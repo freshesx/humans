@@ -1,0 +1,49 @@
+@import "../variables/namespace";
+
+$reboot-size-root:    16px !default;
+$reboot-font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$reboot-font-size:    1rem !default;
+$reboot-line-height:  1.5 !default;
+
+// Change to border-box from content-box
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+// Make viewport responsive
+@at-root {
+  @-ms-viewport { width: device-width; }
+}
+
+html {
+  // Root size, the rem base this
+  font-size: $reboot-size-root;
+  // @see bootstrap
+  // As a side-effect of setting the @viewport above,
+  // IE11 & Edge make the scrollbar overlap the content and automatically hide itself when not in use.
+  // Unfortunately, the auto-showing of the scrollbar is sometimes too sensitive,
+  // thus making it hard to click on stuff near the right edge of the page.
+  // So we add this style to force IE11 & Edge to use a "normal", non-overlapping, non-auto-hiding scrollbar.
+  // See https://github.com/twbs/bootstrap/issues/18543
+  -ms-overflow-style: scrollbar;
+  // @see bootstrap
+  // Changes the default tap highlight to be completely transparent in iOS.
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+  font-family: $reboot-font-family;
+  font-size: $reboot-font-size;
+  line-height: $reboot-line-height;
+}
+
+// Remove outline
+[tabindex="-1"]:focus {
+  outline: none !important;
+}

@@ -1,11 +1,17 @@
+@import "../variables/namespace";
 @import "../variables/colors";
 
+/**
+ * @example class
+ *    .text-red
+ *    .bg-red
+ */
 @each $name, $color in $colors {
-  .text-#{$name} {
+  .#{$namespace}text-#{$name} {
     color: $color;
   }
 
-  .bg-#{$name} {
+  .#{$namespace}bg-#{$name} {
     background: $color;
   }
 }
