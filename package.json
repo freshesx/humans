@@ -1,8 +1,8 @@
 {
   "name": "vue-human",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Vue UI from Apple iOS Human Interface Guidelines",
-  "author": "ChaselWu <minowu@foxmail.com>",
+  "author": "ChaselWu <chasel.wu@vitualreaty.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
