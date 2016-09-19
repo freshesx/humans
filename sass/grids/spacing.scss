@@ -1,0 +1,32 @@
+@import "../variables";
+
+// Margin and padding
+// @class .m-t-1
+// @class .p-t-1
+// @class .m-x-1 .m-y-1
+// @class .p-x-1 .p-y-1
+//
+@each $prop, $prop-abbrev in (margin: m, padding: p) {
+  @each $direction, $direction-abbrev in (top: t, right: r, bottom: b, left: l, x: x, y: y) {
+    @for $i from 0 through 4 {
+      .#{$prop-abbrev}-#{$direction-abbrev}-#{$i} {
+
+        $gutter: $grid-gutters * 0.5 * $i;
+
+        @if $direction == x {
+          #{$prop}: {
+            left: $gutter;
+            right: $gutter;
+          }
+        } @else if $direction == y {
+          #{$prop}: {
+            top: $gutter;
+            bottom: $gutter;
+          }
+        } @else {
+          #{$prop}-#{$direction}: $gutter;
+        }
+      }
+    }
+  }
+}
