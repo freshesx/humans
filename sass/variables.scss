@@ -1,4 +1,8 @@
 //
+// Globla variables
+//
+
+//
 // Colors
 //
 $colors: (
@@ -6,6 +10,7 @@ $colors: (
   "white":                    #fff,
   "black":                    #000,
   "gray":                     #030303,
+  "gray-lightest":            #f5f5f5,
   // Mutil colors
   "red":                      rgb(255, 59, 48),
   "orange":                   rgb(255, 149, 0),
@@ -16,6 +21,8 @@ $colors: (
   "purple":                   rgb(88, 86, 214),
   "pink":                     rgb(255, 45, 85),
 ) !default;
+
+$gray-bg:                     map-get($colors, "gray-lightest") !default;
 
 //
 // Reboot
