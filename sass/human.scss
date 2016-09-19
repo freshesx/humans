@@ -1,5 +1,11 @@
+//
+// You can override custom namespace, and the `is-` prefix is not apply for namespace.
+//
 $namespace: "" !default;
 
+//
+// Import bases, components, etc.
+//
 @import "bases/normalize";
 @import "bases/reboot";
 @import "bases/colors";
