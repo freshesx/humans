@@ -9,12 +9,12 @@ const router = new VueRouter()
 router.map({
   '/bases/colors': {
     component: function (resolve) {
-      require(['./components/colors'], resolve)
+      require(['./docs/bases/colors'], resolve)
     }
   },
   '/grids/flex': {
     component: resolve => {
-      require(['./components/grids/flex'], resolve)
+      require(['./docs/grids/flex'], resolve)
     }
   }
 })
