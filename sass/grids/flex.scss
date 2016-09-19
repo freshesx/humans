@@ -12,7 +12,6 @@ $-grid-flex-col: "#{$namespace}col";
 //
 .#{$-grid-flex-cols} {
   display: flex;
-  margin: 0 $grid-gutters / -2;
 }
 
 // Column
@@ -20,7 +19,6 @@ $-grid-flex-col: "#{$namespace}col";
 //
 .#{$-grid-flex-col} {
   flex: 1;
-  margin: 0 $grid-gutters / 2;
 
   // Specify column class
   // @class .col.is-2 ~ .col.is-11
@@ -35,12 +33,12 @@ $-grid-flex-col: "#{$namespace}col";
 // Gapless column
 // @class .col.is-gapless
 //
-.#{$-grid-flex-cols}.is-gapless {
-  &,
+.#{$-grid-flex-cols}.is-gap {
+  margin-left: $grid-gutters / -2;
+  margin-right: $grid-gutters / -2;
+
   .#{$-grid-flex-col} {
-    margin: {
-      left: 0;
-      right: 0;
-    }
+    margin-left: $grid-gutters / 2;
+    margin-right: $grid-gutters / 2;
   }
 }
