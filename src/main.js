@@ -11,6 +11,11 @@ router.map({
     component: function (resolve) {
       require(['./components/colors'], resolve)
     }
+  },
+  '/grids/flex': {
+    component: resolve => {
+      require(['./components/grids/flex'], resolve)
+    }
   }
 })
 
