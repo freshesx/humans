@@ -16,6 +16,11 @@ router.map({
     component: resolve => {
       require(['./docs/grids/flex'], resolve)
     }
+  },
+  '/components/card': {
+    component: resolve => {
+      require(['./docs/components/card'], resolve)
+    }
   }
 })
 
