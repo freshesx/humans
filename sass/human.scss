@@ -1,1 +1,5 @@
-@import "rebot/main";
+$namespace: "" !default;
+
+@import "bases/normalize";
+@import "bases/reboot";
+@import "bases/colors";

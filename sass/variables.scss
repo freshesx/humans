@@ -1,3 +1,6 @@
+//
+// Colors
+//
 $colors: (
   // Gray
   "white":                    #fff,
@@ -13,3 +16,11 @@ $colors: (
   "purple":                   rgb(88, 86, 214),
   "pink":                     rgb(255, 45, 85),
 ) !default;
+
+//
+// Reboot
+//
+$reboot-size-root:    16px !default;
+$reboot-font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$reboot-font-size:    1rem !default;
+$reboot-line-height:  1.5 !default;
