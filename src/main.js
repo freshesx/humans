@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 const router = new VueRouter()
 
 router.map({
-  '/base/colors': {
+  '/bases/colors': {
     component: function (resolve) {
       require(['./components/colors'], resolve)
     }
