@@ -1,0 +1,46 @@
+@import "../variables";
+
+// @private
+//
+$-grid-flex-cols: "#{$namespace}cols";
+
+// @private
+$-grid-flex-col: "#{$namespace}col";
+
+// Columns
+// @class .cols
+//
+.#{$-grid-flex-cols} {
+  display: flex;
+  margin: 0 $grid-gutters / -2;
+}
+
+// Column
+// @class .col
+//
+.#{$-grid-flex-col} {
+  flex: 1;
+  margin: 0 $grid-gutters / 2;
+
+  // Specify column class
+  // @class .col.is-2 ~ .col.is-11
+  //
+  @for $num from 2 through 11 {
+    &.is-#{$num} {
+      flex: #{$num};
+    }
+  }
+}
+
+// Gapless column
+// @class .col.is-gapless
+//
+.#{$-grid-flex-cols}.is-gapless {
+  &,
+  .#{$-grid-flex-col} {
+    margin: {
+      left: 0;
+      right: 0;
+    }
+  }
+}
