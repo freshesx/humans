@@ -1,8 +1,17 @@
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import App from './app'
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App }
+Vue.use(VueRouter)
+
+const router = new VueRouter()
+
+router.map({
+  '/base/colors': {
+    component: function (resolve) {
+      require(['./components/colors'], resolve)
+    }
+  }
 })
+
+router.start(App, 'app')

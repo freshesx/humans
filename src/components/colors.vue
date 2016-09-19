@@ -1,10 +1,9 @@
 <template>
   <div>
-
     <h3>Color</h3>
 
     <div>
-      最近添加
+      最近添加2
     </div>
 
     <div v-for="color in colors">
@@ -49,11 +48,6 @@
     data () {
       return {
         colors: [
-          // { className: 'gray-dark' },
-          // { className: 'gray' },
-          // { className: 'gray-light' },
-          // { className: 'gray-lighter' },
-          // { className: 'gray-lightest' },
           { className: 'red' },
           { className: 'orange' },
           { className: 'yellow' },
