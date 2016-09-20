@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="scoped-tile p-x-1">
+    <section class="scoped-tile p-x-2">
       <h3>.cols .is-gap</h3>
 
       <div class="cols is-gap">
@@ -10,7 +10,7 @@
       </div>
     </section>
 
-    <section class="scoped-tile">
+    <section class="scoped-tile p-x-2">
       <h3>.cols .col .is-2</h3>
 
       <div class="cols is-gap">
@@ -19,7 +19,7 @@
       </div>
     </section>
 
-    <section class="scoped-tile">
+    <section class="scoped-tile p-x-2">
       <h3>.cols</h3>
 
       <div class="cols is-gapless">
