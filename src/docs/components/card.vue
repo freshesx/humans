@@ -19,8 +19,6 @@
 <style lang="scss" scoped>
   .scoped-stage {
     height: 600px;
-    background: url(../../assets/bg.jpg) no-repeat 0 bottom;
-    background-size: 100% auto;
   }
   .scoped-e-1 {
     height: 300px;
