@@ -1,25 +1,57 @@
 @import "../variables";
+@import "../mixins/headings";
 
 $-card: #{$namespace}card;
-$-card-z-index: 100;
+$-card-heading: #{$namespace}card-heading;
+$-card-icon: #{$namespace}card-icon;
+$-card-title: #{$namespace}card-title;
+$-card-controls: #{$namespace}card-controls;
+$-card-block: #{$namespace}card-block;
 
 .#{$-card} {
-  position: relative;
-  z-index: 100;
+  margin-bottom: $grid-gutters;
   border-radius: $base-radius;
-  overflow: hidden;
-  color: #000;
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.02);
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    filter: blur(80px);
-    margin: -30px;
+.#{$-card-heading} {
+  display: flex;
+  padding: 0 $grid-gutters;
+  height: 3rem;
+  line-height: 3rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top-left-radius: $base-radius;
+  border-top-right-radius: $base-radius;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.#{$-card-icon} {
+  margin-right: $grid-gutters / 2;
+}
+
+.#{$-card-title} {
+  font-size: 1rem;
+  flex: 1 1;
+
+  @include headings() {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.#{$-card-controls} {
+  &,
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+.#{$-card-block} {
+  padding: $grid-gutters;
+
+  &.is-gapless {
+    padding: 0;
   }
 }
