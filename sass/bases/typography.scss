@@ -1,0 +1,5 @@
+@import "../mixins/headings";
+
+@include headings {
+  margin: 0;
+}
