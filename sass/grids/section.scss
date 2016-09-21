@@ -1,0 +1,8 @@
+@import "../variables";
+
+$-grid-section: #{$namespace}section;
+
+.#{$-grid-section} {
+  max-width: 30rem;     // 480px
+  margin: 0 $grid-gutters;
+}
