@@ -29,16 +29,3 @@ $-grid-flex-col: "#{$namespace}col";
     }
   }
 }
-
-// Gapless column
-// @class .col.is-gapless
-//
-.#{$-grid-flex-cols}.is-gap {
-  margin-left: $grid-gutters / -2;
-  margin-right: $grid-gutters / -2;
-
-  .#{$-grid-flex-col} {
-    margin-left: $grid-gutters / 2;
-    margin-right: $grid-gutters / 2;
-  }
-}
