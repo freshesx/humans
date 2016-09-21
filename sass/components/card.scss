@@ -31,13 +31,8 @@ $-card-block: #{$namespace}card-block;
 }
 
 .#{$-card-title} {
-  font-size: 1rem;
   flex: 1 1;
-
-  @include headings() {
-    font-size: 1rem;
-    font-weight: 600;
-  }
+  font-size: 1rem;
 }
 
 .#{$-card-controls} {
