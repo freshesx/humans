@@ -1,19 +1,58 @@
 @import "../variables";
 
-$-button: #{$namespace}btn;
+$-btn: #{$namespace}btn;
+
+$-btn-style: (
+  primary: (
+    normal: (bg: map-get($colors, "green"), color: #fff),
+    hover: (bg: darken(map-get($colors, "green"), 10%)),
+  ),
+  warning: (
+    normal: (bg: map-get($colors, "orange"), color: #fff),
+    hover: (bg: darken(map-get($colors, "orange"), 5%)),
+  ),
+  error: (
+    normal: (bg: map-get($colors, "pink"), color: #fff),
+    hover: (bg: darken(map-get($colors, "pink"), 20%)),
+  ),
+  secondary: (
+    normal: (bg: darken(map-get($colors, "gray-lighter"), 10%)),
+    hover: (bg: darken(darken(map-get($colors, "gray-lighter"), 10%), 10%)),
+  ),
+  inverse: (
+    normal: (bg: lighten(map-get($colors, "gray"), 30%), color: #fff),
+    hover: (bg: darken(lighten(map-get($colors, "gray"), 30%), 10%)),
+  ),
+);
 
 //
 // @class .btn.btn-primary, etc.
 //
-@mixin button-style($bg, $color) {
+@mixin btn-style($bg, $color) {
   background-color: $bg;
   color: $color;
+
+  &:hover {
+    background-color: darken($bg, 10%);
+  }
+}
+
+@mixin btn-bg-color ($options) {
+  @if map-get($options, "bg") {
+    background-color: map-get($options, "bg");
+  }
+  @if map-get($options, "color") {
+    color: map-get($options, "color");
+  }
+  @if map-get($options, "border") {
+    border-color: map-get($options, "border");
+  }
 }
 
 //
 // @class .btn
 //
-.#{$-button} {
+.#{$-btn} {
   display: inline-block;
   text-align: center;
   white-space: nowrap;
@@ -25,8 +64,9 @@ $-button: #{$namespace}btn;
   padding: 0.5rem 1.5rem;
   border-radius: $base-radius;
   text-decoration: none;
-  border: solid 1px transparent;
+  border: none;
   line-height: 1.4rem;
+  outline: none;
 
   //
   // @class .btn.is-block
@@ -43,23 +83,45 @@ $-button: #{$namespace}btn;
     cursor: not-allowed;
   }
 
-  &.is-primary {
-    @include button-style(map-get($colors, "green"), #fff);
-  }
+  //
+  // @class .btn.is-success, etc.
+  //
+  @each $name, $value in $-btn-style {
+    &.is-#{$name} {
+      $normal: map-get($value, "normal");
+      $hover: map-get($value, "hover");
+      $active: map-get($value, "active");
 
-  &.is-warning {
-    @include button-style(map-get($colors, "orange"), #fff);
-  }
+      @if $hover == null {
+        $hover: $normal;
+      }
 
-  &.is-error {
-    @include button-style(map-get($colors, "pink"), #fff);
-  }
+      @if $active == null {
+        $active: $hover;
+      }
 
-  &.is-secondary {
-    @include button-style(darken(map-get($colors, "gray-lighter"), 10%), #333);
-  }
+      // normal
+      & {
+        @if $normal {
+          @include btn-bg-color($normal);
+        }
+      }
 
-  &.is-inverse {
-    @include button-style(lighten(map-get($colors, "gray"), 30%), #fff);
+      // hover
+      &:hover {
+        @if $hover {
+          @include btn-bg-color($hover);
+        }
+      }
+
+      // active
+      &.active,
+      &.active:hover,
+      &:active {
+        @if $active {
+          @include btn-bg-color($active);
+        }
+      }
+    }
   }
 }
