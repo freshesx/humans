@@ -18,12 +18,12 @@
     <section class="section">
       <mn-card>
         <mn-card-heading>
-          <mn-card-title>Inline Button</mn-card-title>
+          <mn-card-title>Block Button</mn-card-title>
         </mn-card-heading>
         <mn-card-block>
-          <mn-btn type="primary" inline>Confirm</mn-btn>
-          <mn-btn type="warning" inline>Sure?</mn-btn>
-          <mn-btn type="error" inline loading>Off</mn-btn>
+          <mn-btn type="primary" block>Confirm</mn-btn>
+          <mn-btn type="warning" block>Sure?</mn-btn>
+          <mn-btn type="error" block loading>Off</mn-btn>
         </mn-card-block>
       </mn-card>
     </section>
