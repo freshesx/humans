@@ -10,6 +10,7 @@
           <mn-btn type="warning">Are you sure?</mn-btn>
           <mn-btn type="error">Cancel</mn-btn>
           <mn-btn type="secondary">Help</mn-btn>
+          <mn-btn type="inverse">Help</mn-btn>
         </mn-card-block>
       </mn-card>
     </section>
