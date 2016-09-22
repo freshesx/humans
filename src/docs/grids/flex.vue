@@ -1,50 +1,35 @@
 <template>
   <div>
-    <section class="section scoped-tile">
-      <div class="card">
-        <div class="card-heading">
-          <div class="card-icon">A</div>
-          <h3 class="card-title">.cols .is-gap</h3>
-          <div class="card-controls">
-            show
-          </div>
-        </div>
-        <div class="card-block">
-          <div class="cols is-gap">
+    <section class="section">
+      <mn-card>
+        <mn-card-heading>
+          <mn-card-title>.cols & .col</mn-card-title>
+          <mn-card-controls>
+            <a href="#">show</a>
+          </mn-card-controls>
+        </mn-card-heading>
+        <mn-card-block>
+          <div class="cols scoped-cols">
             <div class="col bg-green"></div>
             <div class="col bg-blue"></div>
             <div class="col bg-purple"></div>
           </div>
-        </div>
-      </div>
+        </mn-card-block>
+      </mn-card>
     </section>
 
-    <section class="section scoped-tile">
-      <div class="card">
-        <div class="card-heading">
-          <h3 class="card-title">.cols .col .is-2</h3>
-        </div>
-        <div class="card-block">
-          <div class="cols is-gap">
+    <section class="section">
+      <mn-card>
+        <mn-card-heading>
+          <mn-card-title>.cols</mn-card-title>
+        </mn-card-heading>
+        <mn-card-block>
+          <div class="cols scoped-cols">
             <div class="col bg-yellow"></div>
             <div class="col is-2 bg-orange"></div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section scoped-tile">
-      <div class="card">
-        <div class="card-heading">
-          <h3 class="card-title">.cols</h3>
-        </div>
-        <div class="card-block">
-          <div class="cols is-gapless">
-            <div class="col bg-blue"></div>
-            <div class="col is-2 bg-green"></div>
-          </div>
-        </div>
-      </div>
+        </mn-card-block>
+      </mn-card>
     </section>
   </div>
 </template>
@@ -58,7 +43,7 @@
 <style lang="scss" scoped>
   @import "../../../sass/variables";
 
-  .scoped-tile {
+  .scoped-cols {
     .col {
       height: 18rem - $grid-gutters * 2;
       &:first-child {
