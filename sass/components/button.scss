@@ -1,6 +1,7 @@
 @import "../variables";
 
 $-btn: #{$namespace}btn;
+$-btn-loading: #{$namespace}btn-loading;
 
 $-btn-style: (
   primary: (
@@ -124,4 +125,34 @@ $-btn-style: (
       }
     }
   }
+}
+
+//
+// @animation btn-rotate
+//
+@keyframes btn-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+   transform: rotate(360deg);
+ }
+}
+
+//
+// @class .btn-loading
+//
+.#{$-btn-loading} {
+  border: 2px solid #fff;
+  border-radius: 100%;
+  border-bottom-color: transparent;
+  height: 1.2rem;
+  width: 1.2rem;
+  background: transparent !important;
+  display: inline-block;
+  animation: btn-rotate 0.75s 0s linear infinite;
+  vertical-align: middle;
 }
