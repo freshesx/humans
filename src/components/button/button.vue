@@ -10,6 +10,15 @@
       type: {
         type: String,
         default: 'secondary'
+      },
+      inline: {
+        type: Boolean,
+        default: false
+      },
+      loading: {
+        type: Boolean,
+        twoWay: true,
+        default: false
       }
     },
     computed: {
@@ -18,6 +27,9 @@
 
         // success, error, secondary, etc.
         classes[`btn-${this.type}`] = true
+
+        // inline
+        classes['btn-inline'] = this.inline
 
         return classes
       }

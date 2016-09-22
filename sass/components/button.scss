@@ -1,12 +1,17 @@
 @import "../variables";
 
 $-button: #{$namespace}btn;
+$-button-inline: #{$namespace}btn-inline;
+$-button-loading: #{$namespace}btn-loading;
 $-button-primary: #{$namespace}btn-primary;
 $-button-secondary: #{$namespace}btn-secondary;
 $-button-inverse: #{$namespace}btn-inverse;
 $-button-warning: #{$namespace}btn-warning;
 $-button-error: #{$namespace}btn-error;
 
+//
+// @class .btn
+//
 .#{$-button} {
   text-align: center;
   white-space: nowrap;
@@ -14,14 +19,24 @@ $-button-error: #{$namespace}btn-error;
   cursor: pointer;
   user-select: none;
   margin-bottom: 1rem;
-
   height: 2.5rem;
-  line-height: 1.5rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: $base-radius;
   text-decoration: none;
+  border: solid 1px transparent;
+  line-height: 1.4rem;
 }
 
+//
+// @class .btn.btn-inline
+//
+.#{$-button-inline} {
+  display: inline-block;
+}
+
+//
+// @class .btn.btn-primary, etc.
+//
 @mixin button-style($bg, $color) {
   background-color: $bg;
   color: $color;
