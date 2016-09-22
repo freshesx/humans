@@ -1,0 +1,48 @@
+@import "../variables";
+
+$-button: #{$namespace}btn;
+$-button-primary: #{$namespace}btn-primary;
+$-button-secondary: #{$namespace}btn-secondary;
+$-button-inverse: #{$namespace}btn-inverse;
+$-button-warning: #{$namespace}btn-warning;
+$-button-error: #{$namespace}btn-error;
+
+.#{$-button} {
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 1rem;
+
+  height: 2.5rem;
+  line-height: 1.5rem;
+  padding: 0.5rem;
+  border-radius: $base-radius;
+  text-decoration: none;
+}
+
+@mixin button-style($bg, $color) {
+  background-color: $bg;
+  color: $color;
+}
+
+.#{$-button-primary} {
+  @include button-style(map-get($colors, "green"), #fff);
+}
+
+.#{$-button-warning} {
+  @include button-style(map-get($colors, "orange"), #fff);
+}
+
+.#{$-button-error} {
+  @include button-style(map-get($colors, "pink"), #fff);
+}
+
+.#{$-button-secondary} {
+  @include button-style(darken(map-get($colors, "gray-lighter"), 10%), #333);
+}
+
+.#{$-button-inverse} {
+  @include button-style(lighten(map-get($colors, "gray"), 30%), #fff);
+}
