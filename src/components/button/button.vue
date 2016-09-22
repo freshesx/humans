@@ -31,6 +31,9 @@
         // inline
         classes['btn-inline'] = this.inline
 
+        // disabled
+        classes['btn-disabled'] = this.disabled || this.loading
+
         return classes
       }
     }

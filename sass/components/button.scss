@@ -2,6 +2,7 @@
 
 $-button: #{$namespace}btn;
 $-button-inline: #{$namespace}btn-inline;
+$-button-disabled: #{$namespace}btn-disabled;
 $-button-loading: #{$namespace}btn-loading;
 $-button-primary: #{$namespace}btn-primary;
 $-button-secondary: #{$namespace}btn-secondary;
@@ -32,6 +33,13 @@ $-button-error: #{$namespace}btn-error;
 //
 .#{$-button-inline} {
   display: inline-block;
+}
+
+//
+// @class .btn.btn-disabled
+//
+.#{$-button-disabled} {
+  cursor: not-allowed;
 }
 
 //
