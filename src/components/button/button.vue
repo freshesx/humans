@@ -1,7 +1,7 @@
 <template>
-  <div class="btn" :class="classes">
+  <button class="btn" :class="classes">
     <slot></slot>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -11,7 +11,7 @@
         type: String,
         default: 'secondary'
       },
-      inline: {
+      block: {
         type: Boolean,
         default: false
       },
@@ -26,13 +26,13 @@
         let classes = {}
 
         // success, error, secondary, etc.
-        classes[`btn-${this.type}`] = true
+        classes[`is-${this.type}`] = true
 
-        // inline
-        classes['btn-inline'] = this.inline
+        // block
+        classes['is-block'] = this.block
 
         // disabled
-        classes['btn-disabled'] = this.disabled || this.loading
+        classes['is-disabled'] = this.disabled || this.loading
 
         return classes
       }

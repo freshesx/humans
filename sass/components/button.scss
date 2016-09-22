@@ -1,19 +1,20 @@
 @import "../variables";
 
 $-button: #{$namespace}btn;
-$-button-inline: #{$namespace}btn-inline;
-$-button-disabled: #{$namespace}btn-disabled;
-$-button-loading: #{$namespace}btn-loading;
-$-button-primary: #{$namespace}btn-primary;
-$-button-secondary: #{$namespace}btn-secondary;
-$-button-inverse: #{$namespace}btn-inverse;
-$-button-warning: #{$namespace}btn-warning;
-$-button-error: #{$namespace}btn-error;
+
+//
+// @class .btn.btn-primary, etc.
+//
+@mixin button-style($bg, $color) {
+  background-color: $bg;
+  color: $color;
+}
 
 //
 // @class .btn
 //
 .#{$-button} {
+  display: inline-block;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -26,46 +27,39 @@ $-button-error: #{$namespace}btn-error;
   text-decoration: none;
   border: solid 1px transparent;
   line-height: 1.4rem;
-}
 
-//
-// @class .btn.btn-inline
-//
-.#{$-button-inline} {
-  display: inline-block;
-}
+  //
+  // @class .btn.is-block
+  //
+  &.is-block {
+    display: block;
+    width: 100%;
+  }
 
-//
-// @class .btn.btn-disabled
-//
-.#{$-button-disabled} {
-  cursor: not-allowed;
-}
+  //
+  // @class .btn.is-disabled
+  //
+  &.is-disabled {
+    cursor: not-allowed;
+  }
 
-//
-// @class .btn.btn-primary, etc.
-//
-@mixin button-style($bg, $color) {
-  background-color: $bg;
-  color: $color;
-}
+  &.is-primary {
+    @include button-style(map-get($colors, "green"), #fff);
+  }
 
-.#{$-button-primary} {
-  @include button-style(map-get($colors, "green"), #fff);
-}
+  &.is-warning {
+    @include button-style(map-get($colors, "orange"), #fff);
+  }
 
-.#{$-button-warning} {
-  @include button-style(map-get($colors, "orange"), #fff);
-}
+  &.is-error {
+    @include button-style(map-get($colors, "pink"), #fff);
+  }
 
-.#{$-button-error} {
-  @include button-style(map-get($colors, "pink"), #fff);
-}
+  &.is-secondary {
+    @include button-style(darken(map-get($colors, "gray-lighter"), 10%), #333);
+  }
 
-.#{$-button-secondary} {
-  @include button-style(darken(map-get($colors, "gray-lighter"), 10%), #333);
-}
-
-.#{$-button-inverse} {
-  @include button-style(lighten(map-get($colors, "gray"), 30%), #fff);
+  &.is-inverse {
+    @include button-style(lighten(map-get($colors, "gray"), 30%), #fff);
+  }
 }
