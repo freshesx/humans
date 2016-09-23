@@ -4,6 +4,7 @@ $-tab: #{$namespace}tab;
 $-tab-item: #{$namespace}tab-item;
 
 .#{$-tab} {
+  display: flex;
   position: fixed;
   width: 100%;
   height: 3rem;
@@ -13,6 +14,17 @@ $-tab-item: #{$namespace}tab-item;
   backdrop-filter: blur(10px);
 }
 
-#{$-tab-item} {
+.#{$-tab-item} {
+  flex: 1 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 2rem;
 
+  &:hover {
+    background: darken(map-get($colors, "green"), 10%);
+    color: #fff;
+  }
 }
