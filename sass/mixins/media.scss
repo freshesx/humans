@@ -18,7 +18,7 @@
   $names: map-keys($grid-breakpoints);
   $n: index($names, $min-name);
 
-  @return if (
+  @return if(
     $n < length($grid-breakpoints),
       nth($names, ($n + 1)),
       null
@@ -79,7 +79,7 @@
   $max-name: media-breakpoint-next($min-name);
 
   @if $max-name {
-    @include screen($min-name, $max-name) {
+    @include between-screen($min-name, $max-name) {
       @content;
     }
   } @else {
