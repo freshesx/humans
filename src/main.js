@@ -10,6 +10,11 @@ Vue.use(VueRouter)
 const router = new VueRouter()
 
 router.map({
+  '/': {
+    component: resolve => {
+      require(['./docs/home'], resolve)
+    }
+  },
   '/bases/colors': {
     component: function (resolve) {
       require(['./docs/bases/colors'], resolve)
