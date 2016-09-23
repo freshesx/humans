@@ -23,7 +23,6 @@ $colors: (
   "pink":                     rgb(255, 45, 85),
 ) !default;
 
-$gray-bg:                     map-get($colors, "gray-lightest") !default;
 $body-bg:                     map-get($colors, "gray-lighter") !default;
 
 //
