@@ -4,19 +4,87 @@
 // @param string $name - breakpoint name
 // @return {width}px
 //
-@function breakpoint-get($name) {
+@function media-breakpoint-get($name) {
   @return map-get($grid-breakpoints, $name);
 }
 
 //
+// Get specify breackpoint name's next breakpoint or null
+//
+// @param string $min-name - breakpoint name
+// @return string - next-name
+//
+@function media-breakpoint-next($min-name) {
+  $names: map-keys($grid-breakpoints);
+  $n: index($names, $min-name);
+
+  @return if (
+    $n < length($grid-breakpoints),
+      nth($names, ($n + 1)),
+      null
+  )
+}
+
+//
+// Set screen and between breakpoint min & max value media query
+//
+// @public
 // @param string $min-name
 // @param string $max-name
 //
-@mixin screen($min-name, $max-name) {
-  $min: breakpoint-get($min-name);
-  $max: breakpoint-get($max-name) - 1;
+@mixin between-screen($min-name, $max-name) {
+  $min: media-breakpoint-get($min-name);
+  $max: media-breakpoint-get($max-name) - 1;
 
   @media screen and (min-width: $min) and (max-width: $max) {
     @content;
+  }
+}
+
+//
+// Be equal or greater than min breakpoint
+//
+// @public
+// @param string $min-name
+//
+@mixin min-screen($min-name) {
+  $min: media-breakpoint-get($min-name);
+
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+//
+// Be less than max breakpoint
+//
+// @public
+// @param string $max-name
+//
+@mixin max-screen($max-name) {
+  $max: media-breakpoint-get($max-name) - 1;
+
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}
+
+//
+// Between min breakpoint and new breakpoint
+//
+// @public
+// @param string $min-name
+//
+@mixin screen($min-name) {
+  $max-name: media-breakpoint-next($min-name);
+
+  @if $max-name {
+    @include screen($min-name, $max-name) {
+      @content;
+    }
+  } @else {
+    @include min-screen($min-name) {
+      @content;
+    }
   }
 }
