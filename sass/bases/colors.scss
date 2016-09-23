@@ -2,15 +2,15 @@
 
 //
 // Text and background colors
-// @class .text-red
-// @class .bg-red
+// @class .is-red-text
+// @class .is-red-bg
 //
 @each $name, $color in $colors {
-  .#{$namespace}text-#{$name} {
+  .is-#{$name}-text {
     color: $color;
   }
 
-  .#{$namespace}bg-#{$name} {
+  .is-#{$name}-bg {
     background: $color;
   }
 }
