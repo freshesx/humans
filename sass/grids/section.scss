@@ -1,8 +1,16 @@
 @import "../variables";
+@import "../mixins/media";
 
 $-grid-section: #{$namespace}section;
 
 .#{$-grid-section} {
-  max-width: 30rem;     // 480px
+
   margin: 0 $grid-gutters;
+
+  @each $name, $width in $grid-max-widths {
+    @include min-screen($name) {
+      width: $width;
+      margin: 0 auto;
+    }
+  }
 }
