@@ -49,14 +49,10 @@
         return `0 0 ${this.icon.width} ${this.icon.height}`
       },
       width () {
-        return this.icon
-          ? this.icon.width * (20 / 24) * this.scale
-          : 0
+        return this.icon ? 20 * this.scale : 0
       },
       height () {
-        return this.icon
-          ? this.icon.height * (20 / 24) * this.scale
-          : 0
+        return this.icon ? 20 * this.scale : 0
       },
       style () {
         if (this.scale === 1) {
