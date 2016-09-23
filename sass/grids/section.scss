@@ -1,9 +1,10 @@
 @import "../variables";
 @import "../mixins/media";
 
+$-grid-container: #{$namespace}container;
 $-grid-section: #{$namespace}section;
 
-.#{$-grid-section} {
+.#{$-grid-container} {
 
   margin: 0 $grid-gutters;
 
@@ -13,4 +14,8 @@ $-grid-section: #{$namespace}section;
       margin: 0 auto;
     }
   }
+}
+
+.#{$-grid-section} {
+  margin: 0 $grid-gutters;
 }
