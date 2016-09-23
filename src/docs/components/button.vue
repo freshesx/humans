@@ -21,9 +21,16 @@
           <mn-card-title>Block Button</mn-card-title>
         </mn-card-heading>
         <mn-card-block>
-          <mn-btn type="primary" block>Confirm</mn-btn>
-          <mn-btn type="warning" block>Sure?</mn-btn>
-          <mn-btn type="error" block loading>Off</mn-btn>
+          <div class="mn-cols">
+            <div class="mn-col">
+              <mn-btn type="primary" block>Confirm</mn-btn>
+              <mn-btn type="warning" block>Sure?</mn-btn>
+              <mn-btn type="error" block loading>Off</mn-btn>
+            </div>
+            <div class="mn-col">
+              <mn-pre :code="blockButtonCode"></mn-pre>
+            </div>
+          </div>
         </mn-card-block>
       </mn-card>
     </section>
@@ -31,7 +38,13 @@
 </template>
 
 <script>
-  export default {
+  import blockButtonCode from '../codes/block-buttons'
 
+  export default {
+    data () {
+      return {
+        blockButtonCode
+      }
+    }
   }
 </script>
