@@ -10,7 +10,7 @@ $-btn-style: (
   ),
   warning: (
     normal: (bg: $orange, color: #fff),
-    hover: (bg: darken($green, 5%)),
+    hover: (bg: darken($orange, 5%)),
   ),
   error: (
     normal: (bg: $pink, color: #fff),
