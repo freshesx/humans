@@ -15,7 +15,7 @@
           <h4>Grids</h4>
           <ul>
             <li><a href="#">section</a></li>
-            <li><a href="#">flex</a></li>
+            <li><a v-link="{ path: '/grids/flex' }">flex</a></li>
             <li><a href="#">spacing</a></li>
           </ul>
           <h4>Components</h4>
