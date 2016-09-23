@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins/media";
 
 // @private
 //
@@ -13,22 +14,35 @@ $-grid-flex-col: "#{$namespace}col";
 .#{$-grid-flex-cols} {
   display: flex;
   margin: 0 $grid-gutters * -0.5;
+  flex-wrap: wrap;
 }
 
 // Column
 // @class .col
 //
 .#{$-grid-flex-col} {
-  flex: 1;
+  width: 100%;
   overflow: hidden;
-  margin: 0 $grid-gutters * 0.5;
+  padding: 0 $grid-gutters * 0.5;
 
   // Specify column class
-  // @class .col.is-2 ~ .col.is-11
+  // @class .col.is-xs-1 ~ .col.is-xs-12
+  // @class .col.is-sm-1 ~ .col.is-sm-12
+  // @class .col.is-md-1 ~ .col.is-md-12
+  // @class .col.is-lg-1 ~ .col.is-lg-12
+  // @class .col.is-xl-1 ~ .col.is-xl-12
   //
-  @for $num from 2 through 11 {
-    &.is-#{$num} {
-      flex: #{$num};
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include min-screen($breakpoint) {
+      @for $num from 1 through 12 {
+        &.is-#{$breakpoint}-#{$num} {
+          flex: none;
+          width: (100% / 12) * $num;
+        }
+        &.is-offset-#{$breakpoint}-#{$num} {
+          margin-left: (100% / 12) * $num;
+        }
+      }
     }
   }
 }
