@@ -1,6 +1,6 @@
 <template>
   <svg version="1.1"
-    class="scoped-icon"
+    class="icon"
     :class="classes"
     :width="width"
     :height="height"
@@ -74,24 +74,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  @keyframes icon-spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  .scoped-icon {
-    display: inline-block;
-    fill: currentColor;
-    vertical-align: -4px;
-
-    &.is-spin {
-      animation: icon-spin 2s 0s infinite linear;
-    }
-  }
-</style>
