@@ -1,6 +1,6 @@
 <template>
   <button class="mn-btn" :class="classes">
-    <span class="mn-btn-loading" v-if="loading"></span>
+    <mn-icon name="spinner" spin v-if="loading"></mn-icon>
     <slot v-if="!loading"></slot>
   </button>
 </template>
