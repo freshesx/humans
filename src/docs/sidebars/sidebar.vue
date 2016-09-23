@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-cols">
+  <div class="mn-cols is-gapless">
     <div class="mn-col is-sm-2">
       <mn-card>
         <mn-card-heading>
