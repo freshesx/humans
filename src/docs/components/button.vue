@@ -22,12 +22,12 @@
         </mn-card-heading>
         <mn-card-block>
           <div class="mn-cols">
-            <div class="mn-col">
+            <div class="mn-col is-sm-6">
               <mn-btn type="primary" block>Confirm</mn-btn>
               <mn-btn type="warning" block>Sure?</mn-btn>
               <mn-btn type="error" block loading>Off</mn-btn>
             </div>
-            <div class="mn-col">
+            <div class="mn-col is-sm-6">
               <mn-pre :code="blockButtonCode"></mn-pre>
             </div>
           </div>
