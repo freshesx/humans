@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="section">
+    <section class="mn-section">
       <mn-card>
         <mn-card-heading>
           <mn-card-title>Button</mn-card-title>
@@ -15,7 +15,7 @@
       </mn-card>
     </section>
 
-    <section class="section">
+    <section class="mn-section">
       <mn-card>
         <mn-card-heading>
           <mn-card-title>Block Button</mn-card-title>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="section">
+    <section class="mn-section">
       <mn-card>
         <mn-card-heading>
           <mn-card-title>.cols & .col</mn-card-title>
@@ -9,24 +9,24 @@
           </mn-card-controls>
         </mn-card-heading>
         <mn-card-block>
-          <div class="cols scoped-cols">
-            <div class="col bg-green"></div>
-            <div class="col bg-blue"></div>
-            <div class="col bg-purple"></div>
+          <div class="mn-cols scoped-cols">
+            <div class="mn-col is-green-bg"></div>
+            <div class="mn-col is-blue-bg"></div>
+            <div class="mn-col is-purple-bg"></div>
           </div>
         </mn-card-block>
       </mn-card>
     </section>
 
-    <section class="section">
+    <section class="mn-section">
       <mn-card>
         <mn-card-heading>
           <mn-card-title>.cols</mn-card-title>
         </mn-card-heading>
         <mn-card-block>
-          <div class="cols scoped-cols">
-            <div class="col bg-yellow"></div>
-            <div class="col is-2 bg-orange"></div>
+          <div class="mn-cols scoped-cols">
+            <div class="mn-col is-yellow-bg"></div>
+            <div class="mn-col is-2 is-orange-bg"></div>
           </div>
         </mn-card-block>
       </mn-card>
@@ -44,7 +44,7 @@
   @import "../../../sass/variables";
 
   .scoped-cols {
-    .col {
+    .mn-col {
       height: 18rem - $grid-gutters * 2;
       &:first-child {
         border-top-left-radius: $base-radius;
