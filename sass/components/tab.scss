@@ -24,7 +24,7 @@ $-tab-item: #{$namespace}tab-item;
   line-height: 2rem;
 
   &:hover {
-    background: darken(map-get($colors, "green"), 10%);
+    background: darken($green, 10%);
     color: #fff;
   }
 }

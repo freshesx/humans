@@ -1,11 +1,27 @@
 @import "../variables";
 
+$-colors-schema: (
+  "white":                    $white,
+  "black":                    $black,
+  "gray":                     $gray,
+  "gray-lighter":             $gray-lighter,
+  "gray-lightest":            $gray-lightest,
+  "red":                      $red,
+  "orange":                   $orange,
+  "yellow":                   $yellow,
+  "green":                    $green,
+  "teal-blue":                $teal-blue,
+  "blue":                     $blue,
+  "purple":                   $purple,
+  "pink":                     $pink,
+) !default;
+
 //
 // Text and background colors
 // @class .is-red-text
 // @class .is-red-bg
 //
-@each $name, $color in $colors {
+@each $name, $color in $-colors-schema {
   .is-#{$name}-text {
     color: $color;
   }

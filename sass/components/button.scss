@@ -5,24 +5,24 @@ $-btn-loading: #{$namespace}btn-loading;
 
 $-btn-style: (
   primary: (
-    normal: (bg: map-get($colors, "green"), color: #fff),
-    hover: (bg: darken(map-get($colors, "green"), 10%)),
+    normal: (bg: $green, color: #fff),
+    hover: (bg: darken($green, 10%)),
   ),
   warning: (
-    normal: (bg: map-get($colors, "orange"), color: #fff),
-    hover: (bg: darken(map-get($colors, "orange"), 5%)),
+    normal: (bg: $orange, color: #fff),
+    hover: (bg: darken($green, 5%)),
   ),
   error: (
-    normal: (bg: map-get($colors, "pink"), color: #fff),
-    hover: (bg: darken(map-get($colors, "pink"), 20%)),
+    normal: (bg: $pink, color: #fff),
+    hover: (bg: darken($pink, 20%)),
   ),
   secondary: (
-    normal: (bg: darken(map-get($colors, "gray-lighter"), 10%)),
-    hover: (bg: darken(darken(map-get($colors, "gray-lighter"), 10%), 10%)),
+    normal: (bg: darken($gray-lighter, 10%)),
+    hover: (bg: darken(darken($gray-lighter, 10%), 10%)),
   ),
   inverse: (
-    normal: (bg: lighten(map-get($colors, "gray"), 30%), color: #fff),
-    hover: (bg: darken(lighten(map-get($colors, "gray"), 30%), 10%)),
+    normal: (bg: lighten($gray, 30%), color: #fff),
+    hover: (bg: darken(lighten($gray, 30%), 10%)),
   ),
 );
 
