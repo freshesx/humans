@@ -12,6 +12,7 @@ $-grid-flex-col: "#{$namespace}col";
 //
 .#{$-grid-flex-cols} {
   display: flex;
+  margin: 0 $grid-gutters * -0.5;
 }
 
 // Column
@@ -19,6 +20,8 @@ $-grid-flex-col: "#{$namespace}col";
 //
 .#{$-grid-flex-col} {
   flex: 1;
+  overflow: hidden;
+  margin: 0 $grid-gutters * 0.5;
 
   // Specify column class
   // @class .col.is-2 ~ .col.is-11
