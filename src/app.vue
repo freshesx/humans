@@ -1,11 +1,11 @@
 <template>
   <div>
     <router-view></router-view>
-    <div class="tab tab-fixed-bottom">
-      <div class="tab-item">Home</div>
-      <div class="tab-item">Events</div>
-      <div class="tab-item">Search</div>
-      <div class="tab-item">Setting</div>
+    <div class="mn-tab mn-tab-fixed-bottom">
+      <div class="mn-tab-item">Home</div>
+      <div class="mn-tab-item">Events</div>
+      <div class="mn-tab-item">Search</div>
+      <div class="mn-tab-item">Setting</div>
     </div>
   </div>
 </template>

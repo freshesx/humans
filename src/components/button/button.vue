@@ -1,6 +1,6 @@
 <template>
-  <button class="btn" :class="classes">
-    <span class="btn-loading" v-if="loading"></span>
+  <button class="mn-btn" :class="classes">
+    <span class="mn-btn-loading" v-if="loading"></span>
     <slot v-if="!loading"></slot>
   </button>
 </template>
