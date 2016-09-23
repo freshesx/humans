@@ -4,6 +4,7 @@ import App from './app'
 import './components/icon'
 import './components/button'
 import './components/card'
+import '../sass/human.scss'
 
 Vue.use(VueRouter)
 
