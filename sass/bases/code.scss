@@ -1,0 +1,60 @@
+// Inline and block code styles
+code,
+kbd,
+pre,
+samp {
+  // font-family: $font-family-monospace;
+}
+
+// Inline code
+code {
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  color: #bd4147;
+  background-color: #f7f7f9;
+  border-radius: $base-radius;
+}
+
+// User input typically entered via keyboard
+kbd {
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #333;
+  border-radius: $base-radius;
+
+  kbd {
+    padding: 0;
+    font-size: 100%;
+    // font-weight: $nested-kbd-font-weight;
+    // @include box-shadow(none);
+  }
+}
+
+// Blocks of code
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #bd4147;
+  background-color: #f7f7f9;
+  border-radius: $base-radius;
+  padding: 1rem 1rem;
+  overflow: auto;
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+// Enable scrollable blocks of code
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
