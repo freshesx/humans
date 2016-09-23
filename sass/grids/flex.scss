@@ -50,7 +50,7 @@ $-grid-flex-col: "#{$namespace}col";
 .#{$-grid-flex-cols} {
   &.is-gapless {
     margin: 0;
-    .#{$-grid-flex-col} {
+    > .#{$-grid-flex-col} {
       padding: 0;
     }
   }
