@@ -1,0 +1,22 @@
+@import "../variables";
+
+//
+// @param string $name - breakpoint name
+// @return {width}px
+//
+@function breakpoint-get($name) {
+  @return map-get($grid-breakpoints, $name);
+}
+
+//
+// @param string $min-name
+// @param string $max-name
+//
+@mixin screen($min-name, $max-name) {
+  $min: breakpoint-get($min-name);
+  $max: breakpoint-get($max-name) - 1;
+
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
