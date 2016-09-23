@@ -10,9 +10,15 @@
         </mn-card-heading>
         <mn-card-block>
           <div class="mn-cols scoped-cols">
-            <div class="mn-col is-green-bg"></div>
-            <div class="mn-col is-blue-bg"></div>
-            <div class="mn-col is-purple-bg"></div>
+            <div class="mn-col is-sm-4 is-green-bg">
+              .mn-col .is-sm-4 .is-green-bg
+            </div>
+            <div class="mn-col is-sm-4 is-blue-bg">
+              mn-col is-sm-4 is-blue-bg
+            </div>
+            <div class="mn-col is-sm-4 is-purple-bg">
+              mn-col is-sm-4 is-blue-bg
+            </div>
           </div>
         </mn-card-block>
       </mn-card>
@@ -25,8 +31,30 @@
         </mn-card-heading>
         <mn-card-block>
           <div class="mn-cols scoped-cols">
-            <div class="mn-col is-yellow-bg"></div>
-            <div class="mn-col is-2 is-orange-bg"></div>
+            <div class="mn-col is-sm-4 is-yellow-bg">
+              mn-col is-sm-4 is-yellow-bg
+            </div>
+            <div class="mn-col is-sm-8 is-orange-bg">
+              mn-col is-sm-8 is-orange-bg
+            </div>
+          </div>
+        </mn-card-block>
+      </mn-card>
+    </section>
+
+    <section class="mn-section">
+      <mn-card>
+        <mn-card-heading>
+          <mn-card-title>.cols.is-gapless</mn-card-title>
+        </mn-card-heading>
+        <mn-card-block>
+          <div class="mn-cols is-gapless scoped-cols">
+            <div class="mn-col is-sm-4 is-yellow-bg">
+              mn-col is-sm-4 is-yellow-bg
+            </div>
+            <div class="mn-col is-sm-8 is-orange-bg">
+              mn-col is-sm-8 is-orange-bg
+            </div>
           </div>
         </mn-card-block>
       </mn-card>
@@ -45,7 +73,10 @@
 
   .scoped-cols {
     .mn-col {
-      height: 18rem - $grid-gutters * 2;
+      height: 5rem - $grid-gutters * 2;
+      color: #fff;
+      // text-align: center;
+      line-height: 3rem;
       &:first-child {
         border-top-left-radius: $base-radius;
         border-bottom-left-radius: $base-radius;
