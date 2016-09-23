@@ -1,16 +1,17 @@
 <template>
   <div>
-    <router-view></router-view>
-    <div class="mn-tab mn-tab-fixed-bottom">
-      <div class="mn-tab-item">Home</div>
-      <div class="mn-tab-item">Events</div>
-      <div class="mn-tab-item">Search</div>
-      <div class="mn-tab-item">Setting</div>
-    </div>
+    <docs-sidebar>
+      <router-view slot="mainarea"></router-view>
+    </docs-sidebar>
   </div>
 </template>
 
 <script>
-export default {
-}
+  import DocsSidebar from './docs/sidebars/sidebar'
+
+  export default {
+    components: {
+      DocsSidebar
+    }
+  }
 </script>
