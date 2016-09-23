@@ -16,7 +16,7 @@ router.map({
     }
   },
   '/bases/colors': {
-    component: function (resolve) {
+    component: resolve => {
       require(['./docs/bases/colors'], resolve)
     }
   },
