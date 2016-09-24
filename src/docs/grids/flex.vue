@@ -1,32 +1,32 @@
 <template>
   <div>
     <section class="section">
-      <mn-card>
-        <mn-card-heading>
-          <mn-card-title>.cols & .col</mn-card-title>
-          <mn-card-controls>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">.cols & .col</div>
+          <div class="card-controls">
             <a href="#">show</a>
-          </mn-card-controls>
-        </mn-card-heading>
-        <mn-card-block>
+          </div>
+        </div>
+        <div class="card-block">
           <div class="cols">
             <div class="col is-sm-1" v-for="i in cols12">
               <div class="sp-holder is-purple-bg"></div>
             </div>
           </div>
-        </mn-card-block>
-      </mn-card>
+        </div>
+      </div>
     </section>
 
     <section class="section">
-      <mn-card>
-        <mn-card-heading>
-          <mn-card-title>.cols & .col</mn-card-title>
-          <mn-card-controls>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">.cols & .col</div>
+          <div class="card-controls">
             <a href="#">show</a>
-          </mn-card-controls>
-        </mn-card-heading>
-        <mn-card-block>
+          </div>
+        </div>
+        <div class="card-block">
           <div class="cols">
             <div class="col is-sm-4">
               <div class="sp-holder is-green-bg">
@@ -44,16 +44,16 @@
               </div>
             </div>
           </div>
-        </mn-card-block>
-      </mn-card>
+        </div>
+      </div>
     </section>
 
     <section class="section">
-      <mn-card>
-        <mn-card-heading>
-          <mn-card-title>.cols</mn-card-title>
-        </mn-card-heading>
-        <mn-card-block>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">.cols</div>
+        </div>
+        <div class="card-block">
           <div class="cols scoped-cols">
             <div class="col is-sm-4">
               <div class="sp-holder is-yellow-bg">
@@ -66,16 +66,16 @@
               </div>
             </div>
           </div>
-        </mn-card-block>
-      </mn-card>
+        </div>
+      </div>
     </section>
 
     <section class="section">
-      <mn-card>
-        <mn-card-heading>
-          <mn-card-title>.cols.is-gapless</mn-card-title>
-        </mn-card-heading>
-        <mn-card-block>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">.cols.is-gapless</div>
+        </div>
+        <div class="card-block">
           <div class="cols is-gapless scoped-cols">
             <div class="col is-sm-4">
               <div class="sp-holder is-yellow-bg">
@@ -88,8 +88,8 @@
               </div>
             </div>
           </div>
-        </mn-card-block>
-      </mn-card>
+        </div>
+      </div>
     </section>
   </div>
 </template>
