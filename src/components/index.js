@@ -1,3 +1,3 @@
 import './icon'
 import './button'
-import './pre'
+import './code'
