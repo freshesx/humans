@@ -1,0 +1,18 @@
+@import "../variables";
+
+$-form-label: #{$namespace}form-label;
+$-form-control: #{$namespace}form-control;
+
+.#{$-form-label} {
+  display: block;
+  width: 6rem;
+}
+
+.#{$-form-control} {
+  width: 100%;
+  border: none;
+  padding: 0;
+  background: transparent;
+  outline: none;
+  -webkit-appearance: none;
+}
