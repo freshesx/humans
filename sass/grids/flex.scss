@@ -25,6 +25,10 @@ $-grid-flex-col: "#{$namespace}col";
   overflow: hidden;
   padding: 0 $grid-gutters * 0.5;
 
+  @include min-screen(sm) {
+    flex: 1;
+  }
+
   // Specify column class
   // @class .col.is-xs-1 ~ .col.is-xs-12
   // @class .col.is-sm-1 ~ .col.is-sm-12
