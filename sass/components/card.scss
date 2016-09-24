@@ -11,6 +11,7 @@ $-card-lists: #{$namespace}card-lists;
 $-card-item: #{$namespace}card-item;
 $-card-item-addon: #{$namespace}card-item-addon;
 $-card-item-help: #{$namespace}card-item-help;
+$-card-item-action: #{$namespace}card-item-action;
 $-card-item-body: #{$namespace}card-item-body;
 $-card-media: #{$namespace}card-media;
 
@@ -19,6 +20,7 @@ $-card-media: #{$namespace}card-media;
   border-radius: $base-radius;
   background-color: rgba(255, 255, 255, 0.75);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
 }
 
 .#{$-card-header} {
@@ -105,6 +107,10 @@ $-card-media: #{$namespace}card-media;
 
 .#{$-card-item-body} {
   flex: 1;
+}
+
+.#{$-card-item-action} {
+  margin: $grid-gutters * -1 0;
 }
 
 .#{$-card-item-help} {
