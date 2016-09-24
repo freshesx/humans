@@ -2,7 +2,7 @@
 @import "../mixins/headings";
 
 $-card: #{$namespace}card;
-$-card-heading: #{$namespace}card-heading;
+$-card-header: #{$namespace}card-header;
 $-card-icon: #{$namespace}card-icon;
 $-card-title: #{$namespace}card-title;
 $-card-controls: #{$namespace}card-controls;
@@ -21,7 +21,7 @@ $-card-media: #{$namespace}card-media;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.02);
 }
 
-.#{$-card-heading} {
+.#{$-card-header} {
   display: flex;
   padding: 0 $grid-gutters;
   height: 3rem;
