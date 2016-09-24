@@ -9,15 +9,21 @@
           </mn-card-controls>
         </mn-card-heading>
         <mn-card-block>
-          <div class="mn-cols scoped-cols">
-            <div class="mn-col is-sm-4 is-green-bg">
-              .mn-col .is-sm-4 .is-green-bg
+          <div class="mn-cols">
+            <div class="mn-col is-sm-4">
+              <div class="sp-holder is-green-bg">
+                .mn-col .is-sm-4 .is-green-bg
+              </div>
             </div>
-            <div class="mn-col is-sm-4 is-blue-bg">
-              mn-col is-sm-4 is-blue-bg
+            <div class="mn-col is-sm-4">
+              <div class="sp-holder is-blue-bg">
+                mn-col is-sm-4 is-blue-bg
+              </div>
             </div>
-            <div class="mn-col is-sm-4 is-purple-bg">
-              mn-col is-sm-4 is-blue-bg
+            <div class="mn-col is-sm-4">
+              <div class="sp-holder is-purple-bg">
+                mn-col is-sm-4 is-blue-bg
+              </div>
             </div>
           </div>
         </mn-card-block>
@@ -31,11 +37,15 @@
         </mn-card-heading>
         <mn-card-block>
           <div class="mn-cols scoped-cols">
-            <div class="mn-col is-sm-4 is-yellow-bg">
-              mn-col is-sm-4 is-yellow-bg
+            <div class="mn-col is-sm-4">
+              <div class="sp-holder is-yellow-bg">
+                mn-col is-sm-4 is-yellow-bg
+              </div>
             </div>
-            <div class="mn-col is-sm-8 is-orange-bg">
-              mn-col is-sm-8 is-orange-bg
+            <div class="mn-col is-sm-8">
+              <div class="sp-holder is-orange-bg">
+                mn-col is-sm-8 is-orange-bg
+              </div>
             </div>
           </div>
         </mn-card-block>
@@ -49,11 +59,15 @@
         </mn-card-heading>
         <mn-card-block>
           <div class="mn-cols is-gapless scoped-cols">
-            <div class="mn-col is-sm-4 is-yellow-bg">
-              mn-col is-sm-4 is-yellow-bg
+            <div class="mn-col is-sm-4">
+              <div class="sp-holder is-yellow-bg">
+                mn-col is-sm-4 is-yellow-bg
+              </div>
             </div>
-            <div class="mn-col is-sm-8 is-orange-bg">
-              mn-col is-sm-8 is-orange-bg
+            <div class="mn-col is-sm-8">
+              <div class="sp-holder is-orange-bg">
+                mn-col is-sm-8 is-orange-bg
+              </div>
             </div>
           </div>
         </mn-card-block>
@@ -71,20 +85,11 @@
 <style lang="scss" scoped>
   @import "../../../sass/variables";
 
-  .scoped-cols {
-    .mn-col {
-      height: 5rem - $grid-gutters * 2;
-      color: #fff;
-      // text-align: center;
-      line-height: 3rem;
-      &:first-child {
-        border-top-left-radius: $base-radius;
-        border-bottom-left-radius: $base-radius;
-      }
-      &:last-child {
-        border-top-right-radius: $base-radius;
-        border-bottom-right-radius: $base-radius;
-      }
-    }
+  .sp-holder {
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    color: #fff;
+    border-radius: $base-radius;
   }
 </style>
