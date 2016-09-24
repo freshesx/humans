@@ -10,6 +10,24 @@
         </mn-card-heading>
         <mn-card-block>
           <div class="mn-cols">
+            <div class="mn-col is-sm-1" v-for="i in cols12">
+              <div class="sp-holder is-purple-bg"></div>
+            </div>
+          </div>
+        </mn-card-block>
+      </mn-card>
+    </section>
+
+    <section class="mn-section">
+      <mn-card>
+        <mn-card-heading>
+          <mn-card-title>.cols & .col</mn-card-title>
+          <mn-card-controls>
+            <a href="#">show</a>
+          </mn-card-controls>
+        </mn-card-heading>
+        <mn-card-block>
+          <div class="mn-cols">
             <div class="mn-col is-sm-4">
               <div class="sp-holder is-green-bg">
                 .mn-col .is-sm-4 .is-green-bg
@@ -78,7 +96,11 @@
 
 <script>
   export default {
-
+    data () {
+      return {
+        cols12: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+      }
+    }
   }
 </script>
 
