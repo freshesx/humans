@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-card-block">
+  <div class="card-block">
     <slot></slot>
   </div>
 </template>

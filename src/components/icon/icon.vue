@@ -1,6 +1,6 @@
 <template>
   <svg version="1.1"
-    class="mn-icon"
+    class="icon"
     :class="classes"
     :width="width"
     :height="height"

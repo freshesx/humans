@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="mn-section">
+    <section class="section">
       <mn-card>
         <mn-card-heading>
           <mn-card-title>Button</mn-card-title>
@@ -15,19 +15,19 @@
       </mn-card>
     </section>
 
-    <section class="mn-section">
+    <section class="section">
       <mn-card>
         <mn-card-heading>
           <mn-card-title>Block Button</mn-card-title>
         </mn-card-heading>
         <mn-card-block>
-          <div class="mn-cols">
-            <div class="mn-col is-sm-6">
+          <div class="cols">
+            <div class="col is-sm-6">
               <mn-btn type="primary" block>Confirm</mn-btn>
               <mn-btn type="warning" block>Sure?</mn-btn>
               <mn-btn type="error" block loading>Off</mn-btn>
             </div>
-            <div class="mn-col is-sm-6">
+            <div class="col is-sm-6">
               <mn-pre :code="blockButtonCode"></mn-pre>
             </div>
           </div>

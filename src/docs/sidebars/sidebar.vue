@@ -1,6 +1,6 @@
 <template>
-  <div class="mn-cols is-gapless">
-    <div class="mn-col is-sm-2">
+  <div class="cols is-gapless">
+    <div class="col is-sm-2">
       <mn-card>
         <mn-card-heading>
           <mn-card-title>Menus</mn-card-title>
@@ -33,7 +33,7 @@
         </mn-card-block>
       </mn-card>
     </div>
-    <div class="mn-col is-sm-10">
+    <div class="col is-sm-10">
       <slot name="mainarea"></slot>
     </div>
   </div>
