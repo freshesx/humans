@@ -16,18 +16,18 @@
 
         @if $direction == x {
           #{$prop}: {
-            left: $gutter;
-            right: $gutter;
+            left: $gutter !important;
+            right: $gutter !important;
           }
         } @else if $direction == y {
           #{$prop}: {
-            top: $gutter;
-            bottom: $gutter;
+            top: $gutter !important;
+            bottom: $gutter !important;
           }
         } @else if $direction == a {
-          #{$prop}: $gutter;
+          #{$prop}: $gutter !important;
         } @else {
-          #{$prop}-#{$direction}: $gutter;
+          #{$prop}-#{$direction}: $gutter !important;
         }
       }
     }
