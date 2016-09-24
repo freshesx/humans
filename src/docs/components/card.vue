@@ -3,11 +3,11 @@
     <section class="section">
       <div class="cols">
         <div class="col">
-          <mn-card>
-            <mn-card-heading>
-              <mn-card-title>Card</mn-card-title>
-            </mn-card-heading>
-            <mn-card-block>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Card</div>
+            </div>
+            <div class="card-block">
               <h3>What is Lorem Ipsum?</h3>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -18,7 +18,7 @@
               <p>
                 It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
               </p>
-            </mn-card-block>
+            </div>
             <div class="card-lists">
               <div class="card-item">
                 <div class="card-item-body">Item title</div>
@@ -32,23 +32,23 @@
                 <div class="card-item-help">description</div>
               </div>
             </div>
-          </mn-card>
+          </div>
         </div>
         <div class="col">
-          <mn-card>
-            <mn-card-heading>
-              <mn-card-title>Card</mn-card-title>
-            </mn-card-heading>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Card</div>
+            </div>
             <div class="card-media">
               <img src="https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg">
             </div>
-            <mn-card-block>
+            <div class="card-block">
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </p>
               <mn-btn type="primary" block>Submit</mn-btn>
-            </mn-card-block>
-          </mn-card>
+            </div>
+          </div>
         </div>
       </div>
     </section>
