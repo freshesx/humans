@@ -36,6 +36,11 @@ router.map({
     component: resolve => {
       require(['./docs/components/card'], resolve)
     }
+  },
+  '/components/form': {
+    component: resolve => {
+      require(['./docs/components/form'], resolve)
+    }
   }
 })
 

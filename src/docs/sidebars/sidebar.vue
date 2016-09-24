@@ -23,6 +23,7 @@
             <li><a v-link="{ path: '/components/button' }">button</a></li>
             <li><a href="#">icon</a></li>
             <li><a v-link="{ path: '/components/card' }">card</a></li>
+            <li><a v-link="{ path: '/components/form' }">form</a></li>
             <li><a href="#">tab</a></li>
           </ul>
           <h4>API</h4>
