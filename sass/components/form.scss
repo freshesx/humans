@@ -2,6 +2,8 @@
 
 $-form-label: #{$namespace}form-label;
 $-form-control: #{$namespace}form-control;
+$-form-help: #{$namespace}form-help;
+$-form-radio-box: #{$namespace}form-radio-box;
 
 .#{$-form-label} {
   display: block;
@@ -15,4 +17,15 @@ $-form-control: #{$namespace}form-control;
   background: transparent;
   outline: none;
   -webkit-appearance: none;
+}
+
+.#{$-form-help} {
+  font-size: 0.875rem;
+  color: #666;
+  padding-left: $grid-gutters;
+  margin-bottom: $grid-gutters;
+}
+
+.#{$-form-radio-box} {
+  color: darken($green, 10%);
 }
