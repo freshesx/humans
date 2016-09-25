@@ -1,11 +1,9 @@
 import Vue from 'vue'
-import VueValidator from 'vue-validator'
 import VueRouter from 'vue-router'
 import App from './app'
 import './components'
 import './docs/docs.scss'
 
-Vue.use(VueValidator)
 Vue.use(VueRouter)
 
 const router = new VueRouter()
