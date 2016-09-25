@@ -5,6 +5,7 @@
         <div class="col is-sm-6">
           <form-radio></form-radio>
           <form-basic></form-basic>
+          <form-switch></form-switch>
         </div>
       </div>
     </section>
@@ -14,11 +15,13 @@
 <script>
   import FormRadio from './radio'
   import FormBasic from './basic'
+  import FormSwitch from './switch'
 
   export default {
     components: {
       FormRadio,
-      FormBasic
+      FormBasic,
+      FormSwitch
     }
   }
 </script>
