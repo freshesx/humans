@@ -70,6 +70,17 @@ $-btn-style: (
   outline: none;
 
   //
+  // @class .btn.is-sm
+  //
+  &.is-sm {
+    height: 2rem;
+    padding: 0.5rem 1rem;
+    line-height: 1rem;
+    border-radius: $base-radius * 0.75;
+    font-size: 0.875rem;
+  }
+
+  //
   // @class .btn.is-block
   //
   &.is-block {
