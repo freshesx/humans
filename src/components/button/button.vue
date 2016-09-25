@@ -12,6 +12,9 @@
         type: String,
         default: 'secondary'
       },
+      size: {
+        type: String
+      },
       block: {
         type: Boolean,
         default: false
@@ -28,6 +31,9 @@
 
         // success, error, secondary, etc.
         classes[`is-${this.type}`] = true
+
+        // size: sm, normal, lg
+        classes[`is-${this.size}`] = !!this.size
 
         // block
         classes['is-block'] = this.block
