@@ -7,9 +7,10 @@
       <div class="card-block">
         <div class="cols">
           <div class="col is-sm-6">
-            <mn-btn type="primary" block>Confirm</mn-btn>
-            <mn-btn type="warning" block>Sure?</mn-btn>
-            <mn-btn type="error" block loading>Off</mn-btn>
+            <mn-btn type="primary">Confirm</mn-btn>
+            <mn-btn type="primary" size="sm">Confirm</mn-btn>
+            <mn-btn type="warning" size="sm">Sure?</mn-btn>
+            <mn-btn type="error" size="sm" block>Off</mn-btn>
           </div>
           <div class="col is-sm-6">
           </div>
