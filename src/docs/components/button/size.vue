@@ -2,15 +2,15 @@
   <section class="section">
     <div class="card">
       <div class="card-header">
-        <div class="card-title">Block Button</div>
+        <div class="card-title">Button size</div>
       </div>
       <div class="card-block">
         <div class="cols">
           <div class="col is-sm-6">
-            <mn-btn type="primary">Confirm</mn-btn>
-            <mn-btn type="primary" size="sm">Confirm</mn-btn>
-            <mn-btn type="warning" size="sm">Sure?</mn-btn>
-            <mn-btn type="error" size="sm" block>Off</mn-btn>
+            <mn-btn class="is-primary">Confirm</mn-btn>
+            <mn-btn class="is-primary is-sm">Confirm</mn-btn>
+            <mn-btn class="is-warning is-sm">Sure?</mn-btn>
+            <mn-btn class="is-error is-sm">Off</mn-btn>
           </div>
           <div class="col is-sm-6">
           </div>
