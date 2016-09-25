@@ -118,7 +118,9 @@ $-card-group-note: #{$namespace}card-group-note;
 }
 
 .#{$-card-item-action} {
+  display: flex;
   margin: $grid-gutters * -1 0;
+  margin-left: $grid-gutters;
 }
 
 .#{$-card-item-help} {
