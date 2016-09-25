@@ -1,7 +1,7 @@
 <template>
-  <div class="form-group">
-    <div class="form-group-title">
-      Basic form
+  <div class="card-group">
+    <div class="card-group-note">
+      <strong>Basic form</strong>
     </div>
     <div class="card">
       <div class="card-lists">

@@ -1,7 +1,7 @@
 <template>
-  <div class="form-group">
-    <div class="form-group-title">
-      Radio input
+  <div class="card-group">
+    <div class="card-group-note">
+      <strong>Radio input</strong>
     </div>
     <div class="card">
       <div class="card-lists">
@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="form-group-help">
+    <div class="card-group-note">
       <mn-icon name="question" scale="0.8"></mn-icon>
       Add some help for your user.
     </div>
