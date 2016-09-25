@@ -52,7 +52,14 @@ $-card-media: #{$namespace}card-media;
 }
 
 .#{$-card-block} {
+  $border: solid 1px #eee;
+
   padding: $grid-gutters;
+
+  & + &,
+  .#{$-card-lists} + & {
+    border-top: $border
+  }
 
   &.is-gapless {
     padding: 0;
