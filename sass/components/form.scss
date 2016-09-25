@@ -19,7 +19,3 @@ $-form-radio-box: #{$namespace}form-radio-box;
   outline: none;
   -webkit-appearance: none;
 }
-
-.#{$-form-radio-box} {
-  color: darken($green, 10%);
-}
