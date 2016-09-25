@@ -32,7 +32,7 @@
             <input class="form-control" type="text" placeholder="Type your phone number">
           </div>
           <div class="card-item-action">
-            <button class="btn is-secondary m-b-0" href="#">Send code</button>
+            <mn-btn class="is-warning is-sm m-b-0">Send Code</mn-btn>
           </div>
         </div>
       </div>
