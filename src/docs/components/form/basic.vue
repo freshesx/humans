@@ -21,7 +21,7 @@
             <input class="form-control" type="password" placeholder="Type your password">
           </div>
           <div class="card-item-help">
-            <mn-icon name="notification"></mn-icon>
+            <mn-icon name="notification" class="is-pink-text"></mn-icon>
           </div>
         </div>
         <div class="card-item">

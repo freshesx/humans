@@ -8,9 +8,7 @@
         <div class="card-item">
           <div class="card-item-body">Radio one</div>
           <div class="card-item-help">
-            <div class="form-radio-box">
-              <mn-icon name="check"></mn-icon>
-            </div>
+            <mn-icon name="check" class="is-green-text"></mn-icon>
           </div>
         </div>
         <div class="card-item">
