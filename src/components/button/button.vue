@@ -8,17 +8,6 @@
 <script>
   export default {
     props: {
-      type: {
-        type: String,
-        default: 'secondary'
-      },
-      size: {
-        type: String
-      },
-      block: {
-        type: Boolean,
-        default: false
-      },
       loading: {
         type: Boolean,
         twoWay: true,
@@ -28,15 +17,6 @@
     computed: {
       classes () {
         let classes = {}
-
-        // success, error, secondary, etc.
-        classes[`is-${this.type}`] = true
-
-        // size: sm, normal, lg
-        classes[`is-${this.size}`] = !!this.size
-
-        // block
-        classes['is-block'] = this.block
 
         // disabled
         classes['is-disabled'] = this.disabled || this.loading
