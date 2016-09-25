@@ -1,5 +1,4 @@
 @import "../variables";
-@import "../mixins/headings";
 
 $-card: #{$namespace}card;
 $-card-header: #{$namespace}card-header;
@@ -14,6 +13,8 @@ $-card-item-help: #{$namespace}card-item-help;
 $-card-item-action: #{$namespace}card-item-action;
 $-card-item-body: #{$namespace}card-item-body;
 $-card-media: #{$namespace}card-media;
+$-card-group: #{$namespace}card-group;
+$-card-group-note: #{$namespace}card-group-note;
 
 .#{$-card} {
   margin-bottom: $grid-gutters;
@@ -130,4 +131,24 @@ $-card-media: #{$namespace}card-media;
     display: block;
     width: 100%;
   }
+}
+
+.#{$-card-group} {
+  margin-bottom: $grid-gutters;
+
+  .#{$-card} {
+    margin-bottom: 0;
+  }
+}
+
+.#{$-card-group-note} {
+  color: #666;
+  font-size: 0.875rem;
+  padding-left: $grid-gutters;
+  margin-bottom: $grid-gutters / 2;
+}
+
+.#{$-card} + .#{$-card-group-note} {
+  margin-top: $grid-gutters / 2;
+  margin-bottom: 0;
 }

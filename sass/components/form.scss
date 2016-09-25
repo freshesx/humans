@@ -20,23 +20,6 @@ $-form-radio-box: #{$namespace}form-radio-box;
   -webkit-appearance: none;
 }
 
-.#{$-form-group-title},
-.#{$-form-group-help} {
-  font-size: 0.875rem;
-  color: #666;
-  padding-left: $grid-gutters;
-}
-
-.#{$-form-group-title} {
-  font-weight: bold;
-  margin-bottom: $grid-gutters / 2;
-}
-
-.#{$-form-group-help} {
-  margin-top: $grid-gutters / -2;
-  margin-bottom: $grid-gutters;
-}
-
 .#{$-form-radio-box} {
   color: darken($green, 10%);
 }
