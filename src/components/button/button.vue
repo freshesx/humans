@@ -20,7 +20,14 @@
         // disabled
         classes['is-disabled'] = this.disabled || this.loading
 
-        return classes
+        // return default and now classes
+        return Object.assign({}, this.defaultClasses, classes)
+      }
+    },
+    data () {
+      return {
+        // Expose default classes for mixins extend
+        defaultClasses: {}
       }
     }
   }
