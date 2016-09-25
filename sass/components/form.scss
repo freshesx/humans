@@ -2,7 +2,8 @@
 
 $-form-label: #{$namespace}form-label;
 $-form-control: #{$namespace}form-control;
-$-form-help: #{$namespace}form-help;
+$-form-group-title: #{$namespace}form-group-title;
+$-form-group-help: #{$namespace}form-group-help;
 $-form-radio-box: #{$namespace}form-radio-box;
 
 .#{$-form-label} {
@@ -19,10 +20,20 @@ $-form-radio-box: #{$namespace}form-radio-box;
   -webkit-appearance: none;
 }
 
-.#{$-form-help} {
+.#{$-form-group-title},
+.#{$-form-group-help} {
   font-size: 0.875rem;
   color: #666;
   padding-left: $grid-gutters;
+}
+
+.#{$-form-group-title} {
+  font-weight: bold;
+  margin-bottom: $grid-gutters / 2;
+}
+
+.#{$-form-group-help} {
+  margin-top: $grid-gutters / -2;
   margin-bottom: $grid-gutters;
 }
 
