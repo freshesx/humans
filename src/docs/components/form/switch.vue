@@ -11,7 +11,16 @@
             progress
           </div>
           <div class="card-item-action">
-            <mn-form-switch></mn-form-switch>
+            <mn-form-switch v-model="checked"></mn-form-switch>
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-item-body">Switch boolean</div>
+          <div class="card-item-help">
+            loading...
+          </div>
+          <div class="card-item-action">
+            <mn-form-switch v-model="checked2" :disabled="true"></mn-form-switch>
           </div>
         </div>
       </div>
@@ -25,6 +34,16 @@
 
 <script>
   export default {
-
+    watch: {
+      checked (newValue) {
+        console.log(newValue)
+      }
+    },
+    data () {
+      return {
+        checked: true,
+        checked2: false
+      }
+    }
   }
 </script>
