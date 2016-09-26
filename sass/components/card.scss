@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins/arrow";
 
 $-card: #{$namespace}card;
 $-card-header: #{$namespace}card-header;
@@ -91,19 +92,12 @@ $-card-group-note: #{$namespace}card-group-note;
 
   &.is-link {
     cursor: pointer;
+  }
 
+  &.is-link,
+  &.is-arrow {
     &::after {
-      content: '';
-      display: block;
-      flex-shrink: 0;
-      align-content: flex-end;
-      height: 8px;
-      width: 8px;
-      border-width: 2px 2px 0 0;
-      border-color: #c8c8cd;
-      border-style: solid;
-      margin-left: $grid-gutters / 2;
-      transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+      @include make-arrow();
     }
   }
 }
