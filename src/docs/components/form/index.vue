@@ -7,6 +7,7 @@
           <form-basic></form-basic>
           <form-switch></form-switch>
           <form-select></form-select>
+          <mn-btn class="is-primary is-block">Submit</mn-btn>
         </div>
       </div>
     </section>
