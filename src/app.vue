@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="is-full-screen">
     <docs-sidebar>
       <router-view slot="mainarea"></router-view>
     </docs-sidebar>

@@ -1,5 +1,5 @@
 <template>
-  <div class="cols is-gapless">
+  <div class="cols is-gapless is-full-screen">
     <div class="col is-sm-2">
       <div>
         <h4>Bases</h4>
