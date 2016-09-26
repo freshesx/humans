@@ -1,27 +1,8 @@
 <template>
-  <label class="form-switch" :class="classes" @click.prevent="onClick">
-    <input type="checkbox" name="nihao">
-  </label>
+  <input class="form-switch-control" type="checkbox">
 </template>
 
 <script>
   export default {
-    methods: {
-      onClick () {
-        this.isChecked = !this.isChecked
-      }
-    },
-    computed: {
-      classes () {
-        return {
-          'is-checked': this.isChecked
-        }
-      }
-    },
-    data () {
-      return {
-        isChecked: false
-      }
-    }
   }
 </script>

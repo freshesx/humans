@@ -2,7 +2,7 @@
 
 $-form-label: #{$namespace}form-label;
 $-form-control: #{$namespace}form-control;
-$-form-switch: #{$namespace}form-switch;
+$-form-switch-control: #{$namespace}form-switch-control;
 
 .#{$-form-label} {
   display: block;
@@ -18,17 +18,17 @@ $-form-switch: #{$namespace}form-switch;
   -webkit-appearance: none;
 }
 
-.#{$-form-switch} {
-  $bg: #ccc;
-  $height: 1.8rem;
+.#{$-form-switch-control} {
+
+  $height: 2rem;
 
   display: inline-flex;
   position: relative;
   width: $height * 1.625;
-  height: 1.8rem;
+  height: $height;
   border-radius: $height;
-  background-color: $bg;
-  border: 1px solid $bg;
+  background-color: darken($gray-lighter, 10%);
+  border: 1px solid darken($gray-lighter, 10%);
   cursor: pointer;
   outline: 0;
   -webkit-appearance: none;
@@ -53,7 +53,7 @@ $-form-switch: #{$namespace}form-switch;
     background-color: #fff;
     box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
   }
-  &.is-checked {
+  &:checked {
     border-color: $green;
     background-color: $green;
     &:before {
@@ -62,15 +62,5 @@ $-form-switch: #{$namespace}form-switch;
     &:after {
       transform: translateX($height * 0.625);
     }
-  }
-
-  input {
-    opacity: 0;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-    cursor: pointer;
   }
 }
