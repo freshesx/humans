@@ -19,6 +19,7 @@ $-stage-item: #{$namespace}stage-item;
 .#{$-stage-item} {
   position: relative;
   flex: 1 1 100%;
+  overflow: hidden;
 
   &.is-auto {
     flex: 0 0 auto;
