@@ -1,0 +1,26 @@
+// @private
+//
+$-stage: #{$namespace}stage;
+
+// @private
+//
+$-stage-item: #{$namespace}stage-item;
+
+//
+// @class .stage
+//
+.#{$-stage} {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.#{$-stage-item} {
+  position: relative;
+  flex: 1 1 100%;
+
+  &.is-auto {
+    flex: 0 0 auto;
+  }
+}
