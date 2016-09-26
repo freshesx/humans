@@ -1,3 +1,4 @@
+import './scroller'
 import './icon'
 import './button'
 import './form'
