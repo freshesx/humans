@@ -6,14 +6,20 @@
     <div class="card">
       <div class="card-lists">
         <div class="card-item">
-          <div class="card-item-body">Radio one</div>
-          <div class="card-item-help">
-            <mn-icon name="check" class="is-green-text"></mn-icon>
+          <div class="card-item-addon">
+            <label class="form-label">Radio one</label>
+          </div>
+          <div class="card-item-body">
+            <input class="form-radio-control" type="radio" value="one" v-model="radio">
           </div>
         </div>
         <div class="card-item">
-          <div class="card-item-body">Radio two</div>
-          <div class="card-item-help"></div>
+          <div class="card-item-addon">
+            <label class="form-label">Radio two</label>
+          </div>
+          <div class="card-item-body">
+            <input class="form-radio-control" type="radio" value="two" v-model="radio">
+          </div>
         </div>
       </div>
     </div>
@@ -26,6 +32,10 @@
 
 <script>
   export default {
-
+    data () {
+      return {
+        radio: 'one'
+      }
+    }
   }
 </script>
