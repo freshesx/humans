@@ -21,7 +21,7 @@ $-card-btns: #{$namespace}card-btns;
 //
 // @var top-border
 //
-$-card-bordered-classes: ($-card-block, $-card-lists, $-card-btns);
+$-card-bordered-classes: ($-card-header, $-card-block, $-card-lists, $-card-btns);
 
 .#{$-card} {
   margin-bottom: $grid-gutters;
@@ -40,10 +40,13 @@ $-card-bordered-classes: ($-card-block, $-card-lists, $-card-btns);
   padding: 0 $grid-gutters;
   height: 3rem;
   line-height: 3rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-top-left-radius: $base-radius;
-  border-top-right-radius: $base-radius;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  background-color: #fff;
+  color: #999;
+  // For using blur
+  // background-color: rgba(255, 255, 255, 0.9);
+  // border-top-left-radius: $base-radius;
+  // border-top-right-radius: $base-radius;
+  // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
 .#{$-card-icon} {
