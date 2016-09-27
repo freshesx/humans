@@ -1,6 +1,6 @@
 <template>
   <div class="cols is-gapless is-full-screen">
-    <div class="col is-sm-2 is-full-screen">
+    <div class="col is-sm-2 is-full-screen" style="display: none;">
       <div class="stage">
         <div class="stage-item is-auto">
           Vue Human UI
