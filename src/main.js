@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './app'
+import { saveScroll, setScroll } from './components/scroller/save'
 import './components'
 import './docs/docs.scss'
 
@@ -39,6 +40,15 @@ router.map({
       require(['./docs/components/form'], resolve)
     }
   }
+})
+
+router.beforeEach((transition) => {
+  saveScroll(transition.from)
+  transition.next()
+})
+
+router.afterEach((transition) => {
+  setScroll(transition.to)
 })
 
 router.start(App, 'app')
