@@ -25,6 +25,10 @@ $-card-btn: #{$namespace}card-btn;
   background-color: rgba(255, 255, 255, 0.75);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.02);
   overflow: hidden;
+
+  &.is-light {
+    background-color: rgba(255, 255, 255, 1);
+  }
 }
 
 .#{$-card-header} {
