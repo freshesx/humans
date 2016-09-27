@@ -55,9 +55,8 @@ html.is-full-screen {
     position: relative;
     width: 100%;
     height: 100%;
-  }
-
-  body {
     overflow: hidden;
+    -webkit-overflow-scrolling: auto;
+    // @test background: linear-gradient(to bottom, blue, white);
   }
 }
