@@ -53,26 +53,30 @@
       </div>
     </section>
 
-    <mn-popup>
-      <div class="card is-light m-b-1">
+    <mn-popup show>
+      <div class="card m-b-1">
         <div class="card-block">
           <small>此照片将从您所有设备的“iCloud 照片图库”中删除。</small>
         </div>
-        <button class="card-btn is-red-text">删除照片</button>
+        <div class="card-btns">
+          <button class="card-btn is-red-text">删除照片</button>
+        </div>
       </div>
-      <div class="card is-light m-b-0">
-        <button class="card-btn">取消</button>
+      <div class="card m-b-0">
+        <div class="card-btns">
+          <button class="card-btn">取消</button>
+        </div>
       </div>
     </mn-popup>
 
-    <mn-popup show center>
-      <div class="card is-light m-b-1">
+    <mn-popup>
+      <div class="card m-b-1">
         <div class="card-block">
           此照片将从您所有设备的“iCloud 照片图库”中删除。
         </div>
-        <div class="card-btns">
-          <button class="card-btn is-red-text">删除照片</button>
-          <button class="card-btn">取消</button>
+        <div class="card-btns is-column">
+          <button class="is-red-text">删除照片</button>
+          <button>取消</button>
         </div>
       </div>
     </mn-popup>
