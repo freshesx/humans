@@ -55,31 +55,20 @@
 
     <mn-popup show>
       <div class="card m-b-1">
-        <div class="card-block">
-          <small>此照片将从您所有设备的“iCloud 照片图库”中删除。</small>
+        <div class="card-block is-center-text">
+          <small>This photo will be deleted from iCloud Photo Library on all your devices.</small>
         </div>
         <div class="card-btns">
-          <button class="card-btn is-red-text">删除照片</button>
+          <button class="is-red-text">Delete Photo</button>
         </div>
       </div>
       <div class="card m-b-0">
         <div class="card-btns">
-          <button class="card-btn">取消</button>
+          <button class="is-blue-text"><strong>Cancel</strong></button>
         </div>
       </div>
     </mn-popup>
 
-    <mn-popup>
-      <div class="card m-b-1">
-        <div class="card-block">
-          此照片将从您所有设备的“iCloud 照片图库”中删除。
-        </div>
-        <div class="card-btns is-column">
-          <button class="is-red-text">删除照片</button>
-          <button>取消</button>
-        </div>
-      </div>
-    </mn-popup>
   </div>
 </template>
 
