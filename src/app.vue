@@ -1,12 +1,8 @@
 <template>
   <div class="is-full-screen">
-    <docs-sidebar>
-      <div class="is-full-screen" slot="mainarea">
-        <mn-scroller>
-          <router-view></router-view>
-        </mn-scroller>
-      </div>
-    </docs-sidebar>
+    <mn-scroller>
+      <router-view></router-view>
+    </mn-scroller>
   </div>
 </template>
 
