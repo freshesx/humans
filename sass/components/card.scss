@@ -16,6 +16,8 @@ $-card-item-body: #{$namespace}card-item-body;
 $-card-media: #{$namespace}card-media;
 $-card-group: #{$namespace}card-group;
 $-card-group-note: #{$namespace}card-group-note;
+$-card-btns: #{$namespace}card-btns;
+$-card-btn: #{$namespace}card-btn;
 
 .#{$-card} {
   margin-bottom: $grid-gutters;
@@ -146,4 +148,34 @@ $-card-group-note: #{$namespace}card-group-note;
 .#{$-card} + .#{$-card-group-note} {
   margin-top: $grid-gutters / 2;
   margin-bottom: 0;
+}
+
+.#{$-card-btns} {
+  display: flex;
+
+  .#{$-card-btn} {
+    flex: 1 1;
+    border-left: solid 1px #eee;
+    border-top: none;
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+}
+
+.#{$-card-btn} {
+  display: block;
+  outline: none;
+  -webkit-appearance: none;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  padding: $grid-gutters;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color .2s;
+  &:hover {
+    background-color: #f2f2f2;
+  }
 }
