@@ -19,6 +19,11 @@ $-card-group-note: #{$namespace}card-group-note;
 $-card-btns: #{$namespace}card-btns;
 $-card-btn: #{$namespace}card-btn;
 
+//
+// @var top-border
+//
+$-card-bordered-classes: ($-card-block, $-card-lists, $-card-btns, $-card-btn);
+
 .#{$-card} {
   margin-bottom: $grid-gutters;
   border-radius: $base-radius;
@@ -64,11 +69,6 @@ $-card-btn: #{$namespace}card-btn;
 
   padding: $grid-gutters;
 
-  & + &,
-  .#{$-card-lists} + & {
-    border-top: $border
-  }
-
   &.is-gapless {
     padding: 0;
   }
@@ -77,11 +77,6 @@ $-card-btn: #{$namespace}card-btn;
 .#{$-card-lists} {
   $border: solid 1px #eee;
 
-  & + &,
-  .#{$-card-block} + &,
-  &.is-top-border {
-    border-top: $border
-  }
   &.is-bottom-border {
     border-bottom: $border
   }
@@ -152,6 +147,24 @@ $-card-btn: #{$namespace}card-btn;
 .#{$-card} + .#{$-card-group-note} {
   margin-top: $grid-gutters / 2;
   margin-bottom: 0;
+}
+
+//
+// @style top-bordered
+//
+@each $class in $-card-bordered-classes {
+  .#{$class} {
+
+    & + & {
+      border-top: solid 1px #eee;
+    }
+
+    @each $class2 in $-card-bordered-classes {
+      .#{$class2} + & {
+        border-top: solid 1px #eee;
+      }
+    }
+  }
 }
 
 .#{$-card-btns} {
