@@ -27,12 +27,12 @@ $-card-bordered-classes: ($-card-block, $-card-lists, $-card-btns, $-card-btn);
 .#{$-card} {
   margin-bottom: $grid-gutters;
   border-radius: $base-radius;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: #fff;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.02);
   overflow: hidden;
 
   &.is-light {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.75);
   }
 }
 
