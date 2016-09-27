@@ -1,6 +1,6 @@
 <template>
   <div class="is-full-screen">
-    <mn-scroller>
+    <mn-scroller save>
       <router-view></router-view>
     </mn-scroller>
   </div>
