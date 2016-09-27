@@ -1,0 +1,21 @@
+$-popup: #{$namespace}popup;
+$-popup-mask: #{$namespace}popup-mask;
+
+.#{$-popup} {
+  flex: 1;
+}
+
+.#{$-popup-mask} {
+  display: flex;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: $grid-gutters / 2;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  overflow-y: scroll;
+}
