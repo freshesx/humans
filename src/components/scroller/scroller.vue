@@ -1,5 +1,5 @@
 <template>
-  <div class="scrollbar-wrapper">
+  <div class="scrollbar-wrapper" :class="{ 'is-save': save }">
     <div class="scrollbar-contents">
       <slot></slot>
     </div>
@@ -8,7 +8,12 @@
 
 <script>
   export default {
-
+    props: {
+      save: {
+        type: Boolean,
+        default: false
+      }
+    }
   }
 </script>
 
