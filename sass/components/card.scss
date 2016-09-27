@@ -17,12 +17,11 @@ $-card-media: #{$namespace}card-media;
 $-card-group: #{$namespace}card-group;
 $-card-group-note: #{$namespace}card-group-note;
 $-card-btns: #{$namespace}card-btns;
-$-card-btn: #{$namespace}card-btn;
 
 //
 // @var top-border
 //
-$-card-bordered-classes: ($-card-block, $-card-lists, $-card-btns, $-card-btn);
+$-card-bordered-classes: ($-card-block, $-card-lists, $-card-btns);
 
 .#{$-card} {
   margin-bottom: $grid-gutters;
@@ -149,6 +148,46 @@ $-card-bordered-classes: ($-card-block, $-card-lists, $-card-btns, $-card-btn);
   margin-bottom: 0;
 }
 
+.#{$-card-btns} {
+  > .button,
+  > button {
+    display: block;
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding: $grid-gutters;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color .2s;
+    border-top: solid 1px #eee;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+
+  &.is-column {
+    display: flex;
+    > .button,
+    > button {
+      flex: 1 1;
+      border-top: none;
+      border-left: solid 1px #eee;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+}
+
 //
 // @style top-bordered
 //
@@ -164,35 +203,5 @@ $-card-bordered-classes: ($-card-block, $-card-lists, $-card-btns, $-card-btn);
         border-top: solid 1px #eee;
       }
     }
-  }
-}
-
-.#{$-card-btns} {
-  display: flex;
-
-  .#{$-card-btn} {
-    flex: 1 1;
-    border-left: solid 1px #eee;
-    border-top: none;
-
-    &:first-child {
-      border-left: none;
-    }
-  }
-}
-
-.#{$-card-btn} {
-  display: block;
-  outline: none;
-  -webkit-appearance: none;
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  padding: $grid-gutters;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color .2s;
-  &:hover {
-    background-color: #f2f2f2;
   }
 }
