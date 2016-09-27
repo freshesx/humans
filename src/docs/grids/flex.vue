@@ -3,14 +3,17 @@
     <section class="section">
       <div class="card">
         <div class="card-header">
-          <div class="card-title">.cols & .col</div>
-          <div class="card-controls">
-            <a href="#">show</a>
-          </div>
+          <div class="card-title">Flex column</div>
         </div>
         <div class="card-block">
           <div class="cols">
-            <div class="col is-sm-1" v-for="i in cols12">
+            <div class="col is-xs-3" v-for="i in [1, 2, 3, 4]">
+              <div class="sp-holder is-purple-bg"></div>
+            </div>
+            <div class="col is-xs-4" v-for="i in [1, 2, 3]">
+              <div class="sp-holder is-purple-bg"></div>
+            </div>
+            <div class="col is-xs-12">
               <div class="sp-holder is-purple-bg"></div>
             </div>
           </div>
@@ -21,70 +24,30 @@
     <section class="section">
       <div class="card">
         <div class="card-header">
-          <div class="card-title">.cols & .col</div>
-          <div class="card-controls">
-            <a href="#">show</a>
-          </div>
+          <div class="card-title">Gapless</div>
         </div>
         <div class="card-block">
           <div class="cols">
-            <div class="col is-sm-4">
-              <div class="sp-holder is-green-bg">
-                .mn-col .is-sm-4 .is-green-bg
+            <div class="col is-xs-4">
+              <div class="sp-holder is-yellow-bg">
+                is-xs-4
               </div>
             </div>
-            <div class="col is-sm-4">
-              <div class="sp-holder is-blue-bg">
-                mn-col is-sm-4 is-blue-bg
-              </div>
-            </div>
-            <div class="col is-sm-4">
-              <div class="sp-holder is-purple-bg">
-                mn-col is-sm-4 is-blue-bg
+            <div class="col is-xs-8">
+              <div class="sp-holder is-orange-bg">
+                is-xs-8
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">.cols</div>
-        </div>
-        <div class="card-block">
-          <div class="cols scoped-cols">
-            <div class="col is-sm-4">
+          <div class="cols is-gapless">
+            <div class="col is-xs-4">
               <div class="sp-holder is-yellow-bg">
-                mn-col is-sm-4 is-yellow-bg
+                is-xs-4
               </div>
             </div>
-            <div class="col is-sm-8">
+            <div class="col is-xs-8">
               <div class="sp-holder is-orange-bg">
-                mn-col is-sm-8 is-orange-bg
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">.cols.is-gapless</div>
-        </div>
-        <div class="card-block">
-          <div class="cols is-gapless scoped-cols">
-            <div class="col is-sm-4">
-              <div class="sp-holder is-yellow-bg">
-                mn-col is-sm-4 is-yellow-bg
-              </div>
-            </div>
-            <div class="col is-sm-8">
-              <div class="sp-holder is-orange-bg">
-                mn-col is-sm-8 is-orange-bg
+                is-xs-8
               </div>
             </div>
           </div>
@@ -96,11 +59,6 @@
 
 <script>
   export default {
-    data () {
-      return {
-        cols12: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-      }
-    }
   }
 </script>
 
@@ -113,5 +71,6 @@
     text-align: center;
     color: #fff;
     border-radius: $base-radius;
+    margin-bottom: 0.5rem;
   }
 </style>
