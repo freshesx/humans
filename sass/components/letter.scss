@@ -1,0 +1,26 @@
+@import "../variables";
+
+$-letter: #{$namespace}letter;
+$-letter-body: #{$namespace}letter-body;
+$-letter-title: #{$namespace}letter-title;
+$-letter-note: #{$namespace}letter-note;
+
+.#{$-letter} {
+  display: flex;
+}
+
+.#{$-letter-body} {
+  flex: 1;
+  margin: $grid-gutters;
+}
+
+.#{$-letter-title} {
+  flex: 1;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.#{$-letter-note} {
+  font-size: 0.875rem;
+  color: #999;
+}
