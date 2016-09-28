@@ -2,20 +2,37 @@ $-popup: #{$namespace}popup;
 $-popup-mask: #{$namespace}popup-mask;
 
 .#{$-popup} {
-  flex: 1;
+  position: fixed;
+  right: $grid-gutters / 2;
+  bottom: $grid-gutters / 2;
+  left: $grid-gutters / 2;
+
+  &.is-slide-up-transition {
+    transition: transform 0.3s ease;
+  }
+
+  &.is-slide-up-enter,
+  &.is-slide-up-leave {
+    transform: translateY(100%);
+  }
 }
 
 .#{$-popup-mask} {
-  display: flex;
   position: fixed;
-  background: rgba(0, 0, 0, 0.6);
-  top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  padding: $grid-gutters / 2;
-  align-items: flex-end;
-  justify-content: center;
-  overflow: hidden;
-  overflow-y: scroll;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: .4;
+  z-index: 1000;
+
+  .is-fade-transition {
+    transition: all .3s linear;
+  }
+
+  .is-fade-enter,
+  .is-fade-leave {
+    opacity: 0;
+  }
 }
