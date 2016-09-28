@@ -12,17 +12,12 @@
 </template>
 
 <script>
-  import Vue from 'vue'
-  import PopupClass from './popup'
+  import Popup from './popup'
 
   export default {
     methods: {
       openPopup () {
-        const Popup = Vue.extend(PopupClass)
-        this.popup = new Popup({
-          el: document.createElement('div')
-        })
-        this.popup.$appendTo(document.body)
+        this.popup = this.$element(Popup)
         this.popup.$set('show', true)
       }
     }
