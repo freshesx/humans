@@ -5,8 +5,8 @@
         Are you sure?
       </div>
       <div class="card-btns is-column">
-        <button class="is-green-text">OK</button>
         <button @click="cancel">Cancel</button>
+        <button class="is-green-text">OK</button>
       </div>
     </div>
   </mn-popup>
