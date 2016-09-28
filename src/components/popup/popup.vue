@@ -7,6 +7,7 @@
 <script>
   import Element from '../util/element'
   import Mask from './mask'
+  import { getZIndex } from './layer'
 
   export default {
     props: {
@@ -50,7 +51,7 @@
     },
     data () {
       return {
-        zIndex: 20000
+        zIndex: getZIndex()
       }
     }
   }
