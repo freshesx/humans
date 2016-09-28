@@ -8,35 +8,22 @@
         <mn-btn class="is-primary is-block" @click.prevent="openPopup">Open popup</mn-btn>
       </div>
     </div>
-
-    <mn-popup :show.sync="showPopup">
-      <div class="card m-b-1">
-        <div class="card-block is-center-text">
-          <small>This photo will be deleted from iCloud Photo Library on all your devices.</small>
-        </div>
-        <div class="card-btns">
-          <button class="is-red-text">Delete Photo</button>
-        </div>
-      </div>
-      <div class="card m-b-0">
-        <div class="card-btns">
-          <button class="is-blue-text"><strong>Cancel</strong></button>
-        </div>
-      </div>
-    </mn-popup>
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
+  import PopupClass from './popup'
+
   export default {
     methods: {
       openPopup () {
-        this.showPopup = !this.showPopup
-      }
-    },
-    data () {
-      return {
-        showPopup: false
+        const Popup = Vue.extend(PopupClass)
+        this.popup = new Popup({
+          el: document.createElement('div')
+        })
+        this.popup.$appendTo(document.body)
+        this.popup.$set('show', true)
       }
     }
   }
