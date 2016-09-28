@@ -39,6 +39,11 @@ router.map({
     component: resolve => {
       require(['./docs/components/form'], resolve)
     }
+  },
+  '/components/popup': {
+    component: resolve => {
+      require(['./docs/components/popup'], resolve)
+    }
   }
 })
 

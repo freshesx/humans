@@ -54,6 +54,12 @@
           <div class="card-item-body">form</div>
         </div>
       </div>
+      <div class="card-lists">
+        <div class="card-item is-link" v-link="{ path: '/components/popup' }">
+          <div class="card-item-addon"><mn-icon name="menu"></mn-icon></div>
+          <div class="card-item-body">popup</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
