@@ -88,6 +88,8 @@ $-form-select-control: #{$namespace}form-select-control;
   justify-content: flex-end;
   align-items: center;
   cursor: pointer;
+  background: transparent;
+  border: none;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 
