@@ -46,7 +46,7 @@
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </p>
-              <mn-btn type="primary" block>Submit</mn-btn>
+              <mn-btn class="is-primary is-block">Submit</mn-btn>
             </div>
           </div>
         </div>
