@@ -1,12 +1,13 @@
 <template>
   <mn-popup :show.sync="show" center>
-    <div class="card m-b-0">
+    <div class="card m-b-0" style="width: 280px; margin: 0 auto;">
       <div class="card-block is-center-text">
-        Are you sure?
+        <h4>Allow "Calendar" to access your location while you use the app?</h4>
+        <small>Your location is used to estimate travel times to events and improve location searches.</small>
       </div>
       <div class="card-btns is-column">
-        <button @click="cancel">Cancel</button>
-        <button class="is-green-text">OK</button>
+        <button class="is-blue-text" @click="cancel">Don't Allow</button>
+        <button class="is-blue-text">Allow</button>
       </div>
     </div>
   </mn-popup>
