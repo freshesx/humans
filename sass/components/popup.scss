@@ -7,6 +7,12 @@ $-popup-mask: #{$namespace}popup-mask;
   bottom: $grid-gutters / 2;
   left: $grid-gutters / 2;
 
+  &.is-center {
+    top: 45%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
   &.is-slide-up-transition {
     transition: transform 0.3s ease;
   }
@@ -14,6 +20,15 @@ $-popup-mask: #{$namespace}popup-mask;
   &.is-slide-up-enter,
   &.is-slide-up-leave {
     transform: translateY(100%);
+  }
+
+  &.is-fade-transition {
+    transition: opacity 0.5s linear;
+  }
+
+  &.is-fade-enter,
+  &.is-fade-leave {
+    opacity: 0;
   }
 }
 
@@ -24,15 +39,15 @@ $-popup-mask: #{$namespace}popup-mask;
   top: 0;
   bottom: 0;
   background-color: #000;
-  opacity: .4;
+  opacity: 0.4;
   z-index: 1000;
 
-  .is-fade-transition {
-    transition: all .3s linear;
+  &.is-fade-transition {
+    transition: opacity 0.3s linear;
   }
 
-  .is-fade-enter,
-  .is-fade-leave {
+  &.is-fade-enter,
+  &.is-fade-leave {
     opacity: 0;
   }
 }

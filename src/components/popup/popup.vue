@@ -1,5 +1,5 @@
 <template>
-  <div class="popup" v-if="show" :style="{ 'z-index': zIndex }" transition="is-slide-up">
+  <div class="popup" v-if="show" :class="{ 'is-center': center }" :style="style" :transition="transition">
     <slot></slot>
   </div>
 </template>
@@ -12,6 +12,10 @@
   export default {
     props: {
       show: {
+        type: Boolean,
+        default: false
+      },
+      center: {
         type: Boolean,
         default: false
       }
@@ -46,6 +50,16 @@
         // If show is false, trigger close method
         if (!newValue) {
           this.close()
+        }
+      }
+    },
+    computed: {
+      transition () {
+        return this.center ? 'is-fade' : 'is-slide-up'
+      },
+      style () {
+        return {
+          'z-index': this.zIndex
         }
       }
     },
