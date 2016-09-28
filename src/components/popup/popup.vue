@@ -47,6 +47,9 @@
         if (newValue) {
           this.appendMask(this.zIndex - 1)
         }
+        if (!newValue) {
+          this.close()
+        }
       }
     },
     data () {
