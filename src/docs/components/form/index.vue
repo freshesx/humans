@@ -1,16 +1,21 @@
 <template>
-  <div>
-    <section class="section">
-      <div class="cols">
-        <div class="col is-sm-6">
-          <form-radio></form-radio>
-          <form-basic></form-basic>
-          <form-switch></form-switch>
-          <form-select></form-select>
-          <mn-btn class="is-primary is-block">Submit</mn-btn>
-        </div>
+  <div class="section">
+
+    <div class="letter">
+      <div class="letter-body">
+        <h1 class="letter-title">Form</h1>
       </div>
-    </section>
+    </div>
+
+    <div class="cols">
+      <div class="col is-sm-6">
+        <form-radio></form-radio>
+        <form-basic></form-basic>
+        <form-switch></form-switch>
+        <form-select></form-select>
+        <mn-btn class="is-primary is-block">Submit</mn-btn>
+      </div>
+    </div>
   </div>
 </template>
 
