@@ -4,8 +4,10 @@ import App from './app'
 import { saveScroll, setScroll } from './components/scroller/save'
 import './components'
 import './docs/docs.scss'
+import VueElement from './components/util/element'
 
 Vue.use(VueRouter)
+Vue.use(VueElement)
 
 const router = new VueRouter()
 
