@@ -5,11 +5,11 @@
         <h3 class="card-title">Popup</h3>
       </div>
       <div class="card-block">
-        <mn-btn class="is-primary is-block">Open popup</mn-btn>
+        <mn-btn class="is-primary is-block" @click.prevent="openPopup">Open popup</mn-btn>
       </div>
     </div>
 
-    <mn-popup show>
+    <mn-popup :show.sync="showPopup">
       <div class="card m-b-1">
         <div class="card-block is-center-text">
           <small>This photo will be deleted from iCloud Photo Library on all your devices.</small>
@@ -29,6 +29,15 @@
 
 <script>
   export default {
-
+    methods: {
+      openPopup () {
+        this.showPopup = !this.showPopup
+      }
+    },
+    data () {
+      return {
+        showPopup: false
+      }
+    }
   }
 </script>
