@@ -41,12 +41,12 @@
           </div>
           <div class="cols is-gapless">
             <div class="col is-xs-4">
-              <div class="sp-holder is-yellow-bg">
+              <div class="sp-holder sp-left-gapless is-yellow-bg">
                 is-xs-4
               </div>
             </div>
             <div class="col is-xs-8">
-              <div class="sp-holder is-orange-bg">
+              <div class="sp-holder sp-right-gapless is-orange-bg">
                 is-xs-8
               </div>
             </div>
@@ -72,5 +72,20 @@
     color: #fff;
     border-radius: $base-radius;
     margin-bottom: 0.5rem;
+  }
+
+  .sp-left-gapless,
+  .sp-right-gapless {
+    border-radius: 0;
+  }
+
+  .sp-left-gapless {
+    border-top-left-radius: $base-radius;
+    border-bottom-left-radius: $base-radius;
+  }
+
+  .sp-right-gapless {
+    border-top-right-radius: $base-radius;
+    border-bottom-right-radius: $base-radius;
   }
 </style>
