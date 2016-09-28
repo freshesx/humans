@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import Vue from 'vue'
-  import MaskClass from './mask'
+  import Element from '../util/element'
+  import Mask from './mask'
 
   export default {
     props: {
@@ -21,14 +21,8 @@
         this.destroyMask()
       },
       appendMask (zIndex) {
-        const Mask = Vue.extend(MaskClass)
-
-        this.mask = new Mask({
-          el: document.createElement('div')
-        })
-
+        this.mask = Element.create(Mask)
         this.mask.$set('zIndex', zIndex)
-        this.mask.$appendTo(document.body)
 
         // Listen mask.close click event, and exec this.close()
         this.mask.$on('mask.close', () => {
@@ -44,9 +38,11 @@
     },
     watch: {
       show (newValue) {
+        // If show is true, append mask to body, and deliver z-index
         if (newValue) {
           this.appendMask(this.zIndex - 1)
         }
+        // If show is false, trigger close method
         if (!newValue) {
           this.close()
         }
