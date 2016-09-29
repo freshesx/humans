@@ -9,8 +9,10 @@ $-popup-mask: #{$namespace}popup-mask;
 
   &.is-center {
     top: 45%;
+    right: auto;
     bottom: auto;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &.is-slide-up-transition {
