@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div transition="is-slide-left">
     <section class="section">
       <div class="card">
         <div class="card-header">
