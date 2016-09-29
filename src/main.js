@@ -13,6 +13,7 @@ const router = new VueRouter()
 
 router.map({
   '/': {
+    scroll: true,
     component: resolve => {
       require(['./docs/home'], resolve)
     }
