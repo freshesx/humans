@@ -17,6 +17,10 @@
           <div class="card-item-addon"><mn-icon name="menu"></mn-icon></div>
           <div class="card-item-body">colors</div>
         </div>
+        <div class="card-item is-link" v-link="{ path: '/bases/typography' }">
+          <div class="card-item-addon"><mn-icon name="menu"></mn-icon></div>
+          <div class="card-item-body">typography</div>
+        </div>
       </div>
     </div>
 

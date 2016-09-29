@@ -23,6 +23,11 @@ router.map({
       require(['./docs/bases/colors'], resolve)
     }
   },
+  '/bases/typography': {
+    component: resolve => {
+      require(['./docs/bases/typography'], resolve)
+    }
+  },
   '/grids/flex': {
     component: resolve => {
       require(['./docs/grids/flex'], resolve)
