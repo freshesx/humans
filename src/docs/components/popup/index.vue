@@ -3,7 +3,8 @@
 
     <div class="letter">
       <div class="letter-body">
-        <h1 class="letter-title">Popup</h1>
+        <h1>Popup</h1>
+        <small>popup, confirm, alerts, activity sheets</small>
       </div>
     </div>
 
@@ -18,10 +19,10 @@
 
     <div class="card">
       <div class="card-header">
-        <div class="card-title">Confirm</div>
+        <div class="card-title">Center popup</div>
       </div>
       <div class="card-block">
-        <mn-btn class="is-warning is-block" @click.prevent="openConfirm">Open confirm</mn-btn>
+        <mn-btn class="is-warning is-block" @click.prevent="openConfirm">Open center popup</mn-btn>
       </div>
     </div>
   </div>

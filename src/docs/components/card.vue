@@ -3,7 +3,8 @@
 
     <div class="letter">
       <div class="letter-body">
-        <h1 class="letter-title">Card</h1>
+        <h1>Card</h1>
+        <small>card, header, block, lists, item, button</small>
       </div>
     </div>
 

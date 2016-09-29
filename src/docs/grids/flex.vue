@@ -1,59 +1,63 @@
 <template>
-  <div transition="is-slide-left">
-    <section class="section">
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">Flex column</div>
-        </div>
-        <div class="card-block">
-          <div class="cols">
-            <div class="col is-xs-3" v-for="i in [1, 2, 3, 4]">
-              <div class="sp-holder is-purple-bg"></div>
-            </div>
-            <div class="col is-xs-4" v-for="i in [1, 2, 3]">
-              <div class="sp-holder is-purple-bg"></div>
-            </div>
-            <div class="col is-xs-12">
-              <div class="sp-holder is-purple-bg"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div class="section" transition="is-slide-left">
 
-    <section class="section">
-      <div class="card">
-        <div class="card-header">
-          <div class="card-title">Gapless</div>
+    <div class="letter">
+      <div class="letter-body">
+        <h1>Flex</h1>
+        <small>cols, col</small>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Flex column</div>
+      </div>
+      <div class="card-block">
+        <div class="cols">
+          <div class="col is-xs-3" v-for="i in [1, 2, 3, 4]">
+            <div class="sp-holder is-purple-bg"></div>
+          </div>
+          <div class="col is-xs-4" v-for="i in [1, 2, 3]">
+            <div class="sp-holder is-purple-bg"></div>
+          </div>
+          <div class="col is-xs-12">
+            <div class="sp-holder is-purple-bg"></div>
+          </div>
         </div>
-        <div class="card-block">
-          <div class="cols">
-            <div class="col is-xs-4">
-              <div class="sp-holder is-yellow-bg">
-                is-xs-4
-              </div>
-            </div>
-            <div class="col is-xs-8">
-              <div class="sp-holder is-orange-bg">
-                is-xs-8
-              </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Gapless</div>
+      </div>
+      <div class="card-block">
+        <div class="cols">
+          <div class="col is-xs-4">
+            <div class="sp-holder is-yellow-bg">
+              is-xs-4
             </div>
           </div>
-          <div class="cols is-gapless">
-            <div class="col is-xs-4">
-              <div class="sp-holder sp-left-gapless is-yellow-bg">
-                is-xs-4
-              </div>
+          <div class="col is-xs-8">
+            <div class="sp-holder is-orange-bg">
+              is-xs-8
             </div>
-            <div class="col is-xs-8">
-              <div class="sp-holder sp-right-gapless is-orange-bg">
-                is-xs-8
-              </div>
+          </div>
+        </div>
+        <div class="cols is-gapless">
+          <div class="col is-xs-4">
+            <div class="sp-holder sp-left-gapless is-yellow-bg">
+              is-xs-4
+            </div>
+          </div>
+          <div class="col is-xs-8">
+            <div class="sp-holder sp-right-gapless is-orange-bg">
+              is-xs-8
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 

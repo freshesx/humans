@@ -3,7 +3,8 @@
 
     <div class="letter">
       <div class="letter-body">
-        <h1 class="letter-title">Button</h1>
+        <h1>Button</h1>
+        <small>btn, block, loading, disabled</small>
       </div>
     </div>
 

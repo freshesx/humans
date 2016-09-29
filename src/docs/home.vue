@@ -3,8 +3,8 @@
 
     <div class="letter">
       <div class="letter-body">
-        <h1 class="letter-title is-black-text">Vue Human</h1>
-        <div class="letter-note">A component sets for vue & human UI.</div>
+        <h1>Vue Human</h1>
+        <small>A component sets for vue & human UI.</small>
       </div>
     </div>
 

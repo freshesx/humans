@@ -2,7 +2,8 @@
   <div class="section" transition="is-slide-left">
     <div class="letter">
       <div class="letter-body">
-        <h1 class="letter-title is-black-text">Color</h1>
+        <h1>Color</h1>
+        <small>Text, background, other.</small>
       </div>
     </div>
 

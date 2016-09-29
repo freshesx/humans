@@ -1,9 +1,10 @@
 <template>
   <div class="section" transition="is-slide-left">
 
-    <div class="letter">
+    <div class="letter letter-bottom-bordered">
       <div class="letter-body">
-        <h1 class="letter-title">Form</h1>
+        <h1>Form</h1>
+        <small>input, radio, switch, select</small>
       </div>
     </div>
 
@@ -34,3 +35,10 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  .letter-bottom-bordered {
+    border-bottom: solid 1px #e5e5e5;
+    margin-bottom: 1rem;
+  }
+</style>
