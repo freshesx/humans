@@ -60,3 +60,17 @@ html.is-full-screen {
     // @test background: linear-gradient(to bottom, blue, white);
   }
 }
+
+.is-slide-left-transition {
+  transition: transform .2s;
+}
+
+.is-slide-left-enter,
+.is-slide-left-leave {
+  transform: translateX(50%);
+}
+
+.is-slide-left-leave {
+  transform: translateX(0);
+  transition-duration: 0;
+}
