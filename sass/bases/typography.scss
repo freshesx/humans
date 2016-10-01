@@ -46,3 +46,10 @@ h6,
   font-size: 0.875rem;
   font-weight: 700;
 }
+
+article,
+.article {
+  @include headings {
+    margin-bottom: 1rem;
+  }
+}
