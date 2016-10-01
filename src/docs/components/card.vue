@@ -20,6 +20,7 @@
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             </p>
             <p>
+              <mn-image :options="inlineImage" width="120" style="float: left; margin-right: 1rem;"></mn-image>
               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
             </p>
             <p>
@@ -47,7 +48,7 @@
             <div class="card-title">Card</div>
           </div>
           <div class="card-media">
-            <img src="https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg">
+            <mn-block-image :options="blockImage"></mn-block-image>
           </div>
           <div class="card-block">
             <p>
@@ -63,7 +64,23 @@
 
 <script>
   export default {
-
+    data () {
+      return {
+        inlineImage: 'https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg',
+        blockImage: [
+          {
+            min: 0,
+            max: 700,
+            scale: 400 / 200,
+            src: 'https://o9qu3mxgj.qnssl.com/o_1ard82t21s7j9a0184ier9qaa7k.png-cover.md'
+          },
+          {
+            min: 701,
+            src: 'https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg'
+          }
+        ]
+      }
+    }
   }
 </script>
 
