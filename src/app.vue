@@ -7,11 +7,6 @@
 </template>
 
 <script>
-  import DocsSidebar from './docs/sidebars/sidebar'
-
   export default {
-    components: {
-      DocsSidebar
-    }
   }
 </script>
