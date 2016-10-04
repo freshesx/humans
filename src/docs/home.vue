@@ -1,6 +1,5 @@
 <template>
   <div class="section">
-
     <div class="letter">
       <div class="letter-body">
         <h1>Vue Human</h1>
@@ -8,60 +7,14 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" v-for="menu in menus">
       <div class="card-header">
-        <h3 class="card-title">Bases</h3>
+        <h3 class="card-title">{{ menu.title }}</h3>
       </div>
       <div class="card-lists">
-        <div class="card-item is-link" v-link="{ path: '/bases/colors' }">
-          <div class="card-item-addon"><mn-icon name="menu"></mn-icon></div>
-          <div class="card-item-body">colors</div>
-        </div>
-        <div class="card-item is-link" v-link="{ path: '/bases/typography' }">
-          <div class="card-item-addon"><mn-icon name="menu"></mn-icon></div>
-          <div class="card-item-body">typography</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Grids</h3>
-      </div>
-      <div class="card-lists">
-        <div class="card-item is-link" v-link="{ path: '/grids/flex' }">
-          <div class="card-item-addon"><mn-icon name="menu"></mn-icon></div>
-          <div class="card-item-body">flex</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-title">Components</h3>
-      </div>
-      <div class="card-lists">
-        <div class="card-item is-link" v-link="{ path: '/components/button' }">
-          <div class="card-item-addon"><mn-icon name="menu"></mn-icon></div>
-          <div class="card-item-body">button</div>
-        </div>
-      </div>
-      <div class="card-lists">
-        <div class="card-item is-link" v-link="{ path: '/components/card' }">
-          <div class="card-item-addon"><mn-icon name="menu"></mn-icon></div>
-          <div class="card-item-body">card</div>
-        </div>
-      </div>
-      <div class="card-lists">
-        <div class="card-item is-link" v-link="{ path: '/components/form' }">
-          <div class="card-item-addon"><mn-icon name="menu"></mn-icon></div>
-          <div class="card-item-body">form</div>
-        </div>
-      </div>
-      <div class="card-lists">
-        <div class="card-item is-link" v-link="{ path: '/components/popup' }">
-          <div class="card-item-addon"><mn-icon name="menu"></mn-icon></div>
-          <div class="card-item-body">popup</div>
+        <div class="card-item is-link" @click="go(sub.route)" v-for="sub in menu.subMenus">
+          <div class="card-item-addon"><mn-icon :name="sub.icon"></mn-icon></div>
+          <div class="card-item-body">{{ sub.title }}</div>
         </div>
       </div>
     </div>
@@ -70,6 +23,67 @@
 
 <script>
   export default {
-
+    methods: {
+      go (link) {
+        console.log(link)
+        this.$router.push(link)
+      }
+    },
+    data () {
+      return {
+        menus: [
+          {
+            title: 'Bases',
+            subMenus: [
+              {
+                title: 'colors',
+                icon: 'menu',
+                route: { path: '/bases/colors' }
+              },
+              {
+                title: 'typography',
+                icon: 'menu',
+                route: { path: '/bases/typography' }
+              }
+            ]
+          },
+          {
+            title: 'Grids',
+            subMenus: [
+              {
+                title: 'flex',
+                icon: 'menu',
+                route: { path: '/grids/flex' }
+              }
+            ]
+          },
+          {
+            title: 'Components',
+            subMenus: [
+              {
+                title: 'button',
+                icon: 'menu',
+                route: { path: '/components/button' }
+              },
+              {
+                title: 'card',
+                icon: 'menu',
+                route: { path: '/components/card' }
+              },
+              {
+                title: 'form',
+                icon: 'menu',
+                route: { path: '/components/form' }
+              },
+              {
+                title: 'popup',
+                icon: 'menu',
+                route: { path: '/components/popup' }
+              }
+            ]
+          }
+        ]
+      }
+    }
   }
 </script>
