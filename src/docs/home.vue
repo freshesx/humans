@@ -25,7 +25,6 @@
   export default {
     methods: {
       go (link) {
-        console.log(link)
         this.$router.push(link)
       }
     },
