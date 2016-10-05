@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="card-group-note">
-      <mn-icon name="question" scale="0.8"></mn-icon>
+      <mn-icon name="question" :scale="0.8"></mn-icon>
       Add some help for your user.
     </div>
   </div>
