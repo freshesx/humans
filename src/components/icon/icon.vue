@@ -26,10 +26,6 @@
       scale: {
         type: Number,
         default: 1,
-        coerce: val => {
-          val = Number(val)
-          return isNaN(val) ? undefined : val
-        },
         validator: val => {
           return Number(val) > 0
         }
