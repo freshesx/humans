@@ -14,7 +14,8 @@ class Element {
       el: wrapper || document.createElement('div')
     })
 
-    component.$appendTo(dom || document.body)
+    dom = dom || document.body
+    dom.appendChild(component.$el)
 
     return component
   }
