@@ -21,23 +21,25 @@
       }
     },
     methods: {
-      close () {
-        this.show = false
-        this.destroyMask()
+      // Trigger close event
+      closePopup () {
+        this.$emit('close')
       },
       appendMask (zIndex) {
         this.mask = Element.create(Mask)
-        this.mask.$set('zIndex', zIndex)
+        this.mask.zIndex = zIndex
 
         // Listen mask.close click event, and exec this.close()
         this.mask.$on('mask.close', () => {
-          this.close()
+          this.closePopup()
         })
       },
       destroyMask () {
+        // If extis mask instance, then destory them
         if (this.mask) {
-          this.mask.$destroy(true)
-          this.mask = null
+          this.mask.$el.remove()
+          this.mask.$destroy()
+          delete this.mask
         }
       }
     },
@@ -47,9 +49,9 @@
         if (newValue) {
           this.appendMask(this.zIndex - 1)
         }
-        // If show is false, trigger close method
+
         if (!newValue) {
-          this.close()
+          this.destroyMask()
         }
       }
     },
