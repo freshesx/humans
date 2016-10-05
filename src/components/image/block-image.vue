@@ -1,5 +1,5 @@
 <template>
-  <div class="block-image" v-el:container>
+  <div class="block-image" :ref="container">
     <img :src="link" :alt="alt" :title="title">
   </div>
 </template>
@@ -15,13 +15,13 @@
       setDefaultHeight () {
         const scale = this.getViewImage().scale
         const height = scale
-          ? $(this.$els.container).width() / scale
+          ? $(this.$refs.container).width() / scale
           : 'auto'
 
-        $(this.$els.container).height(height)
+        $(this.$refs.container).height(height)
       }
     },
-    ready () {
+    mounted () {
       readyAndResize(() => {
         this.setDefaultHeight()
       })

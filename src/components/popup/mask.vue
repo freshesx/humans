@@ -6,7 +6,7 @@
   export default {
     methods: {
       close () {
-        this.$dispatch('mask.close')
+        this.$emit('mask.close')
       }
     },
     data () {

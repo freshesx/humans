@@ -48,7 +48,7 @@
           : this.getViewImage().src
       }
     },
-    ready () {
+    mounted () {
       readyAndResize(() => {
         this.setViewLink()
       })
