@@ -1,5 +1,5 @@
 <template>
-  <div class="block-image" :ref="container">
+  <div class="block-image" ref="container">
     <img :src="link" :alt="alt" :title="title">
   </div>
 </template>
