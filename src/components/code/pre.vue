@@ -1,16 +1,17 @@
 <template>
-  <pre>{{ code }}</pre>
+  <pre>{{ outputCode }}</pre>
 </template>
 
 <script>
   export default {
     props: {
       code: {
-        type: String,
-        coerce: val => {
-          console.log(val)
-          return val.trim()
-        }
+        type: String
+      }
+    },
+    computed: {
+      outputCode () {
+        return this.code.trim()
       }
     }
   }
