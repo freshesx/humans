@@ -13,7 +13,7 @@
         <div class="card-title">Popup</div>
       </div>
       <div class="card-block">
-        <mn-btn class="is-primary is-block" @click.prevent="openPopup">Open popup</mn-btn>
+        <button class="btn is-primary is-block" @click.prevent="openPopup">Open popup</button>
       </div>
     </div>
 
@@ -22,7 +22,7 @@
         <div class="card-title">Center popup</div>
       </div>
       <div class="card-block">
-        <mn-btn class="is-warning is-block" @click.prevent="openConfirm">Open center popup</mn-btn>
+        <button class="btn is-warning is-block" @click.prevent="openConfirm">Open center popup</button>
       </div>
     </div>
   </div>
@@ -36,11 +36,9 @@
     methods: {
       openPopup () {
         this.popup = this.$element(Popup)
-        this.popup.$set('show', true)
       },
       openConfirm () {
         this.confirm = this.$element(Confirm)
-        this.confirm.$set('show', true)
       }
     }
   }

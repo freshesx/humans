@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" center>
+  <mn-popup :show="show" @close="cancel" center>
     <div class="card m-b-0" style="width: 280px; margin: 0 auto;">
       <div class="card-block is-center-text">
         <h4>Allow "Calendar" to access your location while you use the app?</h4>
@@ -15,16 +15,18 @@
 
 <script>
   export default {
-    props: {
-      show: {
-        type: Boolean,
-        default: false
-      }
-    },
     methods: {
       cancel () {
         this.show = false
       }
+    },
+    data () {
+      return {
+        show: false
+      }
+    },
+    mounted () {
+      this.show = true
     }
   }
 </script>

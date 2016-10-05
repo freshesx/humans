@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show">
+  <mn-popup :show="show" @close="cancel">
     <div class="card m-b-1">
       <div class="card-block is-center-text">
         <small>This photo will be deleted from iCloud Photo Library on all your devices.</small>
@@ -18,16 +18,18 @@
 
 <script>
   export default {
-    props: {
-      show: {
-        type: Boolean,
-        default: false
-      }
-    },
     methods: {
       cancel () {
         this.show = false
       }
+    },
+    data () {
+      return {
+        show: false
+      }
+    },
+    mounted () {
+      this.show = true
     }
   }
 </script>
