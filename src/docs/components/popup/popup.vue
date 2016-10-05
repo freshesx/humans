@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show.sync="show">
+  <mn-popup :show="show">
     <div class="card m-b-1">
       <div class="card-block is-center-text">
         <small>This photo will be deleted from iCloud Photo Library on all your devices.</small>
