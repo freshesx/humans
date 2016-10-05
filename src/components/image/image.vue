@@ -13,10 +13,6 @@
         default: ''
         // [{ min: Number|Undefined, max: Number|Undefined, src: String }]
       },
-      link: {
-        type: String,
-        default: ''
-      },
       alt: {
         type: String,
         default: ''
@@ -46,6 +42,11 @@
         this.link = isString(this.options)
           ? this.options
           : this.getViewImage().src
+      }
+    },
+    data () {
+      return {
+        link: ''
       }
     },
     mounted () {
