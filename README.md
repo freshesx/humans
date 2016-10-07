@@ -1,11 +1,18 @@
-> This package is developing. coming soon.
-> contact: chasel.wu@vitualreaty.com
+# Vue Human v2.0 alpha
 
-# vue-human
+> The UI component for Vue, inspired by iOS Human Interface Guidelines
 
-> Vue UI from Apple iOS Human Interface Guidelines
+> For vue 2.0
 
-## Build Setup
+**This components is under developing!**
+**Contact: chasel.wu@vitualreaty.com**
+
+# How to use
+``` bash
+npm install --save vue-human
+```
+
+# How to contribute
 
 ``` bash
 # install dependencies
@@ -18,11 +25,11 @@ npm run dev
 npm run build
 
 # run unit tests
-npm run unit
+# npm run unit
 
 # run e2e tests
-npm run e2e
+# npm run e2e
 
 # run all tests
-npm test
+# npm test
 ```
