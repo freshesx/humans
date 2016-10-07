@@ -14,24 +14,6 @@ $-popup-mask: #{$namespace}popup-mask;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-  &.is-slide-up-transition {
-    transition: transform 0.3s ease;
-  }
-
-  &.is-slide-up-enter,
-  &.is-slide-up-leave {
-    transform: translateY(100%);
-  }
-
-  &.is-fade-transition {
-    transition: opacity 0.5s linear;
-  }
-
-  &.is-fade-enter,
-  &.is-fade-leave {
-    opacity: 0;
-  }
 }
 
 .#{$-popup-mask} {
@@ -43,13 +25,34 @@ $-popup-mask: #{$namespace}popup-mask;
   background-color: #000;
   opacity: 0.4;
   z-index: 1000;
+}
 
-  &.is-fade-transition {
-    transition: opacity 0.3s linear;
-  }
+//
+// @animation
+//
+.#{$-popup}-slide-enter-active,
+.#{$-popup}-slide-leave-active {
+  transition: transform 0.3s;
+}
+.#{$-popup}-slide-enter,
+.#{$-popup}-slide-leave-active {
+  transform: translateY(100%);
+}
 
-  &.is-fade-enter,
-  &.is-fade-leave {
-    opacity: 0;
-  }
+.#{$-popup}-fade-enter-active,
+.#{$-popup}-fade-leave-active {
+  transition: opacity 0.5s linear;
+}
+.#{$-popup}-fade-enter,
+.#{$-popup}-fade-leave-active {
+  opacity: 0
+}
+
+.#{$-popup-mask}-fade-enter-active,
+.#{$-popup-mask}-fade-leave-active {
+  transition: opacity 0.3s linear;
+}
+.#{$-popup-mask}-fade-enter,
+.#{$-popup-mask}-fade-leave-active {
+  opacity: 0
 }

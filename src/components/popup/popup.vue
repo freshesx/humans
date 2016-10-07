@@ -1,7 +1,9 @@
 <template>
-  <div class="popup" v-if="show" :class="{ 'is-center': center }" :style="style" :transition="transition">
-    <slot></slot>
-  </div>
+  <transition :name="transition">
+    <div class="popup" v-if="show" :class="{ 'is-center': center }" :style="style">
+      <slot></slot>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -28,6 +30,7 @@
       appendMask (zIndex) {
         this.mask = Element.create(Mask)
         this.mask.zIndex = zIndex
+        this.mask.show = true
 
         // Listen mask.close click event, and exec this.close()
         this.mask.$on('mask.close', () => {
@@ -37,6 +40,7 @@
       destroyMask () {
         // If extis mask instance, then destory them
         if (this.mask) {
+          this.mask.show = false
           this.mask.$el.remove()
           this.mask.$destroy()
           delete this.mask
@@ -57,7 +61,7 @@
     },
     computed: {
       transition () {
-        return this.center ? 'is-fade' : 'is-slide-up'
+        return this.center ? 'popup-fade' : 'popup-slide'
       },
       style () {
         return {

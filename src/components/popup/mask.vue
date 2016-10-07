@@ -1,5 +1,7 @@
 <template>
-  <div class="popup-mask" :style="{ 'z-index': zIndex }" transition="is-fade" @click="close"></div>
+  <transition name="popup-mask-fade">
+    <div class="popup-mask" v-if="show" :style="{ 'z-index': zIndex }" @click="close"></div>
+  </transition>
 </template>
 
 <script>
@@ -11,7 +13,8 @@
     },
     data () {
       return {
-        zIndex: 2000
+        zIndex: 2000,
+        show: false
       }
     }
   }
