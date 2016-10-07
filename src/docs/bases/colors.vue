@@ -1,5 +1,5 @@
 <template>
-  <div class="section" transition="is-slide-left">
+  <div class="section">
     <div class="letter">
       <div class="letter-body">
         <h1>Color</h1>

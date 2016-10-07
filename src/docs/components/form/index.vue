@@ -1,5 +1,5 @@
 <template>
-  <div class="section" transition="is-slide-left">
+  <div class="section">
 
     <div class="letter letter-bottom-bordered">
       <div class="letter-body">
