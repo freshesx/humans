@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import { saveScroll, setScroll } from './components/scroller/save'
+import { saveScroll, setScroll } from './components/scroller/save'
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
+const router = new VueRouter({
   routes: [
     {
       path: '/',
@@ -41,3 +41,14 @@ export default new VueRouter({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  saveScroll(from)
+  next()
+})
+
+router.afterEach((to, from, next) => {
+  setScroll(to)
+})
+
+export default router

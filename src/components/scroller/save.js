@@ -6,7 +6,7 @@ import $ from 'jquery'
  * @param from
  */
 export function saveScroll (from) {
-  if (from.path && from.scroll) {
+  if (from.path && from.meta.scroll) {
     const $scroll = $('.scrollbar-wrapper.is-save')
     let storage = $scroll.data('scroll') || {}
     storage[from.path] = $scroll.scrollTop()
