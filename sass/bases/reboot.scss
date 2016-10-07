@@ -61,16 +61,21 @@ html.is-full-screen {
   }
 }
 
-.is-slide-left-transition {
-  transition: transform .2s;
-}
-
-.is-slide-left-enter,
-.is-slide-left-leave {
+//
+// @animation
+//
+.has-slide-enter {
   transform: translateX(50%);
 }
 
-.is-slide-left-leave {
+.has-slide-enter-active {
+  transition: transform .2s;
+}
+
+.has-slide-leave {
+  transition: transform 0;
+}
+
+.has-slide-leave-active {
   transform: translateX(0);
-  transition-duration: 0;
 }
