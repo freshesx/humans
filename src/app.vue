@@ -1,9 +1,7 @@
 <template>
   <div class="is-full-screen">
     <mn-scroller save>
-      <transition name="has-slide">
-        <router-view></router-view>
-      </transition>
+      <router-view></router-view>
     </mn-scroller>
   </div>
 </template>
