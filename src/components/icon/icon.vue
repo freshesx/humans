@@ -4,7 +4,7 @@
     :class="classes"
     :width="width"
     :height="height"
-    :view-box.camel="box"
+    :viewBox="box"
     :style="style"
   >
     <path :d="icon.d" />
