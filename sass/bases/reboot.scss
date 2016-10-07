@@ -71,11 +71,3 @@ html.is-full-screen {
 .has-slide-enter-active {
   transition: transform .2s;
 }
-
-.has-slide-leave {
-  transition: transform 0;
-}
-
-.has-slide-leave-active {
-  transform: translateX(0);
-}
