@@ -8,7 +8,6 @@ import Popup from './components/popup/popup'
 import Image from './components/image/image'
 import BlockImage from './components/image/block-image'
 import element from './components/util/element'
-import '../sass/human.scss'
 
 export default {
   prefix: 'Mn',
