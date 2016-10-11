@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import router from './router'
 import App from './app'
-import './human'
-import './docs/docs.scss'
+import VueHuman from './human'
+
+Vue.use(VueHuman)
 
 /* eslint-disable no-unused-vars */
 const app = new Vue({
