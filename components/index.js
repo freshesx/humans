@@ -4,7 +4,7 @@ import { saveScroll, setScroll } from './scroller/save'
 import components from './components'
 
 export default {
-  prefix: '',
+  prefix: 'Mn',
   install (Vue, options) {
     // Assign default & options
     options = Object.assign({}, options)
