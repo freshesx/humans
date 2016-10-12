@@ -4,6 +4,11 @@
   "description": "The UI component for Vue, inspired by iOS Human Interface Guidelines",
   "author": "ChaselWu <chasel.wu@vitualreaty.com>",
   "main": "components/index.js",
+  "sass": "sass/human.scss",
+  "files": [
+    "components",
+    "sass"
+  ],
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
