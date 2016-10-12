@@ -4,10 +4,13 @@ import { saveScroll, setScroll } from './scroller/save'
 import components from './components'
 
 export default {
-  prefix: 'Mn',
+  prefix: '',
   install (Vue, options) {
+    // Assign default & options
+    options = Object.assign({}, options)
+
     // Custom prefix
-    if (lodash.get(options, 'prefix')) {
+    if (lodash.isString(options.prefix)) {
       this.prefix = options.prefix
     }
 
