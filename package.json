@@ -3,7 +3,7 @@
   "version": "2.0.0-alpha.4",
   "description": "The UI component for Vue, inspired by iOS Human Interface Guidelines",
   "author": "ChaselWu <chasel.wu@vitualreaty.com>",
-  "main": "src/human.js",
+  "main": "components/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
