@@ -12,8 +12,8 @@ export default {
     }
 
     // Using components
-    lodash.forEach(components, (value, key) => {
-      Vue.component(`${this.prefix}${key}`, require(value))
+    lodash.forEach(components, (component, name) => {
+      Vue.component(`${this.prefix}${name}`, component)
     })
 
     // Using $element

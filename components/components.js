@@ -1,18 +1,28 @@
+import Scroller from './scroller/scroller'
+import Icon from './icon/icon'
+import Btn from './button/button'
+import Switch from './form/switch'
+import Select from './form/select'
+import Pre from './code/pre'
+import Popup from './popup/popup'
+import Image from './image/image'
+import BlockImage from './image/block-image'
+
 export default {
   // Scroller
-  Scroller: './scroller/scroller',
+  Scroller,
   // Icon
-  Icon: './icon/icon',
+  Icon,
   // Button
-  Btn: './button/button',
+  Btn,
   // Form
-  Switch: './form/switch',
-  Select: './form/select',
+  Switch,
+  Select,
   // Code
-  Pre: './code/pre',
+  Pre,
   // Popup
-  Popup: './popup/popup',
+  Popup,
   // Image
-  Image: './image/image',
-  BlockImage: './image/block-image'
+  Image,
+  BlockImage
 }
