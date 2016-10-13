@@ -4,7 +4,7 @@
       <div class="card-title">Button</div>
     </div>
     <div class="card-block">
-      <mn-btn type="primary"><mn-icon name="menu"></mn-icon> Confirm</mn-btn>
+      <mn-btn type="primary" @click.native.prevent="say('Hi')"><mn-icon name="menu"></mn-icon> Confirm</mn-btn>
       <mn-btn type="warning">Are you sure?</mn-btn>
       <mn-btn type="error">Cancel</mn-btn>
       <mn-btn type="secondary">Help</mn-btn>
@@ -15,6 +15,10 @@
 
 <script>
   export default {
-
+    methods: {
+      say (some) {
+        window.alert(some)
+      }
+    }
   }
 </script>
