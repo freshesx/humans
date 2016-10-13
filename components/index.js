@@ -23,6 +23,13 @@ export default {
     Vue.use(element)
 
     // Adding scroll save & set
-    Vue.human = { saveScroll, setScroll }
+    Vue.human = {
+      prefix: this.prefix,
+      cssPrefix: '',
+      saveScroll,
+      setScroll
+    }
+
+    Vue.prototype.$human = Vue.human
   }
 }
