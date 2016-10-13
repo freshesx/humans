@@ -118,8 +118,8 @@ $-btn-style: (
         $active: $hover;
       }
 
-      @if $disable = null {
-        $active: $normal;
+      @if $disable == null {
+        $disable: $normal;
       }
 
       // normal
