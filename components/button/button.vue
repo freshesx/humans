@@ -19,6 +19,10 @@
         type: Boolean,
         default: false
       },
+      active: {
+        type: Boolean,
+        default: false
+      },
       // is-primary, is-secondary, is-error etc.
       type: {
         type: String
@@ -48,6 +52,9 @@
 
         // disabled
         classes['is-disabled'] = this.disabled || this.loading
+
+        // active
+        classes['is-active'] = this.active
 
         // return default and now classes
         return Object.assign({}, this.defaultClasses, classes)
