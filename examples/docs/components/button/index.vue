@@ -13,6 +13,8 @@
     <demo-block></demo-block>
 
     <demo-size></demo-size>
+
+    <demo-disabled></demo-disabled>
   </div>
 </template>
 
@@ -20,12 +22,14 @@
   import DemoNormal from './normal'
   import DemoBlock from './block'
   import DemoSize from './size'
+  import DemoDisabled from './disabled'
 
   export default {
     components: {
       DemoNormal,
       DemoBlock,
-      DemoSize
+      DemoSize,
+      DemoDisabled
     }
   }
 </script>
