@@ -7,22 +7,27 @@ $-btn-style: (
   primary: (
     normal: (bg: $green, color: #fff),
     hover: (bg: darken($green, 10%)),
+    disable: (bg: lighten($green, 16%)),
   ),
   warning: (
     normal: (bg: $orange, color: #fff),
     hover: (bg: darken($orange, 5%)),
+    disable: (bg: lighten($orange, 16%)),
   ),
   error: (
     normal: (bg: $pink, color: #fff),
     hover: (bg: darken($pink, 20%)),
+    disable: (bg: lighten($pink, 16%)),
   ),
   secondary: (
-    normal: (bg: darken($gray-lighter, 10%)),
-    hover: (bg: darken(darken($gray-lighter, 10%), 10%)),
+    normal: (bg: #d9d9d9),
+    hover: (bg: darken(#d9d9d9, 10%)),
+    disable: (bg: darken(#d9d9d9, 10%), color: darken(#d9d9d9, 30%)),
   ),
   inverse: (
-    normal: (bg: lighten($gray, 30%), color: #fff),
-    hover: (bg: darken(lighten($gray, 30%), 10%)),
+    normal: (bg: #505050, color: #fff),
+    hover: (bg: lighten(#505050, 5%)),
+    disable: (bg: lighten(#505050, 5%), color: lighten(#505050, 30%)),
   ),
 );
 
@@ -103,6 +108,7 @@ $-btn-style: (
       $normal: map-get($value, "normal");
       $hover: map-get($value, "hover");
       $active: map-get($value, "active");
+      $disable: map-get($value, "disable");
 
       @if $hover == null {
         $hover: $normal;
@@ -110,6 +116,10 @@ $-btn-style: (
 
       @if $active == null {
         $active: $hover;
+      }
+
+      @if $disable = null {
+        $active: $normal;
       }
 
       // normal
@@ -132,6 +142,19 @@ $-btn-style: (
       &:active {
         @if $active {
           @include btn-bg-color($active);
+        }
+      }
+
+      // disabled
+      &.is-disabled {
+        &,
+        &:hover,
+        &.active,
+        &.active:hover,
+        &:active {
+          @if $disable {
+            @include btn-bg-color($disable);
+          }
         }
       }
     }
