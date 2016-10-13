@@ -7,26 +7,31 @@ $-btn-style: (
   primary: (
     normal: (bg: $green, color: #fff),
     hover: (bg: darken($green, 10%)),
+    active: (bg: darken($green, 16%)),
     disable: (bg: lighten($green, 16%)),
   ),
   warning: (
     normal: (bg: $orange, color: #fff),
     hover: (bg: darken($orange, 5%)),
+    active: (bg: darken($orange, 8%)),
     disable: (bg: lighten($orange, 16%)),
   ),
   error: (
     normal: (bg: $pink, color: #fff),
     hover: (bg: darken($pink, 20%)),
+    active: (bg: darken($pink, 20%)),
     disable: (bg: lighten($pink, 16%)),
   ),
   secondary: (
     normal: (bg: #d9d9d9),
     hover: (bg: darken(#d9d9d9, 10%)),
+    active: (bg: darken(#d9d9d9, 10%)),
     disable: (bg: darken(#d9d9d9, 10%), color: darken(#d9d9d9, 30%)),
   ),
   inverse: (
     normal: (bg: #505050, color: #fff),
     hover: (bg: lighten(#505050, 5%)),
+    active: (bg: darken(#505050, 5%)),
     disable: (bg: lighten(#505050, 5%), color: lighten(#505050, 30%)),
   ),
 );
@@ -115,7 +120,7 @@ $-btn-style: (
       }
 
       @if $active == null {
-        $active: $hover;
+        $active: $normal;
       }
 
       @if $disable == null {
@@ -137,9 +142,10 @@ $-btn-style: (
       }
 
       // active
-      &.active,
-      &.active:hover,
+      &.is-active,
+      &.is-active:hover,
       &:active {
+        background: #fff;
         @if $active {
           @include btn-bg-color($active);
         }
@@ -149,8 +155,8 @@ $-btn-style: (
       &.is-disabled {
         &,
         &:hover,
-        &.active,
-        &.active:hover,
+        &.is-active,
+        &.is-active:hover,
         &:active {
           @if $disable {
             @include btn-bg-color($disable);
