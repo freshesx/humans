@@ -36,12 +36,12 @@
             subMenus: [
               {
                 title: 'colors',
-                icon: 'menu',
+                icon: 'ios-color-filter',
                 route: { path: '/bases/colors' }
               },
               {
                 title: 'typography',
-                icon: 'menu',
+                icon: 'wand',
                 route: { path: '/bases/typography' }
               }
             ]
@@ -51,7 +51,7 @@
             subMenus: [
               {
                 title: 'flex',
-                icon: 'menu',
+                icon: 'grid',
                 route: { path: '/grids/flex' }
               }
             ]
@@ -60,23 +60,28 @@
             title: 'Components',
             subMenus: [
               {
+                title: 'icon',
+                icon: 'ios-analytics',
+                route: { path: '/components/icon' }
+              },
+              {
                 title: 'button',
-                icon: 'menu',
+                icon: 'ios-paperplane',
                 route: { path: '/components/button' }
               },
               {
                 title: 'card',
-                icon: 'menu',
+                icon: 'ios-photos',
                 route: { path: '/components/card' }
               },
               {
                 title: 'form',
-                icon: 'menu',
+                icon: 'ios-list',
                 route: { path: '/components/form' }
               },
               {
                 title: 'popup',
-                icon: 'menu',
+                icon: 'social-buffer',
                 route: { path: '/components/popup' }
               }
             ]
