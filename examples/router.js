@@ -37,6 +37,10 @@ const router = new VueRouter({
     {
       path: '/components/popup',
       component: resolve => { require(['./docs/components/popup'], resolve) }
+    },
+    {
+      path: '/components/icon',
+      component: resolve => { require(['./docs/components/icon'], resolve) }
     }
   ]
 })
