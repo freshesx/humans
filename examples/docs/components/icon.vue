@@ -21,7 +21,7 @@
     </div>
 
     <div class="cols">
-      <div class="col is-sm-4" v-for="(icon, key) in searchIcons">
+      <div class="col is-xs-6 is-sm-4" v-for="(icon, key) in searchIcons">
         <div class="scope-tile">
           <div>
             <mn-icon :name="key"></mn-icon>
