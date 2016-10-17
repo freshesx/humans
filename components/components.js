@@ -5,6 +5,7 @@ import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import Pre from './code/pre'
 import Popup from './popup/popup'
+import Confirm from './popup/confirm'
 import InlineImage from './image/image'
 import BlockImage from './image/block-image'
 
@@ -22,6 +23,7 @@ export default {
   Pre,
   // Popup
   Popup,
+  Confirm,
   // Image
   InlineImage,
   BlockImage
