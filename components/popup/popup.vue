@@ -1,6 +1,6 @@
 <template>
   <transition :name="transition">
-    <div class="popup" v-if="show" :class="{ 'is-center': center }" :style="style">
+    <div class="popup" v-if="show" :class="classes" :style="style">
       <slot></slot>
     </div>
   </transition>
@@ -17,9 +17,18 @@
         type: Boolean,
         default: false
       },
-      center: {
-        type: Boolean,
-        default: false
+      position: {
+        type: String,
+        validator: (val) => {
+          return ['center', 'top'].includes(val)
+        }
+      },
+      animation: {
+        type: String,
+        default: 'fadeIn',
+        validator: (val) => {
+          return ['fadeIn', 'slideInDown'].includes(val)
+        }
       },
       masked: {
         type: Boolean,
@@ -66,12 +75,24 @@
     },
     computed: {
       transition () {
-        return this.center ? 'popup-fade' : 'popup-slide'
+        if (this.animation === 'fadeIn') {
+          return 'popup-fade'
+        }
+        if (this.animation === 'slideInDown') {
+          return 'popup-slide'
+        }
       },
       style () {
         return {
           'z-index': this.zIndex
         }
+      },
+      classes () {
+        let classes = {}
+
+        classes[`is-${this.position}`] = this.position
+
+        return classes
       }
     },
     data () {
