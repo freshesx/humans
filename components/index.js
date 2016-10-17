@@ -25,10 +25,19 @@ export default {
       cssPrefix: '',
       saveScroll,
       setScroll,
-      createElement: (ComponentClass, options) => {
+      createElement (ComponentClass, options) {
         return createElement(ComponentClass, Object.assign({ Vue }, options))
       },
-      closeElement
+      closeElement,
+      confirm ({ show }) {
+        const confirm = this.createElement(components.Confirm)
+
+        if (show) {
+          confirm.show = true
+        }
+
+        return confirm
+      }
     }
 
     Vue.prototype.$human = Vue.human
