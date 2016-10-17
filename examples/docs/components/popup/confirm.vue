@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" @close="cancel" center>
+  <mn-popup :show="show" position="center" @close="cancel">
     <div class="card m-b-0" style="width: 280px; margin: 0 auto;">
       <div class="card-block is-center-text">
         <h4>Allow "Calendar" to access your location while you use the app?</h4>
