@@ -10,7 +10,3 @@ export function createElement (ComponentClass, { Vue, dom, wrapper }) {
 
   return component
 }
-
-export function closeElement (component) {
-  component.$el.remove()
-}

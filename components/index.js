@@ -1,5 +1,5 @@
 import lodash from 'lodash'
-import { createElement, closeElement } from './util/element'
+import { createElement } from './util/element'
 import { saveScroll, setScroll } from './scroller/save'
 import components from './components'
 
@@ -28,7 +28,6 @@ export default {
       createElement (ComponentClass, options) {
         return createElement(ComponentClass, Object.assign({ Vue }, options))
       },
-      closeElement,
       confirm ({ show }) {
         const confirm = this.createElement(components.Confirm)
 
