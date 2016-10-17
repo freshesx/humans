@@ -7,7 +7,6 @@
 </template>
 
 <script>
-  import Element from '../util/element'
   import Mask from './mask'
   import { getZIndex } from './layer'
 
@@ -42,7 +41,7 @@
       },
       appendMask (zIndex) {
         if (this.masked) {
-          this.mask = Element.create(Mask)
+          this.mask = this.$human.createElement(Mask)
           this.mask.zIndex = zIndex
           this.mask.show = true
 
