@@ -30,15 +30,18 @@
 
 <script>
   import Popup from './popup'
-  import Confirm from './confirm'
 
   export default {
     methods: {
       openPopup () {
-        this.popup = this.$element(Popup)
+        this.popup = this.$human.createElement(Popup)
       },
       openConfirm () {
-        this.confirm = this.$element(Confirm)
+        const confirm = this.$human.confirm({ show: true })
+
+        confirm.$on('confirm', () => {
+          console.log('成功')
+        })
       }
     }
   }
