@@ -1,5 +1,5 @@
 import lodash from 'lodash'
-import element from './util/element'
+import { createElement, closeElement } from './util/element'
 import { saveScroll, setScroll } from './scroller/save'
 import components from './components'
 
@@ -19,15 +19,16 @@ export default {
       Vue.component(`${this.prefix}${name}`, component)
     })
 
-    // Using $element
-    Vue.use(element)
-
     // Adding scroll save & set
     Vue.human = {
       prefix: this.prefix,
       cssPrefix: '',
       saveScroll,
-      setScroll
+      setScroll,
+      createElement: (ComponentClass, options) => {
+        return createElement(ComponentClass, Object.assign({ Vue }, options))
+      },
+      closeElement
     }
 
     Vue.prototype.$human = Vue.human

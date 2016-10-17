@@ -1,21 +1,16 @@
-export default {
-  install (Vue) {
-    this.vue = Vue
+export function createElement (ComponentClass, { Vue, dom, wrapper }) {
+  const Component = Vue.extend(ComponentClass)
 
-    Vue.prototype.$element = (Class, dom, wrapper) => {
-      return this.create(Class, dom, wrapper)
-    }
-  },
-  create (Class, dom, wrapper) {
-    const Component = this.vue.extend(Class)
+  let component = new Component({
+    el: wrapper || document.createElement('div')
+  })
 
-    let component = new Component({
-      el: wrapper || document.createElement('div')
-    })
+  dom = dom || document.body
+  dom.appendChild(component.$el)
 
-    dom = dom || document.body
-    dom.appendChild(component.$el)
+  return component
+}
 
-    return component
-  }
+export function closeElement (component) {
+  component.$el.remove()
 }
