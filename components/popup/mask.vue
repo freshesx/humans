@@ -8,7 +8,7 @@
   export default {
     methods: {
       close () {
-        this.$emit('mask.close')
+        this.$emit('close')
       }
     },
     data () {

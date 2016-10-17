@@ -20,6 +20,10 @@
       center: {
         type: Boolean,
         default: false
+      },
+      masked: {
+        type: Boolean,
+        default: true
       }
     },
     methods: {
@@ -28,14 +32,16 @@
         this.$emit('close')
       },
       appendMask (zIndex) {
-        this.mask = Element.create(Mask)
-        this.mask.zIndex = zIndex
-        this.mask.show = true
+        if (this.masked) {
+          this.mask = Element.create(Mask)
+          this.mask.zIndex = zIndex
+          this.mask.show = true
 
-        // Listen mask.close click event, and exec this.close()
-        this.mask.$on('mask.close', () => {
-          this.closePopup()
-        })
+          // Listen mask.close click event, and exec this.close()
+          this.mask.$on('close', () => {
+            this.closePopup()
+          })
+        }
       },
       destroyMask () {
         // If extis mask instance, then destory them
@@ -43,7 +49,6 @@
           this.mask.show = false
           this.mask.$el.remove()
           this.mask.$destroy()
-          delete this.mask
         }
       }
     },
