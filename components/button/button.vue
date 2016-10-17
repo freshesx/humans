@@ -35,6 +35,11 @@
       // is-sm
       size: {
         type: String
+      },
+      // is circle
+      circle: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
@@ -55,6 +60,9 @@
 
         // active
         classes['is-active'] = this.active
+
+        // circle
+        classes['is-circle'] = this.circle
 
         // return default and now classes
         return Object.assign({}, this.defaultClasses, classes)

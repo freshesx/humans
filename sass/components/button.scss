@@ -163,6 +163,19 @@ $-btn-style: (
           }
         }
       }
+
+      // circle
+      &.is-circle {
+        &{
+          width: 3rem;
+          border-radius: 1.5rem;
+          padding: 0;
+        }
+        &.is-sm{
+          width: 2rem;
+          border-radius: 1rem;
+        }
+      }
     }
   }
 }
