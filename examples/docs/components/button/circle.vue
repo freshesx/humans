@@ -6,9 +6,9 @@
     <div class="card-block">
       <div class="cols">
         <div class="col">
-          <mn-btn type="primary" circle>hello</mn-btn>
+          <mn-btn type="primary" circle>hi</mn-btn>
           <mn-btn type="warning" circle><mn-icon name="navicon-round"></mn-icon></mn-btn>
-          <mn-btn type="error" circle size="sm"><mn-icon name="navicon-round"></mn-icon></mn-btn>
+          <mn-btn type="error" circle size="sm"><mn-icon name="arrow-shrink"></mn-icon></mn-btn>
         </div>
       </div>
     </div>
