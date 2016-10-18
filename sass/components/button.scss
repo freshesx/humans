@@ -163,20 +163,6 @@ $-btn-style: (
           }
         }
       }
-
-      // circle
-      &.is-circle {
-        &{
-          width: 3rem;
-          border-radius: 1.5rem;
-          padding: 0;
-        }
-        &.is-sm{
-          width: 2rem;
-          border-radius: 1rem;
-          // @todo:Whether to adjust the icon size when 'is-sm'
-        }
-      }
     }
   }
 }
@@ -209,4 +195,19 @@ $-btn-style: (
   display: inline-block;
   animation: btn-rotate 0.75s 0s linear infinite;
   vertical-align: middle;
+}
+
+// circle
+.is-circle {
+  &{
+    width: 3rem;
+    border-radius: 1.5rem;
+    padding: 0;
+  }
+  &.is-sm{
+    width: 2rem;
+    border-radius: 1rem;
+    padding: 0;
+    // @todo:Whether to adjust the icon size when 'is-sm'
+  }
 }
