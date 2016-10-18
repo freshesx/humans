@@ -2,7 +2,6 @@
 
 $-btn: #{$namespace}btn;
 $-btn-loading: #{$namespace}btn-loading;
-$-btn-outline: #{$namespace}btn-outline;
 
 $-btn-style: (
   primary: (
@@ -69,6 +68,7 @@ $-btn-style-outline: (
     disable: (color: lighten(#505050, 5%), border: lighten(#505050, 5%)),
   ),
 );
+// @todo:Whether to reduce it
 
 
 //
