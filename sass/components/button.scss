@@ -2,6 +2,7 @@
 
 $-btn: #{$namespace}btn;
 $-btn-loading: #{$namespace}btn-loading;
+$-btn-outline: #{$namespace}btn-outline;
 
 $-btn-style: (
   primary: (
@@ -36,6 +37,40 @@ $-btn-style: (
   ),
 );
 
+$-btn-style-outline: (
+  primary: (
+    normal: (color: $green, border: $green),
+    hover: (color: darken($green, 10%), border: darken($green, 10%)),
+    active: (color: darken($green, 16%), border: darken($green, 16%)),
+    disable: (color: lighten($green, 16%), border: lighten($green, 16%)),
+  ),
+  warning: (
+    normal: (color: $orange, border: $orange),
+    hover: (color: darken($orange, 5%), border: darken($orange, 5%)),
+    active: (color: darken($orange, 8%), border: darken($orange, 8%)),
+    disable: (color: lighten($orange, 16%), border: lighten($orange, 16%)),
+  ),
+  error: (
+    normal: (color: $pink, border: $pink),
+    hover: (color: darken($pink, 20%), border: darken($pink, 20%)),
+    active: (color: darken($pink, 20%), border: darken($pink, 20%)),
+    disable: (color: lighten($pink, 16%), border: lighten($pink, 16%)),
+  ),
+  secondary: (
+    normal: (color: #d9d9d9, border: #d9d9d9),
+    hover: (color: darken(#d9d9d9, 10%), border: darken(#d9d9d9, 10%)),
+    active: (color: darken(#d9d9d9, 10%), border: darken(#d9d9d9, 10%)),
+    disable: (color: darken(#d9d9d9, 10%), border: darken(#d9d9d9, 10%)),
+  ),
+  inverse: (
+    normal: (color: #505050, border: #505050),
+    hover: (color: lighten(#505050, 5%), border: lighten(#505050, 5%)),
+    active: (color: darken(#505050, 5%), border: darken(#505050, 5%)),
+    disable: (color: lighten(#505050, 5%), border: lighten(#505050, 5%)),
+  ),
+);
+
+
 //
 // @class .btn.btn-primary, etc.
 //
@@ -57,6 +92,18 @@ $-btn-style: (
   }
   @if map-get($options, "border") {
     border-color: map-get($options, "border");
+  }
+}
+
+@mixin btn-bg-color-outline ($options) {
+  @if map-get($options, "bg") {
+    background-color: map-get($options, "bg");
+  }
+  @if map-get($options, "color") {
+    color: map-get($options, "color");
+  }
+  @if map-get($options, "border") {
+    border: 1px solid map-get($options, "border");
   }
 }
 
@@ -160,6 +207,71 @@ $-btn-style: (
         &:active {
           @if $disable {
             @include btn-bg-color($disable);
+          }
+        }
+      }
+    }
+  }
+
+  //
+  // @class .btn.is-outline
+  //
+  &.is-outline {
+    background: transparent !important;
+    border: 1px solid;
+    @each $name, $value in $-btn-style-outline {
+      &.is-#{$name} {
+        $normal: map-get($value, "normal");
+        $hover: map-get($value, "hover");
+        $active: map-get($value, "active");
+        $disable: map-get($value, "disable");
+
+        @if $hover == null {
+          $hover: $normal;
+        }
+
+        @if $active == null {
+          $active: $normal;
+        }
+
+        @if $disable == null {
+          $disable: $normal;
+        }
+
+        // normal
+        & {
+          @if $normal {
+            @include btn-bg-color($normal);
+          }
+        }
+
+        // hover
+        &:hover {
+          @if $hover {
+            @include btn-bg-color($hover);
+          }
+        }
+
+        // active
+        &.is-active,
+        &.is-active:hover,
+        &:active {
+          background: #fff;
+          @if $active {
+            @include btn-bg-color($active);
+          }
+        }
+
+        // disabled
+        &.is-disabled {
+          &,
+          &:hover,
+          &.is-active,
+          &.is-active:hover,
+          &:active {
+            @if $disable {
+              @include btn-bg-color($disable);
+            }
           }
         }
       }

@@ -17,6 +17,8 @@
     <demo-disabled></demo-disabled>
 
     <demo-active></demo-active>
+
+    <demo-outline></demo-outline>
   </div>
 </template>
 
@@ -26,6 +28,7 @@
   import DemoSize from './size'
   import DemoDisabled from './disabled'
   import DemoActive from './active'
+  import DemoOutline from './outline'
 
   export default {
     components: {
@@ -33,7 +36,8 @@
       DemoBlock,
       DemoSize,
       DemoDisabled,
-      DemoActive
+      DemoActive,
+      DemoOutline
     }
   }
 </script>
