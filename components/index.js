@@ -29,13 +29,22 @@ export default {
         return createElement(ComponentClass, Object.assign({ Vue }, options))
       },
       confirm ({ show }) {
-        const confirm = this.createElement(components.Confirm)
+        const component = this.createElement(components.PopupConfirm)
 
         if (show) {
-          confirm.show = true
+          component.show = true
         }
 
-        return confirm
+        return component
+      },
+      alert ({ show }) {
+        const component = this.createElement(components.PopupAlert)
+
+        if (show) {
+          component.show = true
+        }
+
+        return component
       }
     }
 
