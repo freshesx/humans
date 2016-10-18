@@ -107,6 +107,64 @@ $-btn-style-outline: (
   }
 }
 
+@mixin btn-setType ($name, $value){
+  &.is-#{$name} {
+    $normal: map-get($value, "normal");
+    $hover: map-get($value, "hover");
+    $active: map-get($value, "active");
+    $disable: map-get($value, "disable");
+
+    @if $hover == null {
+      $hover: $normal;
+    }
+
+    @if $active == null {
+      $active: $normal;
+    }
+
+    @if $disable == null {
+      $disable: $normal;
+    }
+
+    // normal
+    & {
+      @if $normal {
+        @include btn-bg-color($normal);
+      }
+    }
+
+    // hover
+    &:hover {
+      @if $hover {
+        @include btn-bg-color($hover);
+      }
+    }
+
+    // active
+    &.is-active,
+    &.is-active:hover,
+    &:active {
+      background: #fff;
+      @if $active {
+        @include btn-bg-color($active);
+      }
+    }
+
+    // disabled
+    &.is-disabled {
+      &,
+      &:hover,
+      &.is-active,
+      &.is-active:hover,
+      &:active {
+        @if $disable {
+          @include btn-bg-color($disable);
+        }
+      }
+    }
+  }
+}
+
 //
 // @class .btn
 //
@@ -156,126 +214,7 @@ $-btn-style-outline: (
   // @class .btn.is-success, etc.
   //
   @each $name, $value in $-btn-style {
-    &.is-#{$name} {
-      $normal: map-get($value, "normal");
-      $hover: map-get($value, "hover");
-      $active: map-get($value, "active");
-      $disable: map-get($value, "disable");
-
-      @if $hover == null {
-        $hover: $normal;
-      }
-
-      @if $active == null {
-        $active: $normal;
-      }
-
-      @if $disable == null {
-        $disable: $normal;
-      }
-
-      // normal
-      & {
-        @if $normal {
-          @include btn-bg-color($normal);
-        }
-      }
-
-      // hover
-      &:hover {
-        @if $hover {
-          @include btn-bg-color($hover);
-        }
-      }
-
-      // active
-      &.is-active,
-      &.is-active:hover,
-      &:active {
-        background: #fff;
-        @if $active {
-          @include btn-bg-color($active);
-        }
-      }
-
-      // disabled
-      &.is-disabled {
-        &,
-        &:hover,
-        &.is-active,
-        &.is-active:hover,
-        &:active {
-          @if $disable {
-            @include btn-bg-color($disable);
-          }
-        }
-      }
-    }
-  }
-
-  //
-  // @class .btn.is-outline
-  //
-  &.is-outline {
-    background: transparent !important;
-    border: 1px solid;
-    @each $name, $value in $-btn-style-outline {
-      &.is-#{$name} {
-        $normal: map-get($value, "normal");
-        $hover: map-get($value, "hover");
-        $active: map-get($value, "active");
-        $disable: map-get($value, "disable");
-
-        @if $hover == null {
-          $hover: $normal;
-        }
-
-        @if $active == null {
-          $active: $normal;
-        }
-
-        @if $disable == null {
-          $disable: $normal;
-        }
-
-        // normal
-        & {
-          @if $normal {
-            @include btn-bg-color($normal);
-          }
-        }
-
-        // hover
-        &:hover {
-          @if $hover {
-            @include btn-bg-color($hover);
-          }
-        }
-
-        // active
-        &.is-active,
-        &.is-active:hover,
-        &:active {
-          background: #fff;
-          @if $active {
-            @include btn-bg-color($active);
-          }
-        }
-
-        // disabled
-        &.is-disabled {
-          &,
-          &:hover,
-          &.is-active,
-          &.is-active:hover,
-          &:active {
-            @if $disable {
-              @include btn-bg-color($disable);
-            }
-          }
-        }
-      }
-    }
+    @include btn-setType($name, $value);
   }
 }
 
@@ -307,4 +246,15 @@ $-btn-style-outline: (
   display: inline-block;
   animation: btn-rotate 0.75s 0s linear infinite;
   vertical-align: middle;
+}
+
+//
+// @class .is-outline
+//
+&.is-outline {
+  background: transparent !important;
+  border: 1px solid;
+  @each $name, $value in $-btn-style-outline {
+    @include btn-setType($name, $value);
+  }
 }
