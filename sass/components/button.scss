@@ -107,7 +107,7 @@ $-btn-style-outline: (
   }
 }
 
-@mixin btn-setType ($name, $value){
+@mixin btn-set-type ($name, $value){
   &.is-#{$name} {
     $normal: map-get($value, "normal");
     $hover: map-get($value, "hover");
@@ -211,10 +211,39 @@ $-btn-style-outline: (
   }
 
   //
+  // @class .is-circle
+  //
+  &.is-circle {
+    padding: 0;
+    &{
+      width: 3rem;
+      border-radius: 1.5rem;
+    }
+    &.is-sm{
+      width: 2rem;
+      border-radius: 1rem;
+    }
+  }
+
+  //
   // @class .btn.is-success, etc.
   //
   @each $name, $value in $-btn-style {
-    @include btn-setType($name, $value);
+    @include btn-set-type($name, $value);
+  }
+
+  //
+  // @class .is-outline
+  //
+  &.is-outline {
+    background: transparent !important;
+    border: 1px solid;
+    //
+    // @class .btn.is-outline.is-success, etc.
+    //
+    @each $name, $value in $-btn-style-outline {
+      @include btn-set-type($name, $value);
+    }
   }
 }
 
@@ -246,32 +275,4 @@ $-btn-style-outline: (
   display: inline-block;
   animation: btn-rotate 0.75s 0s linear infinite;
   vertical-align: middle;
-}
-
-//
-// @class .is-circle
-//
-.is-circle {
-  &{
-    width: 3rem;
-    border-radius: 1.5rem;
-    padding: 0;
-  }
-  &.is-sm{
-    width: 2rem;
-    border-radius: 1rem;
-    padding: 0;
-    // @todo:Whether to adjust the icon size when 'is-sm'
-  }
-}
-
-//
-// @class .is-outline
-//
-.is-outline {
-  background: transparent !important;
-  border: 1px solid;
-  @each $name, $value in $-btn-style-outline {
-    @include btn-setType($name, $value);
-  }
 }
