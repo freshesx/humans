@@ -10,7 +10,7 @@
 
     <div class="card">
       <div class="card-header">
-        <div class="card-title">Popup</div>
+        <div class="card-title">Pure popup</div>
       </div>
       <div class="card-block">
         <button class="btn is-primary is-block" @click.prevent="openPopup">Open popup</button>
@@ -19,10 +19,10 @@
 
     <div class="card">
       <div class="card-header">
-        <div class="card-title">Center popup</div>
+        <div class="card-title">Confirm extend popup</div>
       </div>
       <div class="card-block">
-        <button class="btn is-warning is-block" @click.prevent="openConfirm">Open center popup</button>
+        <button class="btn is-warning is-block" @click.prevent="openConfirm">Delete</button>
       </div>
     </div>
   </div>
