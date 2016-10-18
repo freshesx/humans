@@ -215,10 +215,8 @@ $-btn-style-outline: (
   //
   &.is-circle {
     padding: 0;
-    &{
-      width: 3rem;
-      border-radius: 1.5rem;
-    }
+    width: 3rem;
+    border-radius: 1.5rem;
     &.is-sm{
       width: 2rem;
       border-radius: 1rem;
