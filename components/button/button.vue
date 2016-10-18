@@ -40,6 +40,11 @@
       circle: {
         type: Boolean,
         default: false
+      },
+      // is outline
+      outline: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
@@ -63,6 +68,9 @@
 
         // circle
         classes['is-circle'] = this.circle
+
+        // outline
+        classes['is-outline'] = this.outline
 
         // return default and now classes
         return Object.assign({}, this.defaultClasses, classes)

@@ -19,6 +19,9 @@
     <demo-active></demo-active>
 
     <demo-circle></demo-circle>
+
+    <demo-outline></demo-outline>
+
   </div>
 </template>
 
@@ -29,6 +32,7 @@
   import DemoDisabled from './disabled'
   import DemoActive from './active'
   import DemoCircle from './circle'
+  import DemoOutline from './outline'
 
   export default {
     components: {
@@ -37,7 +41,8 @@
       DemoSize,
       DemoDisabled,
       DemoActive,
-      DemoCircle
+      DemoCircle,
+      DemoOutline
     }
   }
 </script>
