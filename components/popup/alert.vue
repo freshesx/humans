@@ -24,8 +24,8 @@
       return {
         show: false,
         title: 'Alert',
-        description: 'Can\'t use it.',
-        cancelText: 'Cancel'
+        description: '',
+        cancelText: 'Close'
       }
     }
   }
