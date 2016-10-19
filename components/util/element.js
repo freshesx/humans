@@ -5,9 +5,14 @@ export function element (ComponentClass, { Vue, dom, wrapper }) {
     el: wrapper || document.createElement('div')
   })
 
+  appendTo(component, dom)
+
+  return component
+}
+
+export function appendTo (component, dom) {
   dom = dom || document.body
   dom.appendChild(component.$el)
-
   return component
 }
 
