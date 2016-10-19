@@ -10,7 +10,7 @@
 
     <div class="card">
       <div class="card-header">
-        <div class="card-title">Popup</div>
+        <div class="card-title">Pure popup</div>
       </div>
       <div class="card-block">
         <button class="btn is-primary is-block" @click.prevent="openPopup">Open popup</button>
@@ -19,10 +19,19 @@
 
     <div class="card">
       <div class="card-header">
-        <div class="card-title">Center popup</div>
+        <div class="card-title">Confirm extend popup</div>
       </div>
       <div class="card-block">
-        <button class="btn is-warning is-block" @click.prevent="openConfirm">Open center popup</button>
+        <button class="btn is-warning is-block" @click.prevent="openConfirm">Delete</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Alert extend popup</div>
+      </div>
+      <div class="card-block">
+        <button class="btn is-secondary is-block" @click.prevent="openAlert">Alert</button>
       </div>
     </div>
   </div>
@@ -30,15 +39,21 @@
 
 <script>
   import Popup from './popup'
-  import Confirm from './confirm'
 
   export default {
     methods: {
       openPopup () {
-        this.popup = this.$element(Popup)
+        this.popup = this.$human.createElement(Popup)
       },
       openConfirm () {
-        this.confirm = this.$element(Confirm)
+        const confirm = this.$human.confirm({ show: true })
+
+        confirm.$on('confirm', () => {
+          console.log('成功')
+        })
+      },
+      openAlert () {
+        this.$human.alert({ show: true })
       }
     }
   }

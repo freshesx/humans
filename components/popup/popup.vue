@@ -1,13 +1,12 @@
 <template>
   <transition :name="transition">
-    <div class="popup" v-if="show" :class="{ 'is-center': center }" :style="style">
+    <div class="popup" v-if="show" :class="classes" :style="style">
       <slot></slot>
     </div>
   </transition>
 </template>
 
 <script>
-  import Element from '../util/element'
   import Mask from './mask'
   import { getZIndex } from './layer'
 
@@ -17,9 +16,22 @@
         type: Boolean,
         default: false
       },
-      center: {
+      position: {
+        type: String,
+        validator: (val) => {
+          return ['center', 'top'].includes(val)
+        }
+      },
+      animation: {
+        type: String,
+        default: 'fadeIn',
+        validator: (val) => {
+          return ['fadeIn', 'slideInDown'].includes(val)
+        }
+      },
+      masked: {
         type: Boolean,
-        default: false
+        default: true
       }
     },
     methods: {
@@ -28,14 +40,16 @@
         this.$emit('close')
       },
       appendMask (zIndex) {
-        this.mask = Element.create(Mask)
-        this.mask.zIndex = zIndex
-        this.mask.show = true
+        if (this.masked) {
+          this.mask = this.$human.element(Mask)
+          this.mask.zIndex = zIndex
+          this.mask.show = true
 
-        // Listen mask.close click event, and exec this.close()
-        this.mask.$on('mask.close', () => {
-          this.closePopup()
-        })
+          // Listen mask.close click event, and exec this.close()
+          this.mask.$on('close', () => {
+            this.closePopup()
+          })
+        }
       },
       destroyMask () {
         // If extis mask instance, then destory them
@@ -43,7 +57,6 @@
           this.mask.show = false
           this.mask.$el.remove()
           this.mask.$destroy()
-          delete this.mask
         }
       }
     },
@@ -61,12 +74,24 @@
     },
     computed: {
       transition () {
-        return this.center ? 'popup-fade' : 'popup-slide'
+        if (this.animation === 'fadeIn') {
+          return 'popup-fade'
+        }
+        if (this.animation === 'slideInDown') {
+          return 'popup-slide'
+        }
       },
       style () {
         return {
           'z-index': this.zIndex
         }
+      },
+      classes () {
+        let classes = {}
+
+        classes[`is-${this.position}`] = this.position
+
+        return classes
       }
     },
     data () {
