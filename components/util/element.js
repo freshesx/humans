@@ -10,3 +10,11 @@ export function createElement (ComponentClass, { Vue, dom, wrapper }) {
 
   return component
 }
+
+export default {
+  install (Vue, options) {
+    Vue.human.element = (ComponentClass, options) => {
+      return createElement(ComponentClass, Object.assign({ Vue }, options))
+    }
+  }
+}
