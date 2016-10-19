@@ -1,4 +1,4 @@
-export function createElement (ComponentClass, { Vue, dom, wrapper }) {
+export function element (ComponentClass, { Vue, dom, wrapper }) {
   const Component = Vue.extend(ComponentClass)
 
   let component = new Component({
@@ -14,7 +14,7 @@ export function createElement (ComponentClass, { Vue, dom, wrapper }) {
 export default {
   install (Vue, options) {
     Vue.human.element = (ComponentClass, options) => {
-      return createElement(ComponentClass, Object.assign({ Vue }, options))
+      return element(ComponentClass, Object.assign({ Vue }, options))
     }
   }
 }
