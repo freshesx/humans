@@ -1,10 +1,9 @@
 <template>
   <div class="bar-search">
-    <slot></slot>
     <mn-icon name="ios-search-strong"></mn-icon>
-    <input @focus="show = true" type="text" placeholder="Search something">
-    <transition name="ani-searchBar">
-      <button @click="show = false" v-if="show" class="is-error is-sm">cancel</button>
+    <input @focus="show = true" type="text" class="bar-search-input" placeholder="Search something">
+    <transition name="ani-bar-search">
+      <button @focus="show = false" v-if="show" class="bar-search-button is-error is-sm">cancel</button>
     </transition>
   </div>
 </template>

@@ -7,7 +7,7 @@ button:focus, input:focus{
 $-bar-search: #{$namespace}bar-search;
 $-bar-search-input: #{$namespace}bar-search-input;
 $-bar-search-button: #{$namespace}bar-search-button;
-$-ani-searchBar: #{$namespace}ani-searchBar;
+$-ani-bar-search: #{$namespace}ani-bar-search;
 
 .#{$-bar-search} {
   display: flex;
@@ -15,7 +15,7 @@ $-ani-searchBar: #{$namespace}ani-searchBar;
   position: relative;
   overflow: hidden;
   padding: 0 1rem;
-  input{
+  .#{$-bar-search-input} {
     flex: 1 1 auto;
     display: block;
     height: 2rem;
@@ -30,7 +30,7 @@ $-ani-searchBar: #{$namespace}ani-searchBar;
     top: 0.4rem;
     left: 1.4rem;
   }
-  button{
+  .#{$-bar-search-button} {
     flex: 0 0 auto;
     padding: 0 1rem;
     height: 2rem;
@@ -39,13 +39,13 @@ $-ani-searchBar: #{$namespace}ani-searchBar;
   }
 }
 
-.ani-searchBar-enter-active {
-  animation: ani-searchBar-in .25s ease;
+.ani-bar-search-enter-active {
+  animation: ani-bar-search-in .25s ease;
 }
-.ani-searchBar-leave-active {
-  animation: ani-searchBar-out .25s ease;
+.ani-bar-search-leave-active {
+  animation: ani-bar-search-out .25s ease;
 }
-@keyframes ani-searchBar-in {
+@keyframes ani-bar-search-in {
   0% {
     width: 0;
     opacity: 0;
@@ -57,7 +57,7 @@ $-ani-searchBar: #{$namespace}ani-searchBar;
     padding: 0 1rem;
   }
 }
-@keyframes ani-searchBar-out {
+@keyframes ani-bar-search-out {
   0% {
     width: auto;
     opacity: 1;
