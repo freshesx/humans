@@ -15,7 +15,7 @@ $-ani-bar-search: #{$namespace}ani-bar-search;
   position: relative;
   overflow: hidden;
   padding: 0 1rem;
-  .#{$-bar-search-input} {
+  input {
     flex: 1 1 auto;
     display: block;
     height: 2rem;
@@ -30,11 +30,12 @@ $-ani-bar-search: #{$namespace}ani-bar-search;
     top: 0.4rem;
     left: 1.4rem;
   }
-  .#{$-bar-search-button} {
+  button {
     flex: 0 0 auto;
     padding: 0 1rem;
     height: 2rem;
     border: 0;
+    color: $pink;
     background: transparent;
   }
 }
