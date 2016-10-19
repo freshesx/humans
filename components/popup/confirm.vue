@@ -28,8 +28,8 @@
     data () {
       return {
         show: false,
-        title: 'Confirm?',
-        description: 'your location is used to ?',
+        title: 'Confirm',
+        description: '',
         cancelText: 'Cancel',
         confirmText: 'OK'
       }
