@@ -28,3 +28,10 @@ export function setScroll (to) {
     $scroll.scrollTop(top)
   }, 0)
 }
+
+export default {
+  install (Vue) {
+    Vue.human.saveScroll = saveScroll
+    Vue.human.setScroll = setScroll
+  }
+}

@@ -1,8 +1,8 @@
 import lodash from 'lodash'
-import { saveScroll, setScroll } from './scroller/save'
 import components from './components'
 import element from './util/element'
 import popup from './popup'
+import scroller from './scroller'
 
 export default {
   options: {
@@ -21,13 +21,12 @@ export default {
     // Adding scroll save & set
     Vue.human = {
       prefix: this.options.prefix,
-      cssPrefix: this.options.cssPrefix,
-      saveScroll,
-      setScroll
+      cssPrefix: this.options.cssPrefix
     }
 
     Vue.prototype.$human = Vue.human
 
+    Vue.use(scroller)
     Vue.use(element)
     Vue.use(popup)
   }
