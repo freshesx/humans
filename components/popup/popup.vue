@@ -41,7 +41,7 @@
       },
       appendMask (zIndex) {
         if (this.masked) {
-          this.mask = this.$human.createElement(Mask)
+          this.mask = this.$human.element(Mask)
           this.mask.zIndex = zIndex
           this.mask.show = true
 

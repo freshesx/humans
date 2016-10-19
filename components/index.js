@@ -1,44 +1,33 @@
 import lodash from 'lodash'
-import { createElement } from './util/element'
-import { saveScroll, setScroll } from './scroller/save'
 import components from './components'
+import element from './util/element'
+import popup from './popup'
+import scroller from './scroller'
 
 export default {
-  prefix: 'Mn',
+  options: {
+    prefix: 'Mn',
+    cssPrefix: ''
+  },
   install (Vue, options) {
     // Assign default & options
-    options = Object.assign({}, options)
-
-    // Custom prefix
-    if (lodash.isString(options.prefix)) {
-      this.prefix = options.prefix
-    }
+    this.options = Object.assign({}, this.options, options)
 
     // Using components
     lodash.forEach(components, (component, name) => {
-      Vue.component(`${this.prefix}${name}`, component)
+      Vue.component(`${this.options.prefix}${name}`, component)
     })
 
     // Adding scroll save & set
     Vue.human = {
-      prefix: this.prefix,
-      cssPrefix: '',
-      saveScroll,
-      setScroll,
-      createElement (ComponentClass, options) {
-        return createElement(ComponentClass, Object.assign({ Vue }, options))
-      },
-      confirm ({ show }) {
-        const confirm = this.createElement(components.Confirm)
-
-        if (show) {
-          confirm.show = true
-        }
-
-        return confirm
-      }
+      prefix: this.options.prefix,
+      cssPrefix: this.options.cssPrefix
     }
 
     Vue.prototype.$human = Vue.human
+
+    Vue.use(scroller)
+    Vue.use(element)
+    Vue.use(popup)
   }
 }
