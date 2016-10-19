@@ -9,6 +9,7 @@ import PopupConfirm from './popup/confirm'
 import PopupAlert from './popup/alert'
 import InlineImage from './image/image'
 import BlockImage from './image/block-image'
+import TabBar from './bar/tab'
 
 export default {
   // Scroller
@@ -28,5 +29,6 @@ export default {
   PopupAlert,
   // Image
   InlineImage,
-  BlockImage
+  BlockImage,
+  TabBar
 }
