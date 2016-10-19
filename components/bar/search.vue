@@ -3,7 +3,7 @@
     <slot></slot>
     <mn-icon name="ios-search-strong"></mn-icon>
     <input @focus="show = true" type="text" placeholder="Search something">
-    <transition name="searchBar">
+    <transition name="ani-searchBar">
       <button @click="show = false" v-if="show" class="is-error is-sm">cancel</button>
     </transition>
   </div>

@@ -7,6 +7,7 @@ button:focus, input:focus{
 $-bar-search: #{$namespace}bar-search;
 $-bar-search-input: #{$namespace}bar-search-input;
 $-bar-search-button: #{$namespace}bar-search-button;
+$-ani-searchBar: #{$namespace}ani-searchBar;
 
 .#{$-bar-search} {
   display: flex;
@@ -38,13 +39,13 @@ $-bar-search-button: #{$namespace}bar-search-button;
   }
 }
 
-.searchBar-enter-active {
-  animation: searchBar-in .25s ease;
+.ani-searchBar-enter-active {
+  animation: ani-searchBar-in .25s ease;
 }
-.searchBar-leave-active {
-  animation: searchBar-out .25s ease;
+.ani-searchBar-leave-active {
+  animation: ani-searchBar-out .25s ease;
 }
-@keyframes searchBar-in {
+@keyframes ani-searchBar-in {
   0% {
     width: 0;
     opacity: 0;
@@ -56,7 +57,7 @@ $-bar-search-button: #{$namespace}bar-search-button;
     padding: 0 1rem;
   }
 }
-@keyframes searchBar-out {
+@keyframes ani-searchBar-out {
   0% {
     width: auto;
     opacity: 1;
