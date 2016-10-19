@@ -8,6 +8,7 @@ import Popup from './popup/popup'
 import Confirm from './popup/confirm'
 import InlineImage from './image/image'
 import BlockImage from './image/block-image'
+import SeachBar from './bar/search'
 
 export default {
   // Scroller
@@ -26,5 +27,7 @@ export default {
   Confirm,
   // Image
   InlineImage,
-  BlockImage
+  BlockImage,
+  // bar
+  SeachBar
 }

@@ -1,0 +1,70 @@
+@import "../variables";
+
+button:focus, input:focus{
+  outline: none;
+}
+
+$-bar-search: #{$namespace}bar-search;
+$-bar-search-input: #{$namespace}bar-search-input;
+$-bar-search-button: #{$namespace}bar-search-button;
+
+.#{$-bar-search} {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  padding: 0 1rem;
+  input{
+    flex: 1 1 auto;
+    display: block;
+    height: 2rem;
+    border: 0;
+    padding-left: 2rem;
+    background-color: #eee;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+  }
+  .icon{
+    position: absolute;
+    top: 0.4rem;
+    left: 1.4rem;
+  }
+  button{
+    flex: 0 0 auto;
+    padding: 0 1rem;
+    height: 2rem;
+    border: 0;
+    background: transparent;
+  }
+}
+
+.searchBar-enter-active {
+  animation: searchBar-in .25s ease;
+}
+.searchBar-leave-active {
+  animation: searchBar-out .25s ease;
+}
+@keyframes searchBar-in {
+  0% {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+  }
+  100% {
+    width: auto;
+    opacity: 1;
+    padding: 0 1rem;
+  }
+}
+@keyframes searchBar-out {
+  0% {
+    width: auto;
+    opacity: 1;
+    padding: 0 1rem;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+  }
+}

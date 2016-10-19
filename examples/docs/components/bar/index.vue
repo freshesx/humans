@@ -7,11 +7,17 @@
         <small>btn, input</small>
       </div>
     </div>
+
+    <demo-search></demo-search>
   </div>
 </template>
 
 <script>
-  export default {
+  import DemoSearch from './search'
 
+  export default {
+    components: {
+      DemoSearch
+    }
   }
 </script>
