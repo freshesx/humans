@@ -3,7 +3,7 @@
     <div class="card-header">
       <div class="card-title">Search Bar</div>
     </div>
-    <mn-seachBar :keyEnter="search"></mn-seachBar>
+    <mn-seachBar :thisKeyEnter="search"></mn-seachBar>
   </div>
 </template>
 
