@@ -20,13 +20,20 @@
     },
     props: {
       thisKeyEnter: {
-        type: Function
+        type: Function,
+        default: function () {
+          return
+        }
       },
       thisOninput: {
-        type: Function
+        type: Function,
+        default: function () {
+          return
+        }
       },
       value: {
-        type: String
+        type: String,
+        default: ''
       }
     },
     methods: {
