@@ -3,7 +3,11 @@
     <div class="card-header">
       <div class="card-title">Search Bar</div>
     </div>
-    <mn-searchBar :thisKeyEnter="search" :thisOninput="hello" v-model="value"></mn-searchBar>
+    <mn-searchBar
+    :thisKeyEnter="search"
+    :thisOninput="hello"
+    v-model="value">
+    </mn-searchBar>
     <p class="message">
       Messages is : {{ value }}
     </p>

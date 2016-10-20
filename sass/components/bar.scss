@@ -1,13 +1,28 @@
 @import "../variables";
 
-button:focus,
-input:focus {
-  outline: none;
-}
 $-bar-search: #{$namespace}bar-search;
 $-bar-search-input: #{$namespace}bar-search-input;
 $-bar-search-button: #{$namespace}bar-search-button;
 $-ani-bar-search: #{$namespace}ani-bar-search;
+$-bar-tab-lists: #{$namespace}bar-tab-lists;
+$-bar-tab-items: #{$namespace}bar-tab-items;
+$-bar-tab-text-color: #999;
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+ul,li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:active, a:hover, a:visited {
+  color: $-bar-tab-text-color;
+  text-decoration: none;
+}
 
 // @todo: add color-map
 .#{$-bar-search} {
@@ -26,7 +41,7 @@ $-ani-bar-search: #{$namespace}ani-bar-search;
       height: 2rem;
       width: 100%;
       border: 0;
-      border-radius: 3px;
+      border-radius: 5px;
       padding-left: 2rem;
       background-color: #eee;
       margin-bottom: 1rem;
@@ -81,4 +96,45 @@ $-ani-bar-search: #{$namespace}ani-bar-search;
     opacity: 0;
     padding: 0;
   }
+}
+
+.#{$-bar-tab-lists}{
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  & > .#{$-bar-tab-items} {
+    background-color: #fafafa;
+    display: flex;
+    flex-wrap: wrap;
+    height: 3rem;
+    color: $-bar-tab-text-color;
+    font-size: 1rem;
+    > a {
+      flex: 1 1 auto;
+      text-align: center;
+      height: 3rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 0.2rem 0;
+      &:hover{
+        color: $pink;
+      }
+      & > p,
+      & > .icon {
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 0;
+        font-size: 0.8rem;
+        align-self: center;
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $pink;
 }
