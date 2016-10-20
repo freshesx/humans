@@ -1,9 +1,9 @@
 @import "../variables";
 
-button:focus, input:focus{
+button:focus,
+input:focus {
   outline: none;
 }
-
 $-bar-search: #{$namespace}bar-search;
 $-bar-search-input: #{$namespace}bar-search-input;
 $-bar-search-button: #{$namespace}bar-search-button;
@@ -15,22 +15,30 @@ $-ani-bar-search: #{$namespace}ani-bar-search;
   position: relative;
   overflow: hidden;
   padding: 0 1rem;
-  input {
-    flex: 1 1 auto;
+
+  .#{$-bar-search-input} {
     display: block;
-    height: 2rem;
-    border: 0;
-    padding-left: 2rem;
-    background-color: #eee;
-    border-radius: 3px;
-    margin-bottom: 1rem;
+    flex: 1 1 auto;
+    position: relative;
+
+    input {
+      height: 2rem;
+      width: 100%;
+      border: 0;
+      border-radius: 3px;
+      padding-left: 2rem;
+      background-color: #eee;
+      margin-bottom: 1rem;
+    }
   }
-  .icon{
+
+  .icon.ifSearch {
     position: absolute;
     top: 0.4rem;
-    left: 1.4rem;
+    left: 0.5rem;
   }
-  button {
+
+  .#{$-bar-search-button} {
     flex: 0 0 auto;
     padding: 0 1rem;
     height: 2rem;
@@ -41,30 +49,33 @@ $-ani-bar-search: #{$namespace}ani-bar-search;
 }
 
 .ani-bar-search-enter-active {
-  animation: ani-bar-search-in .25s ease;
+  animation: ani-bar-search-in 0.25s ease;
 }
+
 .ani-bar-search-leave-active {
-  animation: ani-bar-search-out .25s ease;
+  animation: ani-bar-search-out 0.25s ease;
 }
 @keyframes ani-bar-search-in {
-  0% {
+  from {
     width: 0;
     opacity: 0;
     padding: 0;
   }
-  100% {
+
+  to {
     width: auto;
     opacity: 1;
     padding: 0 1rem;
   }
 }
 @keyframes ani-bar-search-out {
-  0% {
+  from {
     width: auto;
     opacity: 1;
     padding: 0 1rem;
   }
-  100% {
+
+  to {
     width: 0;
     opacity: 0;
     padding: 0;

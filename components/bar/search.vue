@@ -1,9 +1,11 @@
 <template>
   <div class="bar-search">
-    <mn-icon name="ios-search-strong"></mn-icon>
-    <input type="text" v-bind:value="value" v-on:input="onInput" v-model="message" @focus="show = true" @blur="show = false" @keyup.enter="userKeyEnter" placeholder="Search something">
+    <div class="bar-search-input">
+      <mn-icon name="ios-search-strong" class="ifSearch"></mn-icon>
+      <input type="text" v-bind:value="value" v-on:input="onInput" v-model="message" @focus="show = true" @blur="show = false" @keyup.enter="userKeyEnter" placeholder="Search something">
+    </div>
     <transition name="ani-bar-search">
-      <button @click="show = false" v-if="show">cancel</button>
+      <button @click="show = false" v-if="show" class="bar-search-button">cancel</button>
     </transition>
   </div>
 </template>
