@@ -10,6 +10,7 @@ import PopupAlert from './popup/alert'
 import InlineImage from './image/image'
 import BlockImage from './image/block-image'
 import TabBar from './bar/tab'
+import SeachBar from './bar/search'
 
 export default {
   // Scroller
@@ -30,5 +31,7 @@ export default {
   // Image
   InlineImage,
   BlockImage,
+  // bar
+  SeachBar,
   TabBar
 }

@@ -8,15 +8,20 @@
     </div>
 
     <demo-tab></demo-tab>
+
+    <demo-search></demo-search>
+
   </div>
 </template>
 
 <script>
   import DemoTab from './tab'
+  import DemoSearch from './search'
 
   export default {
     components: {
-      DemoTab
+      DemoTab,
+      DemoSearch
     }
   }
 </script>
