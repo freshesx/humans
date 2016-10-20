@@ -34,5 +34,6 @@
     margin-top: 0;
     color: #999;
     line-height: 1rem;
+    font-size: 0.8rem;
   }
 </style>
