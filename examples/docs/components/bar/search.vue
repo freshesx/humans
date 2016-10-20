@@ -3,9 +3,9 @@
     <div class="card-header">
       <div class="card-title">Search Bar</div>
     </div>
-    <mn-seachBar :thisKeyEnter="search" :thisKeyUp="hello" v-model="message"></mn-seachBar>
+    <mn-seachBar :thisKeyEnter="search" :thisOninput="hello" v-model="value"></mn-seachBar>
     <p class="message">
-      Messages is : {{ message }}
+      Messages is : {{ value }}
     </p>
   </div>
 </template>
@@ -22,7 +22,7 @@
     },
     data () {
       return {
-        message: ''
+        value: ''
       }
     }
   }
