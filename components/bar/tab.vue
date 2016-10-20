@@ -1,9 +1,7 @@
 <template>
-  <div class="card">
-    <div class="card-header">
-      <div class="card-title">Tab Bar</div>
-    </div>
-  </div>
+  <p>
+    hello
+  </p>
 </template>
 
 <script>
