@@ -7,6 +7,8 @@ $-ani-bar-search: #{$namespace}ani-bar-search;
 $-bar-tab-lists: #{$namespace}bar-tab-lists;
 $-bar-tab-items: #{$namespace}bar-tab-items;
 $-bar-tab-text-color: #999;
+$-bar-tab-active-color: $pink;
+$-bar-search-button-color: $pink;
 
 button:focus,
 input:focus {
@@ -24,7 +26,6 @@ a, a:active, a:hover, a:visited {
   text-decoration: none;
 }
 
-// @todo: add color-map
 .#{$-bar-search} {
   display: flex;
   flex-wrap: wrap;
@@ -59,7 +60,7 @@ a, a:active, a:hover, a:visited {
     padding: 0 1rem;
     height: 2rem;
     border: 0;
-    color: $pink;
+    color: $-bar-search-button-color;
     background: transparent;
   }
 }
@@ -111,7 +112,7 @@ a, a:active, a:hover, a:visited {
     height: 3rem;
     color: $-bar-tab-text-color;
     font-size: 1rem;
-    > a {
+    > .tabItem {
       flex: 1 1 auto;
       text-align: center;
       height: 3rem;
@@ -121,7 +122,7 @@ a, a:active, a:hover, a:visited {
       justify-content: space-around;
       padding: 0.2rem 0;
       &:hover{
-        color: $pink;
+        color: $-bar-tab-active-color;
       }
       & > p,
       & > .icon {
@@ -136,5 +137,5 @@ a, a:active, a:hover, a:visited {
 }
 
 .is-active {
-  color: $pink;
+  color: $-bar-tab-active-color;
 }

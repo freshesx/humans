@@ -21,7 +21,7 @@
         console.log('click enter.')
       },
       hello: function () {
-        console.log('Type something.')
+        console.log(this.$data.value)
       }
     },
     data () {
