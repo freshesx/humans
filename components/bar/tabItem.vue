@@ -26,12 +26,6 @@
       thisLink: {
         type: String,
         default: ''
-      },
-      changeFlag: {
-        type: Function,
-        default: function () {
-          return
-        }
       }
     },
     computed: {

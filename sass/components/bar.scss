@@ -65,38 +65,14 @@ a, a:active, a:hover, a:visited {
   }
 }
 
-.ani-bar-search-enter-active {
-  animation: ani-bar-search-in 0.25s ease;
+.bar-search-enter-active {
+  transition: all .5s ease;
 }
-
-.ani-bar-search-leave-active {
-  animation: ani-bar-search-out 0.25s ease;
+.bar-search-leave-active {
+  transition: all .3s ease;
 }
-@keyframes ani-bar-search-in {
-  from {
-    width: 0;
-    opacity: 0;
-    padding: 0;
-  }
-
-  to {
-    width: auto;
-    opacity: 1;
-    padding: 0 1rem;
-  }
-}
-@keyframes ani-bar-search-out {
-  from {
-    width: auto;
-    opacity: 1;
-    padding: 0 1rem;
-  }
-
-  to {
-    width: 0;
-    opacity: 0;
-    padding: 0;
-  }
+.bar-search-enter, .bar-search-leave-active {
+  opacity: 0;
 }
 
 .#{$-bar-tab-lists}{

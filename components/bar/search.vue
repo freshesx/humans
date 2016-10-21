@@ -11,7 +11,7 @@
       @keyup.enter="userKeyEnter"
       placeholder="Search something">
     </div>
-    <transition name="ani-bar-search">
+    <transition name="bar-search">
       <button class="bar-search-button"
       @click="show = false"
       v-if="show">cancel</button>
