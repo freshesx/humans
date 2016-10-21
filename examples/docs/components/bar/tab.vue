@@ -5,8 +5,8 @@
     </div>
     <mn-tabBar>
       <mn-tabItem title="首页" icon="ios-home" :thisRouter="router" thisLink="/"></mn-tabItem>
-      <mn-tabItem @click="flag = 1" title="首页" active></mn-tabItem>
-      <mn-tabItem @click="flag = 2" icon="ios-home"></mn-tabItem>
+      <mn-tabItem title="首页" active @click="flag = 1"></mn-tabItem>
+      <mn-tabItem icon="ios-home" @click="flag = 2"></mn-tabItem>
     </mn-tabBar>
     <div class="tab-card" v-if="flag == 1">
       <p>

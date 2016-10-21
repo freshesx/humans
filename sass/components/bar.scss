@@ -1,5 +1,4 @@
 @import "../variables";
-
 $-bar-search: #{$namespace}bar-search;
 $-bar-search-input: #{$namespace}bar-search-input;
 $-bar-search-button: #{$namespace}bar-search-button;
@@ -15,13 +14,17 @@ input:focus {
   outline: none;
 }
 
-ul,li{
+li,
+ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-a, a:active, a:hover, a:visited {
+a,
+a:active,
+a:hover,
+a:visited {
   color: $-bar-tab-text-color;
   text-decoration: none;
 }
@@ -66,28 +69,33 @@ a, a:active, a:hover, a:visited {
 }
 
 .bar-search-enter-active {
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
+
 .bar-search-leave-active {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
-.bar-search-enter, .bar-search-leave-active {
+
+.bar-search-enter,
+.bar-search-leave-active {
   opacity: 0;
 }
 
-.#{$-bar-tab-lists}{
+.#{$-bar-tab-lists} {
   position: relative;
   overflow: hidden;
   height: 3rem;
   margin: 1rem 0;
   padding: 0 1rem;
-  & > .#{$-bar-tab-items} {
+
+  > .#{$-bar-tab-items} {
     background-color: #fafafa;
     display: flex;
     flex-wrap: wrap;
     height: 3rem;
     color: $-bar-tab-text-color;
     font-size: 1rem;
+
     > .tabItem {
       flex: 1 1 auto;
       text-align: center;
@@ -97,11 +105,13 @@ a, a:active, a:hover, a:visited {
       flex-direction: column;
       justify-content: space-around;
       padding: 0.2rem 0;
-      &:hover{
+
+      &:hover {
         color: $-bar-tab-active-color;
       }
-      & > p,
-      & > .icon {
+
+      > .icon,
+      > p {
         flex: 0 0 auto;
         margin: 0;
         padding: 0;
