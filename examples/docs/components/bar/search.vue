@@ -1,0 +1,43 @@
+<template>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Search Bar</div>
+    </div>
+    <mn-searchBar
+    :thisKeyEnter="search"
+    :thisOninput="hello"
+    v-model="value">
+    </mn-searchBar>
+    <p class="message">
+      Messages is : {{ value }}
+    </p>
+  </div>
+</template>
+
+<script>
+  export default {
+    methods: {
+      search: function () {
+        console.log('click enter.')
+      },
+      hello: function () {
+        console.log(this.$data.value)
+      }
+    },
+    data () {
+      return {
+        value: ''
+      }
+    }
+  }
+</script>
+
+<style scoped>
+  .message{
+    padding: 0 1rem;
+    margin-top: 0;
+    color: #999;
+    line-height: 1rem;
+    font-size: 0.8rem;
+  }
+</style>
