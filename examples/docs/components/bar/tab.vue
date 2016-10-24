@@ -3,11 +3,11 @@
     <div class="card-header">
       <div class="card-title">Tab Bar</div>
     </div>
-    <mn-tabBar>
-      <mn-tabItem title="首页" icon="ios-home" @click="router('/')"></mn-tabItem>
-      <mn-tabItem title="首页" active @click="flag = 1"></mn-tabItem>
-      <mn-tabItem icon="ios-home" @click="flag = 2"></mn-tabItem>
-    </mn-tabBar>
+    <mn-tab-bar>
+      <mn-tab-item title="首页" icon="ios-home" @tab-click="router('/')"></mn-tab-item>
+      <mn-tab-item title="首页" active @tab-click="flag = 1"></mn-tab-item>
+      <mn-tab-item icon="ios-home" @tab-click="flag = 2"></mn-tab-item>
+    </mn-tab-bar>
     <div class="tab-card" v-if="flag == 1">
       <p>
         hello
