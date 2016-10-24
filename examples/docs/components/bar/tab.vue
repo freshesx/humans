@@ -4,7 +4,7 @@
       <div class="card-title">Tab Bar</div>
     </div>
     <mn-tabBar>
-      <mn-tabItem title="首页" icon="ios-home" :thisRouter="router" thisLink="/"></mn-tabItem>
+      <mn-tabItem title="首页" icon="ios-home" @click="router('/')"></mn-tabItem>
       <mn-tabItem title="首页" active @click="flag = 1"></mn-tabItem>
       <mn-tabItem icon="ios-home" @click="flag = 2"></mn-tabItem>
     </mn-tabBar>
@@ -26,8 +26,12 @@
   export default {
     data () {
       return {
-        router: router,
         flag: 1
+      }
+    },
+    methods: {
+      router: function (link) {
+        router.push({ path: link })
       }
     }
   }

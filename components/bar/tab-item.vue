@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" @click="routerGo()">
+  <div :class="classes" @click="click">
     <mn-icon :name="this.icon" v-if="this.icon"></mn-icon>
     <p v-if="this.title">{{ this.title }}</p>
   </div>
@@ -19,13 +19,6 @@
       active: {
         type: Boolean,
         default: false
-      },
-      thisRouter: {
-        type: Object
-      },
-      thisLink: {
-        type: String,
-        default: ''
       }
     },
     computed: {
@@ -37,10 +30,7 @@
       }
     },
     methods: {
-      routerGo: function (event) {
-        if (this.thisRouter && this.thisLink) {
-          this.thisRouter.push({ path: this.thisLink })
-        }
+      click: function (event) {
         this.$emit('click')
       }
     }
