@@ -10,7 +10,7 @@ import PopupAlert from './popup/alert'
 import InlineImage from './image/image'
 import BlockImage from './image/block-image'
 import TabBar from './bar/tab'
-import TabItem from './bar/tabItem'
+import TabItem from './bar/tab-item'
 import SearchBar from './bar/search'
 
 export default {

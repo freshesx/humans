@@ -3,18 +3,18 @@
     <div class="bar-search-input">
       <mn-icon name="ios-search-strong" class="ifSearch"></mn-icon>
       <input type="text"
-      v-bind:value="value"
-      v-on:input="onInput"
-      v-model="message"
-      @focus="show = true"
-      @blur="show = false"
-      @keyup.enter="userKeyEnter"
-      placeholder="Search something">
+        v-bind:value="value"
+        v-on:input="input"
+        v-model="message"
+        @focus="show = true"
+        @blur="show = false"
+        @keyup.enter="typying"
+        placeholder="Search something">
     </div>
     <transition name="bar-search">
       <button class="bar-search-button"
-      @click="show = false"
-      v-if="show">cancel</button>
+        @click="show = false"
+        v-if="show">cancel</button>
     </transition>
   </div>
 </template>
@@ -28,30 +28,17 @@
       }
     },
     props: {
-      thisKeyEnter: {
-        type: Function,
-        default: function () {
-          return
-        }
-      },
-      thisOninput: {
-        type: Function,
-        default: function () {
-          return
-        }
-      },
       value: {
         type: String,
         default: ''
       }
     },
     methods: {
-      userKeyEnter: function () {
-        return this.thisKeyEnter()
+      typying: function () {
+        this.$emit('enter')
       },
-      onInput: function (event) {
+      input: function (event) {
         this.$emit('input', event.target.value)
-        return this.thisOninput()
       }
     }
   }
