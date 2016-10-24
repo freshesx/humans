@@ -16,12 +16,12 @@
         type: String,
         default: ''
       },
-      active: {
-        type: Boolean,
-        default: false
-      },
       tab: {
         type: Object,
+        required: true
+      },
+      index: {
+        type: Number,
         required: true
       }
     },
@@ -29,13 +29,13 @@
       classes () {
         let classes = {}
         classes['tabItem'] = true
-        classes['is-active'] = this.active
+        classes['is-active'] = this.$parent.current === this.index
         return Object.assign({}, classes)
       }
     },
     methods: {
       click: function () {
-        this.$emit('tab-click')
+        this.$emit('tab-item-click')
       }
     }
   }
