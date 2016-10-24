@@ -8,14 +8,6 @@
 <script>
   export default {
     props: {
-      title: {
-        type: String,
-        default: ''
-      },
-      icon: {
-        type: String,
-        default: ''
-      },
       tab: {
         type: Object,
         required: true
@@ -36,6 +28,7 @@
     methods: {
       click: function () {
         this.$emit('tab-item-click')
+        this.tab.$router.push({ path: this.tab.link })
       }
     }
   }

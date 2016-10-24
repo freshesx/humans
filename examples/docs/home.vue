@@ -88,6 +88,11 @@
                 title: 'bar',
                 icon: 'ios-barcode',
                 route: { path: '/components/bar' }
+              },
+              {
+                title: 'tab',
+                icon: 'ios-barcode',
+                route: { path: '/components/tab' }
               }
             ]
           }

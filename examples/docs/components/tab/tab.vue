@@ -4,7 +4,12 @@
       <div class="card-title">Tab Bar</div>
     </div>
     <mn-tab-bar>
-      <mn-tab-pane title="首页" icon="ios-home" :router="router" link="/">1</mn-tab-pane>
+      <mn-tab-pane title="首页" icon="ios-home" link="/"></mn-tab-pane>
+      <mn-tab-pane title="首页" link="/"></mn-tab-pane>
+      <mn-tab-pane icon="ios-home" link="/"></mn-tab-pane>
+    </mn-tab-bar>
+    <mn-tab-bar>
+      <mn-tab-pane title="首页" icon="ios-home">1</mn-tab-pane>
       <mn-tab-pane title="首页">2</mn-tab-pane>
       <mn-tab-pane icon="ios-home">3</mn-tab-pane>
     </mn-tab-bar>

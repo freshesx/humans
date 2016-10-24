@@ -21,7 +21,8 @@
     data () {
       return {
         tabs: [],
-        current: 0
+        current: 0,
+        flag: 0
       }
     },
     mounted: function () {

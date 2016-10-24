@@ -12,6 +12,12 @@
       },
       icon: {
         type: String
+      },
+      router: {
+        type: Function
+      },
+      link: {
+        type: String
       }
     }
   }
