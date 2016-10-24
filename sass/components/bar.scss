@@ -3,32 +3,11 @@ $-bar-search: #{$namespace}bar-search;
 $-bar-search-input: #{$namespace}bar-search-input;
 $-bar-search-button: #{$namespace}bar-search-button;
 $-ani-bar-search: #{$namespace}ani-bar-search;
-$-bar-tab: #{$namespace}bar-tab;
-$-bar-tab-content: #{$namespace}bar-tab-content;
-$-bar-tab-lists: #{$namespace}bar-tab-lists;
-$-bar-tab-items: #{$namespace}bar-tab-items;
-$-bar-tab-text-color: #999;
-$-bar-tab-active-color: $pink;
 $-bar-search-button-color: $pink;
 
 button:focus,
 input:focus {
   outline: none;
-}
-
-li,
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-a,
-a:active,
-a:hover,
-a:visited {
-  color: $-bar-tab-text-color;
-  text-decoration: none;
 }
 
 .#{$-bar-search} {
@@ -81,56 +60,4 @@ a:visited {
 .bar-search-enter,
 .bar-search-leave-active {
   opacity: 0;
-}
-.#{$-bar-tab}{
-  width: 100%;
-  .#{$-bar-tab-content}{
-    padding-left: 1rem;
-    padding-bottom: 1rem;
-  }
-  .#{$-bar-tab-lists} {
-    position: relative;
-    overflow: hidden;
-    height: 3rem;
-    margin: 1rem 0;
-    padding: 0 1rem;
-
-    > .#{$-bar-tab-items} {
-      background-color: #fafafa;
-      display: flex;
-      flex-wrap: wrap;
-      height: 3rem;
-      color: $-bar-tab-text-color;
-      font-size: 1rem;
-
-      > .tabItem {
-        flex: 1 1 auto;
-        text-align: center;
-        height: 3rem;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 0.2rem 0;
-
-        &:hover {
-          color: $-bar-tab-active-color;
-        }
-
-        > .icon,
-        > p {
-          flex: 0 0 auto;
-          margin: 0;
-          padding: 0;
-          font-size: 0.8rem;
-          align-self: center;
-        }
-      }
-    }
-  }
-}
-
-
-.is-active {
-  color: $-bar-tab-active-color;
 }
