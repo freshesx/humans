@@ -7,17 +7,7 @@
 </template>
 
 <script>
-  import $ from 'jquery'
   export default {
-    mounted: function () {
-      $('.bar-tab-items').children().each(function () {
-        $(this).click(function () {
-          $('.bar-tab-items').children().each(function () {
-            $(this).removeClass('is-active')
-          })
-          $(this).addClass('is-active')
-        })
-      })
-    }
+
   }
 </script>

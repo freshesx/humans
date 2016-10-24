@@ -1,11 +1,12 @@
 <template>
-  <div :class="classes" @click="click">
+  <div :class="classes" @click="click" v-selected>
     <mn-icon :name="this.icon" v-if="this.icon"></mn-icon>
     <p v-if="this.title">{{ this.title }}</p>
   </div>
 </template>
 
 <script>
+  import $ from 'jquery'
   export default {
     props: {
       title: {
@@ -32,6 +33,14 @@
     methods: {
       click: function (event) {
         this.$emit('click')
+      }
+    },
+    directives: {
+      selected: function (el) {
+        $(el).click(function () {
+          $(this).addClass('is-active')
+          $(this).siblings().removeClass('is-active')
+        })
       }
     }
   }
