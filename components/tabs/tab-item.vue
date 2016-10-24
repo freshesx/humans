@@ -1,7 +1,7 @@
 <template>
   <div :class="classes" @click="click">
-    <mn-icon :name="this.icon" v-if="this.icon"></mn-icon>
-    <p v-if="this.title">{{ this.title }}</p>
+    <mn-icon :name="this.tab.icon" v-if="this.tab.icon"></mn-icon>
+    <p v-if="this.tab.title">{{ this.tab.title }}</p>
   </div>
 </template>
 
@@ -19,6 +19,10 @@
       active: {
         type: Boolean,
         default: false
+      },
+      tab: {
+        type: Object,
+        required: true
       }
     },
     computed: {

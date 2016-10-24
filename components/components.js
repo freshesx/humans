@@ -9,8 +9,9 @@ import PopupConfirm from './popup/confirm'
 import PopupAlert from './popup/alert'
 import InlineImage from './image/image'
 import BlockImage from './image/block-image'
-import TabBar from './bar/tab'
-import TabItem from './bar/tab-item'
+import TabBar from './tabs/tab'
+import TabItem from './tabs/tab-item'
+import TabPane from './tabs/tab-pane'
 import SearchBar from './bar/search'
 
 export default {
@@ -35,5 +36,6 @@ export default {
   // bar
   SearchBar,
   TabBar,
-  TabItem
+  TabItem,
+  TabPane
 }

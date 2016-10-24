@@ -4,20 +4,10 @@
       <div class="card-title">Tab Bar</div>
     </div>
     <mn-tab-bar>
-      <mn-tab-item title="首页" icon="ios-home" @tab-click="router('/')"></mn-tab-item>
-      <mn-tab-item title="首页" active @tab-click="flag = 1"></mn-tab-item>
-      <mn-tab-item icon="ios-home" @tab-click="flag = 2"></mn-tab-item>
+      <mn-tab-pane title="首页" icon="ios-home">1</mn-tab-pane>
+      <mn-tab-pane title="首页">2</mn-tab-pane>
+      <mn-tab-pane icon="ios-home">3</mn-tab-pane>
     </mn-tab-bar>
-    <div class="tab-card" v-if="flag == 1">
-      <p>
-        hello
-      </p>
-    </div>
-    <div class="tab-card" v-if="flag == 2">
-      <p>
-        world
-      </p>
-    </div>
   </div>
 </template>
 

@@ -2,22 +2,22 @@
   <div class="section">
     <div class="letter">
       <div class="letter-body">
-        <h1>Bar</h1>
-        <small>btn, input</small>
+        <h1>Tabs</h1>
+        <small>tab</small>
       </div>
     </div>
 
-    <demo-search></demo-search>
+    <demo-tab></demo-tab>
 
   </div>
 </template>
 
 <script>
-  import DemoSearch from './search'
+  import DemoTab from './tab'
 
   export default {
     components: {
-      DemoSearch
+      DemoTab
     }
   }
 </script>
