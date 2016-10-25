@@ -35,6 +35,7 @@ export default {
   BlockImage,
   // bar
   SearchBar,
+  // tab
   TabBar,
   TabItem,
   TabPane

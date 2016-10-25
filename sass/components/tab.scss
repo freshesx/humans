@@ -1,6 +1,13 @@
 @import "../variables";
 $-tab-bottom: #{$namespace}tab-bottom;
 $-tab-item-bottom: #{$namespace}tab-item-bottom;
+$-tab: #{$namespace}tab;
+$-tab-content: #{$namespace}tab-content;
+$-tab-list: #{$namespace}tab-list;
+$-tab-item: #{$namespace}tab-item;
+$-tab-background: #fafafa;
+$-tab-text-color: #999;
+$-tab-active-color: $pink;
 
 .#{$-tab-bottom} {
   display: flex;
@@ -27,71 +34,56 @@ $-tab-item-bottom: #{$namespace}tab-item-bottom;
     color: #fff;
   }
 }
-@import "../variables";
-$-tab: #{$namespace}tab;
-$-tab-content: #{$namespace}tab-content;
-$-tab-list: #{$namespace}tab-list;
-$-tab-item: #{$namespace}tab-item;
-$-tab-text-color: #999;
-$-tab-active-color: $pink;
 
-li,
-ul {
+.#{$-tab} li,
+.#{$-tab} ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-a,
-a:active,
-a:hover,
-a:visited {
+.#{$-tab} a,
+.#{$-tab} a:active,
+.#{$-tab} a:hover,
+.#{$-tab} a:visited {
   color: $-tab-text-color;
   text-decoration: none;
 }
 
 .#{$-tab} {
   width: 100%;
+}
+.#{$-tab-content} {
+  padding: 0 1rem;
+}
 
-  .#{$-tab-content} {
-    padding-left: 1rem;
-  }
+.#{$-tab-list} {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  height: 3rem;
+  margin: 1rem;
+  background-color: $-tab-background;
+  color: $-tab-text-color;
+}
 
-  .#{$-tab-list} {
-    position: relative;
-    overflow: hidden;
-    height: 3rem;
-    margin: 1rem 0;
-    padding: 0 1rem;
+.#{$-tab-item} {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 3rem;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.2rem 0;
 
-    > .#{$-tab-item} {
-      background-color: #fafafa;
-      display: flex;
-      flex-wrap: wrap;
-      height: 3rem;
-      color: $-tab-text-color;
-      font-size: 1rem;
-
-      > .tabItem {
-        flex: 1 1 auto;
-        text-align: center;
-        height: 3rem;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 0.2rem 0;
-
-        > p,
-        > .icon {
-          flex: 0 0 auto;
-          margin: 0;
-          padding: 0;
-          font-size: 0.8rem;
-          align-self: center;
-        }
-      }
-    }
+  p,
+  .icon {
+    flex: 0 0 auto;
+    align-self: center;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
   }
 }
 

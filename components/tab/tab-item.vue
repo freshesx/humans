@@ -17,12 +17,18 @@
         required: true
       }
     },
+    data () {
+      return {
+        defaultClasses: {
+          [`${this.$human.cssPrefix}tab-item`]: true
+        }
+      }
+    },
     computed: {
       classes () {
         let classes = {}
-        classes['tabItem'] = true
         classes['is-active'] = this.$parent.current === this.index
-        return Object.assign({}, classes)
+        return Object.assign({}, this.defaultClasses, classes)
       }
     },
     methods: {
