@@ -7,6 +7,7 @@
           :tab="tab"
           :index="index"
           @tab-item-click="changeCurrent(index)"
+          ref="tab"
         ></mn-tab-item>
       </div>
     </div>
@@ -21,8 +22,14 @@
     data () {
       return {
         tabs: [],
-        current: 0,
+        current: this.defaultIndex,
         flag: 0
+      }
+    },
+    props: {
+      defaultIndex: {
+        type: Number,
+        default: 0
       }
     },
     mounted: function () {

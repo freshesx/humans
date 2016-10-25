@@ -29,6 +29,12 @@
       click: function () {
         this.$emit('tab-item-click')
         this.tab.$router.push({ path: this.tab.link })
+        this.$parent.flag = this.tab._uid
+      }
+    },
+    mounted: function () {
+      if (this.$parent.current === this.index) {
+        this.$parent.flag = this.tab._uid
       }
     }
   }

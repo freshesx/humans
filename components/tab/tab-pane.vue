@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="this.$parent.flag === this._uid && this.show">
     <slot></slot>
   </div>
 </template>
@@ -13,11 +13,12 @@
       icon: {
         type: String
       },
-      router: {
-        type: Function
-      },
       link: {
         type: String
+      },
+      show: {
+        type: Boolean,
+        default: false
       }
     }
   }
