@@ -26,7 +26,7 @@
         type: String,
         default: 'fadeIn',
         validator: (val) => {
-          return ['fadeIn', 'slideInDown'].includes(val)
+          return ['fadeIn', 'slideInDown', 'slideInUp'].includes(val)
         }
       },
       masked: {
@@ -79,6 +79,9 @@
         }
         if (this.animation === 'slideInDown') {
           return 'popup-slide'
+        }
+        if (this.animation === 'slideInUp') {
+          return 'popup-slideup'
         }
       },
       style () {
