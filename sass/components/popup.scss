@@ -67,5 +67,5 @@ $-popup-mask: #{$namespace}popup-mask;
 }
 .#{$-popup}-slideup-enter,
 .#{$-popup}-slideup-leave-active {
-  transform: translateY(100%);
+  transform: translateY(-100%);
 }

@@ -1,8 +1,8 @@
 <template>
-  <mn-popup :show="show" animation="slideInUp" position="top">
+  <mn-popup :show="show" animation="slideInUp" position="top" :masked="false">
     <div class="card m-b-1">
       <div class="card-block is-center-text">
-        <small>This photo will be deleted from iCloud Photo Library on all your devices.</small>
+        <small>{{ description }}</small>
       </div>
     </div>
   </mn-popup>
@@ -19,8 +19,7 @@
     data () {
       return {
         show: false,
-        title: 'Toastr Message',
-        description: '',
+        description: 'Toastr Message',
         cancelText: 'Close'
       }
     }
