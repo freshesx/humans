@@ -43,8 +43,8 @@ const router = new VueRouter({
       component: resolve => { require(['./docs/components/icon'], resolve) }
     },
     {
-      path: '/components/bar',
-      component: resolve => { require(['./docs/components/bar'], resolve) }
+      path: '/components/searchbar',
+      component: resolve => { require(['./docs/components/searchbar'], resolve) }
     },
     {
       path: '/components/tab',

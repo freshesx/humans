@@ -12,7 +12,7 @@ import BlockImage from './image/block-image'
 import TabBar from './tab/tab'
 import TabItem from './tab/tab-item'
 import TabPane from './tab/tab-pane'
-import SearchBar from './bar/search'
+import SearchBar from './searchbar/search'
 
 export default {
   // Scroller
