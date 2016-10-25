@@ -1,19 +1,15 @@
 <template>
-  <div class="tab">
-    <div class="tab-list">
-      <div class="tab-item">
-        <mn-tab-item
-          v-for="(tab, index) in tabs"
-          :tab="tab"
-          :index="index"
-          @tab-item-click="changeCurrent(index)"
-          ref="tab"
-        ></mn-tab-item>
-      </div>
+  <div :class="tab">
+    <div :class="tablist">
+      <mn-tab-item
+        v-for="(tab, index) in tabs"
+        :tab="tab"
+        :index="index"
+        @tab-item-click="changeCurrent(index)"
+        ref="tab"
+      ></mn-tab-item>
     </div>
-    <div class="tab-content">
-      <slot></slot>
-    </div>
+    <slot></slot>
   </div>
 </template>
 
@@ -23,7 +19,8 @@
       return {
         tabs: [],
         current: this.index,
-        flag: 0
+        flag: 0,
+        defaultClasses: this.$human.cssPrefix
       }
     },
     props: {
@@ -38,6 +35,18 @@
     methods: {
       changeCurrent: function (index) {
         this.current = index
+      }
+    },
+    computed: {
+      tab () {
+        let classes = {}
+        classes[`${this.defaultClasses}tab`] = true
+        return Object.assign({}, classes)
+      },
+      tablist () {
+        let classes = {}
+        classes[`${this.defaultClasses}tab-list`] = true
+        return Object.assign({}, classes)
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.$parent.flag === this._uid && this.show">
+  <div :class="classes" v-if="this.$parent.flag === this._uid && this.show">
     <slot></slot>
   </div>
 </template>
@@ -19,6 +19,19 @@
       show: {
         type: Boolean,
         default: false
+      }
+    },
+    data () {
+      return {
+        defaultClasses: {
+          [`${this.$human.cssPrefix}tab-content`]: true
+        }
+      }
+    },
+    computed: {
+      classes () {
+        let classes = {}
+        return Object.assign({}, this.defaultClasses, classes)
       }
     }
   }
