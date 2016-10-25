@@ -1,7 +1,7 @@
 <template>
-  <div class="bar-search">
-    <div class="bar-search-input">
-      <mn-icon name="ios-search-strong" class="ifSearch"></mn-icon>
+  <div :class="search">
+    <div :class="search_input">
+      <mn-icon name="ios-search-strong"></mn-icon>
       <input type="text"
         v-bind:value="value"
         v-on:input="input"
@@ -12,7 +12,7 @@
         placeholder="Search something">
     </div>
     <transition name="bar-search">
-      <button class="bar-search-button"
+      <button :class="search_button"
         @click="show = false"
         v-if="show">cancel</button>
     </transition>
@@ -24,7 +24,8 @@
     data () {
       return {
         show: false,
-        message: ''
+        message: '',
+        defaultClasses: this.$human.cssPrefix
       }
     },
     props: {
@@ -39,6 +40,23 @@
       },
       input: function (event) {
         this.$emit('input', event.target.value)
+      }
+    },
+    computed: {
+      search () {
+        let classes = {}
+        classes[`${this.defaultClasses}bar-search`] = true
+        return Object.assign({}, classes)
+      },
+      search_input () {
+        let classes = {}
+        classes[`${this.defaultClasses}bar-search-input`] = true
+        return Object.assign({}, classes)
+      },
+      search_button () {
+        let classes = {}
+        classes[`${this.defaultClasses}bar-search-button`] = true
+        return Object.assign({}, classes)
       }
     }
   }
