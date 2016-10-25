@@ -91,7 +91,7 @@
               },
               {
                 title: 'tab',
-                icon: 'ios-barcode',
+                icon: 'ios-barcode-outline',
                 route: { path: '/components/tab' }
               }
             ]

@@ -28,7 +28,9 @@
     methods: {
       click: function () {
         this.$emit('tab-item-click')
-        this.tab.$router.push({ path: this.tab.link })
+        if (this.tab.link) {
+          this.tab.$router.push({ path: this.tab.link })
+        }
         this.$parent.flag = this.tab._uid
       }
     },

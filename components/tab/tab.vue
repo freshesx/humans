@@ -1,7 +1,7 @@
 <template>
-  <div class="bar-tab">
-    <div class="bar-tab-lists">
-      <div class="bar-tab-items">
+  <div class="tab">
+    <div class="tab-list">
+      <div class="tab-item">
         <mn-tab-item
           v-for="(tab, index) in tabs"
           :tab="tab"
@@ -11,7 +11,7 @@
         ></mn-tab-item>
       </div>
     </div>
-    <div class="bar-tab-content">
+    <div class="tab-content">
       <slot></slot>
     </div>
   </div>
@@ -22,12 +22,12 @@
     data () {
       return {
         tabs: [],
-        current: this.defaultIndex,
+        current: this.index,
         flag: 0
       }
     },
     props: {
-      defaultIndex: {
+      index: {
         type: Number,
         default: 0
       }

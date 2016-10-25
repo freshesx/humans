@@ -1,9 +1,8 @@
 @import "../variables";
+$-tab-bottom: #{$namespace}tab-bottom;
+$-tab-item-bottom: #{$namespace}tab-item-bottom;
 
-$-tab: #{$namespace}tab;
-$-tab-item: #{$namespace}tab-item;
-
-.#{$-tab} {
+.#{$-tab-bottom} {
   display: flex;
   position: fixed;
   width: 100%;
@@ -14,7 +13,7 @@ $-tab-item: #{$namespace}tab-item;
   backdrop-filter: blur(10px);
 }
 
-.#{$-tab-item} {
+.#{$-tab-item-bottom} {
   flex: 1 1;
   text-align: center;
   white-space: nowrap;
@@ -27,4 +26,75 @@ $-tab-item: #{$namespace}tab-item;
     background: darken($green, 10%);
     color: #fff;
   }
+}
+@import "../variables";
+$-tab: #{$namespace}tab;
+$-tab-content: #{$namespace}tab-content;
+$-tab-list: #{$namespace}tab-list;
+$-tab-item: #{$namespace}tab-item;
+$-tab-text-color: #999;
+$-tab-active-color: $pink;
+
+li,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:active,
+a:hover,
+a:visited {
+  color: $-tab-text-color;
+  text-decoration: none;
+}
+
+.#{$-tab} {
+  width: 100%;
+
+  .#{$-tab-content} {
+    padding-left: 1rem;
+  }
+
+  .#{$-tab-list} {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    margin: 1rem 0;
+    padding: 0 1rem;
+
+    > .#{$-tab-item} {
+      background-color: #fafafa;
+      display: flex;
+      flex-wrap: wrap;
+      height: 3rem;
+      color: $-tab-text-color;
+      font-size: 1rem;
+
+      > .tabItem {
+        flex: 1 1 auto;
+        text-align: center;
+        height: 3rem;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0.2rem 0;
+
+        > p,
+        > .icon {
+          flex: 0 0 auto;
+          margin: 0;
+          padding: 0;
+          font-size: 0.8rem;
+          align-self: center;
+        }
+      }
+    }
+  }
+}
+
+.is-active {
+  color: $-tab-active-color;
 }

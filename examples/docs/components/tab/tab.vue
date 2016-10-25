@@ -3,20 +3,20 @@
     <div class="card-header">
       <div class="card-title">Tab Bar</div>
     </div>
-    <mn-tab-bar :defaultIndex="0">
-      <mn-tab-pane title="首页" icon="ios-home" link="/"></mn-tab-pane>
-      <mn-tab-pane title="首页" link="/"></mn-tab-pane>
-      <mn-tab-pane icon="ios-home" link="/"></mn-tab-pane>
+    <mn-tab-bar>
+      <mn-tab-pane title="Home" icon="ios-home" link="/"></mn-tab-pane>
+      <mn-tab-pane title="Home" link="/components/icon"></mn-tab-pane>
+      <mn-tab-pane icon="ios-home" link="/components/popup"></mn-tab-pane>
     </mn-tab-bar>
-    <mn-tab-bar :defaultIndex="0">
-      <mn-tab-pane title="首页" icon="ios-home" show>
+    <mn-tab-bar :index="2">
+      <mn-tab-pane title="Home" icon="ios-home" show>
         <p class="example">hello</p>
       </mn-tab-pane>
-      <mn-tab-pane title="首页" show>
+      <mn-tab-pane title="Home" show>
         <p class="example">world</p>
       </mn-tab-pane>
       <mn-tab-pane icon="ios-home" show>
-        <p class="example">!</p>
+        <p class="example">my friend</p>
       </mn-tab-pane>
     </mn-tab-bar>
   </div>
