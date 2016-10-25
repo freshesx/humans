@@ -5,11 +5,6 @@ $-bar-search-button: #{$namespace}bar-search-button;
 $-ani-bar-search: #{$namespace}ani-bar-search;
 $-bar-search-button-color: $pink;
 
-button:focus,
-input:focus {
-  outline: none;
-}
-
 .#{$-bar-search} {
   display: flex;
   flex-wrap: wrap;
@@ -17,36 +12,41 @@ input:focus {
   overflow: hidden;
   padding: 0 1rem;
 
-  .#{$-bar-search-input} {
-    display: block;
-    flex: 1 1 auto;
-    position: relative;
-
-    input {
-      height: 2rem;
-      width: 100%;
-      border: 0;
-      border-radius: 5px;
-      padding-left: 2rem;
-      background-color: #eee;
-      margin-bottom: 1rem;
-    }
-  }
-
-  .icon.ifSearch {
+  .icon {
     position: absolute;
     top: 0.4rem;
     left: 0.5rem;
   }
+}
 
-  .#{$-bar-search-button} {
-    flex: 0 0 auto;
-    padding: 0 1rem;
+.#{$-bar-search} button:focus,
+.#{$-bar-search} input:focus {
+  outline: none;
+}
+
+.#{$-bar-search-input} {
+  display: block;
+  flex: 1 1 auto;
+  position: relative;
+
+  input {
     height: 2rem;
+    width: 100%;
     border: 0;
-    color: $-bar-search-button-color;
-    background: transparent;
+    border-radius: 5px;
+    padding-left: 2rem;
+    background-color: #eee;
+    margin-bottom: 1rem;
   }
+}
+
+.#{$-bar-search-button} {
+  flex: 0 0 auto;
+  padding: 0 1rem;
+  height: 2rem;
+  border: 0;
+  color: $-bar-search-button-color;
+  background: transparent;
 }
 
 .bar-search-enter-active {

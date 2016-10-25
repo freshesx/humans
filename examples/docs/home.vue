@@ -85,9 +85,9 @@
                 route: { path: '/components/popup' }
               },
               {
-                title: 'bar',
+                title: 'searchbar',
                 icon: 'ios-barcode',
-                route: { path: '/components/bar' }
+                route: { path: '/components/searchbar' }
               },
               {
                 title: 'tab',
