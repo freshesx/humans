@@ -40,23 +40,22 @@
       },
       input: function (event) {
         this.$emit('input', event.target.value)
+      },
+      setClass: function (name) {
+        let classes = {}
+        classes[`${this.defaultClasses}${name}`] = true
+        return Object.assign({}, classes)
       }
     },
     computed: {
       search () {
-        let classes = {}
-        classes[`${this.defaultClasses}bar-search`] = true
-        return Object.assign({}, classes)
+        return this.setClass('bar-search')
       },
       search_input () {
-        let classes = {}
-        classes[`${this.defaultClasses}bar-search-input`] = true
-        return Object.assign({}, classes)
+        return this.setClass('bar-search-input')
       },
       search_button () {
-        let classes = {}
-        classes[`${this.defaultClasses}bar-search-button`] = true
-        return Object.assign({}, classes)
+        return this.setClass('bar-search-button')
       }
     }
   }
