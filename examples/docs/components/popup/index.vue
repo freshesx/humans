@@ -31,7 +31,7 @@
         <div class="card-title">Toastr Message extend popup</div>
       </div>
       <div class="card-block">
-        <mn-btn type="error" block @click.native.prevent="openToastr">Toastr Message</mn-btn>
+        <mn-btn type="primary" block @click.native.prevent="openToastr">Toastr Message</mn-btn>
       </div>
     </div>
 

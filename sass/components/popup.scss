@@ -61,11 +61,15 @@ $-popup-mask: #{$namespace}popup-mask;
   opacity: 0
 }
 
-.#{$-popup}-slideup-enter-active,
-.#{$-popup}-slideup-leave-active {
+.#{$-popup}-slideup-enter-active {
   transition: transform 0.3s;
 }
-.#{$-popup}-slideup-enter,
 .#{$-popup}-slideup-leave-active {
+  transition: opacity 0.3s linear;
+}
+.#{$-popup}-slideup-enter {
   transform: translateY(-100%);
+}
+.#{$-popup}-slideup-leave-active {
+  opacity: 0
 }
