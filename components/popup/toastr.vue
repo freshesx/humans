@@ -20,8 +20,8 @@
     data () {
       return {
         show: false,
-        description: 'Toastr Message',
-        icon: ''
+        description: 'You have a message',
+        icon: 'chatbubbles'
       }
     },
     mounted: function () {

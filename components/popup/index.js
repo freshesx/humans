@@ -10,11 +10,9 @@ import Toastr from './toastr'
  * @param  {Boolean}  options.show            show or hide, default hide
  * @return {Object}                           Vue component instance
  */
-function buildComponent ({ Vue, ComponentClass, show, description, icon }) {
+function buildComponent ({ Vue, ComponentClass, show }) {
   const component = element(ComponentClass, { Vue })
   component.show = show
-  component.description = description
-  component.icon = icon
   return component
 }
 

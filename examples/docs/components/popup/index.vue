@@ -67,8 +67,7 @@
       openToastr () {
         this.$human.toastr({
           show: true,
-          description: 'Hello World!', // description for ToastrMessage
-          icon: 'aperture' // icon for ToastrMessage
+          icon: 'arrow-graph-up-left'
         })
       }
     }
