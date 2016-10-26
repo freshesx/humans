@@ -13,6 +13,7 @@
 </template>
 
 <script>
+  import classes from './classes'
   export default {
     data () {
       return {
@@ -35,20 +36,14 @@
     methods: {
       changeCurrent: function (index) {
         this.current = index
-      },
-      setClass: function (name) {
-        let classes = {}
-        classes[`${this.defaultClasses}${name}`] = true
-        return Object.assign({}, classes)
-        // Add css prefix
       }
     },
     computed: {
       tab () {
-        return this.setClass('tab')
+        return classes('tab')
       },
       tablist () {
-        return this.setClass('tab-list')
+        return classes('tab-list')
       }
     }
   }
