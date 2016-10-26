@@ -18,13 +18,13 @@
     data () {
       return {
         tabs: [],
-        current: this.index,
+        current: this.selected,
         flag: 0,
         defaultClasses: this.$human.cssPrefix
       }
     },
     props: {
-      index: {
+      selected: {
         type: Number,
         default: 0
       }
