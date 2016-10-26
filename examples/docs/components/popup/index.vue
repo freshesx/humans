@@ -65,10 +65,7 @@
         this.$human.alert({ show: true })
       },
       openToastr () {
-        this.$human.toastr({
-          show: true,
-          icon: 'arrow-graph-up-left'
-        })
+        this.$human.toastr({ show: true })
       }
     }
   }
