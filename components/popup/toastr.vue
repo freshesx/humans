@@ -2,7 +2,7 @@
   <mn-popup :show="show" animation="slideInUp" position="top" :masked="false">
     <div class="card m-b-1" style="max-width: 500px; margin: 0 auto;">
       <div class="card-block">
-        <mn-icon name="ios-search-strong"></mn-icon>
+        <mn-icon :name="icon"></mn-icon>
         <small>{{ description }}</small>
       </div>
     </div>
@@ -21,13 +21,14 @@
       return {
         show: false,
         description: 'Toastr Message',
-        cancelText: 'Close'
+        icon: ''
       }
     },
     mounted: function () {
       setTimeout(() => {
         this.show = false
       }, 2000)
+      // automatic close after 2s
     }
   }
 </script>

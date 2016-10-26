@@ -65,7 +65,11 @@
         this.$human.alert({ show: true })
       },
       openToastr () {
-        this.$human.toastr({ show: true })
+        this.$human.toastr({
+          show: true,
+          description: 'Hello World!', // description for ToastrMessage
+          icon: 'aperture' // icon for ToastrMessage
+        })
       }
     }
   }
