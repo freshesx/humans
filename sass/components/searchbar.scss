@@ -60,4 +60,5 @@ $-bar-search-button-color: $pink;
 .bar-search-enter,
 .bar-search-leave-active {
   opacity: 0;
+  transform: translateX(100%);
 }

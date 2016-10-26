@@ -45,6 +45,7 @@
         let classes = {}
         classes[`${this.defaultClasses}${name}`] = true
         return Object.assign({}, classes)
+        // Add css prefix
       }
     },
     computed: {
