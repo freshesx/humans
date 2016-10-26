@@ -32,6 +32,7 @@
       classes () {
         let classes = {}
         return Object.assign({}, this.defaultClasses, classes)
+        // Add css prefix
       }
     }
   }

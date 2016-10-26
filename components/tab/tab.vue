@@ -6,7 +6,6 @@
         :tab="tab"
         :index="index"
         @tab-item-click="changeCurrent(index)"
-        ref="tab"
       ></mn-tab-item>
     </div>
     <slot></slot>
@@ -31,6 +30,7 @@
     },
     mounted: function () {
       this.$children.forEach(tab => this.tabs.push(tab))
+      // Add contents to items
     },
     methods: {
       changeCurrent: function (index) {
@@ -40,6 +40,7 @@
         let classes = {}
         classes[`${this.defaultClasses}${name}`] = true
         return Object.assign({}, classes)
+        // Add css prefix
       }
     },
     computed: {

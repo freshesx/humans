@@ -29,6 +29,7 @@
         let classes = {}
         classes['is-active'] = this.$parent.current === this.index
         return Object.assign({}, this.defaultClasses, classes)
+        // Add css prefix
       }
     },
     methods: {
@@ -36,8 +37,10 @@
         this.$emit('tab-item-click')
         if (this.tab.link) {
           this.tab.$router.push({ path: this.tab.link })
+          // if have ':link', add router.push
         }
         this.$parent.flag = this.tab._uid
+        // show this item's content, tracking by _uid
       }
     },
     mounted: function () {
