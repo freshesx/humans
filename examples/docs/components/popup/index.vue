@@ -28,6 +28,15 @@
 
     <div class="card">
       <div class="card-header">
+        <div class="card-title">Toastr Message extend popup</div>
+      </div>
+      <div class="card-block">
+        <mn-btn type="primary" block @click.native.prevent="openToastr">Toastr Message</mn-btn>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
         <div class="card-title">Custom popup (Activity sheets)</div>
       </div>
       <div class="card-block">
@@ -54,6 +63,9 @@
       },
       openAlert () {
         this.$human.alert({ show: true })
+      },
+      openToastr () {
+        this.$human.toastr({ show: true })
       }
     }
   }
