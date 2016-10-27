@@ -17,11 +17,11 @@ $-bar-search-button-color: $pink;
     top: 0.4rem;
     left: 0.5rem;
   }
-}
 
-.#{$-bar-search} button:focus,
-.#{$-bar-search} input:focus {
-  outline: none;
+  button:focus,
+  input:focus {
+    outline: none;
+  }
 }
 
 .#{$-bar-search-input} {

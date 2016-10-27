@@ -7,17 +7,17 @@
       </div>
     </div>
 
-    <demo-search></demo-search>
+    <demo-search-bar></demo-search-bar>
 
   </div>
 </template>
 
 <script>
-  import DemoSearch from './search'
+  import DemoSearchBar from './search'
 
   export default {
     components: {
-      DemoSearch
+      DemoSearchBar
     }
   }
 </script>
