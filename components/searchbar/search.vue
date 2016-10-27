@@ -2,7 +2,8 @@
   <div :class="search">
     <div :class="search_input">
       <mn-icon name="ios-search-strong"></mn-icon>
-      <input type="text"
+      <input
+        type="text"
         v-bind:value="value"
         v-on:input="input"
         v-model="message"
@@ -12,9 +13,11 @@
         placeholder="Search something">
     </div>
     <transition name="bar-search">
-      <button :class="search_button"
+      <button
+        :class="search_button"
         @click="show = false"
-        v-if="show">cancel</button>
+        v-if="show"
+      >cancel</button>
     </transition>
   </div>
 </template>
@@ -45,6 +48,7 @@
         let classes = {}
         classes[`${this.defaultClasses}${name}`] = true
         return Object.assign({}, classes)
+        // Add css prefix
       }
     },
     computed: {
