@@ -35,23 +35,21 @@ $-tab-active-color: $pink;
   }
 }
 
-.#{$-tab} li,
-.#{$-tab} ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.#{$-tab} a,
-.#{$-tab} a:active,
-.#{$-tab} a:hover,
-.#{$-tab} a:visited {
-  color: $-tab-text-color;
-  text-decoration: none;
-}
-
 .#{$-tab} {
   width: 100%;
+  li,
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  a,
+  a:active,
+  a:hover,
+  a:visited{
+    color: $-tab-text-color;
+    text-decoration: none;
+  }
 }
 .#{$-tab-content} {
   padding: 0 1rem;
