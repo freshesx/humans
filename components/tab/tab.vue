@@ -27,6 +27,7 @@
       selected: {
         type: Number,
         default: 0
+        // automatic selected by :selected
       }
     },
     mounted: function () {
