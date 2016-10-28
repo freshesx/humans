@@ -2,6 +2,7 @@ import Scroller from './scroller/scroller'
 import Icon from './icon/icon'
 import Btn from './button/button'
 import Card from './card/card'
+import CardItem from './card/card-item'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import Pre from './code/pre'
@@ -24,6 +25,7 @@ export default {
   Btn,
   // Card
   Card,
+  CardItem,
   // Form
   FormSwitch,
   FormSelect,
