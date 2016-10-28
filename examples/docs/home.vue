@@ -83,6 +83,16 @@
                 title: 'popup',
                 icon: 'social-buffer',
                 route: { path: '/components/popup' }
+              },
+              {
+                title: 'searchbar',
+                icon: 'ios-barcode',
+                route: { path: '/components/searchbar' }
+              },
+              {
+                title: 'tab',
+                icon: 'ios-barcode-outline',
+                route: { path: '/components/tab' }
               }
             ]
           }
