@@ -6,7 +6,6 @@
         :tab="tab"
         :index="index"
         @tab-item-click="changeCurrent(index)"
-        ref="tab"
       ></mn-tab-item>
     </div>
     <slot></slot>
@@ -18,36 +17,47 @@
     data () {
       return {
         tabs: [],
-        current: this.index,
+        current: this.selected,
         flag: 0,
         defaultClasses: this.$human.cssPrefix
       }
     },
     props: {
-      index: {
+      selected: {
         type: Number,
         default: 0
+        // automatic selected by :selected
+      },
+      bottom: {
+        type: Boolean,
+        default: false
       }
     },
     mounted: function () {
       this.$children.forEach(tab => this.tabs.push(tab))
+      // Add contents to items
     },
     methods: {
       changeCurrent: function (index) {
         this.current = index
-      },
-      setClass: function (name) {
-        let classes = {}
-        classes[`${this.defaultClasses}${name}`] = true
-        return Object.assign({}, classes)
       }
     },
     computed: {
       tab () {
-        return this.setClass('tab')
+        let classes = {}
+        // basic class
+        classes[`${this.$human.cssPrefix}tab`] = true
+        // return default and now classes
+        return Object.assign({}, classes)
       },
       tablist () {
-        return this.setClass('tab-list')
+        let classes = {}
+        // basic class
+        classes[`${this.$human.cssPrefix}tab-list`] = true
+        // bottom
+        classes['is-bottom'] = this.bottom
+        // return default and now classes
+        return Object.assign({}, classes)
       }
     }
   }

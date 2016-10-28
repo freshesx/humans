@@ -14,6 +14,10 @@ $-popup-mask: #{$namespace}popup-mask;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  &.is-top {
+    top: 1rem;
+  }
 }
 
 .#{$-popup-mask} {
@@ -54,5 +58,18 @@ $-popup-mask: #{$namespace}popup-mask;
 }
 .#{$-popup-mask}-fade-enter,
 .#{$-popup-mask}-fade-leave-active {
+  opacity: 0
+}
+
+.#{$-popup}-slideup-enter-active {
+  transition: transform 0.3s;
+}
+.#{$-popup}-slideup-leave-active {
+  transition: opacity 0.3s linear;
+}
+.#{$-popup}-slideup-enter {
+  transform: translateY(-100%);
+}
+.#{$-popup}-slideup-leave-active {
   opacity: 0
 }

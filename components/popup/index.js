@@ -1,6 +1,7 @@
 import { element } from '../util/element'
 import Confirm from './confirm'
 import Alert from './alert'
+import Toastr from './toastr'
 
 /**
  * Build component using Vue human element
@@ -43,6 +44,15 @@ export default {
      */
     Vue.human.alert = (options = {}) => {
       return Vue.human.popup(Alert, options)
+    }
+
+    /**
+     * Toastr popup component
+     * @param  {Object} options Some settings
+     * @return {Object}
+     */
+    Vue.human.toastr = (options = {}) => {
+      return Vue.human.popup(Toastr, options)
     }
   }
 }

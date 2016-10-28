@@ -5,26 +5,38 @@
     </div>
     <mn-tab-bar>
       <mn-tab-pane title="Home" icon="ios-home" link="/"></mn-tab-pane>
-      <mn-tab-pane title="Home" link="/components/icon"></mn-tab-pane>
-      <mn-tab-pane icon="ios-home" link="/components/popup"></mn-tab-pane>
+      <mn-tab-pane title="Icon" link="/components/icon"></mn-tab-pane>
+      <mn-tab-pane icon="social-buffer" link="/components/popup"></mn-tab-pane>
     </mn-tab-bar>
-    <mn-tab-bar :index="2">
+    <div class="tab-code">
+      <mn-pre :code="link"></mn-pre>
+    </div>
+    <mn-tab-bar :selected="2">
       <mn-tab-pane title="Home" icon="ios-home" show>
-        <p class="example">hello</p>
+        <p class="example">This is title & icon.</p>
       </mn-tab-pane>
       <mn-tab-pane title="Home" show>
-        <p class="example">world</p>
+        <p class="example">This is only title.</p>
       </mn-tab-pane>
       <mn-tab-pane icon="ios-home" show>
-        <p class="example">my friend</p>
+        <p class="example">This is only icon.</p>
       </mn-tab-pane>
     </mn-tab-bar>
+    <div class="tab-code">
+      <mn-pre :code="select"></mn-pre>
+    </div>
   </div>
 </template>
 
 <script>
+  import { link, select } from './tab-code'
   export default {
-
+    data () {
+      return {
+        link: link,
+        select: select
+      }
+    }
   }
 </script>
 
@@ -32,5 +44,8 @@
   .example{
     font-size: 0.8rem;
     color: #999;
+  }
+  .tab-code{
+    padding: 1rem;
   }
 </style>

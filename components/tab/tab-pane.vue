@@ -23,15 +23,16 @@
     },
     data () {
       return {
-        defaultClasses: {
-          [`${this.$human.cssPrefix}tab-content`]: true
-        }
+        defaultClasses: this.$human.cssPrefix
       }
     },
     computed: {
       classes () {
         let classes = {}
-        return Object.assign({}, this.defaultClasses, classes)
+        // basic class
+        classes[`${this.$human.cssPrefix}tab-content`] = true
+        // return default and now classes
+        return Object.assign({}, classes)
       }
     }
   }
