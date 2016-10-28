@@ -2,12 +2,15 @@
 @import "../mixins/arrow";
 
 $-card: #{$namespace}card;
+// card children
 $-card-block: #{$namespace}card-block;
 $-card-item: #{$namespace}card-item;
+$-card-btns: #{$namespace}card-btns;
 $-card-media: #{$namespace}card-media;
+// card wrapper
 $-card-group: #{$namespace}card-group;
 $-card-group-note: #{$namespace}card-group-note;
-$-card-btns: #{$namespace}card-btns;
+
 
 //
 // @var top-border
