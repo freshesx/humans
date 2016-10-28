@@ -7,6 +7,7 @@ import Pre from './code/pre'
 import Popup from './popup/popup'
 import PopupConfirm from './popup/confirm'
 import PopupAlert from './popup/alert'
+import PopupToastr from './popup/toastr'
 import InlineImage from './image/image'
 import BlockImage from './image/block-image'
 import TabBar from './tab/tab'
@@ -30,6 +31,7 @@ export default {
   Popup,
   PopupConfirm,
   PopupAlert,
+  PopupToastr,
   // Image
   InlineImage,
   BlockImage,
