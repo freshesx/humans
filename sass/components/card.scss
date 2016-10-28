@@ -7,7 +7,6 @@ $-card-icon: #{$namespace}card-icon;
 $-card-title: #{$namespace}card-title;
 $-card-controls: #{$namespace}card-controls;
 $-card-block: #{$namespace}card-block;
-$-card-lists: #{$namespace}card-lists;
 $-card-item: #{$namespace}card-item;
 $-card-item-addon: #{$namespace}card-item-addon;
 $-card-item-help: #{$namespace}card-item-help;
@@ -21,7 +20,7 @@ $-card-btns: #{$namespace}card-btns;
 //
 // @var top-border
 //
-$-card-bordered-classes: ($-card-header, $-card-block, $-card-lists, $-card-btns);
+$-card-bordered-classes: ($-card-header, $-card-block, $-card-item, $-card-btns);
 
 .#{$-card} {
   margin-bottom: $grid-gutters;
@@ -76,22 +75,10 @@ $-card-bordered-classes: ($-card-header, $-card-block, $-card-lists, $-card-btns
   }
 }
 
-.#{$-card-lists} {
-  $border: solid 1px #eee;
-
-  &.is-bottom-border {
-    border-bottom: $border
-  }
-}
-
 .#{$-card-item} {
   display: flex;
   padding: $grid-gutters;
   align-items: center;
-
-  & + & {
-    border-top: solid 1px #eee;
-  }
 
   &.is-link {
     cursor: pointer;
