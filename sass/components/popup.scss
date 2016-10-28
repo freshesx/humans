@@ -33,6 +33,7 @@ $-popup-mask: #{$namespace}popup-mask;
 
 //
 // @animation
+// slide
 //
 .#{$-popup}-slide-enter-active,
 .#{$-popup}-slide-leave-active {
@@ -43,6 +44,9 @@ $-popup-mask: #{$namespace}popup-mask;
   transform: translateY(100%);
 }
 
+//
+// fade
+//
 .#{$-popup}-fade-enter-active,
 .#{$-popup}-fade-leave-active {
   transition: opacity 0.5s linear;
@@ -61,6 +65,9 @@ $-popup-mask: #{$namespace}popup-mask;
   opacity: 0
 }
 
+//
+// slideup
+//
 .#{$-popup}-slideup-enter-active {
   transition: transform 0.3s;
 }
