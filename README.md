@@ -1,4 +1,4 @@
-# Vue Human v2.0 alpha
+# Vue Human v2.0 beta 2
 
 > The UI component for Vue, inspired by iOS Human Interface Guidelines
 
