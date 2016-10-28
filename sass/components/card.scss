@@ -8,10 +8,6 @@ $-card-title: #{$namespace}card-title;
 $-card-controls: #{$namespace}card-controls;
 $-card-block: #{$namespace}card-block;
 $-card-item: #{$namespace}card-item;
-$-card-item-addon: #{$namespace}card-item-addon;
-$-card-item-help: #{$namespace}card-item-help;
-$-card-item-action: #{$namespace}card-item-action;
-$-card-item-body: #{$namespace}card-item-body;
 $-card-media: #{$namespace}card-media;
 $-card-group: #{$namespace}card-group;
 $-card-group-note: #{$namespace}card-group-note;
@@ -90,25 +86,30 @@ $-card-bordered-classes: ($-card-header, $-card-block, $-card-item, $-card-btns)
       @include make-arrow();
     }
   }
-}
 
-.#{$-card-item-addon} {
-  flex-shrink: 0;
-  margin-right: $grid-gutters / 2;
-}
+  // @todo: merge addon, help, action
+  // left addon
+  &-addon {
+    flex-shrink: 0;
+    margin-right: $grid-gutters / 2;
+  }
 
-.#{$-card-item-body} {
-  flex: 1;
-}
+  // middle body
+  &-body {
+    flex: 1;
+  }
 
-.#{$-card-item-action} {
-  display: flex;
-  margin: $grid-gutters * -1 0;
-  margin-left: $grid-gutters;
-}
+  // right action
+  &-action {
+    display: flex;
+    margin: $grid-gutters * -1 0;
+    margin-left: $grid-gutters;
+  }
 
-.#{$-card-item-help} {
-  color: #666;
+  // right help
+  &-help {
+    color: #666;
+  }
 }
 
 .#{$-card-media} {
