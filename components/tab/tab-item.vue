@@ -19,16 +19,15 @@
     },
     data () {
       return {
-        defaultClasses: {
-          [`${this.$human.cssPrefix}tab-item`]: true
-        }
+        defaultClasses: this.$human.cssPrefix
       }
     },
     computed: {
       classes () {
         let classes = {}
         classes['is-active'] = this.$parent.current === this.index
-        return Object.assign({}, this.defaultClasses, classes)
+        classes[`${this.$human.cssPrefix}tab-item`] = true
+        return Object.assign({}, classes)
         // Add css prefix
       }
     },

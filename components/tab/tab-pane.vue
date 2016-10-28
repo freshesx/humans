@@ -5,7 +5,6 @@
 </template>
 
 <script>
-  import classes from './classes'
   export default {
     props: {
       title: {
@@ -22,10 +21,18 @@
         default: false
       }
     },
+    data () {
+      return {
+        defaultClasses: this.$human.cssPrefix
+      }
+    },
     computed: {
       classes () {
-        return classes('tab-content')
-        // Add css prefix
+        let classes = {}
+        // basic class
+        classes[`${this.$human.cssPrefix}tab-content`] = true
+        // return default and now classes
+        return Object.assign({}, classes)
       }
     }
   }

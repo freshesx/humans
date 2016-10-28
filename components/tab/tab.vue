@@ -13,7 +13,6 @@
 </template>
 
 <script>
-  import classes from './classes'
   export default {
     data () {
       return {
@@ -28,6 +27,10 @@
         type: Number,
         default: 0
         // automatic selected by :selected
+      },
+      bottom: {
+        type: Boolean,
+        default: false
       }
     },
     mounted: function () {
@@ -41,10 +44,20 @@
     },
     computed: {
       tab () {
-        return classes('tab')
+        let classes = {}
+        // basic class
+        classes[`${this.$human.cssPrefix}tab`] = true
+        // return default and now classes
+        return Object.assign({}, classes)
       },
       tablist () {
-        return classes('tab-list')
+        let classes = {}
+        // basic class
+        classes[`${this.$human.cssPrefix}tab-list`] = true
+        // bottom
+        classes['is-bottom'] = this.bottom
+        // return default and now classes
+        return Object.assign({}, classes)
       }
     }
   }
