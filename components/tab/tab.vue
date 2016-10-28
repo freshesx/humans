@@ -5,7 +5,7 @@
         v-for="(tab, index) in tabs"
         :tab="tab"
         :index="index"
-        @tab-item-click="changeCurrent(index)"
+        @tab-item-click="changeCurrent(index, tab)"
       ></mn-tab-item>
     </div>
     <slot></slot>
@@ -38,8 +38,10 @@
       // Add contents to items
     },
     methods: {
-      changeCurrent: function (index) {
+      changeCurrent: function (index, tab) {
         this.current = index
+        this.$emit('tab-click', tab)
+        // Add 'tab-click' function
       }
     },
     computed: {

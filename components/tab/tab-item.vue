@@ -34,10 +34,6 @@
     methods: {
       click: function () {
         this.$emit('tab-item-click')
-        if (this.tab.link) {
-          this.tab.$router.push({ path: this.tab.link })
-          // if have ':link', add router.push
-        }
         this.$parent.flag = this.tab._uid
         // show this item's content, tracking by _uid
       }
