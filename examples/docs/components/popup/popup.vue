@@ -4,14 +4,14 @@
       <mn-card-item>
         <small class="is-center-text">This photo will be deleted from iCloud Photo Library on all your devices.</small>
       </mn-card-item>
-      <div class="card-btns">
+      <mn-card-btns>
         <button class="is-red-text">Delete Photo</button>
-      </div>
+      </mn-card-btns>
     </mn-card>
     <mn-card class="m-b-0">
-      <div class="card-btns">
+      <mn-card-btns>
         <button class="is-blue-text" @click="cancel"><strong>Cancel</strong></button>
-      </div>
+      </mn-card-btns>
     </mn-card>
   </mn-popup>
 </template>
