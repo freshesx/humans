@@ -1,6 +1,7 @@
 <template>
   <div :class="[cssPrefix + 'letter']">
-    <div class="letter-body">
+    <div class="letter-body" v-if="$slots.body || $slots.default">
+      <slot name="body"></slot>
       <slot></slot>
     </div>
   </div>
