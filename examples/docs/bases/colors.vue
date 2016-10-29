@@ -11,24 +11,24 @@
       <mn-card>
         <mn-card-item>Color schema</mn-card-item>
         <mn-card-item>
-          <div class="cols">
-            <div class="col is-xs-4" v-for="color in colors">
+          <mn-cols>
+            <mn-col query="xs-4" v-for="color in colors">
               <div class="sp-tile" :class="getBoxClass(color.className)"></div>
-            </div>
-          </div>
+            </mn-col>
+          </mn-cols>
         </mn-card-item>
       </mn-card>
 
       <mn-card>
         <mn-card-item>Color schema</mn-card-item>
         <mn-card-item>
-          <div class="cols">
-            <div class="col is-xs-4" v-for="color in colors">
+          <mn-cols>
+            <mn-col query="xs-4" v-for="color in colors">
               <div class="sp-text" :class="getTextClass(color.className)">
                 {{ color.className }}
               </div>
-            </div>
-          </div>
+            </mn-col>
+          </mn-cols>
         </mn-card-item>
       </mn-card>
 
