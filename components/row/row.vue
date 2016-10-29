@@ -1,5 +1,5 @@
 <template>
-  <div :class="[cssPrefix + 'row', fixedClass]">
+  <div :class="[cssPrefix + 'row', { 'is-fixed': fixed }]">
     <slot></slot>
   </div>
 </template>
@@ -15,9 +15,6 @@
     computed: {
       cssPrefix () {
         return `${this.$human.cssPrefix}`
-      },
-      fixedClass () {
-        return { 'is-fixed': this.fixed }
       }
     }
   }
