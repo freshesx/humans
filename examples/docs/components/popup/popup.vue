@@ -2,7 +2,9 @@
   <mn-popup :show="show" animation="slideInDown" @close="cancel">
     <mn-card class="m-b-1">
       <mn-card-item>
-        <small class="is-center-text">This photo will be deleted from iCloud Photo Library on all your devices.</small>
+        <div class="is-center-text">
+          <small>This photo will be deleted from iCloud Photo Library on all your devices.</small>
+        </div>
       </mn-card-item>
       <mn-card-btns>
         <button class="is-red-text">Delete Photo</button>
