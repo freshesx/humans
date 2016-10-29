@@ -5,6 +5,7 @@ import Card from './card/card'
 import CardItem from './card/card-item'
 import CardMedia from './card/card-media'
 import CardBtns from './card/card-btns'
+import CardWrapper from './card/card-wrapper'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import Pre from './code/pre'
@@ -30,6 +31,7 @@ export default {
   CardItem,
   CardMedia,
   CardBtns,
+  CardWrapper,
   // Form
   FormSwitch,
   FormSelect,
