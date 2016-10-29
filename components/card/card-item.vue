@@ -7,11 +7,11 @@
       <slot name="body"></slot>   <!-- Slot for name -->
       <slot></slot>               <!-- Slot for default -->
     </div>
-    <div :class="[cssPrefix + '-action']" v-if="$slots.action">
-      <slot name="action"></slot>
-    </div>
     <div :class="[cssPrefix + '-help']" v-if="$slots.help">
       <slot name="help"></slot>
+    </div>
+    <div :class="[cssPrefix + '-action']" v-if="$slots.action">
+      <slot name="action"></slot>
     </div>
   </div>
 </template>
