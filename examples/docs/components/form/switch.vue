@@ -1,35 +1,23 @@
 <template>
-  <div class="card-group">
-    <div class="card-group-note">
-      <strong>Switch</strong>
-    </div>
-    <div class="card">
-      <div class="card-lists">
-        <div class="card-item">
-          <div class="card-item-body">Switch boolean</div>
-          <div class="card-item-help">
-            progress
-          </div>
-          <div class="card-item-action">
-            <mn-form-switch v-model="checked"></mn-form-switch>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="card-item-body">Switch boolean</div>
-          <div class="card-item-help">
-            loading...
-          </div>
-          <div class="card-item-action">
-            <mn-form-switch v-model="checked2" :disabled="true"></mn-form-switch>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card-group-note">
+  <mn-card-wrapper>
+    <strong slot="header">Switch</strong>
+    <template slot="footer">
       <mn-icon name="information-circled" :scale="0.9"></mn-icon>
       Add some help for your user.
-    </div>
-  </div>
+    </template>
+    <mn-card slot="body">
+      <mn-card-item>
+        <template slot="body">Switch boolean</template>
+        <template slot="help">progress</template>
+        <mn-form-switch slot="action" v-model="checked"></mn-form-switch>
+      </mn-card-item>
+      <mn-card-item>
+        <template slot="body">Switch boolean</template>
+        <template slot="help">loading...</template>
+        <mn-form-switch slot="action" v-model="checked2" :disabled="true"></mn-form-switch>
+      </mn-card-item>
+    </mn-card>
+  </mn-card-wrapper>
 </template>
 
 <script>
