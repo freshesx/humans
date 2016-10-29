@@ -1,6 +1,6 @@
 <template>
   <mn-popup :show="show" animation="slideInUp" position="top" :masked="false">
-    <mn-card class="m-b-1 scoped-card-shadow" style="max-width: 500px; margin: 0 auto;">
+    <mn-card class="m-b-1 scoped-card-shadow" style="max-width: 500px; margin: 0 auto;" @click.native.prevent="click">
       <mn-card-item>
         <mn-icon :name="icon"></mn-icon>
         <small>{{ description }}</small>
@@ -15,20 +15,28 @@
       cancel () {
         this.show = false
         this.$emit('cancel')
+      },
+      click () {
+        this.show = false
+        this.$emit('click')
       }
     },
     data () {
       return {
         show: false,
         description: 'You have a message',
-        icon: 'chatbubbles'
+        icon: 'chatbubbles',
+        autoClose: true,
+        duration: 2000
       }
     },
     mounted: function () {
-      setTimeout(() => {
-        this.show = false
-      }, 2000)
       // automatic close after 2s
+      if (this.autoClose) {
+        setTimeout(() => {
+          this.cancel()
+        }, this.duration)
+      }
     }
   }
 </script>
