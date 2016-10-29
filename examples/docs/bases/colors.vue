@@ -1,12 +1,11 @@
 <template>
   <transition name="has-slide">
     <div class="section">
-      <div class="letter">
-        <div class="letter-body">
-          <h1>Color</h1>
-          <small>Text, background, other.</small>
-        </div>
-      </div>
+
+      <mn-letter>
+        <h1>Color</h1>
+        <small>Text, background, other.</small>
+      </mn-letter>
 
       <mn-card>
         <mn-card-item>Color schema</mn-card-item>
