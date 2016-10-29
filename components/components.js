@@ -4,6 +4,7 @@ import Btn from './button/button'
 import Card from './card/card'
 import CardItem from './card/card-item'
 import CardMedia from './card/card-media'
+import CardBtns from './card/card-btns'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import Pre from './code/pre'
@@ -28,6 +29,7 @@ export default {
   Card,
   CardItem,
   CardMedia,
+  CardBtns,
   // Form
   FormSwitch,
   FormSelect,
