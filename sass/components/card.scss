@@ -10,12 +10,8 @@ $-card-media: #{$namespace}card-media;
 // card wrapper
 $-card-group: #{$namespace}card-group;
 $-card-group-note: #{$namespace}card-group-note;
-
-
-//
-// @var top-border
-//
-$-card-bordered-classes: ($-card-block, $-card-item, $-card-btns);
+// card top-border
+$-card-bordered-classes: ($-card-item, $-card-btns);
 
 .#{$-card} {
   margin-bottom: $grid-gutters;
@@ -26,16 +22,6 @@ $-card-bordered-classes: ($-card-block, $-card-item, $-card-btns);
 
   &.is-light {
     background-color: rgba(255, 255, 255, 0.75);
-  }
-}
-
-.#{$-card-block} {
-  $border: solid 1px #eee;
-
-  padding: $grid-gutters;
-
-  &.is-gapless {
-    padding: 0;
   }
 }
 
