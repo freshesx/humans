@@ -1,22 +1,19 @@
 <template>
   <div class="section">
+    <mn-letter>
+      <h1>Form</h1>
+      <small>input, radio, switch, select</small>
+    </mn-letter>
 
-    <div class="letter letter-bottom-bordered">
-      <div class="letter-body">
-        <h1>Form</h1>
-        <small>input, radio, switch, select</small>
-      </div>
-    </div>
-
-    <div class="cols">
-      <div class="col is-sm-6">
+    <mn-cols>
+      <mn-col query="sm-6">
         <form-radio></form-radio>
         <form-basic></form-basic>
         <form-switch></form-switch>
         <form-select></form-select>
-        <mn-btn class="is-primary is-block">Submit</mn-btn>
-      </div>
-    </div>
+        <mn-btn type="primary" block>Submit</mn-btn>
+      </mn-col>
+    </mn-cols>
   </div>
 </template>
 
@@ -35,10 +32,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  .letter-bottom-bordered {
-    border-bottom: solid 1px #e5e5e5;
-    margin-bottom: 1rem;
-  }
-</style>

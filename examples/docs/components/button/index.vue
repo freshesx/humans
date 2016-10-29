@@ -1,12 +1,10 @@
 <template>
   <div class="section">
 
-    <div class="letter">
-      <div class="letter-body">
-        <h1>Button</h1>
-        <small>btn, block, loading, disabled</small>
-      </div>
-    </div>
+    <mn-letter>
+      <h1>Button</h1>
+      <small>btn, block, loading, disabled</small>
+    </mn-letter>
 
     <demo-normal></demo-normal>
 

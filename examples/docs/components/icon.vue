@@ -1,35 +1,28 @@
 <template>
   <div class="section">
-    <div class="letter">
-      <div class="letter-body">
-        <h1>Icons</h1>
-        <small>icons</small>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card-lists">
-        <div class="card-item">
-          <div class="card-item-addon">
-            <label class="form-label">Search</label>
-          </div>
-          <div class="card-item-body">
-            <input class="form-control" type="text" placeholder="Input icon name" v-model="searchName">
-          </div>
-        </div>
-      </div>
-    </div>
+    <mn-letter>
+      <h1>Icons</h1>
+      <small>icons</small>
+    </mn-letter>
 
-    <div class="cols">
-      <div class="col is-xs-6 is-sm-4" v-for="(icon, key) in searchIcons">
+    <mn-card>
+      <mn-card-item>
+        <label slot="addon" class="form-label">Search</label>
+        <input slot="body" class="form-control" type="text" placeholder="Input icon name" v-model="searchName">
+      </mn-card-item>
+    </mn-card>
+
+    <mn-cols>
+      <mn-col query="xs-6 sm-4" v-for="(icon, key) in searchIcons">
         <div class="scope-tile">
           <div>
             <mn-icon :name="key"></mn-icon>
           </div>
           <p>{{ key }}</p>
         </div>
-      </div>
-    </div>
+      </mn-col>
+    </mn-cols>
 
   </div>
 </template>

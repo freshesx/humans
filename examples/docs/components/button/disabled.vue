@@ -1,16 +1,14 @@
 <template>
-  <div class="card">
-    <div class="card-header">
-      <div class="card-title">Button disabled</div>
-    </div>
-    <div class="card-block">
+  <mn-card>
+    <mn-card-item>Button disabled</mn-card-item>
+    <mn-card-item>
       <mn-btn type="primary" disabled>Confirm</mn-btn>
       <mn-btn type="warning" disabled>Are you sure?</mn-btn>
       <mn-btn type="error" disabled>Cancel</mn-btn>
       <mn-btn type="secondary" disabled>Help</mn-btn>
       <mn-btn type="inverse" disabled>Off</mn-btn>
-    </div>
-  </div>
+    </mn-card-item>
+  </mn-card>
 </template>
 
 <script>

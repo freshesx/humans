@@ -1,17 +1,16 @@
 <template>
-  <div class="card">
-    <div class="card-header">
-      <div class="card-title">Search Bar</div>
-    </div>
-    <mn-search-bar
-      @enter="search"
-      @input="hello"
-      v-model="value">
-    </mn-search-bar>
-    <p class="message">
-      Messages is : {{ value }}
-    </p>
-  </div>
+  <mn-cols>
+    <mn-col query="sm-4">
+      <mn-card>
+        <mn-card-item>
+          <mn-search-bar @enter="search" @input="hello" v-model="value"></mn-search-bar>
+          <p class="is-gray-text">
+            Messages is : {{ value }}
+          </p>
+        </mn-card-item>
+      </mn-card>
+    </mn-col>
+  </mn-cols>
 </template>
 
 <script>
@@ -33,13 +32,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .message{
-    padding: 0 1rem;
-    margin-top: 0;
-    color: #999;
-    line-height: 1rem;
-    font-size: 0.8rem;
-  }
-</style>

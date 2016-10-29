@@ -1,14 +1,16 @@
 <template>
   <mn-popup :show="show" position="center">
-    <div class="card m-b-0" style="width: 280px; margin: 0 auto;">
-      <div class="card-block is-center-text">
-        <h4>{{ title }}</h4>
-        <small>{{ description }}</small>
-      </div>
-      <div class="card-btns is-column">
+    <mn-card class="m-b-0" style="width: 280px; margin: 0 auto;">
+      <mn-card-item>
+        <div class="is-center-text">
+          <h4>{{ title }}</h4>
+          <small>{{ description }}</small>
+        </div>
+      </mn-card-item>
+      <mn-card-btns type="column">
         <button class="is-blue-text" @click="cancel">{{ cancelText }}</button>
-      </div>
-    </div>
+      </mn-card-btns>
+    </mn-card>
   </mn-popup>
 </template>
 

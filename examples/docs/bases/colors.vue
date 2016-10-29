@@ -1,42 +1,35 @@
 <template>
   <transition name="has-slide">
     <div class="section">
-      <div class="letter">
-        <div class="letter-body">
-          <h1>Color</h1>
-          <small>Text, background, other.</small>
-        </div>
-      </div>
 
-      <div class="card">
-        <div class="card-header">Color schema</div>
-        <div class="card-block">
-          <div class="cols">
-            <div class="col is-xs-4" v-for="color in colors">
+      <mn-letter>
+        <h1>Color</h1>
+        <small>Text, background, other.</small>
+      </mn-letter>
+
+      <mn-card>
+        <mn-card-item>Color schema</mn-card-item>
+        <mn-card-item>
+          <mn-cols>
+            <mn-col query="xs-4" v-for="color in colors">
               <div class="sp-tile" :class="getBoxClass(color.className)"></div>
-            </div>
-          </div>
-        </div>
-        <div class="card-block">
-          <pre>.is-{color}-bg</pre>
-        </div>
-      </div>
+            </mn-col>
+          </mn-cols>
+        </mn-card-item>
+      </mn-card>
 
-      <div class="card">
-        <div class="card-header">Color schema</div>
-        <div class="card-block">
-          <div class="cols">
-            <div class="col is-xs-4" v-for="color in colors">
+      <mn-card>
+        <mn-card-item>Color schema</mn-card-item>
+        <mn-card-item>
+          <mn-cols>
+            <mn-col query="xs-4" v-for="color in colors">
               <div class="sp-text" :class="getTextClass(color.className)">
                 {{ color.className }}
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="card-block">
-          <pre>.is-{color}-text</pre>
-        </div>
-      </div>
+            </mn-col>
+          </mn-cols>
+        </mn-card-item>
+      </mn-card>
 
     </div>
   </transition>

@@ -1,48 +1,38 @@
 <template>
   <div class="section">
 
-    <div class="letter">
-      <div class="letter-body">
-        <h1>Popup</h1>
-        <small>popup, confirm, alerts, activity sheets</small>
-      </div>
-    </div>
+    <mn-letter>
+      <h1>Popup</h1>
+      <small>popup, confirm, alerts, activity sheets</small>
+    </mn-letter>
 
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">Confirm extend popup</div>
-      </div>
-      <div class="card-block">
+    <mn-card>
+      <mn-card-item>Confirm extend popup</mn-card-item>
+      <mn-card-item>
         <mn-btn type="warning" block @click.native.prevent="openConfirm">Confirm</mn-btn>
-      </div>
-    </div>
+      </mn-card-item>
+    </mn-card>
 
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">Alert extend popup</div>
-      </div>
-      <div class="card-block">
+    <mn-card>
+      <mn-card-item>Alert extend popup</mn-card-item>
+      <mn-card-item>
         <mn-btn type="error" block @click.native.prevent="openAlert">Alert</mn-btn>
-      </div>
-    </div>
+      </mn-card-item>
+    </mn-card>
 
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">Toastr Message extend popup</div>
-      </div>
-      <div class="card-block">
+    <mn-card>
+      <mn-card-item>Toastr Message extend popup</mn-card-item>
+      <mn-card-item>
         <mn-btn type="primary" block @click.native.prevent="openToastr">Toastr Message</mn-btn>
-      </div>
-    </div>
+      </mn-card-item>
+    </mn-card>
 
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title">Custom popup (Activity sheets)</div>
-      </div>
-      <div class="card-block">
+    <mn-card>
+      <mn-card-item>Custom popup (Activity sheets)</mn-card-item>
+      <mn-card-item>
         <mn-btn type="secondary" block @click.native.prevent="openPopup">Open activity sheets</mn-btn>
-      </div>
-    </div>
+      </mn-card-item>
+    </mn-card>
   </div>
 </template>
 

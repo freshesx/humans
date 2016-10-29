@@ -1,18 +1,20 @@
 <template>
   <mn-popup :show="show" animation="slideInDown" @close="cancel">
-    <div class="card m-b-1">
-      <div class="card-block is-center-text">
-        <small>This photo will be deleted from iCloud Photo Library on all your devices.</small>
-      </div>
-      <div class="card-btns">
+    <mn-card class="m-b-1">
+      <mn-card-item>
+        <div class="is-center-text">
+          <small>This photo will be deleted from iCloud Photo Library on all your devices.</small>
+        </div>
+      </mn-card-item>
+      <mn-card-btns>
         <button class="is-red-text">Delete Photo</button>
-      </div>
-    </div>
-    <div class="card m-b-0">
-      <div class="card-btns">
+      </mn-card-btns>
+    </mn-card>
+    <mn-card class="m-b-0">
+      <mn-card-btns>
         <button class="is-blue-text" @click="cancel"><strong>Cancel</strong></button>
-      </div>
-    </div>
+      </mn-card-btns>
+    </mn-card>
   </mn-popup>
 </template>
 
