@@ -1,11 +1,11 @@
 <template>
   <mn-popup :show="show" animation="slideInUp" position="top" :masked="false">
-    <div class="card m-b-1" style="max-width: 500px; margin: 0 auto;">
-      <div class="card-block">
+    <mn-card class="m-b-1 scoped-card-shadow" style="max-width: 500px; margin: 0 auto;">
+      <mn-card-item>
         <mn-icon :name="icon"></mn-icon>
         <small>{{ description }}</small>
-      </div>
-    </div>
+      </mn-card-item>
+    </mn-card>
   </mn-popup>
 </template>
 
@@ -32,3 +32,9 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .scoped-card-shadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  }
+</style>
