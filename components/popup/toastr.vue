@@ -41,8 +41,8 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .scoped-card-shadow {
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 </style>
