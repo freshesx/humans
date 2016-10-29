@@ -10,11 +10,13 @@
 
     <div class="cols">
       <div class="col">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">Card</div>
-          </div>
-          <div class="card-block">
+
+        <mn-card>
+          <mn-card-item>
+            <h5 slot="body">Card</h5>
+            <mn-icon slot="addon" name="ios-navigate"></mn-icon>
+          </mn-card-item>
+          <mn-card-item>
             <article>
               <h3>What is Lorem Ipsum?</h3>
               <p>
@@ -28,39 +30,40 @@
                 It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
               </p>
             </article>
-          </div>
-          <div class="card-lists">
-            <div class="card-item">
-              <div class="card-item-body">Item title</div>
-              <div class="card-item-help">description</div>
-            </div>
-            <div class="card-item is-link">
-              <div class="card-item-addon">
-                <mn-icon name="menu"></mn-icon>
-              </div>
-              <div class="card-item-body">Item title</div>
-              <div class="card-item-help">description</div>
-            </div>
-          </div>
-        </div>
+          </mn-card-item>
+          <mn-card-item>
+            <template slot="body">Item title</template>
+            <template slot="help">description</template>
+          </mn-card-item>
+          <mn-card-item type="link">
+            <mn-icon slot="addon" name="compass"></mn-icon>
+            <template slot="body">Item title</template>
+            <template slot="help">description</template>
+          </mn-card-item>
+        </mn-card>
+
       </div>
       <div class="col">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title">Card</div>
-          </div>
-          <div class="card-media">
+
+        <mn-card>
+          <mn-card-item>
+            <mn-icon slot="addon" name="ios-navigate"></mn-icon>
+            <h5 slot="body">Card</h5>
+          </mn-card-item>
+          <mn-card-media>
             <mn-block-image :options="blockImage"></mn-block-image>
-          </div>
-          <div class="card-block">
+          </mn-card-media>
+          <mn-card-item>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             </p>
             <mn-btn class="is-primary is-block">Submit</mn-btn>
-          </div>
-        </div>
+          </mn-card-item>
+        </mn-card>
+
       </div>
     </div>
+
   </div>
 </template>
 
@@ -85,12 +88,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  .scoped-stage {
-    height: 600px;
-  }
-  .scoped-e-1 {
-    height: 300px;
-  }
-</style>
