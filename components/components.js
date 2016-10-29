@@ -1,5 +1,7 @@
 import Cols from './column/cols'
 import Col from './column/col'
+import Rows from './row/rows'
+import Row from './row/row'
 import Scroller from './scroller/scroller'
 import Icon from './icon/icon'
 import Btn from './button/button'
@@ -27,6 +29,8 @@ export default {
   // Column
   Cols,
   Col,
+  Rows,
+  Row,
   // Scroller
   Scroller,
   // Icon
