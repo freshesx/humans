@@ -1,5 +1,5 @@
 <template>
-  <div :class="[cssPrefix]">
+  <div :class="[cssPrefix, typeClass]">
     <div :class="[cssPrefix + '-addon']" v-if="$slots.addon">
       <slot name="addon"></slot>
     </div>
@@ -18,9 +18,18 @@
 
 <script>
   export default {
+    props: {
+      type: {
+        type: String,
+        validator: val => ['link', 'arrow'].includes(val)
+      }
+    },
     computed: {
       cssPrefix () {
         return `${this.$human.cssPrefix}card-item`
+      },
+      typeClass () {
+        return { [`is-${this.type}`]: !!this.type }
       }
     }
   }
