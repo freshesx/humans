@@ -1,3 +1,5 @@
+import Cols from './column/cols'
+import Col from './column/col'
 import Scroller from './scroller/scroller'
 import Icon from './icon/icon'
 import Btn from './button/button'
@@ -20,6 +22,9 @@ import TabPane from './tab/tab-pane'
 import SearchBar from './searchbar/search'
 
 export default {
+  // Column
+  Cols,
+  Col,
   // Scroller
   Scroller,
   // Icon
