@@ -10,6 +10,7 @@ import CardBtns from './card/card-btns'
 import CardWrapper from './card/card-wrapper'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
+import Letter from './letter/letter'
 import Pre from './code/pre'
 import Popup from './popup/popup'
 import PopupConfirm from './popup/confirm'
@@ -40,6 +41,8 @@ export default {
   // Form
   FormSwitch,
   FormSelect,
+  // Letter
+  Letter,
   // Code
   Pre,
   // Popup
