@@ -92,6 +92,11 @@
                 title: 'tab',
                 icon: 'ios-barcode-outline',
                 route: { path: '/components/tab' }
+              },
+              {
+                title: 'control',
+                icon: 'ios-settings-strong',
+                route: { path: '/components/control' }
               }
             ]
           }
