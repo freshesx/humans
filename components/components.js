@@ -1,8 +1,18 @@
+import Cols from './column/cols'
+import Col from './column/col'
+import Rows from './row/rows'
+import Row from './row/row'
 import Scroller from './scroller/scroller'
 import Icon from './icon/icon'
 import Btn from './button/button'
+import Card from './card/card'
+import CardItem from './card/card-item'
+import CardMedia from './card/card-media'
+import CardBtns from './card/card-btns'
+import CardWrapper from './card/card-wrapper'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
+import Letter from './letter/letter'
 import Pre from './code/pre'
 import Popup from './popup/popup'
 import PopupConfirm from './popup/confirm'
@@ -16,15 +26,28 @@ import TabPane from './tab/tab-pane'
 import SearchBar from './searchbar/search'
 
 export default {
+  // Column
+  Cols,
+  Col,
+  Rows,
+  Row,
   // Scroller
   Scroller,
   // Icon
   Icon,
   // Button
   Btn,
+  // Card
+  Card,
+  CardItem,
+  CardMedia,
+  CardBtns,
+  CardWrapper,
   // Form
   FormSwitch,
   FormSelect,
+  // Letter
+  Letter,
   // Code
   Pre,
   // Popup

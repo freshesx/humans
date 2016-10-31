@@ -1,43 +1,23 @@
 <template>
-  <div class="card-group">
-    <div class="card-group-note">
-      <strong>Basic form</strong>
-    </div>
-    <div class="card">
-      <div class="card-lists">
-        <div class="card-item">
-          <div class="card-item-addon">
-            <label class="form-label">Username</label>
-          </div>
-          <div class="card-item-body">
-            <input class="form-control" type="text" placeholder="Type your username">
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="card-item-addon">
-            <label class="form-label">Password</label>
-          </div>
-          <div class="card-item-body">
-            <input class="form-control" type="password" placeholder="Type your password">
-          </div>
-          <div class="card-item-help">
-            <mn-icon name="notification" class="is-pink-text"></mn-icon>
-          </div>
-        </div>
-        <div class="card-item">
-          <div class="card-item-addon">
-            <label class="form-label">Phone</label>
-          </div>
-          <div class="card-item-body">
-            <input class="form-control" type="text" placeholder="Type your phone number">
-          </div>
-          <div class="card-item-action">
-            <mn-btn class="is-warning is-sm m-b-0">Send Code</mn-btn>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <mn-card-wrapper>
+    <strong slot="header">Basic form</strong>
+    <mn-card slot="body">
+      <mn-card-item>
+        <label slot="addon" class="form-label">Username</label>
+        <input slot="body" class="form-control" type="text" placeholder="Type your username">
+      </mn-card-item>
+      <mn-card-item>
+        <label slot="addon" class="form-label">Password</label>
+        <input slot="body" class="form-control" type="password" placeholder="Type your password">
+        <mn-icon slot="help" name="notification" class="is-pink-text"></mn-icon>
+      </mn-card-item>
+      <mn-card-item>
+        <label slot="addon" class="form-label">Phone</label>
+        <input slot="body" class="form-control" type="text" placeholder="Type your phone number">
+        <mn-btn slot="action" class="is-warning is-sm m-b-0">Send Code</mn-btn>
+      </mn-card-item>
+    </mn-card>
+  </mn-card-wrapper>
 </template>
 
 <script>

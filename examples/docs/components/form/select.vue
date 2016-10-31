@@ -1,21 +1,13 @@
 <template>
-  <div class="card-group">
-    <div class="card-group-note">
-      <strong>Select</strong>
-    </div>
-    <div class="card">
-      <div class="card-lists">
-        <div class="card-item is-arrow">
-          <div class="card-item-addon">
-            <label class="form-label">Language</label>
-          </div>
-          <div class="card-item-body">
-            <mn-form-select :options="options" v-model="data"></mn-form-select>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <mn-card-wrapper>
+    <strong slot="header">Select</strong>
+    <mn-card slot="body">
+      <mn-card-item type="arrow">
+        <label slot="addon" class="form-label">Language</label>
+        <mn-form-select slot="body" :options="options" v-model="data"></mn-form-select>
+      </mn-card-item>
+    </mn-card>
+  </mn-card-wrapper>
 </template>
 
 <script>

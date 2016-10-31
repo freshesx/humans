@@ -2,26 +2,16 @@
 @import "../mixins/arrow";
 
 $-card: #{$namespace}card;
-$-card-header: #{$namespace}card-header;
-$-card-icon: #{$namespace}card-icon;
-$-card-title: #{$namespace}card-title;
-$-card-controls: #{$namespace}card-controls;
+// card children
 $-card-block: #{$namespace}card-block;
-$-card-lists: #{$namespace}card-lists;
 $-card-item: #{$namespace}card-item;
-$-card-item-addon: #{$namespace}card-item-addon;
-$-card-item-help: #{$namespace}card-item-help;
-$-card-item-action: #{$namespace}card-item-action;
-$-card-item-body: #{$namespace}card-item-body;
+$-card-btns: #{$namespace}card-btns;
 $-card-media: #{$namespace}card-media;
+// card wrapper
 $-card-group: #{$namespace}card-group;
 $-card-group-note: #{$namespace}card-group-note;
-$-card-btns: #{$namespace}card-btns;
-
-//
-// @var top-border
-//
-$-card-bordered-classes: ($-card-header, $-card-block, $-card-lists, $-card-btns);
+// card top-border
+$-card-bordered-classes: ($-card-item, $-card-btns);
 
 .#{$-card} {
   margin-bottom: $grid-gutters;
@@ -35,63 +25,10 @@ $-card-bordered-classes: ($-card-header, $-card-block, $-card-lists, $-card-btns
   }
 }
 
-.#{$-card-header} {
-  display: flex;
-  padding: 0 $grid-gutters;
-  height: 3rem;
-  line-height: 3rem;
-  background-color: #fff;
-  color: #999;
-  // For using blur
-  // background-color: rgba(255, 255, 255, 0.9);
-  // border-top-left-radius: $base-radius;
-  // border-top-right-radius: $base-radius;
-  // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-}
-
-.#{$-card-icon} {
-  margin-right: $grid-gutters / 2;
-}
-
-.#{$-card-title} {
-  flex: 1 1;
-  font-size: 1rem;
-}
-
-.#{$-card-controls} {
-  &,
-  a {
-    color: #000;
-    text-decoration: none;
-  }
-}
-
-.#{$-card-block} {
-  $border: solid 1px #eee;
-
-  padding: $grid-gutters;
-
-  &.is-gapless {
-    padding: 0;
-  }
-}
-
-.#{$-card-lists} {
-  $border: solid 1px #eee;
-
-  &.is-bottom-border {
-    border-bottom: $border
-  }
-}
-
 .#{$-card-item} {
   display: flex;
   padding: $grid-gutters;
   align-items: center;
-
-  & + & {
-    border-top: solid 1px #eee;
-  }
 
   &.is-link {
     cursor: pointer;
@@ -103,25 +40,30 @@ $-card-bordered-classes: ($-card-header, $-card-block, $-card-lists, $-card-btns
       @include make-arrow();
     }
   }
-}
 
-.#{$-card-item-addon} {
-  flex-shrink: 0;
-  margin-right: $grid-gutters / 2;
-}
+  // @todo: merge addon, help, action
+  // left addon
+  &-addon {
+    flex-shrink: 0;
+    margin-right: $grid-gutters / 2;
+  }
 
-.#{$-card-item-body} {
-  flex: 1;
-}
+  // middle body
+  &-body {
+    flex: 1;
+  }
 
-.#{$-card-item-action} {
-  display: flex;
-  margin: $grid-gutters * -1 0;
-  margin-left: $grid-gutters;
-}
+  // right action
+  &-action {
+    display: flex;
+    margin: $grid-gutters * -1 0;
+    margin-left: $grid-gutters;
+  }
 
-.#{$-card-item-help} {
-  color: #666;
+  // right help
+  &-help {
+    color: #666;
+  }
 }
 
 .#{$-card-media} {

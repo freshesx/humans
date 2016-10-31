@@ -15,6 +15,13 @@ $-grid-flex-col: "#{$namespace}col";
   display: flex;
   margin: 0 $grid-gutters * -0.5;
   flex-wrap: wrap;
+
+  &.is-gapless {
+    margin: 0;
+    > .#{$-grid-flex-col} {
+      padding: 0;
+    }
+  }
 }
 
 // Column
@@ -47,15 +54,6 @@ $-grid-flex-col: "#{$namespace}col";
           margin-left: (100% / 12) * $num;
         }
       }
-    }
-  }
-}
-
-.#{$-grid-flex-cols} {
-  &.is-gapless {
-    margin: 0;
-    > .#{$-grid-flex-col} {
-      padding: 0;
     }
   }
 }

@@ -7,17 +7,16 @@
       </div>
     </div>
 
-    <div class="card" v-for="menu in menus">
-      <div class="card-header">
-        <h3 class="card-title">{{ menu.title }}</h3>
-      </div>
-      <div class="card-lists">
-        <div class="card-item is-link" @click="go(sub.route)" v-for="sub in menu.subMenus">
-          <div class="card-item-addon"><mn-icon :name="sub.icon"></mn-icon></div>
-          <div class="card-item-body">{{ sub.title }}</div>
-        </div>
-      </div>
-    </div>
+    <mn-card v-for="menu in menus">
+      <mn-card-item>
+        {{ menu.title }}
+      </mn-card-item>
+      <mn-card-item type="link" @click.native="go(sub.route)" v-for="sub in menu.subMenus">
+        <mn-icon slot="addon" :name="sub.icon"></mn-icon>
+        <template slot="body">{{ sub.title }}</template>
+      </mn-card-item>
+    </mn-card>
+
   </div>
 </template>
 
