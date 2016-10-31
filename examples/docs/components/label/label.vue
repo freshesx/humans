@@ -1,22 +1,26 @@
 <template>
-  <mn-card>
-    <mn-card-item>
-      <h5 slot="body">Labels with text</h5>
-      <mn-label type="primary">标签一</mn-label>
-      <mn-label type="warning">标签二</mn-label>
-      <mn-label type="error">标签三</mn-label>
-      <mn-label type="secondary">标签四</mn-label>
-      <mn-label type="inverse">标签五</mn-label>
-    </mn-card-item>
-    <mn-card-item>
-      <h5 slot="body">Labels with icon</h5>
-      <mn-label type="primary"><mn-icon name="pricetags"></mn-icon></mn-label>
-      <mn-label type="warning"><mn-icon name="pricetags"></mn-icon></mn-label>
-      <mn-label type="error"><mn-icon name="pricetags"></mn-icon></mn-label>
-      <mn-label type="secondary"><mn-icon name="pricetags"></mn-icon></mn-label>
-      <mn-label type="inverse"><mn-icon name="pricetags"></mn-icon></mn-label>
-    </mn-card-item>
-  </mn-card>
+  <div class="section">
+    <mn-card>
+      <mn-card-item>Labels with text</mn-card-item>
+      <mn-card-item>
+        <mn-label type="primary">1</mn-label>
+        <mn-label type="warning">99+</mn-label>
+        <mn-label type="error">error</mn-label>
+        <mn-label type="secondary">secondary</mn-label>
+        <mn-label type="inverse">inverse</mn-label>
+      </mn-card-item>
+    </mn-card>
+    <mn-card>
+      <mn-card-item>Labels with icon</mn-card-item>
+      <mn-card-item>
+        <mn-label type="primary"><mn-icon name="ios-checkmark-empty"></mn-icon></mn-label>
+        <mn-label type="warning"><mn-icon name="ios-checkmark-empty"></mn-icon></mn-label>
+        <mn-label type="error"><mn-icon name="ios-checkmark-empty"></mn-icon></mn-label>
+        <mn-label type="secondary"><mn-icon name="ios-checkmark-empty"></mn-icon></mn-label>
+        <mn-label type="inverse"><mn-icon name="ios-checkmark-empty"></mn-icon></mn-label>
+      </mn-card-item>
+    </mn-card>
+  </div>
 </template>
 
 <script>
