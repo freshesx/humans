@@ -51,7 +51,8 @@
         defaultClasses: this.$human.cssPrefix,
         value: this.default,
         cannotreduce: false,
-        cannotincrease: false
+        cannotincrease: false,
+        currentValue: this.value
       }
     },
     props: {
@@ -90,15 +91,33 @@
       this.value = this.min
       this.cannotreduce = true
     },
-    updated () {
-      this.cannotreduce = true
-      this.cannotincrease = true
+    watch: {
+      value (val) {
+        this.currentValue = val
+      },
 
-      if (this.value > this.min) {
+      currentValue (newVal, oldVal) {
+        if (!isNaN(newVal) && newVal <= this.max && newVal >= this.min) {
+          this.$emit('change', newVal)
+        } else {
+          this.$nextTick(() => {
+            this.currentValue = oldVal
+          })
+        }
+      }
+    },
+    updated () {
+      let reduce = this.value - this.step
+      let increase = this.value + this.step
+      if (reduce < this.min) {
+        this.cannotreduce = true
+      } else {
         this.cannotreduce = false
       }
 
-      if (this.value < this.max) {
+      if (increase > this.max) {
+        this.cannotincrease = true
+      } else {
         this.cannotincrease = false
       }
     }
