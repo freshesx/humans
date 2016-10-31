@@ -25,7 +25,7 @@
         // basic class
         classes[`${this.$human.cssPrefix}quantity-reduce-button`] = true
         // disabled
-        classes['is-disabled'] = this.cannotreduce
+        classes['is-disabled'] = this.noReduce
         // return default and now classes
         return Object.assign({}, classes)
       },
@@ -41,7 +41,7 @@
         // basic class
         classes[`${this.$human.cssPrefix}quantity-increase-button`] = true
         // disabled
-        classes['is-disabled'] = this.cannotincrease
+        classes['is-disabled'] = this.noIncrease
         // return default and now classes
         return Object.assign({}, classes)
       }
@@ -50,8 +50,8 @@
       return {
         defaultClasses: this.$human.cssPrefix,
         value: this.default,
-        cannotreduce: false,
-        cannotincrease: false,
+        noReduce: false,
+        noIncrease: false,
         currentValue: this.value
       }
     },
@@ -74,20 +74,20 @@
       },
       max: {
         type: Number,
-        default: 99999
+        default: 999999
         // options: The max value
       }
     },
     methods: {
       increaseNum: function () {
-        if (!this.cannotincrease) {
+        if (!this.noIncrease) {
           this.value = this.value + this.step
           return this.value
           // Increase
         }
       },
       reduceNum: function () {
-        if (!this.cannotreduce) {
+        if (!this.noReduce) {
           this.value = this.value - this.step
           return this.value
           // Reduce
@@ -120,17 +120,17 @@
 
         let reduce = newVal - this.step
         if (reduce < this.min) {
-          this.cannotreduce = true
+          this.noReduce = true
         } else {
-          this.cannotreduce = false
+          this.noReduce = false
         }
         // Disable the reduce button when the value is less than the min
 
         let increase = newVal + this.step
         if (increase > this.max) {
-          this.cannotincrease = true
+          this.noIncrease = true
         } else {
-          this.cannotincrease = false
+          this.noIncrease = false
         }
         // Disable the increase button when the value is more than the max
       }
