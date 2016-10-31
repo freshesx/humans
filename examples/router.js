@@ -28,7 +28,7 @@ const router = new VueRouter({
     },
     {
       path: '/components/card',
-      component: resolve => { require(['./docs/components/card/index'], resolve) }
+      component: resolve => { require(['./docs/components/card'], resolve) }
     },
     {
       path: '/components/form',
