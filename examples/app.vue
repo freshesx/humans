@@ -1,9 +1,11 @@
 <template>
-  <div class="is-full-screen">
-    <mn-scroller save>
-      <router-view></router-view>
-    </mn-scroller>
-  </div>
+  <mn-rows>
+    <mn-row>
+      <mn-scroller save>
+        <router-view></router-view>
+      </mn-scroller>
+    </mn-row>
+  </mn-rows>
 </template>
 
 <script>

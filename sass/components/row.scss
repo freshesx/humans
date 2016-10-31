@@ -1,0 +1,23 @@
+@import "../variables";
+
+$-rows: #{$namespace}rows;
+$-row: #{$namespace}row;
+
+.#{$-rows} {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.#{$-row} {
+  flex: 1 1;
+  height: 100%;
+  overflow: hidden;
+
+  &.is-fixed {
+    flex: none;
+    flex-shrink: 0;
+    height: auto;
+  }
+}
