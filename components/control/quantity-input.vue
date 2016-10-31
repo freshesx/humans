@@ -1,5 +1,5 @@
 <template>
-  <input type="text" name="name" value="" :class="classes">
+  <input type="text" name="name" :value="this.default" :class="classes">
 </template>
 
 <script>
@@ -11,6 +11,12 @@
         classes[`${this.$human.cssPrefix}quantity-input`] = true
         // return default and now classes
         return Object.assign({}, classes)
+      }
+    },
+    props: {
+      default: {
+        type: Number,
+        default: 0
       }
     },
     data () {
