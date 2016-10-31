@@ -22,6 +22,7 @@ import TabBar from './tab/tab'
 import TabItem from './tab/tab-item'
 import TabPane from './tab/tab-pane'
 import SearchBar from './searchbar/search'
+import Label from './label/label'
 
 export default {
   // Column
@@ -59,5 +60,6 @@ export default {
   // tab
   TabBar,
   TabItem,
-  TabPane
+  TabPane,
+  Label
 }

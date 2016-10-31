@@ -92,6 +92,11 @@
                 title: 'tab',
                 icon: 'ios-barcode-outline',
                 route: { path: '/components/tab' }
+              },
+              {
+                title: 'label',
+                icon: 'pricetags',
+                route: { path: '/components/label' }
               }
             ]
           }

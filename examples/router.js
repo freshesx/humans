@@ -28,7 +28,7 @@ const router = new VueRouter({
     },
     {
       path: '/components/card',
-      component: resolve => { require(['./docs/components/card'], resolve) }
+      component: resolve => { require(['./docs/components/card/index'], resolve) }
     },
     {
       path: '/components/form',
@@ -49,6 +49,10 @@ const router = new VueRouter({
     {
       path: '/components/tab',
       component: resolve => { require(['./docs/components/tab'], resolve) }
+    },
+    {
+      path: '/components/label',
+      component: resolve => { require(['./docs/components/label'], resolve) }
     }
   ]
 })
