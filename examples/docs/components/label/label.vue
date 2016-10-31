@@ -28,9 +28,3 @@
 
   }
 </script>
-
-<style scoped>
-  h5{
-    margin-bottom: 20px;
-  }
-</style>
