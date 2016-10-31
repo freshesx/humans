@@ -1,0 +1,32 @@
+$-label: #{$namespace}label;
+
+$-label-style: (
+  primary: $green,
+  warning: $orange,
+  error: $pink,
+  secondary: #d9d9d9,
+  inverse: #505050,
+);
+
+@mixin get-color($type) {
+  background-color: lighten(map-get($-label-style, $type), 30%);
+  color: map-get($-label-style, $type);
+  border-color: darken(map-get($-label-style, $type), 10%);
+}
+
+.#{$-label}{
+  font-size: 0.9rem;
+  padding: 0.1rem 1rem;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid;
+  font-style: normal;
+  cursor: default;
+
+  // is-primary, is-secondary, is-error etc.
+  @each $name, $value in $-btn-style {
+    &.is-#{$name}{
+      @include get-color($name);
+    }
+  }
+}
