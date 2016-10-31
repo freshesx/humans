@@ -23,6 +23,9 @@ import TabItem from './tab/tab-item'
 import TabPane from './tab/tab-pane'
 import SearchBar from './searchbar/search'
 import QuantityControl from './control/quantity-control'
+import QuantityIncreaseButton from './control/quantity-increase-button'
+import QuantityReduceButton from './control/quantity-reduce-button'
+import QuantityInput from './control/quantity-input'
 
 export default {
   // Column
@@ -62,5 +65,8 @@ export default {
   TabItem,
   TabPane,
   // control
-  QuantityControl
+  QuantityControl,
+  QuantityIncreaseButton,
+  QuantityReduceButton,
+  QuantityInput
 }

@@ -1,9 +1,7 @@
 <template>
-  <div :class="classes">
-    <mn-quantity-reduce-button></mn-quantity-reduce-button>
-    <mn-quantity-input></mn-quantity-input>
-    <mn-quantity-increase-button></mn-quantity-increase-button>
-  </div>
+  <button type="button" name="button" :class="classes">
+    <mn-icon name="plus"></mn-icon>
+  </button>
 </template>
 
 <script>
@@ -12,7 +10,7 @@
       classes () {
         let classes = {}
         // basic class
-        classes[`${this.$human.cssPrefix}quantity-control`] = true
+        classes[`${this.$human.cssPrefix}quantity-increase-button`] = true
         // return default and now classes
         return Object.assign({}, classes)
       }
