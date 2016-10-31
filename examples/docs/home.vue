@@ -97,6 +97,11 @@
                 title: 'label',
                 icon: 'pricetags',
                 route: { path: '/components/label' }
+              },
+              {
+                title: 'rate',
+                icon: 'ios-star',
+                route: { path: '/components/rate' }
               }
             ]
           }
