@@ -22,12 +22,12 @@
           return `color: ${this.starColor}`
         }
 
-        if (!this.ifInteger(this.$parent.default)) {
-          if (this.index <= Math.ceil(this.$parent.default)) {
+        if (!this.ifInteger(this.$parent.defaultIndex) && this.$parent.ifDefault) {
+          if (this.index <= Math.ceil(this.$parent.defaultIndex)) {
             return `color: ${this.starColor}`
           }
         } else {
-          if (this.index <= this.$parent.default) {
+          if (this.index <= this.$parent.defaultIndex) {
             return `color: ${this.starColor}`
           }
         }
@@ -39,15 +39,14 @@
         }
       },
       setName () {
-        if (!this.ifInteger(this.$parent.default)) {
-          if (this.index === Math.ceil(this.$parent.default)) {
-            return 'ios-star-half'
-          } else {
-            return 'ios-star'
+        if (!this.ifInteger(this.$parent.default) && this.$parent.ifDefault) {
+          if (this.$parent.currentIndex < 0) {
+            if (this.index === Math.ceil(this.$parent.default)) {
+              return 'ios-star-half'
+            }
           }
-        } else {
-          return 'ios-star'
         }
+        return 'ios-star'
       }
     },
     methods: {

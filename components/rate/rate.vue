@@ -32,10 +32,10 @@
       colors: {
         type: Array,
         default: function () {
-          return ['#999', '#000']
+          return ['#ccc', '#000']
         }
       }
-      //         Default color for stars. Each item can be omitted.
+      //         Default color for stars.
       // option: The first item is unselected color.
       //         The last item is selected color.
     },
@@ -44,7 +44,16 @@
         defaultClasses: this.$human.cssPrefix,
         currentIndex: -1,
         selectedIndex: -1,
-        lastIndex: -1
+        lastSelected: -1,
+        defaultIndex: this.default,
+        ifDefault: this.default > 0
+      }
+    },
+    watch: {
+      currentIndex: function (val, oldVal) {
+        if (val > 0) {
+          this.$emit('change', val)
+        }
       }
     },
     computed: {
@@ -61,25 +70,29 @@
         if (this.disable) {
           return
         }
-        this.lastIndex = this.selectedIndex
+        this.lastSelected = this.selectedIndex
         this.selectedIndex = -1
         this.currentIndex = item
+        this.defaultIndex = -1
         // If disable, readonly. If not, change the color on real time.
       },
       mouseLeaveEvent: function (item) {
         if (this.disable) {
           return
         }
-        this.selectedIndex = this.lastIndex
+        this.selectedIndex = this.lastSelected
         this.currentIndex = -1
+        this.defaultIndex = (this.ifDefault) ? this.default : -1
         // If disable, readonly. If not, change the color on real time.
       },
       clickItem: function (item) {
         if (this.disable) {
           return
         }
-        this.lastIndex = item
+        this.lastSelected = item
         this.selectedIndex = item
+        this.defaultIndex = -1
+        this.ifDefault = false
         // If disable, readonly. If not, change the color on real time.
       }
     }
