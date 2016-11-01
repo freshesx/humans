@@ -12,8 +12,8 @@
     },
     data () {
       return {
-        starColor: '#000',
-        defaultColor: '#999'
+        starColor: this.$parent.colors[1],
+        defaultColor: this.$parent.colors[0]
       }
     },
     computed: {

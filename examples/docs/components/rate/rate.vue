@@ -10,7 +10,7 @@
     <mn-card>
       <mn-card-item>Clickable rate</mn-card-item>
       <mn-card-item>
-        <mn-rate @rate-click="hello"></mn-rate>
+        <mn-rate :colors="['#eee', 'rgb(255, 45, 85)']"></mn-rate>
       </mn-card-item>
     </mn-card>
   </div>
@@ -18,10 +18,6 @@
 
 <script>
   export default {
-    methods: {
-      hello: function (i) {
-        console.log(i)
-      }
-    }
+
   }
 </script>
