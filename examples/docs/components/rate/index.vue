@@ -2,8 +2,8 @@
   <div class="section">
     <div class="letter">
       <div class="letter-body">
-        <h1>Tabs</h1>
-        <small>tab</small>
+        <h1>Rate</h1>
+        <small>icon</small>
       </div>
     </div>
 

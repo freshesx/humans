@@ -26,6 +26,7 @@ import TabPane from './tab/tab-pane'
 import SearchBar from './searchbar/search'
 import Label from './label/label'
 import Rate from './rate/rate'
+import RateItem from './rate/rate-item'
 
 export default {
   // Column
@@ -69,5 +70,6 @@ export default {
   // Label
   Label,
   // Rate
-  Rate
+  Rate,
+  RateItem
 }
