@@ -8,45 +8,33 @@
       index: {
         type: Number,
         required: true
-      }
-    },
-    data () {
-      return {
-        starColor: this.$parent.colors[1],
-        defaultColor: this.$parent.colors[0]
+      },
+      count: {
+        type: Number,
+        default: -1
       }
     },
     computed: {
       setColor () {
-        if (this.index <= this.$parent.selectedIndex) {
-          return `color: ${this.starColor}`
-        }
-
-        if (!this.ifInteger(this.$parent.defaultIndex) && this.$parent.ifDefault) {
-          if (this.index <= Math.ceil(this.$parent.defaultIndex)) {
-            return `color: ${this.starColor}`
-          }
-        } else {
-          if (this.index <= this.$parent.defaultIndex) {
-            return `color: ${this.starColor}`
-          }
-        }
-
-        if (this.index <= this.$parent.currentIndex) {
-          return `color: ${this.starColor}`
-        } else {
-          return `color: ${this.defaultColor}`
-        }
+        return `color: ${this.$parent.color}`
+        // Set star's color by 'this.$parent.color'
       },
       setName () {
-        if (!this.ifInteger(this.$parent.default) && this.$parent.ifDefault) {
-          if (this.$parent.currentIndex < 0) {
-            if (this.index === Math.ceil(this.$parent.default)) {
-              return 'ios-star-half'
-            }
+        let ifInteger = this.ifInteger(this.count)
+        // If integer or not.
+        if (!ifInteger) {
+          if (this.index < Math.ceil(this.count)) {
+            return 'ios-star'
+          } else if (this.index === Math.ceil(this.count)) {
+            return 'ios-star-half'
+          }
+        } else {
+          if (this.index <= this.count) {
+            return 'ios-star'
           }
         }
-        return 'ios-star'
+        return 'ios-star-outline'
+        // Change the stars by 'this.count'
       }
     },
     methods: {

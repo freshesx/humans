@@ -3,9 +3,9 @@
     <i
       v-for="item in this.max"
       @mouseenter="mouseEnterEvent(item)"
-      @mouseleave="mouseLeaveEvent(item)"
+      @mouseleave="mouseLeaveEvent(item, this.status)"
       @click="clickItem(item)">
-      <mn-rate-item :index="item"></mn-rate-item>
+      <mn-rate-item :index="item" :count="current"></mn-rate-item>
     </i>
   </span>
 </template>
@@ -29,30 +29,32 @@
         default: false
       },
       // option: is clickable or not
-      colors: {
-        type: Array,
-        default: function () {
-          return ['#ccc', '#000']
-        }
+      color: {
+        type: String,
+        default: 'rgb(255, 204, 0)'
       }
-      //         Default color for stars.
-      // option: The first item is unselected color.
-      //         The last item is selected color.
+      // option: The color of the stars.
     },
     data () {
       return {
         defaultClasses: this.$human.cssPrefix,
-        currentIndex: -1,
-        selectedIndex: -1,
-        lastSelected: -1,
-        defaultIndex: this.default,
-        ifDefault: this.default > 0
+        status: -1,
+        //
+        // If status === -1, no default value and no selected value.
+        // If status === 1, it has the default value.
+        // If status === 2, it has the selected value.
+        //
+        current: -1,
+        // Pass the data to the children component 'rate-item'
+        lastSelected: -1
+        // Record the last selected value for mouseLeaveEvent
       }
     },
     watch: {
-      currentIndex: function (val, oldVal) {
+      current: function (val) {
         if (val > 0) {
           this.$emit('change', val)
+          // Provide function 'change' for every change of current
         }
       }
     },
@@ -70,30 +72,40 @@
         if (this.disable) {
           return
         }
-        this.lastSelected = this.selectedIndex
-        this.selectedIndex = -1
-        this.currentIndex = item
-        this.defaultIndex = -1
+        this.current = item
         // If disable, readonly. If not, change the color on real time.
       },
-      mouseLeaveEvent: function (item) {
+      mouseLeaveEvent: function (item, status) {
         if (this.disable) {
           return
         }
-        this.selectedIndex = this.lastSelected
-        this.currentIndex = -1
-        this.defaultIndex = (this.ifDefault) ? this.default : -1
+        if (this.status === 1) {
+          this.current = this.default
+        } else if (this.status === 2) {
+          this.current = this.lastSelected
+        } else {
+          this.current = -1
+        }
+        //
+        // Change the current value by status.
+        //
         // If disable, readonly. If not, change the color on real time.
       },
       clickItem: function (item) {
         if (this.disable) {
           return
         }
+        this.status = 2
+        this.current = item
         this.lastSelected = item
-        this.selectedIndex = item
-        this.defaultIndex = -1
-        this.ifDefault = false
         // If disable, readonly. If not, change the color on real time.
+      }
+    },
+    mounted () {
+      if (this.default > 0) {
+        this.status = 1
+        this.current = this.default
+        // If default, show the default value.
       }
     }
   }
