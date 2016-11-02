@@ -97,6 +97,11 @@
                 title: 'label',
                 icon: 'pricetags',
                 route: { path: '/components/label' }
+              },
+              {
+                title: 'slidebox',
+                icon: 'images',
+                route: { path: '/components/slidebox' }
               }
             ]
           }

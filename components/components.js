@@ -25,6 +25,7 @@ import TabItem from './tab/tab-item'
 import TabPane from './tab/tab-pane'
 import SearchBar from './searchbar/search'
 import Label from './label/label'
+import SlideBox from './slidebox/slidebox'
 
 export default {
   // Column
@@ -65,5 +66,7 @@ export default {
   TabBar,
   TabItem,
   TabPane,
-  Label
+  Label,
+  // slidebox
+  SlideBox
 }
