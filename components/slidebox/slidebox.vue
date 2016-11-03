@@ -55,7 +55,7 @@
         lastDistance: 0,
         slideBack: false,
         maxSlideValue: 0,
-        multiple: 3
+        multiple: 10
       }
     },
     methods: {
@@ -84,19 +84,25 @@
         this.lastPosition = this.startPosition
       },
       endEvent: function (event) {
+        if (this.direction === 'left') {
+          if (this.distance < this.maxSlideValue || this.distance * this.multiple < this.maxSlideValue) {
+            this.distance = this.maxSlideValue
+            this.lastDistance = this.maxSlideValue
+          } else {
+            this.distance = this.distance * this.multiple
+          }
+        } else {
+          if (this.distance > 0) {
+            this.distance = 0
+            this.lastDistance = 0
+          } else {
+            this.distance = this.distance / this.multiple
+          }
+        }
+
         this.ifTouched = true
         this.lastDistance = this.distance
         this.slideBack = true
-
-        if (this.distance > 0) {
-          this.distance = 0
-          this.lastDistance = 0
-        } else if (this.distance < this.maxSlideValue) {
-          this.distance = this.maxSlideValue
-          this.lastDistance = this.maxSlideValue
-        } else {
-          this.distance = this.distance
-        }
       }
     },
     mounted () {
