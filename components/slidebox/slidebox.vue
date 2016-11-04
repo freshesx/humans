@@ -27,8 +27,6 @@
         classes[`${this.defaultClasses}slide-box`] = true
         // Animation
         classes['slide-back'] = true
-        // is-full
-        classes['is-full'] = this.type === 'full'
         return Object.assign({}, classes)
       },
       slideWrap () {
