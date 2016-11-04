@@ -27,6 +27,7 @@ import SearchBar from './searchbar/search'
 import Label from './label/label'
 import Rate from './rate/rate'
 import RateItem from './rate/rate-item'
+import QuantityControl from './control/quantity-control'
 
 export default {
   // Column
@@ -71,5 +72,7 @@ export default {
   Label,
   // Rate
   Rate,
-  RateItem
+  RateItem,
+  // control
+  QuantityControl
 }

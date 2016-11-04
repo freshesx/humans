@@ -102,6 +102,11 @@
                 title: 'rate',
                 icon: 'ios-star',
                 route: { path: '/components/rate' }
+              },
+              {
+                title: 'control',
+                icon: 'ios-settings-strong',
+                route: { path: '/components/control' }
               }
             ]
           }
