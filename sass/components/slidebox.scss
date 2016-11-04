@@ -6,9 +6,7 @@ $-slide-box-item: #{$namespace}slide-box-item;
 .#{$-slide-wrap}{
   box-sizing: border-box;
   overflow-x: hidden;
-}
-.#{$-slide-content}{
-  width: 100%;
+  padding: 0 1rem;
 }
 .#{$-slide-box}{
   display: flex;

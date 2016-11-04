@@ -1,11 +1,12 @@
 <template>
-  <div :class="slideWrap" ref="wrap">
+  <div :class="slideWrap" ref="wrap" :style="slideWrapStyle">
     <div
       :class="slideBox"
       @touchmove="moveEvent($event)"
       @touchstart="startEvent($event)"
       @touchend = "endEvent($event)"
-      :style="slideBoxStyle">
+      :style="slideBoxStyle"
+      ref="box">
       <slot></slot>
     </div>
   </div>
@@ -14,7 +15,7 @@
 <script>
   export default {
     props: {
-      width: {
+      boxWidth: {
         type: String,
         default: '100%'
       }
@@ -26,6 +27,8 @@
         classes[`${this.defaultClasses}slide-box`] = true
         // Animation
         classes['slide-back'] = true
+        // is-full
+        classes['is-full'] = this.type === 'full'
         return Object.assign({}, classes)
       },
       slideWrap () {
@@ -35,11 +38,10 @@
         return Object.assign({}, classes)
       },
       slideBoxStyle () {
-        let translateX = this.distance
-        return `transform: translateX(${translateX}px);`
+        return `transform: translateX(${this.distance}px);`
       },
       slideWrapStyle () {
-        return `width: ${this.width};`
+        return `width: ${this.boxWidth};`
         // Set initial width.
       }
     },
@@ -53,15 +55,15 @@
         // Current position depends on on-touchmove event.
         lastPosition: 0,
         // The last position.
-        ifTouched: false,
+        isTouched: false,
         // If touched or not
-        direction: 'middle',
+        direction: '',
         // The direction of touch events.
         distance: 0,
         // Counting the distance for transform.
         lastDistance: 0,
         // The last distance.
-        maxSlide: 0,
+        maximum: 0,
         // The max value of slide.
         startTime: 0,
         // Start time depends on on-touchstart event.
@@ -80,7 +82,7 @@
         this.CurrentPosition = event.touches[0].screenX
         this.direction = (this.CurrentPosition < this.lastPosition) ? 'left' : 'right'
         // Judge the direction.
-        this.distance = (!this.ifTouched)
+        this.distance = (!this.isTouched)
                       ? this.CurrentPosition - this.startPosition
                       : this.CurrentPosition - this.startPosition + this.lastDistance
         // Counting the distance.
@@ -89,7 +91,7 @@
 
         if (this.distance > 0) this.distance = this.distance / 10
         // If touched at the far left.
-        if (this.distance < this.maxSlide && this.lastDistance === this.maxSlide) this.distance = (this.CurrentPosition - this.startPosition) / 10 + this.maxSlide
+        if (this.distance < this.maximum && this.lastDistance === this.maximum) this.distance = (this.CurrentPosition - this.startPosition) / 10 + this.maximum
         // If touched at the far right.
 
         this.lastPosition = this.CurrentPosition
@@ -111,9 +113,9 @@
         // Trigger the swipe or not.
 
         if (this.direction === 'left') {
-          if (this.distance < this.maxSlide) {
-            this.distance = this.maxSlide
-            this.lastDistance = this.maxSlide
+          if (this.distance < this.maximum) {
+            this.distance = this.maximum
+            this.lastDistance = this.maximum
           }
         } else {
           if (this.distance > 0) {
@@ -122,7 +124,7 @@
           }
         } this.distance = this.distance
         // If touched at the far left or the far right.
-        this.ifTouched = true
+        this.isTouched = true
         this.lastDistance = this.distance
       },
       swipeEvent: function (distance, duration) {
@@ -140,7 +142,7 @@
       this.$children.map(function (item) {
         sum += item.$el.clientWidth
       })
-      this.maxSlide = this.$refs.wrap.clientWidth - sum
+      this.maximum = this.$refs.wrap.clientWidth - sum - 2 * this.$refs.box.offsetLeft
       // Counting the max slide value.
     }
   }
