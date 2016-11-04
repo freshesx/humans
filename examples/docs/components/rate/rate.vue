@@ -15,6 +15,7 @@
           color="rgb(255, 45, 85)"
           :default="3.5"
           @change="show"
+          @select="select"
           ></mn-rate>
       </mn-card-item>
     </mn-card>
@@ -26,6 +27,9 @@
     methods: {
       show: function (val) {
         console.log(val)
+      },
+      select: function (val) {
+        console.log('selected: ', val)
       }
     }
   }

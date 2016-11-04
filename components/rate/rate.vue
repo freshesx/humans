@@ -3,7 +3,7 @@
     <i
       v-for="item in this.max"
       @mouseenter="mouseEnterEvent(item)"
-      @mouseleave="mouseLeaveEvent(item, this.status)"
+      @mouseleave="mouseLeaveEvent(item)"
       @click="clickItem(item)">
       <mn-rate-item :index="item" :count="current"></mn-rate-item>
     </i>
@@ -75,7 +75,7 @@
         this.current = item
         // If disable, readonly. If not, change the color on real time.
       },
-      mouseLeaveEvent: function (item, status) {
+      mouseLeaveEvent: function (item) {
         if (this.disable) {
           return
         }
@@ -99,6 +99,8 @@
         this.current = item
         this.lastSelected = item
         // If disable, readonly. If not, change the color on real time.
+        this.$emit('select', item)
+        // Provide function 'select' for selecting the item
       }
     },
     mounted () {
