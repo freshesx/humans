@@ -22,18 +22,17 @@
     computed: {
       slideBox () {
         let classes = {}
+        // Add css prefix
         classes[`${this.defaultClasses}slide-box`] = true
         // Animation
         classes['slide-back'] = this.slideBack
         return Object.assign({}, classes)
-        // Add css prefix
       },
       slideWrap () {
         let classes = {}
-        classes[`${this.defaultClasses}slide-wrap`] = true
-        // Animation
-        return Object.assign({}, classes)
         // Add css prefix
+        classes[`${this.defaultClasses}slide-wrap`] = true
+        return Object.assign({}, classes)
       },
       slideBoxStyle () {
         let translateX = this.distance
@@ -41,11 +40,13 @@
       },
       slideWrapStyle () {
         return `width: ${this.width};`
+        // Set initial width.
       }
     },
     data () {
       return {
         defaultClasses: this.$human.cssPrefix,
+        // Defaul css prefix
         startPosition: 0,
         // Start positon depends on  on-touchstart event.
         CurrentPosition: 0,
@@ -62,18 +63,17 @@
         // The last distance.
         slideBack: false,
         // Trigger the animation or not.
-        maxSlideValue: 0,
+        maxSlide: 0,
         // The max value of slide.
         startTime: 0,
         // Start time depends on on-touchstart event.
         finishTime: 0,
         // Finish time depends on on-touchend event.
-        swipeDuration: 300,
-        // Default swipe duration
-        swipeDistance: 150,
-        // Default swipe distance
-        swipeMultiple: 5
-        // Default swipe multiple
+        swipe: {
+          distance: 150,  // Default swipe distance
+          duration: 300,  // Default swipe duration
+          multiple: 2     // Default swipe multiple
+        }
       }
     },
     methods: {
@@ -95,35 +95,34 @@
         if (this.distance > 0) {
           this.distance = this.distance / 10
         }
-        if (this.distance < this.maxSlideValue && this.lastDistance === this.maxSlideValue) {
-          this.distance = (this.CurrentPosition - this.startPosition) / 10 + this.maxSlideValue
+        // If touched at the far left.
+        if (this.distance < this.maxSlide && this.lastDistance === this.maxSlide) {
+          this.distance = (this.CurrentPosition - this.startPosition) / 10 + this.maxSlide
         }
+        // If touched at the far right.
 
         this.lastPosition = this.CurrentPosition
       },
       startEvent: function (event) {
-        this.startPosition = event.touches[0].screenX
-        this.lastPosition = this.startPosition
-
         this.startTime = new Date().getTime()
+        // Set the start time.
+        this.startPosition = event.touches[0].screenX
+        // Set the start position.
+        this.lastPosition = this.startPosition
+        // Set the last position
       },
       endEvent: function (event) {
         this.finishTime = new Date().getTime()
+        // Set finish time.
         let duration = this.finishTime - this.startTime
         let distance = Math.abs(this.CurrentPosition - this.startPosition)
-
-        if (duration < this.swipeDuration && distance > this.swipeDistance) {
-          if (this.direction === 'left') {
-            this.distance += this.distance * this.swipeMultiple
-          } else {
-            this.distance -= this.distance * this.swipeMultiple
-          }
-        }
+        this.swipeEvent(distance, duration)
+        // Trigger the swipe or not.
 
         if (this.direction === 'left') {
-          if (this.distance < this.maxSlideValue) {
-            this.distance = this.maxSlideValue
-            this.lastDistance = this.maxSlideValue
+          if (this.distance < this.maxSlide) {
+            this.distance = this.maxSlide
+            this.lastDistance = this.maxSlide
           }
         } else {
           if (this.distance > 0) {
@@ -131,19 +130,30 @@
             this.lastDistance = 0
           }
         }
+        // If touched at the far left or the far right.
         this.distance = this.distance
 
         this.ifTouched = true
         this.lastDistance = this.distance
         this.slideBack = true
+      },
+      swipeEvent: function (distance, duration) {
+        if (duration < this.swipe.duration && distance > this.swipe.distance) {
+          this.distance = (this.direction === 'left')
+                        ? this.distance + this.distance * this.swipe.multiple
+                        : this.distance - this.distance * this.swipe.multiple
+        }
+        return
+        // Swipe event
       }
     },
     mounted () {
       let sum = 0
-      for (let i in this.$children) {
-        sum += this.$children[i].$el.clientWidth
+      for (let item of this.$children) {
+        sum += item.$el.clientWidth
       }
-      this.maxSlideValue = this.$refs.wrap.clientWidth - sum
+      this.maxSlide = this.$refs.wrap.clientWidth - sum
+      // Counting the max slide value.
     }
   }
 </script>
