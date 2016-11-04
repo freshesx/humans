@@ -53,6 +53,10 @@ const router = new VueRouter({
     {
       path: '/components/label',
       component: resolve => { require(['./docs/components/label'], resolve) }
+    },
+    {
+      path: '/components/rate',
+      component: resolve => { require(['./docs/components/rate'], resolve) }
     }
   ]
 })
