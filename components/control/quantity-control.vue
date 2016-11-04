@@ -25,7 +25,7 @@
         // basic class
         classes[`${this.$human.cssPrefix}quantity-reduce-button`] = true
         // disabled
-        classes['is-disabled'] = this.noReduce
+        classes['is-disabled'] = this.enableReduce
         // return default and now classes
         return Object.assign({}, classes)
       },
@@ -41,7 +41,7 @@
         // basic class
         classes[`${this.$human.cssPrefix}quantity-increase-button`] = true
         // disabled
-        classes['is-disabled'] = this.noIncrease
+        classes['is-disabled'] = this.enableIncrease
         // return default and now classes
         return Object.assign({}, classes)
       }
@@ -50,8 +50,8 @@
       return {
         defaultClasses: this.$human.cssPrefix,
         value: this.default,
-        noReduce: 0,
-        noIncrease: 0,
+        enableReduce: 0,
+        enableIncrease: 0,
         currentValue: this.value
       }
     },
@@ -80,11 +80,11 @@
     },
     methods: {
       increaseNum: function () {
-        if (!this.noIncrease) this.value += this.step
+        if (!this.enableIncrease) this.value += this.step
         // Increase
       },
       reduceNum: function () {
-        if (!this.noReduce) this.value -= this.step
+        if (!this.enableReduce) this.value -= this.step
         // Reduce
       }
     },
@@ -109,11 +109,11 @@
         }
 
         const reduce = newVal - this.step
-        this.noReduce = (reduce < this.min) ? 1 : 0
+        this.enableReduce = (reduce < this.min) ? 1 : 0
         // Disable the reduce button when the value is less than the min
 
         const increase = newVal + this.step
-        this.noIncrease = (increase > this.max) ? 1 : 0
+        this.enableIncrease = (increase > this.max) ? 1 : 0
         // Disable the increase button when the value is more than the max
       }
     }

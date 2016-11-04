@@ -20,9 +20,9 @@
         // Set star's color by 'this.$parent.color'
       },
       setName () {
-        let ifInteger = this.ifInteger(this.count)
+        let isInteger = this.isInteger(this.count)
         // If integer or not.
-        if (!ifInteger) {
+        if (!isInteger) {
           if (this.index < Math.ceil(this.count)) {
             return 'ios-star'
           } else if (this.index === Math.ceil(this.count)) {
@@ -38,7 +38,7 @@
       }
     },
     methods: {
-      ifInteger: function (num) {
+      isInteger: function (num) {
         return (typeof num === 'number') && (num % 1 === 0)
       }
     }
