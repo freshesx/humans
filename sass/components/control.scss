@@ -1,11 +1,10 @@
-@import "../variables";
-
 $-quantity-control: #{$namespace}quantity-control;
 $-quantity-increase-button: #{$namespace}quantity-increase-button;
 $-quantity-reduce-button: #{$namespace}quantity-reduce-button;
 $-quantity-input: #{$namespace}quantity-input;
 $quantity-base-color: #999;
 $quantity-base-background: #fafafa;
+$quantity-base-radius: 5px;
 
 .#{$-quantity-control}{
   display: flex;
@@ -36,11 +35,11 @@ $quantity-base-background: #fafafa;
   }
 }
 .#{$-quantity-increase-button}{
-  border-radius: 0px 3px 3px 0px;
+  border-radius: 0px $quantity-base-radius $quantity-base-radius 0px;
   border-left: 0;
 }
 .#{$-quantity-reduce-button}{
-  border-radius: 3px 0px 0px 3px;
+  border-radius: $quantity-base-radius 0px 0px $quantity-base-radius;
   border-right: 0;
 }
 
