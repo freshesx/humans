@@ -18,6 +18,10 @@
       boxWidth: {
         type: String,
         default: '100%'
+      },
+      type: {
+        type: String,
+        default: 'normal'
       }
     },
     computed: {
@@ -27,6 +31,8 @@
         classes[`${this.defaultClasses}slide-box`] = true
         // Animation
         classes['slide-back'] = true
+        // is-full
+        classes['is-full'] = this.type === 'full'
         return Object.assign({}, classes)
       },
       slideWrap () {
@@ -103,13 +109,18 @@
         // Set the last position
       },
       endEvent: function (event) {
-        this.finishTime = new Date().getTime()
-        // Set finish time.
-        const duration = this.finishTime - this.startTime
-        const distance = Math.abs(this.CurrentPosition - this.startPosition)
-        this.swipeEvent(distance, duration)
-        // Trigger the swipe or not.
-
+        if (this.type === 'full') {
+          this.distance = (this.direction === 'left')
+                        ? this.lastDistance - this.$children[0].$el.clientWidth
+                        : this.lastDistance + this.$children[0].$el.clientWidth
+        } else {
+          this.finishTime = new Date().getTime()
+          // Set finish time.
+          const duration = this.finishTime - this.startTime
+          const distance = Math.abs(this.CurrentPosition - this.startPosition)
+          this.swipeEvent(distance, duration)
+          // Trigger the swipe or not.
+        }
         if (this.direction === 'left') {
           if (this.distance < this.maximum) {
             this.distance = this.maximum

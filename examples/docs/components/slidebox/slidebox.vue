@@ -2,19 +2,36 @@
   <div class="full-page">
     <mn-slide-box>
       <mn-slide-box-item>
-        <div class="list">1</div>
+        <div class="list one">1</div>
       </mn-slide-box-item>
       <mn-slide-box-item>
-        <div class="list">2</div>
+        <div class="list one">2</div>
       </mn-slide-box-item>
       <mn-slide-box-item>
-        <div class="list">3</div>
+        <div class="list one">3</div>
       </mn-slide-box-item>
       <mn-slide-box-item>
-        <div class="list">4</div>
+        <div class="list one">4</div>
       </mn-slide-box-item>
       <mn-slide-box-item>
-        <div class="list">5</div>
+        <div class="list one">5</div>
+      </mn-slide-box-item>
+    </mn-slide-box>
+    <mn-slide-box type="full">
+      <mn-slide-box-item>
+        <div class="list two">1</div>
+      </mn-slide-box-item>
+      <mn-slide-box-item>
+        <div class="list two">2</div>
+      </mn-slide-box-item>
+      <mn-slide-box-item>
+        <div class="list two">3</div>
+      </mn-slide-box-item>
+      <mn-slide-box-item>
+        <div class="list two">4</div>
+      </mn-slide-box-item>
+      <mn-slide-box-item>
+        <div class="list two">5</div>
       </mn-slide-box-item>
     </mn-slide-box>
   </div>
@@ -41,5 +58,11 @@
     color: #999;
     font-size: 1.5rem;
     margin-bottom: 20px;
+  }
+  .list.one{
+    width: 200px;
+  }
+  .list.two{
+    width: 100%;
   }
 </style>

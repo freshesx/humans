@@ -7,6 +7,7 @@ $-slide-box-item: #{$namespace}slide-box-item;
   box-sizing: border-box;
   overflow-x: hidden;
   padding: 0 1rem;
+  width: 100%;
 }
 .#{$-slide-box}{
   display: flex;
@@ -16,7 +17,12 @@ $-slide-box-item: #{$namespace}slide-box-item;
   flex-wrap: nowrap;
   padding: 0 0.5rem;
 }
-
+.is-full{
+  width: 100%;
+  .#{$-slide-box-item}{
+    flex: 0 0 100%;
+  }
+}
 .slide-back{
   transition: 0.5s ease-out;
 }
