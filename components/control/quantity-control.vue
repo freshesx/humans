@@ -50,8 +50,8 @@
       return {
         defaultClasses: this.$human.cssPrefix,
         value: this.default,
-        noReduce: false,
-        noIncrease: false,
+        noReduce: 0,
+        noIncrease: 0,
         currentValue: this.value
       }
     },
@@ -80,27 +80,17 @@
     },
     methods: {
       increaseNum: function () {
-        if (!this.noIncrease) {
-          this.value = this.value + this.step
-          return this.value
-          // Increase
-        }
+        if (!this.noIncrease) this.value += this.step
+        // Increase
       },
       reduceNum: function () {
-        if (!this.noReduce) {
-          this.value = this.value - this.step
-          return this.value
-          // Reduce
-        }
+        if (!this.noReduce) this.value -= this.step
+        // Reduce
       }
     },
     mounted () {
-      if (this.value < this.min) {
-        this.value = this.min
-      }
-      if (this.value > this.max) {
-        this.value = this.max
-      }
+      if (this.value < this.min) this.value = this.min
+      if (this.value > this.max) this.value = this.max
       // If the default value is not between the min and max, return min or max
     },
     watch: {
@@ -118,20 +108,12 @@
           })
         }
 
-        let reduce = newVal - this.step
-        if (reduce < this.min) {
-          this.noReduce = true
-        } else {
-          this.noReduce = false
-        }
+        const reduce = newVal - this.step
+        this.noReduce = (reduce < this.min) ? 1 : 0
         // Disable the reduce button when the value is less than the min
 
-        let increase = newVal + this.step
-        if (increase > this.max) {
-          this.noIncrease = true
-        } else {
-          this.noIncrease = false
-        }
+        const increase = newVal + this.step
+        this.noIncrease = (increase > this.max) ? 1 : 0
         // Disable the increase button when the value is more than the max
       }
     }
