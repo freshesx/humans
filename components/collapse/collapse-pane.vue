@@ -5,9 +5,11 @@
         {{ this.title }}
       </p>
     </div>
-    <div :class="collapseContent" v-if="selected">
-      <slot></slot>
-    </div>
+    <transition name="collapseToggle">
+      <div :class="collapseContent" v-if="selected">
+        <slot></slot>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -23,7 +25,7 @@
       return {
         defaultClasses: this.$human.cssPrefix,
         index: -1,
-        isSelected: false
+        flatSelected: false
       }
     },
     computed: {
@@ -52,21 +54,27 @@
       },
       selected () {
         if (this.$parent.type === 'flat') {
-          return this.isSelected
+          return this.flatSelected
+          // If type is 'flat', use another way to toggle
         }
         return this.index === this.$parent.current
+        // Set the current
       }
     },
     mounted () {
       this.$nextTick(function () {
         this.index = this.$parent.collapses.get(this._uid)
-        if (this.index === this.$parent.current) this.isSelected = true
+        if (this.index === this.$parent.current) this.flatSelected = true
+        // Get the index by _uid and set the current.
       })
     },
     methods: {
       changeIndex: function () {
         this.$parent.current = this.index
-        this.isSelected = !this.isSelected
+        if (this.$parent.type === 'flat') {
+          this.flatSelected = !this.flatSelected
+        }
+        // Toggle the content
       }
     }
   }

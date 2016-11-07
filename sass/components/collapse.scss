@@ -5,36 +5,48 @@ $-collapse-content: #{$namespace}collapse-content;
 $collapse-gray: #ddd;
 $collapse-radius: 5px;
 
-.#{$-collapse}{
+.#{$-collapse} {
   width: 100%;
 }
 
-.#{$-collapse-list}{
+.#{$-collapse-list} {
   border: 1px solid $collapse-gray;
   border-radius: $collapse-radius;
   margin: 1rem 0;
   padding: 0;
 }
 
-.#{$-collapse-title}{
+.#{$-collapse-title} {
   background-color: lighten($collapse-gray, 10%);
   border-radius: $collapse-radius;
   padding: 0 1rem;
   cursor: pointer;
   border-bottom: 0;
-  p{
+
+  p {
     margin: 0;
     line-height: 3rem;
   }
-  &.is-selected{
-    border-radius: $collapse-radius $collapse-radius 0px 0px;
+  // is-selected
+  &.is-selected {
+    border-radius: $collapse-radius $collapse-radius 0 0;
     border-bottom: 1px solid $collapse-gray;
   }
 }
 
-.#{$-collapse-content}{
+.#{$-collapse-content} {
   padding: 0 1rem;
   overflow: hidden;
   box-sizing: border-box;
-  height: auto;
+  max-height: 999px;
+}
+
+.collapseToggle-enter-active,
+.collapseToggle-leave-active {
+  transition: all 0.2s ease;
+}
+
+.collapseToggle-enter,
+.collapseToggle-leave-active {
+  max-height: 0;
 }
