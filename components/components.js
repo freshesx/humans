@@ -29,6 +29,7 @@ import Rate from './rate/rate'
 import RateItem from './rate/rate-item'
 import QuantityControl from './control/quantity-control'
 import Collapse from './collapse/collapse'
+import CollapsePane from './collapse/collapse-pane'
 
 export default {
   // Column
@@ -77,5 +78,6 @@ export default {
   // control
   QuantityControl,
   // collapse
-  Collapse
+  Collapse,
+  CollapsePane
 }

@@ -1,0 +1,33 @@
+$-collapse: #{$namespace}collapse;
+$-collapse-list: #{$namespace}collapse-list;
+$-collapse-title: #{$namespace}collapse-title;
+$-collapse-content: #{$namespace}collapse-content;
+$collapse-gray: #ddd;
+$collapse-radius: 5px;
+
+.#{$-collapse}{
+  width: 100%;
+}
+
+.#{$-collapse-list}{
+  border: 1px solid $collapse-gray;
+  border-radius: $collapse-radius;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.#{$-collapse-title}{
+  background-color: lighten($collapse-gray, 10%);
+  border-radius: $collapse-radius $collapse-radius 0px 0px;
+  border-bottom: 1px solid $collapse-gray;
+  padding: 0 1rem;
+  cursor: pointer;
+  p{
+    margin: 0;
+    line-height: 3rem;
+  }
+}
+
+.#{$-collapse-content}{
+  padding: 0 1rem;
+}
