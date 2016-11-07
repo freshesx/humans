@@ -9,12 +9,17 @@
       <mn-card-item>
         <template slot="body">Switch boolean</template>
         <template slot="help">progress</template>
-        <mn-form-switch slot="action" v-model="checked"></mn-form-switch>
+        <mn-form-switch slot="action" data="A" v-model="data.radio"></mn-form-switch>
       </mn-card-item>
       <mn-card-item>
         <template slot="body">Switch boolean</template>
         <template slot="help">loading...</template>
-        <mn-form-switch slot="action" v-model="checked2" :disabled="true"></mn-form-switch>
+        <mn-form-switch slot="action" data="B" v-model="data.radio"></mn-form-switch>
+      </mn-card-item>
+      <mn-card-item>
+        <template slot="body">Switch boolean</template>
+        <template slot="help">loading...</template>
+        <mn-form-switch slot="action" data="C" v-model="data.radio2"></mn-form-switch>
       </mn-card-item>
     </mn-card>
   </mn-card-wrapper>
@@ -23,14 +28,16 @@
 <script>
   export default {
     watch: {
-      checked (newValue) {
+      data (newValue) {
         console.log(newValue)
       }
     },
     data () {
       return {
-        checked: true,
-        checked2: false
+        data: {
+          radio: undefined,
+          radio2: undefined
+        }
       }
     }
   }
