@@ -94,9 +94,9 @@
                 route: { path: '/components/tab' }
               },
               {
-                title: 'label',
+                title: 'tag',
                 icon: 'pricetags',
-                route: { path: '/components/label' }
+                route: { path: '/components/tag' }
               },
               {
                 title: 'rate',

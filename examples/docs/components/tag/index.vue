@@ -2,22 +2,22 @@
   <div class="section">
     <div class="letter">
       <div class="letter-body">
-        <h1>Label</h1>
-        <small>label</small>
+        <h1>Tag</h1>
+        <small>Tag</small>
       </div>
     </div>
 
-    <demo-label></demo-label>
+    <demo-tag></demo-tag>
 
   </div>
 </template>
 
 <script>
-  import DemoLabel from './label'
+  import DemoTag from './tag'
 
   export default {
     components: {
-      DemoLabel
+      DemoTag
     }
   }
 </script>

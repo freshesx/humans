@@ -24,7 +24,7 @@ import TabBar from './tab/tab'
 import TabItem from './tab/tab-item'
 import TabPane from './tab/tab-pane'
 import SearchBar from './searchbar/search'
-import Label from './label/label'
+import Tag from './tag/tag'
 import Rate from './rate/rate'
 import RateItem from './rate/rate-item'
 import QuantityControl from './control/quantity-control'
@@ -68,8 +68,8 @@ export default {
   TabBar,
   TabItem,
   TabPane,
-  // Label
-  Label,
+  // tag
+  Tag,
   // Rate
   Rate,
   RateItem,
