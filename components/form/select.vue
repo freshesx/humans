@@ -1,7 +1,7 @@
 <template>
   <select
     :class="{
-      [cssPrefix + 'form-select-control']: true
+      [`${cssPrefix}form-select-control`]: true
     }"
     :value="value"
     @input="onInput">
@@ -24,7 +24,7 @@
     },
     computed: {
       cssPrefix () {
-        return `${this.$human.cssPrefix}`
+        return this.$human.cssPrefix
       }
     },
     methods: {
