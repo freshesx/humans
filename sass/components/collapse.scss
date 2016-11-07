@@ -18,16 +18,19 @@ $collapse-radius: 5px;
 
 .#{$-collapse-title}{
   background-color: lighten($collapse-gray, 10%);
-  border-radius: $collapse-radius $collapse-radius 0px 0px;
-  border-bottom: 1px solid $collapse-gray;
+  border-radius: $collapse-radius;
   padding: 0 1rem;
   cursor: pointer;
   p{
     margin: 0;
     line-height: 3rem;
   }
+  &.is-selected{
+    border-radius: $collapse-radius $collapse-radius 0px 0px;
+  }
 }
 
 .#{$-collapse-content}{
   padding: 0 1rem;
+  border-top: 1px solid $collapse-gray;
 }

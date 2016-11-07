@@ -37,6 +37,8 @@
         let classes = {}
         // basic class
         classes[`${this.$human.cssPrefix}collapse-title`] = true
+        // is-selected
+        classes[`is-selected`] = this.index === this.$parent.current
         // return default and now classes
         return Object.assign({}, classes)
       },
