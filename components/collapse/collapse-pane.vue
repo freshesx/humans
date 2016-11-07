@@ -5,7 +5,7 @@
         {{ this.title }}
       </p>
     </div>
-    <div :class="collapseContent" v-if="isSelected">
+    <div :class="collapseContent" v-if="selected">
       <slot></slot>
     </div>
   </div>
@@ -22,7 +22,8 @@
     data () {
       return {
         defaultClasses: this.$human.cssPrefix,
-        index: -1
+        index: -1,
+        isSelected: false
       }
     },
     computed: {
@@ -38,7 +39,7 @@
         // basic class
         classes[`${this.$human.cssPrefix}collapse-title`] = true
         // is-selected
-        classes[`is-selected`] = this.index === this.$parent.current
+        classes[`is-selected`] = this.selected
         // return default and now classes
         return Object.assign({}, classes)
       },
@@ -49,18 +50,23 @@
         // return default and now classes
         return Object.assign({}, classes)
       },
-      isSelected () {
+      selected () {
+        if (this.$parent.type === 'flat') {
+          return this.isSelected
+        }
         return this.index === this.$parent.current
       }
     },
     mounted () {
       this.$nextTick(function () {
         this.index = this.$parent.collapses.get(this._uid)
+        if (this.index === this.$parent.current) this.isSelected = true
       })
     },
     methods: {
       changeIndex: function () {
         this.$parent.current = this.index
+        this.isSelected = !this.isSelected
       }
     }
   }

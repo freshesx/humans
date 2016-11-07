@@ -10,20 +10,23 @@
       return {
         collapses: new Map(),
         defaultClasses: this.$human.cssPrefix,
-        current: -1
+        current: this.selected
       }
     },
     props: {
       selected: {
         type: Number,
-        default: 0
+        default: -1
+      },
+      type: {
+        type: String,
+        default: 'normal'
       }
     },
     mounted () {
       const map = new Map()
       this.$children.forEach((collapse, index) => map.set(collapse._uid, index))
       this.collapses = map
-      this.current = this.selected
     },
     computed: {
       classes () {

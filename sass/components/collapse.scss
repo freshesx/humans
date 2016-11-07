@@ -21,16 +21,20 @@ $collapse-radius: 5px;
   border-radius: $collapse-radius;
   padding: 0 1rem;
   cursor: pointer;
+  border-bottom: 0;
   p{
     margin: 0;
     line-height: 3rem;
   }
   &.is-selected{
     border-radius: $collapse-radius $collapse-radius 0px 0px;
+    border-bottom: 1px solid $collapse-gray;
   }
 }
 
 .#{$-collapse-content}{
   padding: 0 1rem;
-  border-top: 1px solid $collapse-gray;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: auto;
 }
