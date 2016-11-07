@@ -27,6 +27,7 @@
       const map = new Map()
       this.$children.forEach((collapse, index) => map.set(collapse._uid, index))
       this.collapses = map
+      // Push the _uid and the index into a map.
     },
     computed: {
       classes () {
