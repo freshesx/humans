@@ -1,6 +1,13 @@
 <template>
-  <select class="form-select-control" :value="value" @input="onInput">
-    <option :value="option.value" v-for="option in options">{{ option.label }}</option>
+  <select
+    :class="{
+      [cssPrefix + 'form-select-control']: true
+    }"
+    :value="value"
+    @input="onInput">
+    <option
+      :value="option.value"
+      v-for="option in options">{{ option.label }}</option>
   </select>
 </template>
 
@@ -13,6 +20,11 @@
         default: () => {
           return []
         }
+      }
+    },
+    computed: {
+      cssPrefix () {
+        return `${this.$human.cssPrefix}`
       }
     },
     methods: {
