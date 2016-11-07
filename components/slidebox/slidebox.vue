@@ -1,5 +1,5 @@
 <template>
-  <div :class="slideWrap" ref="wrap" :style="slideWrapStyle">
+  <div :class="slideWrap" :style="slideWrapStyle">
     <div
       :class="slideBox"
       @touchmove="moveEvent($event)"
@@ -152,7 +152,7 @@
       this.$children.map(function (item) {
         sum += item.$el.clientWidth
       })
-      this.maximum = this.$refs.wrap.clientWidth - sum - 2 * (this.$refs.box.offsetLeft - this.$refs.wrap.offsetLeft)
+      this.maximum = this.$el.clientWidth - sum - 2 * (this.$refs.box.offsetLeft - this.$el.offsetLeft)
       // Counting the max slide value.
     }
   }
