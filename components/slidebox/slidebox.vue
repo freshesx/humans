@@ -110,6 +110,7 @@
       },
       endEvent: function (event) {
         if (this.type === 'full') {
+          // If type is full, slide all width once.
           this.distance = (this.direction === 'left')
                         ? this.lastDistance - this.$children[0].$el.clientWidth
                         : this.lastDistance + this.$children[0].$el.clientWidth
@@ -151,7 +152,7 @@
       this.$children.map(function (item) {
         sum += item.$el.clientWidth
       })
-      this.maximum = this.$refs.wrap.clientWidth - sum - 2 * this.$refs.box.offsetLeft
+      this.maximum = this.$refs.wrap.clientWidth - sum - 2 * (this.$refs.box.offsetLeft - this.$refs.wrap.offsetLeft)
       // Counting the max slide value.
     }
   }
