@@ -2,13 +2,13 @@
   <div class="">
     <mn-card>
       <mn-card-item>Loading in wrap</mn-card-item>
-      <mn-card-item v-isLoading="true">
+      <mn-card-item v-mn-loading="true">
         <div class="demo"></div>
       </mn-card-item>
     </mn-card>
     <mn-card>
       <mn-card-item>Loading in full screen, will stop after 3s.</mn-card-item>
-      <mn-card-item v-isLoading.fullscreen="loading">
+      <mn-card-item v-mn-loading.fullscreen="loading">
         <mn-btn type="primary" block @click.native="openFullScreen">Add Loading</mn-btn>
       </mn-card-item>
     </mn-card>

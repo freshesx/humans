@@ -39,7 +39,7 @@ export default {
       dom.removeChild(dom.childNodes[node])
       el.isInsertDom = false
     }
-    Vue.directive('isLoading', {
+    Vue.directive('mn-loading', {
       bind: function (el, binding) {
         toggleLoading(el, binding)
       },
