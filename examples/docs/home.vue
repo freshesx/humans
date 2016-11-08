@@ -107,6 +107,11 @@
                 title: 'control',
                 icon: 'ios-settings-strong',
                 route: { path: '/components/control' }
+              },
+              {
+                title: 'loading',
+                icon: 'load-c',
+                route: { path: '/components/loading' }
               }
             ]
           }
