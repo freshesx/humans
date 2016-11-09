@@ -1,7 +1,7 @@
 <template>
   <mn-rows>
     <mn-row>
-      <mn-scroller save @pull-up="pullUp" @drag-down="dragDown">
+      <mn-scroller save @pull-up="pullUp" @drag-down="dragDown" button>
         <router-view></router-view>
       </mn-scroller>
     </mn-row>
