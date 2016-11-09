@@ -14,8 +14,8 @@
       pullUp: function () {
         console.log('The end.')
       },
-      dragDown: function () {
-        console.log('The start.')
+      dragDown: function (distance) {
+        if (distance > 20) console.log('The start.')
       }
     }
   }

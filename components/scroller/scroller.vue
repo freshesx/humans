@@ -54,9 +54,6 @@
         // including: up & down
       }
     },
-    mounted () {
-      console.log(this)
-    },
     methods: {
       startEvent: function (event) {
         this.isEnd = false
@@ -85,12 +82,15 @@
         this.lastPosition = this.startPosition
       },
       endEvent: function (event) {
+        if (this.isStart) this.$emit('drag-down', this.distance)
+        //
+        // Trigger the 'drag-down' when the fingers are released
+        // Provide the 'distance'
+        //
         this.startPosition = 0
         this.lastPosition = 0
         this.distance = 0
         // Reset the data.
-        if (this.isStart) this.$emit('drag-down')
-        // Trigger the 'drag-down' when the fingers are released
       },
       wheelEvent: function (event) {
 
