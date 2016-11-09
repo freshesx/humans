@@ -93,7 +93,13 @@
         // Reset the data.
       },
       wheelEvent: function (event) {
-
+        if (event.deltaY > 0 && this.$el.scrollTop >= this.$el.scrollHeight - this.$el.clientHeight && !this.isEnd) {
+          this.isEnd = true
+          this.$emit('pull-up')
+          // Determine whether the page has reached the bottom
+          // If reached, trigger the 'pull-up'
+        }
+        if (event.deltaY < 0) this.isEnd = false
       },
       buttonClick: function () {
         this.$emit('button-click')
@@ -124,5 +130,8 @@
     margin: 10px auto;
     font-size: 0.75rem;
     color: #999;
+    border: 0;
+    background-color: transparent;
+    outline: none;
   }
 </style>
