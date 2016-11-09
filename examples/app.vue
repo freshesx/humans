@@ -1,7 +1,7 @@
 <template>
   <mn-rows>
     <mn-row>
-      <mn-scroller save>
+      <mn-scroller save @pull-up="pullUp" @drag-down="dragDown">
         <router-view></router-view>
       </mn-scroller>
     </mn-row>
@@ -10,5 +10,13 @@
 
 <script>
   export default {
+    methods: {
+      pullUp: function () {
+        console.log('The end.')
+      },
+      dragDown: function () {
+        console.log('The start.')
+      }
+    }
   }
 </script>
