@@ -113,6 +113,7 @@
         this.startPosition = 0
         this.lastPosition = 0
         this.distance = 0
+        this.isStart = false
         // Reset the data.
       },
       wheelEvent: function (event) {
@@ -123,6 +124,7 @@
           // If reached, trigger the 'pull-up'
         }
         if (event.deltaY < 0) this.isEnd = false
+        if (event.deltaY > 0) this.isStart = false
 
         if (event.deltaY > 0 && this.$el.scrollTop > this.$el.clientHeight && this.scrollToTop) this.isScrollTop = true
         if (event.deltaY < 0 && this.$el.scrollTop <= this.$el.clientHeight && this.scrollToTop) this.isScrollTop = false
@@ -146,9 +148,10 @@
     },
     computed: {
       styles () {
-        if (this.distance > 0) {
+        if (this.distance >= 0 && this.isStart) {
           return `transform: translateY(${this.distance}px)`
         }
+        return 'transform: 0'
         // If drag down, trigger some transform.
       }
     }
