@@ -67,8 +67,10 @@
         gesture: '',
         // the gesture
         // including: up & down
-        isScrollTop: false
+        isScrollTop: false,
         // whether to show the scroll to top button
+        duration: 200
+        // default duration for scrolling
       }
     },
     methods: {
@@ -126,8 +128,15 @@
         // Trigger the 'button-click' when you click the button
       },
       scrollTop: function () {
-        this.$el.scrollTop = 0
+        this.scrolling(this.duration)
         this.isScrollTop = false
+      },
+      scrolling: function (duration) {
+        let scrollStep = this.$el.scrollTop / (duration / 15)
+        let scrollInterval = setInterval(() => {
+          if (this.$el.scrollTop !== 0) this.$el.scrollTop -= scrollStep
+          else clearInterval(scrollInterval)
+        }, 15)
       }
     },
     computed: {
