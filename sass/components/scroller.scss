@@ -1,0 +1,43 @@
+$scroll-to-top-color: #ccc;
+
+.scrollbar-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.scroller-button {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  font-size: 0.75rem;
+  color: #999;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.8rem;
+  border: 0;
+  border-radius: 5px;
+  background-color: $scroll-to-top-color;
+  color: darken($scroll-to-top-color, 30%);
+  outline: none;
+  &:hover{
+    background-color: lighten($scroll-to-top-color, 5%);
+  }
+}
+.scroller-slideUp-enter-active, .scroller-slideUp-leave-active {
+  transition: all .3s ease;
+}
+.scroller-slideUp-enter, .scroller-slideUp-leave-active {
+  transform: translateY(100%);
+  opacity: 0;
+}

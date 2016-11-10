@@ -12,10 +12,20 @@
     <button
       type="button"
       name="button"
-      v-if="this.button"
+      v-if="this.bottom"
       class="scroller-button"
       @click="buttonClick"
     >{{ this.buttonText }}</button>
+    <transition name="scroller-slideUp">
+      <button
+        type="button"
+        name="button"
+        class="scroll-to-top"
+        @click="scrollTop"
+        v-if="isScrollTop">
+        <mn-icon name="arrow-up-a">
+      </button>
+    </transition>
   </div>
 </template>
 
@@ -26,7 +36,7 @@
         type: Boolean,
         default: false
       },
-      button: {
+      bottom: {
         type: Boolean,
         default: false
         // whether to show the bottom button
@@ -35,6 +45,11 @@
         type: String,
         default: 'Loading...'
         // the text on the button
+      },
+      scrollToTop: {
+        type: Boolean,
+        default: false
+        // whether to provide the function of scrolling to top
       }
     },
     data () {
@@ -49,9 +64,11 @@
         // the last position
         distance: 0,
         // the distance for styles
-        gesture: ''
+        gesture: '',
         // the gesture
         // including: up & down
+        isScrollTop: false
+        // whether to show the scroll to top button
       }
     },
     methods: {
@@ -100,38 +117,26 @@
           // If reached, trigger the 'pull-up'
         }
         if (event.deltaY < 0) this.isEnd = false
+
+        if (event.deltaY > 0 && this.$el.scrollTop > this.$el.clientHeight && this.scrollToTop) this.isScrollTop = true
+        if (event.deltaY < 0 && this.$el.scrollTop <= this.$el.clientHeight && this.scrollToTop) this.isScrollTop = false
       },
       buttonClick: function () {
         this.$emit('button-click')
-        // Trigger the  'button-click' when you click the button
+        // Trigger the 'button-click' when you click the button
+      },
+      scrollTop: function () {
+        this.$el.scrollTop = 0
+        this.isScrollTop = false
       }
     },
     computed: {
       styles () {
-        return `transform: translateY(${this.distance}px)`
+        if (this.distance > 0) {
+          return `transform: translateY(${this.distance}px)`
+        }
         // If drag down, trigger some transform.
       }
     }
   }
 </script>
-
-<style lang="scss">
-  .scrollbar-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-  .scroller-button {
-    display: block;
-    width: 100%;
-    margin: 10px auto;
-    font-size: 0.75rem;
-    color: #999;
-    border: 0;
-    background-color: transparent;
-    outline: none;
-  }
-</style>
