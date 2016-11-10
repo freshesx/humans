@@ -86,6 +86,10 @@
         this.gesture = (this.startPosition < this.lastPosition) ? 'up' : 'down'
         // Set the gesture direction.
 
+        if (this.gesture === 'up' && this.$el.scrollTop > this.$el.clientHeight && this.scrollToTop) this.isScrollTop = true
+        if (this.gesture === 'down' && this.$el.scrollTop <= this.$el.clientHeight && this.scrollToTop) this.isScrollTop = false
+        // Determine whether to show the scrollToTop button
+
         if (this.$el.scrollTop >= this.$el.scrollHeight - this.$el.clientHeight && !this.isEnd && this.gesture === 'up') {
           this.$emit('pull-up')
           this.isEnd = true
@@ -122,6 +126,7 @@
 
         if (event.deltaY > 0 && this.$el.scrollTop > this.$el.clientHeight && this.scrollToTop) this.isScrollTop = true
         if (event.deltaY < 0 && this.$el.scrollTop <= this.$el.clientHeight && this.scrollToTop) this.isScrollTop = false
+        // Determine whether to show the scrollToTop button
       },
       buttonClick: function () {
         this.$emit('button-click')
