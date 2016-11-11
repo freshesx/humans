@@ -117,6 +117,11 @@
                 title: 'slidebox',
                 icon: 'images',
                 route: { path: '/components/slidebox' }
+              },
+              {
+                title: 'loading',
+                icon: 'load-c',
+                route: { path: '/components/loading' }
               }
             ]
           }

@@ -69,6 +69,10 @@ const router = new VueRouter({
     {
       path: '/components/slidebox',
       component: resolve => { require(['./docs/components/slidebox'], resolve) }
+    },
+    {
+      path: '/components/loading',
+      component: resolve => { require(['./docs/components/loading'], resolve) }
     }
   ]
 })
