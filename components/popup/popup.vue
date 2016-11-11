@@ -1,6 +1,8 @@
 <template>
   <transition :name="transition">
-    <div class="popup" v-if="show" :class="classes" :style="style">
+    <div :class="{
+      [`${cssPrefix}popup`]: true
+    }" v-if="show" :style="style">
       <slot></slot>
     </div>
   </transition>
@@ -16,22 +18,16 @@
         type: Boolean,
         default: false
       },
-      position: {
-        type: String,
-        validator: (val) => {
-          return ['center', 'top'].includes(val)
-        }
-      },
       animation: {
         type: String,
-        default: 'fadeIn',
-        validator: (val) => {
-          return ['fadeIn', 'slideInDown', 'slideInUp'].includes(val)
-        }
+        default: 'fadeIn'
       },
       masked: {
         type: Boolean,
         default: true
+      },
+      css: {
+        type: [Object, Array]
       }
     },
     methods: {
@@ -73,28 +69,24 @@
       }
     },
     computed: {
+      cssPrefix () {
+        return this.$human.cssPrefix
+      },
+      animations () {
+        return {
+          fadeIn: `${this.cssPrefix}popup-fade`,
+          slideInDown: `${this.cssPrefix}popup-slide`,
+          slideInUp: `${this.cssPrefix}popup-slideup`
+        }
+      },
       transition () {
-        if (this.animation === 'fadeIn') {
-          return 'popup-fade'
-        }
-        if (this.animation === 'slideInDown') {
-          return 'popup-slide'
-        }
-        if (this.animation === 'slideInUp') {
-          return 'popup-slideup'
-        }
+        return this.animations[this.animation]
       },
       style () {
         return {
-          'z-index': this.zIndex
+          'z-index': this.zIndex,
+          ...this.css
         }
-      },
-      classes () {
-        let classes = {}
-
-        classes[`is-${this.position}`] = this.position
-
-        return classes
       }
     },
     data () {

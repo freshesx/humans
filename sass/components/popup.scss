@@ -7,17 +7,17 @@ $-popup-mask: #{$namespace}popup-mask;
   bottom: $grid-gutters / 2;
   left: $grid-gutters / 2;
 
-  &.is-center {
-    top: 45%;
-    right: auto;
-    bottom: auto;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &.is-top {
-    top: 1rem;
-  }
+  // &.is-center {
+  //   top: 45%;
+  //   right: auto;
+  //   bottom: auto;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  // }
+  //
+  // &.is-top {
+  //   top: 1rem;
+  // }
 }
 
 .#{$-popup-mask} {
