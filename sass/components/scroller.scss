@@ -8,7 +8,8 @@ $scroll-to-top-color: #ccc;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-.scrollbar-top-content{
+
+.scrollbar-top-content {
   width: 100%;
   height: 50px;
   background: transparent;
@@ -16,13 +17,15 @@ $scroll-to-top-color: #ccc;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // margin-top: -50px;
-  p, .icon{
+
+  .icon,
+  p {
     font-size: 0.8rem;
     color: #333;
   }
 }
-.scrollbar-bottom-button{
+
+.scrollbar-bottom-button {
   display: block;
   width: 100%;
   margin: 10px auto;
@@ -32,6 +35,7 @@ $scroll-to-top-color: #ccc;
   background-color: transparent;
   outline: none;
 }
+
 .scrollbar-to-top {
   position: fixed;
   bottom: 2rem;
@@ -44,22 +48,30 @@ $scroll-to-top-color: #ccc;
   background-color: $scroll-to-top-color;
   color: darken($scroll-to-top-color, 30%);
   outline: none;
-  &:hover{
+
+  &:hover {
     background-color: lighten($scroll-to-top-color, 5%);
   }
 }
-.scroller-slideUp-enter-active, .scroller-slideUp-leave-active {
-  transition: all .3s ease;
+
+.scroller-slideUp-enter-active,
+.scroller-slideUp-leave-active {
+  transition: all 0.3s ease;
 }
-.scroller-slideUp-enter, .scroller-slideUp-leave-active {
+
+.scroller-slideUp-enter,
+.scroller-slideUp-leave-active {
   transform: translateY(100%);
   opacity: 0;
 }
 
-.scroller-slideDown-enter-active, .scroller-slideDown-leave-active {
-  transition: all .3s ease;
+.scroller-slideDown-enter-active,
+.scroller-slideDown-leave-active {
+  transition: all 0.3s ease;
 }
-.scroller-slideDown-enter, .scroller-slideDown-leave-active {
+
+.scroller-slideDown-enter,
+.scroller-slideDown-leave-active {
   transform: translateY(-100%);
   opacity: 0;
 }

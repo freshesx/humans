@@ -14,7 +14,7 @@
     <button
       type="button"
       name="button"
-      v-if="this.bottom"
+      v-if="this.isBottom"
       class="scrollbar-bottom-button"
       @click="buttonClick"
     >{{ this.buttonText }}</button>
@@ -65,6 +65,8 @@
         // whether the page has reached the bottom
         isStart: false,
         // whether the page has reached the top
+        isBottom: false,
+        // whether to show the bottom button
         startPosition: 0,
         // the start position
         lastPosition: 0,
@@ -100,6 +102,7 @@
         if (this.$el.scrollTop >= this.$el.scrollHeight - this.$el.clientHeight && !this.isEnd && this.gesture === 'up') {
           this.$emit('pull-up')
           this.isEnd = true
+          this.isBottom = this.bottom
           // Determine whether the page has reached the bottom
           // If reached, trigger the 'pull-up'
         }
