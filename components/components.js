@@ -30,6 +30,8 @@ import RateItem from './rate/rate-item'
 import QuantityControl from './control/quantity-control'
 import Collapse from './collapse/collapse'
 import CollapsePane from './collapse/collapse-pane'
+import SlideBox from './slidebox/slidebox'
+import SlideBoxItem from './slidebox/slidebox-item'
 
 export default {
   // Column
@@ -79,5 +81,8 @@ export default {
   QuantityControl,
   // collapse
   Collapse,
-  CollapsePane
+  CollapsePane,
+  // slidebox
+  SlideBox,
+  SlideBoxItem
 }

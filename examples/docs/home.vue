@@ -112,6 +112,11 @@
                 title: 'collapse',
                 icon: 'ios-arrow-down',
                 route: { path: '/components/collapse' }
+              },
+              {
+                title: 'slidebox',
+                icon: 'images',
+                route: { path: '/components/slidebox' }
               }
             ]
           }

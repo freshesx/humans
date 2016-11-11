@@ -65,6 +65,10 @@ const router = new VueRouter({
     {
       path: '/components/collapse',
       component: resolve => { require(['./docs/components/collapse'], resolve) }
+    },
+    {
+      path: '/components/slidebox',
+      component: resolve => { require(['./docs/components/slidebox'], resolve) }
     }
   ]
 })
