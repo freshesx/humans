@@ -24,7 +24,7 @@
         type: Boolean,
         default: true
       },
-      css: {
+      styles: {
         type: [Object, Array]
       },
       classes: {
@@ -92,7 +92,7 @@
       computedStyle () {
         return {
           'z-index': this.zIndex,
-          ...this.css
+          ...this.styles
         }
       }
     },
