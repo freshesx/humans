@@ -8,21 +8,21 @@ $scroll-to-top-color: #ccc;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-.scroll-top-content{
+.scrollbar-top-content{
   width: 100%;
   height: 50px;
   background: transparent;
-  line-height: 50px;
-  margin-top: -50px;
-  p{
-    margin: 0;
-    padding: 0;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // margin-top: -50px;
+  p, .icon{
     font-size: 0.8rem;
     color: #333;
   }
 }
-.scroll-bottom-button{
+.scrollbar-bottom-button{
   display: block;
   width: 100%;
   margin: 10px auto;
@@ -32,7 +32,7 @@ $scroll-to-top-color: #ccc;
   background-color: transparent;
   outline: none;
 }
-.scroll-to-top {
+.scrollbar-to-top {
   position: fixed;
   bottom: 2rem;
   right: 2rem;

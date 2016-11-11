@@ -9,7 +9,7 @@
         @drag-down="dragDown"
         :pause="pause">
         <router-view></router-view>
-        <div slot="topContent"><mn-icon name="load-c" spin></mn-icon></div>
+        <mn-icon slot="topContent" name="load-c" spin></mn-icon>
       </mn-scroller>
     </mn-row>
   </mn-rows>
@@ -31,7 +31,7 @@
         console.log('The start.')
         setTimeout(() => {
           this.pause = false
-        }, 1000)
+        }, 2000)
       }
     }
   }

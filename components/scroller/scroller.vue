@@ -5,7 +5,7 @@
     @touchmove="moveEvent($event)"
     @touchend="endEvent($event)"
     @wheel="wheelEvent($event)">
-    <div class="scroll-top-content" ref="topContent" :style="styles">
+    <div class="scrollbar-top-content" ref="topContent" :style="styles">
       <slot name="topContent"><p>正在刷新</p></slot>
     </div>
     <div class="scrollbar-contents" ref="content">
@@ -15,14 +15,14 @@
       type="button"
       name="button"
       v-if="this.bottom"
-      class="scroll-bottom-button"
+      class="scrollbar-bottom-button"
       @click="buttonClick"
     >{{ this.buttonText }}</button>
     <transition name="scroller-slideUp">
       <button
         type="button"
         name="button"
-        class="scroll-to-top"
+        class="scrollbar-to-top"
         @click="scrollTop"
         v-if="isScrollTop">
         <mn-icon name="arrow-up-a">
@@ -144,6 +144,7 @@
       scrollTop: function () {
         this.scrolling(this.duration)
         this.isScrollTop = false
+        // Scroll to top
       },
       scrolling: function (duration) {
         let scrollStep = this.$el.scrollTop / (duration / 15)
@@ -151,17 +152,13 @@
           if (this.$el.scrollTop !== 0) this.$el.scrollTop -= scrollStep
           else clearInterval(scrollInterval)
         }, 15)
+        // linear scrolling
       }
     },
     computed: {
       styles () {
-        if (this.pause) {
-          return 'margin-top: 0px'
-        } else {
-          if (this.distance >= 0) {
-            return `margin-top: ${this.distance * 2 - 50}px`
-          }
-        }
+        if (this.pause) return 'margin-top: 0px'
+        if (this.distance >= 0) return `margin-top: ${this.distance * 2 - 50}px`
         return 'margin-top: -50px'
         // If drag down, trigger some styles.
       }
