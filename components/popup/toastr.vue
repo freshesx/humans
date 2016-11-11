@@ -1,6 +1,6 @@
 <template>
-  <mn-popup :show="show" :classes="{ [`${cssPrefix}popup-toastr`]: true }" :masked="false" animation="slideInUp">
-    <mn-card class="m-b-0 scoped-card-shadow" @click.native.prevent="click">
+  <mn-popup :show="show" :classes="[`${cssPrefix}popup-toastr`]" :masked="false" animation="slideInUp">
+    <mn-card class="m-b-0" @click.native.prevent="click">
       <mn-card-item>
         <mn-icon :name="icon"></mn-icon>
         <small>{{ description }}</small>
