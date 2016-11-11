@@ -25,7 +25,7 @@
       return {
         defaultClasses: this.$human.cssPrefix,
         index: -1,
-        flatSelected: false
+        isSelected: false
       }
     },
     computed: {
@@ -53,10 +53,8 @@
         return Object.assign({}, classes)
       },
       selected () {
-        if (this.$parent.type === 'flat') {
-          return this.flatSelected
-          // If type is 'flat', use another way to toggle
-        }
+        if (this.$parent.type === 'flat') return this.isSelected
+        // If type is 'flat', use another way to toggle
         return this.index === this.$parent.current
         // Set the current
       }
@@ -64,16 +62,14 @@
     mounted () {
       this.$nextTick(function () {
         this.index = this.$parent.collapses.get(this._uid)
-        if (this.index === this.$parent.current) this.flatSelected = true
+        if (this.index === this.$parent.current) this.isSelected = true
         // Get the index by _uid and set the current.
       })
     },
     methods: {
       changeIndex: function () {
         this.$parent.current = this.index
-        if (this.$parent.type === 'flat') {
-          this.flatSelected = !this.flatSelected
-        }
+        if (this.$parent.type === 'flat') this.isSelected = !this.isSelected
         // Toggle the content
       }
     }
