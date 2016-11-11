@@ -8,7 +8,21 @@ $scroll-to-top-color: #ccc;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-.scroller-button {
+.scroll-top-content{
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  line-height: 50px;
+  margin-top: -50px;
+  p{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #333;
+  }
+}
+.scroll-bottom-button{
   display: block;
   width: 100%;
   margin: 10px auto;
@@ -39,5 +53,13 @@ $scroll-to-top-color: #ccc;
 }
 .scroller-slideUp-enter, .scroller-slideUp-leave-active {
   transform: translateY(100%);
+  opacity: 0;
+}
+
+.scroller-slideDown-enter-active, .scroller-slideDown-leave-active {
+  transition: all .3s ease;
+}
+.scroller-slideDown-enter, .scroller-slideDown-leave-active {
+  transform: translateY(-100%);
   opacity: 0;
 }

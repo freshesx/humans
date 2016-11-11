@@ -1,11 +1,13 @@
 <template>
   <div class="scrollbar-wrapper"
     :class="{ 'is-save': save }"
-    :style="styles"
     @touchstart="startEvent($event)"
     @touchmove="moveEvent($event)"
     @touchend="endEvent($event)"
     @wheel="wheelEvent($event)">
+    <div class="scroll-top-content" ref="topContent" :style="styles">
+      <slot name="topContent"><p>正在刷新</p></slot>
+    </div>
     <div class="scrollbar-contents" ref="content">
       <slot></slot>
     </div>
@@ -13,7 +15,7 @@
       type="button"
       name="button"
       v-if="this.bottom"
-      class="scroller-button"
+      class="scroll-bottom-button"
       @click="buttonClick"
     >{{ this.buttonText }}</button>
     <transition name="scroller-slideUp">
@@ -50,6 +52,11 @@
         type: Boolean,
         default: false
         // whether to provide the function of scrolling to top
+      },
+      pause: {
+        type: Boolean,
+        default: false
+        // whether to pause the top content for some asynchronous requests
       }
     },
     data () {
@@ -148,11 +155,15 @@
     },
     computed: {
       styles () {
-        if (this.distance >= 0 && this.isStart) {
-          return `transform: translateY(${this.distance}px)`
+        if (this.pause) {
+          return 'margin-top: 0px'
+        } else {
+          if (this.distance >= 0) {
+            return `margin-top: ${this.distance * 2 - 50}px`
+          }
         }
-        return 'transform: 0'
-        // If drag down, trigger some transform.
+        return 'margin-top: -50px'
+        // If drag down, trigger some styles.
       }
     }
   }
