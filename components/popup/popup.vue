@@ -28,7 +28,7 @@
         type: [Object, Array]
       },
       classes: {
-        type: [Object]
+        type: [Object, Array]
       },
       zIndex: {
         type: Number
