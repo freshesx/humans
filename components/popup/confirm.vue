@@ -1,6 +1,6 @@
 <template>
-  <mn-popup :show="show" position="center">
-    <mn-card class="m-b-0" style="width: 280px; margin: 0 auto;">
+  <mn-popup :show="show" :css="css">
+    <mn-card class="m-b-0">
       <mn-card-item>
         <div class="is-center-text">
           <h4>{{ title }}</h4>
@@ -33,7 +33,15 @@
         title: 'Confirm',
         description: '',
         cancelText: 'Cancel',
-        confirmText: 'OK'
+        confirmText: 'OK',
+        css: {
+          width: '280px',
+          top: '45%',
+          right: 'auto',
+          bottom: 'auto',
+          left: '50%',
+          transform: 'translate(-50%, -50%)'
+        }
       }
     }
   }

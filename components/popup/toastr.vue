@@ -1,6 +1,6 @@
 <template>
-  <mn-popup :show="show" animation="slideInUp" position="top" :masked="false">
-    <mn-card class="m-b-1 scoped-card-shadow" style="max-width: 500px; margin: 0 auto;" @click.native.prevent="click">
+  <mn-popup :show="show" animation="slideInUp" :css="css" :masked="false">
+    <mn-card class="m-b-0 scoped-card-shadow" @click.native.prevent="click">
       <mn-card-item>
         <mn-icon :name="icon"></mn-icon>
         <small>{{ description }}</small>
@@ -27,7 +27,14 @@
         description: 'You have a message',
         icon: 'chatbubbles',
         autoClose: true,
-        duration: 2000
+        duration: 2000,
+        css: {
+          'max-width': '500px',
+          top: '1rem',
+          right: '1rem',
+          bottom: 'auto',
+          left: '1rem'
+        }
       }
     },
     mounted: function () {
