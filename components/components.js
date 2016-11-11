@@ -28,6 +28,8 @@ import Tag from './tag/tag'
 import Rate from './rate/rate'
 import RateItem from './rate/rate-item'
 import QuantityControl from './control/quantity-control'
+import Collapse from './collapse/collapse'
+import CollapsePane from './collapse/collapse-pane'
 
 export default {
   // Column
@@ -74,5 +76,8 @@ export default {
   Rate,
   RateItem,
   // control
-  QuantityControl
+  QuantityControl,
+  // collapse
+  Collapse,
+  CollapsePane
 }
