@@ -1,6 +1,6 @@
 <template>
   <transition :name="transition">
-    <div class="popup" v-if="show" :class="classes" :style="style">
+    <div :class="[`${cssPrefix}popup`, classes]" :style="[zIndexStyle, styles]" v-if="show">
       <slot></slot>
     </div>
   </transition>
@@ -16,22 +16,22 @@
         type: Boolean,
         default: false
       },
-      position: {
-        type: String,
-        validator: (val) => {
-          return ['center', 'top'].includes(val)
-        }
-      },
       animation: {
         type: String,
-        default: 'fadeIn',
-        validator: (val) => {
-          return ['fadeIn', 'slideInDown', 'slideInUp'].includes(val)
-        }
+        default: 'fadeIn'
       },
       masked: {
         type: Boolean,
         default: true
+      },
+      styles: {
+        type: [Object, Array]
+      },
+      classes: {
+        type: [Object, Array]
+      },
+      zIndex: {
+        type: Number
       }
     },
     methods: {
@@ -73,33 +73,23 @@
       }
     },
     computed: {
-      transition () {
-        if (this.animation === 'fadeIn') {
-          return 'popup-fade'
-        }
-        if (this.animation === 'slideInDown') {
-          return 'popup-slide'
-        }
-        if (this.animation === 'slideInUp') {
-          return 'popup-slideup'
-        }
+      cssPrefix () {
+        return this.$human.cssPrefix
       },
-      style () {
+      animations () {
         return {
-          'z-index': this.zIndex
+          fadeIn: `${this.cssPrefix}popup-fade`,
+          slideInDown: `${this.cssPrefix}popup-slide`,
+          slideInUp: `${this.cssPrefix}popup-slideup`
         }
       },
-      classes () {
-        let classes = {}
-
-        classes[`is-${this.position}`] = this.position
-
-        return classes
-      }
-    },
-    data () {
-      return {
-        zIndex: getZIndex()
+      transition () {
+        return this.animations[this.animation]
+      },
+      zIndexStyle () {
+        return {
+          'z-index': this.zIndex ? this.zIndex : getZIndex()
+        }
       }
     }
   }

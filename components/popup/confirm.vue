@@ -1,6 +1,6 @@
 <template>
-  <mn-popup :show="show" position="center">
-    <mn-card class="m-b-0" style="width: 280px; margin: 0 auto;">
+  <mn-popup :show="show" :classes="[`${cssPrefix}popup-dialog`]">
+    <mn-card class="m-b-0">
       <mn-card-item>
         <div class="is-center-text">
           <h4>{{ title }}</h4>
@@ -25,6 +25,11 @@
       confirm () {
         this.show = false
         this.$emit('confirm')
+      }
+    },
+    computed: {
+      cssPrefix () {
+        return this.$human.cssPrefix
       }
     },
     data () {
