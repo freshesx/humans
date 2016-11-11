@@ -1,6 +1,6 @@
 <template>
   <transition :name="transition">
-    <div :class="computedClass" :style="computedStyle" v-if="show">
+    <div :class="[`${cssPrefix}popup`, classes]" :style="[zIndexStyle, styles]" v-if="show">
       <slot></slot>
     </div>
   </transition>
@@ -29,6 +29,9 @@
       },
       classes: {
         type: [Object]
+      },
+      zIndex: {
+        type: Number
       }
     },
     methods: {
@@ -83,22 +86,10 @@
       transition () {
         return this.animations[this.animation]
       },
-      computedClass () {
+      zIndexStyle () {
         return {
-          [`${this.cssPrefix}popup`]: true,
-          ...this.classes
+          'z-index': this.zIndex ? this.zIndex : getZIndex()
         }
-      },
-      computedStyle () {
-        return {
-          'z-index': this.zIndex,
-          ...this.styles
-        }
-      }
-    },
-    data () {
-      return {
-        zIndex: getZIndex()
       }
     }
   }
