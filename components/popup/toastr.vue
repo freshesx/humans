@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" animation="slideInUp" :css="css" :masked="false">
+  <mn-popup :show="show" :classes="{ [`${cssPrefix}popup-toastr`]: true }" :masked="false" animation="slideInUp">
     <mn-card class="m-b-0 scoped-card-shadow" @click.native.prevent="click">
       <mn-card-item>
         <mn-icon :name="icon"></mn-icon>
@@ -21,20 +21,18 @@
         this.$emit('click')
       }
     },
+    computed: {
+      cssPrefix () {
+        return this.$human.cssPrefix
+      }
+    },
     data () {
       return {
         show: false,
         description: 'You have a message',
         icon: 'chatbubbles',
         autoClose: true,
-        duration: 2000,
-        css: {
-          'max-width': '500px',
-          top: '1rem',
-          right: '1rem',
-          bottom: 'auto',
-          left: '1rem'
-        }
+        duration: 2000
       }
     },
     mounted: function () {
@@ -47,9 +45,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  .scoped-card-shadow {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-</style>

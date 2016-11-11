@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" :css="css">
+  <mn-popup :show="show" :classes="{ [`${cssPrefix}popup-dialog`]: true }">
     <mn-card class="m-b-0">
       <mn-card-item>
         <div class="is-center-text">
@@ -22,20 +22,17 @@
         this.$emit('cancel')
       }
     },
+    computed: {
+      cssPrefix () {
+        return this.$human.cssPrefix
+      }
+    },
     data () {
       return {
         show: false,
         title: 'Alert',
         description: '',
-        cancelText: 'Close',
-        css: {
-          width: '280px',
-          top: '45%',
-          right: 'auto',
-          bottom: 'auto',
-          left: '50%',
-          transform: 'translate(-50%, -50%)'
-        }
+        cancelText: 'Close'
       }
     }
   }

@@ -6,6 +6,28 @@ $-popup-mask: #{$namespace}popup-mask;
   right: $grid-gutters / 2;
   bottom: $grid-gutters / 2;
   left: $grid-gutters / 2;
+
+  // For confirm and alert dialog
+  &-dialog {
+    width: 280px;
+    top: 45%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-toastr {
+    max-width: 500px;
+    top: 1rem;
+    right: 1rem;
+    bottom: auto;
+    left: 1rem;
+
+    > .card {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 
 .#{$-popup-mask} {
