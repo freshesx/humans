@@ -20,4 +20,8 @@ $-row: #{$namespace}row;
     flex-shrink: 0;
     height: auto;
   }
+
+  &.is-visible {
+    overflow: visible;
+  }
 }
