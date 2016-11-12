@@ -11,7 +11,7 @@ $-filter-active-color: $orange;
   display: flex;
   height: $-height;
   background: #fff;
-  z-index: 3000;
+  z-index: 6000;
 
   &.is-shadow {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
