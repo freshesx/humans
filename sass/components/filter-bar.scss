@@ -39,4 +39,17 @@ $-filter-active-color: $orange;
       transform: rotate(-180deg);
     }
   }
+
+  &-popup {
+    top: 3rem;
+    bottom: auto;
+    left: 0;
+    right: 0;
+  }
+
+  &-card {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 }
