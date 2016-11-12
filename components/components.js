@@ -24,6 +24,8 @@ import TabBar from './tab/tab'
 import TabItem from './tab/tab-item'
 import TabPane from './tab/tab-pane'
 import SearchBar from './searchbar/search'
+import FilterBar from './filter-bar/filter-bar'
+import FilterBarItem from './filter-bar/filter-bar-item'
 import Tag from './tag/tag'
 import Rate from './rate/rate'
 import RateItem from './rate/rate-item'
@@ -68,6 +70,9 @@ export default {
   BlockImage,
   // bar
   SearchBar,
+  // Filter bar
+  FilterBar,
+  FilterBarItem,
   // tab
   TabBar,
   TabItem,
