@@ -1,12 +1,12 @@
 <template>
   <mn-filter-bar shadow>
-    <mn-filter-bar-item arrow active>
+    <mn-filter-bar-item arrow @filter-opened="openSortPanel" @filter-closed="closeSortPanel">
       综合排序
     </mn-filter-bar-item>
     <mn-filter-bar-item>
       销量优先
     </mn-filter-bar-item>
-    <mn-filter-bar-item @btn-click="changeView">
+    <mn-filter-bar-item>
       <mn-icon name="ios-grid-view"></mn-icon>
     </mn-filter-bar-item>
     <mn-filter-bar-item bordered>
@@ -16,10 +16,23 @@
 </template>
 
 <script>
+  import SortPanel from './sort-panel'
+
   export default {
     methods: {
-      changeView () {
-        console.log('changeView')
+      openSortPanel () {
+        this.sortPanel = this.$human.popup(SortPanel)
+        this.sortPanel.show = true
+      },
+      closeSortPanel () {
+        if (this.sortPanel) {
+          this.sortPanel.show = false
+        }
+      }
+    },
+    data () {
+      return {
+        sortPanel: undefined
       }
     }
   }
