@@ -1,6 +1,7 @@
 @import "../variables";
 
 $-filter-bar: #{$namespace}filter-bar;
+$-filter-active-color: $orange;
 
 .#{$-filter-bar} {
   $-border: solid 1px #eee;
@@ -28,8 +29,7 @@ $-filter-bar: #{$namespace}filter-bar;
     }
 
     &.is-active {
-      color: #000;
-      font-weight: bold;
+      color: $-filter-active-color;
     }
   }
 
