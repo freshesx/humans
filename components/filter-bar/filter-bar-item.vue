@@ -47,9 +47,9 @@
     watch: {
       isCollapsed (newVal) {
         if (newVal) {
-          this.$emit('filter-open')
+          this.$emit('filter-opened')
         } else {
-          this.$emit('filter-close')
+          this.$emit('filter-closed')
         }
       }
     }
