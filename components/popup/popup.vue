@@ -64,7 +64,7 @@
       show (newValue) {
         // If show is true, append mask to body, and deliver z-index
         if (newValue) {
-          this.appendMask(this.zIndex - 1)
+          this.appendMask(this.computedZIndex - 1)
         }
 
         if (!newValue) {
@@ -86,9 +86,12 @@
       transition () {
         return this.animations[this.animation]
       },
+      computedZIndex () {
+        return this.zIndex ? this.zIndex : getZIndex()
+      },
       zIndexStyle () {
         return {
-          'z-index': this.zIndex ? this.zIndex : getZIndex()
+          'z-index': this.computedZIndex
         }
       }
     }

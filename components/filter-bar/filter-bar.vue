@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ `${cssPrefix}row`, { 'is-fixed': fixed, 'is-visible': visible } ]">
+  <div :class="[ `${cssPrefix}filter-bar`, { 'is-shadow': shadow } ]">
     <slot></slot>
   </div>
 </template>
@@ -7,11 +7,7 @@
 <script>
   export default {
     props: {
-      fixed: {
-        type: Boolean,
-        default: false
-      },
-      visible: {
+      shadow: {
         type: Boolean,
         default: false
       }

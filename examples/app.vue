@@ -1,5 +1,8 @@
 <template>
   <mn-rows>
+    <mn-row fixed visible>
+      <demo-filter-bar></demo-filter-bar>
+    </mn-row>
     <mn-row>
       <mn-scroller
         save
@@ -16,7 +19,12 @@
 </template>
 
 <script>
+  import DemoFilterBar from './docs/components/filter-bar'
+
   export default {
+    components: {
+      DemoFilterBar
+    },
     data () {
       return {
         pause: false
