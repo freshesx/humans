@@ -2,10 +2,10 @@
   <div :class="slideWrap" :style="slideWrapStyle">
     <div
       :class="slideBox"
-      @touchmove="moveEvent($event)"
-      @touchstart="startEvent($event)"
-      @touchend="endEvent($event)"
-      @wheel="wheelEvent($event)"
+      @touchmove="touchmove"
+      @touchstart="touchstart"
+      @touchend="touchend"
+      @wheel="wheel"
       :style="slideBoxStyle"
       ref="box">
       <slot></slot>
@@ -83,7 +83,7 @@
       }
     },
     methods: {
-      moveEvent: function (event) {
+      touchmove: function (event) {
         this.CurrentPosition = event.touches[0].screenX
         this.direction = (this.CurrentPosition < this.lastPosition) ? 'left' : 'right'
         // Judge the direction.
@@ -101,7 +101,7 @@
 
         this.lastPosition = this.CurrentPosition
       },
-      startEvent: function (event) {
+      touchstart: function (event) {
         this.startTime = new Date().getTime()
         // Set the start time.
         this.startPosition = event.touches[0].screenX
@@ -109,7 +109,7 @@
         this.lastPosition = this.startPosition
         // Set the last position
       },
-      endEvent: function (event) {
+      touchend: function (event) {
         if (this.type === 'full') {
           // If type is full, slide all width once.
           this.distance = (this.direction === 'left')
@@ -147,10 +147,19 @@
         return
         // Swipe event
       },
-      wheelEvent: function (event) {
-        this.direction = (event.deltaY > 0) ? 'right' : 'left'
-        this.distance += event.deltaY
-        if (this.direction === 'left') {
+      wheel: function (event) {
+        if (event.deltaY !== -0) this.direction = (event.deltaY > 0) ? 'up' : 'down'
+
+        if (this.type === 'full') {
+          // If type is full, slide all width once.
+          this.distance = (this.direction === 'down')
+                        ? this.lastDistance - this.$children[0].$el.clientWidth
+                        : this.lastDistance + this.$children[0].$el.clientWidth
+        } else {
+          this.distance += event.deltaY
+        }
+
+        if (this.direction === 'down') {
           if (this.distance < this.maximum) {
             this.distance = this.maximum
             this.lastDistance = this.maximum
@@ -161,10 +170,9 @@
             this.lastDistance = 0
           }
         } this.distance = this.distance
-
         this.lastDistance = this.distance
+        // wheel event
       }
-      // wheel event
     },
     mounted () {
       let sum = 0
