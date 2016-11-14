@@ -4,7 +4,8 @@
       :class="slideBox"
       @touchmove="moveEvent($event)"
       @touchstart="startEvent($event)"
-      @touchend = "endEvent($event)"
+      @touchend="endEvent($event)"
+      @wheel="wheelEvent($event)"
       :style="slideBoxStyle"
       ref="box">
       <slot></slot>
@@ -145,7 +146,25 @@
         }
         return
         // Swipe event
+      },
+      wheelEvent: function (event) {
+        this.direction = (event.deltaY > 0) ? 'right' : 'left'
+        this.distance += event.deltaY
+        if (this.direction === 'left') {
+          if (this.distance < this.maximum) {
+            this.distance = this.maximum
+            this.lastDistance = this.maximum
+          }
+        } else {
+          if (this.distance > 0) {
+            this.distance = 0
+            this.lastDistance = 0
+          }
+        } this.distance = this.distance
+
+        this.lastDistance = this.distance
       }
+      // wheel event
     },
     mounted () {
       let sum = 0
