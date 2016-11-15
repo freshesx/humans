@@ -150,14 +150,7 @@
       wheel: function (event) {
         if (event.deltaY !== -0) this.direction = (event.deltaY > 0) ? 'up' : 'down'
 
-        if (this.type === 'full') {
-          // If type is full, slide all width once.
-          this.distance = (this.direction === 'down')
-                        ? this.lastDistance - this.$children[0].$el.clientWidth
-                        : this.lastDistance + this.$children[0].$el.clientWidth
-        } else {
-          this.distance += event.deltaY
-        }
+        this.distance += event.deltaY
 
         if (this.direction === 'down') {
           if (this.distance < this.maximum) {
