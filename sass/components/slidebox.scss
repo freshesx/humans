@@ -2,27 +2,34 @@ $-slide-wrap: #{$namespace}slide-wrap;
 $-slide-content: #{$namespace}slide-content;
 $-slide-box: #{$namespace}slide-box;
 $-slide-box-item: #{$namespace}slide-box-item;
+$max-width: 450px;
 
-.#{$-slide-wrap}{
+.#{$-slide-wrap} {
   box-sizing: border-box;
   overflow-x: hidden;
   padding: 0 1rem;
   width: 100%;
 }
-.#{$-slide-box}{
+
+.#{$-slide-box} {
   display: flex;
 }
-.#{$-slide-box-item}{
+
+.#{$-slide-box-item} {
   flex: 0;
   flex-wrap: nowrap;
   padding: 0 0.5rem;
+  max-width: $max-width;
 }
-.is-full{
+
+.is-full {
   width: 100%;
-  .#{$-slide-box-item}{
+
+  .#{$-slide-box-item} {
     flex: 0 0 100%;
   }
 }
-.slide-back{
+
+.slide-back {
   transition: 0.5s ease-out;
 }
