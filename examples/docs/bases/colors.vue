@@ -1,42 +1,44 @@
 <template>
-  <mn-scroller
-    save
-    scrollToTop>
-    <transition name="has-slide">
-      <div class="section">
+  <transition name="has-slide">
+    <mn-rows>
+      <mn-row>
+        <mn-scroller>
+          <div class="section">
 
-        <mn-letter>
-          <h1>Color</h1>
-          <small>Text, background, other.</small>
-        </mn-letter>
+            <mn-letter>
+              <h1>Color</h1>
+              <small>Text, background, other.</small>
+            </mn-letter>
 
-        <mn-card>
-          <mn-card-item>Color schema</mn-card-item>
-          <mn-card-item>
-            <mn-cols>
-              <mn-col query="xs-4" v-for="color in colors">
-                <div class="sp-tile" :class="getBoxClass(color.className)"></div>
-              </mn-col>
-            </mn-cols>
-          </mn-card-item>
-        </mn-card>
+            <mn-card>
+              <mn-card-item>Color schema</mn-card-item>
+              <mn-card-item>
+                <mn-cols>
+                  <mn-col query="xs-4" v-for="color in colors">
+                    <div class="sp-tile" :class="getBoxClass(color.className)"></div>
+                  </mn-col>
+                </mn-cols>
+              </mn-card-item>
+            </mn-card>
 
-        <mn-card>
-          <mn-card-item>Color schema</mn-card-item>
-          <mn-card-item>
-            <mn-cols>
-              <mn-col query="xs-4" v-for="color in colors">
-                <div class="sp-text" :class="getTextClass(color.className)">
-                  {{ color.className }}
-                </div>
-              </mn-col>
-            </mn-cols>
-          </mn-card-item>
-        </mn-card>
+            <mn-card>
+              <mn-card-item>Color schema</mn-card-item>
+              <mn-card-item>
+                <mn-cols>
+                  <mn-col query="xs-4" v-for="color in colors">
+                    <div class="sp-text" :class="getTextClass(color.className)">
+                      {{ color.className }}
+                    </div>
+                  </mn-col>
+                </mn-cols>
+              </mn-card-item>
+            </mn-card>
 
-      </div>
-    </transition>
-  </mn-scroller>
+          </div>
+        </mn-scroller>
+      </mn-row>
+    </mn-rows>
+  </transition>
 </template>
 
 <script>
