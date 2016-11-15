@@ -7,7 +7,9 @@ $-popup-mask: #{$namespace}popup-mask;
   bottom: $grid-gutters / 2;
   left: $grid-gutters / 2;
 
-  &.is-center {
+  // For confirm and alert dialog
+  &-dialog {
+    width: 280px;
     top: 45%;
     right: auto;
     bottom: auto;
@@ -15,8 +17,59 @@ $-popup-mask: #{$namespace}popup-mask;
     transform: translate(-50%, -50%);
   }
 
-  &.is-top {
+  &-toastr {
+    max-width: 500px;
     top: 1rem;
+    right: 1rem;
+    bottom: auto;
+    left: 1rem;
+
+    > .card {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  //
+  // @animation
+  //
+
+  // Slide from down
+  &-slide-enter-active,
+  &-slide-leave-active {
+    transition: transform 0.3s;
+  }
+
+  &-slide-enter,
+  &-slide-leave-active {
+    transform: translateY(100%);
+  }
+
+  // Fade in
+  &-fade-enter-active,
+  &-fade-leave-active {
+    transition: opacity 0.5s linear;
+  }
+
+  &-fade-enter,
+  &-fade-leave-active {
+    opacity: 0;
+  }
+
+  // Slide from up
+  &-slideup-enter-active {
+    transition: transform 0.3s;
+  }
+
+  &-slideup-leave-active {
+    transition: opacity 0.3s linear;
+  }
+
+  &-slideup-enter {
+    transform: translateY(-100%);
+  }
+
+  &-slideup-leave-active {
+    opacity: 0;
   }
 }
 
@@ -29,54 +82,15 @@ $-popup-mask: #{$namespace}popup-mask;
   background-color: #000;
   opacity: 0.4;
   z-index: 1000;
-}
 
-//
-// @animation
-// slide
-//
-.#{$-popup}-slide-enter-active,
-.#{$-popup}-slide-leave-active {
-  transition: transform 0.3s;
-}
-.#{$-popup}-slide-enter,
-.#{$-popup}-slide-leave-active {
-  transform: translateY(100%);
-}
+  // Fade in
+  &-fade-enter-active,
+  &-fade-leave-active {
+    transition: opacity 0.3s linear;
+  }
 
-//
-// fade
-//
-.#{$-popup}-fade-enter-active,
-.#{$-popup}-fade-leave-active {
-  transition: opacity 0.5s linear;
-}
-.#{$-popup}-fade-enter,
-.#{$-popup}-fade-leave-active {
-  opacity: 0
-}
-
-.#{$-popup-mask}-fade-enter-active,
-.#{$-popup-mask}-fade-leave-active {
-  transition: opacity 0.3s linear;
-}
-.#{$-popup-mask}-fade-enter,
-.#{$-popup-mask}-fade-leave-active {
-  opacity: 0
-}
-
-//
-// slideup
-//
-.#{$-popup}-slideup-enter-active {
-  transition: transform 0.3s;
-}
-.#{$-popup}-slideup-leave-active {
-  transition: opacity 0.3s linear;
-}
-.#{$-popup}-slideup-enter {
-  transform: translateY(-100%);
-}
-.#{$-popup}-slideup-leave-active {
-  opacity: 0
+  &-fade-enter,
+  &-fade-leave-active {
+    opacity: 0;
+  }
 }

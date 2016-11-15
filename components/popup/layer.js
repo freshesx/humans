@@ -1,4 +1,4 @@
-let zIndex = 6000
+let zIndex = 8000
 
 export function getZIndex () {
   zIndex += 10

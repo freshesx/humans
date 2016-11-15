@@ -1,0 +1,19 @@
+.loadingMask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  .icon.is-spin {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    display: block;
+  }
+}

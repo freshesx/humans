@@ -43,16 +43,36 @@ const router = new VueRouter({
       component: resolve => { require(['./docs/components/icon'], resolve) }
     },
     {
-      path: '/components/searchbar',
-      component: resolve => { require(['./docs/components/searchbar'], resolve) }
+      path: '/components/search-bar',
+      component: resolve => { require(['./docs/components/search-bar'], resolve) }
     },
     {
       path: '/components/tab',
       component: resolve => { require(['./docs/components/tab'], resolve) }
     },
     {
-      path: '/components/label',
-      component: resolve => { require(['./docs/components/label'], resolve) }
+      path: '/components/tag',
+      component: resolve => { require(['./docs/components/tag'], resolve) }
+    },
+    {
+      path: '/components/rate',
+      component: resolve => { require(['./docs/components/rate'], resolve) }
+    },
+    {
+      path: '/components/control',
+      component: resolve => { require(['./docs/components/control'], resolve) }
+    },
+    {
+      path: '/components/collapse',
+      component: resolve => { require(['./docs/components/collapse'], resolve) }
+    },
+    {
+      path: '/components/slidebox',
+      component: resolve => { require(['./docs/components/slidebox'], resolve) }
+    },
+    {
+      path: '/components/loading',
+      component: resolve => { require(['./docs/components/loading'], resolve) }
     }
   ]
 })

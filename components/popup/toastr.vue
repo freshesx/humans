@@ -1,6 +1,6 @@
 <template>
-  <mn-popup :show="show" animation="slideInUp" position="top" :masked="false">
-    <mn-card class="m-b-1 scoped-card-shadow" style="max-width: 500px; margin: 0 auto;" @click.native.prevent="click">
+  <mn-popup :show="show" :classes="[`${cssPrefix}popup-toastr`]" :masked="false" animation="slideInUp">
+    <mn-card class="m-b-0" @click.native.prevent="click">
       <mn-card-item>
         <mn-icon :name="icon"></mn-icon>
         <small>{{ description }}</small>
@@ -19,6 +19,11 @@
       click () {
         this.show = false
         this.$emit('click')
+      }
+    },
+    computed: {
+      cssPrefix () {
+        return this.$human.cssPrefix
       }
     },
     data () {
@@ -40,9 +45,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-  .scoped-card-shadow {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-</style>

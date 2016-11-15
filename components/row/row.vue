@@ -1,5 +1,5 @@
 <template>
-  <div :class="[cssPrefix + 'row', { 'is-fixed': fixed }]">
+  <div :class="[ `${cssPrefix}row`, { 'is-fixed': fixed, 'is-visible': visible } ]">
     <slot></slot>
   </div>
 </template>
@@ -10,11 +10,15 @@
       fixed: {
         type: Boolean,
         default: false
+      },
+      visible: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
       cssPrefix () {
-        return `${this.$human.cssPrefix}`
+        return this.$human.cssPrefix
       }
     }
   }

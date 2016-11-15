@@ -1,7 +1,8 @@
 <!-- This is just a component template, copy it to create new component -->
 
 <template>
-  <div :class="[cssPrefix + 'className']">
+  <!-- class and style use Array, not Object -->
+  <div :class="[ `${cssPrefix}className` ]">
     <slot></slot>
   </div>
 </template>
@@ -10,7 +11,7 @@
   export default {
     computed: {
       cssPrefix () {
-        return `${this.$human.cssPrefix}`
+        return this.$human.cssPrefix
       }
     }
   }

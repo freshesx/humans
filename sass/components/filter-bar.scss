@@ -1,0 +1,56 @@
+@import "../variables";
+
+$-filter-bar: #{$namespace}filter-bar;
+$-filter-active-color: $orange;
+
+.#{$-filter-bar} {
+  $-border: solid 1px #eee;
+  $-height: 3rem;
+
+  position: relative;
+  display: flex;
+  height: $-height;
+  background: #fff;
+  z-index: 6000;
+
+  &.is-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &-item {
+    flex: 1;
+    line-height: $-height;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #333;
+
+    &.is-bordered {
+      border-left: $-border;
+    }
+
+    &.is-active {
+      color: $-filter-active-color;
+    }
+  }
+
+  &-arrow {
+    transition: all 0.5s;
+
+    &.is-collapsed {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &-popup {
+    top: 3rem;
+    bottom: auto;
+    left: 0;
+    right: 0;
+  }
+
+  &-card {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}

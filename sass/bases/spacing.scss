@@ -19,14 +19,20 @@
             left: $gutter !important;
             right: $gutter !important;
           }
-        } @else if $direction == y {
+        }
+
+        @else if $direction == y {
           #{$prop}: {
             top: $gutter !important;
             bottom: $gutter !important;
           }
-        } @else if $direction == a {
+        }
+
+        @else if $direction == a {
           #{$prop}: $gutter !important;
-        } @else {
+        }
+
+        @else {
           #{$prop}-#{$direction}: $gutter !important;
         }
       }

@@ -106,7 +106,7 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
     text-align: center;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
     border-top: solid 1px #eee;
 
     &:first-child {
@@ -120,6 +120,7 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
 
   &.is-column {
     display: flex;
+
     > .button,
     > button {
       flex: 1 1;
@@ -138,7 +139,6 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
 //
 @each $class in $-card-bordered-classes {
   .#{$class} {
-
     & + & {
       border-top: solid 1px #eee;
     }

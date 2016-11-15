@@ -1,30 +1,38 @@
 <template>
-  <div class="section">
+  <transition name="has-slide">
+    <mn-rows>
+      <mn-row>
+        <mn-scroller>
+          <div class="section">
 
-    <mn-letter>
-      <h1>Icons</h1>
-      <small>icons</small>
-    </mn-letter>
+            <mn-letter>
+              <h1>Icons</h1>
+              <small>icons</small>
+            </mn-letter>
 
-    <mn-card>
-      <mn-card-item>
-        <label slot="addon" class="form-label">Search</label>
-        <input slot="body" class="form-control" type="text" placeholder="Input icon name" v-model="searchName">
-      </mn-card-item>
-    </mn-card>
+            <mn-card>
+              <mn-card-item>
+                <label slot="addon" class="form-label">Search</label>
+                <input slot="body" class="form-control" type="text" placeholder="Input icon name" v-model="searchName">
+              </mn-card-item>
+            </mn-card>
 
-    <mn-cols>
-      <mn-col query="xs-6 sm-4" v-for="(icon, key) in searchIcons">
-        <div class="scope-tile">
-          <div>
-            <mn-icon :name="key"></mn-icon>
+            <mn-cols>
+              <mn-col query="xs-6 sm-4" v-for="(icon, key) in searchIcons">
+                <div class="scope-tile">
+                  <div>
+                    <mn-icon :name="key"></mn-icon>
+                  </div>
+                  <p>{{ key }}</p>
+                </div>
+              </mn-col>
+            </mn-cols>
+
           </div>
-          <p>{{ key }}</p>
-        </div>
-      </mn-col>
-    </mn-cols>
-
-  </div>
+        </mn-scroller>
+      </mn-row>
+    </mn-rows>
+  </transition>
 </template>
 
 <script>

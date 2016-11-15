@@ -1,23 +1,28 @@
 <template>
-  <div class="section">
-    <div class="letter">
-      <div class="letter-body">
-        <h1>Vue Human</h1>
-        <small>A component sets for vue & human UI.</small>
-      </div>
-    </div>
+  <mn-rows>
+    <mn-row>
+      <mn-scroller save>
+        <div class="section">
+          <div class="letter">
+            <div class="letter-body">
+              <h1>Vue Human</h1>
+              <small>A component sets for vue & human UI.</small>
+            </div>
+          </div>
 
-    <mn-card v-for="menu in menus">
-      <mn-card-item>
-        {{ menu.title }}
-      </mn-card-item>
-      <mn-card-item type="link" @click.native="go(sub.route)" v-for="sub in menu.subMenus">
-        <mn-icon slot="addon" :name="sub.icon"></mn-icon>
-        <template slot="body">{{ sub.title }}</template>
-      </mn-card-item>
-    </mn-card>
-
-  </div>
+          <mn-card v-for="menu in menus">
+            <mn-card-item>
+              {{ menu.title }}
+            </mn-card-item>
+            <mn-card-item type="link" @click.native="go(sub.route)" v-for="sub in menu.subMenus">
+              <mn-icon slot="addon" :name="sub.icon"></mn-icon>
+              <template slot="body">{{ sub.title }}</template>
+            </mn-card-item>
+          </mn-card>
+        </div>
+      </mn-scroller>
+    </mn-row>
+  </mn-rows>
 </template>
 
 <script>
@@ -29,6 +34,7 @@
     },
     data () {
       return {
+        pause: false,
         menus: [
           {
             title: 'Bases',
@@ -84,9 +90,9 @@
                 route: { path: '/components/popup' }
               },
               {
-                title: 'searchbar',
+                title: 'search-bar',
                 icon: 'ios-barcode',
-                route: { path: '/components/searchbar' }
+                route: { path: '/components/search-bar' }
               },
               {
                 title: 'tab',
@@ -94,9 +100,34 @@
                 route: { path: '/components/tab' }
               },
               {
-                title: 'label',
+                title: 'tag',
                 icon: 'pricetags',
-                route: { path: '/components/label' }
+                route: { path: '/components/tag' }
+              },
+              {
+                title: 'rate',
+                icon: 'ios-star',
+                route: { path: '/components/rate' }
+              },
+              {
+                title: 'control',
+                icon: 'ios-settings-strong',
+                route: { path: '/components/control' }
+              },
+              {
+                title: 'collapse',
+                icon: 'ios-arrow-down',
+                route: { path: '/components/collapse' }
+              },
+              {
+                title: 'slidebox',
+                icon: 'images',
+                route: { path: '/components/slidebox' }
+              },
+              {
+                title: 'loading',
+                icon: 'load-c',
+                route: { path: '/components/loading' }
               }
             ]
           }

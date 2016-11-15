@@ -70,7 +70,6 @@ $-btn-style-outline: (
 );
 // @todo:Whether to reduce it
 
-
 //
 // @class .btn.btn-primary, etc.
 //
@@ -87,9 +86,11 @@ $-btn-style-outline: (
   @if map-get($options, "bg") {
     background-color: map-get($options, "bg");
   }
+
   @if map-get($options, "color") {
     color: map-get($options, "color");
   }
+
   @if map-get($options, "border") {
     border-color: map-get($options, "border");
   }
@@ -99,15 +100,17 @@ $-btn-style-outline: (
   @if map-get($options, "bg") {
     background-color: map-get($options, "bg");
   }
+
   @if map-get($options, "color") {
     color: map-get($options, "color");
   }
+
   @if map-get($options, "border") {
     border: 1px solid map-get($options, "border");
   }
 }
 
-@mixin btn-set-type ($name, $value){
+@mixin btn-set-type ($name, $value) {
   &.is-#{$name} {
     $normal: map-get($value, "normal");
     $hover: map-get($value, "hover");
@@ -145,6 +148,7 @@ $-btn-style-outline: (
     &.is-active:hover,
     &:active {
       background: #fff;
+
       @if $active {
         @include btn-bg-color($active);
       }
@@ -217,7 +221,8 @@ $-btn-style-outline: (
     padding: 0;
     width: 3rem;
     border-radius: 1.5rem;
-    &.is-sm{
+
+    &.is-sm {
       width: 2rem;
       border-radius: 1rem;
     }
@@ -252,12 +257,14 @@ $-btn-style-outline: (
   0% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(180deg);
   }
+
   100% {
-   transform: rotate(360deg);
- }
+    transform: rotate(360deg);
+  }
 }
 
 //

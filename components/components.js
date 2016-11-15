@@ -23,8 +23,17 @@ import BlockImage from './image/block-image'
 import TabBar from './tab/tab'
 import TabItem from './tab/tab-item'
 import TabPane from './tab/tab-pane'
-import SearchBar from './searchbar/search'
-import Label from './label/label'
+import SearchBar from './search-bar/search'
+import FilterBar from './filter-bar/filter-bar'
+import FilterBarItem from './filter-bar/filter-bar-item'
+import Tag from './tag/tag'
+import Rate from './rate/rate'
+import RateItem from './rate/rate-item'
+import QuantityControl from './control/quantity-control'
+import Collapse from './collapse/collapse'
+import CollapsePane from './collapse/collapse-pane'
+import SlideBox from './slidebox/slidebox'
+import SlideBoxItem from './slidebox/slidebox-item'
 
 export default {
   // Column
@@ -61,9 +70,24 @@ export default {
   BlockImage,
   // bar
   SearchBar,
+  // Filter bar
+  FilterBar,
+  FilterBarItem,
   // tab
   TabBar,
   TabItem,
   TabPane,
-  Label
+  // tag
+  Tag,
+  // Rate
+  Rate,
+  RateItem,
+  // control
+  QuantityControl,
+  // collapse
+  Collapse,
+  CollapsePane,
+  // slidebox
+  SlideBox,
+  SlideBoxItem
 }

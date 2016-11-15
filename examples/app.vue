@@ -1,11 +1,5 @@
 <template>
-  <mn-rows>
-    <mn-row>
-      <mn-scroller save>
-        <router-view></router-view>
-      </mn-scroller>
-    </mn-row>
-  </mn-rows>
+  <router-view></router-view>
 </template>
 
 <script>
