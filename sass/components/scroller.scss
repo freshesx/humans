@@ -48,6 +48,8 @@ $scroll-to-top-color: #ccc;
   background-color: $scroll-to-top-color;
   color: darken($scroll-to-top-color, 30%);
   outline: none;
+  margin: 0;
+  padding: 0;
 
   &:hover {
     background-color: lighten($scroll-to-top-color, 5%);
