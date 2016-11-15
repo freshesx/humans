@@ -1,0 +1,18 @@
+$-input: #{$namespace}input;
+$-input-item: #{$namespace}input-item;
+$-input-clear: #{$namespace}input-clear;
+
+.#{$-input} {
+  width: 100%;
+  position: relative;
+}
+
+.#{$-input-item} {
+  width: 100%;
+}
+
+.#{$-input-clear} {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

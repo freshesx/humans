@@ -13,16 +13,20 @@
 
       <demo-quantity-control></demo-quantity-control>
 
+      <demo-input-control></demo-input-control>
+
     </div>
   </mn-scroller>
 </template>
 
 <script>
   import DemoQuantityControl from './quantity-control'
+  import DemoInputControl from './input-control'
 
   export default {
     components: {
-      DemoQuantityControl
+      DemoQuantityControl,
+      DemoInputControl
     }
   }
 </script>

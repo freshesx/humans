@@ -34,6 +34,7 @@ import Collapse from './collapse/collapse'
 import CollapsePane from './collapse/collapse-pane'
 import SlideBox from './slidebox/slidebox'
 import SlideBoxItem from './slidebox/slidebox-item'
+import Input from './input/input'
 
 export default {
   // Column
@@ -89,5 +90,7 @@ export default {
   CollapsePane,
   // slidebox
   SlideBox,
-  SlideBoxItem
+  SlideBoxItem,
+  // input
+  Input
 }
