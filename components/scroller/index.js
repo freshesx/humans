@@ -43,7 +43,12 @@ class Scroller {
     setTimeout(() => {
       const $scroll = $('.scroller.is-save')
       $scroll.scrollTop(value)
-    }, 0)
+
+      // 强制移除
+      // @todo 建议设定一个容器存储所有的 popup 再触发清理
+      $('.popup').remove()
+      $('.popup-mask').remove()
+    }, 100)
   }
 }
 
