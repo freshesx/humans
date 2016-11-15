@@ -1,28 +1,30 @@
 <template>
-  <mn-scroller
-    save
-    scrollToTop>
-    <transition name="has-slide">
-      <div class="section">
+  <transition name="has-slide">
+    <mn-rows>
+      <mn-row>
+        <mn-scroller>
+          <div class="section">
 
-        <mn-letter>
-          <h1>Typograhpy</h1>
-          <small>Headings, paragraph, list, etc.</small>
-        </mn-letter>
+            <mn-letter>
+              <h1>Typograhpy</h1>
+              <small>Headings, paragraph, list, etc.</small>
+            </mn-letter>
 
-        <mn-card>
-          <mn-card-item>
-            <h3 class="card-title">Headings</h3>
-          </mn-card-item>
-          <mn-card-item v-for="content in contents">
-            <demo-heading slot="body" :level="content.level">{{ content.title }}</demo-heading>
-            <small slot="help">{{ content.description }}</small>
-          </mn-card-item>
-        </mn-card>
+            <mn-card>
+              <mn-card-item>
+                <h3 class="card-title">Headings</h3>
+              </mn-card-item>
+              <mn-card-item v-for="content in contents">
+                <demo-heading slot="body" :level="content.level">{{ content.title }}</demo-heading>
+                <small slot="help">{{ content.description }}</small>
+              </mn-card-item>
+            </mn-card>
 
-      </div>
-    </transition>
-  </mn-scroller>
+          </div>
+        </mn-scroller>
+      </mn-row>
+    </mn-rows>
+  </transition>
 </template>
 
 <script>

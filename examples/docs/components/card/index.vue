@@ -1,26 +1,30 @@
 <template>
-  <mn-scroller
-    save
-    scrollToTop>
-    <div class="section">
+  <transition name="has-slide">
+    <mn-rows>
+      <mn-row>
+        <mn-scroller>
+          <div class="section">
 
-      <div class="letter">
-        <div class="letter-body">
-          <h1>Card</h1>
-          <small>card, header, block, lists, item, button</small>
-        </div>
-      </div>
+            <div class="letter">
+              <div class="letter-body">
+                <h1>Card</h1>
+                <small>card, header, block, lists, item, button</small>
+              </div>
+            </div>
 
-      <div class="cols">
-        <div class="col is-sm-6">
-          <demo-card-item></demo-card-item>
-          <demo-card-media></demo-card-media>
-          <demo-card-btns></demo-card-btns>
-        </div>
-      </div>
+            <div class="cols">
+              <div class="col is-sm-6">
+                <demo-card-item></demo-card-item>
+                <demo-card-media></demo-card-media>
+                <demo-card-btns></demo-card-btns>
+              </div>
+            </div>
 
-    </div>
-  </mn-scroller>
+          </div>
+        </mn-scroller>
+      </mn-row>
+    </mn-rows>
+  </transition>
 </template>
 
 <script>

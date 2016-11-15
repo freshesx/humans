@@ -1,19 +1,23 @@
 <template>
-  <mn-scroller
-    save
-    scrollToTop>
-    <div class="section">
-      <div class="letter">
-        <div class="letter-body">
-          <h1>Tag</h1>
-          <small>Tag</small>
-        </div>
-      </div>
+  <transition name="has-slide">
+    <mn-rows>
+      <mn-row>
+        <mn-scroller>
+          <div class="section">
+            <div class="letter">
+              <div class="letter-body">
+                <h1>Tag</h1>
+                <small>Tag</small>
+              </div>
+            </div>
 
-      <demo-tag></demo-tag>
+            <demo-tag></demo-tag>
 
-    </div>
-  </mn-scroller>
+          </div>
+        </mn-scroller>
+      </mn-row>
+    </mn-rows>
+  </transition>
 </template>
 
 <script>
