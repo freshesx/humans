@@ -38,6 +38,7 @@ $-popup-mask: #{$namespace}popup-mask;
   &-slide-leave-active {
     transition: transform 0.3s;
   }
+
   &-slide-enter,
   &-slide-leave-active {
     transform: translateY(100%);
@@ -48,23 +49,27 @@ $-popup-mask: #{$namespace}popup-mask;
   &-fade-leave-active {
     transition: opacity 0.5s linear;
   }
+
   &-fade-enter,
   &-fade-leave-active {
-    opacity: 0
+    opacity: 0;
   }
 
   // Slide from up
   &-slideup-enter-active {
     transition: transform 0.3s;
   }
+
   &-slideup-leave-active {
     transition: opacity 0.3s linear;
   }
+
   &-slideup-enter {
     transform: translateY(-100%);
   }
+
   &-slideup-leave-active {
-    opacity: 0
+    opacity: 0;
   }
 }
 
@@ -83,8 +88,9 @@ $-popup-mask: #{$namespace}popup-mask;
   &-fade-leave-active {
     transition: opacity 0.3s linear;
   }
+
   &-fade-enter,
   &-fade-leave-active {
-    opacity: 0
+    opacity: 0;
   }
 }

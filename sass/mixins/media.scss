@@ -20,9 +20,9 @@
 
   @return if(
     $n < length($grid-breakpoints),
-      nth($names, ($n + 1)),
-      null
-  )
+    nth($names, ($n + 1)),
+    null
+  );
 }
 
 //
@@ -82,7 +82,9 @@
     @include between-screen($min-name, $max-name) {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @include min-screen($min-name) {
       @content;
     }

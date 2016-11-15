@@ -37,20 +37,23 @@ $-tab-active-color: $pink;
 
 .#{$-tab} {
   width: 100%;
+
   li,
-  ul{
+  ul {
     list-style: none;
     margin: 0;
     padding: 0;
   }
+
   a,
   a:active,
   a:hover,
-  a:visited{
+  a:visited {
     color: $-tab-text-color;
     text-decoration: none;
   }
 }
+
 .#{$-tab-content} {
   padding: 0 1rem;
 }
@@ -88,7 +91,7 @@ $-tab-active-color: $pink;
     color: $-tab-active-color;
   }
 
-  &.is-bottom{
+  &.is-bottom {
     position: fixed;
     bottom: 0;
     left: 0;

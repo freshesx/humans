@@ -18,6 +18,7 @@ $-grid-flex-col: "#{$namespace}col";
 
   &.is-gapless {
     margin: 0;
+
     > .#{$-grid-flex-col} {
       padding: 0;
     }
@@ -50,6 +51,7 @@ $-grid-flex-col: "#{$namespace}col";
           flex: none;
           width: (100% / 12) * $num;
         }
+
         &.is-offset-#{$breakpoint}-#{$num} {
           margin-left: (100% / 12) * $num;
         }

@@ -35,6 +35,7 @@ $-filter-active-color: $orange;
 
   &-arrow {
     transition: all 0.5s;
+
     &.is-collapsed {
       transform: rotate(-180deg);
     }

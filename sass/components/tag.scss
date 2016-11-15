@@ -12,7 +12,7 @@ $-tag-style: (
   background-color: map-get($-tag-style, $type);
 }
 
-.#{$-tag}{
+.#{$-tag} {
   font-size: 0.9rem;
   padding: 0.1rem 0.6rem;
   display: inline-block;
@@ -23,7 +23,7 @@ $-tag-style: (
 
   // is-primary, is-secondary, is-error etc.
   @each $name, $value in $-btn-style {
-    &.is-#{$name}{
+    &.is-#{$name} {
       @include get-color($name);
     }
   }
