@@ -1,16 +1,20 @@
 <template>
-  <div class="section">
+  <mn-scroller
+    save
+    scrollToTop>
+    <div class="section">
 
-    <div class="letter">
-      <div class="letter-body">
-        <h1>Control</h1>
-        <small>input, button</small>
+      <div class="letter">
+        <div class="letter-body">
+          <h1>Control</h1>
+          <small>input, button</small>
+        </div>
       </div>
+
+      <demo-quantity-control></demo-quantity-control>
+
     </div>
-
-    <demo-quantity-control></demo-quantity-control>
-
-  </div>
+  </mn-scroller>
 </template>
 
 <script>

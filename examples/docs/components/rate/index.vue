@@ -1,15 +1,19 @@
 <template>
-  <div class="section">
-    <div class="letter">
-      <div class="letter-body">
-        <h1>Rate</h1>
-        <small>icon</small>
+  <mn-scroller
+    save
+    scrollToTop>
+    <div class="section">
+      <div class="letter">
+        <div class="letter-body">
+          <h1>Rate</h1>
+          <small>icon</small>
+        </div>
       </div>
+
+      <demo-rate></demo-rate>
+
     </div>
-
-    <demo-rate></demo-rate>
-
-  </div>
+  </mn-scroller>
 </template>
 
 <script>

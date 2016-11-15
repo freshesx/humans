@@ -1,16 +1,20 @@
 <template>
-  <div class="section">
+  <mn-scroller
+    save
+    scrollToTop>
+    <div class="section">
 
-    <div class="letter">
-      <div class="letter-body">
-        <h1>Collapse</h1>
-        <small>Collapse</small>
+      <div class="letter">
+        <div class="letter-body">
+          <h1>Collapse</h1>
+          <small>Collapse</small>
+        </div>
       </div>
+
+      <demo-collapse></demo-collapse>
+
     </div>
-
-    <demo-collapse></demo-collapse>
-
-  </div>
+  </mn-scroller>
 </template>
 
 <script>

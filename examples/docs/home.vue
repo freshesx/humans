@@ -34,6 +34,7 @@
     },
     data () {
       return {
+        pause: false,
         menus: [
           {
             title: 'Bases',

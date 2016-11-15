@@ -44,23 +44,6 @@
       FormSwitch,
       FormSelect,
       DemoFilterBar
-    },
-    data () {
-      return {
-        pause: false
-      }
-    },
-    methods: {
-      pullUp: function () {
-        console.log('The end.')
-      },
-      dragDown: function (distance) {
-        this.pause = true
-        console.log('The start.')
-        setTimeout(() => {
-          this.pause = false
-        }, 2000)
-      }
     }
   }
 </script>

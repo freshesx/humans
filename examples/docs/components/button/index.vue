@@ -1,26 +1,30 @@
 <template>
-  <div class="section">
+  <mn-scroller
+    save
+    scrollToTop>
+    <div class="section">
 
-    <mn-letter>
-      <h1>Button</h1>
-      <small>btn, block, loading, disabled</small>
-    </mn-letter>
+      <mn-letter>
+        <h1>Button</h1>
+        <small>btn, block, loading, disabled</small>
+      </mn-letter>
 
-    <demo-normal></demo-normal>
+      <demo-normal></demo-normal>
 
-    <demo-block></demo-block>
+      <demo-block></demo-block>
 
-    <demo-size></demo-size>
+      <demo-size></demo-size>
 
-    <demo-disabled></demo-disabled>
+      <demo-disabled></demo-disabled>
 
-    <demo-active></demo-active>
+      <demo-active></demo-active>
 
-    <demo-circle></demo-circle>
+      <demo-circle></demo-circle>
 
-    <demo-outline></demo-outline>
+      <demo-outline></demo-outline>
 
-  </div>
+    </div>
+  </mn-scroller>
 </template>
 
 <script>
