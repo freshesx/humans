@@ -1,8 +1,6 @@
 <template>
   <select
-    :class="{
-      [`${cssPrefix}form-select-control`]: true
-    }"
+    :class="[ `${cssPrefix}form-select-control` ]"
     :value="value"
     @input="onInput">
     <option

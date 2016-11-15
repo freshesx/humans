@@ -1,8 +1,6 @@
 <template>
   <input
-    :class="{
-      [`${cssPrefix}form-switch-control`]: true
-    }"
+    :class="[ `${cssPrefix}form-switch-control` ]"
     type="checkbox"
     :checked="data === value"
     @change="onInput">
