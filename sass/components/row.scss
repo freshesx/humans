@@ -11,6 +11,7 @@ $-row: #{$namespace}row;
 }
 
 .#{$-row} {
+  position: relative;
   flex: 1 1;
   height: 100%;
   overflow: hidden;
