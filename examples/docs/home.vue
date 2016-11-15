@@ -1,23 +1,31 @@
 <template>
-  <div class="section">
-    <div class="letter">
-      <div class="letter-body">
-        <h1>Vue Human</h1>
-        <small>A component sets for vue & human UI.</small>
+  <mn-scroller
+    save
+    bottom
+    scrollToTop
+    @pull-up="pullUp"
+    @drag-down="dragDown"
+    :pause="pause">
+    <div class="section">
+      <div class="letter">
+        <div class="letter-body">
+          <h1>Vue Human</h1>
+          <small>A component sets for vue & human UI.</small>
+        </div>
       </div>
+
+      <mn-card v-for="menu in menus">
+        <mn-card-item>
+          {{ menu.title }}
+        </mn-card-item>
+        <mn-card-item type="link" @click.native="go(sub.route)" v-for="sub in menu.subMenus">
+          <mn-icon slot="addon" :name="sub.icon"></mn-icon>
+          <template slot="body">{{ sub.title }}</template>
+        </mn-card-item>
+      </mn-card>
+
     </div>
-
-    <mn-card v-for="menu in menus">
-      <mn-card-item>
-        {{ menu.title }}
-      </mn-card-item>
-      <mn-card-item type="link" @click.native="go(sub.route)" v-for="sub in menu.subMenus">
-        <mn-icon slot="addon" :name="sub.icon"></mn-icon>
-        <template slot="body">{{ sub.title }}</template>
-      </mn-card-item>
-    </mn-card>
-
-  </div>
+  </mn-scroller>
 </template>
 
 <script>
@@ -25,10 +33,21 @@
     methods: {
       go (link) {
         this.$router.push(link)
+      },
+      pullUp: function () {
+        console.log('The end.')
+      },
+      dragDown: function (distance) {
+        this.pause = true
+        console.log('The start.')
+        setTimeout(() => {
+          this.pause = false
+        }, 2000)
       }
     },
     data () {
       return {
+        pause: false,
         menus: [
           {
             title: 'Bases',
