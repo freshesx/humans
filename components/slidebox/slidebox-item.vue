@@ -18,6 +18,9 @@
       return {
         defaultClasses: this.$human.cssPrefix
       }
+    },
+    mounted () {
+      this.$el.style.maxWidth = this.$parent.maxWidth + 'px'
     }
   }
 </script>

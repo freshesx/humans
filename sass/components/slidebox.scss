@@ -2,7 +2,6 @@ $-slide-wrap: #{$namespace}slide-wrap;
 $-slide-content: #{$namespace}slide-content;
 $-slide-box: #{$namespace}slide-box;
 $-slide-box-item: #{$namespace}slide-box-item;
-$max-width: 450px;
 
 .#{$-slide-wrap} {
   box-sizing: border-box;
@@ -19,7 +18,6 @@ $max-width: 450px;
   flex: 0;
   flex-wrap: nowrap;
   padding: 0 0.5rem;
-  max-width: $max-width;
 }
 
 .is-full {

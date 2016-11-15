@@ -23,6 +23,10 @@
       type: {
         type: String,
         default: 'normal'
+      },
+      maxWidth: {
+        type: Number,
+        default: 450
       }
     },
     computed: {

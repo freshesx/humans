@@ -17,7 +17,7 @@
         <div class="list one">5</div>
       </mn-slide-box-item>
     </mn-slide-box>
-    <mn-slide-box type="full">
+    <mn-slide-box type="full" :maxWidth="500">
       <mn-slide-box-item>
         <div class="list two">1</div>
       </mn-slide-box-item>
