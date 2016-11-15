@@ -3,7 +3,7 @@
     <button type="button" :class="reduce" @click="reduceNum">
       <mn-icon name="minus"></mn-icon>
     </button>
-    <input type="text" :value="value" :class="input">
+    <input type="text" v-model="value" :class="input">
     <button type="button" :class="increase" @click="increaseNum">
       <mn-icon name="plus"></mn-icon>
     </button>
@@ -80,11 +80,11 @@
     },
     methods: {
       increaseNum: function () {
-        if (!this.enableIncrease) this.value += this.step
+        if (!this.enableIncrease) this.value = parseInt(this.value) + this.step
         // Increase
       },
       reduceNum: function () {
-        if (!this.enableReduce) this.value -= this.step
+        if (!this.enableReduce) this.value = parseInt(this.value) - this.step
         // Reduce
       }
     },
@@ -99,20 +99,22 @@
       },
 
       currentValue (newVal, oldVal) {
-        if (!isNaN(newVal) && newVal <= this.max && newVal >= this.min) {
-          this.$emit('change', newVal)
+        const newValue = parseInt(newVal)
+        const oldValue = parseInt(oldVal)
+        if (!isNaN(newValue) && newValue <= this.max && newValue >= this.min) {
+          this.$emit('change', newValue)
           // Trigger the function 'change' when the value is changed
         } else {
           this.$nextTick(() => {
-            this.currentValue = oldVal
+            this.currentValue = oldValue
           })
         }
 
-        const reduce = newVal - this.step
+        const reduce = newValue - this.step
         this.enableReduce = (reduce < this.min) ? 1 : 0
         // Disable the reduce button when the value is less than the min
 
-        const increase = newVal + this.step
+        const increase = newValue + this.step
         this.enableIncrease = (increase > this.max) ? 1 : 0
         // Disable the increase button when the value is more than the max
       }
