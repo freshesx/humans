@@ -3,6 +3,7 @@
 $-form-label: #{$namespace}form-label;
 $-form-text: #{$namespace}form-text;
 $-form-radio: #{$namespace}form-radio;
+$-form-checkbox: #{$namespace}form-checkbox;
 $-form-counter: #{$namespace}form-counter;
 $-form-switch-control: #{$namespace}form-switch-control;
 $-form-select-control: #{$namespace}form-select-control;
@@ -110,6 +111,15 @@ $-form-select-control: #{$namespace}form-select-control;
 .#{$-form-radio} {
   &-checkmark {
     color: $green;
+  }
+}
+
+.#{$-form-checkbox} {
+  &-checkmark {
+    color: #999;
+    &.is-active {
+      color: $green;
+    }
   }
 }
 

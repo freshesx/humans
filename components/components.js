@@ -15,6 +15,7 @@ import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import FormCounter from './form/counter'
 import FormRadioCard from './form/radio-card'
+import FormCheckboxCard from './form/checkbox-card'
 import Letter from './letter/letter'
 import Pre from './code/pre'
 import Popup from './popup/popup'
@@ -61,6 +62,7 @@ export default {
   FormSelect,
   FormCounter,
   FormRadioCard,
+  FormCheckboxCard,
   // Letter
   Letter,
   // Code
