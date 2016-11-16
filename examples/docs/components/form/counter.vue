@@ -4,7 +4,7 @@
     <mn-card slot="body">
       <mn-card-item>
         <div slot="body">
-          nihao: {{ counter }}
+          Number {{ counter }}
         </div>
         <mn-form-counter slot="action" :min="1" :max="16" :step="2" v-model="counter"></mn-form-counter>
       </mn-card-item>
