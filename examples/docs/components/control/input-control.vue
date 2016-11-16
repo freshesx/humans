@@ -2,7 +2,8 @@
   <mn-card>
     <mn-card-item>Input Control</mn-card-item>
     <mn-card-item>
-      <mn-input></mn-input>
+      <mn-input v-model="value"></mn-input>
+      <p>{{ value }}</p>
     </mn-card-item>
   </mn-card>
 </template>
@@ -12,6 +13,11 @@
     methods: {
       change: function (value) {
         console.log(value)
+      }
+    },
+    data () {
+      return {
+        value: ''
       }
     }
   }

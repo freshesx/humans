@@ -1,6 +1,7 @@
 $-input: #{$namespace}input;
 $-input-item: #{$namespace}input-item;
 $-input-clear: #{$namespace}input-clear;
+$input-color: #ccc;
 
 .#{$-input} {
   width: 100%;
@@ -9,10 +10,20 @@ $-input-clear: #{$namespace}input-clear;
 
 .#{$-input-item} {
   width: 100%;
+  height: 2rem;
+  padding: 0 1rem;
+  border: 1px solid $input-color;
+  border-radius: 3px;
+  outline: none;
 }
 
 .#{$-input-clear} {
   position: absolute;
+  height: 2rem;
   top: 0;
   right: 0;
+  border: 0;
+  background-color: transparent;
+  color: darken($input-color, 40%);
+  outline: none;
 }
