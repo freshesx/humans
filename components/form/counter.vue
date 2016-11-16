@@ -1,122 +1,60 @@
 <template>
-  <div :class="control">
-    <button type="button" :class="reduce" @click="reduceNum">
-      <mn-icon name="minus"></mn-icon>
+  <div :class="[ `${cssPrefix}form-counter` ]">
+    <button :class="[ `${cssPrefix}form-counter-btn`, { 'is-disabled': !enabledReduce } ]" @click="reduceCount">
+      <mn-icon name="ios-minus-empty"></mn-icon>
     </button>
-    <input type="text" v-model="value" :class="input">
-    <button type="button" :class="increase" @click="increaseNum">
-      <mn-icon name="plus"></mn-icon>
+    <div :class="[ `${cssPrefix}form-counter-box` ]">
+      <input type="text" :class="[ `${cssPrefix}form-counter-input` ]" :value="value">
+    </div>
+    <button :class="[ `${cssPrefix}form-counter-btn`, { 'is-disabled': !enabledIncrease } ]" @click="increaseCount">
+      <mn-icon name="ios-plus-empty"></mn-icon>
     </button>
   </div>
 </template>
 
 <script>
   export default {
-    computed: {
-      control () {
-        let classes = {}
-        // basic class
-        classes[`${this.$human.cssPrefix}input-number`] = true
-        // return default and now classes
-        return Object.assign({}, classes)
-      },
-      reduce () {
-        let classes = {}
-        // basic class
-        classes[`${this.$human.cssPrefix}input-number-reduce-button`] = true
-        // disabled
-        classes['is-disabled'] = this.enableReduce
-        // return default and now classes
-        return Object.assign({}, classes)
-      },
-      input () {
-        let classes = {}
-        // basic class
-        classes[`${this.$human.cssPrefix}input-number-input`] = true
-        // return default and now classes
-        return Object.assign({}, classes)
-      },
-      increase () {
-        let classes = {}
-        // basic class
-        classes[`${this.$human.cssPrefix}input-number-increase-button`] = true
-        // disabled
-        classes['is-disabled'] = this.enableIncrease
-        // return default and now classes
-        return Object.assign({}, classes)
-      }
-    },
-    data () {
-      return {
-        defaultClasses: this.$human.cssPrefix,
-        value: this.default,
-        enableReduce: 0,
-        enableIncrease: 0,
-        currentValue: this.value
-      }
-    },
     props: {
-      // Provide some options
-      default: {
+      value: {
         type: Number,
         default: 0
-        // options: Default value
       },
+      // options: Multiplied increase or reduce of the value
       step: {
         type: Number,
         default: 1
-        // options: Multiplied increase or reduce of the value
       },
+      // options: The min value
       min: {
         type: Number,
         default: 0
-        // options: The min value
       },
+      // options: The max value
       max: {
         type: Number,
         default: 999999
-        // options: The max value
+      }
+    },
+    computed: {
+      cssPrefix () {
+        return this.$human.cssPrefix
+      },
+      enabledReduce () {
+        console.log(this.value, this.min)
+        return this.value > this.min
+      },
+      enabledIncrease () {
+        return this.value < this.max
       }
     },
     methods: {
-      increaseNum: function () {
-        if (!this.enableIncrease) this.value = parseInt(this.value) + this.step
-        // Increase
+      reduceCount () {
+        const newValue = this.value - this.step
+        if (newValue >= this.min) this.$emit('input', newValue)
       },
-      reduceNum: function () {
-        if (!this.enableReduce) this.value = parseInt(this.value) - this.step
-        // Reduce
-      }
-    },
-    mounted () {
-      if (this.value < this.min) this.value = this.min
-      if (this.value > this.max) this.value = this.max
-      // If the default value is not between the min and max, return min or max
-    },
-    watch: {
-      value (val) {
-        this.currentValue = val
-      },
-
-      currentValue (newVal, oldVal) {
-        const newValue = parseInt(newVal)
-        const oldValue = parseInt(oldVal)
-        if (!isNaN(newValue) && newValue <= this.max && newValue >= this.min) {
-          this.$emit('change', newValue)
-          // Trigger the function 'change' when the value is changed
-        } else {
-          this.$nextTick(() => {
-            this.currentValue = oldValue
-          })
-        }
-
-        const reduce = newValue - this.step
-        this.enableReduce = (reduce < this.min) ? 1 : 0
-        // Disable the reduce button when the value is less than the min
-
-        const increase = newValue + this.step
-        this.enableIncrease = (increase > this.max) ? 1 : 0
-        // Disable the increase button when the value is more than the max
+      increaseCount () {
+        const newValue = this.value + this.step
+        if (newValue <= this.max) this.$emit('input', newValue)
       }
     }
   }

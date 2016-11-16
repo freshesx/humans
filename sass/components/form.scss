@@ -2,6 +2,7 @@
 $-form-label: #{$namespace}form-label;
 $-form-control: #{$namespace}form-control;
 $-form-radio: #{$namespace}form-radio;
+$-form-counter: #{$namespace}form-counter;
 $-form-switch-control: #{$namespace}form-switch-control;
 $-form-select-control: #{$namespace}form-select-control;
 $-input-number: #{$namespace}input-number;
@@ -207,5 +208,51 @@ $-form-input-color: #ccc;
 .#{$-form-radio} {
   &-checkmark {
     color: $green;
+  }
+}
+
+.#{$-form-counter} {
+  display: flex;
+  max-width: 8rem;
+
+  &-box {
+    flex-shrink: 1;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+  }
+
+  &-input {
+    width: 100%;
+    display: block;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    outline: none;
+  }
+
+  &-btn {
+    flex-shrink: 0;
+    border: solid 1px #ddd;
+    background: transparent;
+    width: 2.375rem;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+
+    &.is-disabled {
+      background: #eee;
+      outline: none;
+    }
+
+    &:first-child {
+      border-top-left-radius: $base-radius;
+      border-bottom-left-radius: $base-radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $base-radius;
+      border-bottom-right-radius: $base-radius;
+    }
   }
 }

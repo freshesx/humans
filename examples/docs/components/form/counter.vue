@@ -3,12 +3,10 @@
     <strong slot="header">Input Number</strong>
     <mn-card slot="body">
       <mn-card-item>
-        <mn-cols slot="body">
-          <mn-col query="xs-4">nihao</mn-col>
-          <mn-col query="xs-6">
-            <mn-form-counter :min="3" :max="16" :step="2" @change="change"></mn-form-counter>
-          </mn-col>
-        </mn-cols>
+        <div slot="body">
+          nihao: {{ counter }}
+        </div>
+        <mn-form-counter slot="action" :min="1" :max="16" :step="2" v-model="counter"></mn-form-counter>
       </mn-card-item>
     </mn-card>
   </mn-card-wrapper>
@@ -16,9 +14,9 @@
 
 <script>
   export default {
-    methods: {
-      change: function (value) {
-        console.log(value)
+    data () {
+      return {
+        counter: 1
       }
     }
   }
