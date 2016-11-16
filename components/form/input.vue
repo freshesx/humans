@@ -1,24 +1,24 @@
 <template>
-  <div :class="[ `${cssPrefix}input` ]">
+  <div :class="[ `${cssPrefix}form-input` ]">
     <mn-icon
       :name="iconName"
-      :class="`${cssPrefix}input-icon`"
+      :class="`${cssPrefix}form-input-icon`"
       v-if="this.icon !== {}"
       ref="icon"
       :style="icontyles"
       ></mn-icon>
     <input
-    type="text"
-    name="name"
-    v-bind:value="value"
-    v-model="message"
-    :class="[ `${cssPrefix}input-item` ]"
-    v-on:input="onInput"
-    ref="input"
-    :style="inputStyles">
+      type="text"
+      name="name"
+      v-bind:value="value"
+      v-model="message"
+      :class="[ `${cssPrefix}form-input-item` ]"
+      v-on:input="onInput"
+      ref="input"
+      :style="inputStyles">
     <button
       class="clear-text"
-      :class="[ `${cssPrefix}input-clear` ]"
+      :class="[ `${cssPrefix}form-input-clear` ]"
       @mousedown.prevent
       @click="clear"
       v-if="message && this.clearInput"
@@ -38,6 +38,7 @@
         if (this.icon.name && this.icon.position) return (this.icon.position === 'right') ? 'right: 0.5rem;' : 'left: 0.5rem;'
       },
       inputStyles () {
+        if (this.clearInput) return 'padding-right: 2rem;'
         if (this.icon.name && this.icon.position) return (this.icon.position === 'right') ? 'padding-right: 2rem;' : 'padding-left: 2rem;'
       },
       buttonStyles () {
