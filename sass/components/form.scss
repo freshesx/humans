@@ -33,7 +33,7 @@ $-form-input-color: #ccc;
   padding: 0;
   top: 0;
   left: 0.5rem;
-  color: darken($-form-input-color, 40%);
+  color: darken($-form-input-color, 30%);
 }
 
 .#{$-form-input-clear} {
@@ -46,7 +46,7 @@ $-form-input-color: #ccc;
   margin: 0;
   padding: 0;
   background-color: transparent;
-  color: darken($-form-input-color, 40%);
+  color: darken($-form-input-color, 30%);
   outline: none;
 }
 

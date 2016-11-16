@@ -1,11 +1,13 @@
 <template>
-  <mn-card>
-    <mn-card-item>Input Control</mn-card-item>
-    <mn-card-item>
-      <mn-input v-model="value" clearInput></mn-input>
-      <p class="example">{{ value }}</p>
-    </mn-card-item>
-  </mn-card>
+  <mn-card-wrapper>
+    <strong slot="header">Input</strong>
+    <mn-card slot="body">
+      <mn-card-item>
+        <mn-input v-model="value" clearInput></mn-input>
+        <p class="example">{{ value }}</p>
+      </mn-card-item>
+    </mn-card>
+  </mn-card-wrapper>
 </template>
 
 <script>
