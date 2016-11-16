@@ -1,5 +1,6 @@
 $-input: #{$namespace}input;
 $-input-item: #{$namespace}input-item;
+$-input-icon: #{$namespace}input-icon;
 $-input-clear: #{$namespace}input-clear;
 $input-color: #ccc;
 
@@ -15,6 +16,14 @@ $input-color: #ccc;
   border: 1px solid $input-color;
   border-radius: 3px;
   outline: none;
+}
+
+.#{$-input-icon} {
+  position: absolute;
+  display: block;
+  height: 2rem;
+  top: 0;
+  color: darken($input-color, 40%);
 }
 
 .#{$-input-clear} {
