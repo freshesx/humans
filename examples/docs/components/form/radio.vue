@@ -1,7 +1,7 @@
 <template>
   <mn-card-wrapper>
     <strong slot="header">Radio input</strong>
-    <mn-form-radio slot="body" :options="radio" v-model="radioValue"></mn-form-radio>
+    <mn-form-radio-card slot="body" :options="radio" v-model="radioValue"></mn-form-radio-card>
     <template slot="footer">
       <mn-icon name="ios-information-outline"></mn-icon>
       Your choose: {{ radioValue }}

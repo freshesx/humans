@@ -13,8 +13,8 @@ import CardWrapper from './card/card-wrapper'
 import FormText from './form/text'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
-import FormRadio from './form/radio'
 import FormCounter from './form/counter'
+import FormRadioCard from './form/radio-card'
 import Letter from './letter/letter'
 import Pre from './code/pre'
 import Popup from './popup/popup'
@@ -59,8 +59,8 @@ export default {
   FormText,
   FormSwitch,
   FormSelect,
-  FormRadio,
   FormCounter,
+  FormRadioCard,
   // Letter
   Letter,
   // Code
