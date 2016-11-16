@@ -1,145 +1,15 @@
 @import "../variables";
+
 $-form-label: #{$namespace}form-label;
-$-form-control: #{$namespace}form-control;
+$-form-text: #{$namespace}form-text;
 $-form-radio: #{$namespace}form-radio;
 $-form-counter: #{$namespace}form-counter;
 $-form-switch-control: #{$namespace}form-switch-control;
 $-form-select-control: #{$namespace}form-select-control;
-$-input-number: #{$namespace}input-number;
-$-input-number-increase-button: #{$namespace}input-number-increase-button;
-$-input-number-reduce-button: #{$namespace}input-number-reduce-button;
-$-input-number-input: #{$namespace}input-number-input;
-$input-number-base-color: #999;
-$input-number-base-background: #fafafa;
-$input-number-base-radius: 5px;
-$-form-input: #{$namespace}form-input;
-$-form-input-item: #{$namespace}form-input-item;
-$-form-input-icon: #{$namespace}form-input-icon;
-$-form-input-clear: #{$namespace}form-input-clear;
-$-form-input-color: #ccc;
-
-.#{$-input-number} {
-  display: flex;
-}
-
-.#{$-input-number-increase-button},
-.#{$-input-number-reduce-button} {
-  flex: 0 2rem;
-  width: 2rem;
-  height: 2rem;
-  background: $input-number-base-background;
-  border: 1px solid $input-number-base-color;
-  padding: 0;
-  margin: 0;
-  line-height: 1rem;
-  outline: none;
-  cursor: pointer;
-
-  .icon {
-    color: $input-number-base-color;
-    width: 1rem;
-    height: 1rem;
-  }
-
-  &.is-disabled {
-    cursor: not-allowed;
-
-    .icon {
-      color: lighten($input-number-base-color, 20%);
-    }
-  }
-}
-
-.#{$-input-number-increase-button} {
-  border-radius: 0 $input-number-base-radius $input-number-base-radius 0;
-  border-left: 0;
-}
-
-.#{$-input-number-reduce-button} {
-  border-radius: $input-number-base-radius 0 0 $input-number-base-radius;
-  border-right: 0;
-}
-
-.#{$-input-number-input} {
-  flex: 0 3rem;
-  width: 3rem;
-  height: 2rem;
-  background: $input-number-base-background;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  border: 1px solid $input-number-base-color;
-  line-height: 1rem;
-  text-align: center;
-  outline: none;
-  font-size: 0.8rem;
-  border-radius: 0;
-}
-
-.#{$-form-input} {
-  width: 100%;
-  position: relative;
-}
-
-.#{$-form-input-item} {
-  width: 100%;
-  height: 2rem;
-  padding: 0 0.5rem;
-  border: 1px solid $-form-input-color;
-  border-radius: 3px;
-  outline: none;
-}
-
-.#{$-form-input-icon} {
-  position: absolute;
-  display: block;
-  height: 2rem;
-  margin: 0;
-  padding: 0;
-  top: 0;
-  left: 0.5rem;
-  color: darken($-form-input-color, 30%);
-}
-
-.#{$-form-input-clear} {
-  position: absolute;
-  height: 2rem;
-  width: 2rem;
-  top: 0;
-  right: 0;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  color: darken($-form-input-color, 30%);
-  outline: none;
-}
-
-.clear-input-enter-active {
-  transition: all 0.2s ease;
-}
-
-.clear-input-leave-active {
-  transition: all 0.2s ease;
-}
-
-.clear-input-enter,
-.clear-input-leave-active {
-  opacity: 0;
-}
 
 .#{$-form-label} {
   display: block;
   width: 6rem;
-}
-
-.#{$-form-control} {
-  width: 100%;
-  border: none;
-  padding: 0;
-  background: transparent;
-  outline: none;
-  -webkit-appearance: none;
 }
 
 .#{$-form-switch-control} {
@@ -203,6 +73,38 @@ $-form-input-color: #ccc;
   margin: -1rem 0;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+.#{$-form-text} {
+  display: flex;
+
+  &-input {
+    flex: 1 1;
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    background: transparent;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  &-clear {
+    flex-shrink: 0;
+  }
+
+  &-clear-enter-active {
+    transition: all 0.2s ease;
+  }
+
+  &-clear-leave-active {
+    transition: all 0.2s ease;
+  }
+
+  &-clear-enter,
+  &-clear-leave-active {
+    opacity: 0;
+  }
 }
 
 .#{$-form-radio} {
