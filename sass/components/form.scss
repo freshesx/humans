@@ -32,6 +32,7 @@ $-form-input-color: #ccc;
   margin: 0;
   padding: 0;
   top: 0;
+  left: 0.5rem;
   color: darken($-form-input-color, 40%);
 }
 
@@ -47,6 +48,19 @@ $-form-input-color: #ccc;
   background-color: transparent;
   color: darken($-form-input-color, 40%);
   outline: none;
+}
+
+.clear-input-enter-active {
+  transition: all 0.2s ease;
+}
+
+.clear-input-leave-active {
+  transition: all 0.2s ease;
+}
+
+.clear-input-enter,
+.clear-input-leave-active {
+  opacity: 0;
 }
 
 .#{$-form-label} {

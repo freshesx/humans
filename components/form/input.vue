@@ -1,12 +1,9 @@
 <template>
   <div :class="[ `${cssPrefix}form-input` ]">
     <mn-icon
-      :name="iconName"
+      :name="this.icon"
       :class="`${cssPrefix}form-input-icon`"
-      v-if="this.icon !== {}"
-      ref="icon"
-      :style="icontyles"
-      ></mn-icon>
+      v-if="this.icon"></mn-icon>
     <input
       type="text"
       name="name"
@@ -16,15 +13,16 @@
       v-on:input="onInput"
       ref="input"
       :style="inputStyles">
-    <button
-      class="clear-text"
-      :class="[ `${cssPrefix}form-input-clear` ]"
-      @mousedown.prevent
-      @click="clear"
-      v-if="message && this.clearInput"
-      :style="buttonStyles">
-      <mn-icon name="ios-close-outline"></mn-icon>
-    </button>
+    <transition name="clear-input">
+      <button
+        class="clear-text"
+        :class="[ `${cssPrefix}form-input-clear` ]"
+        @mousedown.prevent
+        @click="clear"
+        v-if="message && this.clearInput">
+        <mn-icon name="ios-close-outline"></mn-icon>
+      </button>
+    </transition>
   </div>
 </template>
 
@@ -34,24 +32,30 @@
       cssPrefix () {
         return this.$human.cssPrefix
       },
-      icontyles () {
-        if (this.icon.name && this.icon.position) return (this.icon.position === 'right') ? 'right: 0.5rem;' : 'left: 0.5rem;'
-      },
       inputStyles () {
-        if (this.clearInput) return 'padding-right: 2rem;'
-        if (this.icon.name && this.icon.position) return (this.icon.position === 'right') ? 'padding-right: 2rem;' : 'padding-left: 2rem;'
-      },
-      buttonStyles () {
-        if (this.icon.name && this.icon.position) return (this.icon.position === 'right') ? 'right: 2rem;' : ''
+        let styles = ''
+        if (this.clearInput) styles += 'padding-right: 2rem;'
+        // whether to show the 'clear-text' button
+        if (this.icon) styles += 'padding-left: 2rem;'
+        // whether to show the icon on the left
+        if (this.width) styles += `width: ${this.width};`
+        // whether to change the width
+        if (this.height) styles += `height: ${this.height};`
+        // whether to change the height
+        if (this.noBorder) styles += 'border: 0;'
+        // whether to hide the border
+        return styles
       }
     },
     methods: {
       clear: function (event) {
         this.message = ''
         this.$emit('input', event.target.value)
+        // clear the value and trigger the input
       },
       onInput: function (event) {
         this.$emit('input', event.target.value)
+        // trigger the input
       }
     },
     data () {
@@ -69,15 +73,22 @@
         type: Boolean,
         default: false
       },
+      width: {
+        type: String,
+        default: ''
+      },
+      height: {
+        type: String,
+        default: ''
+      },
       icon: {
-        type: Object,
-        default: function () {
-          return {}
-        }
+        type: String,
+        default: ''
+      },
+      noBorder: {
+        type: Boolean,
+        default: false
       }
-    },
-    mounted () {
-      if (this.icon.name) this.iconName = this.icon.name
     }
   }
 </script>
