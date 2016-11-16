@@ -16,6 +16,7 @@
             <mn-cols>
               <mn-col query="sm-6">
                 <form-radio></form-radio>
+                <form-checkbox></form-checkbox>
                 <form-basic></form-basic>
                 <form-switch></form-switch>
                 <form-select></form-select>
@@ -33,6 +34,7 @@
 
 <script>
   import FormRadio from './radio'
+  import FormCheckbox from './checkbox'
   import FormBasic from './basic'
   import FormSwitch from './switch'
   import FormSelect from './select'
@@ -42,6 +44,7 @@
   export default {
     components: {
       FormRadio,
+      FormCheckbox,
       FormBasic,
       FormSwitch,
       FormSelect,
