@@ -40,7 +40,6 @@
         return this.$human.cssPrefix
       },
       enabledReduce () {
-        console.log(this.value, this.min)
         return this.value > this.min
       },
       enabledIncrease () {
