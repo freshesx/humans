@@ -3,7 +3,11 @@
     <strong slot="header">Input Number</strong>
     <mn-card slot="body">
       <mn-card-item>
-        <mn-input-number :min="3" :max="16" @change="change" :step="2"></mn-input-number>
+        <template slot="body">
+          nihao
+        </template>
+        <mn-form-counter :min="3" :max="16" :step="2" @change="change">
+        </mn-form-counter>
       </mn-card-item>
     </mn-card>
   </mn-card-wrapper>
