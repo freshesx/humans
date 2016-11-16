@@ -12,6 +12,7 @@ import CardBtns from './card/card-btns'
 import CardWrapper from './card/card-wrapper'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
+import FormRadio from './form/radio'
 import InputNumber from './form/input-number'
 import Letter from './letter/letter'
 import Pre from './code/pre'
@@ -57,6 +58,7 @@ export default {
   // Form
   FormSwitch,
   FormSelect,
+  FormRadio,
   InputNumber,
   // Letter
   Letter,
