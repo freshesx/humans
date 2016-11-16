@@ -1,19 +1,10 @@
 <template>
   <mn-card-wrapper>
     <strong slot="header">Radio input</strong>
-    <mn-card slot="body">
-      <mn-card-item>
-        <label slot="addon" class="form-label">Radio one</label>
-        <input slot="body" class="form-radio-control" type="radio" value="one" v-model="radio">
-      </mn-card-item>
-      <mn-card-item>
-        <label slot="addon" class="form-label">Radio two</label>
-        <input slot="body" class="form-radio-control" type="radio" value="two" v-model="radio">
-      </mn-card-item>
-    </mn-card>
+    <mn-form-radio slot="body" :options="radio" v-model="radioValue"></mn-form-radio>
     <template slot="footer">
-      <mn-icon name="help-circled" :scale="0.9"></mn-icon>
-      Add some help for your user.
+      <mn-icon name="ios-information-outline"></mn-icon>
+      Your choose: {{ radioValue }}
     </template>
   </mn-card-wrapper>
 </template>
@@ -22,7 +13,12 @@
   export default {
     data () {
       return {
-        radio: 'one'
+        radio: [
+          { label: 'One', value: 'one' },
+          { label: 'Two', value: 'two' },
+          { label: 'Three', value: 'three' }
+        ],
+        radioValue: 'one'
       }
     }
   }
