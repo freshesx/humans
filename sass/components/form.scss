@@ -2,7 +2,7 @@
 
 $-form-label: #{$namespace}form-label;
 $-form-control: #{$namespace}form-control;
-$-form-radio-control: #{$namespace}form-radio-control;
+$-form-radio: #{$namespace}form-radio;
 $-form-switch-control: #{$namespace}form-switch-control;
 $-form-select-control: #{$namespace}form-select-control;
 
@@ -84,34 +84,8 @@ $-form-select-control: #{$namespace}form-select-control;
   -webkit-tap-highlight-color: transparent;
 }
 
-.#{$-form-radio-control} {
-  display: flex;
-  width: 100%;
-  height: 3.5rem;
-  margin: -1rem 0;
-  outline: none;
-  justify-content: flex-end;
-  align-items: center;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: transparent;
-
-  &::after {
-    content: '';
-    display: none;
-    width: 8px;
-    height: 16px;
-    border: solid $green;
-    border-width: 0 3px 3px 0;
-    margin-right: $grid-gutters / 4;
-    transform: rotate(45deg);
-  }
-
-  &:checked {
-    &::after {
-      display: block;
-    }
+.#{$-form-radio} {
+  &-checkmark {
+    color: $green;
   }
 }
