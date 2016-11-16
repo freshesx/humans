@@ -139,6 +139,10 @@ $-form-select-control: #{$namespace}form-select-control;
     padding: 0.25rem 0.5rem;
     text-align: center;
     outline: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    border: none;
+    background: transparent;
   }
 
   &-btn {
@@ -147,10 +151,10 @@ $-form-select-control: #{$namespace}form-select-control;
     background: transparent;
     width: 2.375rem;
     text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
     cursor: pointer;
-    user-select: none;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
 
     &.is-disabled {
       background: #eee;
