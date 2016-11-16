@@ -34,7 +34,7 @@ import Collapse from './collapse/collapse'
 import CollapsePane from './collapse/collapse-pane'
 import SlideBox from './slidebox/slidebox'
 import SlideBoxItem from './slidebox/slidebox-item'
-import Input from './input/input'
+import Input from './form/input'
 
 export default {
   // Column

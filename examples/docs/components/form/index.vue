@@ -14,6 +14,7 @@
           <form-basic></form-basic>
           <form-switch></form-switch>
           <form-select></form-select>
+          <form-input></form-input>
           <mn-btn type="primary" block>Submit</mn-btn>
         </mn-col>
       </mn-cols>
@@ -26,13 +27,15 @@
   import FormBasic from './basic'
   import FormSwitch from './switch'
   import FormSelect from './select'
+  import FormInput from './input'
 
   export default {
     components: {
       FormRadio,
       FormBasic,
       FormSwitch,
-      FormSelect
+      FormSelect,
+      FormInput
     }
   }
 </script>

@@ -2,8 +2,8 @@
   <mn-card>
     <mn-card-item>Input Control</mn-card-item>
     <mn-card-item>
-      <mn-input v-model="value" clearInput :icon="icon"></mn-input>
-      <p>{{ value }}</p>
+      <mn-input v-model="value" clearInput></mn-input>
+      <p class="example">{{ value }}</p>
     </mn-card-item>
   </mn-card>
 </template>
@@ -17,12 +17,15 @@
     },
     data () {
       return {
-        value: '',
-        icon: {
-          name: 'ios-search',
-          position: 'right'
-        }
+        value: ''
       }
     }
   }
 </script>
+
+<style scoped>
+  .example{
+    font-size: 0.8rem;
+    color: #999;
+  }
+</style>
