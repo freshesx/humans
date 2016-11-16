@@ -10,6 +10,7 @@ import CardItem from './card/card-item'
 import CardMedia from './card/card-media'
 import CardBtns from './card/card-btns'
 import CardWrapper from './card/card-wrapper'
+import FormText from './form/text'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import FormRadio from './form/radio'
@@ -35,7 +36,6 @@ import Collapse from './collapse/collapse'
 import CollapsePane from './collapse/collapse-pane'
 import SlideBox from './slidebox/slidebox'
 import SlideBoxItem from './slidebox/slidebox-item'
-import Input from './form/input'
 
 export default {
   // Column
@@ -56,6 +56,7 @@ export default {
   CardBtns,
   CardWrapper,
   // Form
+  FormText,
   FormSwitch,
   FormSelect,
   FormRadio,
@@ -91,7 +92,5 @@ export default {
   CollapsePane,
   // slidebox
   SlideBox,
-  SlideBoxItem,
-  // input
-  Input
+  SlideBoxItem
 }
