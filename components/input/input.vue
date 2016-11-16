@@ -8,7 +8,12 @@
     :class="[ `${cssPrefix}input-item` ]"
     v-on:input="onInput"
     ref="input">
-    <button class="clear-text" :class="[ `${cssPrefix}input-clear` ]" @click="clear" v-if="message">
+    <button
+      class="clear-text"
+      :class="[ `${cssPrefix}input-clear` ]"
+      @mousedown.prevent
+      @click="clear"
+      v-if="message && this.clearInput">
       <mn-icon name="ios-close-outline"></mn-icon>
     </button>
   </div>
@@ -39,6 +44,10 @@
       value: {
         type: String,
         default: ''
+      },
+      clearInput: {
+        type: Boolean,
+        default: false
       }
     }
   }

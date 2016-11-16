@@ -2,7 +2,7 @@
   <mn-card>
     <mn-card-item>Input Control</mn-card-item>
     <mn-card-item>
-      <mn-input v-model="value"></mn-input>
+      <mn-input v-model="value" clearInput></mn-input>
       <p>{{ value }}</p>
     </mn-card-item>
   </mn-card>
