@@ -19,6 +19,7 @@
                 <form-basic></form-basic>
                 <form-switch></form-switch>
                 <form-select></form-select>
+                <form-input-number></form-input-number>
                 <mn-btn type="primary" block>Submit</mn-btn>
               </mn-col>
             </mn-cols>
@@ -35,6 +36,7 @@
   import FormBasic from './basic'
   import FormSwitch from './switch'
   import FormSelect from './select'
+  import FormInputNumber from './input-number'
   import DemoFilterBar from '../filter-bar'
 
   export default {
@@ -43,6 +45,7 @@
       FormBasic,
       FormSwitch,
       FormSelect,
+      FormInputNumber,
       DemoFilterBar
     }
   }

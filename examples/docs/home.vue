@@ -110,11 +110,6 @@
                 route: { path: '/components/rate' }
               },
               {
-                title: 'control',
-                icon: 'ios-settings-strong',
-                route: { path: '/components/control' }
-              },
-              {
                 title: 'collapse',
                 icon: 'ios-arrow-down',
                 route: { path: '/components/collapse' }

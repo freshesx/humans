@@ -16,14 +16,14 @@
       control () {
         let classes = {}
         // basic class
-        classes[`${this.$human.cssPrefix}quantity-control`] = true
+        classes[`${this.$human.cssPrefix}input-number`] = true
         // return default and now classes
         return Object.assign({}, classes)
       },
       reduce () {
         let classes = {}
         // basic class
-        classes[`${this.$human.cssPrefix}quantity-reduce-button`] = true
+        classes[`${this.$human.cssPrefix}input-number-reduce-button`] = true
         // disabled
         classes['is-disabled'] = this.enableReduce
         // return default and now classes
@@ -32,14 +32,14 @@
       input () {
         let classes = {}
         // basic class
-        classes[`${this.$human.cssPrefix}quantity-input`] = true
+        classes[`${this.$human.cssPrefix}input-number-input`] = true
         // return default and now classes
         return Object.assign({}, classes)
       },
       increase () {
         let classes = {}
         // basic class
-        classes[`${this.$human.cssPrefix}quantity-increase-button`] = true
+        classes[`${this.$human.cssPrefix}input-number-increase-button`] = true
         // disabled
         classes['is-disabled'] = this.enableIncrease
         // return default and now classes
