@@ -4,7 +4,7 @@
       <mn-icon name="ios-minus-empty"></mn-icon>
     </button>
     <div :class="[ `${cssPrefix}form-counter-box` ]">
-      <input type="text" :class="[ `${cssPrefix}form-counter-input` ]" :value="value">
+      <input type="number" :class="[ `${cssPrefix}form-counter-input` ]" :value="value" v-on:input="input">
     </div>
     <button :class="[ `${cssPrefix}form-counter-btn`, { 'is-disabled': !enabledIncrease } ]" @click="increaseCount">
       <mn-icon name="ios-plus-empty"></mn-icon>
@@ -54,6 +54,10 @@
       increaseCount () {
         const newValue = this.value + this.step
         if (newValue <= this.max) this.$emit('input', newValue)
+      },
+      input (event) {
+        const newValue = parseInt(event.target.value)
+        if (!isNaN(newValue)) this.$emit('input', newValue)
       }
     }
   }

@@ -118,6 +118,7 @@ $-form-select-control: #{$namespace}form-select-control;
 .#{$-form-checkbox} {
   &-checkmark {
     color: #999;
+
     &.is-active {
       color: $green;
     }
@@ -144,6 +145,16 @@ $-form-select-control: #{$namespace}form-select-control;
     -webkit-tap-highlight-color: transparent;
     border: none;
     background: transparent;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none !important;
+      margin: 0;
+    }
+
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
   }
 
   &-btn {
