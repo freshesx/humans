@@ -1,5 +1,5 @@
 <template>
-  <i :class="[ `${cssPrefix}tag`, `is-${this.type}` ]">
+  <i :class="[ `${cssPrefix}tag`, tagType ]">
     <slot></slot>
   </i>
 </template>
@@ -9,6 +9,9 @@
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix
+      },
+      tagType () {
+        if (this.type) return `is-${this.type}`
       }
     },
     props: {
