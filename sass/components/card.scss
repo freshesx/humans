@@ -51,6 +51,7 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
   // middle body
   &-body {
     flex: 1;
+    overflow: hidden;
   }
 
   // right action
