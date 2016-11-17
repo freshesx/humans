@@ -1,7 +1,7 @@
 <template>
-  <div :class="slideWrap" :style="slideWrapStyle">
+  <div :class="[ `${cssPrefix}slide-wrap` ]" :style="slideWrapStyle">
     <div
-      :class="slideBox"
+      :class="[ `${cssPrefix}slide-box`, 'slide-back', { 'is-full': this.isFull } ]"
       @touchmove="touchmove"
       @touchstart="touchstart"
       @touchend="touchend"
@@ -30,21 +30,8 @@
       }
     },
     computed: {
-      slideBox () {
-        let classes = {}
-        // Add css prefix
-        classes[`${this.defaultClasses}slide-box`] = true
-        // Animation
-        classes['slide-back'] = true
-        // is-full
-        classes['is-full'] = this.type === 'full'
-        return Object.assign({}, classes)
-      },
-      slideWrap () {
-        let classes = {}
-        // Add css prefix
-        classes[`${this.defaultClasses}slide-wrap`] = true
-        return Object.assign({}, classes)
+      cssPrefix () {
+        return this.$human.cssPrefix
       },
       slideBoxStyle () {
         return `transform: translateX(${this.distance}px);`
@@ -56,8 +43,6 @@
     },
     data () {
       return {
-        defaultClasses: this.$human.cssPrefix,
-        // Defaul css prefix
         startPosition: 0,
         // Start positon depends on  on-touchstart event.
         CurrentPosition: 0,
@@ -66,6 +51,8 @@
         // The last position.
         isTouched: false,
         // If touched or not
+        isFull: this.type === 'full',
+        // If is-full
         direction: '',
         // The direction of touch events.
         distance: 0,
