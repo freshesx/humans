@@ -17,7 +17,18 @@
         <mn-btn slot="action" class="is-warning is-sm m-b-0">Send Code</mn-btn>
       </mn-card-item>
       <mn-card-item>
+        <label slot="addon" class="form-label">Date</label>
+        <mn-form-text slot="body" type="date" v-model="date" placeholder="date"></mn-form-text>
+      </mn-card-item>
+      <mn-card-item>
+        <label slot="addon" class="form-label">DateTime</label>
+        <mn-form-text slot="body" type="datetime-local" v-model="datetime" placeholder="datetime"></mn-form-text>
+      </mn-card-item>
+      <mn-card-item>
         Username: {{ username || 'unset' }}
+      </mn-card-item>
+      <mn-card-item>
+        DateTime: {{ datetime || 'unset' }}
       </mn-card-item>
     </mn-card>
   </mn-card-wrapper>
@@ -29,7 +40,9 @@
       return {
         username: undefined,
         password: undefined,
-        phone: undefined
+        phone: undefined,
+        date: undefined,
+        datetime: undefined
       }
     }
   }
