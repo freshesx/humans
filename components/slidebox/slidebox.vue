@@ -35,7 +35,7 @@
         // Add css prefix
         classes[`${this.defaultClasses}slide-box`] = true
         // Animation
-        classes['slide-back'] = true
+        classes['slide-back'] = this.enableAnimation
         // is-full
         classes['is-full'] = this.type === 'full'
         return Object.assign({}, classes)
@@ -56,6 +56,10 @@
     },
     data () {
       return {
+        enableAnimation: false,
+        // Enable the animation
+        delayDistance: 100,
+        // the delay distance when touch-end
         defaultClasses: this.$human.cssPrefix,
         // Defaul css prefix
         startPosition: 0,
@@ -112,6 +116,7 @@
         // Set the start position.
         this.lastPosition = this.startPosition
         // Set the last position
+        this.enableAnimation = false
       },
       touchend: function (event) {
         if (this.type === 'full') {
@@ -141,6 +146,7 @@
         // If touched at the far left or the far right.
         this.isTouched = true
         this.lastDistance = this.distance
+        this.enableAnimation = true
       },
       swipeEvent: function (distance, duration) {
         if (duration < this.swipe.duration && distance > this.swipe.distance) {
@@ -148,7 +154,7 @@
                         ? this.distance + this.distance * this.swipe.multiple
                         : this.distance - this.distance * this.swipe.multiple
         }
-        return
+        this.distance = (this.direction === 'left') ? this.distance - this.delayDistance : this.distance + this.delayDistance
         // Swipe event
       },
       wheel: function (event) {
