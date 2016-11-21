@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" @click="click">
+  <div :class="[ `${cssPrefix}tab-item`, { 'is-active': isActive } ]" @click="click">
     <mn-icon :name="this.tab.icon" v-if="this.tab.icon"></mn-icon>
     <p v-if="this.tab.title">{{ this.tab.title }}</p>
   </div>
@@ -17,18 +17,12 @@
         required: true
       }
     },
-    data () {
-      return {
-        defaultClasses: this.$human.cssPrefix
-      }
-    },
     computed: {
-      classes () {
-        let classes = {}
-        classes['is-active'] = this.$parent.current === this.index
-        classes[`${this.$human.cssPrefix}tab-item`] = true
-        return Object.assign({}, classes)
-        // Add css prefix
+      cssPrefix () {
+        return this.$human.cssPrefix
+      },
+      isActive () {
+        return this.$parent.current === this.index
       }
     },
     methods: {
@@ -39,9 +33,7 @@
       }
     },
     mounted: function () {
-      if (this.$parent.current === this.index) {
-        this.$parent.flag = this.tab._uid
-      }
+      if (this.$parent.current === this.index) this.$parent.flag = this.tab._uid
     }
   }
 </script>

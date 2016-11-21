@@ -22,6 +22,11 @@
         default: ''
       }
     },
+    computed: {
+      cssPrefix () {
+        return this.$human.cssPrefix
+      }
+    },
     methods: {
       getViewImage () {
         let image = ''

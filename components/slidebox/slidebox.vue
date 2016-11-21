@@ -1,7 +1,7 @@
 <template>
-  <div :class="slideWrap" :style="slideWrapStyle">
+  <div :class="[ `${cssPrefix}slide-wrap` ]" :style="slideWrapStyle">
     <div
-      :class="slideBox"
+      :class="[ `${cssPrefix}slide-box`, 'slide-back', { 'is-full': this.isFull } ]"
       @touchmove="touchmove"
       @touchstart="touchstart"
       @touchend="touchend"
@@ -30,21 +30,8 @@
       }
     },
     computed: {
-      slideBox () {
-        let classes = {}
-        // Add css prefix
-        classes[`${this.defaultClasses}slide-box`] = true
-        // Animation
-        classes['slide-back'] = true
-        // is-full
-        classes['is-full'] = this.type === 'full'
-        return Object.assign({}, classes)
-      },
-      slideWrap () {
-        let classes = {}
-        // Add css prefix
-        classes[`${this.defaultClasses}slide-wrap`] = true
-        return Object.assign({}, classes)
+      cssPrefix () {
+        return this.$human.cssPrefix
       },
       slideBoxStyle () {
         return `transform: translateX(${this.distance}px);`
@@ -56,6 +43,10 @@
     },
     data () {
       return {
+        enableAnimation: false,
+        // Enable the animation
+        delayDistance: 100,
+        // the delay distance when touch-end
         defaultClasses: this.$human.cssPrefix,
         // Defaul css prefix
         startPosition: 0,
@@ -66,6 +57,8 @@
         // The last position.
         isTouched: false,
         // If touched or not
+        isFull: this.type === 'full',
+        // If is-full
         direction: '',
         // The direction of touch events.
         distance: 0,
@@ -112,6 +105,7 @@
         // Set the start position.
         this.lastPosition = this.startPosition
         // Set the last position
+        this.enableAnimation = false
       },
       touchend: function (event) {
         if (this.type === 'full') {
@@ -141,6 +135,7 @@
         // If touched at the far left or the far right.
         this.isTouched = true
         this.lastDistance = this.distance
+        this.enableAnimation = true
       },
       swipeEvent: function (distance, duration) {
         if (duration < this.swipe.duration && distance > this.swipe.distance) {
@@ -148,7 +143,7 @@
                         ? this.distance + this.distance * this.swipe.multiple
                         : this.distance - this.distance * this.swipe.multiple
         }
-        return
+        this.distance = (this.direction === 'left') ? this.distance - this.delayDistance : this.distance + this.delayDistance
         // Swipe event
       },
       wheel: function (event) {

@@ -1,5 +1,10 @@
 <template>
-  <svg version="1.1" class="icon" :class="classes" :width="width" :height="height" :viewBox="box">
+  <svg version="1.1"
+    class="icon"
+    :class="[ `${cssPrefix}icon`, { 'is-spin': spin } ]"
+    :width="width"
+    :height="height"
+    :viewBox="box">
     <path :d="path.d" :fill="path.fill" v-for="path in paths"></path>
   </svg>
 </template>
@@ -21,10 +26,8 @@
       spin: Boolean
     },
     computed: {
-      classes () {
-        return {
-          'is-spin': this.spin
-        }
+      cssPrefix () {
+        return this.$human.cssPrefix
       },
       icon () {
         return this.icons[this.name]

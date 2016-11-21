@@ -1,5 +1,5 @@
 <template>
-  <div :class="[cardClass]">
+  <div :class="[ `${cssPrefix}card` ]">
     <slot></slot>
   </div>
 </template>
@@ -7,8 +7,8 @@
 <script>
   export default {
     computed: {
-      cardClass () {
-        return { [`${this.$human.cssPrefix}card`]: true }
+      cssPrefix () {
+        return this.$human.cssPrefix
       }
     }
   }

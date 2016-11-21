@@ -1,23 +1,24 @@
 <template>
-  <div :class="search">
-    <div :class="searchInput">
+  <div :class="[ `${cssPrefix}bar-search` ]">
+    <div :class="[ `${cssPrefix}bar-search-input` ]">
       <mn-icon name="ios-search-strong"></mn-icon>
       <input
         type="text"
-        v-bind:value="value"
-        v-on:input="input"
         v-model="message"
+        placeholder="Search something"
+        :value="value"
+        @input="input"
         @focus="show = true"
         @blur="show = false"
-        @keyup.enter="typying"
-        placeholder="Search something">
+        @keyup.enter="typying">
     </div>
     <transition name="bar-search">
       <button
-        :class="searchButton"
+        :class="[ `${cssPrefix}bar-search-button` ]"
         @click="show = false"
-        v-if="show"
-      >cancel</button>
+        v-if="show">
+        cancel
+     </button>
     </transition>
   </div>
 </template>
@@ -27,8 +28,7 @@
     data () {
       return {
         show: false,
-        message: '',
-        defaultClasses: this.$human.cssPrefix
+        message: ''
       }
     },
     props: {
@@ -43,23 +43,11 @@
       },
       input: function (event) {
         this.$emit('input', event.target.value)
-      },
-      setClass: function (name) {
-        let classes = {}
-        classes[`${this.defaultClasses}${name}`] = true
-        return Object.assign({}, classes)
-        // Add css prefix
       }
     },
     computed: {
-      search () {
-        return this.setClass('bar-search')
-      },
-      searchInput () {
-        return this.setClass('bar-search-input')
-      },
-      searchButton () {
-        return this.setClass('bar-search-button')
+      cssPrefix () {
+        return this.$human.cssPrefix
       }
     }
   }

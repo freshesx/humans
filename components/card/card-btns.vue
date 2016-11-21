@@ -1,5 +1,5 @@
 <template>
-  <div :class="[cssPrefix, typeClass]">
+  <div :class="[`${cssPrefix}card-btns`, typeClass]">
     <slot></slot>
   </div>
 </template>
@@ -14,7 +14,7 @@
     },
     computed: {
       cssPrefix () {
-        return `${this.$human.cssPrefix}card-btns`
+        return this.$human.cssPrefix
       },
       typeClass () {
         return { [`is-${this.type}`]: !!this.type }

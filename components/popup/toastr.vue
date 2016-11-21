@@ -30,7 +30,7 @@
       return {
         show: false,
         description: 'You have a message',
-        icon: 'chatbubbles',
+        icon: 'ios-chatbubble',
         autoClose: true,
         duration: 2000
       }

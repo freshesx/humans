@@ -59,10 +59,6 @@ const router = new VueRouter({
       component: resolve => { require(['./docs/components/rate'], resolve) }
     },
     {
-      path: '/components/control',
-      component: resolve => { require(['./docs/components/control'], resolve) }
-    },
-    {
       path: '/components/collapse',
       component: resolve => { require(['./docs/components/collapse'], resolve) }
     },

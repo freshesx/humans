@@ -1,6 +1,6 @@
 <template>
-  <div :class="tab">
-    <div :class="tablist">
+  <div :class="[ `${cssPrefix}tab` ]">
+    <div :class="[ `${cssPrefix}tab-list`, { 'is-bottom': this.bottom } ]">
       <mn-tab-item
         v-for="(tab, index) in tabs"
         :tab="tab"
@@ -18,8 +18,7 @@
       return {
         tabs: [],
         current: this.selected,
-        flag: 0,
-        defaultClasses: this.$human.cssPrefix
+        flag: 0
       }
     },
     props: {
@@ -45,21 +44,8 @@
       }
     },
     computed: {
-      tab () {
-        let classes = {}
-        // basic class
-        classes[`${this.$human.cssPrefix}tab`] = true
-        // return default and now classes
-        return Object.assign({}, classes)
-      },
-      tablist () {
-        let classes = {}
-        // basic class
-        classes[`${this.$human.cssPrefix}tab-list`] = true
-        // bottom
-        classes['is-bottom'] = this.bottom
-        // return default and now classes
-        return Object.assign({}, classes)
+      cssPrefix () {
+        return this.$human.cssPrefix
       }
     }
   }

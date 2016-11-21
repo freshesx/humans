@@ -1,16 +1,16 @@
 <template>
-  <div :class="[cssPrefix, typeClass]">
-    <div :class="[cssPrefix + '-addon']" v-if="$slots.addon">
+  <div :class="[`${cssPrefix}card-item`, typeClass]">
+    <div :class="[ `${cssPrefix}card-item-addon` ]" v-if="$slots.addon">
       <slot name="addon"></slot>
     </div>
-    <div :class="[cssPrefix + '-body']" v-if="$slots.body || $slots.default">
+    <div :class="[ `${cssPrefix}card-item-body` ]" v-if="$slots.body || $slots.default">
       <slot name="body"></slot>   <!-- Slot for name -->
       <slot></slot>               <!-- Slot for default -->
     </div>
-    <div :class="[cssPrefix + '-help']" v-if="$slots.help">
+    <div :class="[ `${cssPrefix}card-item-help` ]" v-if="$slots.help">
       <slot name="help"></slot>
     </div>
-    <div :class="[cssPrefix + '-action']" v-if="$slots.action">
+    <div :class="[ `${cssPrefix}card-item-action` ]" v-if="$slots.action">
       <slot name="action"></slot>
     </div>
   </div>
@@ -26,7 +26,7 @@
     },
     computed: {
       cssPrefix () {
-        return `${this.$human.cssPrefix}card-item`
+        return this.$human.cssPrefix
       },
       typeClass () {
         return { [`is-${this.type}`]: !!this.type }

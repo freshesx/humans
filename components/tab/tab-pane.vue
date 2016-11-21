@@ -1,5 +1,5 @@
 <template>
-  <div :class="classes" v-if="this.$parent.flag === this._uid && this.show">
+  <div :class="[ `${cssPrefix}tab-content` ]" v-if="this.$parent.flag === this._uid && this.show">
     <slot></slot>
   </div>
 </template>
@@ -21,18 +21,9 @@
         default: false
       }
     },
-    data () {
-      return {
-        defaultClasses: this.$human.cssPrefix
-      }
-    },
     computed: {
-      classes () {
-        let classes = {}
-        // basic class
-        classes[`${this.$human.cssPrefix}tab-content`] = true
-        // return default and now classes
-        return Object.assign({}, classes)
+      cssPrefix () {
+        return this.$human.cssPrefix
       }
     }
   }

@@ -1,9 +1,8 @@
 <template>
   <mn-card-wrapper>
-    <strong slot="header">Radio input</strong>
-    <mn-form-radio-card slot="body" :options="radio" v-model="radioValue"></mn-form-radio-card>
+    <strong slot="header">Checkbox</strong>
+    <mn-form-checkbox-card slot="body" :options="radio" v-model="radioValue"></mn-form-checkbox-card>
     <template slot="footer">
-      <mn-icon name="ios-information-outline"></mn-icon>
       Your choose: {{ radioValue }}
     </template>
   </mn-card-wrapper>
@@ -18,7 +17,7 @@
           { label: 'Two', value: 'two' },
           { label: 'Three', value: 'three' }
         ],
-        radioValue: 'one'
+        radioValue: []
       }
     }
   }

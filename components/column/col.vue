@@ -1,5 +1,5 @@
 <template>
-  <div :class="[cssPrefix + 'col', queryClass]">
+  <div :class="[`${cssPrefix}col`, queryClass]">
     <slot></slot>
   </div>
 </template>
@@ -14,7 +14,7 @@
     },
     computed: {
       cssPrefix () {
-        return `${this.$human.cssPrefix}`
+        return this.$human.cssPrefix
       },
       queryClass () {
         let queries = this.query.split(' ')

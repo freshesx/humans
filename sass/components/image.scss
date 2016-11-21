@@ -1,0 +1,11 @@
+$-block-image: #{$namespace}block-image;
+
+.#{$-block-image} {
+  overflow: hidden;
+  background: #eee;
+
+  > img {
+    width: 100%;
+    display: block;
+  }
+}

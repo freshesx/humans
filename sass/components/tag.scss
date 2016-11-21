@@ -20,6 +20,7 @@ $-tag-style: (
   font-style: normal;
   cursor: default;
   color: #fff;
+  background-color: #000;
 
   // is-primary, is-secondary, is-error etc.
   @each $name, $value in $-btn-style {

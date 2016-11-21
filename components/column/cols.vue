@@ -1,5 +1,5 @@
 <template>
-  <div :class="[cssPrefix + 'cols', gaplessClass]">
+  <div :class="[`${cssPrefix}cols`, gaplessClass]">
     <slot></slot>
   </div>
 </template>
@@ -14,7 +14,7 @@
     },
     computed: {
       cssPrefix () {
-        return `${this.$human.cssPrefix}`
+        return this.$human.cssPrefix
       },
       gaplessClass () {
         return { 'is-gapless': this.gapless }

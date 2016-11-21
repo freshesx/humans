@@ -1,6 +1,6 @@
 <template>
-  <div :class="[cssPrefix + 'letter']">
-    <div class="letter-body" v-if="$slots.body || $slots.default">
+  <div :class="[ `${cssPrefix}letter` ]">
+    <div :class="[ `${cssPrefix}letter-body` ]" v-if="$slots.body || $slots.default">
       <slot name="body"></slot>
       <slot></slot>
     </div>
@@ -11,7 +11,7 @@
   export default {
     computed: {
       cssPrefix () {
-        return `${this.$human.cssPrefix}`
+        return this.$human.cssPrefix
       }
     }
   }

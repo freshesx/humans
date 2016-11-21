@@ -10,8 +10,13 @@ import CardItem from './card/card-item'
 import CardMedia from './card/card-media'
 import CardBtns from './card/card-btns'
 import CardWrapper from './card/card-wrapper'
+import FormText from './form/text'
+import FormDate from './form/date'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
+import FormCounter from './form/counter'
+import FormRadioCard from './form/radio-card'
+import FormCheckboxCard from './form/checkbox-card'
 import Letter from './letter/letter'
 import Pre from './code/pre'
 import Popup from './popup/popup'
@@ -29,7 +34,6 @@ import FilterBarItem from './filter-bar/filter-bar-item'
 import Tag from './tag/tag'
 import Rate from './rate/rate'
 import RateItem from './rate/rate-item'
-import QuantityControl from './control/quantity-control'
 import Collapse from './collapse/collapse'
 import CollapsePane from './collapse/collapse-pane'
 import SlideBox from './slidebox/slidebox'
@@ -54,8 +58,13 @@ export default {
   CardBtns,
   CardWrapper,
   // Form
+  FormText,
+  FormDate,
   FormSwitch,
   FormSelect,
+  FormCounter,
+  FormRadioCard,
+  FormCheckboxCard,
   // Letter
   Letter,
   // Code
@@ -82,8 +91,6 @@ export default {
   // Rate
   Rate,
   RateItem,
-  // control
-  QuantityControl,
   // collapse
   Collapse,
   CollapsePane,

@@ -1,8 +1,10 @@
 @import "../variables";
 
 $-form-label: #{$namespace}form-label;
-$-form-control: #{$namespace}form-control;
-$-form-radio-control: #{$namespace}form-radio-control;
+$-form-text: #{$namespace}form-text;
+$-form-radio: #{$namespace}form-radio;
+$-form-checkbox: #{$namespace}form-checkbox;
+$-form-counter: #{$namespace}form-counter;
 $-form-switch-control: #{$namespace}form-switch-control;
 $-form-select-control: #{$namespace}form-select-control;
 
@@ -11,17 +13,7 @@ $-form-select-control: #{$namespace}form-select-control;
   width: 6rem;
 }
 
-.#{$-form-control} {
-  width: 100%;
-  border: none;
-  padding: 0;
-  background: transparent;
-  outline: none;
-  -webkit-appearance: none;
-}
-
 .#{$-form-switch-control} {
-
   $height: 2rem;
 
   display: inline-flex;
@@ -36,8 +28,8 @@ $-form-select-control: #{$namespace}form-select-control;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 
-  &::before,
-  &::after {
+  &::after,
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -84,34 +76,111 @@ $-form-select-control: #{$namespace}form-select-control;
   -webkit-tap-highlight-color: transparent;
 }
 
-.#{$-form-radio-control} {
+.#{$-form-text} {
   display: flex;
-  width: 100%;
-  height: 3.5rem;
-  margin: -1rem 0;
-  outline: none;
-  justify-content: flex-end;
-  align-items: center;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: transparent;
 
-  &::after {
-    content: '';
-    display: none;
-    width: 8px;
-    height: 16px;
-    border: solid $green;
-    border-width: 0 3px 3px 0;
-    margin-right: $grid-gutters / 4;
-    transform: rotate(45deg);
+  &-input {
+    flex: 1 1;
+    display: block;
+    width: 100%;
+    height: 1.5rem;
+    border: none;
+    padding: 0;
+    background: transparent;
+    outline: none;
+    -webkit-appearance: none;
   }
 
-  &:checked {
-    &::after {
-      display: block;
+  &-clear {
+    flex-shrink: 0;
+  }
+
+  &-clear-enter-active {
+    transition: all 0.2s ease;
+  }
+
+  &-clear-leave-active {
+    transition: all 0.2s ease;
+  }
+
+  &-clear-enter,
+  &-clear-leave-active {
+    opacity: 0;
+  }
+}
+
+.#{$-form-radio} {
+  &-checkmark {
+    color: $green;
+  }
+}
+
+.#{$-form-checkbox} {
+  &-checkmark {
+    color: #999;
+
+    &.is-active {
+      color: $green;
+    }
+  }
+}
+
+.#{$-form-counter} {
+  display: flex;
+  max-width: 8rem;
+
+  &-box {
+    flex-shrink: 1;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+  }
+
+  &-input {
+    width: 100%;
+    display: block;
+    padding: 0.25rem 0.5rem;
+    text-align: center;
+    outline: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    border: none;
+    background: transparent;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none !important;
+      margin: 0;
+    }
+
+    &[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+
+  &-btn {
+    flex-shrink: 0;
+    border: solid 1px #ddd;
+    background: transparent;
+    width: 2.375rem;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &.is-disabled {
+      background: #eee;
+      outline: none;
+    }
+
+    &:first-child {
+      border-top-left-radius: $base-radius;
+      border-bottom-left-radius: $base-radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $base-radius;
+      border-bottom-right-radius: $base-radius;
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <span :class="classes">
+  <span :class="[ `${cssPrefix}rate` ]">
     <i
       v-for="item in this.max"
       @mouseenter="mouseEnterEvent(item)"
@@ -37,7 +37,6 @@
     },
     data () {
       return {
-        defaultClasses: this.$human.cssPrefix,
         status: -1,
         //
         // If status === -1, no default value and no selected value.
@@ -59,12 +58,8 @@
       }
     },
     computed: {
-      classes () {
-        let classes = {}
-        // basic class
-        classes[`${this.$human.cssPrefix}rate`] = true
-        // return default and now classes
-        return Object.assign({}, classes)
+      cssPrefix () {
+        return this.$human.cssPrefix
       }
     },
     methods: {

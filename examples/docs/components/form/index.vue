@@ -16,9 +16,12 @@
             <mn-cols>
               <mn-col query="sm-6">
                 <form-radio></form-radio>
+                <form-checkbox></form-checkbox>
                 <form-basic></form-basic>
+                <form-date></form-date>
                 <form-switch></form-switch>
                 <form-select></form-select>
+                <form-counter></form-counter>
                 <mn-btn type="primary" block>Submit</mn-btn>
               </mn-col>
             </mn-cols>
@@ -32,17 +35,23 @@
 
 <script>
   import FormRadio from './radio'
+  import FormCheckbox from './checkbox'
   import FormBasic from './basic'
+  import FormDate from './date'
   import FormSwitch from './switch'
   import FormSelect from './select'
+  import FormCounter from './counter'
   import DemoFilterBar from '../filter-bar'
 
   export default {
     components: {
       FormRadio,
+      FormCheckbox,
       FormBasic,
+      FormDate,
       FormSwitch,
       FormSelect,
+      FormCounter,
       DemoFilterBar
     }
   }

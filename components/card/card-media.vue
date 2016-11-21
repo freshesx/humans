@@ -1,5 +1,5 @@
 <template>
-  <div :class="[cssPrefix]">
+  <div :class="[ `${cssPrefix}card-media` ]">
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,7 @@
   export default {
     computed: {
       cssPrefix () {
-        return `${this.$human.cssPrefix}card-media`
+        return this.$human.cssPrefix
       }
     }
   }
