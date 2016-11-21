@@ -11,7 +11,7 @@
       <!-- datetime-local -->
       <mn-card-item>
         <label slot="addon" class="form-label">DateTime</label>
-        <mn-form-date slot="body" type="datetime-local" v-model="datetime"></mn-form-date>
+        <mn-form-date slot="body" v-model="datetime"></mn-form-date>
       </mn-card-item>
 
       <!-- month -->
