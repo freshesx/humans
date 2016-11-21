@@ -15,7 +15,7 @@
     <transition name="bar-search">
       <button
         :class="[ `${cssPrefix}bar-search-button` ]"
-        @click="show = false"
+        @click="cancel"
         v-if="show">
         cancel
      </button>
@@ -43,6 +43,11 @@
       },
       input: function (event) {
         this.$emit('input', event.target.value)
+      },
+      cancel: function (event) {
+        this.show = false
+        this.message = undefined
+        this.$emit('input', undefined)
       }
     },
     computed: {
