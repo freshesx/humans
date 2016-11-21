@@ -4,18 +4,9 @@
       :type="type"
       :class="[ `${cssPrefix}form-text-input` ]"
       :value="value"
-      :placeholder="placeholder"
       :readonly="readonly"
       :disabled="disabled"
       @input="changeValue">
-    <transition :name="`${cssPrefix}form-text-clear`">
-      <div
-        v-if="value"
-        :class="[ `${cssPrefix}form-text-clear` ]"
-        @click="clearValue">
-        <mn-icon name="ios-close-outline"></mn-icon>
-      </div>
-    </transition>
   </div>
 </template>
 
@@ -29,13 +20,10 @@
       },
       type: {
         type: String,
-        default: 'text',
+        default: 'datetime-local',
         validator: val => {
-          return ['text', 'number', 'password'].includes(val)
+          return ['datetime-local', 'date', 'month', 'week', 'time'].includes(val)
         }
-      },
-      placeholder: {
-        type: String
       },
       readonly: {
         type: Boolean,
@@ -54,9 +42,6 @@
     methods: {
       changeValue (event) {
         this.$emit('input', event.target.value)
-      },
-      clearValue () {
-        this.$emit('input', undefined)
       }
     }
   }

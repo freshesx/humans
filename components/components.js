@@ -11,6 +11,7 @@ import CardMedia from './card/card-media'
 import CardBtns from './card/card-btns'
 import CardWrapper from './card/card-wrapper'
 import FormText from './form/text'
+import FormDate from './form/date'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import FormCounter from './form/counter'
@@ -58,6 +59,7 @@ export default {
   CardWrapper,
   // Form
   FormText,
+  FormDate,
   FormSwitch,
   FormSelect,
   FormCounter,

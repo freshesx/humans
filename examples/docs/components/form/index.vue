@@ -18,6 +18,7 @@
                 <form-radio></form-radio>
                 <form-checkbox></form-checkbox>
                 <form-basic></form-basic>
+                <form-date></form-date>
                 <form-switch></form-switch>
                 <form-select></form-select>
                 <form-counter></form-counter>
@@ -36,6 +37,7 @@
   import FormRadio from './radio'
   import FormCheckbox from './checkbox'
   import FormBasic from './basic'
+  import FormDate from './date'
   import FormSwitch from './switch'
   import FormSelect from './select'
   import FormCounter from './counter'
@@ -46,6 +48,7 @@
       FormRadio,
       FormCheckbox,
       FormBasic,
+      FormDate,
       FormSwitch,
       FormSelect,
       FormCounter,
