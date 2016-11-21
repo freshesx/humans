@@ -1,5 +1,5 @@
 <template>
-  <button :class="classes">
+  <button :class="[`${cssPrefix}btn`, classes]">
     <mn-icon name="load-c" spin v-if="loading"></mn-icon>
     <slot v-if="!loading"></slot>
   </button>
@@ -48,6 +48,9 @@
       }
     },
     computed: {
+      cssPrefix () {
+        return this.$human.cssPrefix
+      },
       classes () {
         let classes = {}
 
@@ -72,16 +75,7 @@
         // outline
         classes['is-outline'] = this.outline
 
-        // return default and now classes
-        return Object.assign({}, this.defaultClasses, classes)
-      }
-    },
-    data () {
-      return {
-        // Expose default classes for mixins extend
-        defaultClasses: {
-          [`${this.$human.cssPrefix}btn`]: true
-        }
+        return classes
       }
     }
   }
