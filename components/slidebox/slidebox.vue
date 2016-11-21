@@ -115,8 +115,6 @@
         const duration = this.finishTime - this.startTime
         const distance = Math.abs(this.CurrentPosition - this.startPosition)
 
-        console.log(distance)
-
         if (this.type === 'full') {
           // If type is full, slide all width once.
           if (distance > 20) {
