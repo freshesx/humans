@@ -31,7 +31,7 @@
         type: String,
         default: 'text',
         validator: val => {
-          return ['text', 'number', 'password', 'datetime-local', 'date'].includes(val)
+          return ['text', 'number', 'password'].includes(val)
         }
       },
       placeholder: {
