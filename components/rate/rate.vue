@@ -24,7 +24,7 @@
         default: 0
       },
       // option: the default value of the rate
-      disable: {
+      disabled: {
         type: Boolean,
         default: false
       },
@@ -64,14 +64,14 @@
     },
     methods: {
       mouseEnterEvent: function (item) {
-        if (this.disable) {
+        if (this.disabled) {
           return
         }
         this.current = item
-        // If disable, readonly. If not, change the color on real time.
+        // If disabled, readonly. If not, change the color on real time.
       },
       mouseLeaveEvent: function (item) {
-        if (this.disable) {
+        if (this.disabled) {
           return
         }
         if (this.status === 1) {
@@ -84,16 +84,16 @@
         //
         // Change the current value by status.
         //
-        // If disable, readonly. If not, change the color on real time.
+        // If disabled, readonly. If not, change the color on real time.
       },
       clickItem: function (item) {
-        if (this.disable) {
+        if (this.disabled) {
           return
         }
         this.status = 2
         this.current = item
         this.lastSelected = item
-        // If disable, readonly. If not, change the color on real time.
+        // If disabled, readonly. If not, change the color on real time.
         this.$emit('select', item)
         // Provide function 'select' for selecting the item
       }
