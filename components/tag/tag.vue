@@ -1,25 +1,17 @@
 <template>
-  <i :class="classes">
+  <i :class="[ `${cssPrefix}tag`, hasType ]">
     <slot></slot>
   </i>
 </template>
 
 <script>
   export default {
-    data () {
-      return {
-        defaultClasses: this.$human.cssPrefix
-      }
-    },
     computed: {
-      classes () {
-        let classes = {}
-        // basic class
-        classes[`${this.$human.cssPrefix}tag`] = true
-        // type
-        classes[`is-${this.type}`] = this.type
-        // return default and now classes
-        return Object.assign({}, classes)
+      cssPrefix () {
+        return this.$human.cssPrefix
+      },
+      hasType () {
+        if (this.type) return `is-${this.type}`
       }
     },
     props: {
