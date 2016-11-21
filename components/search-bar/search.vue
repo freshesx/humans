@@ -1,8 +1,10 @@
 <template>
   <div :class="[ `${cssPrefix}bar-search` ]">
-    <div :class="[ `${cssPrefix}bar-search-input` ]">
+    <div
+    :class="[ `${cssPrefix}bar-search-input` ]">
       <mn-icon name="ios-search-strong"></mn-icon>
       <input
+        ref="input"
         type="text"
         v-model="message"
         placeholder="Search something"
@@ -11,11 +13,21 @@
         @focus="show = true"
         @blur="show = false"
         @keyup.enter="typying">
+        <transition :name="`${cssPrefix}bar-search-clear`">
+          <div
+            v-if="value"
+            :class="[ `${cssPrefix}bar-search-clear` ]"
+            @click="clearValue"
+            @mousedown.prevent>
+            <mn-icon name="ios-close-outline"></mn-icon>
+          </div>
+        </transition>
     </div>
-    <transition name="bar-search">
+    <transition :name="`${cssPrefix}bar-search`">
       <button
         :class="[ `${cssPrefix}bar-search-button` ]"
         @click="cancel"
+        @mousedown.prevent
         v-if="show">
         cancel
      </button>
@@ -44,8 +56,12 @@
       input: function (event) {
         this.$emit('input', event.target.value)
       },
-      cancel: function (event) {
-        this.show = false
+      cancel: function () {
+        this.message = undefined
+        this.$emit('input', undefined)
+        this.$refs.input.blur()
+      },
+      clearValue: function () {
         this.message = undefined
         this.$emit('input', undefined)
       }
