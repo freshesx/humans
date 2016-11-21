@@ -42,7 +42,7 @@
         password: undefined,
         phone: undefined,
         date: undefined,
-        datetime: undefined
+        datetime: '2016-09-09T08:00:00'
       }
     }
   }
