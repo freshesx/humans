@@ -28,14 +28,3 @@
     }
   }
 </script>
-
-<style lang="scss">
-  .block-image {
-    overflow: hidden;
-    background: #eee;
-    > img {
-      width: 100%;
-      display: block;
-    }
-  }
-</style>
