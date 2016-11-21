@@ -1,24 +1,37 @@
-# Vue Human v2.0 beta
+<p align="center"><img width="320" src="docs/vue-human.jpg"></p>
 
-> The UI component for Vue, inspired by iOS Human Interface Guidelines
+# Vue Human
 
-> For vue 2.0
+> vue-human 2.0-beta
+> for vue2
 
-**This components is under developing!**
-**Contact: chasel.wu@vitualreaty.com**
+# Install in your application
 
-# How to use
+Step 1: In your terminal
+
 ``` bash
-npm install --save vue-human
+$ yarn add vue-human // or using `npm install --save vue-human`
+```
+
+Step 2: Must set babel in your webpack
+
+``` javascript
+loaders: [
+  // Other loaders
+  {
+    test: /vue-human\/.*?js$/,
+    loader: 'babel'
+  }
+]
 ```
 
 # How to contribute
 
 ``` bash
 # install dependencies
-npm install
+yarn install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:3000
 npm run dev
 
 # build for production with minification
