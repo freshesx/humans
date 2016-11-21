@@ -4,20 +4,21 @@
       <mn-icon name="ios-search-strong"></mn-icon>
       <input
         type="text"
-        v-bind:value="value"
-        v-on:input="input"
         v-model="message"
+        placeholder="Search something"
+        :value="value"
+        @input="input"
         @focus="show = true"
         @blur="show = false"
-        @keyup.enter="typying"
-        placeholder="Search something">
+        @keyup.enter="typying">
     </div>
     <transition name="bar-search">
       <button
         :class="[ `${cssPrefix}bar-search-button` ]"
         @click="show = false"
-        v-if="show"
-      >cancel</button>
+        v-if="show">
+        cancel
+     </button>
     </transition>
   </div>
 </template>
