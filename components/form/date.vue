@@ -20,7 +20,7 @@
       },
       type: {
         type: String,
-        default: 'date',
+        default: 'datetime-local',
         validator: val => {
           return ['datetime-local', 'date', 'month', 'week', 'time'].includes(val)
         }
