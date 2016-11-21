@@ -2,6 +2,7 @@
 $-bar-search: #{$namespace}bar-search;
 $-bar-search-input: #{$namespace}bar-search-input;
 $-bar-search-button: #{$namespace}bar-search-button;
+$-bar-search-clear: #{$namespace}bar-search-clear;
 $-bar-search-button-color: $pink;
 
 .#{$-bar-search} {
@@ -32,7 +33,7 @@ $-bar-search-button-color: $pink;
     width: 100%;
     border: 0;
     border-radius: 5px;
-    padding-left: 2rem;
+    padding: 0 2rem;
     background-color: #eee;
     margin-bottom: 1rem;
   }
@@ -47,16 +48,30 @@ $-bar-search-button-color: $pink;
   background: transparent;
 }
 
-.bar-search-enter-active {
-  transition: all 0.5s ease;
+.#{$-bar-search-clear} {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  height: 1rem;
 }
 
-.bar-search-leave-active {
+.#{$-bar-search}-enter-active,
+.#{$-bar-search}-leave-active {
   transition: all 0.3s ease;
 }
 
-.bar-search-enter,
-.bar-search-leave-active {
+.#{$-bar-search}-enter,
+.#{$-bar-search}-leave-active {
   opacity: 0;
   transform: translateX(100%);
+}
+
+.#{$-bar-search-clear}-enter-active,
+.#{$-bar-search-clear}-leave-active {
+  transition: all 0.3s ease;
+}
+
+.#{$-bar-search-clear}-enter,
+.#{$-bar-search-clear}-leave-active {
+  opacity: 0;
 }
