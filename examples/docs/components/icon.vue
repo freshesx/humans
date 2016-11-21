@@ -10,12 +10,7 @@
               <small>icons</small>
             </mn-letter>
 
-            <mn-card>
-              <mn-card-item>
-                <label slot="addon" class="form-label">Search</label>
-                <input slot="body" class="form-control" type="text" placeholder="Input icon name" v-model="searchName">
-              </mn-card-item>
-            </mn-card>
+            <mn-search-bar v-model="searchName"></mn-search-bar>
 
             <mn-cols>
               <mn-col query="xs-6 sm-4" v-for="(icon, key) in searchIcons">
