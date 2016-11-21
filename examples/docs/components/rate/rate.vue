@@ -3,8 +3,8 @@
     <mn-card>
       <mn-card-item>Read only rate component. Support for half-star.</mn-card-item>
       <mn-card-item>
-        <mn-rate :default="3.5" disable></mn-rate>
-        <mn-rate :default="5" disable></mn-rate>
+        <mn-rate :default="3.5" disabled></mn-rate>
+        <mn-rate :default="5" disabled></mn-rate>
       </mn-card-item>
     </mn-card>
     <mn-card>
