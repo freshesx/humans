@@ -1,6 +1,6 @@
 <template>
-  <transition name="popup-mask-fade">
-    <div class="popup-mask" v-if="show" :style="{ 'z-index': zIndex }" @click="close"></div>
+  <transition :name="`${cssPrefix}popup-mask-fade`">
+    <div :class="[ `${cssPrefix}popup-mask` ]" v-if="show" :style="{ 'z-index': zIndex }" @click="close"></div>
   </transition>
 </template>
 
@@ -9,6 +9,11 @@
     methods: {
       close () {
         this.$emit('close')
+      }
+    },
+    computed: {
+      cssPrefix () {
+        return this.$human.cssPrefix
       }
     },
     data () {
