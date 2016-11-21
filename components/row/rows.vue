@@ -1,5 +1,5 @@
 <template>
-  <div :class="[cssPrefix + 'rows']">
+  <div :class="[ `${cssPrefix}rows` ]">
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,7 @@
   export default {
     computed: {
       cssPrefix () {
-        return `${this.$human.cssPrefix}`
+        return this.$human.cssPrefix
       }
     }
   }
