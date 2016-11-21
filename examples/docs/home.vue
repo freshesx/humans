@@ -46,7 +46,7 @@
               },
               {
                 title: 'typography',
-                icon: 'wand',
+                icon: 'ios-bookmarks',
                 route: { path: '/bases/typography' }
               }
             ]
@@ -56,7 +56,7 @@
             subMenus: [
               {
                 title: 'flex',
-                icon: 'grid',
+                icon: 'ios-box',
                 route: { path: '/grids/flex' }
               }
             ]
@@ -86,7 +86,7 @@
               },
               {
                 title: 'popup',
-                icon: 'social-buffer',
+                icon: 'ios-browsers-outline',
                 route: { path: '/components/popup' }
               },
               {
@@ -101,7 +101,7 @@
               },
               {
                 title: 'tag',
-                icon: 'pricetags',
+                icon: 'ios-pricetags-outline',
                 route: { path: '/components/tag' }
               },
               {
@@ -116,7 +116,7 @@
               },
               {
                 title: 'slidebox',
-                icon: 'images',
+                icon: 'ios-time-outline',
                 route: { path: '/components/slidebox' }
               },
               {
