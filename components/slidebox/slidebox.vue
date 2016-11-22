@@ -105,22 +105,25 @@
         // Set the start position.
         this.lastPosition = this.startPosition
         // Set the last position
+        this.CurrentPosition = this.startPosition
         this.enableAnimation = false
+        // Reset some data
       },
       touchend: function (event) {
+        this.finishTime = new Date().getTime()
+        // Set finish time.
+        const duration = this.finishTime - this.startTime
+        const distance = Math.abs(this.CurrentPosition - this.startPosition)
+
         if (this.type === 'full') {
           // If type is full, slide all width once.
-          this.distance = (this.direction === 'left')
-                        ? this.lastDistance - this.$children[0].$el.clientWidth
-                        : this.lastDistance + this.$children[0].$el.clientWidth
-        } else {
-          this.finishTime = new Date().getTime()
-          // Set finish time.
-          const duration = this.finishTime - this.startTime
-          const distance = Math.abs(this.CurrentPosition - this.startPosition)
-          this.swipeEvent(distance, duration)
-          // Trigger the swipe or not.
-        }
+          if (distance > 20) {
+            this.distance = (this.direction === 'left')
+                          ? this.lastDistance - this.$children[0].$el.clientWidth
+                          : this.lastDistance + this.$children[0].$el.clientWidth
+          } else this.distance = this.lastDistance
+        } else this.swipeEvent(distance, duration) // Trigger the swipe or not.
+
         if (this.direction === 'left') {
           if (this.distance < this.maximum) {
             this.distance = this.maximum
@@ -133,6 +136,7 @@
           }
         } this.distance = this.distance
         // If touched at the far left or the far right.
+
         this.isTouched = true
         this.lastDistance = this.distance
         this.enableAnimation = true
@@ -143,6 +147,7 @@
                         ? this.distance + this.distance * this.swipe.multiple
                         : this.distance - this.distance * this.swipe.multiple
         }
+
         this.distance = (this.direction === 'left') ? this.distance - this.delayDistance : this.distance + this.delayDistance
         // Swipe event
       },
@@ -162,6 +167,7 @@
             this.lastDistance = 0
           }
         } this.distance = this.distance
+
         this.lastDistance = this.distance
         // wheel event
       }
