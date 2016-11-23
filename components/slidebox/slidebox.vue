@@ -81,6 +81,8 @@
     },
     methods: {
       touchmove: function (event) {
+        if (this.maximum >= 0) return
+
         this.CurrentPosition = event.touches[0].screenX
         this.direction = (this.CurrentPosition < this.lastPosition) ? 'left' : 'right'
         // Judge the direction.
@@ -108,6 +110,8 @@
         this.enableAnimation = false
       },
       touchend: function (event) {
+        if (this.maximum >= 0) return
+
         if (this.type === 'full') {
           // If type is full, slide all width once.
           this.distance = (this.direction === 'left')
@@ -147,6 +151,8 @@
         // Swipe event
       },
       wheel: function (event) {
+        if (this.maximum >= 0) return
+
         if (event.deltaY !== -0) this.direction = (event.deltaY > 0) ? 'up' : 'down'
 
         this.distance += event.deltaY
