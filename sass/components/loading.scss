@@ -1,6 +1,6 @@
 $-loading-mask: #{$namespace}loading-mask;
+$-loading: #{$namespace}loading;
 $-load: #{$namespace}load;
-$-load-spin: #{$namespace}load-spin;
 
 @keyframes load-spin {
   0% {
@@ -26,12 +26,20 @@ $-load-spin: #{$namespace}load-spin;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
   background-color: rgba(0, 0, 0, 0.2);
+}
 
-  .#{$-load-spin} {
+.#{$-loading} {
+  display: flex;
+  fill: currentColor;
+  font-style: normal;
+  vertical-align: -4px;
+  font-size: 1em;
+
+  &.is-spin {
     width: 30px;
     height: 30px;
-    color: #fff;
     display: block;
   }
 }
@@ -44,7 +52,7 @@ $-load-spin: #{$namespace}load-spin;
   font-size: 1em;
 }
 
-.#{$-load-spin} {
+.is-spin {
   width: 1em;
   font-size: 1em;
   animation: load-spin 1s 0s infinite linear;
