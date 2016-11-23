@@ -73,7 +73,7 @@
         // Finish time depends on on-touchend event.
         swipe: {
         // Some options for swipe event
-          distance: 150,  // Default swipe distance
+          distance: 100,  // Default swipe distance
           duration: 300,  // Default swipe duration
           multiple: 2     // Default swipe multiple
         }
@@ -81,6 +81,8 @@
     },
     methods: {
       touchmove: function (event) {
+        if (this.maximum >= 0) return
+
         this.CurrentPosition = event.touches[0].screenX
         this.direction = (this.CurrentPosition < this.lastPosition) ? 'left' : 'right'
         // Judge the direction.
@@ -110,6 +112,8 @@
         // Reset some data
       },
       touchend: function (event) {
+        if (this.maximum >= 0) return
+
         this.finishTime = new Date().getTime()
         // Set finish time.
         const duration = this.finishTime - this.startTime
@@ -152,6 +156,8 @@
         // Swipe event
       },
       wheel: function (event) {
+        if (this.maximum >= 0) return
+
         if (event.deltaY !== -0) this.direction = (event.deltaY > 0) ? 'up' : 'down'
 
         this.distance += event.deltaY
