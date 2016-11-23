@@ -12,6 +12,12 @@
         <mn-btn type="primary" block @click.native="openFullScreen">Add Loading</mn-btn>
       </mn-card-item>
     </mn-card>
+    <mn-card>
+      <mn-card-item>Load component.</mn-card-item>
+      <mn-card-item>
+        <mn-load><p>刷新</p></mn-load>
+      </mn-card-item>
+    </mn-card>
   </div>
 </template>
 

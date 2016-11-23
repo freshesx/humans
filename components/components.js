@@ -38,6 +38,7 @@ import Collapse from './collapse/collapse'
 import CollapsePane from './collapse/collapse-pane'
 import SlideBox from './slidebox/slidebox'
 import SlideBoxItem from './slidebox/slidebox-item'
+import Load from './loading/load'
 
 export default {
   // Column
@@ -96,5 +97,7 @@ export default {
   CollapsePane,
   // slidebox
   SlideBox,
-  SlideBoxItem
+  SlideBoxItem,
+  // load
+  Load
 }
