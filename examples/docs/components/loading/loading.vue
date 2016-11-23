@@ -15,7 +15,9 @@
     <mn-card>
       <mn-card-item>Load component.</mn-card-item>
       <mn-card-item>
+        <mn-load></mn-load>
         <mn-load><p>刷新</p></mn-load>
+        <mn-btn type="error" block><mn-load></mn-load></mn-btn>
       </mn-card-item>
     </mn-card>
   </div>

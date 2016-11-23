@@ -40,8 +40,12 @@ $-load-spin: #{$namespace}load-spin;
   display: inline-block;
   fill: currentColor;
   font-style: normal;
+  vertical-align: -4px;
+  font-size: 1em;
 }
 
 .#{$-load-spin} {
+  width: 1em;
+  font-size: 1em;
   animation: load-spin 1s 0s infinite linear;
 }
