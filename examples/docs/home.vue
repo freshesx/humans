@@ -121,7 +121,7 @@
               },
               {
                 title: 'loading',
-                icon: 'load-c',
+                icon: 'ios-reload',
                 route: { path: '/components/loading' }
               }
             ]
