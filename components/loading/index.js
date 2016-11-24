@@ -36,9 +36,9 @@ export default {
         let node
         let dom
         dom = (binding.modifiers.fullscreen) ? document.body : el
-        dom.childNodes.forEach((item, index) => {
-          if (item.className === `${Vue.human.cssPrefix}loading-mask`) node = index
-        })
+        for (let i = 0; i < dom.childNodes.length; i++) {
+          if (dom.childNodes[i].className === `${Vue.human.cssPrefix}loading-mask`) node = i
+        }
         dom.removeChild(dom.childNodes[node])
         // Search for the node of 'loadingMask', and remove it
         el.isInsertDom = false
