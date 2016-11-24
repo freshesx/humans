@@ -1,11 +1,11 @@
 @import "../variables";
-$-bar-search: #{$namespace}bar-search;
-$-bar-search-input: #{$namespace}bar-search-input;
-$-bar-search-button: #{$namespace}bar-search-button;
-$-bar-search-clear: #{$namespace}bar-search-clear;
-$-bar-search-button-color: $pink;
+$-search-bar: #{$namespace}search-bar;
+$-search-bar-input: #{$namespace}search-bar-input;
+$-search-bar-button: #{$namespace}search-bar-button;
+$-search-bar-clear: #{$namespace}search-bar-clear;
+$-search-bar-button-color: $pink;
 
-.#{$-bar-search} {
+.#{$-search-bar} {
   display: flex;
   flex-wrap: wrap;
   position: relative;
@@ -23,7 +23,7 @@ $-bar-search-button-color: $pink;
   }
 }
 
-.#{$-bar-search-input} {
+.#{$-search-bar-input} {
   display: block;
   flex: 1 1;
   position: relative;
@@ -39,39 +39,39 @@ $-bar-search-button-color: $pink;
   }
 }
 
-.#{$-bar-search-button} {
+.#{$-search-bar-button} {
   flex: 0 0;
   padding: 0 1rem;
   height: 2rem;
   border: 0;
-  color: $-bar-search-button-color;
+  color: $-search-bar-button-color;
   background: transparent;
 }
 
-.#{$-bar-search-clear} {
+.#{$-search-bar-clear} {
   position: absolute;
   top: 0;
   right: 2rem;
   height: 1rem;
 }
 
-.#{$-bar-search}-enter-active,
-.#{$-bar-search}-leave-active {
+.#{$-search-bar}-enter-active,
+.#{$-search-bar}-leave-active {
   transition: all 0.3s ease;
 }
 
-.#{$-bar-search}-enter,
-.#{$-bar-search}-leave-active {
+.#{$-search-bar}-enter,
+.#{$-search-bar}-leave-active {
   opacity: 0;
   transform: translateX(100%);
 }
 
-.#{$-bar-search-clear}-enter-active,
-.#{$-bar-search-clear}-leave-active {
+.#{$-search-bar-clear}-enter-active,
+.#{$-search-bar-clear}-leave-active {
   transition: all 0.3s ease;
 }
 
-.#{$-bar-search-clear}-enter,
-.#{$-bar-search-clear}-leave-active {
+.#{$-search-bar-clear}-enter,
+.#{$-search-bar-clear}-leave-active {
   opacity: 0;
 }

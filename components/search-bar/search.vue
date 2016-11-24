@@ -1,7 +1,7 @@
 <template>
-  <div :class="[ `${cssPrefix}bar-search` ]">
+  <div :class="[ `${cssPrefix}search-bar` ]">
     <div
-    :class="[ `${cssPrefix}bar-search-input` ]">
+    :class="[ `${cssPrefix}search-bar-input` ]">
       <mn-icon name="ios-search-strong"></mn-icon>
       <input
         ref="input"
@@ -13,19 +13,19 @@
         @focus="show = true"
         @blur="show = false"
         @keyup.enter="typying">
-        <transition :name="`${cssPrefix}bar-search-clear`">
+        <transition :name="`${cssPrefix}search-bar-clear`">
           <div
             v-if="value"
-            :class="[ `${cssPrefix}bar-search-clear` ]"
+            :class="[ `${cssPrefix}search-bar-clear` ]"
             @click="clearValue"
             @mousedown.prevent>
             <mn-icon name="ios-close-outline"></mn-icon>
           </div>
         </transition>
     </div>
-    <transition :name="`${cssPrefix}bar-search`">
+    <transition :name="`${cssPrefix}search-bar`">
       <button
-        :class="[ `${cssPrefix}bar-search-button` ]"
+        :class="[ `${cssPrefix}search-bar-button` ]"
         @click="cancel"
         @mousedown.prevent
         v-if="show">
