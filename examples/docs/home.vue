@@ -115,9 +115,9 @@
                 route: { path: '/components/collapse' }
               },
               {
-                title: 'slidebox',
+                title: 'slide-bar',
                 icon: 'ios-time-outline',
-                route: { path: '/components/slidebox' }
+                route: { path: '/components/slide-bar' }
               },
               {
                 title: 'loading',

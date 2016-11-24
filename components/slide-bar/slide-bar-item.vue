@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ `${cssPrefix}slide-box-item` ]">
+  <div :class="[ `${cssPrefix}slide-bar-item` ]">
     <slot></slot>
   </div>
 </template>

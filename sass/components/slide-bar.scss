@@ -1,7 +1,7 @@
 $-slide-wrap: #{$namespace}slide-wrap;
 $-slide-content: #{$namespace}slide-content;
-$-slide-box: #{$namespace}slide-box;
-$-slide-box-item: #{$namespace}slide-box-item;
+$-slide-bar: #{$namespace}slide-bar;
+$-slide-bar-item: #{$namespace}slide-bar-item;
 
 .#{$-slide-wrap} {
   box-sizing: border-box;
@@ -10,11 +10,11 @@ $-slide-box-item: #{$namespace}slide-box-item;
   width: 100%;
 }
 
-.#{$-slide-box} {
+.#{$-slide-bar} {
   display: flex;
 }
 
-.#{$-slide-box-item} {
+.#{$-slide-bar-item} {
   flex: 0;
   flex-wrap: nowrap;
   padding: 0 0.5rem;
@@ -23,7 +23,7 @@ $-slide-box-item: #{$namespace}slide-box-item;
 .is-full {
   width: 100%;
 
-  .#{$-slide-box-item} {
+  .#{$-slide-bar-item} {
     flex: 0 0 100%;
   }
 }

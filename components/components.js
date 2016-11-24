@@ -36,8 +36,8 @@ import Rate from './rate/rate'
 import RateItem from './rate/rate-item'
 import Collapse from './collapse/collapse'
 import CollapsePane from './collapse/collapse-pane'
-import SlideBox from './slidebox/slidebox'
-import SlideBoxItem from './slidebox/slidebox-item'
+import SlideBar from './slide-bar/slide-bar'
+import SlideBarItem from './slide-bar/slide-bar-item'
 import Load from './loading/load'
 
 export default {
@@ -96,8 +96,8 @@ export default {
   Collapse,
   CollapsePane,
   // slidebox
-  SlideBox,
-  SlideBoxItem,
+  SlideBar,
+  SlideBarItem,
   // load
   Load
 }
