@@ -20,12 +20,6 @@
         <mn-form-datetime slot="body" type="month" v-model="month"></mn-form-datetime>
       </mn-card-item>
 
-      <!-- week -->
-      <mn-card-item>
-        <label slot="addon" class="form-label">week</label>
-        <mn-form-datetime slot="body" type="week" v-model="week"></mn-form-datetime>
-      </mn-card-item>
-
       <!-- time -->
       <mn-card-item>
         <label slot="addon" class="form-label">time</label>
@@ -42,7 +36,6 @@
         date: undefined,
         datetime: '2016-09-09T08:00:00',
         month: undefined,
-        week: undefined,
         time: undefined
       }
     }
