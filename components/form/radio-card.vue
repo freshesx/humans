@@ -1,7 +1,9 @@
 <template>
   <mn-card>
     <mn-card-item v-for="option in options" @click.native.prevent="onClick($event, option.value)">
-      <label slot="body" class="form-label">{{ option.label }}</label>
+      <template slot="body">
+        {{ option.label }}
+      </template>
       <template slot="action">
         <mn-icon :class="[`${cssPrefix}form-radio-checkmark`]" name="ios-checkmark-empty" :scale="2" v-if="option.value === value"></mn-icon>
       </template>
