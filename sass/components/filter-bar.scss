@@ -18,11 +18,13 @@ $-filter-active-color: $orange;
   }
 
   &-item {
+    display: flex;
     flex: 1;
-    line-height: $-height;
     text-align: center;
     font-size: 0.875rem;
     color: #333;
+    justify-content: center;
+    align-items: center;
 
     &.is-bordered {
       border-left: $-border;
