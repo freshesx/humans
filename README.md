@@ -25,6 +25,16 @@ loaders: [
 ]
 ```
 
+Step 3: Import vue-human
+
+``` javascript
+import Vue from 'vue'
+import VueHuman from 'vue-human'
+import "../node_modules/vue-human/sass/human.scss"
+
+Vue.use(VueHuman)
+```
+
 # How to contribute
 
 ``` bash
