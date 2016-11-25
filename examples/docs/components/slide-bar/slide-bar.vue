@@ -1,39 +1,39 @@
 <template>
   <div class="full-page">
-    <mn-slide-box>
-      <mn-slide-box-item>
+    <mn-slide-bar>
+      <mn-slide-bar-item>
         <div class="list one">1</div>
-      </mn-slide-box-item>
-      <mn-slide-box-item>
+      </mn-slide-bar-item>
+      <mn-slide-bar-item>
         <div class="list one">2</div>
-      </mn-slide-box-item>
-      <mn-slide-box-item>
+      </mn-slide-bar-item>
+      <mn-slide-bar-item>
         <div class="list one">3</div>
-      </mn-slide-box-item>
-      <mn-slide-box-item>
+      </mn-slide-bar-item>
+      <mn-slide-bar-item>
         <div class="list one">4</div>
-      </mn-slide-box-item>
-      <mn-slide-box-item>
+      </mn-slide-bar-item>
+      <mn-slide-bar-item>
         <div class="list one">5</div>
-      </mn-slide-box-item>
-    </mn-slide-box>
-    <mn-slide-box type="full" :maxWidth="500">
-      <mn-slide-box-item>
+      </mn-slide-bar-item>
+    </mn-slide-bar>
+    <mn-slide-bar type="full" :maxWidth="500">
+      <mn-slide-bar-item>
         <div class="list two">1</div>
-      </mn-slide-box-item>
-      <mn-slide-box-item>
+      </mn-slide-bar-item>
+      <mn-slide-bar-item>
         <div class="list two">2</div>
-      </mn-slide-box-item>
-      <mn-slide-box-item>
+      </mn-slide-bar-item>
+      <mn-slide-bar-item>
         <div class="list two">3</div>
-      </mn-slide-box-item>
-      <mn-slide-box-item>
+      </mn-slide-bar-item>
+      <mn-slide-bar-item>
         <div class="list two">4</div>
-      </mn-slide-box-item>
-      <mn-slide-box-item>
+      </mn-slide-bar-item>
+      <mn-slide-bar-item>
         <div class="list two">5</div>
-      </mn-slide-box-item>
-    </mn-slide-box>
+      </mn-slide-bar-item>
+    </mn-slide-bar>
   </div>
 </template>
 

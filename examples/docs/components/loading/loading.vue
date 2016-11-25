@@ -8,8 +8,16 @@
     </mn-card>
     <mn-card>
       <mn-card-item>Loading in full screen, will stop after 3s.</mn-card-item>
-      <mn-card-item v-mn-loading.fullscreen="loading">
+      <mn-card-item v-mn-loading.fullscreen.locked="loading">
         <mn-btn type="primary" block @click.native="openFullScreen">Add Loading</mn-btn>
+      </mn-card-item>
+    </mn-card>
+    <mn-card>
+      <mn-card-item>Load component.</mn-card-item>
+      <mn-card-item>
+        <mn-load></mn-load>
+        <mn-load><p>刷新</p></mn-load>
+        <mn-btn type="error" block><mn-load></mn-load></mn-btn>
       </mn-card-item>
     </mn-card>
   </div>

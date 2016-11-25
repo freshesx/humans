@@ -6,7 +6,7 @@
         <mn-tab-bar @tab-click="routerpush">
           <mn-tab-pane title="Home" icon="ios-home" link="/"></mn-tab-pane>
           <mn-tab-pane title="Icon" link="/components/icon"></mn-tab-pane>
-          <mn-tab-pane icon="social-buffer" link="/components/popup"></mn-tab-pane>
+          <mn-tab-pane icon="ios-home" link="/components/popup"></mn-tab-pane>
         </mn-tab-bar>
       </mn-card-item>
     </mn-card>

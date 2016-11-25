@@ -4,7 +4,7 @@ import App from './app'
 import VueHuman from '../components/index.js'
 import './docs/docs.scss'
 
-Vue.use(VueHuman, { prefix: 'Mn' })
+Vue.use(VueHuman)
 
 /* eslint-disable no-unused-vars */
 const app = new Vue({

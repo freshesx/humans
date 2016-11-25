@@ -8,7 +8,7 @@
               <h1>Slide Box</h1>
               <small></small>
             </mn-letter>
-            <demo-slide-box></demo-slide-box>
+            <demo-slide-bar></demo-slide-bar>
           </div>
         </mn-scroller>
       </mn-row>
@@ -17,11 +17,11 @@
 </template>
 
 <script>
-  import DemoSlideBox from './slidebox'
+  import DemoSlideBar from './slide-bar'
 
   export default {
     components: {
-      DemoSlideBox
+      DemoSlideBar
     }
   }
 </script>

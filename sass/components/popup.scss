@@ -18,14 +18,17 @@ $-popup-mask: #{$namespace}popup-mask;
   }
 
   &-toastr {
-    max-width: 500px;
-    top: 1rem;
-    right: 1rem;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
     bottom: auto;
-    left: 1rem;
+    padding: 1rem 1rem 0;
 
     > .card {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      margin: 0 auto;
     }
   }
 

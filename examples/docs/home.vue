@@ -115,13 +115,13 @@
                 route: { path: '/components/collapse' }
               },
               {
-                title: 'slidebox',
+                title: 'slide-bar',
                 icon: 'ios-time-outline',
-                route: { path: '/components/slidebox' }
+                route: { path: '/components/slide-bar' }
               },
               {
                 title: 'loading',
-                icon: 'load-c',
+                icon: 'ios-reload',
                 route: { path: '/components/loading' }
               }
             ]

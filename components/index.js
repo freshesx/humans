@@ -3,6 +3,7 @@ import element from './util/element'
 import popup from './popup'
 import scroller from './scroller'
 import loading from './loading'
+import browser from './util/browser'
 
 export default {
   options: {
@@ -15,7 +16,12 @@ export default {
      * Human css prefix, using it in scss
      * @type {String}
      */
-    cssPrefix: ''
+    cssPrefix: '',
+    /**
+     * Human load SVG, using it in load component
+     * @type {String}
+     */
+    loadSvg: ''
   },
   /**
    * Vue install
@@ -34,7 +40,8 @@ export default {
     // Set up vue human
     Vue.human = {
       prefix: this.options.prefix,
-      cssPrefix: this.options.cssPrefix
+      cssPrefix: this.options.cssPrefix,
+      loadSvg: this.options.loadSvg
     }
 
     // Alias for human
@@ -45,5 +52,6 @@ export default {
     Vue.use(element)
     Vue.use(popup)
     Vue.use(loading)
+    Vue.use(browser)
   }
 }

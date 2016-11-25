@@ -11,7 +11,7 @@ import CardMedia from './card/card-media'
 import CardBtns from './card/card-btns'
 import CardWrapper from './card/card-wrapper'
 import FormText from './form/text'
-import FormDate from './form/date'
+import FormDatetime from './form/datetime'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import FormCounter from './form/counter'
@@ -36,8 +36,9 @@ import Rate from './rate/rate'
 import RateItem from './rate/rate-item'
 import Collapse from './collapse/collapse'
 import CollapsePane from './collapse/collapse-pane'
-import SlideBox from './slidebox/slidebox'
-import SlideBoxItem from './slidebox/slidebox-item'
+import SlideBar from './slide-bar/slide-bar'
+import SlideBarItem from './slide-bar/slide-bar-item'
+import Load from './loading/load'
 
 export default {
   // Column
@@ -59,7 +60,7 @@ export default {
   CardWrapper,
   // Form
   FormText,
-  FormDate,
+  FormDatetime,
   FormSwitch,
   FormSelect,
   FormCounter,
@@ -95,6 +96,8 @@ export default {
   Collapse,
   CollapsePane,
   // slidebox
-  SlideBox,
-  SlideBoxItem
+  SlideBar,
+  SlideBarItem,
+  // load
+  Load
 }
