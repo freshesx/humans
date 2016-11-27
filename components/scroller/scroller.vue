@@ -3,7 +3,7 @@
     :class="[ `${cssPrefix}scroller`, { 'is-save': save } ]"
     @touchstart="touchStart"
     @touchmove="touchMove">
-    <div class="scroller-contents">
+    <div :class="[ `${cssPrefix}scroller-contents` ]">
       <slot></slot>
     </div>
   </div>
