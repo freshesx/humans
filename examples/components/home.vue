@@ -20,6 +20,18 @@
         </mn-section>
       </mn-scroller>
     </mn-row>
+    <mn-row fixed>
+      <mn-tab-bar>
+        <mn-tab-pane title="Bases" icon="ios-home">
+        </mn-tab-pane>
+        <mn-tab-pane title="Core" icon="ios-albums-outline">
+        </mn-tab-pane>
+        <mn-tab-pane title="More" icon="ios-cloud-outline">
+        </mn-tab-pane>
+        <mn-tab-pane title="Github" icon="ios-people">
+        </mn-tab-pane>
+      </mn-tab-bar>
+    </mn-row>
   </mn-rows>
 </template>
 
