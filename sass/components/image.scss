@@ -1,4 +1,9 @@
+$-image: #{$namespace}image;
 $-block-image: #{$namespace}block-image;
+
+.#{$-image} {
+  // Some image scss
+}
 
 .#{$-block-image} {
   overflow: hidden;

@@ -1,5 +1,5 @@
 <template>
-  <img :src="link" :alt="alt" :title="title">
+  <img :class="[ `${cssPrefix}image` ]" :src="link" :alt="alt" :title="title">
 </template>
 
 <script>
