@@ -3,22 +3,27 @@
 //
 
 //
+// You can override custom namespace, and the `is-` prefix is not apply for namespace.
+//
+$namespace: "human-" !default;
+
+//
 // Colors
 //
-$white:                    #fff;
-$black:                    #000;
-$gray:                     #030303;
-$gray-lighter:             #f2f2f2;
-$gray-lightest:            #f5f5f5;
+$white:                    #fff !default;
+$black:                    #000 !default;
+$gray:                     #030303 !default;
+$gray-lighter:             #f2f2f2 !default;
+$gray-lightest:            #f5f5f5 !default;
 
-$red:                      rgb(255, 59, 48);
-$orange:                   rgb(255, 149, 0);
-$yellow:                   rgb(255, 204, 0);
-$green:                    rgb(76, 217, 100);
-$teal-blue:                rgb(90, 200, 250);
-$blue:                     rgb(0, 122, 255);
-$purple:                   rgb(88, 86, 214);
-$pink:                     rgb(255, 45, 85);
+$red:                      rgb(255, 59, 48) !default;
+$orange:                   rgb(255, 149, 0) !default;
+$yellow:                   rgb(255, 204, 0) !default;
+$green:                    rgb(76, 217, 100) !default;
+$teal-blue:                rgb(90, 200, 250) !default;
+$blue:                     rgb(0, 122, 255) !default;
+$purple:                   rgb(88, 86, 214) !default;
+$pink:                     rgb(255, 45, 85) !default;
 
 //
 // Reboot
@@ -32,7 +37,7 @@ $reboot-bg:           $gray-lighter !default;
 //
 // Grids
 //
-$grid-gutters: 1rem;
+$grid-gutters: 1rem !default;
 
 // media query
 $grid-breakpoints: (
@@ -54,11 +59,11 @@ $grid-max-widths: (
 //
 // Radius
 //
-$base-radius: 0.75rem;
+$base-radius: 0.75rem !default;
 
 // z-index
-// $content-z-index: 0;
-// $navigation-z-index: 2000;
-// $sub-popup-z-index: 4000
-// $panel-z-index: 6000;
-// $popup-z-index: 8000;
+$content-z-index: 0 !default;
+$navigation-z-index: 2000 !default;
+$sub-popup-z-index: 4000 !default;
+$panel-z-index: 6000 !default;
+$popup-z-index: 8000 !default;

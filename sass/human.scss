@@ -1,9 +1,4 @@
 //
-// You can override custom namespace, and the `is-` prefix is not apply for namespace.
-//
-$namespace: "human-" !default;
-
-//
 // Import bases, components, etc.
 //
 @import "bases/normalize";
