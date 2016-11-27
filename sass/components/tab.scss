@@ -17,7 +17,6 @@ $-tab-active-color: $pink;
   left: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(10px);
 }
 
 .#{$-tab-item-bottom} {
@@ -63,7 +62,6 @@ $-tab-active-color: $pink;
   flex-wrap: wrap;
   overflow: hidden;
   height: 3rem;
-  margin: 1rem;
   background-color: $-tab-background;
   color: $-tab-text-color;
 }
