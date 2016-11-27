@@ -1,16 +1,21 @@
 $-image: #{$namespace}image;
-$-block-image: #{$namespace}block-image;
 
 .#{$-image} {
-  // Some image scss
-}
-
-.#{$-block-image} {
-  overflow: hidden;
-  background: #eee;
+  display: inline-block;
 
   > img {
-    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &.is-block {
     display: block;
+    overflow: hidden;
+    background: #eee;
+
+    > img {
+      display: block;
+      width: 100%;
+    }
   }
 }

@@ -1,5 +1,7 @@
 <template>
-  <img :class="[ `${cssPrefix}image` ]" :src="link" :alt="alt" :title="title">
+  <div :class="[ `${cssPrefix}image`, { 'is-block': isBlock } ]">
+    <img :src="link" :alt="alt" :title="title">
+  </div>
 </template>
 
 <script>
@@ -51,7 +53,8 @@
     },
     data () {
       return {
-        link: ''
+        link: '',
+        isBlock: false
       }
     },
     mounted () {
