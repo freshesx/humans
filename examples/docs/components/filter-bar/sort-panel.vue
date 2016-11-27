@@ -1,6 +1,6 @@
 <template>
-  <mn-popup :show="show" animation="slideInUp" @close="cancel" :classes="['filter-bar-popup']" :zIndex="zIndex">
-    <mn-form-radio-card :class="[ 'm-b-0', 'filter-bar-card' ]" :options="filterOptions" v-model="filters"></mn-form-radio-card>
+  <mn-popup :show="show" animation="slideInUp" @close="cancel" :classes="[ `${cssPrefix}filter-bar-popup` ]" :zIndex="zIndex">
+    <mn-form-radio-card :class="[ 'm-b-0', `${cssPrefix}filter-bar-card` ]" :options="filterOptions" v-model="filters"></mn-form-radio-card>
   </mn-popup>
 </template>
 
@@ -9,6 +9,11 @@
     methods: {
       cancel () {
         this.$emit('cancel')
+      }
+    },
+    computed: {
+      cssPrefix () {
+        return this.$human.cssPrefix
       }
     },
     data () {
