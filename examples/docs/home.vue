@@ -2,13 +2,11 @@
   <mn-rows>
     <mn-row>
       <mn-scroller save>
-        <div class="section">
-          <div class="letter">
-            <div class="letter-body">
-              <h1>Vue Human</h1>
-              <small>A component sets for vue & human UI.</small>
-            </div>
-          </div>
+        <mn-section>
+          <mn-letter>
+            <h1>Vue Human</h1>
+            <small>A component sets for vue & human UI.</small>
+          </mn-letter>
 
           <mn-card v-for="menu in menus">
             <mn-card-item>
@@ -19,7 +17,7 @@
               <template slot="body">{{ sub.title }}</template>
             </mn-card-item>
           </mn-card>
-        </div>
+        </mn-section>
       </mn-scroller>
     </mn-row>
   </mn-rows>
