@@ -16,7 +16,7 @@ export default {
      * Human css prefix, using it in scss
      * @type {String}
      */
-    cssPrefix: 'human-',
+    cssPrefix: 'mn-',
     /**
      * Human load function
      * @example function (resolve) { require(['./file/path'], resolve) }
