@@ -1,3 +1,5 @@
+import Container from './container/container'
+import Section from './section/section'
 import Cols from './column/cols'
 import Col from './column/col'
 import Rows from './row/rows'
@@ -41,6 +43,8 @@ import SlideBarItem from './slide-bar/slide-bar-item'
 import Load from './loading/load'
 
 export default {
+  Container,
+  Section,
   // Column
   Cols,
   Col,
