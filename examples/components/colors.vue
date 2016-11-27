@@ -3,8 +3,7 @@
     <mn-rows>
       <mn-row>
         <mn-scroller>
-          <div class="section">
-
+          <mn-section>
             <mn-letter>
               <h1>Color</h1>
               <small>Text, background, other.</small>
@@ -33,8 +32,7 @@
                 </mn-cols>
               </mn-card-item>
             </mn-card>
-
-          </div>
+          </mn-section>
         </mn-scroller>
       </mn-row>
     </mn-rows>

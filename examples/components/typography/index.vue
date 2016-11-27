@@ -3,8 +3,7 @@
     <mn-rows>
       <mn-row>
         <mn-scroller>
-          <div class="section">
-
+          <mn-section>
             <mn-letter>
               <h1>Typograhpy</h1>
               <small>Headings, paragraph, list, etc.</small>
@@ -19,8 +18,7 @@
                 <small slot="help">{{ content.description }}</small>
               </mn-card-item>
             </mn-card>
-
-          </div>
+          </mn-section>
         </mn-scroller>
       </mn-row>
     </mn-rows>

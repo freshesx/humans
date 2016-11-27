@@ -3,8 +3,7 @@
     <mn-rows>
       <mn-row>
         <mn-scroller>
-          <div class="section">
-
+          <mn-section>
             <mn-letter>
               <h1>Popup</h1>
               <small>popup, confirm, alerts, activity sheets</small>
@@ -37,7 +36,7 @@
                 <mn-btn type="secondary" block @click.native.prevent="openPopup">Open activity sheets</mn-btn>
               </mn-card-item>
             </mn-card>
-          </div>
+          </mn-section>
         </mn-scroller>
       </mn-row>
     </mn-rows>

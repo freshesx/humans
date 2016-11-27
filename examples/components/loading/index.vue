@@ -3,17 +3,18 @@
     <mn-rows>
       <mn-row>
         <mn-scroller>
-          <div class="section">
-            <div class="letter">
-              <div class="letter-body">
-                <h1>Loading</h1>
-                <small>Loading component</small>
-              </div>
-            </div>
+          <mn-section>
+            <mn-letter>
+              <h1>Loading</h1>
+              <small>Loading component</small>
+            </mn-letter>
 
-            <demo-loading></demo-loading>
-
-          </div>
+            <mn-card>
+              <mn-card-item>
+                <mn-loading-icon></mn-loading-icon> Loading
+              </mn-card-item>
+            </mn-card>
+          </mn-section>
         </mn-scroller>
       </mn-row>
     </mn-rows>
@@ -21,11 +22,6 @@
 </template>
 
 <script>
-  import DemoLoading from './loading'
-
   export default {
-    components: {
-      DemoLoading
-    }
   }
 </script>

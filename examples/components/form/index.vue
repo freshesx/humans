@@ -6,8 +6,7 @@
       </mn-row>
       <mn-row>
         <mn-scroller>
-
-          <div class="section">
+          <mn-section>
             <mn-letter>
               <h1>Form</h1>
               <small>input, radio, switch, select</small>
@@ -25,8 +24,7 @@
                 <mn-btn type="primary" block>Submit</mn-btn>
               </mn-col>
             </mn-cols>
-          </div>
-
+          </mn-section>
         </mn-scroller>
       </mn-row>
     </mn-rows>

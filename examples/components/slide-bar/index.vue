@@ -3,13 +3,13 @@
     <mn-rows>
       <mn-row>
         <mn-scroller>
-          <div class="section">
+          <mn-section>
             <mn-letter>
               <h1>Slide Box</h1>
               <small></small>
             </mn-letter>
             <demo-slide-bar></demo-slide-bar>
-          </div>
+          </mn-section>
         </mn-scroller>
       </mn-row>
     </mn-rows>

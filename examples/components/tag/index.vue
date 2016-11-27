@@ -3,17 +3,13 @@
     <mn-rows>
       <mn-row>
         <mn-scroller>
-          <div class="section">
-            <div class="letter">
-              <div class="letter-body">
-                <h1>Tag</h1>
-                <small>Tag</small>
-              </div>
-            </div>
-
+          <mn-section>
+            <mn-letter>
+              <h1>Tag</h1>
+              <small>Tag</small>
+            </mn-letter>
             <demo-tag></demo-tag>
-
-          </div>
+          </mn-section>
         </mn-scroller>
       </mn-row>
     </mn-rows>

@@ -3,24 +3,22 @@
     <mn-rows>
       <mn-row>
         <mn-scroller>
-          <div class="section">
+          <mn-section>
+            <mn-letter>
+              <h1>Card</h1>
+              <small>card, header, block, lists, item, button</small>
+            </mn-letter>
 
-            <div class="letter">
-              <div class="letter-body">
-                <h1>Card</h1>
-                <small>card, header, block, lists, item, button</small>
-              </div>
-            </div>
-
-            <div class="cols">
-              <div class="col is-sm-6">
-                <demo-card-item></demo-card-item>
+            <mn-cols>
+              <mn-col query="sm-6">
                 <demo-card-media></demo-card-media>
+              </mn-col>
+              <mn-col query="sm-6">
+                <demo-card-item></demo-card-item>
                 <demo-card-btns></demo-card-btns>
-              </div>
-            </div>
-
-          </div>
+              </mn-col>
+            </mn-cols>
+          </mn-section>
         </mn-scroller>
       </mn-row>
     </mn-rows>

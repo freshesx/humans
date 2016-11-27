@@ -3,8 +3,7 @@
     <mn-rows>
       <mn-row>
         <mn-scroller>
-          <div class="section">
-
+          <mn-section>
             <mn-letter>
               <h1>Flex</h1>
               <small>cols, col</small>
@@ -56,8 +55,7 @@
                 </mn-cols>
               </mn-card-item>
             </mn-card>
-
-          </div>
+          </mn-section>
         </mn-scroller>
       </mn-row>
     </mn-rows>

@@ -3,8 +3,7 @@
     <mn-rows>
       <mn-row>
         <mn-scroller>
-          <div class="section">
-
+          <mn-section>
             <mn-letter>
               <h1>Icons</h1>
               <small>icons</small>
@@ -22,8 +21,7 @@
                 </div>
               </mn-col>
             </mn-cols>
-
-          </div>
+          </mn-section>
         </mn-scroller>
       </mn-row>
     </mn-rows>
