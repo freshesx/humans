@@ -50,22 +50,12 @@
             ]
           },
           {
-            title: 'Grids',
+            title: 'Core components',
             subMenus: [
               {
-                title: 'Column',
+                title: 'column',
                 icon: 'ios-box',
                 route: { path: '/components/column' }
-              }
-            ]
-          },
-          {
-            title: 'Components',
-            subMenus: [
-              {
-                title: 'icon',
-                icon: 'ios-analytics',
-                route: { path: '/components/icon' }
               },
               {
                 title: 'button',
@@ -78,14 +68,29 @@
                 route: { path: '/components/card' }
               },
               {
-                title: 'form',
-                icon: 'ios-list',
-                route: { path: '/components/form' }
-              },
-              {
                 title: 'popup',
                 icon: 'ios-browsers-outline',
                 route: { path: '/components/popup' }
+              },
+              {
+                title: 'loading icon',
+                icon: 'ios-reload',
+                route: { path: '/components/loading' }
+              }
+            ]
+          },
+          {
+            title: 'More Components',
+            subMenus: [
+              {
+                title: 'icon',
+                icon: 'ios-analytics',
+                route: { path: '/components/icon' }
+              },
+              {
+                title: 'form',
+                icon: 'ios-list',
+                route: { path: '/components/form' }
               },
               {
                 title: 'search-bar',
@@ -116,11 +121,6 @@
                 title: 'slide-bar',
                 icon: 'ios-time-outline',
                 route: { path: '/components/slide-bar' }
-              },
-              {
-                title: 'loading',
-                icon: 'ios-reload',
-                route: { path: '/components/loading' }
               }
             ]
           }
