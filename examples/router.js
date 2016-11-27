@@ -8,67 +8,67 @@ const router = new VueRouter({
     {
       path: '/',
       meta: { scroll: true },
-      component: resolve => { require(['./docs/home'], resolve) }
+      component: resolve => { require(['./components/home'], resolve) }
     },
     {
       path: '/components/colors',
-      component: resolve => { require(['./docs/components/colors'], resolve) }
+      component: resolve => { require(['./components/colors'], resolve) }
     },
     {
       path: '/components/typography',
-      component: resolve => { require(['./docs/components/typography'], resolve) }
+      component: resolve => { require(['./components/typography'], resolve) }
     },
     {
       path: '/components/column',
-      component: resolve => { require(['./docs/components/column'], resolve) }
+      component: resolve => { require(['./components/column'], resolve) }
     },
     {
       path: '/components/button',
-      component: resolve => { require(['./docs/components/button'], resolve) }
+      component: resolve => { require(['./components/button'], resolve) }
     },
     {
       path: '/components/card',
-      component: resolve => { require(['./docs/components/card'], resolve) }
+      component: resolve => { require(['./components/card'], resolve) }
     },
     {
       path: '/components/form',
-      component: resolve => { require(['./docs/components/form'], resolve) }
+      component: resolve => { require(['./components/form'], resolve) }
     },
     {
       path: '/components/popup',
-      component: resolve => { require(['./docs/components/popup'], resolve) }
+      component: resolve => { require(['./components/popup'], resolve) }
     },
     {
       path: '/components/icon',
-      component: resolve => { require(['./docs/components/icon'], resolve) }
+      component: resolve => { require(['./components/icon'], resolve) }
     },
     {
       path: '/components/search-bar',
-      component: resolve => { require(['./docs/components/search-bar'], resolve) }
+      component: resolve => { require(['./components/search-bar'], resolve) }
     },
     {
       path: '/components/tab',
-      component: resolve => { require(['./docs/components/tab'], resolve) }
+      component: resolve => { require(['./components/tab'], resolve) }
     },
     {
       path: '/components/tag',
-      component: resolve => { require(['./docs/components/tag'], resolve) }
+      component: resolve => { require(['./components/tag'], resolve) }
     },
     {
       path: '/components/rate',
-      component: resolve => { require(['./docs/components/rate'], resolve) }
+      component: resolve => { require(['./components/rate'], resolve) }
     },
     {
       path: '/components/collapse',
-      component: resolve => { require(['./docs/components/collapse'], resolve) }
+      component: resolve => { require(['./components/collapse'], resolve) }
     },
     {
       path: '/components/slide-bar',
-      component: resolve => { require(['./docs/components/slide-bar'], resolve) }
+      component: resolve => { require(['./components/slide-bar'], resolve) }
     },
     {
       path: '/components/loading',
-      component: resolve => { require(['./docs/components/loading'], resolve) }
+      component: resolve => { require(['./components/loading'], resolve) }
     }
   ]
 })
