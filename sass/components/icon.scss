@@ -1,9 +1,10 @@
 $-icon: #{$namespace}icon;
+$-icon-spin: #{$namespace}icon-spin;
 
 //
 // @animation btn-rotate
 //
-@keyframes icon-spin {
+@keyframes #{$-icon-spin} {
   0% {
     transform: rotate(0deg) scale(1);
   }
@@ -29,6 +30,6 @@ $-icon: #{$namespace}icon;
   // @class .icon.is-spin
   //
   &.is-spin {
-    animation: icon-spin 1s 0s infinite linear;
+    animation: #{$-icon-spin} 1s 0s infinite linear;
   }
 }
