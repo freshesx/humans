@@ -1,6 +1,6 @@
 <template>
   <button :class="[`${cssPrefix}btn`, classes]">
-    <mn-loading v-if="loading"></mn-loading>
+    <mn-loading-icon v-if="loading"></mn-loading-icon>
     <slot v-if="!loading"></slot>
   </button>
 </template>
