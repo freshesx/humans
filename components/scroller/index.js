@@ -39,8 +39,8 @@ class Scroller {
 
       // 强制移除
       // @todo 建议设定一个容器存储所有的 popup 再触发清理
-      $('.popup').remove()
-      $('.popup-mask').remove()
+      $('.human-popup').remove()
+      $('.human-popup-mask').remove()
     })
   }
 }
