@@ -32,11 +32,6 @@ export default {
     // Merge and assign options
     this.options = Object.assign({}, this.options, options)
 
-    // Vue load components
-    for (let name in components) {
-      Vue.component(`${this.options.prefix}${name}`, components[name])
-    }
-
     // Set up vue human
     Vue.human = {
       prefix: this.options.prefix,
@@ -53,5 +48,10 @@ export default {
     Vue.use(popup)
     Vue.use(loading)
     Vue.use(browser)
+
+    // Vue load components
+    for (let name in components) {
+      Vue.component(`${this.options.prefix}${name}`, components[name])
+    }
   }
 }
