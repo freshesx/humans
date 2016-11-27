@@ -18,10 +18,11 @@ export default {
      */
     cssPrefix: 'human-',
     /**
-     * Human load SVG, using it in load component
-     * @type {String}
+     * Human load function
+     * @example function (resolve) { require(['./file/path'], resolve) }
+     * @type {Function}
      */
-    loadSvg: ''
+    loading: undefined
   },
   /**
    * Vue install
@@ -36,7 +37,7 @@ export default {
     Vue.human = {
       prefix: this.options.prefix,
       cssPrefix: this.options.cssPrefix,
-      loadSvg: this.options.loadSvg
+      loading: this.options.loading
     }
 
     // Alias for human
