@@ -3,10 +3,7 @@
   "version": "2.0.0-beta.7",
   "description": "The UI component for Vue, inspired by iOS Human Interface Guidelines",
   "author": "ChaselWu <chasel.wu@vitualreaty.com>",
-  "main": [
-    "components/index.js",
-    "sass/human.scss"
-  ],
+  "main": "components/index.js",
   "sass": "sass/human.scss",
   "files": [
     "components",
