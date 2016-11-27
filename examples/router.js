@@ -19,8 +19,8 @@ const router = new VueRouter({
       component: resolve => { require(['./docs/bases/typography'], resolve) }
     },
     {
-      path: '/grids/flex',
-      component: resolve => { require(['./docs/grids/flex'], resolve) }
+      path: '/components/column',
+      component: resolve => { require(['./docs/components/column'], resolve) }
     },
     {
       path: '/components/button',
