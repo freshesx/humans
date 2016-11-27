@@ -3,7 +3,7 @@
     <mn-card>
       <mn-card-item>Tabs with router</mn-card-item>
       <mn-card-item>
-        <mn-tab-bar @tab-click="routerpush">
+        <mn-tab-bar @tab-click="go">
           <mn-tab-pane title="Home" icon="ios-home" link="/"></mn-tab-pane>
           <mn-tab-pane title="Icon" link="/components/icon"></mn-tab-pane>
           <mn-tab-pane icon="ios-home" link="/components/popup"></mn-tab-pane>
@@ -30,11 +30,10 @@
 </template>
 
 <script>
-  import router from '../../../router'
   export default {
     methods: {
-      routerpush: function (tab) {
-        router.push({ path: tab.link })
+      go: function (tab) {
+        this.$router.push({ path: tab.link })
       }
     }
   }

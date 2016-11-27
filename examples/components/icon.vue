@@ -31,7 +31,7 @@
 </template>
 
 <script>
-  import icons from '../../../components/icon/icons.json'
+  import icons from '../../components/icon/icons.json'
   import lodash from 'lodash'
 
   export default {
