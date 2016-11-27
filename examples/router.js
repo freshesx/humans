@@ -11,12 +11,12 @@ const router = new VueRouter({
       component: resolve => { require(['./docs/home'], resolve) }
     },
     {
-      path: '/bases/colors',
-      component: resolve => { require(['./docs/bases/colors'], resolve) }
+      path: '/components/colors',
+      component: resolve => { require(['./docs/components/colors'], resolve) }
     },
     {
-      path: '/bases/typography',
-      component: resolve => { require(['./docs/bases/typography'], resolve) }
+      path: '/components/typography',
+      component: resolve => { require(['./docs/components/typography'], resolve) }
     },
     {
       path: '/components/column',

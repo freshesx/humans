@@ -40,12 +40,12 @@
               {
                 title: 'colors',
                 icon: 'ios-color-filter',
-                route: { path: '/bases/colors' }
+                route: { path: '/components/colors' }
               },
               {
                 title: 'typography',
                 icon: 'ios-bookmarks',
-                route: { path: '/bases/typography' }
+                route: { path: '/components/typography' }
               }
             ]
           },
@@ -55,7 +55,7 @@
               {
                 title: 'flex',
                 icon: 'ios-box',
-                route: { path: '/grids/flex' }
+                route: { path: '/components/flex' }
               }
             ]
           },
