@@ -16,7 +16,7 @@ export default {
      * Human css prefix, using it in scss
      * @type {String}
      */
-    cssPrefix: '',
+    cssPrefix: 'human-',
     /**
      * Human load SVG, using it in load component
      * @type {String}
