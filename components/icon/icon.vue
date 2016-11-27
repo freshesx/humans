@@ -1,6 +1,5 @@
 <template>
   <svg version="1.1"
-    class="icon"
     :class="[ `${cssPrefix}icon`, { 'is-spin': spin } ]"
     :width="width"
     :height="height"
