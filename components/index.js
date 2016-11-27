@@ -16,12 +16,13 @@ export default {
      * Human css prefix, using it in scss
      * @type {String}
      */
-    cssPrefix: '',
+    cssPrefix: 'human-',
     /**
-     * Human load SVG, using it in load component
-     * @type {String}
+     * Human load function
+     * @example function (resolve) { require(['./file/path'], resolve) }
+     * @type {Function}
      */
-    loadSvg: ''
+    loading: undefined
   },
   /**
    * Vue install
@@ -32,16 +33,11 @@ export default {
     // Merge and assign options
     this.options = Object.assign({}, this.options, options)
 
-    // Vue load components
-    for (let name in components) {
-      Vue.component(`${this.options.prefix}${name}`, components[name])
-    }
-
     // Set up vue human
     Vue.human = {
       prefix: this.options.prefix,
       cssPrefix: this.options.cssPrefix,
-      loadSvg: this.options.loadSvg
+      loading: this.options.loading
     }
 
     // Alias for human
@@ -53,5 +49,10 @@ export default {
     Vue.use(popup)
     Vue.use(loading)
     Vue.use(browser)
+
+    // Vue load components
+    for (let name in components) {
+      Vue.component(`${this.options.prefix}${name}`, components[name])
+    }
   }
 }

@@ -1,10 +1,10 @@
 @import "../variables";
 @import "../mixins/media";
 
-$-grid-container: #{$namespace}container;
-$-grid-section: #{$namespace}section;
+$-container: #{$namespace}container;
+$-section: #{$namespace}section;
 
-.#{$-grid-container} {
+.#{$-container} {
   margin: 0 $grid-gutters;
 
   @each $name, $width in $grid-max-widths {
@@ -15,6 +15,6 @@ $-grid-section: #{$namespace}section;
   }
 }
 
-.#{$-grid-section} {
+.#{$-section} {
   margin: 0 $grid-gutters;
 }

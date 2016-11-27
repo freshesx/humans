@@ -1,9 +1,3 @@
-<template>
-  <div :class="[ `${cssPrefix}block-image` ]" ref="container">
-    <img :src="link" :alt="alt" :title="title">
-  </div>
-</template>
-
 <script>
   import Image from './image'
   import $ from 'jquery'
@@ -15,16 +9,21 @@
       setDefaultHeight () {
         const scale = this.getViewImage().scale
         const height = scale
-          ? $(this.$refs.container).width() / scale
+          ? $(this.$el).width() / scale
           : 'auto'
 
-        $(this.$refs.container).height(height)
+        $(this.$el).height(height)
       }
     },
     mounted () {
       readyAndResize(() => {
         this.setDefaultHeight()
       })
+    },
+    data () {
+      return {
+        isBlock: true
+      }
     }
   }
 </script>

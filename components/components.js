@@ -1,15 +1,20 @@
-import Cols from './column/cols'
-import Col from './column/col'
-import Rows from './row/rows'
-import Row from './row/row'
-import Scroller from './scroller/scroller'
+// Core
 import Icon from './icon/icon'
+import LoadingIcon from './loading-icon/loading-icon'
+import Scroller from './scroller/scroller'
 import Btn from './button/button'
 import Card from './card/card'
 import CardItem from './card/card-item'
 import CardMedia from './card/card-media'
 import CardBtns from './card/card-btns'
 import CardWrapper from './card/card-wrapper'
+import Pre from './code/pre'
+import Popup from './popup/popup'
+import PopupConfirm from './popup/confirm'
+import PopupAlert from './popup/alert'
+import PopupToastr from './popup/toastr'
+
+// Form
 import FormText from './form/text'
 import FormDatetime from './form/datetime'
 import FormSwitch from './form/switch'
@@ -17,13 +22,17 @@ import FormSelect from './form/select'
 import FormCounter from './form/counter'
 import FormRadioCard from './form/radio-card'
 import FormCheckboxCard from './form/checkbox-card'
+
+// Layout
+import Container from './container/container'
+import Section from './section/section'
+import Cols from './column/cols'
+import Col from './column/col'
+import Rows from './row/rows'
+import Row from './row/row'
+
+// More components
 import Letter from './letter/letter'
-import Pre from './code/pre'
-import Popup from './popup/popup'
-import PopupConfirm from './popup/confirm'
-import PopupAlert from './popup/alert'
-import PopupToastr from './popup/toastr'
-import InlineImage from './image/image'
 import BlockImage from './image/block-image'
 import TabBar from './tab/tab'
 import TabItem from './tab/tab-item'
@@ -38,26 +47,24 @@ import Collapse from './collapse/collapse'
 import CollapsePane from './collapse/collapse-pane'
 import SlideBar from './slide-bar/slide-bar'
 import SlideBarItem from './slide-bar/slide-bar-item'
-import Load from './loading/load'
 
 export default {
-  // Column
-  Cols,
-  Col,
-  Rows,
-  Row,
-  // Scroller
-  Scroller,
-  // Icon
+  // Core
   Icon,
-  // Button
+  LoadingIcon,
+  Scroller,
   Btn,
-  // Card
   Card,
   CardItem,
   CardMedia,
   CardBtns,
   CardWrapper,
+  Pre,
+  Popup,
+  PopupConfirm,
+  PopupAlert,
+  PopupToastr,
+
   // Form
   FormText,
   FormDatetime,
@@ -66,38 +73,29 @@ export default {
   FormCounter,
   FormRadioCard,
   FormCheckboxCard,
-  // Letter
+
+  // Layout
+  Container,
+  Section,
+  Cols,
+  Col,
+  Rows,
+  Row,
+
+  // More components
   Letter,
-  // Code
-  Pre,
-  // Popup
-  Popup,
-  PopupConfirm,
-  PopupAlert,
-  PopupToastr,
-  // Image
-  InlineImage,
   BlockImage,
-  // bar
-  SearchBar,
-  // Filter bar
-  FilterBar,
-  FilterBarItem,
-  // tab
   TabBar,
   TabItem,
   TabPane,
-  // tag
+  SearchBar,
+  FilterBar,
+  FilterBarItem,
   Tag,
-  // Rate
   Rate,
   RateItem,
-  // collapse
   Collapse,
   CollapsePane,
-  // slidebox
   SlideBar,
-  SlideBarItem,
-  // load
-  Load
+  SlideBarItem
 }

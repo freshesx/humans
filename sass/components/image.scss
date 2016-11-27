@@ -1,11 +1,34 @@
-$-block-image: #{$namespace}block-image;
+$-image: #{$namespace}image;
+$-image-loading: #{$namespace}image-loading;
 
-.#{$-block-image} {
-  overflow: hidden;
-  background: #eee;
+.#{$-image} {
+  display: inline-block;
 
   > img {
-    width: 100%;
-    display: block;
+    margin: 0;
+    padding: 0;
   }
+
+  &.is-block {
+    display: block;
+    overflow: hidden;
+    background: #eee;
+    position: relative;
+
+    > img {
+      display: block;
+      position: absolute;
+      width: 100%;
+      z-index: 20;
+    }
+  }
+}
+
+.#{$-image-loading} {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
