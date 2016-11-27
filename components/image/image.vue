@@ -1,5 +1,8 @@
 <template>
   <div :class="[ `${cssPrefix}image`, { 'is-block': isBlock } ]">
+    <span :class="[ `${cssPrefix}image-loading` ]" v-if="isBlock">
+      <mn-loading-icon></mn-loading-icon>
+    </span>
     <img :src="link" :alt="alt" :title="title">
   </div>
 </template>

@@ -1,4 +1,5 @@
 $-image: #{$namespace}image;
+$-image-loading: #{$namespace}image-loading;
 
 .#{$-image} {
   display: inline-block;
@@ -12,10 +13,22 @@ $-image: #{$namespace}image;
     display: block;
     overflow: hidden;
     background: #eee;
+    position: relative;
 
     > img {
       display: block;
+      position: absolute;
       width: 100%;
+      z-index: 20;
     }
   }
+}
+
+.#{$-image-loading} {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
