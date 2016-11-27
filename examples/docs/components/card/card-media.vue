@@ -18,7 +18,6 @@
       <article>
         <h3>What is Lorem Ipsum?</h3>
         <p>
-          <mn-inline-image :options="inlineImage" width="120" style="float: left; margin-right: 1rem;"></mn-inline-image>
           Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
         </p>
       </article>
@@ -31,7 +30,9 @@
   export default {
     data () {
       return {
-        inlineImage: 'https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg',
+        // Simple image
+        // blockImage: 'https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg',
+        // Media query image
         blockImage: [
           {
             min: 0,
