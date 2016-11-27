@@ -1,17 +1,13 @@
 @import "../variables";
 @import "../mixins/media";
 
-// @private
-//
-$-grid-flex-cols: "#{$namespace}cols";
-
-// @private
-$-grid-flex-col: "#{$namespace}col";
+$-cols: #{$namespace}cols;
+$-col: #{$namespace}col;
 
 // Columns
 // @class .cols
 //
-.#{$-grid-flex-cols} {
+.#{$-cols} {
   display: flex;
   margin: 0 $grid-gutters * -0.5;
   flex-wrap: wrap;
@@ -19,7 +15,7 @@ $-grid-flex-col: "#{$namespace}col";
   &.is-gapless {
     margin: 0;
 
-    > .#{$-grid-flex-col} {
+    > .#{$-col} {
       padding: 0;
     }
   }
@@ -28,7 +24,7 @@ $-grid-flex-col: "#{$namespace}col";
 // Column
 // @class .col
 //
-.#{$-grid-flex-col} {
+.#{$-col} {
   width: 100%;
   overflow: hidden;
   padding: 0 $grid-gutters * 0.5;
@@ -38,6 +34,8 @@ $-grid-flex-col: "#{$namespace}col";
   }
 
   // Specify column class
+  // @todo( @advice: xsmall, small, medium, large, xlarge )
+  // @todo( @advice: mobile, pad, screen, xscreen, xxscreen )
   // @class .col.is-xs-1 ~ .col.is-xs-12
   // @class .col.is-sm-1 ~ .col.is-sm-12
   // @class .col.is-md-1 ~ .col.is-md-12
