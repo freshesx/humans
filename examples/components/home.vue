@@ -53,9 +53,9 @@
             title: 'Grids',
             subMenus: [
               {
-                title: 'flex',
+                title: 'Column',
                 icon: 'ios-box',
-                route: { path: '/components/flex' }
+                route: { path: '/components/column' }
               }
             ]
           },
