@@ -79,7 +79,7 @@ $-tab-active-color: $pink;
   padding: 0.2rem 0;
 
   p,
-  .icon {
+  .#{$namespace}icon {
     flex: 0 0 auto;
     align-self: center;
     margin: 0;
