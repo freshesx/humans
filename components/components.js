@@ -33,6 +33,7 @@ import Row from './row/row'
 
 // More components
 import Letter from './letter/letter'
+import Article from './article/article'
 import BlockImage from './image/block-image'
 import NavBar from './nav-bar/nav-bar'
 import TabBar from './tab-bar/tab-bar'
@@ -85,6 +86,7 @@ export default {
 
   // More components
   Letter,
+  Article,
   BlockImage,
   NavBar,
   TabBar,
