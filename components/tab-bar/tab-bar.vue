@@ -1,12 +1,12 @@
 <template>
   <div :class="[ `${cssPrefix}tab` ]">
     <div :class="[ `${cssPrefix}tab-list`, { 'is-bottom': this.bottom } ]">
-      <mn-tab-item
+      <mn-tab-bar-item
         v-for="(tab, index) in tabs"
         :tab="tab"
         :index="index"
         @tab-item-click="changeCurrent(index, tab)"
-      ></mn-tab-item>
+      ></mn-tab-bar-item>
     </div>
     <slot></slot>
   </div>
