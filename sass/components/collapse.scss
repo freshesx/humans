@@ -2,6 +2,7 @@ $-collapse: #{$namespace}collapse;
 $-collapse-list: #{$namespace}collapse-list;
 $-collapse-title: #{$namespace}collapse-title;
 $-collapse-content: #{$namespace}collapse-content;
+$-collapse-toggle: #{$namespace}collapse-toggle;
 $collapse-gray: #ddd;
 $collapse-radius: 5px;
 
@@ -41,12 +42,12 @@ $collapse-radius: 5px;
   max-height: 999px;
 }
 
-.collapseToggle-enter-active,
-.collapseToggle-leave-active {
+.#{$-collapse-toggle}-enter-active,
+.#{$-collapse-toggle}-leave-active {
   transition: all 0.2s ease;
 }
 
-.collapseToggle-enter,
-.collapseToggle-leave-active {
+.#{$-collapse-toggle}-enter,
+.#{$-collapse-toggle}-leave-active {
   max-height: 0;
 }

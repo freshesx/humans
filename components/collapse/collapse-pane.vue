@@ -5,7 +5,7 @@
         {{ this.title }}
       </p>
     </div>
-    <transition name="collapseToggle">
+    <transition :name="`${cssPrefix}collapse-toggle`">
       <div :class="[ `${cssPrefix}collapse-content` ]" v-if="selected">
         <slot></slot>
       </div>
