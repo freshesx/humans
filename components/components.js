@@ -34,6 +34,7 @@ import Row from './row/row'
 // More components
 import Letter from './letter/letter'
 import BlockImage from './image/block-image'
+import NavBar from './nav-bar/nav-bar'
 import TabBar from './tab/tab'
 import TabItem from './tab/tab-item'
 import TabPane from './tab/tab-pane'
@@ -85,6 +86,7 @@ export default {
   // More components
   Letter,
   BlockImage,
+  NavBar,
   TabBar,
   TabItem,
   TabPane,
