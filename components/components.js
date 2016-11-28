@@ -33,10 +33,12 @@ import Row from './row/row'
 
 // More components
 import Letter from './letter/letter'
+import Article from './article/article'
 import BlockImage from './image/block-image'
-import TabBar from './tab/tab'
-import TabItem from './tab/tab-item'
-import TabPane from './tab/tab-pane'
+import NavBar from './nav-bar/nav-bar'
+import TabBar from './tab-bar/tab-bar'
+import TabBarItem from './tab-bar/tab-bar-item'
+import TabBarPane from './tab-bar/tab-bar-pane'
 import SearchBar from './search-bar/search'
 import FilterBar from './filter-bar/filter-bar'
 import FilterBarItem from './filter-bar/filter-bar-item'
@@ -84,10 +86,12 @@ export default {
 
   // More components
   Letter,
+  Article,
   BlockImage,
+  NavBar,
   TabBar,
-  TabItem,
-  TabPane,
+  TabBarItem,
+  TabBarPane,
   SearchBar,
   FilterBar,
   FilterBarItem,

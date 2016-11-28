@@ -1,6 +1,17 @@
 <template>
   <transition name="has-slide">
     <mn-rows>
+      <mn-row fixed>
+        <mn-nav-bar>
+          <div slot="prefix" @click="$router.go(-1)">
+            <mn-icon name="ios-arrow-back"></mn-icon>Back
+          </div>
+          <div slot="body">
+            <mn-icon name="ios-color-filter"></mn-icon>
+            Color
+          </div>
+        </mn-nav-bar>
+      </mn-row>
       <mn-row>
         <mn-scroller>
           <mn-section>

@@ -22,14 +22,14 @@
     </mn-row>
     <mn-row fixed>
       <mn-tab-bar>
-        <mn-tab-pane title="Bases" icon="ios-home">
-        </mn-tab-pane>
-        <mn-tab-pane title="Core" icon="ios-albums-outline">
-        </mn-tab-pane>
-        <mn-tab-pane title="More" icon="ios-cloud-outline">
-        </mn-tab-pane>
-        <mn-tab-pane title="Github" icon="ios-people">
-        </mn-tab-pane>
+        <mn-tab-bar-pane title="Bases" icon="ios-home">
+        </mn-tab-bar-pane>
+        <mn-tab-bar-pane title="Core" icon="ios-albums-outline">
+        </mn-tab-bar-pane>
+        <mn-tab-bar-pane title="More" icon="ios-cloud-outline">
+        </mn-tab-bar-pane>
+        <mn-tab-bar-pane title="Github" icon="ios-people">
+        </mn-tab-bar-pane>
       </mn-tab-bar>
     </mn-row>
   </mn-rows>
@@ -108,11 +108,6 @@
                 title: 'search-bar',
                 icon: 'ios-barcode',
                 route: { path: '/components/search-bar' }
-              },
-              {
-                title: 'tab',
-                icon: 'ios-barcode-outline',
-                route: { path: '/components/tab' }
               },
               {
                 title: 'tag',

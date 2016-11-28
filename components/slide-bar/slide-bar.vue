@@ -1,7 +1,7 @@
 <template>
   <div :class="[ `${cssPrefix}slide-wrap` ]" :style="slideWrapStyle">
     <div
-      :class="[ `${cssPrefix}slide-bar`, 'slide-back', { 'is-full': this.isFull } ]"
+      :class="[ `${cssPrefix}slide-bar`, 'is-back', { 'is-full': this.isFull } ]"
       @touchmove="touchmove"
       @touchstart="touchstart"
       @touchend="touchend"

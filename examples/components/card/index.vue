@@ -35,23 +35,6 @@
       DemoCardItem,
       DemoCardMedia,
       DemoCardBtns
-    },
-    data () {
-      return {
-        inlineImage: 'https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg',
-        blockImage: [
-          {
-            min: 0,
-            max: 700,
-            scale: 400 / 200,
-            src: 'https://o9qu3mxgj.qnssl.com/o_1ard82t21s7j9a0184ier9qaa7k.png-cover.md'
-          },
-          {
-            min: 701,
-            src: 'https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg'
-          }
-        ]
-      }
     }
   }
 </script>

@@ -20,7 +20,7 @@ $-slide-bar-item: #{$namespace}slide-bar-item;
   padding: 0 0.5rem;
 }
 
-.is-full {
+.#{$-slide-bar}.is-full {
   width: 100%;
 
   .#{$-slide-bar-item} {
@@ -28,6 +28,6 @@ $-slide-bar-item: #{$namespace}slide-bar-item;
   }
 }
 
-.slide-back {
+.#{$-slide-bar}.is-back {
   transition: 0.5s ease-out;
 }
