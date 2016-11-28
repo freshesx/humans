@@ -110,11 +110,6 @@
                 route: { path: '/components/search-bar' }
               },
               {
-                title: 'tab',
-                icon: 'ios-barcode-outline',
-                route: { path: '/components/tab' }
-              },
-              {
                 title: 'tag',
                 icon: 'ios-pricetags-outline',
                 route: { path: '/components/tag' }
