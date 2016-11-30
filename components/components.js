@@ -15,6 +15,7 @@ import PopupAlert from './popup/alert'
 import PopupToastr from './popup/toastr'
 
 // Form
+import FormLabel from './form/label'
 import FormText from './form/text'
 import FormDatetime from './form/datetime'
 import FormSwitch from './form/switch'
@@ -68,6 +69,7 @@ export default {
   PopupToastr,
 
   // Form
+  FormLabel,
   FormText,
   FormDatetime,
   FormSwitch,
