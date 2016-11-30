@@ -4,25 +4,25 @@
     <mn-card slot="body">
       <!-- date -->
       <mn-card-item>
-        <label slot="addon" class="form-label">Date</label>
+        <mn-form-label slot="addon">Date</mn-form-label>
         <mn-form-datetime slot="body" type="date" v-model="date"></mn-form-datetime>
       </mn-card-item>
 
       <!-- datetime-local -->
       <mn-card-item>
-        <label slot="addon" class="form-label">DateTime</label>
+        <mn-form-label slot="addon">DateTime</mn-form-label>
         <mn-form-datetime slot="body" v-model="datetime"></mn-form-datetime>
       </mn-card-item>
 
       <!-- month -->
       <mn-card-item>
-        <label slot="addon" class="form-label">month</label>
+        <mn-form-label slot="addon">Month</mn-form-label>
         <mn-form-datetime slot="body" type="month" v-model="month"></mn-form-datetime>
       </mn-card-item>
 
       <!-- time -->
       <mn-card-item>
-        <label slot="addon" class="form-label">time</label>
+        <mn-form-label slot="addon">Time</mn-form-label>
         <mn-form-datetime slot="body" type="time" v-model="time"></mn-form-datetime>
       </mn-card-item>
     </mn-card>
