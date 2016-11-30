@@ -3,7 +3,7 @@
     <strong slot="header">Select</strong>
     <mn-card slot="body">
       <mn-card-item type="arrow">
-        <label slot="addon" class="form-label">Language</label>
+        <mn-form-label slot="addon">Language</mn-form-label>
         <mn-form-select slot="body" :options="options" v-model="model.language"></mn-form-select>
       </mn-card-item>
     </mn-card>
