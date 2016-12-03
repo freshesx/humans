@@ -21,7 +21,12 @@ export default {
      * @example function (resolve) { require(['./file/path'], resolve) }
      * @type {Function}
      */
-    loading: undefined
+    loading: undefined,
+    /**
+     * Human icon array
+     * @type {Array}
+     */
+    icons: {}
   },
   /**
    * Vue install
@@ -36,7 +41,8 @@ export default {
     Vue.human = {
       prefix: this.options.prefix,
       cssPrefix: this.options.cssPrefix,
-      loading: this.options.loading
+      loading: this.options.loading,
+      icons: this.options.icons
     }
 
     // Alias for human
