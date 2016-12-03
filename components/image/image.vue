@@ -14,9 +14,16 @@
   export default {
     props: {
       options: {
+        // Array: [{ min: Number|Undefined, max: Number|Undefined, src: String }]
+        // String: 'image/src/path'
         type: [Array, String],
         default: ''
-        // [{ min: Number|Undefined, max: Number|Undefined, src: String }]
+      },
+      // circle, rounded
+      type: {
+        type: String,
+        default: false,
+        validator: val => ['circle', 'rounded'].includes(val)
       },
       alt: {
         type: String,
@@ -25,12 +32,6 @@
       title: {
         type: String,
         default: ''
-      },
-      // circle, rounded
-      type: {
-        type: String,
-        default: false,
-        validator: val => ['circle', 'rounded'].includes(val)
       }
     },
     computed: {
