@@ -1,6 +1,7 @@
 @import "../variables";
 
 $-btn: #{$namespace}btn;
+$-icon: #{$namespace}icon;
 $-btn-loading: #{$namespace}btn-loading;
 
 $-btn-style: (
@@ -179,7 +180,6 @@ $-btn-style-outline: (
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  margin-bottom: 1rem;
   height: 3rem;
   padding: 0.5rem 1.5rem;
   border-radius: $base-radius;
@@ -187,6 +187,7 @@ $-btn-style-outline: (
   border: none;
   line-height: 1.4rem;
   outline: none;
+  background: transparent;
 
   //
   // @class .btn.is-sm
@@ -197,6 +198,11 @@ $-btn-style-outline: (
     line-height: 1rem;
     border-radius: $base-radius * 0.75;
     font-size: 0.875rem;
+
+    .#{$-icon} {
+      vertical-align: -5px;
+      margin-top: -6px;
+    }
   }
 
   //
