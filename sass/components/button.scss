@@ -1,15 +1,15 @@
 @import "../variables";
 
-$-btn: #{$namespace}btn;
+$-button: #{$namespace}btn;
 $-icon: #{$namespace}icon;
 
 // Using global variables
-$-btn-style: $button-theme;
+$-button-theme: $button-theme;
 
 //
 // @class .btn
 //
-.#{$-btn} {
+.#{$-button} {
   display: inline-block;
   text-align: center;
   white-space: nowrap;
@@ -146,11 +146,11 @@ $-btn-style: $button-theme;
   }
 }
 
-.#{$-btn} {
+.#{$-button} {
   //
   // @class .btn.is-success, etc.
   //
-  @each $name, $value in $-btn-style {
+  @each $name, $value in $-button-theme {
     @include btn-set-type($name, $value);
   }
 }
