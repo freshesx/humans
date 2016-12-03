@@ -132,4 +132,17 @@ $button-theme: (
     active: (color: darken(#505050, 5%), border: darken(#505050, 5%)),
     disable: (color: lighten(#505050, 5%), border: lighten(#505050, 5%)),
   ),
+  // link
+  primary-link: (
+    normal: (color: $green),
+    hover: (color: darken($green, 10%)),
+    active: (color: darken($green, 10%)),
+    disable: (color: #ccc),
+  ),
+  secondary-link: (
+    normal: (color: #666),
+    hover: (color: #000),
+    active: (color: #000),
+    disable: (color: #ccc),
+  ),
 );
