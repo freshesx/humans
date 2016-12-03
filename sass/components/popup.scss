@@ -1,4 +1,7 @@
+@import "../mixins/media";
+
 $-popup: #{$namespace}popup;
+$-card: #{$namespace}card;
 $-popup-mask: #{$namespace}popup-mask;
 
 .#{$-popup} {
@@ -18,17 +21,20 @@ $-popup-mask: #{$namespace}popup-mask;
   }
 
   &-toastr {
-    width: 100%;
-    top: 0;
-    right: 0;
-    left: 0;
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
     bottom: auto;
-    padding: 1rem 1rem 0;
 
-    > .card {
+    @include min-screen(sm) {
+      max-width: 560px;
+      left: 50%;
+      right: auto;
+      transform: translate(-50%, 0);
+    }
+
+    > .#{$-card} {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      max-width: 500px;
-      margin: 0 auto;
     }
   }
 
