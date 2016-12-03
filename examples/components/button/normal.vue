@@ -7,6 +7,8 @@
       <mn-btn type="error">Cancel</mn-btn>
       <mn-btn type="secondary">Help</mn-btn>
       <mn-btn type="inverse" loading></mn-btn>
+      <mn-btn type="primary-link">Link</mn-btn>
+      <mn-btn type="secondary-link">Link</mn-btn>
     </mn-card-item>
   </mn-card>
 </template>
