@@ -1,9 +1,9 @@
 <template>
-  <div :class="[ `${cssPrefix}image`, { 'is-block': isBlock } ]">
-    <span :class="[ `${cssPrefix}image-loading` ]" v-if="isBlock">
+  <div :class="[ `${cssPrefix}image`, { 'is-block': isBlock, [`is-${type}`]: type } ]">
+    <span :class="[ `${cssPrefix}image-loading` ]" v-if="isLoading">
       <mn-loading-icon></mn-loading-icon>
     </span>
-    <img :src="link" :alt="alt" :title="title">
+    <img :src="link" :alt="alt" :title="title" ref="image">
   </div>
 </template>
 
@@ -25,6 +25,12 @@
       title: {
         type: String,
         default: ''
+      },
+      // circle, rounded
+      type: {
+        type: String,
+        default: false,
+        validator: val => ['circle', 'rounded'].includes(val)
       }
     },
     computed: {
@@ -52,18 +58,31 @@
         this.link = isString(this.options)
           ? this.options
           : this.getViewImage().src
+      },
+      listenSize () {
+        readyAndResize(() => {
+          this.setViewLink()
+        })
+      },
+      listenImageComplete () {
+        let timer = setInterval(() => {
+          if (this.$refs.image.complete) {
+            clearInterval(timer)
+            this.isLoading = false
+          }
+        }, 500)
       }
     },
     data () {
       return {
         link: '',
-        isBlock: false
+        isBlock: false,
+        isLoading: true
       }
     },
     mounted () {
-      readyAndResize(() => {
-        this.setViewLink()
-      })
+      this.listenSize()
+      this.listenImageComplete()
     },
     destoryed () {
       // unbind window resize
