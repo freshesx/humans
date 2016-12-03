@@ -10,9 +10,16 @@ import Toastr from './toastr'
  * @param  {Boolean}  options.show            show or hide, default hide
  * @return {Object}                           Vue component instance
  */
-function buildComponent ({ Vue, ComponentClass, show }) {
+function buildComponent ({ Vue, ComponentClass }, options) {
+  // Build component
   const component = element(ComponentClass, { Vue })
-  component.show = show
+
+  // Change component data by options
+  for (var variable in options) {
+    if (options.hasOwnProperty(variable) && component.hasOwnProperty(variable)) {
+      component[variable] = options[variable]
+    }
+  }
   return component
 }
 
@@ -25,7 +32,7 @@ export default {
      * @return {Object}                Vue component instance
      */
     Vue.human.popup = (ComponentClass, options = {}) => {
-      return buildComponent(Object.assign(options, { Vue, ComponentClass }))
+      return buildComponent({ Vue, ComponentClass }, options)
     }
 
     /**
