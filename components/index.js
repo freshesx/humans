@@ -2,7 +2,6 @@ import components from './components'
 import element from './util/element'
 import popup from './popup'
 import scroller from './scroller'
-import loading from './loading'
 import browser from './util/browser'
 
 export default {
@@ -22,7 +21,12 @@ export default {
      * @example function (resolve) { require(['./file/path'], resolve) }
      * @type {Function}
      */
-    loading: undefined
+    loading: undefined,
+    /**
+     * Human icon array
+     * @type {Array}
+     */
+    icons: {}
   },
   /**
    * Vue install
@@ -37,7 +41,8 @@ export default {
     Vue.human = {
       prefix: this.options.prefix,
       cssPrefix: this.options.cssPrefix,
-      loading: this.options.loading
+      loading: this.options.loading,
+      icons: this.options.icons
     }
 
     // Alias for human
@@ -47,7 +52,6 @@ export default {
     Vue.use(scroller)
     Vue.use(element)
     Vue.use(popup)
-    Vue.use(loading)
     Vue.use(browser)
 
     // Vue load components

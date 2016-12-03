@@ -1,8 +1,16 @@
+// Namespace
 $-image: #{$namespace}image;
 $-image-loading: #{$namespace}image-loading;
 
+// Using global base radius
+$-rounded-radius: $base-radius;
+
+//
+// @class .image
+//
 .#{$-image} {
   display: inline-block;
+  overflow: hidden;
 
   > img {
     margin: 0;
@@ -11,19 +19,27 @@ $-image-loading: #{$namespace}image-loading;
 
   &.is-block {
     display: block;
-    overflow: hidden;
     background: #eee;
     position: relative;
 
     > img {
       display: block;
-      position: absolute;
       width: 100%;
-      z-index: 20;
     }
+  }
+
+  &.is-circle {
+    border-radius: 50%;
+  }
+
+  &.is-rounded {
+    border-radius: $-rounded-radius;
   }
 }
 
+//
+// @class image-loading
+//
 .#{$-image-loading} {
   display: block;
   position: absolute;

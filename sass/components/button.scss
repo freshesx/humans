@@ -1,74 +1,63 @@
 @import "../variables";
 
-$-btn: #{$namespace}btn;
-$-btn-loading: #{$namespace}btn-loading;
+$-button: #{$namespace}btn;
+$-icon: #{$namespace}icon;
 
-$-btn-style: (
-  primary: (
-    normal: (bg: $green, color: #fff),
-    hover: (bg: darken($green, 10%)),
-    active: (bg: darken($green, 16%)),
-    disable: (bg: lighten($green, 16%)),
-  ),
-  warning: (
-    normal: (bg: $orange, color: #fff),
-    hover: (bg: darken($orange, 5%)),
-    active: (bg: darken($orange, 8%)),
-    disable: (bg: lighten($orange, 16%)),
-  ),
-  error: (
-    normal: (bg: $pink, color: #fff),
-    hover: (bg: darken($pink, 20%)),
-    active: (bg: darken($pink, 20%)),
-    disable: (bg: lighten($pink, 16%)),
-  ),
-  secondary: (
-    normal: (bg: #d9d9d9),
-    hover: (bg: darken(#d9d9d9, 10%)),
-    active: (bg: darken(#d9d9d9, 10%)),
-    disable: (bg: darken(#d9d9d9, 10%), color: darken(#d9d9d9, 30%)),
-  ),
-  inverse: (
-    normal: (bg: #505050, color: #fff),
-    hover: (bg: lighten(#505050, 5%)),
-    active: (bg: darken(#505050, 5%)),
-    disable: (bg: lighten(#505050, 5%), color: lighten(#505050, 30%)),
-  ),
-);
+// Using global variables
+$-button-theme: $button-theme;
 
-$-btn-style-outline: (
-  primary: (
-    normal: (color: $green, border: $green),
-    hover: (color: darken($green, 10%), border: darken($green, 10%)),
-    active: (color: darken($green, 16%), border: darken($green, 16%)),
-    disable: (color: lighten($green, 16%), border: lighten($green, 16%)),
-  ),
-  warning: (
-    normal: (color: $orange, border: $orange),
-    hover: (color: darken($orange, 5%), border: darken($orange, 5%)),
-    active: (color: darken($orange, 8%), border: darken($orange, 8%)),
-    disable: (color: lighten($orange, 16%), border: lighten($orange, 16%)),
-  ),
-  error: (
-    normal: (color: $pink, border: $pink),
-    hover: (color: darken($pink, 20%), border: darken($pink, 20%)),
-    active: (color: darken($pink, 20%), border: darken($pink, 20%)),
-    disable: (color: lighten($pink, 16%), border: lighten($pink, 16%)),
-  ),
-  secondary: (
-    normal: (color: #d9d9d9, border: #d9d9d9),
-    hover: (color: darken(#d9d9d9, 10%), border: darken(#d9d9d9, 10%)),
-    active: (color: darken(#d9d9d9, 10%), border: darken(#d9d9d9, 10%)),
-    disable: (color: darken(#d9d9d9, 10%), border: darken(#d9d9d9, 10%)),
-  ),
-  inverse: (
-    normal: (color: #505050, border: #505050),
-    hover: (color: lighten(#505050, 5%), border: lighten(#505050, 5%)),
-    active: (color: darken(#505050, 5%), border: darken(#505050, 5%)),
-    disable: (color: lighten(#505050, 5%), border: lighten(#505050, 5%)),
-  ),
-);
-// @todo:Whether to reduce it
+//
+// @class .btn
+//
+.#{$-button} {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  height: 3rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: $base-radius;
+  text-decoration: none;
+  border: none;
+  line-height: 1.4rem;
+  outline: none;
+  background: transparent;
+
+  &.is-sm {
+    height: 2rem;
+    padding: 0.5rem 1rem;
+    line-height: 1rem;
+    border-radius: $base-radius * 0.75;
+    font-size: 0.875rem;
+
+    .#{$-icon} {
+      vertical-align: -5px;
+      margin-top: -6px;
+    }
+  }
+
+  &.is-circle {
+    padding: 0;
+    width: 3rem;
+    border-radius: 1.5rem;
+  }
+
+  &.is-block {
+    display: block;
+    width: 100%;
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+  }
+
+  &.is-circle.is-sm {
+    width: 2rem;
+    border-radius: 1rem;
+  }
+}
 
 //
 // @class .btn.btn-primary, etc.
@@ -93,20 +82,8 @@ $-btn-style-outline: (
 
   @if map-get($options, "border") {
     border-color: map-get($options, "border");
-  }
-}
-
-@mixin btn-bg-color-outline ($options) {
-  @if map-get($options, "bg") {
-    background-color: map-get($options, "bg");
-  }
-
-  @if map-get($options, "color") {
-    color: map-get($options, "color");
-  }
-
-  @if map-get($options, "border") {
-    border: 1px solid map-get($options, "border");
+    border-width: 1px;
+    border-style: solid;
   }
 }
 
@@ -169,115 +146,11 @@ $-btn-style-outline: (
   }
 }
 
-//
-// @class .btn
-//
-.#{$-btn} {
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  user-select: none;
-  margin-bottom: 1rem;
-  height: 3rem;
-  padding: 0.5rem 1.5rem;
-  border-radius: $base-radius;
-  text-decoration: none;
-  border: none;
-  line-height: 1.4rem;
-  outline: none;
-
-  //
-  // @class .btn.is-sm
-  //
-  &.is-sm {
-    height: 2rem;
-    padding: 0.5rem 1rem;
-    line-height: 1rem;
-    border-radius: $base-radius * 0.75;
-    font-size: 0.875rem;
-  }
-
-  //
-  // @class .btn.is-block
-  //
-  &.is-block {
-    display: block;
-    width: 100%;
-  }
-
-  //
-  // @class .btn.is-disabled
-  //
-  &.is-disabled {
-    cursor: not-allowed;
-  }
-
-  //
-  // @class .is-circle
-  //
-  &.is-circle {
-    padding: 0;
-    width: 3rem;
-    border-radius: 1.5rem;
-
-    &.is-sm {
-      width: 2rem;
-      border-radius: 1rem;
-    }
-  }
-
+.#{$-button} {
   //
   // @class .btn.is-success, etc.
   //
-  @each $name, $value in $-btn-style {
+  @each $name, $value in $-button-theme {
     @include btn-set-type($name, $value);
   }
-
-  //
-  // @class .is-outline
-  //
-  &.is-outline {
-    background: transparent !important;
-    border: 1px solid;
-    //
-    // @class .btn.is-outline.is-success, etc.
-    //
-    @each $name, $value in $-btn-style-outline {
-      @include btn-set-type($name, $value);
-    }
-  }
-}
-
-//
-// @animation btn-rotate
-//
-@keyframes btn-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(180deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-//
-// @class .btn-loading
-//
-.#{$-btn-loading} {
-  border: 2px solid #fff;
-  border-radius: 100%;
-  border-bottom-color: transparent;
-  height: 1.2rem;
-  width: 1.2rem;
-  background: transparent !important;
-  display: inline-block;
-  animation: btn-rotate 0.75s 0s linear infinite;
-  vertical-align: middle;
 }

@@ -23,7 +23,7 @@ $-tag-style: (
   background-color: #000;
 
   // is-primary, is-secondary, is-error etc.
-  @each $name, $value in $-btn-style {
+  @each $name, $value in $-tag-style {
     &.is-#{$name} {
       @include get-color($name);
     }
