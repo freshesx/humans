@@ -4,6 +4,9 @@
       <slot name="body"></slot>
       <slot></slot>
     </div>
+    <div :class="[ `${cssPrefix}letter-action` ]" v-if="$slots.action">
+      <slot name="action"></slot>
+    </div>
   </div>
 </template>
 
