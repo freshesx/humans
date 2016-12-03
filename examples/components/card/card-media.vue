@@ -6,7 +6,7 @@
       <mn-icon slot="addon" name="ios-navigate"></mn-icon>
     </mn-card-item>
     <mn-card-media>
-      <mn-block-image :options="blockImage"></mn-block-image>
+      <mn-block-image :options="blockImage" type="rounded"></mn-block-image>
     </mn-card-media>
     <mn-card-item>
       <p>
