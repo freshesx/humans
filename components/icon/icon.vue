@@ -9,6 +9,8 @@
 </template>
 
 <script>
+  import { getMergeIcons } from './merge-icons'
+
   export default {
     props: {
       name: {
@@ -46,7 +48,7 @@
     },
     data () {
       return {
-        icons: require('./icons.json')
+        icons: getMergeIcons()
       }
     }
   }
