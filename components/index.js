@@ -2,7 +2,6 @@ import components from './components'
 import element from './util/element'
 import popup from './popup'
 import scroller from './scroller'
-import loading from './loading'
 import browser from './util/browser'
 
 export default {
@@ -47,7 +46,6 @@ export default {
     Vue.use(scroller)
     Vue.use(element)
     Vue.use(popup)
-    Vue.use(loading)
     Vue.use(browser)
 
     // Vue load components
