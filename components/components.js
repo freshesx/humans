@@ -22,6 +22,7 @@ import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import FormCounter from './form/counter'
 import FormRadio from './form/radio'
+import FormCheckbox from './form/checkbox'
 import FormRadioCard from './form/radio-card'
 import FormCheckboxCard from './form/checkbox-card'
 
@@ -77,6 +78,7 @@ export default {
   FormSelect,
   FormCounter,
   FormRadio,
+  FormCheckbox,
   FormRadioCard,
   FormCheckboxCard,
 
