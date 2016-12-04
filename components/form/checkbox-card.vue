@@ -5,7 +5,7 @@
         {{ option.label }}
       </template>
       <template slot="action">
-        <mn-icon :class="[`${cssPrefix}form-checkbox-checkmark`, { 'is-active': getChecked(option) }]" :name="getIconName(option)" :scale="1.5"></mn-icon>
+        <mn-form-checkbox :checked="getChecked(option)"></mn-form-checkbox>
       </template>
     </mn-card-item>
   </mn-card>
