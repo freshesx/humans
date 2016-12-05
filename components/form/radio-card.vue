@@ -4,9 +4,7 @@
       <template slot="body">
         {{ option.label }}
       </template>
-      <template slot="action">
-        <mn-icon :class="[`${cssPrefix}form-radio-checkmark`]" name="ios-checkmark-empty" :scale="2" v-if="option.value === value"></mn-icon>
-      </template>
+      <mn-form-radio slot="action" :checked="option.value === value"></mn-form-radio>
     </mn-card-item>
   </mn-card>
 </template>

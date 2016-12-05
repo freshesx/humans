@@ -105,11 +105,6 @@
                 route: { path: '/components/form' }
               },
               {
-                title: 'search-bar',
-                icon: 'ios-barcode',
-                route: { path: '/components/search-bar' }
-              },
-              {
                 title: 'tag',
                 icon: 'ios-pricetags-outline',
                 route: { path: '/components/tag' }

@@ -21,6 +21,8 @@ import FormDatetime from './form/datetime'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import FormCounter from './form/counter'
+import FormRadio from './form/radio'
+import FormCheckbox from './form/checkbox'
 import FormRadioCard from './form/radio-card'
 import FormCheckboxCard from './form/checkbox-card'
 
@@ -40,7 +42,7 @@ import NavBar from './nav-bar/nav-bar'
 import TabBar from './tab-bar/tab-bar'
 import TabBarItem from './tab-bar/tab-bar-item'
 import TabBarPane from './tab-bar/tab-bar-pane'
-import SearchBar from './search-bar/search'
+import SearchBar from './search-bar/search-bar'
 import FilterBar from './filter-bar/filter-bar'
 import FilterBarItem from './filter-bar/filter-bar-item'
 import Tag from './tag/tag'
@@ -75,6 +77,8 @@ export default {
   FormSwitch,
   FormSelect,
   FormCounter,
+  FormRadio,
+  FormCheckbox,
   FormRadioCard,
   FormCheckboxCard,
 

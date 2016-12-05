@@ -9,7 +9,9 @@
               <small>icons</small>
             </mn-letter>
 
-            <mn-search-bar v-model="searchName"></mn-search-bar>
+            <mn-search-bar :class="[ 'has-two-margin-bottom', 'has-white-bg' ]">
+              <mn-form-text v-model="searchName"></mn-form-text>
+            </mn-search-bar>
 
             <mn-cols>
               <mn-col query="xs-6 sm-4" v-for="(icon, key) in searchIcons">

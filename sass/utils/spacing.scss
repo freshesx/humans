@@ -1,0 +1,41 @@
+@import "../variables";
+
+//
+// @class .has-{none, one, two...}-{margin, padding}-{top, right, bottom, left, x, y, all}
+//
+@each $prop in (margin, padding) {
+  @each $direction in (top, right, bottom, left, x, y, all) {
+    @each $abbrev, $number in (none: 0, one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8) {
+      .has-#{$abbrev}-#{$prop}-#{$direction} {
+        // unit 1 == 0.5rem
+        $gutter: $grid-gutters * 0.5 * $number;
+
+        @if $direction == x {
+          #{$prop}: {
+            left: $gutter !important;
+            right: $gutter !important;
+          }
+        }
+
+        @else if $direction == y {
+          #{$prop}: {
+            top: $gutter !important;
+            bottom: $gutter !important;
+          }
+        }
+
+        @else if $direction == all {
+          #{$prop}: $gutter !important;
+        }
+
+        @else {
+          #{$prop}-#{$direction}: $gutter !important;
+        }
+      }
+    }
+  }
+}
+
+.has-center-text {
+  text-align: center !important;
+}
