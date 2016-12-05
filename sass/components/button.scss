@@ -25,6 +25,10 @@ $-button-theme: $button-theme;
   outline: none;
   background: transparent;
 
+  &.is-margin-bottom {
+    margin-bottom: 0.5rem;
+  }
+
   &.is-sm {
     height: 2rem;
     padding: 0.5rem 1rem;

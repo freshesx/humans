@@ -45,6 +45,10 @@
       outline: {
         type: Boolean,
         default: false
+      },
+      margin: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
@@ -74,6 +78,9 @@
 
         // outline
         classes['is-outline'] = this.outline
+
+        // margin bottom
+        classes['is-margin-bottom'] = this.margin
 
         return classes
       }
