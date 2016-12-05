@@ -1,12 +1,13 @@
 //
-// Import bases, components, etc.
+// Bases
 //
 @import "bases/normalize";
 @import "bases/reboot";
-@import "bases/colors";
 @import "bases/typography";
 @import "bases/code";
-@import "bases/spacing";
+//
+// Components
+//
 @import "components/section";
 @import "components/column";
 @import "components/row";
@@ -27,3 +28,8 @@
 @import "components/collapse";
 @import "components/slide-bar";
 @import "components/loading";
+//
+// Utils
+//
+@import "utils/colors";
+@import "utils/spacing";
