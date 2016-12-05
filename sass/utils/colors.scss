@@ -22,11 +22,11 @@ $-colors-schema: (
 // @class .is-red-bg
 //
 @each $name, $color in $-colors-schema {
-  .is-#{$name}-text {
+  .has-#{$name}-text {
     color: $color;
   }
 
-  .is-#{$name}-bg {
+  .has-#{$name}-bg {
     background: $color;
   }
 }
