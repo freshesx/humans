@@ -1,15 +1,15 @@
 <template>
   <mn-popup :show="show" :classes="[`${cssPrefix}popup-dialog`]">
-    <mn-card class="m-b-0">
+    <mn-card class="has-none-margin-bottom">
       <mn-card-item>
-        <div class="is-center-text">
+        <div class="has-center-text">
           <h4>{{ title }}</h4>
           <small>{{ description }}</small>
         </div>
       </mn-card-item>
       <mn-card-btns type="column">
-        <button class="is-blue-text" @click="cancel">{{ cancelText }}</button>
-        <button class="is-blue-text" @click="confirm">{{ confirmText }}</button>
+        <button class="has-blue-text" @click="cancel">{{ cancelText }}</button>
+        <button class="has-blue-text" @click="confirm">{{ confirmText }}</button>
       </mn-card-btns>
     </mn-card>
   </mn-popup>
