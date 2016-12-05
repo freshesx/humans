@@ -2,7 +2,7 @@
 
 # Vue Human
 
-> vue-human 2.0-beta.10
+> vue-human 2.0-beta.11
 > for vue2
 
 # Install in your application
