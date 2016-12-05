@@ -9,7 +9,7 @@
       <mn-card-item>
         <mn-form-label slot="addon">Password</mn-form-label>
         <mn-form-text slot="body" type="password" v-model="password" placeholder="password"></mn-form-text>
-        <mn-icon slot="help" name="ios-information" class="is-pink-text"></mn-icon>
+        <mn-icon slot="help" name="ios-information" class="has-pink-text"></mn-icon>
       </mn-card-item>
       <mn-card-item>
         <mn-form-label slot="addon">Phone</mn-form-label>

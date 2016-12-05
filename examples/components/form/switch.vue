@@ -2,7 +2,7 @@
   <mn-card-wrapper>
     <strong slot="header">Switch</strong>
     <template slot="footer">
-      <mn-icon name="information-circled" :scale="0.9"></mn-icon>
+      <mn-icon name="ios-information-outline"></mn-icon>
       Add some help for your user.
     </template>
     <mn-card slot="body">
