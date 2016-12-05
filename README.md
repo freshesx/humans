@@ -2,7 +2,7 @@
 
 # Vue Human
 
-> vue-human 2.0-beta
+> vue-human 2.0-beta.10
 > for vue2
 
 # Install in your application
@@ -10,7 +10,7 @@
 Step 1: In your terminal
 
 ``` bash
-$ yarn add vue-human // or using `npm install --save vue-human`
+$ yarn add vue-human
 ```
 
 Step 2: Must set babel in your webpack
@@ -30,7 +30,7 @@ Step 3: Import vue-human
 ``` javascript
 import Vue from 'vue'
 import VueHuman from 'vue-human'
-import "../node_modules/vue-human/sass/human.scss"
+import "vue-human/sass/human.scss"
 
 Vue.use(VueHuman)
 ```
