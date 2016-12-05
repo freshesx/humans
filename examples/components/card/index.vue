@@ -7,10 +7,10 @@
             <mn-letter>
               <template slot="body">
                 <h1>Card</h1>
-                <small>card, header, block, lists, item, button</small>
+                <small>card</small>
               </template>
               <template slot="action">
-                <mn-btn type="primary" size="sm"><mn-icon name="ios-navigate"></mn-icon> New</mn-btn>
+                <mn-btn type="primary" size="sm">New</mn-btn>
                 <mn-btn size="sm">Link</mn-btn>
                 <mn-btn size="sm"><mn-icon name="ios-navigate"></mn-icon></mn-btn>
               </template>
