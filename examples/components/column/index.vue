@@ -5,7 +5,7 @@
         <mn-scroller>
           <mn-section>
             <mn-letter>
-              <h1>Flex</h1>
+              <h1>Columns</h1>
               <small>cols, col</small>
             </mn-letter>
 
@@ -14,13 +14,13 @@
               <mn-card-item>
                 <mn-cols>
                   <mn-col query="xs-3" v-for="i in [1, 2, 3, 4]">
-                    <div class="sp-holder is-purple-bg"></div>
+                    <div class="sp-holder has-purple-bg"></div>
                   </mn-col>
                   <mn-col query="xs-4" v-for="i in [1, 2, 3]">
-                    <div class="sp-holder is-purple-bg"></div>
+                    <div class="sp-holder has-purple-bg"></div>
                   </mn-col>
                   <mn-col query="xs-12">
-                    <div class="sp-holder is-purple-bg"></div>
+                    <div class="sp-holder has-purple-bg"></div>
                   </mn-col>
                 </mn-cols>
               </mn-card-item>
@@ -31,24 +31,24 @@
               <mn-card-item>
                 <mn-cols>
                   <mn-col query="xs-4">
-                    <div class="sp-holder is-yellow-bg">
+                    <div class="sp-holder has-yellow-bg">
                       is-xs-4
                     </div>
                   </mn-col>
                   <mn-col query="xs-8">
-                    <div class="sp-holder is-orange-bg">
+                    <div class="sp-holder has-orange-bg">
                       is-xs-8
                     </div>
                   </mn-col>
                 </mn-cols>
                 <mn-cols gapless>
                   <mn-col query="xs-4">
-                    <div class="sp-holder sp-left-gapless is-yellow-bg">
+                    <div class="sp-holder sp-left-gapless has-yellow-bg">
                       is-xs-4
                     </div>
                   </mn-col>
                   <mn-col query="xs-8">
-                    <div class="sp-holder sp-right-gapless is-orange-bg">
+                    <div class="sp-holder sp-right-gapless has-orange-bg">
                       is-xs-8
                     </div>
                   </mn-col>

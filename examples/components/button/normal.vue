@@ -2,13 +2,13 @@
   <mn-card>
     <mn-card-item>Button</mn-card-item>
     <mn-card-item>
-      <mn-btn type="primary" @click.native.prevent="say('Hi')"><mn-icon name="navicon-round"></mn-icon> Confirm</mn-btn>
-      <mn-btn type="warning">Are you sure?</mn-btn>
-      <mn-btn type="error">Cancel</mn-btn>
-      <mn-btn type="secondary">Help</mn-btn>
-      <mn-btn type="inverse" loading></mn-btn>
-      <mn-btn type="primary-link">Link</mn-btn>
-      <mn-btn type="secondary-link">Link</mn-btn>
+      <mn-btn type="primary" @click.native.prevent="say('Hi')" margin><mn-icon name="navicon-round"></mn-icon> Confirm</mn-btn>
+      <mn-btn type="warning" margin>Are you sure?</mn-btn>
+      <mn-btn type="error" margin>Cancel</mn-btn>
+      <mn-btn type="secondary" margin>Help</mn-btn>
+      <mn-btn type="inverse" loading margin></mn-btn>
+      <mn-btn type="primary-link" margin>Link</mn-btn>
+      <mn-btn type="secondary-link" margin>Link</mn-btn>
     </mn-card-item>
   </mn-card>
 </template>

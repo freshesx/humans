@@ -38,12 +38,12 @@
     methods: {
       getBoxClass (className) {
         return {
-          [`is-${className}-bg`]: true
+          [`has-${className}-bg`]: true
         }
       },
       getTextClass (className) {
         return {
-          [`is-${className}-text`]: true
+          [`has-${className}-text`]: true
         }
       }
     },

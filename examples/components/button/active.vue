@@ -2,11 +2,11 @@
   <mn-card>
     <mn-card-item>Button active</mn-card-item>
     <mn-card-item>
-      <mn-btn type="primary" active>Confirm</mn-btn>
-      <mn-btn type="warning" active>Are you sure?</mn-btn>
-      <mn-btn type="error" active>Cancel</mn-btn>
-      <mn-btn type="secondary" active>Help</mn-btn>
-      <mn-btn type="inverse" active>Off</mn-btn>
+      <mn-btn type="primary" active margin>Confirm</mn-btn>
+      <mn-btn type="warning" active margin>Are you sure?</mn-btn>
+      <mn-btn type="error" active margin>Cancel</mn-btn>
+      <mn-btn type="secondary" active margin>Help</mn-btn>
+      <mn-btn type="inverse" active margin>Off</mn-btn>
     </mn-card-item>
   </mn-card>
 </template>
