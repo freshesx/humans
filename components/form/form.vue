@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submit">
+  <form @submit.prevent="submit" novalidate>
     <slot></slot>
   </form>
 </template>
@@ -9,7 +9,7 @@
 
   export default {
     props: {
-      value: [Array, Object],
+      value: Object,
       models: Object,
       rules: Object
     },
@@ -22,30 +22,39 @@
         }
       }
     },
+    watch: {
+      models: {
+        deep: true,
+        handler () {
+          this.validate().then().catch()
+        }
+      }
+    },
     methods: {
       submit () {
-        // Before validate
-        this.form.$loading = true
-        this.form.$checked = true
-        this.$emit('input', this.form)
+        this.validate().then(() => {
+          this.$emit('submit', true)
+        }).catch(() => {
+          this.$emit('submit', false)
+        })
+      },
+      validate () {
+        return new Promise((resolve, reject) => {
+          // Before validate
+          this.form.$loading = true
+          this.form.$checked = true
+          this.$emit('input', this.form)
 
-        // Build validate schema
-        const validator = new Schema(this.rules)
+          // Build validate schema
+          const validator = new Schema(this.rules)
 
-        // Async validate
-        validator.validate(this.models, (errors, form) => {
-          if (errors) {
-            // Validate error
+          // Async validate
+          validator.validate(this.models, (errors, form) => {
+            this.form.$valid = !!errors
             this.form.$loading = false
-            this.form.$valid = false
             this.$emit('input', { ...this.form, ...form })
-          } else {
-            // Validate success, and emit submit
-            this.form.$loading = false
-            this.form.$valid = true
-            this.$emit('input', { ...this.form, ...form })
-            this.$emit('submit')
-          }
+            errors ? reject(form) : resolve(form)
+          })
         })
       }
     },
