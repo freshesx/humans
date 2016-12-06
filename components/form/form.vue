@@ -34,8 +34,10 @@
       submit () {
         this.validate().then(() => {
           this.$emit('submit', true)
+          this.$emit('success')
         }).catch(() => {
           this.$emit('submit', false)
+          this.$emit('fail')
         })
       },
       validate () {
