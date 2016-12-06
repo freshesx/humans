@@ -26,12 +26,19 @@
       models: {
         deep: true,
         handler () {
-          this.validate().then().catch()
+          // After first submit
+          if (this.form.$checked) {
+            this.validate().then().catch()
+          }
         }
       }
     },
     methods: {
       submit () {
+        // First using submit method, set checked true
+        this.form.$checked = true
+
+        // Validate and emit
         this.validate().then(() => {
           this.$emit('submit', true)
           this.$emit('success')
@@ -44,7 +51,7 @@
         return new Promise((resolve, reject) => {
           // Before validate
           this.form.$loading = true
-          this.form.$checked = true
+          // this.form.$checked = true
           this.$emit('input', this.form)
 
           // Build validate schema
