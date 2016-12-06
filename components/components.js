@@ -17,6 +17,7 @@ import PopupToastr from './popup/toastr'
 // Form
 import Form from './form/form'
 import FormLabel from './form/label'
+import FormHelper from './form/helper'
 import FormText from './form/text'
 import FormDatetime from './form/datetime'
 import FormSwitch from './form/switch'
@@ -74,6 +75,7 @@ export default {
   // Form
   Form,
   FormLabel,
+  FormHelper,
   FormText,
   FormDatetime,
   FormSwitch,

@@ -1,6 +1,7 @@
 @import "../variables";
 
 $-form-label: #{$namespace}form-label;
+$-form-helper: #{$namespace}form-helper;
 $-form-text: #{$namespace}form-text;
 $-form-radio: #{$namespace}form-radio;
 $-form-checkbox: #{$namespace}form-checkbox;
@@ -11,6 +12,16 @@ $-form-select-control: #{$namespace}form-select-control;
 .#{$-form-label} {
   display: block;
   width: 6rem;
+
+  &.is-error {
+    color: $pink;
+  }
+}
+
+.#{$-form-helper} {
+  &.is-error {
+    color: $pink;
+  }
 }
 
 .#{$-form-switch-control} {
