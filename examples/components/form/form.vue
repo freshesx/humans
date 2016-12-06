@@ -35,6 +35,18 @@
         <mn-form-helper :validate="validation.like"></mn-form-helper>
       </template>
     </mn-card-wrapper>
+    <!-- Policy -->
+    <mn-card-wrapper>
+      <mn-card slot="body">
+        <mn-card-item>
+          <template slot="body">Agree Terms & Policy</template>
+          <mn-form-switch slot="action" :data="true" v-model="models.policy"></mn-form-switch>
+        </mn-card-item>
+      </mn-card>
+      <template slot="footer">
+        <mn-form-helper :validate="validation.policy"></mn-form-helper>
+      </template>
+    </mn-card-wrapper>
 
     <mn-btn type="primary" block :loading="validation.$loading">Submit</mn-btn>
   </mn-form>
@@ -49,7 +61,8 @@
           username: undefined,
           password: undefined,
           sex: undefined,
-          like: []
+          like: [],
+          policy: true
         },
         rules: {
           username: [
@@ -60,12 +73,9 @@
             { type: 'string', required: true },
             { min: 6, max: 20 }
           ],
-          sex: [
-            { type: 'string', required: true }
-          ],
-          like: [
-            { type: 'array', required: true }
-          ]
+          sex: { type: 'string', required: true },
+          like: { type: 'array', required: true },
+          policy: { type: 'boolean', required: true }
         },
         sexOptions: [
           { label: 'Male', value: 'Male' },
