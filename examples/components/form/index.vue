@@ -14,14 +14,7 @@
 
             <mn-cols>
               <mn-col query="sm-6">
-                <form-radio></form-radio>
-                <form-checkbox></form-checkbox>
-                <form-basic></form-basic>
-                <form-date></form-date>
-                <form-switch></form-switch>
-                <form-select></form-select>
-                <form-counter></form-counter>
-                <mn-btn type="primary" block>Submit</mn-btn>
+                <demo-form></demo-form>
               </mn-col>
             </mn-cols>
           </mn-section>
@@ -40,6 +33,7 @@
   import FormSelect from './select'
   import FormCounter from './counter'
   import DemoFilterBar from '../filter-bar'
+  import DemoForm from './form'
 
   export default {
     components: {
@@ -50,7 +44,8 @@
       FormSwitch,
       FormSelect,
       FormCounter,
-      DemoFilterBar
+      DemoFilterBar,
+      DemoForm
     }
   }
 </script>
