@@ -1,5 +1,6 @@
 <template>
   <mn-form :models="models" :rules="rules" v-model="validation" @submit="submit">
+    <!-- FRESH ID and password -->
     <mn-card-wrapper>
       <strong slot="header">FRESH ID and password</strong>
       <mn-card slot="body">
@@ -18,6 +19,15 @@
         <mn-form-helper :validate="validation.password"></mn-form-helper>
       </template>
     </mn-card-wrapper>
+    <!-- sex -->
+    <mn-card-wrapper>
+      <strong slot="header">Choose your sex</strong>
+      <mn-form-radio-card slot="body" :options="sexOptions" v-model="models.sex"></mn-form-radio-card>
+      <template slot="footer">
+        <mn-form-helper :validate="validation.sex"></mn-form-helper>
+      </template>
+    </mn-card-wrapper>
+
     <mn-btn type="primary" block :loading="validation.$loading">Submit</mn-btn>
   </mn-form>
 </template>
@@ -28,8 +38,9 @@
       return {
         validation: {},
         models: {
-          username: '',
-          password: ''
+          username: undefined,
+          password: undefined,
+          sex: undefined
         },
         rules: {
           username: [
@@ -39,8 +50,15 @@
           password: [
             { type: 'string', required: true },
             { min: 6, max: 20 }
+          ],
+          sex: [
+            { type: 'string', required: true }
           ]
-        }
+        },
+        sexOptions: [
+          { label: 'Male', value: 'male' },
+          { label: 'Female', value: 'female' }
+        ]
       }
     },
     methods: {
