@@ -1,5 +1,5 @@
 <template>
-  <mn-form :models="models" :rules="rules" v-model="validation" @submit="submit">
+  <mn-form :models="models" :rules="rules" v-model="validation" @success="success">
     <!-- FRESH ID and password -->
     <mn-card-wrapper>
       <strong slot="header">FRESH ID and password</strong>
@@ -62,8 +62,12 @@
       }
     },
     methods: {
-      submit () {
-        this.$human.toastr({ show: true, description: '数据验证成功' })
+      success () {
+        this.$human.toastr({
+          show: true,
+          type: 'primary',
+          description: '数据验证成功'
+        })
       }
     }
   }
