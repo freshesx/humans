@@ -8,8 +8,8 @@
         <mn-scroller>
           <mn-section>
             <mn-letter>
-              <h1>Form</h1>
-              <small>input, radio, switch, select</small>
+              <h1>Sign Up</h1>
+              <small>form and validate</small>
             </mn-letter>
 
             <mn-cols>
