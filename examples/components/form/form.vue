@@ -10,7 +10,7 @@
         </mn-card-item>
         <mn-card-item>
           <mn-form-label slot="addon" :validate="validation.password">Password</mn-form-label>
-          <mn-form-text slot="body" v-model="models.password" placeholder="Password"></mn-form-text>
+          <mn-form-text slot="body" type="password" v-model="models.password" placeholder="Password"></mn-form-text>
         </mn-card-item>
       </mn-card>
       <template slot="footer">
@@ -27,6 +27,14 @@
         <mn-form-helper :validate="validation.sex"></mn-form-helper>
       </template>
     </mn-card-wrapper>
+    <!-- Like -->
+    <mn-card-wrapper>
+      <strong slot="header">What do you like?</strong>
+      <mn-form-checkbox-card slot="body" :options="likeOptions" v-model="models.like"></mn-form-checkbox-card>
+      <template slot="footer">
+        <mn-form-helper :validate="validation.like"></mn-form-helper>
+      </template>
+    </mn-card-wrapper>
 
     <mn-btn type="primary" block :loading="validation.$loading">Submit</mn-btn>
   </mn-form>
@@ -40,7 +48,8 @@
         models: {
           username: undefined,
           password: undefined,
-          sex: undefined
+          sex: undefined,
+          like: []
         },
         rules: {
           username: [
@@ -53,11 +62,19 @@
           ],
           sex: [
             { type: 'string', required: true }
+          ],
+          like: [
+            { type: 'array', required: true }
           ]
         },
         sexOptions: [
-          { label: 'Male', value: 'male' },
-          { label: 'Female', value: 'female' }
+          { label: 'Male', value: 'Male' },
+          { label: 'Female', value: 'Female' }
+        ],
+        likeOptions: [
+          { label: 'Football', value: 'Football' },
+          { label: 'Basketball', value: 'Basketball' },
+          { label: 'Volleyball', value: 'Volleyball' }
         ]
       }
     },
