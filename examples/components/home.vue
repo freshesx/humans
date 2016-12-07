@@ -10,11 +10,11 @@
 
           <mn-card v-for="menu in menus">
             <mn-card-item>
-              {{ menu.title }}
+              <h5>{{ menu.title }}</h5>
             </mn-card-item>
             <mn-card-item type="link" @click.native="go(sub.route)" v-for="sub in menu.subMenus">
-              <mn-icon slot="addon" :name="sub.icon"></mn-icon>
-              <template slot="body">{{ sub.title }}</template>
+              <mn-card-prefix><mn-icon :name="sub.icon"></mn-icon></mn-card-prefix>
+              <mn-card-body>{{ sub.title }}</mn-card-body>
             </mn-card-item>
           </mn-card>
         </mn-section>
