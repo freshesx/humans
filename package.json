@@ -1,7 +1,7 @@
 {
   "name": "vue-human",
-  "version": "2.0.0-beta.11",
-  "description": "The UI component for Vue, inspired by iOS Human Interface Guidelines",
+  "version": "2.0.0-beta.12",
+  "description": "Human UI for vue2, inspired by iOS Human Interface Guidelines",
   "author": "ChaselWu <chasel.wu@vitualreaty.com>",
   "main": "components/index.js",
   "sass": "sass/human.scss",
@@ -12,9 +12,6 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
-    "unit": "karma start test/unit/karma.conf.js --single-run",
-    "e2e": "node test/e2e/runner.js",
-    "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
