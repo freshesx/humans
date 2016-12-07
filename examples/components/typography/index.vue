@@ -14,8 +14,12 @@
                 <h3 class="card-title">Headings</h3>
               </mn-card-item>
               <mn-card-item v-for="content in contents">
-                <demo-heading slot="body" :level="content.level">{{ content.title }}</demo-heading>
-                <small slot="help">{{ content.description }}</small>
+                <mn-card-body>
+                  <demo-heading :level="content.level">{{ content.title }}</demo-heading>
+                </mn-card-body>
+                <mn-card-suffix muted>
+                  <small>{{ content.description }}</small>
+                </mn-card-suffix>
               </mn-card-item>
             </mn-card>
           </mn-section>
