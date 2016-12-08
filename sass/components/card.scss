@@ -58,7 +58,8 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
 
     &.is-action {
       display: flex;
-      margin: $grid-gutters * -1 0;
+      margin-top: -$grid-gutters;
+      margin-bottom: -$grid-gutters;
       align-items: center;
     }
   }
