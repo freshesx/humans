@@ -2,17 +2,23 @@
 
   <mn-card>
     <mn-card-item>
-      <h5 slot="body">Card media</h5>
-      <mn-icon slot="addon" name="ios-navigate"></mn-icon>
+      <mn-card-prefix>
+        <mn-icon name="ios-navigate"></mn-icon>
+      </mn-card-prefix>
+      <mn-card-body>Card media</mn-card-body>
     </mn-card-item>
+
     <mn-card-media>
       <mn-block-image :options="blockImage" type="rounded"></mn-block-image>
     </mn-card-media>
+
     <mn-card-item>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      </p>
-      <mn-btn class="is-primary is-block">Submit</mn-btn>
+      <mn-card-body>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+        <mn-btn class="is-primary is-block">Submit</mn-btn>
+      </mn-card-body>
     </mn-card-item>
     <mn-card-item>
       <mn-article>

@@ -11,7 +11,9 @@
 
             <mn-card>
               <mn-card-item>
-                <mn-loading-icon></mn-loading-icon> Loading
+                <mn-card-body>
+                  <mn-loading-icon></mn-loading-icon> Loading
+                </mn-card-body>
               </mn-card-item>
             </mn-card>
           </mn-section>

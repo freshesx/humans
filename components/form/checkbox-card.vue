@@ -1,12 +1,13 @@
 <template>
   <mn-card>
     <mn-card-item v-for="option in options" @click.native.prevent="onClick($event, option.value)">
-      <template slot="body">
-        {{ option.label }}
-      </template>
-      <template slot="action">
+      <mn-card-prefix action v-if="!suffix">
         <mn-form-checkbox :checked="getChecked(option)"></mn-form-checkbox>
-      </template>
+      </mn-card-prefix>
+      <mn-card-body>{{ option.label }}</mn-card-body>
+      <mn-card-suffix action v-if="suffix">
+        <mn-form-checkbox :checked="getChecked(option)"></mn-form-checkbox>
+      </mn-card-suffix>
     </mn-card-item>
   </mn-card>
 </template>
@@ -23,7 +24,8 @@
       options: {
         type: Array,
         required: true
-      }
+      },
+      suffix: Boolean
     },
     computed: {
       cssPrefix () {

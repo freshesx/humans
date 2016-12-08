@@ -5,12 +5,20 @@
       <strong slot="header">FRESH ID and password</strong>
       <mn-card slot="body">
         <mn-card-item>
-          <mn-form-label slot="addon" :validate="validation.username">FRESH ID</mn-form-label>
-          <mn-form-text slot="body" v-model="models.username" placeholder="Phone / Email / Username"></mn-form-text>
+          <mn-card-prefix>
+            <mn-form-label :validate="validation.username">FRESH ID</mn-form-label>
+          </mn-card-prefix>
+          <mn-card-body>
+            <mn-form-text v-model="models.username" placeholder="Phone / Email / Username"></mn-form-text>
+          </mn-card-body>
         </mn-card-item>
         <mn-card-item>
-          <mn-form-label slot="addon" :validate="validation.password">Password</mn-form-label>
-          <mn-form-text slot="body" type="password" v-model="models.password" placeholder="Password"></mn-form-text>
+          <mn-card-prefix>
+            <mn-form-label :validate="validation.password">Password</mn-form-label>
+          </mn-card-prefix>
+          <mn-card-body>
+            <mn-form-text type="password" v-model="models.password" placeholder="Password"></mn-form-text>
+          </mn-card-body>
         </mn-card-item>
       </mn-card>
       <template slot="footer">
@@ -39,8 +47,10 @@
     <mn-card-wrapper>
       <mn-card slot="body">
         <mn-card-item>
-          <template slot="body">Agree Terms & Policy</template>
-          <mn-form-switch slot="action" :data="true" v-model="models.policy"></mn-form-switch>
+          <mn-card-body>Agree Terms & Policy</mn-card-body>
+          <mn-card-suffix action>
+            <mn-form-switch :data="true" v-model="models.policy"></mn-form-switch>
+          </mn-card-suffix>
         </mn-card-item>
       </mn-card>
       <template slot="footer">
@@ -48,7 +58,7 @@
       </template>
     </mn-card-wrapper>
 
-    <mn-btn type="primary" block :loading="validation.$loading">Submit</mn-btn>
+    <mn-btn type="primary" margin block :loading="validation.$loading">Submit</mn-btn>
   </mn-form>
 </template>
 

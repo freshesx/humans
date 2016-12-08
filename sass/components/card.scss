@@ -41,29 +41,33 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
     }
   }
 
-  // @todo: merge addon, help, action
-  // left addon
   &-addon {
     flex-shrink: 0;
-    margin-right: $grid-gutters / 2;
+
+    &.is-prefix {
+      margin-right: 0.5rem;
+    }
+
+    &.is-suffix {
+      margin-left: 0.5rem;
+    }
+
+    &.is-muted {
+      color: #666;
+    }
+
+    &.is-action {
+      display: flex;
+      margin-top: -$grid-gutters;
+      margin-bottom: -$grid-gutters;
+      align-items: center;
+    }
   }
 
   // middle body
   &-body {
     flex: 1;
     overflow: hidden;
-  }
-
-  // right action
-  &-action {
-    display: flex;
-    margin: $grid-gutters * -1 0;
-    margin-left: $grid-gutters;
-  }
-
-  // right help
-  &-help {
-    color: #666;
   }
 }
 

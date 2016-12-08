@@ -2,10 +2,10 @@
   <mn-popup :show="show" :classes="[`${cssPrefix}popup-dialog`]">
     <mn-card class="has-none-margin-bottom">
       <mn-card-item>
-        <div class="has-center-text">
+        <mn-card-body class="has-center-text">
           <h4>{{ title }}</h4>
           <small>{{ description }}</small>
-        </div>
+        </mn-card-body>
       </mn-card-item>
       <mn-card-btns type="column">
         <button class="has-blue-text" @click="cancel">{{ cancelText }}</button>

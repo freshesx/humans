@@ -12,47 +12,51 @@
             <mn-card>
               <mn-card-item>Flex column</mn-card-item>
               <mn-card-item>
-                <mn-cols>
-                  <mn-col query="xs-3" v-for="i in [1, 2, 3, 4]">
-                    <div class="sp-holder has-purple-bg"></div>
-                  </mn-col>
-                  <mn-col query="xs-4" v-for="i in [1, 2, 3]">
-                    <div class="sp-holder has-purple-bg"></div>
-                  </mn-col>
-                  <mn-col query="xs-12">
-                    <div class="sp-holder has-purple-bg"></div>
-                  </mn-col>
-                </mn-cols>
+                <mn-card-body>
+                  <mn-cols>
+                    <mn-col query="xs-3" v-for="i in [1, 2, 3, 4]">
+                      <div class="holder has-purple-bg"></div>
+                    </mn-col>
+                    <mn-col query="xs-4" v-for="i in [1, 2, 3]">
+                      <div class="holder has-purple-bg"></div>
+                    </mn-col>
+                    <mn-col query="xs-12">
+                      <div class="holder has-purple-bg"></div>
+                    </mn-col>
+                  </mn-cols>
+                </mn-card-body>
               </mn-card-item>
             </mn-card>
 
             <mn-card>
               <mn-card-item>Gapless</mn-card-item>
               <mn-card-item>
-                <mn-cols>
-                  <mn-col query="xs-4">
-                    <div class="sp-holder has-yellow-bg">
-                      is-xs-4
-                    </div>
-                  </mn-col>
-                  <mn-col query="xs-8">
-                    <div class="sp-holder has-orange-bg">
-                      is-xs-8
-                    </div>
-                  </mn-col>
-                </mn-cols>
-                <mn-cols gapless>
-                  <mn-col query="xs-4">
-                    <div class="sp-holder sp-left-gapless has-yellow-bg">
-                      is-xs-4
-                    </div>
-                  </mn-col>
-                  <mn-col query="xs-8">
-                    <div class="sp-holder sp-right-gapless has-orange-bg">
-                      is-xs-8
-                    </div>
-                  </mn-col>
-                </mn-cols>
+                <mn-card-body>
+                  <mn-cols>
+                    <mn-col query="xs-4">
+                      <div class="holder has-yellow-bg">
+                        is-xs-4
+                      </div>
+                    </mn-col>
+                    <mn-col query="xs-8">
+                      <div class="holder has-orange-bg">
+                        is-xs-8
+                      </div>
+                    </mn-col>
+                  </mn-cols>
+                  <mn-cols gapless>
+                    <mn-col query="xs-4">
+                      <div class="holder left-gapless has-yellow-bg">
+                        is-xs-4
+                      </div>
+                    </mn-col>
+                    <mn-col query="xs-8">
+                      <div class="holder right-gapless has-orange-bg">
+                        is-xs-8
+                      </div>
+                    </mn-col>
+                  </mn-cols>
+                </mn-card-body>
               </mn-card-item>
             </mn-card>
           </mn-section>
@@ -70,27 +74,27 @@
 <style lang="scss" scoped>
   @import "../../../sass/variables";
 
-  .sp-holder {
+  .holder {
     height: 3rem;
     line-height: 3rem;
     text-align: center;
     color: #fff;
-    border-radius: $base-radius;
+    border-radius: 0.75rem;
     margin-bottom: 0.5rem;
   }
 
-  .sp-left-gapless,
-  .sp-right-gapless {
+  .left-gapless,
+  .right-gapless {
     border-radius: 0;
   }
 
-  .sp-left-gapless {
-    border-top-left-radius: $base-radius;
-    border-bottom-left-radius: $base-radius;
+  .left-gapless {
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
   }
 
-  .sp-right-gapless {
-    border-top-right-radius: $base-radius;
-    border-bottom-right-radius: $base-radius;
+  .right-gapless {
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
   }
 </style>

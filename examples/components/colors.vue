@@ -9,24 +9,28 @@
       <mn-card>
         <mn-card-item>Color schema</mn-card-item>
         <mn-card-item>
-          <mn-cols>
-            <mn-col query="xs-4" v-for="color in colors">
-              <div class="sp-tile" :class="getBoxClass(color.className)"></div>
-            </mn-col>
-          </mn-cols>
+          <mn-card-body>
+            <mn-cols>
+              <mn-col query="xs-4" v-for="color in colors">
+                <div class="tile" :class="getBoxClass(color.className)"></div>
+              </mn-col>
+            </mn-cols>
+          </mn-card-body>
         </mn-card-item>
       </mn-card>
 
       <mn-card>
         <mn-card-item>Color schema</mn-card-item>
         <mn-card-item>
-          <mn-cols>
-            <mn-col query="xs-4" v-for="color in colors">
-              <div class="sp-text" :class="getTextClass(color.className)">
-                {{ color.className }}
-              </div>
-            </mn-col>
-          </mn-cols>
+          <mn-card-body>
+            <mn-cols>
+              <mn-col query="xs-4" v-for="color in colors">
+                <div class="text" :class="getTextClass(color.className)">
+                  {{ color.className }}
+                </div>
+              </mn-col>
+            </mn-cols>
+          </mn-card-body>
         </mn-card-item>
       </mn-card>
     </mn-section>
@@ -57,7 +61,16 @@
           { className: 'teal-blue' },
           { className: 'blue' },
           { className: 'purple' },
-          { className: 'pink' }
+          { className: 'pink' },
+          { className: 'black' },
+          { className: 'black-lighter' },
+          { className: 'black-lightest' },
+          { className: 'gray-darkest' },
+          { className: 'gray-darker' },
+          { className: 'gray' },
+          { className: 'gray-lighter' },
+          { className: 'gray-lightest' },
+          { className: 'white' }
         ]
       }
     }
@@ -65,13 +78,13 @@
 </script>
 
 <style lang="scss" scoped>
-  .sp-tile {
+  .tile {
     height: 80px;
     margin: 0 auto 1rem auto;
     border-radius: 12px;
   }
 
-  .sp-text {
+  .text {
     text-align: center;
     margin-bottom: 1rem;
   }

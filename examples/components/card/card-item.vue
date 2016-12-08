@@ -2,17 +2,31 @@
 
   <mn-card>
     <mn-card-item>
-      <h5 slot="body">Card items</h5>
-      <mn-icon slot="addon" name="ios-navigate"></mn-icon>
+      <mn-card-prefix><mn-icon name="ios-navigate"></mn-icon></mn-card-prefix>
+      <mn-card-body>
+        <h5>Card items</h5>
+      </mn-card-body>
     </mn-card-item>
+
     <mn-card-item>
-      <template slot="body">Item title</template>
-      <template slot="help">description</template>
+      <mn-card-body>Item title</mn-card-body>
+      <mn-card-suffix muted>description</mn-card-suffix>
     </mn-card-item>
+
     <mn-card-item type="link">
-      <mn-icon slot="addon" name="compass"></mn-icon>
-      <template slot="body">Item title</template>
-      <template slot="help">description</template>
+      <mn-card-prefix><mn-loading-icon></mn-loading-icon></mn-card-prefix>
+      <mn-card-body>Item title</mn-card-body>
+      <mn-card-suffix muted>description</mn-card-suffix>
+    </mn-card-item>
+
+    <mn-card-item type="arrow">
+      <mn-card-prefix><mn-loading-icon></mn-loading-icon></mn-card-prefix>
+      <mn-card-body>Item title</mn-card-body>
+      <mn-card-suffix>
+        <mn-card-action>
+          <mn-btn type="primary" size="sm">Action</mn-btn>
+        </mn-card-action>
+      </mn-card-suffix>
     </mn-card-item>
   </mn-card>
 
