@@ -1,10 +1,10 @@
 <template>
   <mn-card>
     <mn-card-item v-for="option in options" @click.native.prevent="onClick($event, option.value)">
-      <template slot="body">
-        {{ option.label }}
-      </template>
-      <mn-form-radio slot="action" :checked="option.value === value"></mn-form-radio>
+      <mn-card-body>{{ option.label }}</mn-card-body>
+      <mn-card-suffix action>
+        <mn-form-radio :checked="option.value === value"></mn-form-radio>
+      </mn-card-suffix>
     </mn-card-item>
   </mn-card>
 </template>
