@@ -55,10 +55,12 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
     &.is-muted {
       color: #666;
     }
-  }
 
-  &-action {
-    margin: $grid-gutters * -1 0;
+    &.is-action {
+      display: flex;
+      margin: $grid-gutters * -1 0;
+      align-items: center;
+    }
   }
 
   // middle body
