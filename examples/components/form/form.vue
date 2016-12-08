@@ -58,7 +58,7 @@
       </template>
     </mn-card-wrapper>
 
-    <mn-btn type="primary" block :loading="validation.$loading">Submit</mn-btn>
+    <mn-btn type="primary" margin block :loading="validation.$loading">Submit</mn-btn>
   </mn-form>
 </template>
 
