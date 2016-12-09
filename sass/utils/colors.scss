@@ -34,3 +34,11 @@ $-colors-schema: (
     background: $color !important;
   }
 }
+
+.has-none-text {
+  color: transparent !important;
+}
+
+.has-none-bg {
+  background: transparent !important;
+}
