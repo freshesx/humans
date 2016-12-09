@@ -27,10 +27,10 @@ $-colors-schema: (
 //
 @each $name, $color in $-colors-schema {
   .has-#{$name}-text {
-    color: $color;
+    color: $color !important;
   }
 
   .has-#{$name}-bg {
-    background: $color;
+    background: $color !important;
   }
 }
