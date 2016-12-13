@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ `${cssPrefix}card-group` ]">
+  <div :class="[ `${cssPrefix}card-group-note` ]">
     <slot></slot>
   </div>
 </template>

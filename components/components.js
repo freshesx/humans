@@ -12,6 +12,7 @@ import CardAction from './card/card-action'
 import CardMedia from './card/card-media'
 import CardBtns from './card/card-btns'
 import CardWrapper from './card/card-wrapper'
+import CardNote from './card/card-note'
 import Pre from './code/pre'
 import Popup from './popup/popup'
 import PopupConfirm from './popup/confirm'
@@ -74,6 +75,7 @@ export default {
   CardMedia,
   CardBtns,
   CardWrapper,
+  CardNote,
   Pre,
   Popup,
   PopupConfirm,
