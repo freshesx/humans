@@ -24,6 +24,7 @@ import Form from './form/form'
 import FormLabel from './form/label'
 import FormHelper from './form/helper'
 import FormText from './form/text'
+import FormTextarea from './form/textarea'
 import FormDatetime from './form/datetime'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
@@ -87,6 +88,7 @@ export default {
   FormLabel,
   FormHelper,
   FormText,
+  FormTextarea,
   FormDatetime,
   FormSwitch,
   FormSelect,

@@ -3,6 +3,7 @@
 $-form-label: #{$namespace}form-label;
 $-form-helper: #{$namespace}form-helper;
 $-form-text: #{$namespace}form-text;
+$-form-textarea: #{$namespace}form-textarea;
 $-form-radio: #{$namespace}form-radio;
 $-form-checkbox: #{$namespace}form-checkbox;
 $-form-counter: #{$namespace}form-counter;
@@ -117,6 +118,25 @@ $-form-select-control: #{$namespace}form-select-control;
   &-clear-enter,
   &-clear-leave-active {
     opacity: 0;
+  }
+}
+
+.#{$-form-textarea} {
+  &-input {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    background: transparent;
+    outline: none;
+    -webkit-appearance: none;
+    resize: none;
+  }
+
+  &-counter {
+    border-top: solid 1px #eee;
+    padding-top: 0.5rem;
+    text-align: right;
   }
 }
 
