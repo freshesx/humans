@@ -43,6 +43,20 @@
         <mn-form-helper :validate="validation.like"></mn-form-helper>
       </mn-card-note>
     </mn-card-wrapper>
+    <!-- Note -->
+    <mn-card-wrapper>
+      <mn-card-note>Notes</mn-card-note>
+      <mn-card>
+        <mn-card-item>
+          <mn-card-body>
+            <mn-form-textarea v-model="models.note" placeholder="Add some note" max-length="300"></mn-form-textarea>
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+      <mn-card-note>
+        <mn-form-helper :validate="validation.note"></mn-form-helper>
+      </mn-card-note>
+    </mn-card-wrapper>
     <!-- Policy -->
     <mn-card-wrapper>
       <mn-card>
@@ -72,7 +86,8 @@
           password: undefined,
           sex: undefined,
           like: [],
-          policy: true
+          policy: true,
+          note: undefined
         },
         rules: {
           username: [
