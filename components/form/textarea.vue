@@ -9,7 +9,7 @@
       @input="changeValue">{{ value }}</textarea>
     <div :class="[ `${cssPrefix}form-textarea-counter` ]">
       <mn-icon name="ios-grid-view-outline"></mn-icon>
-      {{ value.length }}
+      {{ value ? value.length : 0 }}
       <span v-if="maxLength">
         / {{ maxLength }}
       </span>
