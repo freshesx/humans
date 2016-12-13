@@ -2,8 +2,8 @@
   <mn-form :models="models" :rules="rules" v-model="validation" @success="success">
     <!-- FRESH ID and password -->
     <mn-card-wrapper>
-      <strong slot="header">FRESH ID and password</strong>
-      <mn-card slot="body">
+      <mn-card-note>FRESH ID and password</mn-card-note>
+      <mn-card>
         <mn-card-item>
           <mn-card-prefix>
             <mn-form-label :validate="validation.username">FRESH ID</mn-form-label>
@@ -21,31 +21,31 @@
           </mn-card-body>
         </mn-card-item>
       </mn-card>
-      <template slot="footer">
+      <mn-card-note>
         Your FRESH ID (Phone, Email or username).
         <mn-form-helper :validate="validation.username"></mn-form-helper>
         <mn-form-helper :validate="validation.password"></mn-form-helper>
-      </template>
+      </mn-card-note>
     </mn-card-wrapper>
     <!-- sex -->
     <mn-card-wrapper>
-      <strong slot="header">Choose your sex</strong>
-      <mn-form-radio-card slot="body" :options="sexOptions" v-model="models.sex"></mn-form-radio-card>
-      <template slot="footer">
+      <mn-card-note>Choose your sex</mn-card-note>
+      <mn-form-radio-card :options="sexOptions" v-model="models.sex"></mn-form-radio-card>
+      <mn-card-note>
         <mn-form-helper :validate="validation.sex"></mn-form-helper>
-      </template>
+      </mn-card-note>
     </mn-card-wrapper>
     <!-- Like -->
     <mn-card-wrapper>
-      <strong slot="header">What do you like?</strong>
-      <mn-form-checkbox-card slot="body" :options="likeOptions" v-model="models.like"></mn-form-checkbox-card>
-      <template slot="footer">
+      <mn-card-note>What do you like?</mn-card-note>
+      <mn-form-checkbox-card :options="likeOptions" v-model="models.like"></mn-form-checkbox-card>
+      <mn-card-note>
         <mn-form-helper :validate="validation.like"></mn-form-helper>
-      </template>
+      </mn-card-note>
     </mn-card-wrapper>
     <!-- Policy -->
     <mn-card-wrapper>
-      <mn-card slot="body">
+      <mn-card>
         <mn-card-item>
           <mn-card-body>Agree Terms & Policy</mn-card-body>
           <mn-card-suffix action>
@@ -53,9 +53,9 @@
           </mn-card-suffix>
         </mn-card-item>
       </mn-card>
-      <template slot="footer">
+      <mn-card-note>
         <mn-form-helper :validate="validation.policy"></mn-form-helper>
-      </template>
+      </mn-card-note>
     </mn-card-wrapper>
 
     <mn-btn type="primary" margin block :loading="validation.$loading">Submit</mn-btn>
