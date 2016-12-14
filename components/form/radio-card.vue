@@ -3,7 +3,7 @@
     <mn-card-item v-for="option in options" @click.native.prevent="onClick($event, option.value)">
       <mn-card-body>{{ option.label }}</mn-card-body>
       <mn-card-suffix action>
-        <mn-form-radio :checked="option.value === value"></mn-form-radio>
+        <mn-form-radio-card-icon :checked="option.value === value"></mn-form-radio-card-icon>
       </mn-card-suffix>
     </mn-card-item>
   </mn-card>
