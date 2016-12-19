@@ -25,7 +25,7 @@
             <mn-form-label :validate="validation.yaer">year</mn-form-label>
           </mn-card-prefix>
           <mn-card-body>
-            <mn-form-text type="number" v-model="models.yaer" placeholder="Year"></mn-form-text>
+            <mn-form-text type="number" v-model="models.year" placeholder="Year"></mn-form-text>
           </mn-card-body>
         </mn-card-item>
       </mn-card>
@@ -92,6 +92,7 @@
         models: {
           username: undefined,
           password: undefined,
+          year: 22,
           sex: undefined,
           like: [],
           policy: true,
@@ -128,6 +129,14 @@
           type: 'primary',
           description: '数据验证成功'
         })
+      }
+    },
+    watch: {
+      'models.username' (newValue) {
+        console.log('username', newValue)
+      },
+      'models.year' (newValue) {
+        console.log('year', newValue)
       }
     }
   }
