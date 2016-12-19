@@ -53,7 +53,10 @@
     },
     methods: {
       changeValue (event) {
-        this.$emit('input', event.target.value)
+        let value = event.target.value.length > 0
+          ? event.target.value
+          : undefined
+        this.$emit('input', value)
       },
       clearValue () {
         this.$emit('input', undefined)
