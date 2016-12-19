@@ -2,11 +2,11 @@
   <mn-card>
     <mn-card-item v-for="option in options" @click.native.prevent="onClick($event, option.value)">
       <mn-card-prefix action v-if="!suffix">
-        <mn-form-checkbox :checked="getChecked(option)"></mn-form-checkbox>
+        <mn-form-checkbox-card-icon :checked="getChecked(option)"></mn-form-checkbox-card-icon>
       </mn-card-prefix>
       <mn-card-body>{{ option.label }}</mn-card-body>
       <mn-card-suffix action v-if="suffix">
-        <mn-form-checkbox :checked="getChecked(option)"></mn-form-checkbox>
+        <mn-form-checkbox-card-icon :checked="getChecked(option)"></mn-form-checkbox-card-icon>
       </mn-card-suffix>
     </mn-card-item>
   </mn-card>

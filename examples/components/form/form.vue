@@ -20,6 +20,14 @@
             <mn-form-text type="password" v-model="models.password" placeholder="Password"></mn-form-text>
           </mn-card-body>
         </mn-card-item>
+        <mn-card-item>
+          <mn-card-prefix>
+            <mn-form-label :validate="validation.yaer">year</mn-form-label>
+          </mn-card-prefix>
+          <mn-card-body>
+            <mn-form-text type="number" v-model="models.yaer" placeholder="Year"></mn-form-text>
+          </mn-card-body>
+        </mn-card-item>
       </mn-card>
       <mn-card-note>
         Your FRESH ID (Phone, Email or username).

@@ -29,10 +29,10 @@ import FormDatetime from './form/datetime'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import FormCounter from './form/counter'
-import FormRadio from './form/radio'
-import FormCheckbox from './form/checkbox'
 import FormRadioCard from './form/radio-card'
+import FormRadioCardIcon from './form/radio-card-icon'
 import FormCheckboxCard from './form/checkbox-card'
+import FormCheckboxCardIcon from './form/checkbox-card-icon'
 
 // Layout
 import Container from './container/container'
@@ -93,10 +93,10 @@ export default {
   FormSwitch,
   FormSelect,
   FormCounter,
-  FormRadio,
-  FormCheckbox,
   FormRadioCard,
+  FormRadioCardIcon,
   FormCheckboxCard,
+  FormCheckboxCardIcon,
 
   // Layout
   Container,
