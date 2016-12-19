@@ -3,7 +3,7 @@
     <input
       :type="type"
       :class="[ `${cssPrefix}form-text-input` ]"
-      :value="value"
+      :value="parseBefore(value)"
       :placeholder="placeholder"
       :readonly="readonly"
       :disabled="disabled"
@@ -53,13 +53,21 @@
     },
     methods: {
       changeValue (event) {
-        let value = event.target.value.length > 0
-          ? event.target.value
-          : undefined
-        this.$emit('input', value)
+        this.$emit('input', this.parseAfter(event.target.value))
       },
       clearValue () {
-        this.$emit('input', undefined)
+        this.$emit('input', this.parseClear())
+      },
+      parseBefore () {
+        return this.value
+      },
+      parseAfter (newValue) {
+        return newValue.length > 0
+          ? newValue
+          : undefined
+      },
+      parseClear () {
+        return undefined
       }
     }
   }
