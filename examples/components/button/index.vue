@@ -9,9 +9,9 @@
               <small>btn, block, loading, disabled</small>
             </mn-letter>
             <demo-normal></demo-normal>
+            <demo-disabled></demo-disabled>
             <demo-block></demo-block>
             <demo-size></demo-size>
-            <demo-disabled></demo-disabled>
             <demo-active></demo-active>
             <demo-circle></demo-circle>
             <demo-outline></demo-outline>
