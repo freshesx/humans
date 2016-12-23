@@ -19,7 +19,7 @@ export function appendTo (component, dom) {
 export default {
   install (Vue, options) {
     Vue.human.element = (ComponentClass, options) => {
-      return element(ComponentClass, Object.assign({ Vue }, options))
+      return element(ComponentClass, { Vue, ...options })
     }
   }
 }
