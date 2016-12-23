@@ -16,10 +16,19 @@ function buildComponent ({ Vue, ComponentClass }, options) {
 
   // Change component data by options
   for (var variable in options) {
-    if (options.hasOwnProperty(variable) && component.hasOwnProperty(variable)) {
+    if (options.hasOwnProperty(variable) && component.hasOwnProperty(variable) && variable !== 'close') {
       component[variable] = options[variable]
     }
   }
+
+  component.$on('close', () => {
+    if (options.close) {
+      options.close.apply(component)
+    } else {
+      component.show = false
+    }
+  })
+
   return component
 }
 
