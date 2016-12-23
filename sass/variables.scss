@@ -125,10 +125,10 @@ $button-theme: (
     disable: (color: lighten($pink, 16%), border: lighten($pink, 16%)),
   ),
   secondary-outline: (
-    normal: (color: #d9d9d9, border: #d9d9d9),
-    hover: (color: darken(#d9d9d9, 10%), border: darken(#d9d9d9, 10%)),
-    active: (color: darken(#d9d9d9, 10%), border: darken(#d9d9d9, 10%)),
-    disable: (color: darken(#d9d9d9, 10%), border: darken(#d9d9d9, 10%)),
+    normal: (color: #999, border: #bbb),
+    hover: (color: darken(#999, 20%), border: darken(#bbb, 20%)),
+    active: (color: darken(#999, 20%), border: darken(#bbb, 20%)),
+    disable: (color: darken(#999, 20%), border: darken(#bbb, 20%)),
   ),
   inverse-outline: (
     normal: (color: #505050, border: #505050),
@@ -143,10 +143,28 @@ $button-theme: (
     active: (color: darken($green, 10%)),
     disable: (color: #ccc),
   ),
+  warning-link: (
+    normal: (color: $orange),
+    hover: (color: darken($orange, 5%)),
+    active: (color: darken($orange, 8%)),
+    disable: (color: lighten($orange, 16%)),
+  ),
+  error-link: (
+    normal: (color: $pink),
+    hover: (color: darken($pink, 20%)),
+    active: (color: darken($pink, 20%)),
+    disable: (color: lighten($pink, 16%)),
+  ),
   secondary-link: (
-    normal: (color: #666),
+    normal: (color: #999),
     hover: (color: #000),
     active: (color: #000),
     disable: (color: #ccc),
+  ),
+  inverse-link: (
+    normal: (color: #505050),
+    hover: (color: lighten(#505050, 5%)),
+    active: (color: darken(#505050, 5%)),
+    disable: (color: lighten(#505050, 5%)),
   ),
 );
