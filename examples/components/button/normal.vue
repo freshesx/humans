@@ -1,15 +1,9 @@
 <template>
   <mn-card>
-    <mn-card-item>Button</mn-card-item>
-    <mn-card-item>
+    <mn-card-item><h5>Button</h5></mn-card-item>
+    <mn-card-item v-for="types in buttons">
       <mn-card-body>
-        <mn-btn type="primary" @click.native.prevent="say('Hi')" margin><mn-icon name="navicon-round"></mn-icon> Confirm</mn-btn>
-        <mn-btn type="warning" margin>Are you sure?</mn-btn>
-        <mn-btn type="error" margin>Cancel</mn-btn>
-        <mn-btn type="secondary" margin>Help</mn-btn>
-        <mn-btn type="inverse" loading margin></mn-btn>
-        <mn-btn type="primary-link" margin>Link</mn-btn>
-        <mn-btn type="secondary-link" margin>Link</mn-btn>
+        <mn-btn :class="'has-one-margin-right'" :type="button" @click="click(button)" v-for="button in types">{{ button }}</mn-btn>
       </mn-card-body>
     </mn-card-item>
   </mn-card>
@@ -18,8 +12,35 @@
 <script>
   export default {
     methods: {
-      say (some) {
-        window.alert(some)
+      click (some) {
+        this.$human.toastr({ show: true, description: some })
+      }
+    },
+    data () {
+      return {
+        buttons: {
+          normal: [
+            'primary',
+            'warning',
+            'error',
+            'secondary',
+            'inverse'
+          ],
+          outline: [
+            'primary-outline',
+            'warning-outline',
+            'error-outline',
+            'secondary-outline',
+            'inverse-outline'
+          ],
+          link: [
+            'primary-link',
+            'warning-link',
+            'error-link',
+            'secondary-link',
+            'inverse-link'
+          ]
+        }
       }
     }
   }
