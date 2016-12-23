@@ -79,6 +79,22 @@
         <mn-form-helper :validate="validation.policy"></mn-form-helper>
       </mn-card-note>
     </mn-card-wrapper>
+    <!-- City -->
+    <mn-card-wrapper>
+      <mn-card>
+        <mn-card-item type="link">
+          <mn-card-prefix>
+            <mn-form-label :validate="validation.city">City</mn-form-label>
+          </mn-card-prefix>
+          <mn-card-body>
+            <mn-form-select :options="cityOptions" v-model="models.city"></mn-form-select>
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+      <mn-card-note>
+        <mn-form-helper :validate="validation.city"></mn-form-helper>
+      </mn-card-note>
+    </mn-card-wrapper>
 
     <mn-btn type="primary" margin block :loading="validation.$loading">Submit</mn-btn>
   </mn-form>
@@ -93,10 +109,11 @@
           username: undefined,
           password: undefined,
           year: 22,
-          sex: undefined,
-          like: [],
+          sex: 'Male',
+          like: ['Football'],
           policy: true,
-          note: undefined
+          note: undefined,
+          city: undefined
         },
         rules: {
           username: [
@@ -109,7 +126,8 @@
           ],
           sex: { type: 'string', required: true },
           like: { type: 'array', required: true },
-          policy: { type: 'boolean', required: true }
+          policy: { type: 'boolean', required: true },
+          city: { type: 'string', required: true }
         },
         sexOptions: [
           { label: 'Male', value: 'Male' },
@@ -119,6 +137,12 @@
           { label: 'Football', value: 'Football' },
           { label: 'Basketball', value: 'Basketball' },
           { label: 'Volleyball', value: 'Volleyball' }
+        ],
+        cityOptions: [
+          { label: 'Choose your city', value: undefined },
+          { label: 'Shanghai', value: 'Shanghai' },
+          { label: 'Suzhou', value: 'Suzhou' },
+          { label: 'Hangzhou', value: 'Hangzhou' }
         ]
       }
     },
