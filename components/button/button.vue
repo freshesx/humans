@@ -1,5 +1,8 @@
 <template>
-  <button :class="[`${cssPrefix}btn`, classes]">
+  <button
+    :class="[`${cssPrefix}btn`, classes]"
+    :title="title"
+    @click="click">
     <mn-loading-icon v-if="loading"></mn-loading-icon>
     <slot v-if="!loading"></slot>
   </button>
@@ -8,6 +11,7 @@
 <script>
   export default {
     props: {
+      title: String,
       // is loading
       loading: {
         type: Boolean,
@@ -83,6 +87,15 @@
         classes['is-margin-bottom'] = this.margin
 
         return classes
+      }
+    },
+    methods: {
+      click ($event) {
+        if (!this.disabled) {
+          this.$emit('click', $event)
+        } else {
+          this.$emit('error', $event)
+        }
       }
     }
   }
