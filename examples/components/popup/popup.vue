@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" animation="slideInDown" @close="cancel">
+  <mn-popup :show="show" @close="close" animation="slideInDown">
     <mn-card class="has-one-margin-bottom">
       <mn-card-item>
         <mn-card-body class="has-center-text">
@@ -12,7 +12,7 @@
     </mn-card>
     <mn-card class="has-none-margin-bottom">
       <mn-card-btns>
-        <button class="has-blue-text" @click="cancel"><strong>Cancel</strong></button>
+        <button class="has-blue-text" @click="close"><strong>Cancel</strong></button>
       </mn-card-btns>
     </mn-card>
   </mn-popup>
@@ -20,18 +20,14 @@
 
 <script>
   export default {
+    props: {
+      show: Boolean
+    },
     methods: {
-      cancel () {
-        this.show = false
+      close () {
+        console.log('close')
+        this.$emit('close')
       }
-    },
-    data () {
-      return {
-        show: false
-      }
-    },
-    mounted () {
-      this.show = true
     }
   }
 </script>
