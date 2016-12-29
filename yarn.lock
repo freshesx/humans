@@ -6028,6 +6028,10 @@ vue@^2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.0.3.tgz#3f7698f83d6ad1f0e35955447901672876c63fde"
 
+vuelidate@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/vuelidate/download/vuelidate-0.2.0.tgz#7c50b220ef3700b1a28900f32825c442df809337"
+
 watchpack@^0.2.1:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-0.2.9.tgz#62eaa4ab5e5ba35fdfc018275626e3c0f5e3fb0b"
