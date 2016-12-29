@@ -141,7 +141,7 @@ $button-theme: (
     normal: (color: $green),
     hover: (color: darken($green, 10%)),
     active: (color: darken($green, 10%)),
-    disable: (color: #ccc),
+    disable: (color: lighten($green, 16%)),
   ),
   warning-link: (
     normal: (color: $orange),
