@@ -3,7 +3,14 @@
     <mn-card-item><h5>{{ title }}</h5></mn-card-item>
     <mn-card-item v-for="types in buttons">
       <mn-card-body>
-        <mn-btn :class="'has-one-margin-right'" :type="button" @click="click(button)" @error="error" :disabled="disabled" v-for="button in types">{{ button }}</mn-btn>
+        <mn-btn
+          icon="ios-analytics"
+          :class="'has-one-margin-right'"
+          :type="button"
+          :disabled="disabled"
+          @click="click"
+          @error="error"
+          v-for="button in types">{{ button }}</mn-btn>
       </mn-card-body>
     </mn-card-item>
   </mn-card>
@@ -12,10 +19,14 @@
 <script>
   export default {
     methods: {
-      click (some) {
-        this.$human.toastr({ show: true, description: some })
+      click ($event, button) {
+        button.loading = true
+        setTimeout(() => {
+          this.$human.toastr({ show: true, description: '加载成功' })
+          button.loading = false
+        }, 3000)
       },
-      error (some) {
+      error () {
         this.$human.toastr({ show: true, type: 'error', description: 'disabled 时禁用按钮' })
       }
     },
