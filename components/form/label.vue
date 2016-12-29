@@ -7,14 +7,16 @@
 <script>
   export default {
     props: {
-      validate: Array
+      validate: Object
     },
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix
       },
       isInvalid () {
-        return this.validate && this.validate.length > 0
+        return this.validate
+          ? this.validate.$error
+          : false
       }
     }
   }
