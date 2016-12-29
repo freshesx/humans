@@ -4,7 +4,8 @@
     :title="title"
     @click="click">
     <mn-loading-icon v-if="loading"></mn-loading-icon>
-    <slot v-if="!loading"></slot>
+    <mn-icon :name="icon" v-if="icon && !loading"></mn-icon>
+    <slot></slot>
   </button>
 </template>
 
@@ -12,13 +13,11 @@
   export default {
     props: {
       title: String,
-      // is loading
-      loading: {
-        type: Boolean,
-        default: false
+      icon: {
+        type: String,
+        default: ''
       },
       // is disabled
-      // @todo hover tips
       disabled: {
         type: Boolean,
         default: false
@@ -53,6 +52,11 @@
       margin: {
         type: Boolean,
         default: false
+      }
+    },
+    data () {
+      return {
+        loading: false
       }
     },
     computed: {
@@ -91,11 +95,11 @@
     },
     methods: {
       click ($event) {
-        if (!this.disabled) {
-          this.$emit('click', $event)
-        } else {
-          this.$emit('error', $event)
-        }
+        // If loading, prevent
+        if (this.loading) return
+
+        // Emit event
+        this.$emit(this.disabled ? 'error' : 'click', $event, this)
       }
     }
   }
