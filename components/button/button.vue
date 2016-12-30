@@ -11,6 +11,7 @@
 
 <script>
   export default {
+    name: 'mn-btn',
     props: {
       title: String,
       icon: {

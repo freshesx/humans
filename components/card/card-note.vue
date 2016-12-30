@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-card-note',
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix

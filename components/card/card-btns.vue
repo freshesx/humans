@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-card-btns',
     props: {
       type: {
         type: String,
