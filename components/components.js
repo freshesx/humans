@@ -4,7 +4,7 @@ import LoadingIcon from './loading-icon'
 import Scroller from './scroller'
 import Btn from './button'
 import Card from './card'
-import Pre from './code/pre'
+import Code from './code'
 import Popup from './popup/popup'
 import PopupConfirm from './popup/confirm'
 import PopupAlert from './popup/alert'
@@ -60,7 +60,7 @@ export default {
   ...Scroller,
   ...Btn,
   ...Card,
-  Pre,
+  ...Code,
   Popup,
   PopupConfirm,
   PopupAlert,
