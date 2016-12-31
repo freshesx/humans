@@ -89,12 +89,12 @@ export default {
   Form,
   FormText,
   FormSwitch,
-  FormSelect,
   FormCounter,
 
   Label,
   Datetime,
   Textarea,
+  Select,
   CheckItem,
   CheckIcon,
   RadioItem,
