@@ -55,9 +55,12 @@
       <mn-card-note>Choose your sex</mn-card-note>
       <mn-card>
         <mn-radio-item :data="option.value" v-model="models.sex" v-for="option in sexOptions">
-          <mn-card-prefix><mn-icon name="ios-information"></mn-icon></mn-card-prefix>
+          <mn-card-prefix action>
+            <mn-radio-icon :data="option.value" :value="models.sex"></mn-radio-icon>
+          </mn-card-prefix>
           <mn-card-body>{{ option.label }}</mn-card-body>
           <mn-card-suffix muted><small>Helper information</small></mn-card-suffix>
+          <mn-card-suffix @click.native.stop.prevent="openRadioInfo"><mn-icon name="ios-information"></mn-icon></mn-card-suffix>
         </mn-radio-item>
       </mn-card>
       <mn-card-note>
@@ -213,6 +216,9 @@
           form.loading = false
           this.$refs.submit.loading = false
         }, 5000)
+      },
+      openRadioInfo () {
+        this.$human.toastr({ show: true, description: 'Show radio information' })
       }
     }
   }
