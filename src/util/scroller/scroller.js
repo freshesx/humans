@@ -1,4 +1,3 @@
-import $ from 'jquery'
 import popupStorage from '../popup/storage'
 
 export default class Scroller {
@@ -21,8 +20,7 @@ export default class Scroller {
    */
   saveScroll (from, Vue) {
     if (from.path && from.meta.scroll) {
-      const $scroll = this.getScrollerElement(Vue)
-      this.addStorage(from.fullPath, $scroll.scrollTop())
+      this.addStorage(from.fullPath, this.getFirstScrollerTop(Vue))
     }
   }
 
@@ -34,15 +32,28 @@ export default class Scroller {
   setScroll (to, Vue) {
     let value = this.getStorage(to.fullPath)
     setTimeout(() => {
-      const $scroll = this.getScrollerElement(Vue)
-      $scroll.scrollTop(value)
+      this.setFirstScrollerTop(value, Vue)
       // 强制移除
       this.removePopupElement(Vue)
     })
   }
 
-  getScrollerElement (Vue) {
-    return $(`.${Vue.human.cssPrefix}scroller.is-save`)
+  getFirstScrollerTop (Vue) {
+    let scroller = document.getElementsByClassName(
+      `${Vue.human.cssPrefix}scroller is-save`)
+
+    return scroller.length > 0
+      ? scroller[0].scrollTop
+      : 0
+  }
+
+  setFirstScrollerTop (value, Vue) {
+    let scroller = document.getElementsByClassName(
+      `${Vue.human.cssPrefix}scroller is-save`)
+
+    if (scroller.length > 0) {
+      scroller[0].scrollTop = value
+    }
   }
 
   removePopupElement (Vue) {
