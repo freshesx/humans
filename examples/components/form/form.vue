@@ -22,7 +22,7 @@
         </mn-card-item>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-form-label :validate="$v.models.yaer">year</mn-form-label>
+            <mn-form-label :validate="$v.models.year">year</mn-form-label>
           </mn-card-prefix>
           <mn-card-body>
             <mn-form-text type="number" v-model="models.year" placeholder="Year"></mn-form-text>
