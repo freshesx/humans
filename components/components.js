@@ -3,16 +3,7 @@ import Icon from './icon/icon'
 import LoadingIcon from './loading-icon/loading-icon'
 import Scroller from './scroller/scroller'
 import Btn from './button/button'
-import Card from './card/card'
-import CardItem from './card/card-item'
-import CardBody from './card/card-body'
-import CardPrefix from './card/card-prefix'
-import CardSuffix from './card/card-suffix'
-import CardAction from './card/card-action'
-import CardMedia from './card/card-media'
-import CardBtns from './card/card-btns'
-import CardWrapper from './card/card-wrapper'
-import CardNote from './card/card-note'
+import Card from './card'
 import Pre from './code/pre'
 import Popup from './popup/popup'
 import PopupConfirm from './popup/confirm'
@@ -68,16 +59,7 @@ export default {
   LoadingIcon,
   Scroller,
   Btn,
-  Card,
-  CardItem,
-  CardBody,
-  CardPrefix,
-  CardSuffix,
-  CardAction,
-  CardMedia,
-  CardBtns,
-  CardWrapper,
-  CardNote,
+  ...Card,
   Pre,
   Popup,
   PopupConfirm,
