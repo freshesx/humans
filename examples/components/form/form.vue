@@ -225,7 +225,7 @@
         }, 5000)
       },
       openRadioInfo () {
-        this.$human.toastr({ show: true, description: 'Show radio information' })
+        this.$human.toastr({ show: true, type: 'warning', title: 'Some radio', description: 'Show radio information' })
       }
     }
   }
