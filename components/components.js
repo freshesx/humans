@@ -8,20 +8,17 @@ import Code from './code'
 import Popup from './popup'
 
 // Form
-import Form from './form/form'
-import Label from './label/label'
-import Input from './input/input'
-import Datetime from './datetime/datetime'
-import Textarea from './textarea/textarea'
-import Select from './select/select'
-import CheckItem from './check/check-item'
-import CheckIcon from './check/check-icon'
-import RadioItem from './radio/radio-item'
-import RadioIcon from './radio/radio-icon'
-import Switch from './switch/switch'
-import Counter from './counter/counter'
-import Helper from './helper/helper'
-import HelperItem from './helper/helper-item'
+import Form from './form'
+import Label from './label'
+import Input from './input'
+import Datetime from './datetime'
+import Textarea from './textarea'
+import Select from './select'
+import Switch from './switch'
+import Counter from './counter'
+import Check from './check'
+import Radio from './radio'
+import Helper from './helper'
 
 // Layout
 import Container from './container'
@@ -53,20 +50,17 @@ export default {
   ...Popup,
 
   // Form
-  Form,
-  Label,
-  Input,
-  Datetime,
-  Textarea,
-  Select,
-  CheckItem,
-  CheckIcon,
-  RadioItem,
-  RadioIcon,
-  Switch,
-  Counter,
-  Helper,
-  HelperItem,
+  ...Form,
+  ...Label,
+  ...Input,
+  ...Datetime,
+  ...Textarea,
+  ...Select,
+  ...Switch,
+  ...Counter,
+  ...Check,
+  ...Radio,
+  ...Helper,
 
   // Layout
   ...Container,
