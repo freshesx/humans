@@ -39,6 +39,7 @@ export default {
      * @return {Object}
      */
     Vue.human.toastr = (options = {}) => {
+      console && console.warn('建议使用 this.$human.message 取代 this.$human.toastr。')
       return Vue.human.popup(Toastr, options)
     }
 
