@@ -6,7 +6,7 @@
       <mn-card>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-form-label :validate="$v.models.username">FRESH ID</mn-form-label>
+            <mn-label :validate="$v.models.username">FRESH ID</mn-label>
           </mn-card-prefix>
           <mn-card-body>
             <mn-form-text v-model="models.username" placeholder="Phone / Email / Username"></mn-form-text>
@@ -14,7 +14,7 @@
         </mn-card-item>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-form-label :validate="$v.models.password">Password</mn-form-label>
+            <mn-label :validate="$v.models.password">Password</mn-label>
           </mn-card-prefix>
           <mn-card-body>
             <mn-form-text type="password" v-model="models.password" placeholder="Password"></mn-form-text>
@@ -22,7 +22,7 @@
         </mn-card-item>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-form-label :validate="$v.models.year">year</mn-form-label>
+            <mn-label :validate="$v.models.year">year</mn-label>
           </mn-card-prefix>
           <mn-card-body>
             <mn-form-text type="number" v-model="models.year" placeholder="Year"></mn-form-text>
@@ -123,7 +123,7 @@
       <mn-card>
         <mn-card-item type="link">
           <mn-card-prefix>
-            <mn-form-label :validate="$v.models.city">City</mn-form-label>
+            <mn-label :validate="$v.models.city">City</mn-label>
           </mn-card-prefix>
           <mn-card-body>
             <mn-form-select :options="cityOptions" v-model="models.city"></mn-form-select>

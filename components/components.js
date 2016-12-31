@@ -21,7 +21,6 @@ import PopupToastr from './popup/toastr'
 
 // Form
 import Form from './form/form'
-import FormLabel from './form/label'
 import FormText from './form/text'
 import FormTextarea from './form/textarea'
 import FormDatetime from './form/datetime'
@@ -29,6 +28,7 @@ import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import FormCounter from './form/counter'
 
+import Label from './label/label'
 import CheckItem from './check/check-item'
 import CheckIcon from './check/check-icon'
 import RadioItem from './radio/radio-item'
@@ -87,7 +87,6 @@ export default {
 
   // Form
   Form,
-  FormLabel,
   FormText,
   FormTextarea,
   FormDatetime,
@@ -95,6 +94,7 @@ export default {
   FormSelect,
   FormCounter,
 
+  Label,
   CheckItem,
   CheckIcon,
   RadioItem,
