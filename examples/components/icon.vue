@@ -10,7 +10,7 @@
             </mn-letter>
 
             <mn-search-bar :class="[ 'has-two-margin-bottom', 'has-white-bg' ]">
-              <mn-form-text v-model="searchName"></mn-form-text>
+              <mn-input v-model="searchName"></mn-input>
             </mn-search-bar>
 
             <mn-cols>

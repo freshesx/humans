@@ -9,7 +9,7 @@
             <mn-label :validate="$v.models.username">FRESH ID</mn-label>
           </mn-card-prefix>
           <mn-card-body>
-            <mn-form-text v-model="models.username" placeholder="Phone / Email / Username"></mn-form-text>
+            <mn-input v-model="models.username" placeholder="Phone / Email / Username"></mn-input>
           </mn-card-body>
         </mn-card-item>
         <mn-card-item>
@@ -17,7 +17,7 @@
             <mn-label :validate="$v.models.password">Password</mn-label>
           </mn-card-prefix>
           <mn-card-body>
-            <mn-form-text type="password" v-model="models.password" placeholder="Password"></mn-form-text>
+            <mn-input type="password" v-model="models.password" placeholder="Password"></mn-input>
           </mn-card-body>
         </mn-card-item>
         <mn-card-item>
@@ -25,7 +25,7 @@
             <mn-label :validate="$v.models.year">year</mn-label>
           </mn-card-prefix>
           <mn-card-body>
-            <mn-form-text type="number" v-model="models.year" placeholder="Year"></mn-form-text>
+            <mn-input type="number" v-model="models.year" placeholder="Year"></mn-input>
           </mn-card-body>
           <mn-card-suffix v-if="$v.models.year.$pending">
             <mn-loading-icon></mn-loading-icon>
