@@ -5,10 +5,7 @@ import Scroller from './scroller'
 import Btn from './button'
 import Card from './card'
 import Code from './code'
-import Popup from './popup/popup'
-import PopupConfirm from './popup/confirm'
-import PopupAlert from './popup/alert'
-import PopupToastr from './popup/toastr'
+import Popup from './popup'
 
 // Form
 import Form from './form/form'
@@ -61,10 +58,7 @@ export default {
   ...Btn,
   ...Card,
   ...Code,
-  Popup,
-  PopupConfirm,
-  PopupAlert,
-  PopupToastr,
+  ...Popup,
 
   // Form
   Form,

@@ -1,6 +1,6 @@
 import components from './components'
 import element from './util/element'
-import popup from './popup'
+import popup from './popup/plugins.js'
 import scroller from './scroller/plugins.js'
 import browser from './util/browser'
 
