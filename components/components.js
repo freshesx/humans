@@ -21,9 +21,8 @@ import PopupToastr from './popup/toastr'
 
 // Form
 import Form from './form/form'
-import FormText from './form/text'
-
 import Label from './label/label'
+import Input from './input/input'
 import Datetime from './datetime/datetime'
 import Textarea from './textarea/textarea'
 import Select from './select/select'
@@ -87,9 +86,8 @@ export default {
 
   // Form
   Form,
-  FormText,
-
   Label,
+  Input,
   Datetime,
   Textarea,
   Select,
