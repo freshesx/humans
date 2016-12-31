@@ -1,4 +1,5 @@
 import element from '../element'
+import storage from './storage'
 
 /**
  * Build component using Vue human element
@@ -25,6 +26,8 @@ export default function popup ({ Vue, ComponentClass }, options) {
       component.show = false
     }
   })
+
+  storage.addItem(component)
 
   return component
 }
