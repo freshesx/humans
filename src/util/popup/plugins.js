@@ -1,7 +1,7 @@
-import { element } from '../../util/element'
-import Confirm from './confirm'
-import Alert from './alert'
-import Toastr from './toastr'
+import element from '../element'
+import Confirm from '../../components/popup/confirm'
+import Alert from '../../components/popup/alert'
+import Toastr from '../../components/popup/toastr'
 
 /**
  * Build component using Vue human element
