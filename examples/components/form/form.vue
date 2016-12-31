@@ -108,7 +108,7 @@
         <mn-card-item>
           <mn-card-body>Agree Terms & Policy</mn-card-body>
           <mn-card-suffix action>
-            <mn-form-switch :data="true" v-model="models.policy"></mn-form-switch>
+            <mn-switch :data="true" v-model="models.policy"></mn-switch>
           </mn-card-suffix>
         </mn-card-item>
       </mn-card>

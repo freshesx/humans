@@ -22,7 +22,6 @@ import PopupToastr from './popup/toastr'
 // Form
 import Form from './form/form'
 import FormText from './form/text'
-import FormSwitch from './form/switch'
 import FormCounter from './form/counter'
 
 import Label from './label/label'
@@ -33,6 +32,7 @@ import CheckItem from './check/check-item'
 import CheckIcon from './check/check-icon'
 import RadioItem from './radio/radio-item'
 import RadioIcon from './radio/radio-icon'
+import Switch from './switch/switch'
 import Helper from './helper/helper'
 import HelperItem from './helper/helper-item'
 
@@ -88,7 +88,6 @@ export default {
   // Form
   Form,
   FormText,
-  FormSwitch,
   FormCounter,
 
   Label,
@@ -99,6 +98,7 @@ export default {
   CheckIcon,
   RadioItem,
   RadioIcon,
+  Switch,
   Helper,
   HelperItem,
 
