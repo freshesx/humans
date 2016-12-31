@@ -1,7 +1,7 @@
 // Core
 import Icon from './icon'
 import LoadingIcon from './loading-icon'
-import Scroller from './scroller/scroller'
+import Scroller from './scroller'
 import Btn from './button/button'
 import Card from './card'
 import Pre from './code/pre'
@@ -57,7 +57,7 @@ export default {
   // Core
   ...Icon,
   ...LoadingIcon,
-  Scroller,
+  ...Scroller,
   Btn,
   ...Card,
   Pre,
