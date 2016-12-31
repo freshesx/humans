@@ -20,14 +20,19 @@
         type: Number,
         default: 1.5
       },
-      checked: {
-        type: Boolean,
-        default: false
+      data: {
+        required: true
+      },
+      value: {
+        required: true
       }
     },
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix
+      },
+      checked () {
+        return this.data === this.value
       }
     }
   }

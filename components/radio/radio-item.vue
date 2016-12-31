@@ -1,9 +1,6 @@
 <template>
   <mn-card-item @click="click" type="cursor">
     <slot></slot>
-    <mn-card-suffix action>
-      <mn-radio-icon :checked="value === data"></mn-radio-icon>
-    </mn-card-suffix>
   </mn-card-item>
 </template>
 
