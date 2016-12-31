@@ -41,5 +41,14 @@ export default {
     Vue.human.toastr = (options = {}) => {
       return Vue.human.popup(Toastr, options)
     }
+
+    /**
+     * Message using Toastr popup component
+     * @param  {Object} options Some settings
+     * @return {Object}
+     */
+    Vue.human.message = (options = {}) => {
+      return Vue.human.popup(Toastr, options)
+    }
   }
 }
