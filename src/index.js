@@ -1,6 +1,6 @@
 import components from './components/index.js'
 
-import element from './util/element'
+import element from './util/element/plugins.js'
 import browser from './util/browser/plugins.js'
 
 import popup from './components/popup/plugins.js'
