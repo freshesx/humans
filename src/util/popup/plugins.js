@@ -1,36 +1,7 @@
-import element from '../element'
 import Confirm from '../../components/popup/confirm'
 import Alert from '../../components/popup/alert'
 import Toastr from '../../components/popup/toastr'
-
-/**
- * Build component using Vue human element
- * @param  {Object}   options.Vue             Vue
- * @param  {Object}   options.ComponentClass  Some component class
- * @param  {Boolean}  options.show            show or hide, default hide
- * @return {Object}                           Vue component instance
- */
-function buildComponent ({ Vue, ComponentClass }, options) {
-  // Build component
-  const component = element(ComponentClass, { Vue })
-
-  // Change component data by options
-  for (var variable in options) {
-    if (options.hasOwnProperty(variable) && component.hasOwnProperty(variable) && variable !== 'close') {
-      component[variable] = options[variable]
-    }
-  }
-
-  component.$on('close', () => {
-    if (options.close) {
-      options.close.apply(component)
-    } else {
-      component.show = false
-    }
-  })
-
-  return component
-}
+import popup from './index.js'
 
 export default {
   install (Vue) {
@@ -41,7 +12,7 @@ export default {
      * @return {Object}                Vue component instance
      */
     Vue.human.popup = (ComponentClass, options = {}) => {
-      return buildComponent({ Vue, ComponentClass }, options)
+      return popup({ Vue, ComponentClass }, options)
     }
 
     /**
