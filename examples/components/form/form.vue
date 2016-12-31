@@ -6,26 +6,26 @@
       <mn-card>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-form-label :validate="$v.models.username">FRESH ID</mn-form-label>
+            <mn-label :validate="$v.models.username">FRESH ID</mn-label>
           </mn-card-prefix>
           <mn-card-body>
-            <mn-form-text v-model="models.username" placeholder="Phone / Email / Username"></mn-form-text>
+            <mn-input v-model="models.username" placeholder="Phone / Email / Username"></mn-input>
           </mn-card-body>
         </mn-card-item>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-form-label :validate="$v.models.password">Password</mn-form-label>
+            <mn-label :validate="$v.models.password">Password</mn-label>
           </mn-card-prefix>
           <mn-card-body>
-            <mn-form-text type="password" v-model="models.password" placeholder="Password"></mn-form-text>
+            <mn-input type="password" v-model="models.password" placeholder="Password"></mn-input>
           </mn-card-body>
         </mn-card-item>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-form-label :validate="$v.models.yaer">year</mn-form-label>
+            <mn-label :validate="$v.models.year">year</mn-label>
           </mn-card-prefix>
           <mn-card-body>
-            <mn-form-text type="number" v-model="models.year" placeholder="Year"></mn-form-text>
+            <mn-input type="number" v-model="models.year" placeholder="Year"></mn-input>
           </mn-card-body>
           <mn-card-suffix v-if="$v.models.year.$pending">
             <mn-loading-icon></mn-loading-icon>
@@ -53,7 +53,16 @@
     <!-- sex -->
     <mn-card-wrapper>
       <mn-card-note>Choose your sex</mn-card-note>
-      <mn-form-radio-card :options="sexOptions" v-model="models.sex"></mn-form-radio-card>
+      <mn-card>
+        <mn-radio-item :data="option.value" v-model="models.sex" v-for="option in sexOptions">
+          <mn-card-prefix action>
+            <mn-radio-icon :data="option.value" :value="models.sex"></mn-radio-icon>
+          </mn-card-prefix>
+          <mn-card-body>{{ option.label }}</mn-card-body>
+          <mn-card-suffix muted><small>Helper information</small></mn-card-suffix>
+          <mn-card-suffix @click.native.stop.prevent="openRadioInfo"><mn-icon name="ios-information"></mn-icon></mn-card-suffix>
+        </mn-radio-item>
+      </mn-card>
       <mn-card-note>
         <mn-helper :validate="$v.models.sex">
           <mn-helper-item name="required">Must choose one</mn-helper-item>
@@ -63,7 +72,14 @@
     <!-- Like -->
     <mn-card-wrapper>
       <mn-card-note>What do you like?</mn-card-note>
-      <mn-form-checkbox-card :options="likeOptions" v-model="models.like"></mn-form-checkbox-card>
+      <mn-card>
+        <mn-check-item :data="option.value" :disabled="key === 1" v-model="models.like" v-for="(option, key) in likeOptions">
+          <mn-card-prefix action>
+            <mn-check-icon :data="option.value" :value="models.like"></mn-check-icon>
+          </mn-card-prefix>
+          <mn-card-body>{{ option.label }}</mn-card-body>
+        </mn-check-item>
+      </mn-card>
       <mn-card-note>
         <mn-helper :validate="$v.models.like">
           <mn-helper-item name="required">Must choose one</mn-helper-item>
@@ -76,7 +92,7 @@
       <mn-card>
         <mn-card-item>
           <mn-card-body>
-            <mn-form-textarea v-model="models.note" placeholder="Add some note" :max-length="300"></mn-form-textarea>
+            <mn-textarea v-model="models.note" placeholder="Add some note" :max-length="300"></mn-textarea>
           </mn-card-body>
         </mn-card-item>
       </mn-card>
@@ -92,7 +108,7 @@
         <mn-card-item>
           <mn-card-body>Agree Terms & Policy</mn-card-body>
           <mn-card-suffix action>
-            <mn-form-switch :data="true" v-model="models.policy"></mn-form-switch>
+            <mn-switch :data="true" v-model="models.policy"></mn-switch>
           </mn-card-suffix>
         </mn-card-item>
       </mn-card>
@@ -107,10 +123,10 @@
       <mn-card>
         <mn-card-item type="link">
           <mn-card-prefix>
-            <mn-form-label :validate="$v.models.city">City</mn-form-label>
+            <mn-label :validate="$v.models.city">City</mn-label>
           </mn-card-prefix>
           <mn-card-body>
-            <mn-form-select :options="cityOptions" v-model="models.city"></mn-form-select>
+            <mn-select :options="cityOptions" v-model="models.city"></mn-select>
           </mn-card-body>
         </mn-card-item>
       </mn-card>
@@ -170,7 +186,7 @@
           username: undefined,
           password: undefined,
           year: 22,
-          sex: undefined,
+          sex: 'Male',
           like: [],
           policy: true,
           note: undefined,
@@ -207,6 +223,9 @@
           form.loading = false
           this.$refs.submit.loading = false
         }, 5000)
+      },
+      openRadioInfo () {
+        this.$human.toastr({ show: true, type: 'warning', title: 'Some radio', description: 'Show radio information' })
       }
     }
   }

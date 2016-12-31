@@ -72,7 +72,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../../sass/variables";
+  @import "../../../src/sass/variables";
 
   .holder {
     height: 3rem;
