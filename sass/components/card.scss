@@ -30,7 +30,8 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
   padding: $grid-gutters;
   align-items: center;
 
-  &.is-link {
+  &.is-link,
+  &.is-cursor {
     cursor: pointer;
   }
 

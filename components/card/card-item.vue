@@ -9,7 +9,7 @@
     props: {
       type: {
         type: String,
-        validator: val => ['link', 'arrow'].includes(val)
+        validator: val => ['link', 'arrow', 'cursor'].includes(val)
       }
     },
     computed: {
