@@ -19,6 +19,7 @@
 
 <script>
   export default {
+    name: 'mn-textarea',
     props: {
       value: {
         type: null,

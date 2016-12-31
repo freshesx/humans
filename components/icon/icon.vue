@@ -12,6 +12,7 @@
   import { getMergeIcons } from './merge-icons'
 
   export default {
+    name: 'mn-icon',
     props: {
       name: {
         type: String,

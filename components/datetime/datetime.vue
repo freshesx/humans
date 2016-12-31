@@ -12,6 +12,7 @@
 
 <script>
   export default {
+    name: 'mn-datetime',
     props: {
       value: {
         type: null,

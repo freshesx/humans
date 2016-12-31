@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-filter-bar',
     props: {
       shadow: {
         type: Boolean,

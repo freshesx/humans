@@ -4,6 +4,7 @@
 
 <script>
   export default {
+    name: 'mn-rate-item',
     props: {
       index: {
         type: Number,

@@ -4,6 +4,7 @@
 
 <script>
   export default {
+    name: 'mn-pre',
     props: {
       code: {
         type: String

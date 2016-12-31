@@ -8,6 +8,7 @@
 
 <script>
   export default {
+    name: 'mn-switch',
     props: {
       value: {},
       data: {}

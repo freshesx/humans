@@ -15,6 +15,7 @@
 
 <script>
   export default {
+    name: 'mn-slide-bar',
     props: {
       boxWidth: {
         type: String,

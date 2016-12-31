@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-slide-bar-item',
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix

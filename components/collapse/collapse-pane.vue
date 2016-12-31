@@ -15,6 +15,7 @@
 
 <script>
   export default {
+    name: 'mn-collapse-pane',
     props: {
       title: {
         type: String,

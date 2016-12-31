@@ -14,6 +14,7 @@
 
 <script>
   export default {
+    name: 'mn-counter',
     props: {
       value: {
         type: Number,

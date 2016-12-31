@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-cols',
     props: {
       gapless: {
         type: Boolean,

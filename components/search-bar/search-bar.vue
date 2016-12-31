@@ -9,6 +9,7 @@
 
 <script>
   export default {
+    name: 'mn-search-bar',
     props: {
       size: String
     },

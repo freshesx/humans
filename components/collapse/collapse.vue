@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-collapse',
     data () {
       return {
         collapses: new Map(),

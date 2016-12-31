@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-row',
     props: {
       fixed: {
         type: Boolean,

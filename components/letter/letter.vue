@@ -12,6 +12,7 @@
 
 <script>
   export default {
+    name: 'mn-letter',
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix

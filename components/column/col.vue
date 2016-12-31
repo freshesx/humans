@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-col',
     props: {
       query: {
         type: String,

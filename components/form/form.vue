@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-form',
     props: {
       validate: Object
     },

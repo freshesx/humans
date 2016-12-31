@@ -11,6 +11,7 @@
   import { getZIndex } from './layer'
 
   export default {
+    name: 'mn-popup',
     props: {
       show: {
         type: Boolean,

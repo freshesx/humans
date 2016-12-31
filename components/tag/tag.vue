@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-tag',
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix

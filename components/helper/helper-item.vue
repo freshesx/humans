@@ -7,6 +7,7 @@
 
 <script>
   export default {
+    name: 'mn-helper-item',
     props: {
       name: String
     },

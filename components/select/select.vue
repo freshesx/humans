@@ -11,6 +11,7 @@
 
 <script>
   export default {
+    name: 'mn-select',
     props: {
       value: {},
       options: {

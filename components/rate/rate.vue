@@ -12,6 +12,7 @@
 
 <script>
   export default {
+    name: 'mn-rate',
     props: {
       // Provide some options.
       max: {

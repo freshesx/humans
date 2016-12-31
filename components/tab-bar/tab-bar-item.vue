@@ -7,6 +7,7 @@
 
 <script>
   export default {
+    name: 'mn-tab-bar-item',
     props: {
       tab: {
         type: Object,

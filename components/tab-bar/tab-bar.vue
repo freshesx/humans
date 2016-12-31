@@ -14,6 +14,7 @@
 
 <script>
   export default {
+    name: 'mn-tab-bar',
     data () {
       return {
         tabs: [],

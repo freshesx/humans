@@ -13,6 +13,7 @@
   import $ from 'jquery'
 
   export default {
+    name: 'mn-scroller',
     props: {
       save: {
         type: Boolean,

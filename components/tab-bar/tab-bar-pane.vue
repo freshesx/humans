@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-tab-bar-pane',
     props: {
       title: {
         type: String

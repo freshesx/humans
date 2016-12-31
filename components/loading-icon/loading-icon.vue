@@ -7,6 +7,7 @@
   import resolveIcon from './resolve-icon'
 
   export default {
+    name: 'mn-loading-icon',
     components: {
       CustomIcon (resolve) {
         Vue.human.loading

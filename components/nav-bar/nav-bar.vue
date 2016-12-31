@@ -13,6 +13,7 @@
 </template>
 <script>
   export default {
+    name: 'mn-nav-bar',
     props: {
       loading: {
         type: Boolean,

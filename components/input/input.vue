@@ -21,6 +21,7 @@
 
 <script>
   export default {
+    name: 'mn-input',
     props: {
       value: {
         type: null,

@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-helper',
     props: {
       validate: Object
     },
