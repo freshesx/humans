@@ -13,6 +13,7 @@
 
 <script>
   export default {
+    name: 'mn-radio-icon',
     props: {
       // when checked, show this icon.
       active: {

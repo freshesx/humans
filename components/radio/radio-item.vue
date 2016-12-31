@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-radio-item',
     props: {
       value: null,
       data: null
