@@ -29,7 +29,6 @@ import Row from './row'
 // More components
 import Letter from './letter'
 import Article from './article'
-import Image from './image'
 import Tag from './tag'
 import Rate from './rate'
 import Collapse from './collapse'
@@ -71,7 +70,6 @@ export default {
   // More components
   ...Letter,
   ...Article,
-  ...Image,
   ...Tag,
   ...Rate,
   ...Collapse,

@@ -9,7 +9,7 @@
     </mn-card-item>
 
     <mn-card-media>
-      <mn-block-image :options="blockImage" type="rounded"></mn-block-image>
+      <img src="https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg">
     </mn-card-media>
 
     <mn-card-item>
@@ -31,28 +31,3 @@
   </mn-card>
 
 </template>
-
-<script>
-  export default {
-    data () {
-      return {
-        // Simple image
-        // blockImage: 'https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg',
-        // Media query image
-        blockImage: [
-          {
-            min: 0,
-            max: 700,
-            scale: 400 / 200,
-            src: 'https://o9qu3mxgj.qnssl.com/o_1ard82t21s7j9a0184ier9qaa7k.png-cover.md'
-          },
-          {
-            min: 701,
-            scale: 400 / 200,
-            src: 'https://o9qu3mxgj.qnssl.com/holder/multicolored.jpg-cover.lg'
-          }
-        ]
-      }
-    }
-  }
-</script>
