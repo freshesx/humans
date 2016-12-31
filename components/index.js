@@ -1,7 +1,7 @@
 import components from './components'
 import element from './util/element'
 import popup from './popup'
-import scroller from './scroller'
+import scroller from './scroller/plugins.js'
 import browser from './util/browser'
 
 export default {
