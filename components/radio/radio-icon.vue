@@ -1,5 +1,5 @@
 <template>
-  <div :class="[`${cssPrefix}form-radio-icon-box`]">
+  <div :style="{ width: `${20 * scale}px` }">
     <mn-icon
       :class="[`${cssPrefix}form-radio-checkmark`]"
       :name="icon"
@@ -18,7 +18,7 @@
       },
       scale: {
         type: Number,
-        default: 2
+        default: 1.5
       },
       checked: {
         type: Boolean,

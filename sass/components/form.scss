@@ -141,9 +141,6 @@ $-form-select-control: #{$namespace}form-select-control;
 }
 
 .#{$-form-radio} {
-  &-icon-box {
-    width: 40px;
-  }
   &-checkmark {
     color: $green;
   }
