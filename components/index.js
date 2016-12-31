@@ -1,7 +1,7 @@
-import components from './components'
+import components from './components/index.js'
 import element from './util/element'
-import popup from './popup/plugins.js'
-import scroller from './scroller/plugins.js'
+import popup from './components/popup/plugins.js'
+import scroller from './components/scroller/plugins.js'
 import browser from './util/browser'
 
 export default {

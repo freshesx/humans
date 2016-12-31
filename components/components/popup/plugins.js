@@ -1,4 +1,4 @@
-import { element } from '../util/element'
+import { element } from '../../util/element'
 import Confirm from './confirm'
 import Alert from './alert'
 import Toastr from './toastr'
