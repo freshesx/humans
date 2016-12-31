@@ -24,12 +24,10 @@ import Helper from './helper/helper'
 import HelperItem from './helper/helper-item'
 
 // Layout
-import Container from './container/container'
-import Section from './section/section'
-import Cols from './column/cols'
-import Col from './column/col'
-import Rows from './row/rows'
-import Row from './row/row'
+import Container from './container'
+import Section from './section'
+import Column from './column'
+import Row from './row'
 
 // More components
 import Letter from './letter/letter'
@@ -77,12 +75,10 @@ export default {
   HelperItem,
 
   // Layout
-  Container,
-  Section,
-  Cols,
-  Col,
-  Rows,
-  Row,
+  ...Container,
+  ...Section,
+  ...Column,
+  ...Row,
 
   // More components
   Letter,
