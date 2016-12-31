@@ -126,7 +126,7 @@
             <mn-label :validate="$v.models.city">City</mn-label>
           </mn-card-prefix>
           <mn-card-body>
-            <mn-form-select :options="cityOptions" v-model="models.city"></mn-form-select>
+            <mn-select :options="cityOptions" v-model="models.city"></mn-select>
           </mn-card-body>
         </mn-card-item>
       </mn-card>
