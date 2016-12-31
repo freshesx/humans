@@ -1,12 +1,12 @@
 <template>
-  <mn-form :models="models" :rules="rules" v-model="validation" @success="success">
+  <mn-form :validate="$v" @success="success">
     <!-- FRESH ID and password -->
     <mn-card-wrapper>
       <mn-card-note>FRESH ID and password</mn-card-note>
       <mn-card>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-form-label :validate="validation.username">FRESH ID</mn-form-label>
+            <mn-form-label :validate="$v.models.username">FRESH ID</mn-form-label>
           </mn-card-prefix>
           <mn-card-body>
             <mn-form-text v-model="models.username" placeholder="Phone / Email / Username"></mn-form-text>
@@ -14,7 +14,7 @@
         </mn-card-item>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-form-label :validate="validation.password">Password</mn-form-label>
+            <mn-form-label :validate="$v.models.password">Password</mn-form-label>
           </mn-card-prefix>
           <mn-card-body>
             <mn-form-text type="password" v-model="models.password" placeholder="Password"></mn-form-text>
@@ -22,17 +22,32 @@
         </mn-card-item>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-form-label :validate="validation.yaer">year</mn-form-label>
+            <mn-form-label :validate="$v.models.yaer">year</mn-form-label>
           </mn-card-prefix>
           <mn-card-body>
             <mn-form-text type="number" v-model="models.year" placeholder="Year"></mn-form-text>
           </mn-card-body>
+          <mn-card-suffix v-if="$v.models.year.$pending">
+            <mn-loading-icon></mn-loading-icon>
+          </mn-card-suffix>
         </mn-card-item>
       </mn-card>
       <mn-card-note>
         Your FRESH ID (Phone, Email or username).
-        <mn-form-helper :validate="validation.username"></mn-form-helper>
-        <mn-form-helper :validate="validation.password"></mn-form-helper>
+        <mn-helper :validate="$v.models.username">
+          <mn-helper-item name="required">Require FRESH ID</mn-helper-item>
+          <mn-helper-item name="minLength">FRESH ID need to be more than 4</mn-helper-item>
+          <mn-helper-item name="maxLength">FRESH ID need to be less then 100</mn-helper-item>
+        </mn-helper>
+        <mn-helper :validate="$v.models.password">
+          <mn-helper-item name="required">Require password</mn-helper-item>
+          <mn-helper-item name="minLength">Password need to be more than 6</mn-helper-item>
+          <mn-helper-item name="maxLength">Password need to be less then 20</mn-helper-item>
+        </mn-helper>
+        <mn-helper :validate="$v.models.year">
+          <mn-helper-item name="required">Require year</mn-helper-item>
+          <mn-helper-item name="integer">Year must use integer</mn-helper-item>
+        </mn-helper>
       </mn-card-note>
     </mn-card-wrapper>
     <!-- sex -->
@@ -46,7 +61,9 @@
         </mn-radio-item>
       </mn-card>
       <mn-card-note>
-        <mn-form-helper :validate="validation.sex"></mn-form-helper>
+        <mn-helper :validate="$v.models.sex">
+          <mn-helper-item name="required">Must choose one</mn-helper-item>
+        </mn-helper>
       </mn-card-note>
     </mn-card-wrapper>
     <!-- Like -->
@@ -54,7 +71,9 @@
       <mn-card-note>What do you like?</mn-card-note>
       <mn-form-checkbox-card :options="likeOptions" v-model="models.like"></mn-form-checkbox-card>
       <mn-card-note>
-        <mn-form-helper :validate="validation.like"></mn-form-helper>
+        <mn-helper :validate="$v.models.like">
+          <mn-helper-item name="required">Must choose one</mn-helper-item>
+        </mn-helper>
       </mn-card-note>
     </mn-card-wrapper>
     <!-- Note -->
@@ -68,7 +87,9 @@
         </mn-card-item>
       </mn-card>
       <mn-card-note>
-        <mn-form-helper :validate="validation.note"></mn-form-helper>
+        <mn-helper :validate="$v.models.note">
+          <mn-helper-item name="maxLength">Need to be less then 300</mn-helper-item>
+        </mn-helper>
       </mn-card-note>
     </mn-card-wrapper>
     <!-- Policy -->
@@ -82,7 +103,9 @@
         </mn-card-item>
       </mn-card>
       <mn-card-note>
-        <mn-form-helper :validate="validation.policy"></mn-form-helper>
+        <mn-helper :validate="$v.models.policy">
+          <mn-helper-item name="required">Must agree</mn-helper-item>
+        </mn-helper>
       </mn-card-note>
     </mn-card-wrapper>
     <!-- City -->
@@ -90,7 +113,7 @@
       <mn-card>
         <mn-card-item type="link">
           <mn-card-prefix>
-            <mn-form-label :validate="validation.city">City</mn-form-label>
+            <mn-form-label :validate="$v.models.city">City</mn-form-label>
           </mn-card-prefix>
           <mn-card-body>
             <mn-form-select :options="cityOptions" v-model="models.city"></mn-form-select>
@@ -98,42 +121,66 @@
         </mn-card-item>
       </mn-card>
       <mn-card-note>
-        <mn-form-helper :validate="validation.city"></mn-form-helper>
+        <mn-helper :validate="$v.models.city">
+          <mn-helper-item name="required">Must choose one</mn-helper-item>
+        </mn-helper>
       </mn-card-note>
     </mn-card-wrapper>
 
-    <mn-btn type="primary" margin block :loading="validation.$loading">Submit</mn-btn>
+    <mn-btn type="primary" margin block ref="submit">Submit</mn-btn>
   </mn-form>
 </template>
 
 <script>
+  import {
+    required,
+    minLength,
+    maxLength } from 'vuelidate/lib/validators'
+  import lodash from 'lodash'
+
   export default {
+    validations: {
+      models: {
+        username: {
+          required,
+          minLength: minLength(4),
+          maxLength: maxLength(100)
+        },
+        password: {
+          required,
+          minLength: minLength(6),
+          maxLength: maxLength(20)
+        },
+        year: {
+          required,
+          integer (val) {
+            // Test asynchronous validation
+            return new Promise((resolve, reject) => {
+              setTimeout(() => {
+                console.log('Integer asynchronous resolve.')
+                resolve(lodash.isSafeInteger(val))
+              }, 5000)
+            })
+          }
+        },
+        sex: { required },
+        like: { required },
+        policy: { required },
+        note: { maxLength: maxLength(300) },
+        city: { required }
+      }
+    },
     data () {
       return {
-        validation: {},
         models: {
           username: undefined,
           password: undefined,
           year: 22,
-          sex: 'Male',
-          like: ['Football'],
+          sex: undefined,
+          like: [],
           policy: true,
           note: undefined,
           city: undefined
-        },
-        rules: {
-          username: [
-            { type: 'string', required: true },
-            { min: 4, max: 100 }
-          ],
-          password: [
-            { type: 'string', required: true },
-            { min: 6, max: 20 }
-          ],
-          sex: { type: 'string', required: true },
-          like: { type: 'array', required: true },
-          policy: { type: 'boolean', required: true },
-          city: { type: 'string', required: true }
         },
         sexOptions: [
           { label: 'Male', value: 'Male' },
@@ -153,20 +200,19 @@
       }
     },
     methods: {
-      success () {
-        this.$human.toastr({
-          show: true,
-          type: 'primary',
-          description: '数据验证成功'
-        })
-      }
-    },
-    watch: {
-      'models.username' (newValue) {
-        console.log('username', newValue)
-      },
-      'models.year' (newValue) {
-        console.log('year', newValue)
+      success ($event, form) {
+        form.loading = true
+        this.$refs.submit.loading = true
+
+        setTimeout(() => {
+          this.$human.toastr({
+            show: true,
+            type: 'primary',
+            description: '数据验证成功'
+          })
+          form.loading = false
+          this.$refs.submit.loading = false
+        }, 5000)
       }
     }
   }

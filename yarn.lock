@@ -3683,6 +3683,10 @@ lodash@^4.0.0, lodash@^4.0.1, lodash@^4.1.0, lodash@^4.14.0, lodash@^4.16.2, lod
   version "4.16.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.16.4.tgz#01ce306b9bad1319f2a5528674f88297aeb70127"
 
+lodash@^4.17.3:
+  version "4.17.3"
+  resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.3.tgz#557ed7d2a9438cac5fd5a43043ca60cb455e01f7"
+
 log-symbols@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-1.0.2.tgz#376ff7b58ea3086a0f09facc74617eca501e1a18"
@@ -6023,6 +6027,10 @@ vue-template-es2015-compiler@^1.0.0:
 vue@^2.0.1:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.0.3.tgz#3f7698f83d6ad1f0e35955447901672876c63fde"
+
+vuelidate@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/vuelidate/download/vuelidate-0.2.0.tgz#7c50b220ef3700b1a28900f32825c442df809337"
 
 watchpack@^0.2.1:
   version "0.2.9"

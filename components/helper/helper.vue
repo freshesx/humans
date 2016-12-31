@@ -1,7 +1,7 @@
 <template>
-  <label :class="[ `${cssPrefix}form-label`, { 'is-error': isInvalid } ]">
+  <div v-if="validate.$error">
     <slot></slot>
-  </label>
+  </div>
 </template>
 
 <script>
@@ -12,11 +12,6 @@
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix
-      },
-      isInvalid () {
-        return this.validate
-          ? this.validate.$error
-          : false
       }
     }
   }

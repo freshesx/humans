@@ -22,7 +22,6 @@ import PopupToastr from './popup/toastr'
 // Form
 import Form from './form/form'
 import FormLabel from './form/label'
-import FormHelper from './form/helper'
 import FormText from './form/text'
 import FormTextarea from './form/textarea'
 import FormDatetime from './form/datetime'
@@ -34,6 +33,8 @@ import FormCheckboxCardIcon from './form/checkbox-card-icon'
 
 import RadioItem from './radio/radio-item'
 import RadioIcon from './radio/radio-icon'
+import Helper from './helper/helper'
+import HelperItem from './helper/helper-item'
 
 // Layout
 import Container from './container/container'
@@ -87,7 +88,6 @@ export default {
   // Form
   Form,
   FormLabel,
-  FormHelper,
   FormText,
   FormTextarea,
   FormDatetime,
@@ -99,6 +99,8 @@ export default {
 
   RadioItem,
   RadioIcon,
+  Helper,
+  HelperItem,
 
   // Layout
   Container,

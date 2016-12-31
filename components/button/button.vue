@@ -98,8 +98,12 @@
         // If loading, prevent
         if (this.loading) return
 
-        // Emit event
-        this.$emit(this.disabled ? 'error' : 'click', $event, this)
+        if (!this.disabled) {
+          this.$emit('click', $event, this)
+        } else {
+          $event.preventDefault()
+          this.$emit('error', $event, this)
+        }
       }
     }
   }
