@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueHuman from '../../components/index.js'
+import VueHuman from '../../src/index.js'
 // import resolveLoadingIcon from './resolve-loading-icon'
 import './styles.scss'
 import DocsLayoutPage from '../components/layout/page'
