@@ -92,7 +92,7 @@
       <mn-card>
         <mn-card-item>
           <mn-card-body>
-            <mn-form-textarea v-model="models.note" placeholder="Add some note" :max-length="300"></mn-form-textarea>
+            <mn-textarea v-model="models.note" placeholder="Add some note" :max-length="300"></mn-textarea>
           </mn-card-body>
         </mn-card-item>
       </mn-card>
