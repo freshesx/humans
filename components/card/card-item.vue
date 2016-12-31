@@ -1,6 +1,10 @@
 <template>
   <div
-    :class="[`${cssPrefix}card-item`, typeClass, { 'is-focus': focus }]"
+    :class="[
+      `${cssPrefix}card-item`,
+      typeClass,
+      { 'is-focus': focus, 'is-disabled': disabled
+    }]"
     @click="click">
     <slot></slot>
   </div>
@@ -12,7 +16,8 @@
       type: {
         type: String,
         validator: val => ['link', 'arrow', 'cursor'].includes(val)
-      }
+      },
+      disabled: Boolean
     },
     data () {
       return {

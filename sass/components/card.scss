@@ -46,6 +46,10 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
     }
   }
 
+  &.is-disabled {
+    background: #eee;
+  }
+
   &-addon {
     flex-shrink: 0;
 
