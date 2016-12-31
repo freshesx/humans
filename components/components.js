@@ -30,9 +30,9 @@ import Column from './column'
 import Row from './row'
 
 // More components
-import Letter from './letter/letter'
-import Article from './article/article'
-import BlockImage from './image/block-image'
+import Letter from './letter'
+import Article from './article'
+import Image from './image'
 import NavBar from './nav-bar/nav-bar'
 import TabBar from './tab-bar/tab-bar'
 import TabBarItem from './tab-bar/tab-bar-item'
@@ -81,9 +81,9 @@ export default {
   ...Row,
 
   // More components
-  Letter,
-  Article,
-  BlockImage,
+  ...Letter,
+  ...Article,
+  ...Image,
   NavBar,
   TabBar,
   TabBarItem,
