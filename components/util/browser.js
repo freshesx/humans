@@ -1,4 +1,4 @@
-import $ from 'jquery'
+import lodash from 'lodash'
 
 class Browser {
   constructor () {
@@ -14,16 +14,25 @@ class Browser {
       isChrome
     }
   }
+
+  isSafari () {
+    return this.storage.isSafari
+  }
+
+  isChrome () {
+    return this.storage.isChrome
+  }
 }
 
 export default {
   install (Vue, options) {
     let browser = new Browser()
-    let classes = ''
+    let html = document.documentElement
+    let classes = html.className
 
     if (browser.storage.isSafari) classes += ' is-safari'
     if (browser.storage.isChrome) classes += ' is-chrome'
 
-    $('html').addClass(classes)
+    document.documentElement.className = lodash.trim(classes)
   }
 }
