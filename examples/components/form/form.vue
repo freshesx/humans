@@ -38,7 +38,13 @@
     <!-- sex -->
     <mn-card-wrapper>
       <mn-card-note>Choose your sex</mn-card-note>
-      <mn-form-radio-card :options="sexOptions" v-model="models.sex"></mn-form-radio-card>
+      <mn-card>
+        <mn-radio-item :data="option.value" v-model="models.sex" v-for="option in sexOptions">
+          <mn-card-prefix><mn-icon name="ios-information"></mn-icon></mn-card-prefix>
+          <mn-card-body>{{ option.label }}</mn-card-body>
+          <mn-card-suffix muted><small>Helper information</small></mn-card-suffix>
+        </mn-radio-item>
+      </mn-card>
       <mn-card-note>
         <mn-form-helper :validate="validation.sex"></mn-form-helper>
       </mn-card-note>
