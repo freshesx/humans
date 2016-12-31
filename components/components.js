@@ -33,20 +33,14 @@ import Row from './row'
 import Letter from './letter'
 import Article from './article'
 import Image from './image'
-import NavBar from './nav-bar/nav-bar'
-import TabBar from './tab-bar/tab-bar'
-import TabBarItem from './tab-bar/tab-bar-item'
-import TabBarPane from './tab-bar/tab-bar-pane'
-import SearchBar from './search-bar/search-bar'
-import FilterBar from './filter-bar/filter-bar'
-import FilterBarItem from './filter-bar/filter-bar-item'
-import Tag from './tag/tag'
-import Rate from './rate/rate'
-import RateItem from './rate/rate-item'
-import Collapse from './collapse/collapse'
-import CollapsePane from './collapse/collapse-pane'
-import SlideBar from './slide-bar/slide-bar'
-import SlideBarItem from './slide-bar/slide-bar-item'
+import Tag from './tag'
+import Rate from './rate'
+import Collapse from './collapse'
+import NavBar from './nav-bar'
+import TabBar from './tab-bar'
+import SearchBar from './search-bar'
+import FilterBar from './filter-bar'
+import SlideBar from './slide-bar'
 
 export default {
   // Core
@@ -84,18 +78,12 @@ export default {
   ...Letter,
   ...Article,
   ...Image,
-  NavBar,
-  TabBar,
-  TabBarItem,
-  TabBarPane,
-  SearchBar,
-  FilterBar,
-  FilterBarItem,
-  Tag,
-  Rate,
-  RateItem,
-  Collapse,
-  CollapsePane,
-  SlideBar,
-  SlideBarItem
+  ...Tag,
+  ...Rate,
+  ...Collapse,
+  ...NavBar,
+  ...TabBar,
+  ...SearchBar,
+  ...FilterBar,
+  ...SlideBar
 }
