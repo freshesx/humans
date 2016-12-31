@@ -140,12 +140,7 @@ $-form-select-control: #{$namespace}form-select-control;
   }
 }
 
-.#{$-form-radio} {
-  &-checkmark {
-    color: $green;
-  }
-}
-
+.#{$-form-radio},
 .#{$-form-checkbox} {
   &-checkmark {
     color: #999;
