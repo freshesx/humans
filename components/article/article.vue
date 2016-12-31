@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-article',
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix

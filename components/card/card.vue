@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-card',
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix

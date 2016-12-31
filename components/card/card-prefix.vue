@@ -6,6 +6,7 @@
 
 <script>
   export default {
+    name: 'mn-card-prefix',
     props: {
       muted: Boolean,
       action: Boolean

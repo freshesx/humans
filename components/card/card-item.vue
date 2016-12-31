@@ -12,6 +12,7 @@
 
 <script>
   export default {
+    name: 'mn-card-item',
     props: {
       type: {
         type: String,
