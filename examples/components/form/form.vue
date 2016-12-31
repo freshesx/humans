@@ -72,7 +72,14 @@
     <!-- Like -->
     <mn-card-wrapper>
       <mn-card-note>What do you like?</mn-card-note>
-      <mn-form-checkbox-card :options="likeOptions" v-model="models.like"></mn-form-checkbox-card>
+      <mn-card>
+        <mn-check-item :data="option.value" v-model="models.like" v-for="option in likeOptions">
+          <mn-card-prefix action>
+            <mn-check-icon :data="option.value" :value="models.like"></mn-check-icon>
+          </mn-card-prefix>
+          <mn-card-body>{{ option.label }}</mn-card-body>
+        </mn-check-item>
+      </mn-card>
       <mn-card-note>
         <mn-helper :validate="$v.models.like">
           <mn-helper-item name="required">Must choose one</mn-helper-item>
@@ -179,7 +186,7 @@
           username: undefined,
           password: undefined,
           year: 22,
-          sex: undefined,
+          sex: 'Male',
           like: [],
           policy: true,
           note: undefined,
