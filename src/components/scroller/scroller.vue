@@ -10,8 +10,6 @@
 </template>
 
 <script>
-  import $ from 'jquery'
-
   export default {
     name: 'mn-scroller',
     props: {
@@ -32,9 +30,9 @@
       },
       touchMove (event) {
         let pageY = event.touches[0].pageY
-        let scrollTop = $(this.$el).scrollTop()
+        let scrollTop = this.$el.scrollTop
         let scrollHeight = this.$el.scrollHeight
-        let containerHeight = $(this.$el).height()
+        let containerHeight = this.$el.offsetHeight
 
         // 允许侧边栏手势进行返回
         if (this.startPageX > 16) {
