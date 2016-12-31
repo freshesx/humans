@@ -1,8 +1,10 @@
 import components from './components/index.js'
+
 import element from './util/element'
+import browser from './util/browser/plugins.js'
+
 import popup from './components/popup/plugins.js'
 import scroller from './components/scroller/plugins.js'
-import browser from './util/browser'
 
 export default {
   options: {
