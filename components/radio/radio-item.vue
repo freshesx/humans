@@ -1,5 +1,5 @@
 <template>
-  <mn-card-item @click="click" type="cursor">
+  <mn-card-item type="cursor" :disabled="disabled" @click="click">
     <slot></slot>
   </mn-card-item>
 </template>
@@ -9,11 +9,14 @@
     name: 'mn-radio-item',
     props: {
       value: null,
-      data: null
+      data: null,
+      disabled: Boolean
     },
     methods: {
       click () {
-        this.$emit('input', this.data)
+        if (!this.disabled) {
+          this.$emit('input', this.data)
+        }
       }
     }
   }

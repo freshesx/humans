@@ -6,10 +6,13 @@
     mixins: [ MnRadioItem ],
     methods: {
       click () {
-        if (this.value.includes(this.data)) {
-          this.$emit('input', this.value.filter(item => item !== this.data))
-        } else {
-          this.$emit('input', [ ...this.value, this.data ])
+        if (!this.disabled) {
+          this.$emit(
+            'input',
+            this.value.includes(this.data)
+              ? this.value.filter(item => item !== this.data)
+              : [ ...this.value, this.data ]
+          )
         }
       }
     }
