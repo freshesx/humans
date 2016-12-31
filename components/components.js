@@ -22,11 +22,11 @@ import PopupToastr from './popup/toastr'
 // Form
 import Form from './form/form'
 import FormText from './form/text'
-import FormDatetime from './form/datetime'
 import FormSwitch from './form/switch'
 import FormCounter from './form/counter'
 
 import Label from './label/label'
+import Datetime from './datetime/datetime'
 import Textarea from './textarea/textarea'
 import Select from './select/select'
 import CheckItem from './check/check-item'
@@ -88,12 +88,12 @@ export default {
   // Form
   Form,
   FormText,
-  FormDatetime,
   FormSwitch,
   FormSelect,
   FormCounter,
 
   Label,
+  Datetime,
   Textarea,
   CheckItem,
   CheckIcon,
