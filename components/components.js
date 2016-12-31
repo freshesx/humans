@@ -1,5 +1,5 @@
 // Core
-import Icon from './icon/icon'
+import Icon from './icon'
 import LoadingIcon from './loading-icon/loading-icon'
 import Scroller from './scroller/scroller'
 import Btn from './button/button'
@@ -55,7 +55,7 @@ import SlideBarItem from './slide-bar/slide-bar-item'
 
 export default {
   // Core
-  Icon,
+  ...Icon,
   LoadingIcon,
   Scroller,
   Btn,
