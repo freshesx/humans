@@ -73,7 +73,7 @@
     <mn-card-wrapper>
       <mn-card-note>What do you like?</mn-card-note>
       <mn-card>
-        <mn-check-item :data="option.value" v-model="models.like" v-for="option in likeOptions">
+        <mn-check-item :data="option.value" :disabled="key === 1" v-model="models.like" v-for="(option, key) in likeOptions">
           <mn-card-prefix action>
             <mn-check-icon :data="option.value" :value="models.like"></mn-check-icon>
           </mn-card-prefix>
