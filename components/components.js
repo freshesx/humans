@@ -2,7 +2,7 @@
 import Icon from './icon'
 import LoadingIcon from './loading-icon'
 import Scroller from './scroller'
-import Btn from './button/button'
+import Btn from './button'
 import Card from './card'
 import Pre from './code/pre'
 import Popup from './popup/popup'
@@ -58,7 +58,7 @@ export default {
   ...Icon,
   ...LoadingIcon,
   ...Scroller,
-  Btn,
+  ...Btn,
   ...Card,
   Pre,
   Popup,
