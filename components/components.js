@@ -28,9 +28,9 @@ import FormDatetime from './form/datetime'
 import FormSwitch from './form/switch'
 import FormSelect from './form/select'
 import FormCounter from './form/counter'
-import FormCheckboxCard from './form/checkbox-card'
-import FormCheckboxCardIcon from './form/checkbox-card-icon'
 
+import CheckItem from './check/check-item'
+import CheckIcon from './check/check-icon'
 import RadioItem from './radio/radio-item'
 import RadioIcon from './radio/radio-icon'
 import Helper from './helper/helper'
@@ -94,9 +94,9 @@ export default {
   FormSwitch,
   FormSelect,
   FormCounter,
-  FormCheckboxCard,
-  FormCheckboxCardIcon,
 
+  CheckItem,
+  CheckIcon,
   RadioItem,
   RadioIcon,
   Helper,
