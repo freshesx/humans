@@ -1,5 +1,6 @@
 @import "../variables";
 @import "../mixins/media";
+@import "../mixins/number";
 
 $-cols: #{$namespace}cols;
 $-col: #{$namespace}col;
@@ -33,25 +34,19 @@ $-col: #{$namespace}col;
     flex: 1;
   }
 
-  // Specify column class
-  // @todo( @advice: xsmall, small, medium, large, xlarge )
-  // @todo( @advice: mobile, pad, screen, xscreen, xxscreen )
-  // @class .col.is-xs-1 ~ .col.is-xs-12
-  // @class .col.is-sm-1 ~ .col.is-sm-12
-  // @class .col.is-md-1 ~ .col.is-md-12
-  // @class .col.is-lg-1 ~ .col.is-lg-12
-  // @class .col.is-xl-1 ~ .col.is-xl-12
+  // Column span and offset
+  // @divice(mobile, tablet, desktop, widescreen)
   //
   @each $breakpoint in map-keys($grid-breakpoints) {
     @include min-screen($breakpoint) {
-      @for $num from 1 through 12 {
-        &.is-#{$breakpoint}-#{$num} {
+      @for $number from 1 through 12 {
+        &.is-#{$breakpoint}-#{getLetterByNumber($number)} {
           flex: none;
-          width: (100% / 12) * $num;
+          width: (100% / 12) * $number;
         }
 
-        &.is-offset-#{$breakpoint}-#{$num} {
-          margin-left: (100% / 12) * $num;
+        &.is-#{$breakpoint}-offset-#{getLetterByNumber($number)} {
+          margin-left: (100% / 12) * $number;
         }
       }
     }

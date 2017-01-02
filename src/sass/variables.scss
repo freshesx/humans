@@ -45,11 +45,10 @@ $grid-gutters: 1rem !default;
 
 // media query
 $grid-breakpoints: (
-  xs: 0,
-  sm: 544px,    // 34rem
-  md: 768px,    // 48rem
-  lg: 992px,    // 62rem
-  xl: 1200px    // 75rem
+  mobile: 0,
+  tablet: 768px,
+  desktop: 992px,
+  widescreen: 1200px
 ) !default;
 
 // section container
