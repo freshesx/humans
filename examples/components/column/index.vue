@@ -14,13 +14,13 @@
               <mn-card-item>
                 <mn-card-body>
                   <mn-cols>
-                    <mn-col query="xs-3" v-for="i in [1, 2, 3, 4]">
+                    <mn-col mobile="three" v-for="i in [1, 2, 3, 4]">
                       <div class="holder has-purple-bg"></div>
                     </mn-col>
-                    <mn-col query="xs-4" v-for="i in [1, 2, 3]">
+                    <mn-col mobile="four" v-for="i in [1, 2, 3]">
                       <div class="holder has-purple-bg"></div>
                     </mn-col>
-                    <mn-col query="xs-12">
+                    <mn-col mobile="twelve">
                       <div class="holder has-purple-bg"></div>
                     </mn-col>
                   </mn-cols>
@@ -33,26 +33,26 @@
               <mn-card-item>
                 <mn-card-body>
                   <mn-cols>
-                    <mn-col query="xs-4">
+                    <mn-col mobile="four" desktop="two">
                       <div class="holder has-yellow-bg">
-                        is-xs-4
+                        four mobile, two desktop
                       </div>
                     </mn-col>
-                    <mn-col query="xs-8">
+                    <mn-col mobile="eight" desktop="ten">
                       <div class="holder has-orange-bg">
-                        is-xs-8
+                        eight mobile, ten desktop
                       </div>
                     </mn-col>
                   </mn-cols>
                   <mn-cols gapless>
-                    <mn-col query="xs-4">
+                    <mn-col mobile="four">
                       <div class="holder left-gapless has-yellow-bg">
-                        is-xs-4
+                        Hello
                       </div>
                     </mn-col>
-                    <mn-col query="xs-8">
+                    <mn-col mobile="eight">
                       <div class="holder right-gapless has-orange-bg">
-                        is-xs-8
+                        World!
                       </div>
                     </mn-col>
                   </mn-cols>
