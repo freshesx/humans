@@ -1,0 +1,26 @@
+$_letters: (
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'ten',
+  'eleven',
+  'twelve',
+  'thirteen',
+  'fourteen',
+  'fifteen',
+  'sixteen'
+);
+
+@function getLetterByNumber ($number) {
+  @return nth($_letters, $number);
+}
+
+@function getNumberByLetter ($letter) {
+  @return index($_letters, $letter);
+}
