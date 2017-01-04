@@ -13,7 +13,12 @@
 </template>
 
 <script>
+  import TabBarItem from './tab-bar-item'
+
   export default {
+    components: {
+      [TabBarItem.name]: TabBarItem
+    },
     name: 'mn-tab-bar',
     data () {
       return {

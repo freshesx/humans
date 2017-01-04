@@ -8,7 +8,12 @@
 </template>
 
 <script>
+  import Icon from '../icon/icon'
+
   export default {
+    components: {
+      [Icon.name]: Icon
+    },
     name: 'mn-search-bar',
     props: {
       size: String

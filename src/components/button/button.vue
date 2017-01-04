@@ -10,8 +10,8 @@
 </template>
 
 <script>
-  import LoadingIcon from '../loading-icon'
-  import Icon from '../icon'
+  import LoadingIcon from '../loading-icon/loading-icon'
+  import Icon from '../icon/icon'
 
   export default {
     components: {

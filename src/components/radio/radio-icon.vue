@@ -12,7 +12,12 @@
 </template>
 
 <script>
+  import Icon from '../icon/icon'
+
   export default {
+    components: {
+      [Icon.name]: Icon
+    },
     name: 'mn-radio-icon',
     props: {
       // when checked, show this icon.

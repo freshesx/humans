@@ -15,7 +15,20 @@
 </template>
 
 <script>
+  import Popup from './popup'
+  import Card from '../card/card'
+  import CardItem from '../card/card-item'
+  import CardBody from '../card/card-body'
+  import CardBtns from '../card/card-btns'
+
   export default {
+    components: {
+      [Popup.name]: Popup,
+      [Card.name]: Card,
+      [CardItem.name]: CardItem,
+      [CardBody.name]: CardBody,
+      [CardBtns.name]: CardBtns
+    },
     methods: {
       cancel () {
         this.show = false

@@ -22,6 +22,13 @@
 </template>
 
 <script>
+  import Popup from './popup'
+  import Card from '../card/card'
+  import CardItem from '../card/card-item'
+  import CardBody from '../card/card-body'
+  import CardPrefix from '../card/card-prefix'
+  import CardSuffix from '../card/card-suffix'
+
   const toastrTypes = {
     default: { text: 'Message', icon: 'ios-chatbubble', color: 'black' },
     primary: { text: 'Success', icon: 'ios-checkmark', color: 'green' },
@@ -30,6 +37,14 @@
   }
 
   export default {
+    components: {
+      [Popup.name]: Popup,
+      [Card.name]: Card,
+      [CardItem.name]: CardItem,
+      [CardBody.name]: CardBody,
+      [CardPrefix.name]: CardPrefix,
+      [CardSuffix.name]: CardSuffix
+    },
     methods: {
       close () {
         this.show = false

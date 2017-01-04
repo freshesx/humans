@@ -11,7 +11,12 @@
 </template>
 
 <script>
+  import RateItem from './rate-item'
+
   export default {
+    components: {
+      [RateItem.name]: RateItem
+    },
     name: 'mn-rate',
     props: {
       // Provide some options.

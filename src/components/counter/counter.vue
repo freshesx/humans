@@ -13,7 +13,12 @@
 </template>
 
 <script>
+  import Icon from '../icon/icon'
+
   export default {
+    components: {
+      [Icon.name]: Icon
+    },
     name: 'mn-counter',
     props: {
       value: {
