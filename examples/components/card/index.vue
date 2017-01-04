@@ -17,10 +17,10 @@
             </mn-letter>
 
             <mn-cols>
-              <mn-col query="sm-6">
+              <mn-col tablet="six">
                 <demo-card-media></demo-card-media>
               </mn-col>
-              <mn-col query="sm-6">
+              <mn-col tablet="six">
                 <demo-card-item></demo-card-item>
                 <demo-card-btns></demo-card-btns>
               </mn-col>
