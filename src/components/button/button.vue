@@ -10,7 +10,14 @@
 </template>
 
 <script>
+  import LoadingIcon from '../loading-icon'
+  import Icon from '../icon'
+
   export default {
+    components: {
+      [LoadingIcon.name]: LoadingIcon,
+      [Icon.name]: Icon
+    },
     name: 'mn-btn',
     props: {
       title: String,
