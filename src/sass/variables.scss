@@ -51,14 +51,6 @@ $grid-breakpoints: (
   widescreen: 1200px
 ) !default;
 
-// section container
-$grid-max-widths: (
-  sm: 576px,
-  md: 720px,
-  lg: 940px,
-  // xl: 1140px,    If not set, it will use prev size
-) !default;
-
 //
 // Radius
 //

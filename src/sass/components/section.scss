@@ -1,19 +1,6 @@
 @import "../variables";
-@import "../mixins/media";
 
-$-container: #{$namespace}container;
 $-section: #{$namespace}section;
-
-.#{$-container} {
-  margin: 0 $grid-gutters;
-
-  @each $name, $width in $grid-max-widths {
-    @include min-screen($name) {
-      width: $width;
-      margin: 0 auto;
-    }
-  }
-}
 
 .#{$-section} {
   margin: 0 $grid-gutters;

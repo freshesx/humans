@@ -21,7 +21,6 @@ import Radio from './radio'
 import Helper from './helper'
 
 // Layout
-import Container from './container'
 import Section from './section'
 import Column from './column'
 import Row from './row'
@@ -62,7 +61,6 @@ export default {
   ...Helper,
 
   // Layout
-  ...Container,
   ...Section,
   ...Column,
   ...Row,
