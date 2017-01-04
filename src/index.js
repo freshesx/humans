@@ -1,5 +1,3 @@
-import components from './components/index.js'
-
 import element from './util/element/plugins.js'
 import browser from './util/browser/plugins.js'
 import popup from './util/popup/plugins.js'
@@ -7,11 +5,6 @@ import scroller from './util/scroller/plugins.js'
 
 export default {
   options: {
-    /**
-     * Vue human component prefix
-     * @type {String}
-     */
-    prefix: 'Mn',
     /**
      * Human css prefix, using it in scss
      * @type {String}
@@ -35,12 +28,13 @@ export default {
    * @param  {Object} options
    */
   install (Vue, options) {
+    this.$vue = Vue
+
     // Merge and assign options
-    this.options = Object.assign({}, this.options, options)
+    this.options = { ...this.options, options }
 
     // Set up vue human
     Vue.human = {
-      prefix: this.options.prefix,
       cssPrefix: this.options.cssPrefix,
       loading: this.options.loading,
       icons: this.options.icons
@@ -54,10 +48,13 @@ export default {
     Vue.use(element)
     Vue.use(popup)
     Vue.use(browser)
-
-    // Vue load components
-    for (let name in components) {
-      Vue.component(`${this.options.prefix}${name}`, components[name])
+  },
+  add (VueComponent, name = VueComponent.name) {
+    this.$vue.component(name, VueComponent)
+  },
+  use (VueComponents) {
+    for (let name in VueComponents) {
+      this.add(VueComponents[name])
     }
   }
 }
