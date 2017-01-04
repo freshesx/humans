@@ -1,5 +1,5 @@
 import Icon from './icon'
 
-export default {
+export default [
   Icon
-}
+]

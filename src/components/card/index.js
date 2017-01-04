@@ -9,7 +9,7 @@ import CardBtns from './card-btns'
 import CardWrapper from './card-wrapper'
 import CardNote from './card-note'
 
-export default {
+export default [
   Card,
   CardItem,
   CardBody,
@@ -20,4 +20,4 @@ export default {
   CardBtns,
   CardWrapper,
   CardNote
-}
+]

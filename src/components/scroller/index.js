@@ -1,5 +1,5 @@
 import Scroller from './scroller'
 
-export default {
+export default [
   Scroller
-}
+]

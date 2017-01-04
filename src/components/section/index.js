@@ -1,5 +1,5 @@
 import Section from './section'
 
-export default {
+export default [
   Section
-}
+]

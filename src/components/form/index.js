@@ -1,5 +1,5 @@
 import Form from './form'
 
-export default {
+export default [
   Form
-}
+]

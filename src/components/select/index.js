@@ -1,5 +1,5 @@
 import Select from './select'
 
-export default {
+export default [
   Select
-}
+]

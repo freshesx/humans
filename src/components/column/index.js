@@ -1,7 +1,7 @@
 import Cols from './cols'
 import Col from './col'
 
-export default {
+export default [
   Cols,
   Col
-}
+]

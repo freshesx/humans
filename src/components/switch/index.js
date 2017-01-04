@@ -1,5 +1,5 @@
 import Switch from './switch'
 
-export default {
+export default [
   Switch
-}
+]

@@ -1,5 +1,5 @@
 import Popup from './popup'
 
-export default {
+export default [
   Popup
-}
+]

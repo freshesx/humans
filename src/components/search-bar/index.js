@@ -1,5 +1,5 @@
 import SearchBar from './search-bar'
 
-export default {
+export default [
   SearchBar
-}
+]

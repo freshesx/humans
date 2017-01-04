@@ -1,5 +1,5 @@
 import Tag from './tag'
 
-export default {
+export default [
   Tag
-}
+]

@@ -1,5 +1,5 @@
 import Counter from './counter'
 
-export default {
+export default [
   Counter
-}
+]

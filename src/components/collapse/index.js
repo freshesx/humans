@@ -1,7 +1,7 @@
 import Collapse from './collapse'
 import CollapsePane from './collapse-pane'
 
-export default {
+export default [
   Collapse,
   CollapsePane
-}
+]

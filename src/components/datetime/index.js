@@ -1,5 +1,5 @@
 import Datetime from './datetime'
 
-export default {
+export default [
   Datetime
-}
+]

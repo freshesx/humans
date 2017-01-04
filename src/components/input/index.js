@@ -1,5 +1,5 @@
 import Input from './input'
 
-export default {
+export default [
   Input
-}
+]

@@ -1,5 +1,5 @@
 import Pre from './pre'
 
-export default {
+export default [
   Pre
-}
+]

@@ -37,7 +37,7 @@ import SearchBar from './search-bar'
 import FilterBar from './filter-bar'
 import SlideBar from './slide-bar'
 
-export default {
+export default [
   // Core
   ...Icon,
   ...LoadingIcon,
@@ -76,4 +76,4 @@ export default {
   ...SearchBar,
   ...FilterBar,
   ...SlideBar
-}
+]

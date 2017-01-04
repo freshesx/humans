@@ -1,5 +1,5 @@
 import Letter from './letter'
 
-export default {
+export default [
   Letter
-}
+]

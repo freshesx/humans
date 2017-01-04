@@ -1,7 +1,7 @@
 import SlideBar from './slide-bar'
 import SlideBarItem from './slide-bar-item'
 
-export default {
+export default [
   SlideBar,
   SlideBarItem
-}
+]

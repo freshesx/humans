@@ -1,5 +1,5 @@
 import NavBar from './nav-bar'
 
-export default {
+export default [
   NavBar
-}
+]

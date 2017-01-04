@@ -1,5 +1,5 @@
 import Textarea from './textarea'
 
-export default {
+export default [
   Textarea
-}
+]
