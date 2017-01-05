@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueHuman from 'vue-human'
-import components from 'vue-human/lots/total'
+import components from 'vue-human/total'
 // import resolveLoadingIcon from './resolve-loading-icon'
 import DocsLayoutPage from '../components/layout/page'
 import './styles.scss'
