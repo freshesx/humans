@@ -1,19 +1,29 @@
 <template>
-  <custom-icon></custom-icon>
+  <span></span>
 </template>
 
 <script>
   import Vue from 'vue'
-  import resolveIcon from './resolve-icon'
+  import defaultIcon from './default-icon'
 
   export default {
     name: 'mn-loading-icon',
-    components: {
-      CustomIcon (resolve) {
-        Vue.human.loading
-          ? Vue.human.loading(resolve)
-          : resolveIcon(resolve)
+    data () {
+      return {
+        icon: undefined
       }
+    },
+    mounted () {
+      const Component = Vue.extend(this.$human.loading || defaultIcon)
+      this.icon = new Component({ el: document.createElement('span') })
+
+      this.$nextTick(() => {
+        this.$el.appendChild(this.icon.$el)
+      })
+    },
+    beforeDestroy () {
+      this.$el.removeChild(this.icon.$el)
+      this.icon.$destroy()
     }
   }
 </script>
