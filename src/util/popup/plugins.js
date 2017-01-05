@@ -1,6 +1,6 @@
 import Confirm from '../../components/popup/confirm'
 import Alert from '../../components/popup/alert'
-import Toastr from '../../components/popup/toastr'
+import Message from '../../components/popup/message'
 import popup from './index.js'
 
 export default {
@@ -40,7 +40,7 @@ export default {
      */
     Vue.human.toastr = (options = {}) => {
       console && console.warn('建议使用 this.$human.message 取代 this.$human.toastr。')
-      return Vue.human.popup(Toastr, options)
+      return Vue.human.popup(Message, options)
     }
 
     /**
@@ -49,7 +49,7 @@ export default {
      * @return {Object}
      */
     Vue.human.message = (options = {}) => {
-      return Vue.human.popup(Toastr, options)
+      return Vue.human.popup(Message, options)
     }
   }
 }
