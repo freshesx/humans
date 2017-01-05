@@ -19,7 +19,8 @@ module.exports = {
       'vue': 'vue/dist/vue.common.js',
       'examples': path.resolve(__dirname, '../examples'),
       'assets': path.resolve(__dirname, '../examples/assets'),
-      'components': path.resolve(__dirname, '../examples/components')
+      'components': path.resolve(__dirname, '../examples/components'),
+      'vue-human': path.resolve(__dirname, '../src')
     }
   },
   resolveLoader: {
