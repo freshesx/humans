@@ -11,6 +11,20 @@ export default {
      */
     cssPrefix: 'mn-',
     /**
+     * Human css breakpoints
+     * @type {Object}
+     * @var {Number} breakpoints.mobile
+     * @var {Number} breakpoints.tablets
+     * @var {Number} breakpoints.desktop
+     * @var {Number} breakpoints.widescreen
+     */
+    breakpoints: {
+      mobile: 0,
+      tablets: 768,
+      desktop: 992,
+      widescreen: 1200
+    },
+    /**
      * Human load function
      * @example function (resolve) { require(['./file/path'], resolve) }
      * @type {Function}
