@@ -55,9 +55,7 @@ export default {
     }
 
     // Alias for human
-    Vue.prototype.$human = {
-      cssPrefix: this.options.cssPrefix
-    }
+    Vue.prototype.$human = Vue.human
 
     // Using human plugins
     Vue.use(scroller)
