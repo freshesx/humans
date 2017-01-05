@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import icons from './icons'
+  import iconsStorage from '../../util/icons'
 
   export default {
     name: 'mn-icon',
@@ -64,7 +64,7 @@
     },
     data () {
       return {
-        icons: icons(this.$human.icons)
+        icons: iconsStorage.items()
       }
     }
   }
