@@ -1,17 +1,19 @@
 <script>
   import MnRadioIcon from '../radio/radio-icon'
+  import checkmarkOutline from './checkmark-outline.json'
+  import circleOutline from './circle-outline.json'
 
   export default {
     name: 'mn-check-icon',
     mixins: [ MnRadioIcon ],
     props: {
       active: {
-        type: String,
-        default: 'checkmark-outline'
+        type: [String, Object],
+        default: () => checkmarkOutline
       },
       unactive: {
-        type: String,
-        default: 'circle-outline'
+        type: [String, Object],
+        default: () => circleOutline
       }
     },
     computed: {
