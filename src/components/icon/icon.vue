@@ -15,19 +15,13 @@
     name: 'mn-icon',
     props: {
       /**
-       * name 值是当前 icon 的命名，如果该名称在 icons 里不存在，则会读取 svg 的配置
+       * name 优先选择为 SVG JSON 对象，逐步淘汰 string 名称
        */
       name: {
-        type: String,
-        required: true
-      },
-      /**
-       * { "viewBox": "", "paths": [] }
-       */
-      svg: {
-        type: Object,
+        type: [String, Object],
+        required: true,
         validator: val => {
-          if (!val) return true
+          if (typeof val === 'string') return true
           if (val.paths instanceof Array && val.viewBox) return true
         }
       },
@@ -45,8 +39,9 @@
         return this.$human.cssPrefix
       },
       icon () {
-        if (this.icons[this.name]) return this.icons[this.name]
-        if (this.svg) return this.svg
+        if (typeof this.name === 'string') return this.icons[this.name]
+        if (typeof this.name === 'object') return this.name
+        console && console.warn('未指定图标参数')
         return
       },
       paths () {
