@@ -13,6 +13,15 @@
 
 <script>
   import Icon from '../icon/icon'
+  import iconStorage from '../../util/icons'
+  import checkmarkEmpty from './checkmark-empty.json'
+  import checkmarkOutline from './checkmark-outline.json'
+  import circleOutline from './circle-outline.json'
+
+  // Add icon to icons storage
+  iconStorage.addItem(checkmarkEmpty.name, checkmarkEmpty)
+  iconStorage.addItem(checkmarkOutline.name, checkmarkOutline)
+  iconStorage.addItem(circleOutline.name, circleOutline)
 
   export default {
     components: {
@@ -23,7 +32,7 @@
       // when checked, show this icon.
       active: {
         type: String,
-        default: 'ios-checkmark-empty'
+        default: 'checkmark-empty'
       },
       // When unchecked, show this icon.
       // If the icon is empty, hide the icon.

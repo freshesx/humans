@@ -7,11 +7,11 @@
     props: {
       active: {
         type: String,
-        default: 'ios-checkmark-outline'
+        default: 'checkmark-outline'
       },
       unactive: {
         type: String,
-        default: 'ios-circle-outline'
+        default: 'circle-outline'
       }
     },
     computed: {
