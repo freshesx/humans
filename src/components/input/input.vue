@@ -13,7 +13,7 @@
         v-if="value"
         :class="[ `${cssPrefix}form-text-clear` ]"
         @click="clearValue">
-        <mn-icon name="ios-close-outline"></mn-icon>
+        <mn-icon name="close-outline"></mn-icon>
       </div>
     </transition>
   </div>
@@ -21,6 +21,11 @@
 
 <script>
   import Icon from '../icon/icon'
+  import iconStorage from '../../util/icons'
+  import closeOutline from './close-outline.json'
+
+  // Add icon to icons storage
+  iconStorage.addItem(closeOutline.name, closeOutline)
 
   export default {
     components: {
