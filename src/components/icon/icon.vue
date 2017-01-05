@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import { getMergeIcons } from './merge-icons'
+  import icons from './icons'
 
   export default {
     name: 'mn-icon',
@@ -49,7 +49,7 @@
     },
     data () {
       return {
-        icons: getMergeIcons()
+        icons: icons(this.$human.icons)
       }
     }
   }
