@@ -4,8 +4,7 @@
       :class="[`${cssPrefix}form-radio-checkmark`, {
         'is-active': checked
       }]"
-      :name="iconName"
-      :svg="iconSvg"
+      :name="icon"
       :scale="scale"
       v-if="isShow">
     </mn-icon>
@@ -14,10 +13,7 @@
 
 <script>
   import Icon from '../icon/icon'
-  // import iconStorage from '../../util/icons'
   import checkmarkEmpty from './checkmark-empty.json'
-  // import checkmarkOutline from './checkmark-outline.json'
-  // import circleOutline from './circle-outline.json'
 
   export default {
     components: {
@@ -67,16 +63,6 @@
         }
 
         return this.checked
-      },
-      iconName () {
-        if (typeof this.icon === 'string') {
-          return this.icon
-        }
-      },
-      iconSvg () {
-        if (typeof this.icon === 'object') {
-          return this.icon
-        }
       }
     }
   }

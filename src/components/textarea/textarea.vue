@@ -8,7 +8,7 @@
       :disabled="disabled"
       @input="changeValue">{{ value }}</textarea>
     <div :class="[ `${cssPrefix}form-textarea-counter` ]">
-      <mn-icon name="number-sign"></mn-icon>
+      <mn-icon :name="numberSign"></mn-icon>
       {{ value ? value.length : 0 }}
       <span v-if="maxLength">
         / {{ maxLength }}
@@ -19,11 +19,7 @@
 
 <script>
   import Icon from '../icon/icon'
-  import iconStorage from '../../util/icons'
   import numberSign from './number-sign.json'
-
-  // Add icon to icons storage
-  iconStorage.addItem(numberSign.name, numberSign)
 
   export default {
     components: {
@@ -53,6 +49,11 @@
       disabled: {
         type: Boolean,
         default: false
+      }
+    },
+    data () {
+      return {
+        numberSign
       }
     },
     computed: {

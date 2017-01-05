@@ -13,7 +13,7 @@
         v-if="value"
         :class="[ `${cssPrefix}form-text-clear` ]"
         @click="clearValue">
-        <mn-icon :svg="closeOutline"></mn-icon>
+        <mn-icon :name="closeOutline"></mn-icon>
       </div>
     </transition>
   </div>
