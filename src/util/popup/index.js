@@ -1,4 +1,3 @@
-import element from '../element'
 import storage from './storage'
 
 /**
@@ -10,7 +9,7 @@ import storage from './storage'
  */
 export default function popup ({ Vue, ComponentClass }, options) {
   // Build component
-  const component = element(ComponentClass, { Vue })
+  const component = new (Vue.extend(ComponentClass))({ el: document.createElement('div') })
 
   // Change component data by options
   for (var variable in options) {

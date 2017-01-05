@@ -7,6 +7,7 @@
 </template>
 
 <script>
+  import Vue from 'vue'
   import Mask from './mask'
   import { getZIndex } from './layer'
 
@@ -42,7 +43,8 @@
       },
       appendMask (zIndex) {
         if (this.masked) {
-          this.mask = this.$human.element(Mask)
+          this.mask = new (Vue.extend(Mask))({ el: document.createElement('div') })
+          document.body.appendChild(this.mask.$el)
           this.mask.zIndex = zIndex
           this.mask.show = true
 
@@ -56,7 +58,7 @@
         // If extis mask instance, then destory them
         if (this.mask) {
           this.mask.show = false
-          this.mask.$el.remove()
+          document.body.removeChild(this.mask.$el)
           this.mask.$destroy()
         }
       }
@@ -65,11 +67,16 @@
       show (newValue) {
         // If show is true, append mask to body, and deliver z-index
         if (newValue) {
+          document.body.appendChild(this.$el)
           this.appendMask(this.computedZIndex - 1)
         }
 
         if (!newValue) {
           this.destroyMask()
+          setTimeout(() => {
+            document.body.removeChild(this.$el)
+            this.$destroy()
+          }, 3000)
         }
       }
     },
