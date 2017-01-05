@@ -14,9 +14,22 @@
   export default {
     name: 'mn-icon',
     props: {
+      /**
+       * name 值是当前 icon 的命名，如果该名称在 icons 里不存在，则会读取 svg 的配置
+       */
       name: {
         type: String,
         required: true
+      },
+      /**
+       * { "viewBox": "", "paths": [] }
+       */
+      svg: {
+        type: Object,
+        validator: val => {
+          if (!val) return true
+          if (val.paths instanceof Array && val.viewBox) return true
+        }
       },
       scale: {
         type: Number,
@@ -32,7 +45,9 @@
         return this.$human.cssPrefix
       },
       icon () {
-        return this.icons[this.name]
+        if (this.icons[this.name]) return this.icons[this.name]
+        if (this.svg) return this.svg
+        return
       },
       paths () {
         return this.icon ? this.icon.paths : ''
