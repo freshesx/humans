@@ -45,11 +45,12 @@ export default {
     this.$vue = Vue
 
     // Merge and assign options
-    this.options = { ...this.options, options }
+    this.options = { ...this.options, ...options }
 
     // Set up vue human
     Vue.human = {
       cssPrefix: this.options.cssPrefix,
+      breakpoints: this.options.breakpoints,
       loading: this.options.loading,
       icons: this.options.icons
     }
