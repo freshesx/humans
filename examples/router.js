@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { saveScroll, setScroll } from 'vue-human/util/scroller'
 
 Vue.use(VueRouter)
 
@@ -62,12 +63,12 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  Vue.human.saveScroll(from)
+  saveScroll(from)
   next()
 })
 
 router.afterEach((to, from, next) => {
-  Vue.human.setScroll(to)
+  setScroll(to)
 })
 
 export default router

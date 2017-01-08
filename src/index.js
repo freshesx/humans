@@ -1,5 +1,4 @@
 import browser from './util/browser/plugins.js'
-import scroller from './util/scroller/plugins.js'
 
 export default {
   options: {
@@ -57,7 +56,6 @@ export default {
     Vue.prototype.$human = Vue.human
 
     // Using human plugins
-    Vue.use(scroller)
     Vue.use(browser)
   },
   /**
