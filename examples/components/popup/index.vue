@@ -44,25 +44,28 @@
 </template>
 
 <script>
-  import Popup from './popup'
+  import popupConfig from './popup'
+  import popup from 'vue-human/util/popup'
+  import confirm from 'vue-human/util/confirm'
+  import alert from 'vue-human/util/alert'
+  import message from 'vue-human/util/message'
 
   export default {
     methods: {
       openPopup () {
-        this.popup = this.$human.popup(Popup, { show: true })
+        popup(popupConfig, { show: true })
       },
       openConfirm () {
-        const confirm = this.$human.confirm({ show: true })
-
-        confirm.$on('confirm', () => {
-          console.log('成功')
-        })
+        confirm({ show: true })
+          .$on('confirm', () => {
+            console.log('成功')
+          })
       },
       openAlert () {
-        this.$human.alert({ show: true })
+        alert({ show: true })
       },
       openToastr () {
-        this.$human.toastr({ show: true })
+        message({ show: true })
       }
     }
   }

@@ -17,17 +17,19 @@
 </template>
 
 <script>
+  import message from 'vue-human/util/message'
+
   export default {
     methods: {
       click ($event, button) {
         button.loading = true
         setTimeout(() => {
-          this.$human.toastr({ show: true, description: '加载成功' })
+          message({ show: true, description: 'Testing' })
           button.loading = false
         }, 3000)
       },
       error () {
-        this.$human.toastr({ show: true, type: 'error', description: 'disabled 时禁用按钮' })
+        message({ show: true, type: 'error', description: 'disabled 时禁用按钮' })
       }
     },
     data () {
