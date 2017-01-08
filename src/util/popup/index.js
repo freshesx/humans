@@ -1,31 +1,31 @@
+import Vue from 'vue'
 import storage from './storage'
 
 /**
- * Build component using Vue human element
- * @param  {Vue}        Vue
- * @param  {Vue}        ComponentClass
- * @param  {Boolean}    options
- * @return {VueComponent}
+ * 将组件配置初始化为 popup 弹层
+ * @param  {Object}     componentConfig
+ * @param  {Object}     data
+ * @return {Object}     VueComponent
  */
-export default function popup ({ Vue, ComponentClass }, options) {
-  // Build component
-  const component = new (Vue.extend(ComponentClass))({ el: document.createElement('div') })
+export default function popup (componentConfig, data) {
+  // Instance component
+  const component = new (Vue.extend(componentConfig))({
+    el: document.createElement('div')
+  })
 
-  // Change component data by options
-  for (var variable in options) {
-    if (options.hasOwnProperty(variable) && component.hasOwnProperty(variable) && variable !== 'close') {
-      component[variable] = options[variable]
+  // Change component data by data
+  for (var variable in data) {
+    if (data.hasOwnProperty(variable) && component.hasOwnProperty(variable) && variable !== 'close') {
+      component[variable] = data[variable]
     }
   }
 
+  // When listen 'close' event, set show is false
   component.$on('close', () => {
-    if (options.close) {
-      options.close.apply(component)
-    } else {
-      component.show = false
-    }
+    component.show = false
   })
 
+  // Add this component to popup storage
   storage.addItem(component)
 
   return component
