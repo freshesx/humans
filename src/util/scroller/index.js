@@ -30,6 +30,7 @@ function getStorage (name) {
 
 /**
  * getFirstScrollerTop
+ * @todo 将 scroller 的实例加入某个容器，然后在该容器里管理和找到该节点。
  *
  * @return {Number}  Scroll top
  */
