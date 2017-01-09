@@ -40,4 +40,12 @@ $-tag-style: (
       @include get-color($name);
     }
   }
+
+  &.is-sm {
+    font-size: 0.7rem;
+  }
+
+  &.is-lg {
+    font-size: 1rem;
+  }
 }
