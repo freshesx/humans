@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="[ `${cssPrefix}scroller`, { 'is-save': save } ]"
+    :class="[ `${cssPrefix}scroller`, { 'is-save': save },  { 'is-xaxis': xAxis }]"
     @touchstart="touchStart"
     @touchmove="touchMove">
     <div :class="[ `${cssPrefix}scroller-contents` ]">
@@ -14,6 +14,10 @@
     name: 'mn-scroller',
     props: {
       save: {
+        type: Boolean,
+        default: false
+      },
+      xAxis: {
         type: Boolean,
         default: false
       }
