@@ -1,5 +1,6 @@
 <template>
   <a
+    :href="href"
     :class="[`${cssPrefix}btn`, classes]"
     :title="title"
     @click="click">
@@ -10,10 +11,26 @@
 </template>
 
 <script>
-  import MnBtn from './button'
+  import mixin from './mixin'
 
   export default {
     name: 'mn-link',
-    mixins: [ MnBtn ]
+    mixins: [ mixin ],
+    props: {
+      to: {
+        type: String,
+        default: '/components/radio'
+      }
+    },
+    computed: {
+      href () {
+        if (this.$router) {
+          const { href } = this.$router.resolve(this.to)
+          return href
+        } else {
+          return this.to
+        }
+      }
+    }
   }
 </script>
