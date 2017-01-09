@@ -14,6 +14,7 @@ $-button-theme: $button-theme;
   align-items: center;
   text-align: center;
   white-space: nowrap;
+  vertical-align: middle;
   cursor: pointer;
   user-select: none;
   height: 3rem;
@@ -21,6 +22,7 @@ $-button-theme: $button-theme;
   border-radius: $base-radius;
   text-decoration: none;
   border: none;
+  line-height: 1.4rem;
   outline: none;
   background: transparent;
 
