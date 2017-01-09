@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="href"
+    :href="computedHref"
     :class="[`${cssPrefix}btn`, classes]"
     :title="title"
     @click="click">
@@ -17,18 +17,20 @@
     name: 'mn-link',
     mixins: [ mixin ],
     props: {
+      href: {
+        type: String
+      },
       to: {
-        type: String,
-        default: '/components/radio'
+        type: String
       }
     },
     computed: {
-      href () {
-        if (this.$router) {
+      computedHref () {
+        if (this.to && this.$router) {
           const { href } = this.$router.resolve(this.to)
           return href
         } else {
-          return this.to
+          return this.href || ''
         }
       }
     }
