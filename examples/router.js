@@ -40,6 +40,10 @@ const router = new VueRouter({
       component: resolve => { require(['./components/form/radio'], resolve) }
     },
     {
+      path: '/components/check',
+      component: resolve => { require(['./components/form/check'], resolve) }
+    },
+    {
       path: '/components/popup',
       component: resolve => { require(['./components/popup'], resolve) }
     },
