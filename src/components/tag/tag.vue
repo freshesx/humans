@@ -1,5 +1,5 @@
 <template>
-  <i :class="[ `${cssPrefix}tag`, hasType ]">
+  <i :class="[ `${cssPrefix}tag`, hasName ]">
     <slot></slot>
   </i>
 </template>
@@ -11,13 +11,13 @@
       cssPrefix () {
         return this.$human.cssPrefix
       },
-      hasType () {
-        if (this.type) return `is-${this.type}`
+      hasName () {
+        if (this.name) return `is-${this.name}`
       }
     },
     props: {
-      // is-primary, is-secondary, is-error etc.
-      type: {
+      // is-red, is-green, is-pink etc.
+      name: {
         type: String
       }
     }

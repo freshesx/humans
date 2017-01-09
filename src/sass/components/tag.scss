@@ -1,11 +1,23 @@
 $-tag: #{$namespace}tag;
 
 $-tag-style: (
-  primary: $green,
-  warning: $orange,
-  error: $pink,
-  secondary: #d9d9d9,
-  inverse: #505050,
+  white: $white,
+  black: $black,
+  black-lighter: $black-lighter,
+  black-lightest: $black-lightest,
+  gray-darkest: $gray-darkest,
+  gray-darker: $gray-darker,
+  gray: $gray,
+  gray-lighter: $gray-lighter,
+  gray-lightest: $gray-lightest,
+  red: $red,
+  orange: $orange,
+  yellow: $yellow,
+  green: $green,
+  teal-blue: $teal-blue,
+  blue: $blue,
+  purple: $purple,
+  pink: $pink
 );
 
 @mixin get-color($type) {
