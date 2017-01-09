@@ -142,6 +142,15 @@ $-form-select-control: #{$namespace}form-select-control;
 
 .#{$-form-radio},
 .#{$-form-checkbox} {
+  &-label {
+    cursor: pointer;
+    user-select: none;
+
+    & + & {
+      margin-left: 0.5rem;
+    }
+  }
+
   &-checkmark {
     color: #999;
 
