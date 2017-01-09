@@ -3,7 +3,8 @@
     <mn-card-item><h5>{{ title }}</h5></mn-card-item>
     <mn-card-item v-for="types in buttons">
       <mn-card-body>
-        <mn-btn
+        <component
+          :is="buttonName"
           :icon="iosAnalytics"
           margin
           :class="'has-one-margin-right'"
@@ -11,7 +12,7 @@
           :disabled="disabled"
           @click="click"
           @error="error"
-          v-for="button in types">{{ button }}</mn-btn>
+          v-for="button in types">{{ button }}</component>
       </mn-card-body>
     </mn-card-item>
   </mn-card>
@@ -37,6 +38,7 @@
     data () {
       return {
         iosAnalytics,
+        buttonName: 'mn-btn',
         title: 'Buttons',
         disabled: false,
         buttons: {

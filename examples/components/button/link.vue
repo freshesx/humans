@@ -1,22 +1,12 @@
-<template>
-  <mn-card>
-    <mn-card-item><h5>{{ title }}</h5></mn-card-item>
-    <mn-card-item>
-      <mn-card-body>
-        <mn-link
-          type="primary"
-          :class="'has-one-margin-right'"
-          @click="click">Hyper link</mn-link>
-      </mn-card-body>
-    </mn-card-item>
-  </mn-card>
-</template>
-
 <script>
+  import Normal from './normal'
+
   export default {
+    mixins: [ Normal ],
     data () {
       return {
-        title: '<a> link'
+        title: '<a> link',
+        buttonName: 'mn-link'
       }
     },
     methods: {
