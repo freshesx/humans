@@ -4,7 +4,8 @@
     <mn-card-item v-for="types in buttons">
       <mn-card-body>
         <mn-btn
-          icon="ios-analytics"
+          :icon="iosAnalytics"
+          margin
           :class="'has-one-margin-right'"
           :type="button"
           :disabled="disabled"
@@ -18,6 +19,7 @@
 
 <script>
   import message from 'vue-human/util/message'
+  import iosAnalytics from './ios-analytics.json'
 
   export default {
     methods: {
@@ -34,6 +36,7 @@
     },
     data () {
       return {
+        iosAnalytics,
         title: 'Buttons',
         disabled: false,
         buttons: {
