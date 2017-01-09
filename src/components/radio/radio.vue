@@ -4,7 +4,7 @@
       :class="[`${cssPrefix}form-radio-checkmark`, {
         'is-active': checked
       }]"
-      :name="checked ? circleFilled : circleOutline"></mn-icon>
+      :name="icon"></mn-icon>
     <span v-if="$slots.default">
       <slot>placeholder</slot>
     </span>
@@ -24,12 +24,14 @@
     props: {
       value: null,
       data: null,
-      disabled: Boolean
-    },
-    data () {
-      return {
-        circleFilled,
-        circleOutline
+      disabled: Boolean,
+      active: {
+        type: [String, Object],
+        default: () => circleFilled
+      },
+      unactive: {
+        type: [String, Object],
+        default: () => circleOutline
       }
     },
     computed: {
@@ -38,6 +40,11 @@
       },
       checked () {
         return this.data === this.value
+      },
+      icon () {
+        return this.checked
+          ? this.active
+          : this.unactive
       }
     },
     methods: {
