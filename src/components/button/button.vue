@@ -21,10 +21,7 @@
     name: 'mn-btn',
     props: {
       title: String,
-      icon: {
-        type: String,
-        default: ''
-      },
+      icon: null,
       // is disabled
       disabled: {
         type: Boolean,
