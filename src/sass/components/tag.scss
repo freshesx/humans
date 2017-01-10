@@ -48,4 +48,8 @@ $-tag-style: (
   &.is-lg {
     font-size: 1rem;
   }
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
