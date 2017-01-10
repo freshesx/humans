@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="[ `${cssPrefix}scroller`, { 'is-save': save },  { 'is-xaxis': xAxis }]"
+    :class="[ `${cssPrefix}scroller`, { 'is-save': save },  { 'has-scrollbar': scrollbar }]"
     @touchstart="touchStart"
     @touchmove="touchMove">
     <div :class="[ `${cssPrefix}scroller-contents` ]">
@@ -17,7 +17,7 @@
         type: Boolean,
         default: false
       },
-      xAxis: {
+      scrollbar: {
         type: Boolean,
         default: false
       }
