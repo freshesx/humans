@@ -11,16 +11,16 @@
     name: 'mn-col',
     props: {
       mobile: {
-        type: [String, Array]
+        type: [String, Object]
       },
       tablet: {
-        type: [String, Array]
+        type: [String, Object]
       },
       desktop: {
-        type: [String, Array]
+        type: [String, Object]
       },
       widescreen: {
-        type: [String, Array]
+        type: [String, Object]
       }
     },
     data () {
@@ -40,32 +40,18 @@
       queryClass () {
         const classes = []
 
-        lodash.forIn(this.media, (value, key) => {
-          // 如果值为字符串，则有两种情况：one 或则 one, one。第二位表示 offset
-          if (lodash.isString(value)) {
-            if (value.includes(',')) {
-              const query = lodash.split(value, /,+\s*/)
-              if (query[0].length > 0) {
-                classes.push({ [`is-${key}-${query[0]}`]: true })
-              }
-              if (query[1].length > 0) {
-                classes.push({ [`is-${key}-offset-${query[1]}`]: true })
-              }
-            } else {
-              classes.push({ [`is-${key}-${value}`]: true })
-            }
-          }
-          // 如果为数组
-          if (lodash.isArray(value)) {
-            // 第一位为 span
-            if (lodash.isString(value[0])) {
-              classes.push({ [`is-${key}-${value[0]}`]: true })
-            }
-            // 第二位为 offset
-            if (lodash.isString(value[1])) {
-              classes.push({ [`is-${key}-offset-${value[1]}`]: true })
-            }
-          }
+        let media = {
+          ...this.mobile ? { mobile: this.mobile } : undefined,
+          ...this.tablet ? { tablet: this.tablet } : undefined,
+          ...this.desktop ? { desktop: this.desktop } : undefined,
+          ...this.widescreen ? { widescreen: this.widescreen } : undefined
+        }
+
+        lodash.forIn(media, (value, key) => {
+          const [span, offset] = lodash.split(value, /,+\s*/)
+
+          if (span) classes.push({ [`is-${key}-${span}`]: true })
+          if (offset) classes.push({ [`is-${key}-offset-${offset}`]: true })
         })
 
         return classes
