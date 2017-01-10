@@ -10,6 +10,7 @@
             </mn-letter>
             <demo-normal></demo-normal>
             <demo-disabled></demo-disabled>
+            <demo-link></demo-link>
             <demo-block></demo-block>
             <demo-size></demo-size>
             <demo-active></demo-active>
@@ -24,6 +25,7 @@
 
 <script>
   import DemoNormal from './normal'
+  import DemoLink from './link'
   import DemoBlock from './block'
   import DemoSize from './size'
   import DemoDisabled from './disabled'
@@ -34,6 +36,7 @@
   export default {
     components: {
       DemoNormal,
+      DemoLink,
       DemoBlock,
       DemoSize,
       DemoDisabled,

@@ -2,44 +2,42 @@
   <docs-layout-page>
     <mn-section>
       <mn-letter>
-        <h1>Radio</h1>
+        <h1>Check</h1>
       </mn-letter>
 
       <mn-form :validate="$v" @success="success">
-        <!-- radio item -->
+        <!-- check item -->
         <mn-card-wrapper>
-          <mn-card-note>Choose your sex</mn-card-note>
+          <mn-card-note>What do you like?</mn-card-note>
           <mn-card>
-            <mn-radio-item :data="option.value" v-model="models.sex" v-for="option in sexOptions">
+            <mn-check-item :data="option.value" v-model="models.like" v-for="(option, key) in likeOptions">
               <mn-card-prefix action>
-                <mn-radio-icon :data="option.value" :value="models.sex"></mn-radio-icon>
+                <mn-check-icon :data="option.value" :value="models.like"></mn-check-icon>
               </mn-card-prefix>
               <mn-card-body>{{ option.label }}</mn-card-body>
-              <mn-card-suffix muted><small>Helper information</small></mn-card-suffix>
-              <mn-card-suffix @click.native.stop.prevent="openRadioInfo"><mn-icon name="ios-information"></mn-icon></mn-card-suffix>
-            </mn-radio-item>
+            </mn-check-item>
           </mn-card>
           <mn-card-note>
-            <mn-helper :validate="$v.models.sex">
+            <mn-helper :validate="$v.models.like">
               <mn-helper-item name="required">Must choose one</mn-helper-item>
             </mn-helper>
           </mn-card-note>
         </mn-card-wrapper>
-        <!-- radio -->
+        <!-- check -->
         <mn-card-wrapper>
-          <mn-card-note>Choose your sex</mn-card-note>
+          <mn-card-note>What do you like?</mn-card-note>
           <mn-card>
             <mn-card-item>
               <mn-card-prefix>
-                <mn-label>Sex</mn-label>
+                <mn-label>Like?</mn-label>
               </mn-card-prefix>
               <mn-card-body>
-                <mn-radio :data="option.value" v-model="models.sex" v-for="option in sexOptions">{{ option.label }}</mn-radio>
+                <mn-check :data="option.value" v-model="models.like" v-for="option in likeOptions">{{ option.label }}</mn-check>
               </mn-card-body>
             </mn-card-item>
           </mn-card>
           <mn-card-note>
-            <mn-helper :validate="$v.models.sex">
+            <mn-helper :validate="$v.models.like">
               <mn-helper-item name="required">Must choose one</mn-helper-item>
             </mn-helper>
           </mn-card-note>
@@ -58,17 +56,18 @@
   export default {
     validations: {
       models: {
-        sex: { required }
+        like: { required }
       }
     },
     data () {
       return {
         models: {
-          sex: 'Male'
+          like: []
         },
-        sexOptions: [
-          { label: 'Male', value: 'Male' },
-          { label: 'Female', value: 'Female' }
+        likeOptions: [
+          { label: 'Football', value: 'Football' },
+          { label: 'Basketball', value: 'Basketball' },
+          { label: 'Volleyball', value: 'Volleyball' }
         ]
       }
     },
