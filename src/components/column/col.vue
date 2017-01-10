@@ -7,6 +7,8 @@
 <script>
   import lodash from 'lodash'
 
+  const MEDIA_KEYWORDS = ['span', 'offset', 'order']
+
   export default {
     name: 'mn-col',
     props: {
@@ -23,23 +25,12 @@
         type: [String, Object]
       }
     },
-    data () {
-      return {
-        media: {
-          mobile: this.mobile,
-          tablet: this.tablet,
-          desktop: this.desktop,
-          widescreen: this.widescreen
-        }
-      }
-    },
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix
       },
-      queryClass () {
-        const classes = []
-
+      computedMedia () {
+        // const classes = []
         let media = {
           ...this.mobile ? { mobile: this.mobile } : undefined,
           ...this.tablet ? { tablet: this.tablet } : undefined,
@@ -48,14 +39,38 @@
         }
 
         lodash.forIn(media, (value, key) => {
-          const [span, offset] = lodash.split(value, /,+\s*/)
+          // const [span, offset] = lodash.split(value, /,+\s*/)
+          // if (span) classes.push({ [`is-${key}-${span}`]: true })
+          // if (offset) classes.push({ [`is-${key}-offset-${offset}`]: true })
+          let queries = {}
 
-          if (span) classes.push({ [`is-${key}-${span}`]: true })
-          if (offset) classes.push({ [`is-${key}-offset-${offset}`]: true })
+          // 将 `,` 和 `空格` 的字符串分解为数组
+          lodash.split(value, /,+\s*/).forEach((item, index) => {
+            queries[MEDIA_KEYWORDS[index]] = item
+          })
+
+          media[key] = queries
         })
 
+        return media
+      },
+      queryClass () {
+        let classes = []
+        let media = this.computedMedia
+
+        lodash.forIn(media, (mediaValue, mediaName) => {
+          lodash.forIn(mediaValue, (value, name) => {
+            if (name === 'span') classes.push({ [`is-${mediaName}-${value}`]: true })
+            if (name === 'offset') classes.push({ [`is-${mediaName}-offset-${value}`]: true })
+          })
+        })
+
+        console.log(classes)
         return classes
       }
+    },
+    mounted () {
+      console.log(this.computedMedia)
     }
   }
 </script>
