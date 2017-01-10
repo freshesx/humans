@@ -1,6 +1,7 @@
 @import "../variables";
 
 $-scroller: #{$namespace}scroller;
+$-scroller-x: #{$namespace}scroller-x;
 
 .#{$-scroller} {
   position: relative;
@@ -11,33 +12,47 @@ $-scroller: #{$namespace}scroller;
   -webkit-overflow-scrolling: touch;
   // &-contents {
   // }
-  &.is-xaxis {
-    height: inherit;
-    overflow-x: auto;
-  }
+}
+
+.#{$-scroller-x} {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  // &-contents {
+  // }
 }
 
 .is-windows {
   ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
+    width: 0;
+    height: 0;
   }
 
-  ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-  }
+  .has-scrollbar {
+    &::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
 
-  ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-  }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+    &::-webkit-scrollbar {
+      width: 12px;
+      height: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+    }
   }
 }
