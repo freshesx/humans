@@ -5,8 +5,10 @@
         <mn-scroller>
           <mn-section>
             <mn-letter>
-              <h1>Tag</h1>
-              <small>Tag</small>
+              <mn-letter-body>
+                <h1>Tag</h1>
+                <small>Tag</small>
+              </mn-letter-body>
             </mn-letter>
             <demo-tag></demo-tag>
           </mn-section>

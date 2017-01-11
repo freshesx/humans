@@ -2,8 +2,10 @@
   <docs-layout-page>
     <mn-section>
       <mn-letter>
-        <h1>Color</h1>
-        <small>Text, background, other.</small>
+        <mn-letter-body>
+          <h1>Color</h1>
+          <small>Text, background, other.</small>
+        </mn-letter-body>
       </mn-letter>
 
       <mn-card>

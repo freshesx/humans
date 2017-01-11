@@ -5,8 +5,10 @@
         <mn-scroller>
           <mn-section>
             <mn-letter>
-              <h1>Popup</h1>
-              <small>popup, confirm, alerts, activity sheets</small>
+              <mn-letter-body>
+                <h1>Popup</h1>
+                <small>popup, confirm, alerts, activity sheets</small>
+              </mn-letter-body>
             </mn-letter>
 
             <mn-card>

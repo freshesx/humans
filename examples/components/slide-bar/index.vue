@@ -5,8 +5,10 @@
         <mn-scroller>
           <mn-section>
             <mn-letter>
-              <h1>Slide Box</h1>
-              <small></small>
+              <mn-letter-body>
+                <h1>Slide Box</h1>
+                <small></small>
+              </mn-letter-body>
             </mn-letter>
             <demo-slide-bar></demo-slide-bar>
           </mn-section>

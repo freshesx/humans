@@ -5,8 +5,10 @@
         <mn-scroller>
           <mn-section>
             <mn-letter>
-              <h1>Typograhpy</h1>
-              <small>Headings, paragraph, list, etc.</small>
+              <mn-letter-body>
+                <h1>Typograhpy</h1>
+                <small>Headings, paragraph, list, etc.</small>
+              </mn-letter-body>
             </mn-letter>
 
             <mn-card>

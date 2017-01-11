@@ -5,8 +5,10 @@
         <mn-scroller>
           <mn-section>
             <mn-letter>
-              <h1>Button</h1>
-              <small>btn, block, loading, disabled</small>
+              <mn-letter-body>
+                <h1>Button</h1>
+                <small>btn, block, loading, disabled</small>
+              </mn-letter-body>
             </mn-letter>
             <demo-normal></demo-normal>
             <demo-disabled></demo-disabled>
