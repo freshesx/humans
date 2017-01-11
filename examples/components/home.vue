@@ -120,6 +120,11 @@
                 route: { path: '/components/collapse' }
               },
               {
+                title: 'menu',
+                icon: 'ios-arrow-down',
+                route: { path: '/components/menu' }
+              },
+              {
                 title: 'slide-bar',
                 icon: 'ios-time-outline',
                 route: { path: '/components/slide-bar' }
