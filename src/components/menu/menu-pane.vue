@@ -1,12 +1,12 @@
 <template>
-  <div :class="[ `${cssPrefix}collapse-list` ]">
-    <div :class="[ `${cssPrefix}collapse-title`, { 'is-selected': this.selected } ]" :index="index" @click="changeIndex">
+  <div :class="[ `${cssPrefix}menu-list` ]">
+    <div :class="[ `${cssPrefix}menu-title`, { 'is-selected': this.selected } ]" :index="index" @click="changeIndex">
       <p>
         {{ this.title }}
       </p>
     </div>
-    <transition :name="`${cssPrefix}collapse-toggle`">
-      <div :class="[ `${cssPrefix}collapse-content` ]" v-if="selected">
+    <transition :name="`${cssPrefix}menu-toggle`">
+      <div :class="[ `${cssPrefix}menu-content` ]" v-if="selected">
         <slot></slot>
       </div>
     </transition>
@@ -15,7 +15,7 @@
 
 <script>
   export default {
-    name: 'mn-collapse-pane',
+    name: 'mn-menu-pane',
     props: {
       title: {
         type: String,
@@ -41,7 +41,7 @@
     },
     mounted () {
       this.$nextTick(function () {
-        this.index = this.$parent.collapses.get(this._uid)
+        this.index = this.$parent.menus.get(this._uid)
         if (this.index === this.$parent.current) this.isSelected = true
         // Get the index by _uid and set the current.
       })

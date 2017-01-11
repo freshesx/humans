@@ -1,15 +1,15 @@
 <template>
-  <div :class="[ `${cssPrefix}collapse` ]">
+  <div :class="[ `${cssPrefix}menu` ]">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'mn-collapse',
+    name: 'mn-menu',
     data () {
       return {
-        collapses: new Map(),
+        menus: new Map(),
         current: this.selected
       }
     },
@@ -30,8 +30,8 @@
     },
     mounted () {
       const map = new Map()
-      this.$children.forEach((collapse, index) => map.set(collapse._uid, index))
-      this.collapses = map
+      this.$children.forEach((menu, index) => map.set(menu._uid, index))
+      this.menus = map
       // Push the _uid and the index into a map.
     }
   }

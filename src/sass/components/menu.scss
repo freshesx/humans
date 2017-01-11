@@ -1,0 +1,41 @@
+$-menu: #{$namespace}menu;
+$-menu-list: #{$namespace}menu-list;
+$-menu-title: #{$namespace}menu-title;
+$-menu-content: #{$namespace}menu-content;
+$-menu-toggle: #{$namespace}menu-toggle;
+$menu-gray: #ddd;
+
+.#{$-menu} {
+  width: 100%;
+}
+
+.#{$-menu-list} {
+  padding: 0;
+}
+
+.#{$-menu-title} {
+  background-color: lighten($menu-gray, 10%);
+  padding: 0 1rem;
+  cursor: pointer;
+
+  p {
+    margin: 0;
+    line-height: 3rem;
+  }
+}
+
+.#{$-menu-content} {
+  overflow: hidden;
+  box-sizing: border-box;
+  max-height: 999px;
+}
+
+.#{$-menu-toggle}-enter-active,
+.#{$-menu-toggle}-leave-active {
+  transition: all 0.2s ease;
+}
+
+.#{$-menu-toggle}-enter,
+.#{$-menu-toggle}-leave-active {
+  max-height: 0;
+}

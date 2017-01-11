@@ -3,45 +3,57 @@
     <mn-card>
       <mn-card-item>Selecting one will hide the others.</mn-card-item>
       <mn-card-item>
-        <mn-collapse :selected="0">
-          <mn-collapse-pane title="item #1">
-            <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            </p>
-          </mn-collapse-pane>
-          <mn-collapse-pane title="item #2">
-            <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            </p>
-          </mn-collapse-pane>
-          <mn-collapse-pane title="item #3">
-            <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            </p>
-          </mn-collapse-pane>
-        </mn-collapse>
+        <mn-menu :selected="0">
+          <mn-menu-pane title="Title #1">
+            <ul class="user-menu">
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+            </ul>
+          </mn-menu-pane>
+          <mn-menu-pane title="Title #2">
+            <ul class="user-menu">
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+            </ul>
+          </mn-menu-pane>
+          <mn-menu-pane title="Title #3">
+            <ul class="user-menu">
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+            </ul>
+          </mn-menu-pane>
+        </mn-menu>
       </mn-card-item>
     </mn-card>
     <mn-card>
       <mn-card-item>Selecting one will not hide the others.</mn-card-item>
       <mn-card-item>
-        <mn-collapse type="flat">
-          <mn-collapse-pane title="item #1">
-            <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            </p>
-          </mn-collapse-pane>
-          <mn-collapse-pane title="item #2">
-            <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            </p>
-          </mn-collapse-pane>
-          <mn-collapse-pane title="item #3">
-            <p>
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-            </p>
-          </mn-collapse-pane>
-        </mn-collapse>
+        <mn-menu type="flat">
+          <mn-menu-pane title="Title #1">
+            <ul class="user-menu">
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+            </ul>
+          </mn-menu-pane>
+          <mn-menu-pane title="Title #2">
+            <ul class="user-menu">
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+            </ul>
+          </mn-menu-pane>
+          <mn-menu-pane title="Title #3">
+            <ul class="user-menu">
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+              <li>some subMenu</li>
+            </ul>
+          </mn-menu-pane>
+        </mn-menu>
       </mn-card-item>
     </mn-card>
   </div>
@@ -52,3 +64,16 @@
 
   }
 </script>
+
+<style scoped lang="scss">
+  .user-menu {
+    list-style: none;
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0;
+
+    li {
+      line-height: 2.5rem;
+    }
+  }
+</style>
