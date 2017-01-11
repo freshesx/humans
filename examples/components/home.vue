@@ -4,8 +4,10 @@
       <mn-scroller save>
         <mn-section>
           <mn-letter>
-            <h1>Vue Human</h1>
-            <small>A component sets for vue & human UI.</small>
+            <mn-letter-body>
+              <h1>Vue Human</h1>
+              <small>A component sets for vue & human UI.</small>
+            </mn-letter-body>
           </mn-letter>
 
           <mn-card v-for="menu in menus">

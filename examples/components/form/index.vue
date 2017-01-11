@@ -2,8 +2,10 @@
   <docs-layout-page>
     <mn-section>
       <mn-letter>
-        <h1>Form</h1>
-        <small>From and validation</small>
+        <mn-letter-body>
+          <h1>Form</h1>
+          <small>From and validation</small>
+        </mn-letter-body>
       </mn-letter>
 
       <mn-card-wrapper>

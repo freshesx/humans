@@ -5,8 +5,10 @@
         <mn-scroller>
           <mn-section>
             <mn-letter>
-              <h1>Collapse</h1>
-              <small>Collapse</small>
+              <mn-letter-body>
+                <h1>Collapse</h1>
+                <small>Collapse</small>
+              </mn-letter-body>
             </mn-letter>
             <demo-collapse></demo-collapse>
           </mn-section>

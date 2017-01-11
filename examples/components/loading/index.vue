@@ -5,8 +5,10 @@
         <mn-scroller>
           <mn-section>
             <mn-letter>
-              <h1>Loading</h1>
-              <small>Loading component</small>
+              <mn-letter-body>
+                <h1>Loading</h1>
+                <small>Loading component</small>
+              </mn-letter-body>
             </mn-letter>
 
             <mn-card>

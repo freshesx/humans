@@ -5,8 +5,10 @@
         <mn-scroller>
           <mn-section>
             <mn-letter>
-              <h1>Rate</h1>
-              <small>icon</small>
+              <mn-letter-body>
+                <h1>Rate</h1>
+                <small>icon</small>
+              </mn-letter-body>
             </mn-letter>
             <demo-rate></demo-rate>
           </mn-section>
