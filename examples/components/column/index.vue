@@ -10,6 +10,25 @@
             </mn-letter>
 
             <mn-card>
+              <mn-card-item>Order</mn-card-item>
+              <mn-card-item>
+                <mn-card-body>
+                  <mn-cols>
+                    <mn-col mobile="six, 2">
+                      <div class="holder has-purple-bg"></div>
+                    </mn-col>
+                    <mn-col :mobile="{ span: 'two', order: 6 }">
+                      <div class="holder has-pink-bg"></div>
+                    </mn-col>
+                    <mn-col mobile="four, -1">
+                      <div class="holder has-blue-bg"></div>
+                    </mn-col>
+                  </mn-cols>
+                </mn-card-body>
+              </mn-card-item>
+            </mn-card>
+
+            <mn-card>
               <mn-card-item>Flex column</mn-card-item>
               <mn-card-item>
                 <mn-card-body>
