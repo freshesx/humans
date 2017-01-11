@@ -4,10 +4,10 @@
       <mn-row fixed>
         <mn-nav-bar>
           <div slot="prefix" @click="$router.go(-1)">
-            <mn-icon name="ios-arrow-back"></mn-icon>Back
+            <mn-icon :name="backSvg"></mn-icon> Back
           </div>
           <div slot="body">
-            <mn-icon :name="icon"></mn-icon>
+            <mn-icon :name="titleSvg"></mn-icon>
             {{ title }}
           </div>
         </mn-nav-bar>
@@ -22,15 +22,22 @@
 </template>
 
 <script>
+  import iosArrowBack from './ios-arrow-back.json'
+  import iosColorFilter from './ios-color-filter.json'
+
   export default {
     props: {
       title: {
         type: String,
         default: 'Human UI'
       },
-      icon: {
-        type: String,
-        default: 'ios-color-filter'
+      titleSvg: {
+        type: Object,
+        default: () => { return iosColorFilter }
+      },
+      backSvg: {
+        type: Object,
+        default: () => { return iosArrowBack }
       }
     }
   }
