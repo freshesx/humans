@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" :classes="[`${cssPrefix}popup-dialog`]">
+  <mn-popup :show="show" :classes="[`${cssPrefix}loading-dialog`]">
     <mn-card class="has-none-margin-bottom">
       <mn-card-item>
         <mn-card-body class="has-center-text">
