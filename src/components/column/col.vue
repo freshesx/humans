@@ -1,5 +1,5 @@
 <template>
-  <div :class="[`${cssPrefix}col`, queryClass]">
+  <div :class="[`${cssPrefix}col`, classes]" :style="styles">
     <slot></slot>
   </div>
 </template>
@@ -39,14 +39,16 @@
         }
 
         lodash.forIn(media, (value, key) => {
-          // const [span, offset] = lodash.split(value, /,+\s*/)
-          // if (span) classes.push({ [`is-${key}-${span}`]: true })
-          // if (offset) classes.push({ [`is-${key}-offset-${offset}`]: true })
           let queries = {}
 
           // 将 `,` 和 `空格` 的字符串分解为数组
-          lodash.split(value, /,+\s*/).forEach((item, index) => {
-            queries[MEDIA_KEYWORDS[index]] = item
+          value.split(/,\s*/).forEach((item, index) => {
+            // 如果字符为数字的话，则表达其为 order
+            if (typeof item === 'string' && item.length > 0 && lodash.isInteger(Number(item))) {
+              queries[MEDIA_KEYWORDS[2]] = item
+            } else {
+              queries[MEDIA_KEYWORDS[index]] = item
+            }
           })
 
           media[key] = queries
@@ -54,23 +56,27 @@
 
         return media
       },
-      queryClass () {
+      queries () {
         let classes = []
+        let styles = []
         let media = this.computedMedia
 
         lodash.forIn(media, (mediaValue, mediaName) => {
           lodash.forIn(mediaValue, (value, name) => {
             if (name === 'span') classes.push({ [`is-${mediaName}-${value}`]: true })
             if (name === 'offset') classes.push({ [`is-${mediaName}-offset-${value}`]: true })
+            if (name === 'order') styles.push({ order: value })
           })
         })
 
-        console.log(classes)
-        return classes
+        return { classes, styles }
+      },
+      classes () {
+        return this.queries.classes
+      },
+      styles () {
+        return this.queries.styles
       }
-    },
-    mounted () {
-      console.log(this.computedMedia)
     }
   }
 </script>
