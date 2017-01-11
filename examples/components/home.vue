@@ -97,11 +97,6 @@
             title: 'More Components',
             subMenus: [
               {
-                title: 'icon',
-                icon: 'ios-analytics',
-                route: { path: '/components/icon' }
-              },
-              {
                 title: 'form',
                 icon: 'ios-list',
                 route: { path: '/components/form' }
