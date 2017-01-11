@@ -11,10 +11,6 @@
   export default {
     name: 'mn-scroller-x',
     props: {
-      save: {
-        type: Boolean,
-        default: false
-      },
       scrollbar: {
         type: Boolean,
         default: false
