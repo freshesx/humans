@@ -41,15 +41,20 @@
         lodash.forIn(media, (value, key) => {
           let queries = {}
 
-          // 将 `,` 和 `空格` 的字符串分解为数组
-          value.split(/,\s*/).forEach((item, index) => {
-            // 如果字符为数字的话，则表达其为 order
-            if (typeof item === 'string' && item.length > 0 && lodash.isInteger(Number(item))) {
-              queries[MEDIA_KEYWORDS[2]] = item
-            } else {
-              queries[MEDIA_KEYWORDS[index]] = item
-            }
-          })
+          if (lodash.isString(value)) {
+            // 字符串情况，将 `,` 和 `空格` 的字符串分解为数组
+            value.split(/,\s*/).forEach((item, index) => {
+              // 如果字符为数字的话，则表达其为 order
+              if (lodash.isString(item) && item.length > 0 && lodash.isInteger(Number(item))) {
+                queries[MEDIA_KEYWORDS[2]] = Number(item)
+              } else {
+                queries[MEDIA_KEYWORDS[index]] = item
+              }
+            })
+          } else if (lodash.isPlainObject(value)) {
+            // 对象情况
+            queries = value
+          }
 
           media[key] = queries
         })
