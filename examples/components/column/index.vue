@@ -17,8 +17,11 @@
                     <mn-col mobile="six, 2">
                       <div class="holder has-purple-bg"></div>
                     </mn-col>
-                    <mn-col mobile="four, two">
+                    <mn-col :mobile="{ span: 'two', order: 6 }">
                       <div class="holder has-pink-bg"></div>
+                    </mn-col>
+                    <mn-col mobile="four, -1">
+                      <div class="holder has-blue-bg"></div>
                     </mn-col>
                   </mn-cols>
                 </mn-card-body>
