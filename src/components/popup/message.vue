@@ -9,7 +9,7 @@
           <h4><small>{{ title || currentType.text }}</small></h4>
         </mn-card-body>
         <mn-card-suffix @click.native="close">
-          <mn-icon name="ios-close-empty"></mn-icon>
+          <mn-icon :name="closeSvg"></mn-icon>
         </mn-card-suffix>
       </mn-card-item>
       <mn-card-item :style="{ 'padding': '1rem 1rem' }">
@@ -29,11 +29,17 @@
   import CardPrefix from '../card/card-prefix'
   import CardSuffix from '../card/card-suffix'
 
+  import chatbubble from './chatbubble.json'
+  import checkmark from './checkmark.json'
+  import closeEmpty from './close-empty.json'
+  import close from './close.json'
+  import information from './information.json'
+
   const toastrTypes = {
-    default: { text: 'Message', icon: 'ios-chatbubble', color: 'black' },
-    primary: { text: 'Success', icon: 'ios-checkmark', color: 'green' },
-    warning: { text: 'Warning', icon: 'ios-information', color: 'orange' },
-    error: { text: 'Error', icon: 'ios-close', color: 'pink' }
+    default: { text: 'Message', icon: chatbubble, color: 'black' },
+    primary: { text: 'Success', icon: checkmark, color: 'green' },
+    warning: { text: 'Warning', icon: information, color: 'orange' },
+    error: { text: 'Error', icon: close, color: 'pink' }
   }
 
   export default {
@@ -70,7 +76,8 @@
         icon: undefined,
         type: 'default',  // 'default', 'primary', 'warning', 'error'
         autoClose: true,
-        duration: 3000
+        duration: 3000,
+        closeSvg: closeEmpty
       }
     },
     mounted: function () {
