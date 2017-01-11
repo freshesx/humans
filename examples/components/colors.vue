@@ -9,12 +9,14 @@
       </mn-letter>
 
       <mn-card>
-        <mn-card-item>Color schema</mn-card-item>
+        <mn-card-item><h5>Background color schema</h5></mn-card-item>
         <mn-card-item>
           <mn-card-body>
             <mn-cols>
-              <mn-col query="xs-4" v-for="color in colors">
-                <div class="tile" :class="getBoxClass(color.className)"></div>
+              <mn-col v-for="(color, index) in colors">
+                <div class="tile" :class="[ getBoxClass(color.className), { 'has-white-text': index <= 10 } ]">
+                  .has-{{ color.className }}-bg
+                </div>
               </mn-col>
             </mn-cols>
           </mn-card-body>
@@ -22,13 +24,13 @@
       </mn-card>
 
       <mn-card>
-        <mn-card-item>Color schema</mn-card-item>
+        <mn-card-item><h5>Text color schema</h5></mn-card-item>
         <mn-card-item>
           <mn-card-body>
             <mn-cols>
-              <mn-col query="xs-4" v-for="color in colors">
+              <mn-col mobile="six" v-for="color in colors">
                 <div class="text" :class="getTextClass(color.className)">
-                  {{ color.className }}
+                  .has-{{ color.className }}-text
                 </div>
               </mn-col>
             </mn-cols>
@@ -84,6 +86,9 @@
     height: 80px;
     margin: 0 auto 1rem auto;
     border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .text {
