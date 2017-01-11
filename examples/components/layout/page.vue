@@ -3,9 +3,9 @@
     <mn-rows>
       <mn-row fixed>
         <mn-nav-bar>
-          <div slot="prefix" @click="$router.go(-1)">
+          <mn-btn :class="'has-none-padding-all'" slot="prefix" @click="$router.go(-1)">
             <mn-icon :name="backSvg"></mn-icon> Back
-          </div>
+          </mn-btn>
           <div slot="body">
             <mn-icon :name="titleSvg"></mn-icon>
             {{ title }}
