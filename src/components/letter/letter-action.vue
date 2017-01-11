@@ -1,12 +1,12 @@
 <template>
-  <div :class="[ `${cssPrefix}letter` ]">
+  <div :class="[ `${cssPrefix}letter-action` ]">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'mn-letter',
+    name: 'mn-letter-action',
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix
