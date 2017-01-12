@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="[ `${cssPrefix}scroller`, { 'is-save': save },  { 'has-scrollbar': scrollbar }]"
+    :class="[ `${cssPrefix}scroller`, { 'is-save': save },  { 'is-bar': scrollbar }]"
     @touchstart="touchStart"
     @touchmove="touchMove">
     <div :class="[ `${cssPrefix}scroller-contents` ]">
