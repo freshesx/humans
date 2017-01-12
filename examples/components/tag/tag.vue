@@ -6,7 +6,7 @@
         <mn-tag name="green">1</mn-tag>
         <mn-tag name="orange">99+</mn-tag>
         <mn-tag name="pink">hello</mn-tag>
-        <mn-tag bg-color="#f2753f" text="#ffe957">world</mn-tag>
+        <mn-tag background="#f2753f" text="#ffe957">world</mn-tag>
       </mn-card-item>
     </mn-card>
     <mn-card>
