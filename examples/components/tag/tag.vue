@@ -6,7 +6,7 @@
         <mn-tag name="green">1</mn-tag>
         <mn-tag name="orange">99+</mn-tag>
         <mn-tag name="pink">hello</mn-tag>
-        <mn-tag bgColor="#f2753f" fontColor="#ffe957">world</mn-tag>
+        <mn-tag bg-color="#f2753f" text="#ffe957">world</mn-tag>
       </mn-card-item>
     </mn-card>
     <mn-card>
@@ -15,7 +15,7 @@
         <mn-tag name="green"><mn-icon name="ios-checkmark-empty"></mn-icon></mn-tag>
         <mn-tag name="orange"><mn-icon name="ios-checkmark-empty"></mn-icon></mn-tag>
         <mn-tag name="pink"><mn-icon name="ios-checkmark-empty"></mn-icon></mn-tag>
-        <mn-tag bgColor="#f2753f" fontColor="#ffe957"><mn-icon name="ios-checkmark-empty"></mn-icon></mn-tag>
+        <mn-tag background="#f2753f" text="#ffe957"><mn-icon name="ios-checkmark-empty"></mn-icon></mn-tag>
       </mn-card-item>
     </mn-card>
     <mn-card>

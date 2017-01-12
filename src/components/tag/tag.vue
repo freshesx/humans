@@ -19,10 +19,10 @@
       },
       style () {
         let style = ''
-        if (this.bgColor) style += `background-color: ${this.bgColor};`
-        if (this.fontColor) style += `color: ${this.fontColor};`
+        if (this.background) style += `background-color: ${this.background};`
+        if (this.text) style += `color: ${this.text};`
         return style
-        // If there is bgColor or fontColor, set the style
+        // If there is background or text, set the style
       }
     },
     props: {
@@ -31,11 +31,11 @@
         type: String
       },
       // set background-color
-      bgColor: {
+      background: {
         type: String
       },
       // set color
-      fontColor: {
+      text: {
         type: String
       },
       // is-sm, is-md, is-lg
