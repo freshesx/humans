@@ -4,26 +4,41 @@
       <mn-card-item>Selecting one will hide the others.</mn-card-item>
       <mn-card-item>
         <mn-menu :selected="0">
-          <mn-menu-pane title="Title #1">
-            <ul class="user-menu">
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-            </ul>
+          <mn-menu-pane>
+            <mn-menu-title>
+              <p class="title">Title #1</p>
+            </mn-menu-title>
+            <mn-menu-content>
+              <ul class="user-menu">
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+              </ul>
+            </mn-menu-content>
           </mn-menu-pane>
-          <mn-menu-pane title="Title #2">
-            <ul class="user-menu">
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-            </ul>
+          <mn-menu-pane>
+            <mn-menu-title>
+              <p class="title">Title #2</p>
+            </mn-menu-title>
+            <mn-menu-content>
+              <ul class="user-menu">
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+              </ul>
+            </mn-menu-content>
           </mn-menu-pane>
-          <mn-menu-pane title="Title #3">
-            <ul class="user-menu">
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-            </ul>
+          <mn-menu-pane>
+            <mn-menu-title>
+              <p class="title">Title #3</p>
+            </mn-menu-title>
+            <mn-menu-content>
+              <ul class="user-menu">
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+              </ul>
+            </mn-menu-content>
           </mn-menu-pane>
         </mn-menu>
       </mn-card-item>
@@ -32,26 +47,41 @@
       <mn-card-item>Selecting one will not hide the others.</mn-card-item>
       <mn-card-item>
         <mn-menu type="flat">
-          <mn-menu-pane title="Title #1">
-            <ul class="user-menu">
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-            </ul>
+          <mn-menu-pane>
+            <mn-menu-title>
+              <p class="title">Title #1</p>
+            </mn-menu-title>
+            <mn-menu-content>
+              <ul class="user-menu">
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+              </ul>
+            </mn-menu-content>
           </mn-menu-pane>
-          <mn-menu-pane title="Title #2">
-            <ul class="user-menu">
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-            </ul>
+          <mn-menu-pane>
+            <mn-menu-title>
+              <p class="title">Title #2</p>
+            </mn-menu-title>
+            <mn-menu-content>
+              <ul class="user-menu">
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+              </ul>
+            </mn-menu-content>
           </mn-menu-pane>
-          <mn-menu-pane title="Title #3">
-            <ul class="user-menu">
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-              <li>some subMenu</li>
-            </ul>
+          <mn-menu-pane>
+            <mn-menu-title>
+              <p class="title">Title #3</p>
+            </mn-menu-title>
+            <mn-menu-content>
+              <ul class="user-menu">
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+                <li>some subMenu</li>
+              </ul>
+            </mn-menu-content>
           </mn-menu-pane>
         </mn-menu>
       </mn-card-item>
@@ -75,5 +105,11 @@
     li {
       line-height: 2.5rem;
     }
+  }
+
+  p.title {
+    background-color: #eee;
+    margin: 0;
+    padding: 1rem;
   }
 </style>

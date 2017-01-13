@@ -13,17 +13,6 @@ $menu-gray: #ddd;
   padding: 0;
 }
 
-.#{$-menu-title} {
-  background-color: lighten($menu-gray, 10%);
-  padding: 0 1rem;
-  cursor: pointer;
-
-  p {
-    margin: 0;
-    line-height: 3rem;
-  }
-}
-
 .#{$-menu-content} {
   overflow: hidden;
   box-sizing: border-box;
