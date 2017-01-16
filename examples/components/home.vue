@@ -24,13 +24,13 @@
     </mn-row>
     <mn-row fixed>
       <mn-tab-bar>
-        <mn-tab-bar-pane title="Bases" icon="ios-home">
+        <mn-tab-bar-pane title="Bases" :icon="iosHome">
         </mn-tab-bar-pane>
-        <mn-tab-bar-pane title="Core" icon="ios-albums-outline">
+        <mn-tab-bar-pane title="Core" :icon="iosAlbumsOutline">
         </mn-tab-bar-pane>
-        <mn-tab-bar-pane title="More" icon="ios-cloud-outline">
+        <mn-tab-bar-pane title="More" :icon="iosCloudOutline">
         </mn-tab-bar-pane>
-        <mn-tab-bar-pane title="Github" icon="ios-people">
+        <mn-tab-bar-pane title="Github" :icon="iosPeople">
         </mn-tab-bar-pane>
       </mn-tab-bar>
     </mn-row>
@@ -46,6 +46,10 @@
     },
     data () {
       return {
+        iosHome: require('human-icons/js/ios/home'),
+        iosAlbumsOutline: require('human-icons/js/ios/albums-outline'),
+        iosCloudOutline: require('human-icons/js/ios/cloud-outline'),
+        iosPeople: require('human-icons/js/ios/people'),
         pause: false,
         menus: [
           {
