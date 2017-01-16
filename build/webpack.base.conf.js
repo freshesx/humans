@@ -21,7 +21,7 @@ module.exports = {
       'assets': path.resolve(__dirname, '../examples/assets'),
       'components': path.resolve(__dirname, '../examples/components'),
       'vue-human': path.resolve(__dirname, '../src'),
-      'icons': path.resolve(__dirname, '../node_modules/human-icons/js')
+      'human-icons': path.resolve(__dirname, '../node_modules/human-icons/js')
     }
   },
   resolveLoader: {
