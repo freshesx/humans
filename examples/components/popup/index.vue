@@ -14,28 +14,28 @@
             <mn-card>
               <mn-card-item>Confirm extend popup</mn-card-item>
               <mn-card-item>
-                <mn-btn type="warning" block @click.native.prevent="openConfirm">Confirm</mn-btn>
+                <mn-btn type="warning" block @click="openConfirm">Confirm</mn-btn>
               </mn-card-item>
             </mn-card>
 
             <mn-card>
               <mn-card-item>Alert extend popup</mn-card-item>
               <mn-card-item>
-                <mn-btn type="error" block @click.native.prevent="openAlert">Alert</mn-btn>
+                <mn-btn type="error" block @click="openAlert">Alert</mn-btn>
               </mn-card-item>
             </mn-card>
 
             <mn-card>
               <mn-card-item>Toastr Message extend popup</mn-card-item>
               <mn-card-item>
-                <mn-btn type="primary" block @click.native.prevent="openToastr">Toastr Message</mn-btn>
+                <mn-btn type="primary" block @click="openToastr">Toastr Message</mn-btn>
               </mn-card-item>
             </mn-card>
 
             <mn-card>
               <mn-card-item>Custom popup (Activity sheets)</mn-card-item>
               <mn-card-item>
-                <mn-btn type="secondary" block @click.native.prevent="openPopup">Open activity sheets</mn-btn>
+                <mn-btn type="secondary" block @click="openPopup">Open activity sheets</mn-btn>
               </mn-card-item>
             </mn-card>
           </mn-section>
