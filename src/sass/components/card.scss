@@ -153,13 +153,9 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
 //
 @each $class in $-card-bordered-classes {
   .#{$class} {
-    & + & {
-      border-top: solid 1px #eee;
-    }
-
     @each $class2 in $-card-bordered-classes {
       .#{$class2} + & {
-        border-top: solid 1px #eee;
+        border-top: solid 1px rgba(0, 0, 0, 0.1);
       }
     }
   }
