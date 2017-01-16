@@ -38,11 +38,8 @@
       }
     },
     methods: {
-      methods: {
-        close () {
-          this.show = false
-          this.$emit('close')
-        }
+      close: function () {
+        this.show = false
       }
     }
   }

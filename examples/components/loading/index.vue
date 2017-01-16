@@ -38,7 +38,13 @@
   export default {
     methods: {
       isLoading: function () {
-        loading({ show: true })
+        const loadingComponent = loading()
+        loadingComponent.show = true
+        // show the loading component
+        setTimeout(() => {
+          loadingComponent.close()
+        }, 2000)
+        // the loading component will be automatically close in 2s
       }
     }
   }
