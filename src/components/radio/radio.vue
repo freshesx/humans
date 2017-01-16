@@ -13,8 +13,8 @@
 
 <script>
   import Icon from '../icon/icon'
-  import circleFilled from './circle-filled.json'
-  import circleOutline from './circle-outline.json'
+  import circleFilled from 'human-icons/js/ios/circle-filled'
+  import circleOutline from 'human-icons/js/ios/circle-outline'
 
   export default {
     name: 'mn-radio',
