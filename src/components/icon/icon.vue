@@ -1,6 +1,6 @@
 <template>
   <span
-    v-html="name"
+    v-html="svg"
     :class="[ `${cssPrefix}icon` ]"
     :style="{ width: `${computedWidth}px`, height: `${computedHeight}px` }"></span>
 </template>
@@ -10,7 +10,7 @@
     name: 'mn-icon',
     props: {
       name: {
-        type: String,
+        type: [String, Object],
         required: true
       },
       width: {
@@ -35,6 +35,15 @@
       },
       computedHeight () {
         return this.height * this.scale
+      },
+      svg () {
+        if (typeof this.name === 'string') {
+          return this.name
+        } else if (typeof this.name === 'object' && this.name.default) {
+          return this.name.default
+        } else {
+          return '<svg viewBox="0 0 0 0"></svg>'
+        }
       }
     }
   }
