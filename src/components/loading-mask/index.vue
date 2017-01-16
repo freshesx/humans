@@ -36,6 +36,14 @@
       return {
         show: false
       }
+    },
+    methods: {
+      methods: {
+        close () {
+          this.show = false
+          this.$emit('close')
+        }
+      }
     }
   }
 </script>

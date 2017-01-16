@@ -18,8 +18,11 @@
             </mn-card>
             <mn-card>
               <mn-card-item>
+                <mn-card-body>Full screen loading</mn-card-body>
+              </mn-card-item>
+              <mn-card-item>
                 <mn-card-body>
-                  <mn-btn type="primary" block @click.native="isLoading()">加载</mn-btn>
+                  <mn-btn type="primary" block @click.native="isLoading()">Loading</mn-btn>
                 </mn-card-body>
               </mn-card-item>
             </mn-card>
