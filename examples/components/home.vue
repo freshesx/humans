@@ -53,12 +53,12 @@
             subMenus: [
               {
                 title: 'colors',
-                icon: 'ios-color-filter',
+                icon: require('human-icons/js/ios/color-filter'),
                 route: { path: '/components/colors' }
               },
               {
                 title: 'typography',
-                icon: 'ios-bookmarks',
+                icon: require('human-icons/js/ios/bookmarks'),
                 route: { path: '/components/typography' }
               }
             ]
@@ -68,27 +68,27 @@
             subMenus: [
               {
                 title: 'column',
-                icon: 'ios-box',
+                icon: require('human-icons/js/ios/box'),
                 route: { path: '/components/column' }
               },
               {
                 title: 'button',
-                icon: 'ios-paperplane',
+                icon: require('human-icons/js/ios/paperplane'),
                 route: { path: '/components/button' }
               },
               {
                 title: 'card',
-                icon: 'ios-photos',
+                icon: require('human-icons/js/ios/photos'),
                 route: { path: '/components/card' }
               },
               {
                 title: 'popup',
-                icon: 'ios-browsers-outline',
+                icon: require('human-icons/js/ios/browsers-outline'),
                 route: { path: '/components/popup' }
               },
               {
                 title: 'loading icon',
-                icon: 'ios-reload',
+                icon: require('human-icons/js/ios/reload'),
                 route: { path: '/components/loading' }
               }
             ]
@@ -98,32 +98,32 @@
             subMenus: [
               {
                 title: 'form',
-                icon: 'ios-list',
+                icon: require('human-icons/js/ios/list'),
                 route: { path: '/components/form' }
               },
               {
                 title: 'tag',
-                icon: 'ios-pricetags-outline',
+                icon: require('human-icons/js/ios/pricetags-outline'),
                 route: { path: '/components/tag' }
               },
               {
                 title: 'rate',
-                icon: 'ios-star',
+                icon: require('human-icons/js/ios/star'),
                 route: { path: '/components/rate' }
               },
               {
                 title: 'collapse',
-                icon: 'ios-arrow-down',
+                icon: require('human-icons/js/ios/arrow-down'),
                 route: { path: '/components/collapse' }
               },
               {
                 title: 'menu',
-                icon: 'ios-arrow-down',
+                icon: require('human-icons/js/ios/arrow-down'),
                 route: { path: '/components/menu' }
               },
               {
                 title: 'slide-bar',
-                icon: 'ios-time-outline',
+                icon: require('human-icons/js/ios/time-outline'),
                 route: { path: '/components/slide-bar' }
               }
             ]
