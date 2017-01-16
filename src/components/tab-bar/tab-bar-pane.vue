@@ -12,7 +12,7 @@
         type: String
       },
       icon: {
-        type: String
+        type: [String, Object]
       },
       link: {
         type: String
