@@ -22,8 +22,8 @@
 </template>
 
 <script>
-  import iosArrowBack from './ios-arrow-back.json'
-  import iosColorFilter from './ios-color-filter.json'
+  import iosArrowBack from 'human-icons/js/ios/arrow-back'
+  import iosColorFilter from 'human-icons/js/ios/color-filter'
 
   export default {
     props: {
