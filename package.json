@@ -14,7 +14,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
-    "human-icons": "^1.1.0",
+    "human-icons": "^1.2.0",
     "lodash": "^4.17.3",
     "node-sass": "^4.1.1",
     "sass-loader": "^4.0.2",

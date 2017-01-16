@@ -2787,9 +2787,9 @@ https-proxy-agent@1:
     debug "2"
     extend "3"
 
-human-icons@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/human-icons/-/human-icons-1.1.0.tgz#35f8ed929f8055c4f89fa7f8b3bf468ef3a3390e"
+human-icons@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/human-icons/-/human-icons-1.2.0.tgz#071513ff06bea4cfb60a3e824357fc4f519bcd64"
 
 iconv-lite@0.4.13, iconv-lite@^0.4.5:
   version "0.4.13"
