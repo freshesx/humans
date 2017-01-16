@@ -32,11 +32,9 @@
         default: 'Human UI'
       },
       titleSvg: {
-        type: Object,
         default: () => { return iosColorFilter }
       },
       backSvg: {
-        type: Object,
         default: () => { return iosArrowBack }
       }
     }
