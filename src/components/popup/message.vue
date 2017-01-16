@@ -29,11 +29,11 @@
   import CardPrefix from '../card/card-prefix'
   import CardSuffix from '../card/card-suffix'
 
-  import chatbubble from './chatbubble.json'
-  import checkmark from './checkmark.json'
-  import closeEmpty from './close-empty.json'
-  import close from './close.json'
-  import information from './information.json'
+  import chatbubble from 'human-icons/js/ios/chatbubble'
+  import checkmark from 'human-icons/js/ios/checkmark'
+  import closeEmpty from 'human-icons/js/ios/close-empty'
+  import close from 'human-icons/js/ios/close'
+  import information from 'human-icons/js/ios/information'
 
   const toastrTypes = {
     default: { text: 'Message', icon: chatbubble, color: 'black' },
