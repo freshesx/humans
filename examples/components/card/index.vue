@@ -23,6 +23,9 @@
                 <demo-card-item></demo-card-item>
                 <demo-card-btns></demo-card-btns>
               </mn-col>
+              <mn-col tablet="twelve">
+                <demo-card-dark></demo-card-dark>
+              </mn-col>
             </mn-cols>
           </mn-section>
         </mn-scroller>
@@ -35,12 +38,14 @@
   import DemoCardItem from './card-item'
   import DemoCardMedia from './card-media'
   import DemoCardBtns from './card-btns'
+  import DemoCardDark from './card-dark'
 
   export default {
     components: {
       DemoCardItem,
       DemoCardMedia,
-      DemoCardBtns
+      DemoCardBtns,
+      DemoCardDark
     }
   }
 </script>
