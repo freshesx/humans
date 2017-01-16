@@ -20,7 +20,8 @@ module.exports = {
       'examples': path.resolve(__dirname, '../examples'),
       'assets': path.resolve(__dirname, '../examples/assets'),
       'components': path.resolve(__dirname, '../examples/components'),
-      'vue-human': path.resolve(__dirname, '../src')
+      'vue-human': path.resolve(__dirname, '../src'),
+      'icons': path.resolve(__dirname, '../node_modules/human-icons/js')
     }
   },
   resolveLoader: {
@@ -51,6 +52,10 @@ module.exports = {
         loader: 'babel',
         include: projectRoot,
         exclude: /node_modules/
+      },
+      {
+        test: /human-icons\/.*?js$/,
+        loader: 'babel'
       },
       {
         test: /\.json$/,
