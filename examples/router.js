@@ -60,6 +60,10 @@ const router = new VueRouter({
       component: resolve => { require(['./components/collapse'], resolve) }
     },
     {
+      path: '/components/menu',
+      component: resolve => { require(['./components/menu'], resolve) }
+    },
+    {
       path: '/components/slide-bar',
       component: resolve => { require(['./components/slide-bar'], resolve) }
     },
