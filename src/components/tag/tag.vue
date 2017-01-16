@@ -50,7 +50,11 @@
       }
     },
     mounted () {
-      if (this.background && !this.text) {
+      if (this.name && !this.bg && !this.text) {
+        if (this.name === 'white' || this.name === 'gray-lighter' || this.name === 'gray-lightest') this.textColor = '#000'
+      }
+
+      if (this.bg && !this.text) {
         const rgb = this.$el.style.backgroundColor
         // If the color is 'red' or something like that, the font color is '#fff'
         if (rgb.indexOf('rgb') === -1) return
