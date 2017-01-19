@@ -10,6 +10,12 @@
       [Icon.name]: Icon
     },
     name: 'mn-rate-item',
+    data () {
+      return {
+        iosStar: require('human-icons/js/ios/star'),
+        iosStarOutline: require('human-icons/js/ios/star-outline')
+      }
+    },
     props: {
       index: {
         type: Number,
@@ -30,16 +36,16 @@
         // If integer or not.
         if (!isInteger) {
           if (this.index < Math.ceil(this.count)) {
-            return 'ios-star'
+            return this.iosStar
           } else if (this.index === Math.ceil(this.count)) {
-            return 'ios-star-half'
+            return this.iosStarOutline
           }
         } else {
           if (this.index <= this.count) {
-            return 'ios-star'
+            return this.iosStar
           }
         }
-        return 'ios-star-outline'
+        return this.iosStarOutline
         // Change the stars by 'this.count'
       }
     },
