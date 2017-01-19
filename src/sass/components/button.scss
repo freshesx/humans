@@ -1,7 +1,6 @@
 @import "../variables";
 
 $-button: #{$namespace}btn;
-$-icon: #{$namespace}icon;
 
 // Using global variables
 $-button-theme: $button-theme;
@@ -35,18 +34,6 @@ $-button-theme: $button-theme;
     line-height: 1rem;
     border-radius: $base-radius * 0.75;
     font-size: 0.875rem;
-
-    .#{$-icon} {
-      vertical-align: -5px;
-      margin-top: -6px;
-    }
-  }
-
-  &.is-circle {
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 1.5rem;
   }
 
   &.is-block {
@@ -56,6 +43,14 @@ $-button-theme: $button-theme;
 
   &.is-disabled {
     cursor: not-allowed;
+  }
+
+  &.is-circle {
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    padding: 0;
   }
 
   &.is-circle.is-sm {
