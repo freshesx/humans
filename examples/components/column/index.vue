@@ -8,7 +8,7 @@
         </mn-letter-body>
       </mn-letter>
 
-      <mn-card>
+      <mn-card mobile="narrow">
         <mn-card-item>Order</mn-card-item>
         <mn-card-item>
           <mn-card-body>
@@ -27,7 +27,7 @@
         </mn-card-item>
       </mn-card>
 
-      <mn-card>
+      <mn-card mobile="narrow">
         <mn-card-item>Flex column</mn-card-item>
         <mn-card-item>
           <mn-card-body>
@@ -46,7 +46,7 @@
         </mn-card-item>
       </mn-card>
 
-      <mn-card>
+      <mn-card mobile="narrow">
         <mn-card-item>Gapless</mn-card-item>
         <mn-card-item>
           <mn-card-body>

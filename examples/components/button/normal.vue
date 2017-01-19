@@ -1,5 +1,5 @@
 <template>
-  <mn-card>
+  <mn-card mobile="narrow">
     <mn-card-item><h5>{{ title }}</h5></mn-card-item>
     <mn-card-item v-for="types in buttons">
       <mn-card-body>

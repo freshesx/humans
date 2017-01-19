@@ -8,7 +8,7 @@
         </mn-letter-body>
       </mn-letter>
 
-      <mn-card>
+      <mn-card mobile="narrow">
         <mn-card-item><h5>Background color schema</h5></mn-card-item>
         <mn-card-item>
           <mn-card-body>
@@ -23,7 +23,7 @@
         </mn-card-item>
       </mn-card>
 
-      <mn-card>
+      <mn-card mobile="narrow">
         <mn-card-item><h5>Text color schema</h5></mn-card-item>
         <mn-card-item>
           <mn-card-body>

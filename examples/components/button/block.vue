@@ -1,5 +1,5 @@
 <template>
-  <mn-card>
+  <mn-card mobile="narrow">
     <mn-card-item>Block Button</mn-card-item>
     <mn-card-item>
       <mn-card-body>

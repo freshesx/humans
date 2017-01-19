@@ -1,6 +1,5 @@
 <template>
-
-  <mn-card>
+  <mn-card mobile="narrow">
     <mn-card-item>
       <mn-card-prefix>
         <mn-icon name="ios-navigate"></mn-icon>
