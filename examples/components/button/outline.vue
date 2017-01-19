@@ -3,9 +3,9 @@
     <mn-card-item>Outline Button</mn-card-item>
     <mn-card-item>
       <mn-card-body>
-        <mn-btn class="m-b-2" type="primary-outline" margin><mn-icon name="navicon-round"></mn-icon> Confirm</mn-btn>
-        <mn-btn class="m-b-2" type="warning-outline" loading margin>Warning</mn-btn>
-        <mn-btn class="m-b-2" type="primary-outline" size="sm" margin>Confirm</mn-btn>
+        <mn-btn :icon="iosNaviconRound" class="has-two-margin-bottom" type="primary-outline" margin>Confirm</mn-btn>
+        <mn-btn :icon="iosNaviconRound" class="has-two-margin-bottom" type="warning-outline" loading margin></mn-btn>
+        <mn-btn class="has-two-margin-bottom" type="primary-outline" size="sm" margin>Confirm</mn-btn>
         <mn-btn type="error-outline" block loading margin>Error</mn-btn>
       </mn-card-body>
     </mn-card-item>
@@ -13,7 +13,13 @@
 </template>
 
 <script>
-  export default {
+  import iosNaviconRound from 'human-icons/js/iconic/navicon-round'
 
+  export default {
+    data () {
+      return {
+        iosNaviconRound
+      }
+    }
   }
 </script>
