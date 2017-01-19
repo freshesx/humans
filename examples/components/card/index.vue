@@ -11,7 +11,7 @@
               </mn-letter-body>
               <mn-letter-action>
                 <mn-link type="primary" size="sm">New</mn-link>
-                <mn-link size="sm">Link</mn-link>
+                <mn-link type="secondary-link" size="sm">Link</mn-link>
               </mn-letter-action>
             </mn-letter>
 
