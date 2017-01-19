@@ -11,7 +11,7 @@
               </mn-letter-body>
             </mn-letter>
 
-            <mn-card mobile="narrow">
+            <mn-card>
               <mn-card-item>
                 <h3 class="card-title">Headings</h3>
               </mn-card-item>

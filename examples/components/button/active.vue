@@ -1,5 +1,5 @@
 <template>
-  <mn-card mobile="narrow">
+  <mn-card>
     <mn-card-item>Button active</mn-card-item>
     <mn-card-item>
       <mn-card-body>

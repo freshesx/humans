@@ -1,5 +1,5 @@
 <template>
-  <mn-card mobile="narrow" dark>
+  <mn-card dark>
     <mn-card-item>
       <mn-card-body>Dark card</mn-card-body>
     </mn-card-item>
