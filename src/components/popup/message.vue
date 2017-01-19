@@ -1,6 +1,6 @@
 <template>
   <mn-popup :show="show" :classes="[`${cssPrefix}popup-toastr`]" :masked="false" animation="slideInUp">
-    <mn-card :style="{ 'max-width': '600px', 'margin': '0 auto', 'box-shadow': '0 0 6px rgba(0,0,0,0.3)' }">
+    <mn-popup-card :style="{ 'max-width': '600px', 'margin': '0 auto', 'box-shadow': '0 0 6px rgba(0,0,0,0.3)' }">
       <mn-card-item :style="{ 'padding': '0.3rem 1rem' }">
         <mn-card-prefix>
           <mn-icon :class="[`has-${currentType.color}-text`]" :name="iconName"></mn-icon>
@@ -17,13 +17,13 @@
           {{ description }}
         </mn-card-body>
       </mn-card-item>
-    </mn-card>
+    </mn-popup-card>
   </mn-popup>
 </template>
 
 <script>
   import Popup from './popup'
-  import Card from '../card/card'
+  import PopupCard from '../popup/popup-card'
   import CardItem from '../card/card-item'
   import CardBody from '../card/card-body'
   import CardPrefix from '../card/card-prefix'
@@ -45,7 +45,7 @@
   export default {
     components: {
       [Popup.name]: Popup,
-      [Card.name]: Card,
+      [PopupCard.name]: PopupCard,
       [CardItem.name]: CardItem,
       [CardBody.name]: CardBody,
       [CardPrefix.name]: CardPrefix,
