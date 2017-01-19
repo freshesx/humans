@@ -10,7 +10,7 @@
             </mn-letter-body>
           </mn-letter>
 
-          <mn-card mobile="narrow" v-for="menu in menus">
+          <mn-card v-for="menu in menus">
             <mn-card-item>
               <h5>{{ menu.title }}</h5>
             </mn-card-item>
