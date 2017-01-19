@@ -116,11 +116,6 @@
                 route: { path: '/components/rate' }
               },
               {
-                title: 'collapse',
-                icon: require('human-icons/js/ios/arrow-down'),
-                route: { path: '/components/collapse' }
-              },
-              {
                 title: 'menu',
                 icon: require('human-icons/js/ios/arrow-down'),
                 route: { path: '/components/menu' }
