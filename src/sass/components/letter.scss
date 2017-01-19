@@ -11,6 +11,11 @@ $-letter-action: #{$namespace}letter-action;
 .#{$-letter-body} {
   flex: 1;
   margin: $grid-gutters;
+
+  @include screen('mobile') {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .#{$-letter-action} {
