@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ `${cssPrefix}card`, { 'is-dark': dark } ]">
+  <div :class="[ `${cssPrefix}card`, { 'is-dark': dark, 'is-none-mobile-narrow': isNoneMobileNarrow } ]">
     <slot></slot>
   </div>
 </template>
@@ -15,6 +15,11 @@
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix
+      }
+    },
+    data () {
+      return {
+        isNoneMobileNarrow: false
       }
     }
   }
