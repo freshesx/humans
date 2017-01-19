@@ -23,9 +23,9 @@
     <mn-card>
       <mn-card-item>Tags with different size</mn-card-item>
       <mn-card-item>
-        <mn-tag name="purple" size="sm">123456</mn-tag>
-        <mn-tag name="purple" size="md">123456</mn-tag>
-        <mn-tag name="purple" size="lg">123456</mn-tag>
+        <mn-tag name="purple" size="sm">hello</mn-tag>
+        <mn-tag name="purple" size="md">hello</mn-tag>
+        <mn-tag name="purple" size="lg">hello</mn-tag>
       </mn-card-item>
     </mn-card>
   </div>
