@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ `${cssPrefix}card`, { 'is-dark': dark }, { 'is-mobile-narrow': mobile === 'narrow' } ]">
+  <div :class="[ `${cssPrefix}card`, { 'is-dark': dark } ]">
     <slot></slot>
   </div>
 </template>
@@ -10,9 +10,6 @@
     props: {
       dark: {
         type: Boolean
-      },
-      mobile: {
-        type: String
       }
     },
     computed: {

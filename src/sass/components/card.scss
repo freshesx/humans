@@ -28,14 +28,6 @@ $-card-bordered-classes: ($-card-item, $-card-btns);
     background-color: #333;
     color: #fff;
   }
-
-  &.is-mobile-narrow {
-    @include screen('mobile') {
-      margin-left: $grid-gutters * -1;
-      margin-right: $grid-gutters * -1;
-      border-radius: 0;
-    }
-  }
 }
 
 .#{$-card-item} {
