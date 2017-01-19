@@ -9,7 +9,7 @@ $-button-theme: $button-theme;
 // @class .btn
 //
 .#{$-button} {
-  display: inline-flex;
+  display: inline-block;
   align-items: center;
   text-align: center;
   white-space: nowrap;
@@ -17,12 +17,13 @@ $-button-theme: $button-theme;
   cursor: pointer;
   user-select: none;
   height: 3rem;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1rem;
   border-radius: $base-radius;
   text-decoration: none;
   border: none;
   outline: none;
   background: transparent;
+  line-height: 2rem;
 
   &.is-margin-bottom {
     margin-bottom: 1rem;
@@ -46,7 +47,6 @@ $-button-theme: $button-theme;
   }
 
   &.is-circle {
-    justify-content: center;
     width: 3rem;
     height: 3rem;
     border-radius: 1.5rem;
