@@ -1,19 +1,21 @@
 <template>
   <div :class="[ `${cssPrefix}form-counter` ]">
-    <button :class="[ `${cssPrefix}form-counter-btn`, { 'is-disabled': !enabledReduce } ]" @click="reduceCount">
-      <mn-icon name="ios-minus-empty"></mn-icon>
+    <button :class="[ `${cssPrefix}form-counter-btn`, { 'is-disabled': !enabledReduce } ]" @click.prevent.stop="reduceCount">
+      <mn-icon :name="iosMinusEmpty"></mn-icon>
     </button>
     <div :class="[ `${cssPrefix}form-counter-box` ]">
       <input type="number" :class="[ `${cssPrefix}form-counter-input` ]" :value="value" v-on:input="input">
     </div>
-    <button :class="[ `${cssPrefix}form-counter-btn`, { 'is-disabled': !enabledIncrease } ]" @click="increaseCount">
-      <mn-icon name="ios-plus-empty"></mn-icon>
+    <button :class="[ `${cssPrefix}form-counter-btn`, { 'is-disabled': !enabledIncrease } ]" @click.prevent.stop="increaseCount">
+      <mn-icon :name="iosPlusEmpty"></mn-icon>
     </button>
   </div>
 </template>
 
 <script>
   import Icon from '../icon/icon'
+  import iosMinusEmpty from 'human-icons/js/ios/minus-empty'
+  import iosPlusEmpty from 'human-icons/js/ios/plus-empty'
 
   export default {
     components: {
@@ -39,6 +41,12 @@
       max: {
         type: Number,
         default: 999999
+      }
+    },
+    data () {
+      return {
+        iosMinusEmpty,
+        iosPlusEmpty
       }
     },
     computed: {

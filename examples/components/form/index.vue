@@ -120,6 +120,20 @@
             </mn-helper>
           </mn-card-note>
         </mn-card-wrapper>
+        <!-- counter -->
+        <mn-card-wrapper>
+          <mn-card-note>Choose your counter</mn-card-note>
+          <mn-card>
+            <mn-card-item>
+              <mn-card-body>
+                <mn-label>Counter</mn-label>
+              </mn-card-body>
+              <mn-card-suffix>
+                <mn-counter v-model="models.counter"></mn-counter>
+              </mn-card-suffix>
+            </mn-card-item>
+          </mn-card>
+        </mn-card-wrapper>
         <!-- Policy -->
         <mn-card-wrapper>
           <mn-card>
@@ -214,7 +228,8 @@
           like: [],
           policy: true,
           note: undefined,
-          city: undefined
+          city: undefined,
+          counter: 2
         },
         sexOptions: [
           { label: 'Male', value: 'Male' },
