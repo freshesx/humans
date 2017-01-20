@@ -16,7 +16,7 @@
               </mn-card-prefix>
               <mn-card-body>{{ option.label }}</mn-card-body>
               <mn-card-suffix muted><small>Helper information</small></mn-card-suffix>
-              <mn-card-suffix @click.native.stop.prevent="openRadioInfo"><mn-icon name="ios-information"></mn-icon></mn-card-suffix>
+              <mn-card-suffix @click.native.stop.prevent="openRadioInfo"><mn-icon :name="iosInformation"></mn-icon></mn-card-suffix>
             </mn-radio-item>
           </mn-card>
           <mn-card-note>
@@ -54,6 +54,7 @@
 <script>
   import { required } from 'vuelidate/lib/validators'
   import message from 'vue-human/util/message'
+  import iosInformation from 'human-icons/js/ios/information'
 
   export default {
     validations: {
@@ -63,6 +64,7 @@
     },
     data () {
       return {
+        iosInformation,
         models: {
           sex: 'Male'
         },
