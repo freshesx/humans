@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ `${cssPrefix}card`, { 'is-dark': dark, 'is-none-mobile-narrow': isNoneMobileNarrow } ]">
+  <div :class="[ `${cssPrefix}card`, { [`is-${type}`]: true, 'is-none-mobile-narrow': isNoneMobileNarrow } ]">
     <slot></slot>
   </div>
 </template>
@@ -8,8 +8,10 @@
   export default {
     name: 'mn-card',
     props: {
-      dark: {
-        type: Boolean
+      // primary, inverse
+      type: {
+        type: String,
+        default: 'primary'
       }
     },
     computed: {
