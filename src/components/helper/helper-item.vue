@@ -1,12 +1,13 @@
 <template>
   <div :class="[ `${cssPrefix}form-helper`, 'is-error' ]" v-if="someIsInvalid">
-    <mn-icon name="ios-information"></mn-icon>
+    <mn-icon :name="iosInformation"></mn-icon>
     <slot></slot>
   </div>
 </template>
 
 <script>
   import Icon from '../icon/icon'
+  import iosInformation from 'human-icons/js/ios/information'
 
   export default {
     components: {
@@ -15,6 +16,11 @@
     name: 'mn-helper-item',
     props: {
       name: String
+    },
+    data () {
+      return {
+        iosInformation
+      }
     },
     computed: {
       cssPrefix () {
