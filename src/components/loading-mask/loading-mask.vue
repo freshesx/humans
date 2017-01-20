@@ -1,18 +1,18 @@
 <template>
   <mn-popup :show="show" :classes="[`${cssPrefix}loading-dialog`]">
-    <mn-card class="has-none-margin-bottom">
+    <mn-popup-card class="has-none-margin-bottom">
       <mn-card-item>
         <mn-card-body class="has-center-text">
           <mn-loading-icon></mn-loading-icon>
         </mn-card-body>
       </mn-card-item>
-    </mn-card>
+    </mn-popup-card>
   </mn-popup>
 </template>
 
 <script>
   import Popup from '../popup/popup'
-  import Card from '../card/card'
+  import PopupCard from '../popup/popup-card'
   import CardItem from '../card/card-item'
   import CardBody from '../card/card-body'
   import CardBtns from '../card/card-btns'
@@ -21,7 +21,7 @@
   export default {
     components: {
       [Popup.name]: Popup,
-      [Card.name]: Card,
+      [PopupCard.name]: PopupCard,
       [CardItem.name]: CardItem,
       [CardBody.name]: CardBody,
       [CardBtns.name]: CardBtns,
