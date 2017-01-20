@@ -1,21 +1,15 @@
 <template>
-  <transition name="has-slide">
-    <mn-rows>
-      <mn-row>
-        <mn-scroller>
-          <mn-section>
-            <mn-letter>
-              <mn-letter-body>
-                <h1>Slide Box</h1>
-                <small></small>
-              </mn-letter-body>
-            </mn-letter>
-            <demo-slide-bar></demo-slide-bar>
-          </mn-section>
-        </mn-scroller>
-      </mn-row>
-    </mn-rows>
-  </transition>
+  <docs-layout-page>
+    <mn-section>
+      <mn-letter>
+        <mn-letter-body>
+          <h1>Slide Box</h1>
+          <small></small>
+        </mn-letter-body>
+      </mn-letter>
+      <demo-slide-bar></demo-slide-bar>
+    </mn-section>
+  </docs-layout-page>
 </template>
 
 <script>

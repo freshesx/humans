@@ -1,34 +1,28 @@
 <template>
-  <transition name="has-slide">
-    <mn-rows>
-      <mn-row>
-        <mn-scroller>
-          <mn-section>
-            <mn-letter>
-              <mn-letter-body>
-                <h1>Typograhpy</h1>
-                <small>Headings, paragraph, list, etc.</small>
-              </mn-letter-body>
-            </mn-letter>
+  <docs-layout-page>
+    <mn-section>
+      <mn-letter>
+        <mn-letter-body>
+          <h1>Typograhpy</h1>
+          <small>Headings, paragraph, list, etc.</small>
+        </mn-letter-body>
+      </mn-letter>
 
-            <mn-card>
-              <mn-card-item>
-                <h3 class="card-title">Headings</h3>
-              </mn-card-item>
-              <mn-card-item v-for="content in contents">
-                <mn-card-body>
-                  <demo-heading :level="content.level">{{ content.title }}</demo-heading>
-                </mn-card-body>
-                <mn-card-suffix muted>
-                  <small>{{ content.description }}</small>
-                </mn-card-suffix>
-              </mn-card-item>
-            </mn-card>
-          </mn-section>
-        </mn-scroller>
-      </mn-row>
-    </mn-rows>
-  </transition>
+      <mn-card>
+        <mn-card-item>
+          <h3 class="card-title">Headings</h3>
+        </mn-card-item>
+        <mn-card-item v-for="content in contents">
+          <mn-card-body>
+            <demo-heading :level="content.level">{{ content.title }}</demo-heading>
+          </mn-card-body>
+          <mn-card-suffix muted>
+            <small>{{ content.description }}</small>
+          </mn-card-suffix>
+        </mn-card-item>
+      </mn-card>
+    </mn-section>
+  </docs-layout-page>
 </template>
 
 <script>
