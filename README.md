@@ -2,7 +2,7 @@
 
 # Vue Human
 
-> vue-human 2.0-beta.23
+> vue-human 2.0-rc.1
 > for vue2
 
 # Install in your application
@@ -30,9 +30,11 @@ Step 3: Import vue-human
 ``` javascript
 import Vue from 'vue'
 import VueHuman from 'vue-human'
-import "vue-human/sass/human.scss"
+import components from 'vue-human/total'
+import './styles.scss'
 
 Vue.use(VueHuman)
+VueHuman.add(components)
 ```
 
 # How to contribute
