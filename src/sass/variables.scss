@@ -85,7 +85,7 @@ $button-theme: (
     disable: (bg: lighten($pink, 16%)),
   ),
   secondary: (
-    normal: (bg: #d9d9d9),
+    normal: (bg: #d9d9d9, color: #000),
     hover: (bg: darken(#d9d9d9, 10%)),
     active: (bg: darken(#d9d9d9, 10%)),
     disable: (bg: darken(#d9d9d9, 10%), color: darken(#d9d9d9, 30%)),

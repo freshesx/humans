@@ -8,7 +8,7 @@
       :disabled="disabled"
       @input="changeValue">{{ value }}</textarea>
     <div :class="[ `${cssPrefix}form-textarea-counter` ]">
-      <mn-icon :name="numberSign"></mn-icon>
+      <mn-icon :name="iosGridViewOutline"></mn-icon>
       {{ value ? value.length : 0 }}
       <span v-if="maxLength">
         / {{ maxLength }}
@@ -19,7 +19,7 @@
 
 <script>
   import Icon from '../icon/icon'
-  import numberSign from './number-sign.json'
+  import iosGridViewOutline from 'human-icons/js/ios/grid-view-outline'
 
   export default {
     components: {
@@ -53,7 +53,7 @@
     },
     data () {
       return {
-        numberSign
+        iosGridViewOutline
       }
     },
     computed: {

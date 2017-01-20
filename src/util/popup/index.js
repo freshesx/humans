@@ -3,30 +3,29 @@ import storage from './storage'
 
 /**
  * 将组件配置初始化为 popup 弹层
- * @param  {Object}     componentConfig
- * @param  {Object}     data
+ * @param  {Object}     Component
+ * @param  {Object}     propsData
  * @return {Object}     VueComponent
  */
-export default function popup (componentConfig, data) {
-  // Instance component
-  const component = new (Vue.extend(componentConfig))({
-    el: document.createElement('div')
-  })
+export default function popup (Component, propsData) {
+  // Build Component
+  const Ctor = Vue.extend(Component)
+  const vm = new Ctor({ el: document.createElement('div') })
 
-  // Change component data by data
-  for (var variable in data) {
-    if (data.hasOwnProperty(variable) && component.hasOwnProperty(variable) && variable !== 'close') {
-      component[variable] = data[variable]
+  // Change vm props by propsData
+  for (var variable in propsData) {
+    if (propsData.hasOwnProperty(variable) && vm.hasOwnProperty(variable) && variable !== 'close') {
+      vm[variable] = propsData[variable]
     }
   }
 
   // When listen 'close' event, set show is false
-  component.$on('close', () => {
-    component.show = false
+  vm.$on('close', () => {
+    vm.show = false
   })
 
-  // Add this component to popup storage
-  storage.addItem(component)
+  // Add this vm to popup storage
+  storage.addItem(vm)
 
-  return component
+  return vm
 }

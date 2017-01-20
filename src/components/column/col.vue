@@ -1,5 +1,5 @@
 <template>
-  <div :class="[`${cssPrefix}col`, queryClass]">
+  <div :class="[`${cssPrefix}col`, classes]" :style="styles">
     <slot></slot>
   </div>
 </template>
@@ -7,68 +7,80 @@
 <script>
   import lodash from 'lodash'
 
+  const MEDIA_KEYWORDS = ['span', 'offset', 'order']
+
   export default {
     name: 'mn-col',
     props: {
       mobile: {
-        type: [String, Array]
+        type: [String, Object]
       },
       tablet: {
-        type: [String, Array]
+        type: [String, Object]
       },
       desktop: {
-        type: [String, Array]
+        type: [String, Object]
       },
       widescreen: {
-        type: [String, Array]
-      }
-    },
-    data () {
-      return {
-        media: {
-          mobile: this.mobile,
-          tablet: this.tablet,
-          desktop: this.desktop,
-          widescreen: this.widescreen
-        }
+        type: [String, Object]
       }
     },
     computed: {
       cssPrefix () {
         return this.$human.cssPrefix
       },
-      queryClass () {
-        const classes = []
+      computedMedia () {
+        // const classes = []
+        let media = {
+          ...this.mobile ? { mobile: this.mobile } : undefined,
+          ...this.tablet ? { tablet: this.tablet } : undefined,
+          ...this.desktop ? { desktop: this.desktop } : undefined,
+          ...this.widescreen ? { widescreen: this.widescreen } : undefined
+        }
 
-        lodash.forIn(this.media, (value, key) => {
-          // 如果值为字符串，则有两种情况：one 或则 one, one。第二位表示 offset
+        lodash.forIn(media, (value, key) => {
+          let queries = {}
+
           if (lodash.isString(value)) {
-            if (value.includes(',')) {
-              const query = lodash.split(value, /,+\s*/)
-              if (query[0].length > 0) {
-                classes.push({ [`is-${key}-${query[0]}`]: true })
+            // 字符串情况，将 `,` 和 `空格` 的字符串分解为数组
+            value.split(/,\s*/).forEach((item, index) => {
+              // 如果字符为数字的话，则表达其为 order
+              if (lodash.isString(item) && item.length > 0 && lodash.isInteger(Number(item))) {
+                queries[MEDIA_KEYWORDS[2]] = Number(item)
+              } else {
+                queries[MEDIA_KEYWORDS[index]] = item
               }
-              if (query[1].length > 0) {
-                classes.push({ [`is-${key}-offset-${query[1]}`]: true })
-              }
-            } else {
-              classes.push({ [`is-${key}-${value}`]: true })
-            }
+            })
+          } else if (lodash.isPlainObject(value)) {
+            // 对象情况
+            queries = value
           }
-          // 如果为数组
-          if (lodash.isArray(value)) {
-            // 第一位为 span
-            if (lodash.isString(value[0])) {
-              classes.push({ [`is-${key}-${value[0]}`]: true })
-            }
-            // 第二位为 offset
-            if (lodash.isString(value[1])) {
-              classes.push({ [`is-${key}-offset-${value[1]}`]: true })
-            }
-          }
+
+          media[key] = queries
         })
 
-        return classes
+        return media
+      },
+      queries () {
+        let classes = []
+        let styles = []
+        let media = this.computedMedia
+
+        lodash.forIn(media, (mediaValue, mediaName) => {
+          lodash.forIn(mediaValue, (value, name) => {
+            if (name === 'span') classes.push({ [`is-${mediaName}-${value}`]: true })
+            if (name === 'offset') classes.push({ [`is-${mediaName}-offset-${value}`]: true })
+            if (name === 'order') styles.push({ order: value })
+          })
+        })
+
+        return { classes, styles }
+      },
+      classes () {
+        return this.queries.classes
+      },
+      styles () {
+        return this.queries.styles
       }
     }
   }

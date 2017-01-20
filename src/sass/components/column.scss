@@ -27,7 +27,7 @@ $-col: #{$namespace}col;
 //
 .#{$-col} {
   width: 100%;
-  overflow: hidden;
+  // overflow: hidden;  Remove it for card narrow
   padding: 0 $grid-gutters * 0.5;
 
   @include min-screen(sm) {

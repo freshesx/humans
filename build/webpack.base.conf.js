@@ -53,6 +53,10 @@ module.exports = {
         exclude: /node_modules/
       },
       {
+        test: /human-icons\/.*?js$/,
+        loader: 'babel'
+      },
+      {
         test: /\.json$/,
         loader: 'json'
       },

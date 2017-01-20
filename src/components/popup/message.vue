@@ -1,6 +1,6 @@
 <template>
   <mn-popup :show="show" :classes="[`${cssPrefix}popup-toastr`]" :masked="false" animation="slideInUp">
-    <mn-card :style="{ 'max-width': '600px', 'margin': '0 auto', 'box-shadow': '0 0 6px rgba(0,0,0,0.3)' }">
+    <mn-popup-card :style="{ 'max-width': '600px', 'margin': '0 auto', 'box-shadow': '0 0 6px rgba(0,0,0,0.3)' }">
       <mn-card-item :style="{ 'padding': '0.3rem 1rem' }">
         <mn-card-prefix>
           <mn-icon :class="[`has-${currentType.color}-text`]" :name="iconName"></mn-icon>
@@ -9,7 +9,7 @@
           <h4><small>{{ title || currentType.text }}</small></h4>
         </mn-card-body>
         <mn-card-suffix @click.native="close">
-          <mn-icon name="ios-close-empty"></mn-icon>
+          <mn-icon :name="closeSvg"></mn-icon>
         </mn-card-suffix>
       </mn-card-item>
       <mn-card-item :style="{ 'padding': '1rem 1rem' }">
@@ -17,29 +17,35 @@
           {{ description }}
         </mn-card-body>
       </mn-card-item>
-    </mn-card>
+    </mn-popup-card>
   </mn-popup>
 </template>
 
 <script>
   import Popup from './popup'
-  import Card from '../card/card'
+  import PopupCard from '../popup/popup-card'
   import CardItem from '../card/card-item'
   import CardBody from '../card/card-body'
   import CardPrefix from '../card/card-prefix'
   import CardSuffix from '../card/card-suffix'
 
+  import chatbubble from 'human-icons/js/ios/chatbubble'
+  import checkmark from 'human-icons/js/ios/checkmark'
+  import closeEmpty from 'human-icons/js/ios/close-empty'
+  import close from 'human-icons/js/ios/close'
+  import information from 'human-icons/js/ios/information'
+
   const toastrTypes = {
-    default: { text: 'Message', icon: 'ios-chatbubble', color: 'black' },
-    primary: { text: 'Success', icon: 'ios-checkmark', color: 'green' },
-    warning: { text: 'Warning', icon: 'ios-information', color: 'orange' },
-    error: { text: 'Error', icon: 'ios-close', color: 'pink' }
+    default: { text: 'Message', icon: chatbubble, color: 'black' },
+    primary: { text: 'Success', icon: checkmark, color: 'green' },
+    warning: { text: 'Warning', icon: information, color: 'orange' },
+    error: { text: 'Error', icon: close, color: 'pink' }
   }
 
   export default {
     components: {
       [Popup.name]: Popup,
-      [Card.name]: Card,
+      [PopupCard.name]: PopupCard,
       [CardItem.name]: CardItem,
       [CardBody.name]: CardBody,
       [CardPrefix.name]: CardPrefix,
@@ -70,7 +76,8 @@
         icon: undefined,
         type: 'default',  // 'default', 'primary', 'warning', 'error'
         autoClose: true,
-        duration: 3000
+        duration: 3000,
+        closeSvg: closeEmpty
       }
     },
     mounted: function () {

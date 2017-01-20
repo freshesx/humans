@@ -35,7 +35,7 @@
         return this.$human.cssPrefix
       },
       slideBoxStyle () {
-        return `transform: translateX(${this.distance}px);`
+        return `transform: translateX(${this.distance}px);-webkit-transform: translateX(${this.distance}px);-moz-transform: translateX(${this.distance}px);-o-transform: translateX(${this.distance}px);`
       },
       slideWrapStyle () {
         return `width: ${this.boxWidth};`

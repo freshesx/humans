@@ -71,7 +71,7 @@ $-popup-mask: #{$namespace}popup-mask;
   // Fade in
   &-fade-enter-active,
   &-fade-leave-active {
-    transition: opacity 0.5s linear;
+    transition: opacity 0.3s linear;
   }
 
   &-fade-enter,

@@ -3,11 +3,11 @@
     <mn-rows>
       <mn-row fixed>
         <mn-nav-bar>
-          <div slot="prefix" @click="$router.go(-1)">
-            <mn-icon name="ios-arrow-back"></mn-icon>Back
-          </div>
+          <mn-btn :class="'has-none-padding-all'" slot="prefix" @click="$router.go(-1)">
+            <mn-icon :name="backSvg"></mn-icon> Back
+          </mn-btn>
           <div slot="body">
-            <mn-icon :name="icon"></mn-icon>
+            <mn-icon :name="titleSvg"></mn-icon>
             {{ title }}
           </div>
         </mn-nav-bar>
@@ -22,15 +22,20 @@
 </template>
 
 <script>
+  import iosArrowBack from 'human-icons/js/ios/arrow-back'
+  import iosColorFilter from 'human-icons/js/ios/color-filter'
+
   export default {
     props: {
       title: {
         type: String,
         default: 'Human UI'
       },
-      icon: {
-        type: String,
-        default: 'ios-color-filter'
+      titleSvg: {
+        default: () => { return iosColorFilter }
+      },
+      backSvg: {
+        default: () => { return iosArrowBack }
       }
     }
   }
