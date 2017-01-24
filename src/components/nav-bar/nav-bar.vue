@@ -27,3 +27,36 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  .#{$namespace}nav-bar {
+    display: flex;
+    background: #fafafa;
+    height: 50px;
+    white-space: nowrap;
+
+    &-prefix {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 0.5rem;
+    }
+
+    &-suffix {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-right: 0.5rem;
+    }
+
+    &-body {
+      flex: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+</style>
