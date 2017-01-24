@@ -56,3 +56,28 @@
     }
   }
 </script>
+
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  .#{$namespace}form-radio,
+  .#{$namespace}form-checkbox {
+    &-label {
+      cursor: pointer;
+      user-select: none;
+
+      & + & {
+        margin-left: 0.5rem;
+      }
+    }
+
+    &-checkmark {
+      color: #999;
+
+      &.is-active {
+        color: $green;
+      }
+    }
+  }
+</style>

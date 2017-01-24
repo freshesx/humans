@@ -84,3 +84,40 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  .#{$namespace}form-text {
+    display: flex;
+
+    &-input {
+      flex: 1 1;
+      display: block;
+      width: 100%;
+      height: 1.5rem;
+      border: none;
+      padding: 0;
+      background: transparent;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    &-clear {
+      flex-shrink: 0;
+    }
+
+    &-clear-enter-active {
+      transition: all 0.2s ease;
+    }
+
+    &-clear-leave-active {
+      transition: all 0.2s ease;
+    }
+
+    &-clear-enter,
+    &-clear-leave-active {
+      opacity: 0;
+    }
+  }
+</style>

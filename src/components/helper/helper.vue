@@ -17,3 +17,13 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  .#{$namespace}form-helper {
+    &.is-error {
+      color: $pink;
+    }
+  }
+</style>

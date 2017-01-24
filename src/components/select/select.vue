@@ -33,3 +33,19 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  .#{$namespace}form-select-control {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    width: 100%;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    margin: -1rem 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+</style>
