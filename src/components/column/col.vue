@@ -85,3 +85,37 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+  @import "../../sass/mixins/media";
+  @import "../../sass/mixins/number";
+
+  .#{$namespace}col {
+    width: 100%;
+    // overflow: hidden;  Remove it for card narrow
+    padding: 0 $grid-gutters * 0.5;
+
+    @include min-screen(sm) {
+      flex: 1;
+    }
+
+    // Column span and offset
+    // @divice(mobile, tablet, desktop, widescreen)
+    //
+    @each $breakpoint in map-keys($grid-breakpoints) {
+      @include min-screen($breakpoint) {
+        @for $number from 1 through 12 {
+          &.is-#{$breakpoint}-#{getLetterByNumber($number)} {
+            flex: none;
+            width: (100% / 12) * $number;
+          }
+
+          &.is-#{$breakpoint}-offset-#{getLetterByNumber($number)} {
+            margin-left: (100% / 12) * $number;
+          }
+        }
+      }
+    }
+  }
+</style>
