@@ -48,3 +48,13 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  .#{$namespace}icon {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: -4px;
+  }
+</style>
