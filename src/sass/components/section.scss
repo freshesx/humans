@@ -1,7 +1,0 @@
-@import "../variables";
-
-$-section: #{$namespace}section;
-
-.#{$-section} {
-  margin: 0 $grid-gutters;
-}
