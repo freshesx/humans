@@ -48,3 +48,13 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .#{$namespace}icon {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: -4px;
+  }
+</style>

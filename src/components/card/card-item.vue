@@ -46,3 +46,34 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+  @import "../../scss/mixins/arrow";
+
+  .mn-card-item {
+    display: flex;
+    padding: $grid-gutters;
+    align-items: center;
+
+    &.is-focus {
+      background: #f5f5f5;
+    }
+
+    &.is-link,
+    &.is-cursor {
+      cursor: pointer;
+    }
+
+    &.is-link,
+    &.is-arrow {
+      &::after {
+        @include make-arrow();
+      }
+    }
+  }
+
+  .mn-card-item + .mn-card-item {
+    border-top: solid 1px rgba(0, 0, 0, 0.1);
+  }
+</style>

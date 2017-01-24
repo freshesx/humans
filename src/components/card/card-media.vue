@@ -14,3 +14,12 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .mn-card-media {
+    > img {
+      display: block;
+      width: 100%;
+    }
+  }
+</style>

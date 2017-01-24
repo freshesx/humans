@@ -189,3 +189,29 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .#{$namespace}slide-wrap {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .#{$namespace}slide-bar {
+    display: flex;
+    backface-visibility: hidden;
+    perspective: 1000;
+
+    // @affect(./slide-bar-item.vue)
+    &.is-full {
+      width: 100%;
+    }
+
+    &.is-back {
+      transition: 0.5s ease-out;
+    }
+  }
+</style>

@@ -56,3 +56,36 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+  @import "./vars";
+
+  .#{$-tab} {
+    width: 100%;
+
+    li,
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a,
+    a:active,
+    a:hover,
+    a:visited {
+      color: $-tab-text-color;
+      text-decoration: none;
+    }
+  }
+
+  .#{$-tab-list} {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 3rem;
+    background-color: $-tab-background;
+    color: $-tab-text-color;
+  }
+</style>

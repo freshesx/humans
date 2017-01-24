@@ -14,3 +14,12 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .mn-card-item-body {
+    flex: 1;
+    overflow: hidden;
+  }
+</style>

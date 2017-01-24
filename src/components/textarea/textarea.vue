@@ -68,3 +68,26 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .#{$namespace}form-textarea {
+    &-input {
+      display: block;
+      width: 100%;
+      border: none;
+      padding: 0;
+      background: transparent;
+      outline: none;
+      -webkit-appearance: none;
+      resize: none;
+    }
+
+    &-counter {
+      border-top: solid 1px #eee;
+      padding-top: 0.5rem;
+      text-align: right;
+    }
+  }
+</style>

@@ -29,3 +29,12 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+  @import "./vars";
+
+  .#{$-tab-content} {
+    padding: 0 1rem;
+  }
+</style>

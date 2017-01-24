@@ -14,3 +14,11 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .#{$namespace}section {
+    margin: 0 $grid-gutters;
+  }
+</style>

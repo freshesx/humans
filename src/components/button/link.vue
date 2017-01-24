@@ -11,11 +11,11 @@
 </template>
 
 <script>
-  import mixin from './mixin'
+  import Button from './button'
 
   export default {
     name: 'mn-link',
-    mixins: [ mixin ],
+    mixins: [ Button ],
     props: {
       href: {
         type: String
