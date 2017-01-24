@@ -1,7 +1,7 @@
 <template>
   <div :class="[ `${cssPrefix}tab-item`, { 'is-active': isActive } ]" @click="click">
-    <mn-icon :name="this.tab.icon" v-if="this.tab.icon"></mn-icon>
-    <p v-if="this.tab.title">{{ this.tab.title }}</p>
+    <mn-icon :class="[ `${cssPrefix}tab-item-icon` ]" :name="this.tab.icon" v-if="this.tab.icon"></mn-icon>
+    <p :class="[ `${cssPrefix}tab-item-title` ]" v-if="this.tab.title">{{ this.tab.title }}</p>
   </div>
 </template>
 
@@ -43,3 +43,40 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+  @import "./vars";
+
+  .#{$-tab-item} {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 3rem;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.2rem 0;
+
+    &.is-active {
+      color: $-tab-active-color;
+    }
+
+    &.is-bottom {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .#{$namespace}tab-item-icon,
+  .#{$namespace}tab-item-title {
+    flex: 0 0 auto;
+    align-self: center;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+</style>
