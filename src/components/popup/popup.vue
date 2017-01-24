@@ -105,3 +105,95 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  .#{$namespace}popup {
+    position: fixed;
+    right: $grid-gutters / 2;
+    bottom: $grid-gutters / 2;
+    left: $grid-gutters / 2;
+
+    &-dialog {
+      width: 280px;
+      top: 45%;
+      right: auto;
+      bottom: auto;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &-toastr {
+      top: 0.5rem;
+      right: 0.5rem;
+      left: 0.5rem;
+      bottom: auto;
+    }
+
+    &-toastr-box {
+      max-width: 560px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 0.875rem 2rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      border-radius: $base-radius;
+      cursor: pointer;
+
+      &.is-primary {
+        background: rgba($green, 0.8);
+        color: darken($green, 60%);
+      }
+
+      &.is-warning {
+        background: rgba($orange, 0.8);
+        color: #fff;
+      }
+
+      &.is-error {
+        background: rgba($red, 0.8);
+        color: #fff;
+      }
+    }
+
+    // Slide from down
+    &-slide-enter-active,
+    &-slide-leave-active {
+      transition: transform 0.3s;
+    }
+
+    &-slide-enter,
+    &-slide-leave-active {
+      transform: translateY(100%);
+    }
+
+    // Fade in
+    &-fade-enter-active,
+    &-fade-leave-active {
+      transition: opacity 0.3s linear;
+    }
+
+    &-fade-enter,
+    &-fade-leave-active {
+      opacity: 0;
+    }
+
+    // Slide from up
+    &-slideup-enter-active {
+      transition: transform 0.3s;
+    }
+
+    &-slideup-leave-active {
+      transition: opacity 0.3s linear;
+    }
+
+    &-slideup-enter {
+      transform: translateY(-100%);
+    }
+
+    &-slideup-leave-active {
+      opacity: 0;
+    }
+  }
+</style>
