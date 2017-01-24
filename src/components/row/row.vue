@@ -24,3 +24,24 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  .#{$namespace}row {
+    position: relative;
+    flex: 1 1;
+    height: 100%;
+    overflow: hidden;
+
+    &.is-fixed {
+      flex: none;
+      flex-shrink: 0;
+      height: auto;
+    }
+
+    &.is-visible {
+      overflow: visible;
+    }
+  }
+</style>
