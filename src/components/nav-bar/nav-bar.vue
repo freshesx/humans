@@ -29,7 +29,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
+  @import "../../scss/vars";
 
   .#{$namespace}nav-bar {
     display: flex;

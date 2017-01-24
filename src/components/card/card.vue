@@ -28,8 +28,8 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
-  @import "../../sass/mixins/media";
+  @import "../../scss/vars";
+  @import "../../scss/mixins/media";
 
   .mn-card {
     margin-bottom: $grid-gutters;

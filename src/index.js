@@ -1,5 +1,5 @@
 import browser from './util/browser/plugins.js'
-import './sass/bases.scss'
+import './scss/bases.scss'
 
 export default {
   options: {

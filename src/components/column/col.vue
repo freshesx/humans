@@ -87,9 +87,9 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
-  @import "../../sass/mixins/media";
-  @import "../../sass/mixins/number";
+  @import "../../scss/vars";
+  @import "../../scss/mixins/media";
+  @import "../../scss/mixins/number";
 
   .#{$namespace}col {
     width: 100%;

@@ -59,7 +59,7 @@
 
 
 <style lang="scss">
-  @import "../../sass/vars";
+  @import "../../scss/vars";
 
   .#{$namespace}form-radio,
   .#{$namespace}form-checkbox {

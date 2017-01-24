@@ -48,8 +48,8 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
-  @import "../../sass/mixins/arrow";
+  @import "../../scss/vars";
+  @import "../../scss/mixins/arrow";
 
   .mn-card-item {
     display: flex;

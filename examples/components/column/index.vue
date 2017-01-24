@@ -87,7 +87,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "~vue-human/sass/vars.scss";
+  @import "~vue-human/scss/vars.scss";
 
   .holder {
     height: 3rem;

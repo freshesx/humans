@@ -27,7 +27,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
+  @import "../../scss/vars";
 
   .#{$namespace}form-switch-control {
     $height: 2rem;

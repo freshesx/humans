@@ -35,7 +35,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
+  @import "../../scss/vars";
 
   .#{$namespace}form-select-control {
     border: 0;

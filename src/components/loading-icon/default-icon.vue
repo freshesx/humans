@@ -13,7 +13,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
+  @import "../../scss/vars";
 
   .#{$namespace}loading-icon {
     @keyframes #{$namespace}loading-icon {

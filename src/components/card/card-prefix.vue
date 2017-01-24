@@ -25,7 +25,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
+  @import "../../scss/vars";
 
   .mn-card-item-addon {
     flex-shrink: 0;

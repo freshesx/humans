@@ -27,7 +27,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
+  @import "../../scss/vars";
 
   $-search-bar: #{$namespace}search-bar;
 

@@ -16,8 +16,8 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
-  @import "../../sass/mixins/media";
+  @import "../../scss/vars";
+  @import "../../scss/mixins/media";
 
   $-letter-body: #{$namespace}letter-body;
 

@@ -56,7 +56,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
+  @import "../../scss/vars";
 
   $-scroller: #{$namespace}scroller;
 

@@ -58,7 +58,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/vars";
+  @import "../../scss/vars";
   @import "./vars";
 
   .#{$-tab} {
