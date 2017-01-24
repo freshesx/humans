@@ -19,7 +19,7 @@
 
 <script>
   import Icon from '../icon/icon'
-  import iosGridViewOutline from 'human-icons/js/ios/grid-view-outline'
+  import iosGridViewOutline from 'vue-human-icons/js/ios/grid-view-outline'
 
   export default {
     components: {

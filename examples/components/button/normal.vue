@@ -20,7 +20,7 @@
 
 <script>
   import message from 'vue-human/util/message'
-  import iosAnalytics from 'human-icons/js/ios/analytics'
+  import iosAnalytics from 'vue-human-icons/js/ios/analytics'
 
   export default {
     methods: {

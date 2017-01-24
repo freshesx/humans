@@ -13,7 +13,7 @@
 
 <script>
   import Icon from '../icon/icon'
-  import checkmarkEmpty from 'human-icons/js/ios/checkmark-empty'
+  import checkmarkEmpty from 'vue-human-icons/js/ios/checkmark-empty'
 
   export default {
     components: {

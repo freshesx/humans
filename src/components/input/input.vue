@@ -21,7 +21,7 @@
 
 <script>
   import Icon from '../icon/icon'
-  import iosCloseOutline from 'human-icons/js/ios/close-outline'
+  import iosCloseOutline from 'vue-human-icons/js/ios/close-outline'
 
   export default {
     components: {

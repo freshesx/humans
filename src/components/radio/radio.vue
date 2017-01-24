@@ -13,8 +13,8 @@
 
 <script>
   import Icon from '../icon/icon'
-  import circleFilled from 'human-icons/js/ios/circle-filled'
-  import circleOutline from 'human-icons/js/ios/circle-outline'
+  import circleFilled from 'vue-human-icons/js/ios/circle-filled'
+  import circleOutline from 'vue-human-icons/js/ios/circle-outline'
 
   export default {
     name: 'mn-radio',

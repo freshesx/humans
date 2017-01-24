@@ -1,7 +1,7 @@
 <script>
   import MnRadioIcon from '../radio/radio-icon'
-  import checkmarkOutline from 'human-icons/js/ios/checkmark-outline'
-  import circleOutline from 'human-icons/js/ios/circle-outline'
+  import checkmarkOutline from 'vue-human-icons/js/ios/checkmark-outline'
+  import circleOutline from 'vue-human-icons/js/ios/circle-outline'
 
   export default {
     name: 'mn-check-icon',
