@@ -14,3 +14,13 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  $-letter: #{$namespace}letter;
+
+  .#{$-letter} {
+    display: flex;
+  }
+</style>
