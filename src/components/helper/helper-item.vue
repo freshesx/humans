@@ -7,7 +7,7 @@
 
 <script>
   import Icon from '../icon/icon'
-  import iosInformation from 'human-icons/js/ios/information'
+  import iosInformation from 'vue-human-icons/js/ios/information'
 
   export default {
     components: {

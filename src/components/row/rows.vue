@@ -14,3 +14,14 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .#{$namespace}rows {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+  }
+</style>

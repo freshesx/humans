@@ -22,3 +22,16 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .#{$namespace}form-label {
+    display: block;
+    width: 6rem;
+
+    &.is-error {
+      color: $pink;
+    }
+  }
+</style>

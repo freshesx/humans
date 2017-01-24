@@ -17,3 +17,18 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .#{$namespace}slide-bar-item {
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+    padding: 0 0.5rem;
+
+    // @affect(./slide-bar.vue)
+    .#{$namespace}slide-bar.is-full & {
+      flex: 0 0 100%;
+    }
+  }
+</style>

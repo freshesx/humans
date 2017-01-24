@@ -35,7 +35,7 @@
   export default {
     data () {
       return {
-        checkmarkEmpty: require('human-icons/js/ios/checkmark-empty')
+        checkmarkEmpty: require('vue-human-icons/js/ios/checkmark-empty')
       }
     }
   }

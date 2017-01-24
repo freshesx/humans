@@ -24,3 +24,29 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .#{$namespace}popup-mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.4;
+    z-index: 1000;
+
+    // Fade in
+    &-fade-enter-active,
+    &-fade-leave-active {
+      transition: opacity 0.3s linear;
+    }
+
+    &-fade-enter,
+    &-fade-leave-active {
+      opacity: 0;
+    }
+  }
+</style>

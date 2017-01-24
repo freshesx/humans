@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import iosArrowDown from 'human-icons/js/ios/arrow-down'
+  import iosArrowDown from 'vue-human-icons/js/ios/arrow-down'
 
   export default {
     data () {

@@ -54,7 +54,7 @@
 <script>
   import { required } from 'vuelidate/lib/validators'
   import message from 'vue-human/util/message'
-  import iosInformation from 'human-icons/js/ios/information'
+  import iosInformation from 'vue-human-icons/js/ios/information'
 
   export default {
     validations: {

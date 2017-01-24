@@ -23,3 +23,30 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .mn-card-item-addon {
+    flex-shrink: 0;
+
+    &.is-prefix {
+      margin-right: 0.5rem;
+    }
+
+    &.is-suffix {
+      margin-left: 0.5rem;
+    }
+
+    &.is-muted {
+      color: #666;
+    }
+
+    &.is-action {
+      display: flex;
+      margin-top: -$grid-gutters;
+      margin-bottom: -$grid-gutters;
+      align-items: center;
+    }
+  }
+</style>

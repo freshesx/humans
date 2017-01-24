@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import iosNaviconRound from 'human-icons/js/iconic/navicon-round'
+  import iosNaviconRound from 'vue-human-icons/js/iconic/navicon-round'
 
   export default {
     data () {

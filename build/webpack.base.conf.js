@@ -53,7 +53,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /human-icons\/.*?js$/,
+        test: /vue-human-icons\/.*?js$/,
         loader: 'babel'
       },
       {
@@ -88,5 +88,6 @@ module.exports = {
         browsers: ['last 2 versions']
       })
     ]
-  }
+  },
+  sassResources: path.resolve(__dirname, '../examples/human/vars.scss')
 }

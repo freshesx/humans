@@ -29,11 +29,11 @@
   import CardPrefix from '../card/card-prefix'
   import CardSuffix from '../card/card-suffix'
 
-  import chatbubble from 'human-icons/js/ios/chatbubble'
-  import checkmark from 'human-icons/js/ios/checkmark'
-  import closeEmpty from 'human-icons/js/ios/close-empty'
-  import close from 'human-icons/js/ios/close'
-  import information from 'human-icons/js/ios/information'
+  import chatbubble from 'vue-human-icons/js/ios/chatbubble'
+  import checkmark from 'vue-human-icons/js/ios/checkmark'
+  import closeEmpty from 'vue-human-icons/js/ios/close-empty'
+  import close from 'vue-human-icons/js/ios/close'
+  import information from 'vue-human-icons/js/ios/information'
 
   const toastrTypes = {
     default: { text: 'Message', icon: chatbubble, color: 'black' },

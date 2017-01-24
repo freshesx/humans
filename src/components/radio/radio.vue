@@ -13,8 +13,8 @@
 
 <script>
   import Icon from '../icon/icon'
-  import circleFilled from 'human-icons/js/ios/circle-filled'
-  import circleOutline from 'human-icons/js/ios/circle-outline'
+  import circleFilled from 'vue-human-icons/js/ios/circle-filled'
+  import circleOutline from 'vue-human-icons/js/ios/circle-outline'
 
   export default {
     name: 'mn-radio',
@@ -56,3 +56,28 @@
     }
   }
 </script>
+
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .#{$namespace}form-radio,
+  .#{$namespace}form-checkbox {
+    &-label {
+      cursor: pointer;
+      user-select: none;
+
+      & + & {
+        margin-left: 0.5rem;
+      }
+    }
+
+    &-checkmark {
+      color: #999;
+
+      &.is-active {
+        color: $green;
+      }
+    }
+  }
+</style>

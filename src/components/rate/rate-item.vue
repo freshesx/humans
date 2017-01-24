@@ -12,8 +12,8 @@
     name: 'mn-rate-item',
     data () {
       return {
-        iosStar: require('human-icons/js/ios/star'),
-        iosStarOutline: require('human-icons/js/ios/star-outline')
+        iosStar: require('vue-human-icons/js/ios/star'),
+        iosStarOutline: require('vue-human-icons/js/ios/star-outline')
       }
     },
     props: {

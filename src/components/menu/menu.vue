@@ -36,3 +36,11 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .#{$namespace}menu {
+    width: 100%;
+  }
+</style>

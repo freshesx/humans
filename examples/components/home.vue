@@ -46,10 +46,10 @@
     },
     data () {
       return {
-        iosHome: require('human-icons/js/ios/home'),
-        iosAlbumsOutline: require('human-icons/js/ios/albums-outline'),
-        iosCloudOutline: require('human-icons/js/ios/cloud-outline'),
-        iosPeople: require('human-icons/js/ios/people'),
+        iosHome: require('vue-human-icons/js/ios/home'),
+        iosAlbumsOutline: require('vue-human-icons/js/ios/albums-outline'),
+        iosCloudOutline: require('vue-human-icons/js/ios/cloud-outline'),
+        iosPeople: require('vue-human-icons/js/ios/people'),
         pause: false,
         menus: [
           {
@@ -57,12 +57,12 @@
             subMenus: [
               {
                 title: 'colors',
-                icon: require('human-icons/js/ios/color-filter'),
+                icon: require('vue-human-icons/js/ios/color-filter'),
                 route: { path: '/components/colors' }
               },
               {
                 title: 'typography',
-                icon: require('human-icons/js/ios/bookmarks'),
+                icon: require('vue-human-icons/js/ios/bookmarks'),
                 route: { path: '/components/typography' }
               }
             ]
@@ -72,27 +72,27 @@
             subMenus: [
               {
                 title: 'column',
-                icon: require('human-icons/js/ios/box'),
+                icon: require('vue-human-icons/js/ios/box'),
                 route: { path: '/components/column' }
               },
               {
                 title: 'button',
-                icon: require('human-icons/js/ios/paperplane'),
+                icon: require('vue-human-icons/js/ios/paperplane'),
                 route: { path: '/components/button' }
               },
               {
                 title: 'card',
-                icon: require('human-icons/js/ios/photos'),
+                icon: require('vue-human-icons/js/ios/photos'),
                 route: { path: '/components/card' }
               },
               {
                 title: 'popup',
-                icon: require('human-icons/js/ios/browsers-outline'),
+                icon: require('vue-human-icons/js/ios/browsers-outline'),
                 route: { path: '/components/popup' }
               },
               {
                 title: 'loading icon',
-                icon: require('human-icons/js/ios/reload'),
+                icon: require('vue-human-icons/js/ios/reload'),
                 route: { path: '/components/loading' }
               }
             ]
@@ -102,27 +102,27 @@
             subMenus: [
               {
                 title: 'form',
-                icon: require('human-icons/js/ios/list'),
+                icon: require('vue-human-icons/js/ios/list'),
                 route: { path: '/components/form' }
               },
               {
                 title: 'tag',
-                icon: require('human-icons/js/ios/pricetags-outline'),
+                icon: require('vue-human-icons/js/ios/pricetags-outline'),
                 route: { path: '/components/tag' }
               },
               {
                 title: 'rate',
-                icon: require('human-icons/js/ios/star'),
+                icon: require('vue-human-icons/js/ios/star'),
                 route: { path: '/components/rate' }
               },
               {
                 title: 'menu',
-                icon: require('human-icons/js/ios/arrow-down'),
+                icon: require('vue-human-icons/js/ios/arrow-down'),
                 route: { path: '/components/menu' }
               },
               {
                 title: 'slide-bar',
-                icon: require('human-icons/js/ios/time-outline'),
+                icon: require('vue-human-icons/js/ios/time-outline'),
                 route: { path: '/components/slide-bar' }
               }
             ]

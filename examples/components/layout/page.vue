@@ -22,8 +22,8 @@
 </template>
 
 <script>
-  import iosArrowBack from 'human-icons/js/ios/arrow-back'
-  import iosColorFilter from 'human-icons/js/ios/color-filter'
+  import iosArrowBack from 'vue-human-icons/js/ios/arrow-back'
+  import iosColorFilter from 'vue-human-icons/js/ios/color-filter'
 
   export default {
     props: {
