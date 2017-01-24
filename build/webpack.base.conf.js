@@ -88,5 +88,6 @@ module.exports = {
         browsers: ['last 2 versions']
       })
     ]
-  }
+  },
+  sassResources: path.resolve(__dirname, '../examples/human/vars.scss')
 }
