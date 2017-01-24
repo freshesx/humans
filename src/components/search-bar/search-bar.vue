@@ -25,3 +25,30 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  $-search-bar: #{$namespace}search-bar;
+
+  .#{$-search-bar} {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-items: center;
+    background: #eee;
+    border-radius: $base-radius;
+    padding: 0.5rem;
+    transition: width 0.2s;
+
+    &-control {
+      flex: 1;
+      margin-left: 0.5rem;
+    }
+
+    &.is-sm {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
+    }
+  }
+</style>
