@@ -5967,6 +5967,10 @@ vue-hot-reload-api@^2.0.1:
   version "2.0.7"
   resolved "http://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.0.7.tgz#45bd46cfeee7fd22550b467a76fa0c4a0ceae51b"
 
+vue-human-icons@^1.4.0:
+  version "1.4.0"
+  resolved "http://registry.npm.taobao.org/vue-human-icons/download/vue-human-icons-1.4.0.tgz#e3fd023207474d0adc6898ddf55eb491b7839582"
+
 vue-loader@^9.4.0:
   version "9.9.5"
   resolved "http://registry.npm.taobao.org/vue-loader/download/vue-loader-9.9.5.tgz#0893e3093e90c8fbe852053b2b0f4854a3bf4651"

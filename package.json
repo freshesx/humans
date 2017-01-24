@@ -19,6 +19,7 @@
     "sass-loader": "^4.0.2",
     "sass-resources-loader": "1.0.2",
     "vue": "^2.0.1",
+    "vue-human-icons": "^1.4.0",
     "vuelidate": "^0.2.0"
   },
   "devDependencies": {
