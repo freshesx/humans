@@ -7,7 +7,6 @@ import Menu from './components/menu'
 import NavBar from './components/nav-bar'
 import TabBar from './components/tab-bar'
 import SearchBar from './components/search-bar'
-import FilterBar from './components/filter-bar'
 import SlideBar from './components/slide-bar'
 
 export default [
@@ -20,6 +19,5 @@ export default [
   ...NavBar,
   ...TabBar,
   ...SearchBar,
-  ...FilterBar,
   ...SlideBar
 ]
