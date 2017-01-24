@@ -16,7 +16,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/variables";
+  @import "../../sass/vars";
 
   .#{$namespace}section {
     margin: 0 $grid-gutters;

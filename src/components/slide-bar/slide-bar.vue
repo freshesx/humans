@@ -191,7 +191,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/variables";
+  @import "../../sass/vars";
 
   .#{$namespace}slide-wrap {
     box-sizing: border-box;

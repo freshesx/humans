@@ -19,7 +19,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/variables";
+  @import "../../sass/vars";
 
   .#{$namespace}form-helper {
     &.is-error {

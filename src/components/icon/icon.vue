@@ -50,7 +50,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/variables";
+  @import "../../sass/vars";
 
   .#{$namespace}icon {
     display: inline-block;

@@ -115,7 +115,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/variables";
+  @import "../../sass/vars";
 
   $-rate: #{$namespace}rate;
 

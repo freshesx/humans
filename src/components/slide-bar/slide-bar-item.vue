@@ -19,7 +19,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/variables";
+  @import "../../sass/vars";
 
   .#{$namespace}slide-bar-item {
     flex: 0 0 auto;

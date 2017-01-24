@@ -107,7 +107,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/variables";
+  @import "../../sass/vars";
 
   $-button: #{$namespace}btn;
   $-button-theme: $button-theme;

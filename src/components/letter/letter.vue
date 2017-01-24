@@ -16,7 +16,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../sass/variables";
+  @import "../../sass/vars";
 
   $-letter: #{$namespace}letter;
 
