@@ -113,3 +113,13 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  $-rate: #{$namespace}rate;
+
+  .#{$-rate} {
+    display: block;
+  }
+</style>
