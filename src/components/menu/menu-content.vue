@@ -34,3 +34,23 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  .#{$namespace}menu-content {
+    overflow: hidden;
+    box-sizing: border-box;
+    max-height: 999px;
+  }
+
+  .#{$namespace}menu-toggle-enter-active,
+  .#{$namespace}menu-toggle-leave-active {
+    transition: all 0.2s ease;
+  }
+
+  .#{$namespace}menu-toggle-enter,
+  .#{$namespace}menu-toggle-leave-active {
+    max-height: 0;
+  }
+</style>
