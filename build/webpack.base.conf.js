@@ -53,7 +53,7 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /human-icons\/.*?js$/,
+        test: /vue-human-icons\/.*?js$/,
         loader: 'babel'
       },
       {
