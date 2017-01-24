@@ -14,3 +14,15 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../sass/variables";
+
+  .mn-card-group {
+    margin-bottom: $grid-gutters;
+
+    .mn-card {
+      margin-bottom: 0;
+    }
+  }
+</style>
