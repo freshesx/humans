@@ -3,15 +3,16 @@
   "version": "2.0.0-rc.3",
   "description": "Human UI for vue2, inspired by iOS Human Interface Guidelines",
   "author": "ChaselWu <chasel.wu@vitualreaty.com>",
-  "main": "src/index.js",
-  "sass": "src/sass/human.scss",
+  "main": "index.js",
   "files": [
-    "src"
+    "components",
+    "scss",
+    "suits",
+    "util",
+    "index.js"
   ],
   "scripts": {
-    "dev": "node build/dev-server.js",
-    "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue components suits util"
   },
   "dependencies": {
     "lodash": "^4.17.3",

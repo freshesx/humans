@@ -17,16 +17,9 @@ Step 2: Must set babel in your webpack
 ``` javascript
 loaders: [
   {
-    test: /vue-human\/src\/.*?js$/,
-    loader: 'babel'
-  },
-  {
-    test: /human-icons\/.*?js$/,
-    loader: 'babel'
-  },
-  {
-    test: /vue-human-env\/.*?js$/,
-    loader: 'babel'
+    test: /vue-human[-\w]*\/.*?js$/,
+    loader: 'babel',
+    exclude: /vue-human[-\w]*\/node_modules/
   }
 ]
 ```
