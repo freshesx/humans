@@ -1,5 +1,5 @@
 <template>
-  <span></span>
+  <span class="mn-loading-icon"></span>
 </template>
 
 <script>
