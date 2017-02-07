@@ -85,6 +85,8 @@
 </script>
 
 <style lang="scss">
+  @import "../../scss/vars";
+
   .mn-counter {
     display: flex;
     max-width: 8rem;
