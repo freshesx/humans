@@ -1,7 +1,8 @@
 <template>
   <a
     :href="computedHref"
-    :class="[`${cssPrefix}btn`, classes]"
+    class="mn-btn"
+    :class="classes"
     :title="title"
     @click="click">
     <mn-loading-icon :class="'has-one-margin-right'" v-if="loading"></mn-loading-icon>
