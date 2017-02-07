@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submit" novalidate>
+  <form class="mn-form" @submit.prevent="submit" novalidate>
     <slot></slot>
   </form>
 </template>
@@ -47,6 +47,11 @@
 <style lang="scss">
   @import "../../scss/vars";
 
+  .mn-form {
+    // mn-form
+  }
+
+  // @todo Move code to other components
   .#{$namespace}form-counter {
     display: flex;
     max-width: 8rem;
