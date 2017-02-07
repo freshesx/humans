@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ { 'is-selected': this.selected } ]" :index="index" @click="changeIndex">
+  <div class="mn-menu-title" :class="{ 'is-selected': this.selected }" :index="index" @click="changeIndex">
     <slot></slot>
   </div>
 </template>
