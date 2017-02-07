@@ -1,5 +1,5 @@
 <template>
-  <span :class="[ `${cssPrefix}rate` ]">
+  <span class="mn-rate">
     <i
       v-for="item in this.max"
       @mouseenter="mouseEnterEvent(item)"
@@ -63,11 +63,6 @@
         }
       }
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    },
     methods: {
       mouseEnterEvent: function (item) {
         if (this.disabled) {
@@ -115,11 +110,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  $-rate: #{$namespace}rate;
-
-  .#{$-rate} {
+  .mn-rate {
     display: block;
   }
 </style>
