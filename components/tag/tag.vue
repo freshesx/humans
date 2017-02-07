@@ -1,22 +1,16 @@
 <template>
-  <i :class="[ `${cssPrefix}tag`, hasName, hasSize ]" :style="style">
+  <span
+    class="mn-tag"
+    :class="{ [`is-${name}`]: !!name, [`is-${size}`]: !!size }"
+    :style="style">
     <slot></slot>
-  </i>
+  </span>
 </template>
 
 <script>
   export default {
     name: 'mn-tag',
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
-      hasName () {
-        if (this.name) return `is-${this.name}`
-      },
-      hasSize () {
-        if (this.size) return `is-${this.size}`
-      },
       style () {
         // If there is background or text, set the style
         let style = ''
@@ -81,7 +75,7 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  $-tag: #{$namespace}tag;
+  $-tag: "mn-tag";
 
   $-tag-style: (
     white: $white,
