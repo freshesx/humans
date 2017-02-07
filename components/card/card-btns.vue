@@ -67,4 +67,10 @@
       }
     }
   }
+
+  // @import mn-card-item, mn-card-media
+  .mn-card-item + .mn-card-btns,
+  .mn-card-media + .mn-card-btns {
+    border-top: solid 1px rgba(0, 0, 0, 0.1);
+  }
 </style>
