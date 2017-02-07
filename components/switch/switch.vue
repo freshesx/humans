@@ -1,6 +1,6 @@
 <template>
   <input
-    :class="[ `${cssPrefix}form-switch-control` ]"
+    class="mn-switch"
     type="checkbox"
     :checked="data === value"
     @change="onInput">
@@ -13,11 +13,6 @@
       value: {},
       data: {}
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    },
     methods: {
       onInput (event) {
         this.$emit('input', event.target.checked ? this.data : undefined)
@@ -29,7 +24,7 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  .#{$namespace}form-switch-control {
+  .mn-switch {
     $height: 2rem;
 
     display: inline-flex;
