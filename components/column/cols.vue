@@ -27,7 +27,7 @@
     &.is-gapless {
       margin: 0;
 
-      // @import mn-col
+      // @affect(./col.vue)
       > .mn-col {
         padding: 0;
       }
