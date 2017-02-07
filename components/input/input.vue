@@ -1,17 +1,17 @@
 <template>
-  <div :class="[ `${cssPrefix}form-text` ]">
+  <div class="mn-input">
     <input
       :type="type"
-      :class="[ `${cssPrefix}form-text-input` ]"
+      class="mn-input-control"
       :value="parseBefore(value)"
       :placeholder="placeholder"
       :readonly="readonly"
       :disabled="disabled"
       @input="changeValue">
-    <transition :name="`${cssPrefix}form-text-clear`">
+    <transition name="mn-input-clear">
       <div
         v-if="value"
-        :class="[ `${cssPrefix}form-text-clear` ]"
+        class="mn-input-clear"
         @click="clearValue">
         <mn-icon :name="iosCloseOutline"></mn-icon>
       </div>
@@ -88,10 +88,10 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  .#{$namespace}form-text {
+  .mn-input {
     display: flex;
 
-    &-input {
+    &-control {
       flex: 1 1;
       display: block;
       width: 100%;
