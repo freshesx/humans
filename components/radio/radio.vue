@@ -1,7 +1,7 @@
 <template>
-  <label :class="[`${cssPrefix}form-radio-label`]" @click="click">
+  <label class="mn-radio-label" @click="click">
     <mn-icon
-      :class="[`${cssPrefix}form-radio-checkmark`, {
+      :class="['mn-radio-checkmark', {
         'is-active': checked
       }]"
       :name="icon"></mn-icon>
@@ -61,8 +61,7 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  .#{$namespace}form-radio,
-  .#{$namespace}form-checkbox {
+  .mn-radio {
     &-label {
       cursor: pointer;
       user-select: none;
