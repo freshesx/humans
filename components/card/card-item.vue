@@ -1,10 +1,11 @@
 <template>
   <div
-    :class="[
-      `${cssPrefix}card-item`,
-      typeClass,
-      { 'is-focus': focus, 'is-disabled': disabled
-    }]"
+    class="mn-card-item"
+    :class="{
+      [`is-${type}`]: !!type,
+      'is-focus': focus,
+      'is-disabled': disabled
+    }"
     @click="click">
     <slot></slot>
   </div>
@@ -23,14 +24,6 @@
     data () {
       return {
         focus: false
-      }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
-      typeClass () {
-        return { [`is-${this.type}`]: !!this.type }
       }
     },
     methods: {

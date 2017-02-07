@@ -1,5 +1,5 @@
 <template>
-  <div :class="[`${cssPrefix}card-btns`, typeClass]">
+  <div class="mn-card-btns" :class="{ [`is-${type}`]: !!type }">
     <slot></slot>
   </div>
 </template>
@@ -11,14 +11,6 @@
       type: {
         type: String,
         validator: val => ['column'].includes(val)
-      }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
-      typeClass () {
-        return { [`is-${this.type}`]: !!this.type }
       }
     }
   }

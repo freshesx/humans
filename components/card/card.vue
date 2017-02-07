@@ -1,5 +1,10 @@
 <template>
-  <div :class="[ `${cssPrefix}card`, { [`is-${type}`]: true, 'is-none-mobile-narrow': isNoneMobileNarrow } ]">
+  <div
+    class="mn-card"
+    :class="{
+      [`is-${type}`]: true,
+      'is-none-mobile-narrow': isNoneMobileNarrow
+    }">
     <slot></slot>
   </div>
 </template>
@@ -12,11 +17,6 @@
       type: {
         type: String,
         default: 'primary'
-      }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
       }
     },
     data () {
