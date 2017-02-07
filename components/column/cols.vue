@@ -1,5 +1,5 @@
 <template>
-  <div :class="[`${cssPrefix}cols`, gaplessClass]">
+  <div class="mn-cols" :class="{ 'is-gapless': gapless }">
     <slot></slot>
   </div>
 </template>
@@ -12,14 +12,6 @@
         type: Boolean,
         default: false
       }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
-      gaplessClass () {
-        return { 'is-gapless': this.gapless }
-      }
     }
   }
 </script>
@@ -27,7 +19,7 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  .#{$namespace}cols {
+  .mn-cols {
     display: flex;
     margin: 0 $grid-gutters * -0.5;
     flex-wrap: wrap;
@@ -35,7 +27,8 @@
     &.is-gapless {
       margin: 0;
 
-      > .#{$namespace}col {
+      // @import mn-col
+      > .mn-col {
         padding: 0;
       }
     }
