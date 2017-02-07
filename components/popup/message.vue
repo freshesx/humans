@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" :classes="[`${cssPrefix}popup-toastr`]" :masked="false" animation="slideInUp">
+  <mn-popup :show="show" :class="[ 'mn-popup-meesage' ]" :masked="false" animation="slideInUp">
     <mn-popup-card :style="{ 'max-width': '600px', 'margin': '0 auto', 'box-shadow': '0 0 6px rgba(0,0,0,0.3)' }">
       <mn-card-item :style="{ 'padding': '0.3rem 1rem' }">
         <mn-card-prefix>
@@ -90,3 +90,12 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .mn-popup-meesage {
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+    bottom: auto;
+  }
+</style>
