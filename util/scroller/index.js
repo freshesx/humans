@@ -35,8 +35,7 @@ function getStorage (name) {
  * @return {Number}  Scroll top
  */
 function getFirstScrollerTop () {
-  let scroller = document.getElementsByClassName(
-    `${Vue.human.cssPrefix}scroller is-save`)
+  let scroller = document.getElementsByClassName('mn-scroller is-save')
 
   return scroller.length > 0
     ? scroller[0].scrollTop
@@ -50,8 +49,7 @@ function getFirstScrollerTop () {
  * @return {this}
  */
 function setFirstScrollerTop (value) {
-  let scroller = document.getElementsByClassName(
-    `${Vue.human.cssPrefix}scroller is-save`)
+  let scroller = document.getElementsByClassName('mn-scroller is-save')
 
   if (scroller.length > 0) {
     scroller[0].scrollTop = value
