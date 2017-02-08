@@ -49,8 +49,6 @@
         // Enable the animation
         delayDistance: 100,
         // the delay distance when touch-end
-        defaultClasses: this.$human.cssPrefix,
-        // Defaul css prefix
         startPosition: 0,
         // Start positon depends on  on-touchstart event.
         CurrentPosition: 0,
