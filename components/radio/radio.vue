@@ -35,9 +35,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       checked () {
         return this.data === this.value
       },
