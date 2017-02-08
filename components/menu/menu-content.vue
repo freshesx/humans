@@ -20,9 +20,6 @@
         // If type is 'flat', use another way to toggle
         return this.index === this.$parent.$parent.current
         // Set the current
-      },
-      cssPrefix () {
-        return this.$human.cssPrefix
       }
     },
     mounted () {

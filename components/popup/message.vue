@@ -62,9 +62,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       currentType () {
         return toastrTypes[this.type]
       },

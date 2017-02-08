@@ -25,11 +25,6 @@
       [CardBody.name]: CardBody,
       [LoadingIcon.name]: LoadingIcon
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    },
     data () {
       return {
         show: false
