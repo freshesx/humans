@@ -9,3 +9,13 @@
     name: 'mn-article'
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/mixins/headings";
+
+  .mn-article {
+    @include headings {
+      margin-bottom: 1rem;
+    }
+  }
+</style>
