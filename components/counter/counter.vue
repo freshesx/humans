@@ -57,9 +57,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       enabledReduce () {
         return this.value > this.min
       },

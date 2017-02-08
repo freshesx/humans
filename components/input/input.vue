@@ -58,11 +58,6 @@
         iosCloseOutline
       }
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    },
     methods: {
       changeValue (event) {
         this.$emit('input', this.parseAfter(event.target.value))

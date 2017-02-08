@@ -38,11 +38,6 @@
         default: false
       }
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    },
     methods: {
       changeValue (event) {
         this.$emit('input', event.target.value)
