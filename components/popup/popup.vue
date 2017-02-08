@@ -2,7 +2,7 @@
   <transition :name="transition">
     <div
       class="mn-popup"
-      :style="[zIndexStyle, styles]"
+      :style="zIndexStyle"
       v-if="show">
       <slot></slot>
     </div>
@@ -29,12 +29,6 @@
         type: Boolean,
         default: true
       },
-      styles: {
-        type: [Object, Array]
-      },
-      // classes: {
-      //   type: [Object, Array]
-      // },
       zIndex: {
         type: Number
       }
