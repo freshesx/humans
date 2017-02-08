@@ -1,7 +1,7 @@
 <template>
-  <div class="mn-section">
+  <section class="mn-section">
     <slot></slot>
-  </div>
+  </section>
 </template>
 
 <script>
