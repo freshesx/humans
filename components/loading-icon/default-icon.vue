@@ -1,22 +1,16 @@
 <template>
-  <span :class="[ `${cssPrefix}loading-icon` ]"></span>
+  <span class="mn-default-icon"></span>
 </template>
 
 <script>
   export default {
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    }
+    name: 'mn-default-icon'
   }
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  .#{$namespace}loading-icon {
-    @keyframes #{$namespace}loading-icon {
+  .mn-default-icon {
+    @keyframes mn-default-icon {
       0% {
         transform: scale(1);
       }
@@ -36,6 +30,6 @@
     background: currentColor;
     border-radius: 8px;
     vertical-align: -2px;
-    animation: #{$namespace}loading-icon 1.5s infinite linear;
+    animation: mn-default-icon 1.5s infinite linear;
   }
 </style>

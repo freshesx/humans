@@ -1,6 +1,6 @@
 <template>
   <select
-    :class="[ `${cssPrefix}form-select-control` ]"
+    class="mn-select"
     :value="value"
     @input="onInput">
     <option
@@ -21,11 +21,6 @@
         }
       }
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    },
     methods: {
       onInput (event) {
         this.$emit('input', event.target.value)
@@ -35,9 +30,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  .#{$namespace}form-select-control {
+  .mn-select {
     border: 0;
     outline: 0;
     background: transparent;

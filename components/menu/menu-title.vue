@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ { 'is-selected': this.selected } ]" :index="index" @click="changeIndex">
+  <div class="mn-menu-title" :class="{ 'is-selected': this.selected }" :index="index" @click="changeIndex">
     <slot></slot>
   </div>
 </template>
@@ -18,9 +18,6 @@
         // If type is 'flat', use another way to toggle
         return this.index === this.$parent.$parent.current
         // Set the current
-      },
-      cssPrefix () {
-        return this.$human.cssPrefix
       }
     },
     mounted () {

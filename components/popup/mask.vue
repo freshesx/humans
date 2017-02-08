@@ -1,6 +1,6 @@
 <template>
-  <transition :name="`${cssPrefix}popup-mask-fade`">
-    <div :class="[ `${cssPrefix}popup-mask` ]" v-if="show" :style="{ 'z-index': zIndex }" @click="close"></div>
+  <transition name="mn-popup-mask-fade">
+    <div class="mn-popup-mask" v-if="show" :style="{ 'z-index': zIndex }" @click="close"></div>
   </transition>
 </template>
 
@@ -9,11 +9,6 @@
     methods: {
       close () {
         this.$emit('close')
-      }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
       }
     },
     data () {
@@ -28,7 +23,7 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  .#{$namespace}popup-mask {
+  .mn-popup-mask {
     position: fixed;
     left: 0;
     right: 0;

@@ -1,12 +1,12 @@
 <template>
-  <div :class="[ `${cssPrefix}nav-bar` ]">
-    <div :class="[`${cssPrefix}nav-bar-prefix`]">
+  <div class="mn-nav-bar">
+    <div class="mn-nav-bar-prefix">
       <slot name="prefix"></slot>
     </div>
-    <div :class="[`${cssPrefix}nav-bar-body`]">
+    <div class="mn-nav-bar-body">
       <slot name="body"></slot>
     </div>
-    <div :class="[`${cssPrefix}nav-bar-suffix`]">
+    <div class="mn-nav-bar-suffix">
       <slot name="suffix"></slot>
     </div>
   </div>
@@ -19,19 +19,12 @@
         type: Boolean,
         default: false
       }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
     }
   }
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  .#{$namespace}nav-bar {
+  .mn-nav-bar {
     display: flex;
     background: #fafafa;
     height: 50px;

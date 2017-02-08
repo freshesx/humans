@@ -1,24 +1,17 @@
 <template>
-  <div :class="[ `${cssPrefix}rows` ]">
+  <div class="mn-rows">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'mn-rows',
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    }
+    name: 'mn-rows'
   }
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  .#{$namespace}rows {
+  .mn-rows {
     display: flex;
     flex-direction: column;
     position: relative;

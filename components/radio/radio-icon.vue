@@ -1,7 +1,7 @@
 <template>
   <div :style="{ width: `${20 * scale}px` }">
     <mn-icon
-      :class="[`${cssPrefix}form-radio-checkmark`, {
+      :class="['mn-radio-checkmark', {
         'is-active': checked
       }]"
       :name="icon"
@@ -46,9 +46,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       checked () {
         return this.data === this.value
       },

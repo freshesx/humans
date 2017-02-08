@@ -4,11 +4,6 @@ import './scss/bases.scss'
 export default {
   options: {
     /**
-     * Human css prefix, using it in scss
-     * @type {String}
-     */
-    cssPrefix: 'mn-',
-    /**
      * Human css breakpoints
      * @type {Object}
      * @var {Number} breakpoints.mobile
@@ -47,7 +42,6 @@ export default {
 
     // Set up vue human
     Vue.human = {
-      cssPrefix: this.options.cssPrefix,
       breakpoints: this.options.breakpoints,
       loading: this.options.loading,
       icons: this.options.icons

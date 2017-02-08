@@ -1,9 +1,10 @@
 <template>
   <div
-    :class="[ `${cssPrefix}scroller`, { 'is-save': save },  { 'is-bar': scrollbar }]"
+    class="mn-scroller"
+    :class="{ 'is-save': save, 'is-bar': scrollbar }"
     @touchstart="touchStart"
     @touchmove="touchMove">
-    <div :class="[ `${cssPrefix}scroller-contents` ]">
+    <div class="mn-scroller-contents">
       <slot></slot>
     </div>
   </div>
@@ -20,11 +21,6 @@
       scrollbar: {
         type: Boolean,
         default: false
-      }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
       }
     },
     methods: {
@@ -56,11 +52,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  $-scroller: #{$namespace}scroller;
-
-  .#{$-scroller} {
+  .mn-scroller {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -83,7 +75,7 @@
       height: 0;
     }
 
-    .#{$-scroller}.is-bar {
+    .mn-scroller.is-bar {
       &::-webkit-scrollbar {
         width: 10px;
         height: 10px;

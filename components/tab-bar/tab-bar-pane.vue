@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ `${cssPrefix}tab-content` ]" v-if="this.$parent.flag === this._uid && this.show">
+  <div class="mn-tab-bar-content" v-if="this.$parent.flag === this._uid && this.show">
     <slot></slot>
   </div>
 </template>
@@ -21,20 +21,12 @@
         type: Boolean,
         default: false
       }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
     }
   }
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-  @import "./vars";
-
-  .#{$-tab-content} {
+  .mn-tab-bar-content {
     padding: 0 1rem;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ `${cssPrefix}menu` ]">
+  <div class="mn-menu">
     <slot></slot>
   </div>
 </template>
@@ -23,11 +23,6 @@
         default: 'normal'
       }
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    },
     mounted () {
       const map = new Map()
       this.$children.forEach((menu, index) => map.set(menu._uid, index))
@@ -38,9 +33,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  .#{$namespace}menu {
+  .mn-menu {
     width: 100%;
   }
 </style>

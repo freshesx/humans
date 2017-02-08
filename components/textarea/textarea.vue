@@ -1,13 +1,13 @@
 <template>
-  <div :class="[ `${cssPrefix}form-textarea` ]">
+  <div class="mn-textarea">
     <textarea
-      :class="[ `${cssPrefix}form-textarea-input` ]"
+      class="mn-textarea-control"
       :rows="rows"
       :placeholder="placeholder"
       :readonly="readonly"
       :disabled="disabled"
       @input="changeValue">{{ value }}</textarea>
-    <div :class="[ `${cssPrefix}form-textarea-counter` ]">
+    <div class="mn-textarea-counter">
       <mn-icon :name="iosGridViewOutline"></mn-icon>
       {{ value ? value.length : 0 }}
       <span v-if="maxLength">
@@ -56,11 +56,6 @@
         iosGridViewOutline
       }
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    },
     methods: {
       changeValue (event) {
         this.$emit('input', event.target.value)
@@ -70,10 +65,8 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  .#{$namespace}form-textarea {
-    &-input {
+  .mn-textarea {
+    &-control {
       display: block;
       width: 100%;
       border: none;

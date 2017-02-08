@@ -1,9 +1,13 @@
 <template>
-  <mn-popup :show="show" :classes="[`${cssPrefix}popup-toastr`]" :masked="false" animation="slideInUp">
-    <mn-popup-card :style="{ 'max-width': '600px', 'margin': '0 auto', 'box-shadow': '0 0 6px rgba(0,0,0,0.3)' }">
-      <mn-card-item :style="{ 'padding': '0.3rem 1rem' }">
+  <mn-popup
+    :show="show"
+    :class="[ 'mn-popup-message' ]"
+    :masked="false"
+    animation="slideInUp">
+    <mn-popup-card :class="[ 'mn-popup-message-card' ]">
+      <mn-card-item :class="[ 'mn-popup-message-title' ]">
         <mn-card-prefix>
-          <mn-icon :class="[`has-${currentType.color}-text`]" :name="iconName"></mn-icon>
+          <mn-icon :class="{ [`has-${currentType.color}-text`]: true }" :name="iconName"></mn-icon>
         </mn-card-prefix>
         <mn-card-body>
           <h4><small>{{ title || currentType.text }}</small></h4>
@@ -12,7 +16,7 @@
           <mn-icon :name="closeSvg"></mn-icon>
         </mn-card-suffix>
       </mn-card-item>
-      <mn-card-item :style="{ 'padding': '1rem 1rem' }">
+      <mn-card-item :class="[ 'mn-popup-message-contents' ]">
         <mn-card-body>
           {{ description }}
         </mn-card-body>
@@ -58,9 +62,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       currentType () {
         return toastrTypes[this.type]
       },
@@ -90,3 +91,26 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .mn-popup-message {
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+    bottom: auto;
+
+    &-card {
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3)
+    }
+
+    &-title {
+      padding: 0.3rem 1rem;
+    }
+
+    &-contents {
+      padding: 1rem 1rem;
+    }
+  }
+</style>
