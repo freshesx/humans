@@ -1,7 +1,7 @@
 <template>
   <div
     class="mn-scroller"
-    :class="{ 'is-save': save, 'is-bar': scrollbar }"
+    :class="{ 'is-bar': scrollbar }"
     @touchstart="touchStart"
     @touchmove="touchMove">
     <div class="mn-scroller-contents">
@@ -18,7 +18,7 @@
     props: {
       save: {
         type: Boolean,
-        default: false
+        default: true
       },
       scrollbar: {
         type: Boolean,
@@ -56,11 +56,16 @@
         }
       },
       createScrollTop () {
+        // 是否设置
+        if (!this.save) return
         // 获取 scrollTop，并且设置修改过 scrollTop
         this.$el.scrollTop = getScrollTop(this.$route.path, 'default')
         this.createdScrollTop = true
       },
       listenScrollTop () {
+        // 是否储存
+        if (!this.save) return
+        // 是否初始过 scrollTop
         if (!this.createdScrollTop) return
 
         // 对比当前和上一条记录是否相等
