@@ -35,15 +35,12 @@ Vue.use(VueHuman)
 VueHuman.add(components)
 ```
 
-# How to contribute
+# Recommend
+
+You can use vue boilerplate
 
 ``` bash
-# install dependencies
-yarn install
+npm install -g vue-cli
 
-# serve with hot reload at localhost:3000
-npm run dev
-
-# build for production with minification
-npm run build
+vue init VitualReaty/webpack my-project
 ```
