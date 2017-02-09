@@ -12,6 +12,7 @@
 
 <script>
   import { addStorage, getScrollTop } from './storage'
+  import popupStorage from '../../util/popup/storage'
 
   export default {
     name: 'mn-scroller',
@@ -94,7 +95,13 @@
       }
     },
     beforeDestroy () {
+      // 清除定时器
       clearInterval(this.time)
+
+      // 设定一个容器存储所有的 popup，离开当前页面时自动关闭
+      popupStorage.items().forEach(item => {
+        item.show = false
+      })
     },
     mounted () {
       this.$nextTick(() => {
