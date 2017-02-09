@@ -11,6 +11,8 @@
 </template>
 
 <script>
+  import { addStorage, getScrollTop } from './storage'
+
   export default {
     name: 'mn-scroller',
     props: {
@@ -21,6 +23,12 @@
       scrollbar: {
         type: Boolean,
         default: false
+      }
+    },
+    data () {
+      return {
+        time: undefined,
+        createdScrollTop: false
       }
     },
     methods: {
@@ -46,7 +54,36 @@
             event.preventDefault()
           }
         }
+      },
+      createScrollTop () {
+        // 获取 scrollTop，并且设置修改过 scrollTop
+        this.$el.scrollTop = getScrollTop(this.$route.path, 'default')
+        this.createdScrollTop = true
+      },
+      listenScrollTop () {
+        if (!this.createdScrollTop) return
+
+        // 对比当前和上一条记录是否相等
+        const lastScrollTop = getScrollTop(this.$route.path, 'default')
+        const currentScrollTop = this.$el.scrollTop
+
+        if (lastScrollTop !== currentScrollTop) {
+          addStorage(this.$route.path, 'default', currentScrollTop)
+        }
       }
+    },
+    beforeDestroy () {
+      clearInterval(this.time)
+    },
+    mounted () {
+      this.$nextTick(() => {
+        this.createScrollTop()
+      })
+
+      // @todo 是否可以监听 touch 和 scroll 的事件来获得最新的 scrollTop
+      this.time = setInterval(() => {
+        this.listenScrollTop()
+      }, 500)
     }
   }
 </script>
