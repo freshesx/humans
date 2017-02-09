@@ -1,5 +1,7 @@
 <template>
-  <div :class="[ `${cssPrefix}row`, { 'is-fixed': fixed, 'is-visible': visible } ]">
+  <div
+    class="mn-row"
+    :class="{ 'is-fixed': fixed, 'is-visible': visible }">
     <slot></slot>
   </div>
 </template>
@@ -16,19 +18,12 @@
         type: Boolean,
         default: false
       }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
     }
   }
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  .#{$namespace}row {
+  .mn-row {
     position: relative;
     flex: 1 1;
     height: 100%;

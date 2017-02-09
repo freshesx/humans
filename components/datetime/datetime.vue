@@ -1,8 +1,8 @@
 <template>
-  <div :class="[ `${cssPrefix}form-text` ]">
+  <div class="mn-input">
     <input
+      class="mn-input-control"
       :type="type"
-      :class="[ `${cssPrefix}form-text-input` ]"
       :value="value"
       :readonly="readonly"
       :disabled="disabled"
@@ -11,6 +11,9 @@
 </template>
 
 <script>
+  /* eslint-disable no-unused-vars */
+  import Input from '../input/input'  // import input for scss
+
   export default {
     name: 'mn-datetime',
     props: {
@@ -33,11 +36,6 @@
       disabled: {
         type: Boolean,
         default: false
-      }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
       }
     },
     methods: {

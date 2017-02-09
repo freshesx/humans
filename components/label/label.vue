@@ -1,5 +1,7 @@
 <template>
-  <label :class="[ `${cssPrefix}form-label`, { 'is-error': isInvalid } ]">
+  <label
+    class="mn-label"
+    :class="{ 'is-error': isInvalid }">
     <slot></slot>
   </label>
 </template>
@@ -11,9 +13,6 @@
       validate: Object
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       isInvalid () {
         return this.validate
           ? this.validate.$error
@@ -26,7 +25,7 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  .#{$namespace}form-label {
+  .mn-label {
     display: block;
     width: 6rem;
 

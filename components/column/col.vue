@@ -1,5 +1,5 @@
 <template>
-  <div :class="[`${cssPrefix}col`, classes]" :style="styles">
+  <div class="mn-col" :class="classes" :style="styles">
     <slot></slot>
   </div>
 </template>
@@ -26,9 +26,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       computedMedia () {
         // const classes = []
         let media = {
@@ -91,7 +88,7 @@
   @import "../../scss/mixins/media";
   @import "../../scss/mixins/number";
 
-  .#{$namespace}col {
+  .mn-col {
     width: 100%;
     // overflow: hidden;  Remove it for card narrow
     padding: 0 $grid-gutters * 0.5;

@@ -1,26 +1,17 @@
 <template>
-  <div :class="[ `${cssPrefix}letter` ]">
+  <div class="mn-letter">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'mn-letter',
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    }
+    name: 'mn-letter'
   }
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  $-letter: #{$namespace}letter;
-
-  .#{$-letter} {
+  .mn-letter {
     display: flex;
   }
 </style>

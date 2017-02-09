@@ -1,17 +1,12 @@
 <template>
-  <div :class="[ `${cssPrefix}letter-body` ]">
+  <div class="mn-letter-body">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'mn-letter-body',
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    }
+    name: 'mn-letter-body'
   }
 </script>
 
@@ -19,9 +14,7 @@
   @import "../../scss/vars";
   @import "../../scss/mixins/media";
 
-  $-letter-body: #{$namespace}letter-body;
-
-  .#{$-letter-body} {
+  .mn-letter-body {
     flex: 1;
     margin: $grid-gutters;
 

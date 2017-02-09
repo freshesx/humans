@@ -1,7 +1,7 @@
 <template>
-  <div :class="[ `${cssPrefix}tab-item`, { 'is-active': isActive } ]" @click="click">
-    <mn-icon :class="[ `${cssPrefix}tab-item-icon` ]" :name="this.tab.icon" v-if="this.tab.icon"></mn-icon>
-    <p :class="[ `${cssPrefix}tab-item-title` ]" v-if="this.tab.title">{{ this.tab.title }}</p>
+  <div class="mn-tab-bar-item" :class="{ 'is-active': isActive }" @click="click">
+    <mn-icon :class="[ 'mn-tab-item-icon' ]" :name="this.tab.icon" v-if="this.tab.icon"></mn-icon>
+    <p class="mn-tab-item-title" v-if="this.tab.title">{{ this.tab.title }}</p>
   </div>
 </template>
 
@@ -24,9 +24,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       isActive () {
         return this.$parent.current === this.index
       }
@@ -45,10 +42,9 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
   @import "./vars";
 
-  .#{$-tab-item} {
+  .mn-tab-bar-item {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
@@ -71,8 +67,8 @@
     }
   }
 
-  .#{$namespace}tab-item-icon,
-  .#{$namespace}tab-item-title {
+  .mn-tab-item-icon,
+  .mn-tab-item-title {
     flex: 0 0 auto;
     align-self: center;
     margin: 0;

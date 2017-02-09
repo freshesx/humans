@@ -1,7 +1,7 @@
 <template>
-  <div :class="[ `${cssPrefix}search-bar`, { [`is-${size}`]: !!size } ]">
+  <div class="mn-search-bar" :class="{ [`is-${size}`]: !!size }">
     <mn-icon name="ios-search-strong"></mn-icon>
-    <div :class="[ `${cssPrefix}search-bar-control` ]">
+    <div class="mn-search-bar-control">
       <slot></slot>
     </div>
   </div>
@@ -17,11 +17,6 @@
     name: 'mn-search-bar',
     props: {
       size: String
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
     }
   }
 </script>
@@ -29,9 +24,7 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  $-search-bar: #{$namespace}search-bar;
-
-  .#{$-search-bar} {
+  .mn-search-bar {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;

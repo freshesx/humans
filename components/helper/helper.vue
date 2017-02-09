@@ -1,5 +1,5 @@
 <template>
-  <div v-if="validate.$error">
+  <div class="mn-helper" v-if="validate.$error">
     <slot></slot>
   </div>
 </template>
@@ -9,21 +9,6 @@
     name: 'mn-helper',
     props: {
       validate: Object
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
     }
   }
 </script>
-
-<style lang="scss">
-  @import "../../scss/vars";
-
-  .#{$namespace}form-helper {
-    &.is-error {
-      color: $pink;
-    }
-  }
-</style>

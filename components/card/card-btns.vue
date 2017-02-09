@@ -1,5 +1,5 @@
 <template>
-  <div :class="[`${cssPrefix}card-btns`, typeClass]">
+  <div class="mn-card-btns" :class="{ [`is-${type}`]: !!type }">
     <slot></slot>
   </div>
 </template>
@@ -11,14 +11,6 @@
       type: {
         type: String,
         validator: val => ['column'].includes(val)
-      }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
-      typeClass () {
-        return { [`is-${this.type}`]: !!this.type }
       }
     }
   }
@@ -66,5 +58,12 @@
         }
       }
     }
+  }
+
+  // @affect(./card-item.vue, ./card-media.vue)
+  .mn-card-item + .mn-card-btns,
+  .mn-card-media + .mn-card-btns,
+  .mn-card-btns + .mn-card-btns {
+    border-top: solid 1px rgba(0, 0, 0, 0.1);
   }
 </style>

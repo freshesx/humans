@@ -1,6 +1,7 @@
 <template>
   <button
-    :class="[`${cssPrefix}btn`, classes]"
+    class="mn-btn"
+    :class="classes"
     :title="title"
     @click="click">
     <mn-loading-icon :class="{ 'has-one-margin-right': !!$slots.default }" v-if="loading"></mn-loading-icon>
@@ -60,9 +61,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       classes () {
         let classes = {}
 
@@ -109,7 +107,7 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  $-button: #{$namespace}btn;
+  $-button: "mn-btn";
   $-button-theme: $button-theme;
 
   //

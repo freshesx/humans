@@ -1,7 +1,8 @@
 <template>
   <div
-    :class="[`${cssPrefix}scroller`, { 'is-x': true }, { 'is-bar': scrollbar }]">
-    <div :class="[ `${cssPrefix}scroller-contents` ]">
+    class="mn-scroller"
+    :class="{ 'is-x': true, 'is-bar': scrollbar }">
+    <div class="mn-scroller-contents">
       <slot></slot>
     </div>
   </div>
@@ -14,11 +15,6 @@
       scrollbar: {
         type: Boolean,
         default: false
-      }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
       }
     }
   }

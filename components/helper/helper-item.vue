@@ -1,5 +1,5 @@
 <template>
-  <div :class="[ `${cssPrefix}form-helper`, 'is-error' ]" v-if="someIsInvalid">
+  <div class="mn-helper-item" :class="{ 'is-error': true }" v-if="someIsInvalid">
     <mn-icon :name="iosInformation"></mn-icon>
     <slot></slot>
   </div>
@@ -23,9 +23,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       validate () {
         return this.$parent.validate
       },
@@ -35,3 +32,14 @@
     }
   }
 </script>
+
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .mn-helper-item {
+    &.is-error {
+      color: $pink;
+    }
+  }
+</style>

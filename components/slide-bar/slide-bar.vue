@@ -1,7 +1,11 @@
 <template>
-  <div :class="[ `${cssPrefix}slide-wrap` ]" :style="slideWrapStyle">
+  <div class="mn-slide-bar" :style="slideWrapStyle">
     <div
-      :class="[ `${cssPrefix}slide-bar`, 'is-back', { 'is-full': this.isFull } ]"
+      class="mn-slide-bar-contents"
+      :class="{
+        'is-back': true,
+        'is-full': isFull
+      }"
       @touchmove="touchmove"
       @touchstart="touchstart"
       @touchend="touchend"
@@ -31,9 +35,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       slideBoxStyle () {
         return `transform: translateX(${this.distance}px);-webkit-transform: translateX(${this.distance}px);-moz-transform: translateX(${this.distance}px);-o-transform: translateX(${this.distance}px);`
       },
@@ -48,8 +49,6 @@
         // Enable the animation
         delayDistance: 100,
         // the delay distance when touch-end
-        defaultClasses: this.$human.cssPrefix,
-        // Defaul css prefix
         startPosition: 0,
         // Start positon depends on  on-touchstart event.
         CurrentPosition: 0,
@@ -191,16 +190,14 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  .#{$namespace}slide-wrap {
+  .mn-slide-bar {
     box-sizing: border-box;
     overflow-x: hidden;
     padding: 0 1rem;
     width: 100%;
   }
 
-  .#{$namespace}slide-bar {
+  .mn-slide-bar-contents {
     display: flex;
     backface-visibility: hidden;
     perspective: 1000;

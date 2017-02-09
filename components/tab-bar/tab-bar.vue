@@ -1,6 +1,6 @@
 <template>
-  <div :class="[ `${cssPrefix}tab` ]">
-    <div :class="[ `${cssPrefix}tab-list`, { 'is-bottom': this.bottom } ]">
+  <div class="mn-tab-bar">
+    <div class="mn-tab-bar-list" :class="{ 'is-bottom': bottom }">
       <mn-tab-bar-item
         v-for="(tab, index) in tabs"
         :tab="tab"
@@ -48,20 +48,14 @@
         this.$emit('tab-click', tab)
         // Add 'tab-click' function
       }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
     }
   }
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
   @import "./vars";
 
-  .#{$-tab} {
+  .mn-tab-bar {
     width: 100%;
 
     li,
@@ -80,7 +74,7 @@
     }
   }
 
-  .#{$-tab-list} {
+  .mn-tab-bar-list {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;

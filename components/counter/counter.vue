@@ -1,12 +1,19 @@
 <template>
-  <div :class="[ `${cssPrefix}form-counter` ]">
-    <button :class="[ `${cssPrefix}form-counter-btn`, { 'is-disabled': !enabledReduce } ]" @click.prevent.stop="reduceCount">
+  <div class="mn-counter">
+    <button
+      class="mn-counter-btn"
+      :class="{ 'is-disabled': !enabledReduce }"
+      @click.prevent.stop="reduceCount">
       <mn-icon :name="iosMinusEmpty"></mn-icon>
     </button>
-    <div :class="[ `${cssPrefix}form-counter-box` ]">
-      <input type="number" :class="[ `${cssPrefix}form-counter-input` ]" :value="value" v-on:input="input">
+    <div
+      class="mn-counter-box">
+      <input type="number" class="mn-counter-control" :value="value" @input="input">
     </div>
-    <button :class="[ `${cssPrefix}form-counter-btn`, { 'is-disabled': !enabledIncrease } ]" @click.prevent.stop="increaseCount">
+    <button
+      class="mn-counter-btn"
+      :class="{ 'is-disabled': !enabledIncrease }"
+      @click.prevent.stop="increaseCount">
       <mn-icon :name="iosPlusEmpty"></mn-icon>
     </button>
   </div>
@@ -50,9 +57,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       enabledReduce () {
         return this.value > this.min
       },
@@ -76,3 +80,67 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .mn-counter {
+    display: flex;
+    max-width: 8rem;
+
+    &-box {
+      flex-shrink: 1;
+      border-top: solid 1px #ddd;
+      border-bottom: solid 1px #ddd;
+    }
+
+    &-control {
+      width: 100%;
+      display: block;
+      padding: 0.25rem 0.5rem;
+      text-align: center;
+      outline: none;
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: transparent;
+      border: none;
+      background: transparent;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none !important;
+        margin: 0;
+      }
+
+      &[type="number"] {
+        -moz-appearance: textfield;
+      }
+    }
+
+    &-btn {
+      flex-shrink: 0;
+      border: solid 1px #ddd;
+      background: transparent;
+      width: 2.375rem;
+      text-align: center;
+      cursor: pointer;
+      padding: 0;
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: transparent;
+
+      &.is-disabled {
+        background: #eee;
+        outline: none;
+      }
+
+      &:first-child {
+        border-top-left-radius: $base-radius;
+        border-bottom-left-radius: $base-radius;
+      }
+
+      &:last-child {
+        border-top-right-radius: $base-radius;
+        border-bottom-right-radius: $base-radius;
+      }
+    }
+  }
+</style>

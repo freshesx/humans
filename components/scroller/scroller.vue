@@ -1,30 +1,44 @@
 <template>
   <div
-    :class="[ `${cssPrefix}scroller`, { 'is-save': save },  { 'is-bar': scrollbar }]"
+    class="mn-scroller"
+    :class="{ 'is-bar': scrollbar }"
     @touchstart="touchStart"
     @touchmove="touchMove">
-    <div :class="[ `${cssPrefix}scroller-contents` ]">
+    <div class="mn-scroller-contents">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
+  import { addStorage, getScrollTop } from './storage'
+  import popupStorage from '../../util/popup/storage'
+
   export default {
     name: 'mn-scroller',
     props: {
       save: {
         type: Boolean,
-        default: false
+        default: true
+      },
+      name: {
+        type: String,
+        default: 'default'
+      },
+      mode: {
+        type: String,
+        default: 'path',
+        validator: val => ['path', 'fullPath'].includes(val)
       },
       scrollbar: {
         type: Boolean,
         default: false
       }
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
+    data () {
+      return {
+        time: undefined,
+        createdScrollTop: false
       }
     },
     methods: {
@@ -50,17 +64,58 @@
             event.preventDefault()
           }
         }
+      },
+      getRoutePath () {
+        return this.$route[this.mode]
+      },
+      createScrollTop () {
+        // 必须依赖 $route
+        if (!this.$route) return
+        // 是否设置
+        if (!this.save) return
+        // 获取 scrollTop，并且设置修改过 scrollTop
+        this.$el.scrollTop = getScrollTop(this.getRoutePath(), this.name)
+        this.createdScrollTop = true
+      },
+      listenScrollTop () {
+        // 必须依赖 $route
+        if (!this.$route) return
+        // 是否储存
+        if (!this.save) return
+        // 是否初始过 scrollTop
+        if (!this.createdScrollTop) return
+
+        // 对比当前和上一条记录是否相等
+        const lastScrollTop = getScrollTop(this.getRoutePath(), this.name)
+        const currentScrollTop = this.$el.scrollTop
+
+        if (lastScrollTop !== currentScrollTop) {
+          addStorage(this.getRoutePath(), this.name, currentScrollTop)
+        }
       }
+    },
+    beforeDestroy () {
+      // 清除定时器
+      clearInterval(this.time)
+
+      // 设定一个容器存储所有的 popup，离开当前页面时自动关闭
+      popupStorage.items().forEach(item => {
+        item.show = false
+      })
+    },
+    mounted () {
+      this.createScrollTop()
+
+      // @todo 是否可以监听 touch 和 scroll 的事件来获得最新的 scrollTop
+      this.time = setInterval(() => {
+        this.listenScrollTop()
+      }, 500)
     }
   }
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  $-scroller: #{$namespace}scroller;
-
-  .#{$-scroller} {
+  .mn-scroller {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -83,7 +138,7 @@
       height: 0;
     }
 
-    .#{$-scroller}.is-bar {
+    .mn-scroller.is-bar {
       &::-webkit-scrollbar {
         width: 10px;
         height: 10px;

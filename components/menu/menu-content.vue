@@ -1,6 +1,6 @@
 <template>
-  <transition :name="`${cssPrefix}menu-toggle`">
-    <div :class="[ `${cssPrefix}menu-content` ]" v-if="selected">
+  <transition name="mn-menu-toggle">
+    <div class="mn-menu-content" v-if="selected">
       <slot></slot>
     </div>
   </transition>
@@ -20,9 +20,6 @@
         // If type is 'flat', use another way to toggle
         return this.index === this.$parent.$parent.current
         // Set the current
-      },
-      cssPrefix () {
-        return this.$human.cssPrefix
       }
     },
     mounted () {
@@ -36,21 +33,19 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  .#{$namespace}menu-content {
+  .mn-menu-content {
     overflow: hidden;
     box-sizing: border-box;
     max-height: 999px;
   }
 
-  .#{$namespace}menu-toggle-enter-active,
-  .#{$namespace}menu-toggle-leave-active {
+  .mn-menu-toggle-enter-active,
+  .mn-menu-toggle-leave-active {
     transition: all 0.2s ease;
   }
 
-  .#{$namespace}menu-toggle-enter,
-  .#{$namespace}menu-toggle-leave-active {
+  .mn-menu-toggle-enter,
+  .mn-menu-toggle-leave-active {
     max-height: 0;
   }
 </style>

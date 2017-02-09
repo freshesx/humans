@@ -1,5 +1,6 @@
 <template>
-  <span :class="[ `${cssPrefix}rate` ]">
+  <span class="mn-rate">
+    <!-- 建议用 span 替换 i 标签 -->
     <i
       v-for="item in this.max"
       @mouseenter="mouseEnterEvent(item)"
@@ -63,11 +64,6 @@
         }
       }
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    },
     methods: {
       mouseEnterEvent: function (item) {
         if (this.disabled) {
@@ -115,11 +111,8 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  $-rate: #{$namespace}rate;
-
-  .#{$-rate} {
+  // @todo 如果使用了 span，为什么又设置为 block，如果需要块状元素，建议直接改为 div
+  .mn-rate {
     display: block;
   }
 </style>

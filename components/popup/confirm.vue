@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" :classes="[`${cssPrefix}popup-dialog`]">
+  <mn-popup :show="show" :class="[ 'mn-popup-confirm' ]">
     <mn-popup-card class="has-none-margin-bottom">
       <mn-card-item>
         <mn-card-body class="has-center-text">
@@ -40,11 +40,6 @@
         this.$emit('confirm')
       }
     },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
-    },
     data () {
       return {
         show: false,
@@ -56,3 +51,14 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .mn-popup-confirm {
+    width: 280px;
+    top: 45%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>

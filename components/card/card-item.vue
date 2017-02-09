@@ -1,10 +1,11 @@
 <template>
   <div
-    :class="[
-      `${cssPrefix}card-item`,
-      typeClass,
-      { 'is-focus': focus, 'is-disabled': disabled
-    }]"
+    class="mn-card-item"
+    :class="{
+      [`is-${type}`]: !!type,
+      'is-focus': focus,
+      'is-disabled': disabled
+    }"
     @click="click">
     <slot></slot>
   </div>
@@ -23,14 +24,6 @@
     data () {
       return {
         focus: false
-      }
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
-      typeClass () {
-        return { [`is-${this.type}`]: !!this.type }
       }
     },
     methods: {
@@ -73,7 +66,10 @@
     }
   }
 
-  .mn-card-item + .mn-card-item {
+  // @affect(./card-btns.vue, ./card-media.vue)
+  .mn-card-item + .mn-card-item,
+  .mn-card-media + .mn-card-item,
+  .mn-card-btns + .mn-card-item {
     border-top: solid 1px rgba(0, 0, 0, 0.1);
   }
 </style>

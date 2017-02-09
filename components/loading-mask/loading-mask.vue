@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" :classes="[`${cssPrefix}loading-dialog`]">
+  <mn-popup :show="show" :class="[ 'mn-loading-mask' ]">
     <mn-popup-card class="has-none-margin-bottom">
       <mn-card-item>
         <mn-card-body class="has-center-text">
@@ -15,7 +15,6 @@
   import PopupCard from '../popup/popup-card'
   import CardItem from '../card/card-item'
   import CardBody from '../card/card-body'
-  import CardBtns from '../card/card-btns'
   import LoadingIcon from '../loading-icon'
 
   export default {
@@ -24,13 +23,7 @@
       [PopupCard.name]: PopupCard,
       [CardItem.name]: CardItem,
       [CardBody.name]: CardBody,
-      [CardBtns.name]: CardBtns,
       [LoadingIcon.name]: LoadingIcon
-    },
-    computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      }
     },
     data () {
       return {
@@ -44,3 +37,14 @@
     }
   }
 </script>
+
+<style lang="scss">
+  .mn-loading-mask {
+    width: 100px;
+    top: 45%;
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>

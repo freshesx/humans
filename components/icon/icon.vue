@@ -1,7 +1,7 @@
 <template>
   <span
     v-html="svg"
-    :class="[ `${cssPrefix}icon` ]"
+    class="mn-icon"
     :style="{ width: `${computedWidth}px`, height: `${computedHeight}px` }"></span>
 </template>
 
@@ -27,9 +27,6 @@
       }
     },
     computed: {
-      cssPrefix () {
-        return this.$human.cssPrefix
-      },
       computedWidth () {
         return this.width * this.scale
       },
@@ -52,7 +49,7 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  .#{$namespace}icon {
+  .mn-icon {
     display: inline-block;
     fill: currentColor;
     vertical-align: -4px;

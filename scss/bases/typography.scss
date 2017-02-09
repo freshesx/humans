@@ -1,7 +1,5 @@
 @import "../mixins/headings";
 
-$-article: #{$namespace}article;
-
 //
 // h1 ~ h6
 //
@@ -48,10 +46,4 @@ h6,
 .h6 {
   font-size: 0.875rem;
   font-weight: 700;
-}
-
-.#{$-article} {
-  @include headings {
-    margin-bottom: 1rem;
-  }
 }
