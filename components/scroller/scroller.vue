@@ -2,8 +2,8 @@
   <div
     class="mn-scroller"
     :class="{ 'is-bar': scrollbar }"
-    @scroll="saveScrollTop"
-    @touchend="saveScrollTop"
+    @scroll="changeScrollTop"
+    @touchend="changeScrollTop"
     @touchstart="touchStart"
     @touchmove="touchMove">
     <div class="mn-scroller-contents">
@@ -44,6 +44,19 @@
       }
     },
     methods: {
+      changeScrollTop ($event) {
+        this.saveScrollTop()
+
+        // 拉到顶部，触发事件
+        if (this.$el.scrollTop <= 0) {
+          this.$emit('top', $event, this)
+        }
+
+        // 拉到底部，触发事件
+        if (this.$el.offsetHeight >= this.$el.scrollHeight - this.$el.scrollTop) {
+          this.$emit('bottom', $event, this)
+        }
+      },
       touchStart (event) {
         this.startPageY = event.touches[0].pageY
         this.startPageX = event.touches[0].pageX
