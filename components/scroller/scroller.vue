@@ -20,6 +20,15 @@
         type: Boolean,
         default: true
       },
+      name: {
+        type: String,
+        default: 'default'
+      },
+      mode: {
+        type: String,
+        default: 'path',
+        validator: val => ['path', 'fullPath'].includes(val)
+      },
       scrollbar: {
         type: Boolean,
         default: false
@@ -55,25 +64,32 @@
           }
         }
       },
+      getRoutePath () {
+        return this.$route[this.mode]
+      },
       createScrollTop () {
+        // 必须依赖 $route
+        if (!this.$route) return
         // 是否设置
         if (!this.save) return
         // 获取 scrollTop，并且设置修改过 scrollTop
-        this.$el.scrollTop = getScrollTop(this.$route.path, 'default')
+        this.$el.scrollTop = getScrollTop(this.getRoutePath(), this.name)
         this.createdScrollTop = true
       },
       listenScrollTop () {
+        // 必须依赖 $route
+        if (!this.$route) return
         // 是否储存
         if (!this.save) return
         // 是否初始过 scrollTop
         if (!this.createdScrollTop) return
 
         // 对比当前和上一条记录是否相等
-        const lastScrollTop = getScrollTop(this.$route.path, 'default')
+        const lastScrollTop = getScrollTop(this.getRoutePath(), this.name)
         const currentScrollTop = this.$el.scrollTop
 
         if (lastScrollTop !== currentScrollTop) {
-          addStorage(this.$route.path, 'default', currentScrollTop)
+          addStorage(this.getRoutePath(), this.name, currentScrollTop)
         }
       }
     },
