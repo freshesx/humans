@@ -104,9 +104,7 @@
       })
     },
     mounted () {
-      this.$nextTick(() => {
-        this.createScrollTop()
-      })
+      this.createScrollTop()
 
       // @todo 是否可以监听 touch 和 scroll 的事件来获得最新的 scrollTop
       this.time = setInterval(() => {
