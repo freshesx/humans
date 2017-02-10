@@ -2,10 +2,10 @@
   <div
     class="mn-scroller"
     :class="{ 'is-bar': scrollbar }"
-    @scroll="changeScrollTop"
-    @touchend="changeScrollTop"
     @touchstart="touchStart"
-    @touchmove="touchMove">
+    @touchmove="touchMove"
+    @touchend="touchEnd"
+    @scroll="scroll">
     <div class="mn-scroller-contents">
       <slot></slot>
     </div>
@@ -44,22 +44,12 @@
       }
     },
     methods: {
-      changeScrollTop ($event) {
-        this.saveScrollTop()
-
-        // 拉到顶部，触发事件
-        if (this.$el.scrollTop <= 0) {
-          this.$emit('top', $event, this)
-        }
-
-        // 拉到底部，触发事件
-        if (this.$el.offsetHeight >= this.$el.scrollHeight - this.$el.scrollTop) {
-          this.$emit('bottom', $event, this)
-        }
-      },
       touchStart (event) {
+        // 监听 touchstart 事件，记录开始前的 pageX 和 pageY
+        // 触发组件 touchstart 事件
         this.startPageY = event.touches[0].pageY
         this.startPageX = event.touches[0].pageX
+        this.$emit('touchstart', event, this)
       },
       touchMove (event) {
         let pageY = event.touches[0].pageY
@@ -78,6 +68,28 @@
           if (pageY < this.startPageY && scrollTop >= scrollHeight - containerHeight) {
             event.preventDefault()
           }
+        }
+        this.$emit('touchmove', event, this)
+      },
+      touchEnd (event) {
+        this.scrollAndTouchEnd(event)
+        this.$emit('touchend', event, this)
+      },
+      scroll (event) {
+        this.scrollAndTouchEnd(event)
+        this.$emit('scroll', event, this)
+      },
+      scrollAndTouchEnd (event) {
+        this.saveScrollTop()
+
+        // 拉到顶部，触发事件
+        if (this.$el.scrollTop <= 0) {
+          this.$emit('top', event, this)
+        }
+
+        // 拉到底部，触发事件
+        if (this.$el.offsetHeight >= this.$el.scrollHeight - this.$el.scrollTop) {
+          this.$emit('bottom', event, this)
         }
       },
       getRoutePath () {
