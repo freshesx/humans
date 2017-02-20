@@ -3,7 +3,9 @@
     class="mn-scroller"
     :class="{ 'is-bar': scrollbar }"
     @touchstart="touchStart"
-    @touchmove="touchMove">
+    @touchmove="touchMove"
+    @touchend="touchEnd"
+    @scroll="scroll">
     <div class="mn-scroller-contents">
       <slot></slot>
     </div>
@@ -43,8 +45,11 @@
     },
     methods: {
       touchStart (event) {
+        // 监听 touchstart 事件，记录开始前的 pageX 和 pageY
+        // 触发组件 touchstart 事件
         this.startPageY = event.touches[0].pageY
         this.startPageX = event.touches[0].pageX
+        this.$emit('touchstart', event, this)
       },
       touchMove (event) {
         let pageY = event.touches[0].pageY
@@ -64,52 +69,58 @@
             event.preventDefault()
           }
         }
+        this.$emit('touchmove', event, this)
+      },
+      touchEnd (event) {
+        this.scrollAndTouchEnd(event)
+        this.$emit('touchend', event, this)
+      },
+      scroll (event) {
+        this.scrollAndTouchEnd(event)
+        this.$emit('scroll', event, this)
+      },
+      scrollAndTouchEnd (event) {
+        this.saveScrollTop()
+
+        // 拉到顶部，触发事件
+        if (this.$el.scrollTop <= 0) {
+          this.$emit('top', event, this)
+        }
+
+        // 拉到底部，触发事件
+        if (this.$el.offsetHeight >= this.$el.scrollHeight - this.$el.scrollTop) {
+          this.$emit('bottom', event, this)
+        }
       },
       getRoutePath () {
         return this.$route[this.mode]
       },
       createScrollTop () {
         // 必须依赖 $route
-        if (!this.$route) return
         // 是否设置
-        if (!this.save) return
+        if (!this.$route || !this.save) return
         // 获取 scrollTop，并且设置修改过 scrollTop
         this.$el.scrollTop = getScrollTop(this.getRoutePath(), this.name)
         this.createdScrollTop = true
       },
-      listenScrollTop () {
+      saveScrollTop () {
         // 必须依赖 $route
-        if (!this.$route) return
         // 是否储存
-        if (!this.save) return
         // 是否初始过 scrollTop
-        if (!this.createdScrollTop) return
-
-        // 对比当前和上一条记录是否相等
-        const lastScrollTop = getScrollTop(this.getRoutePath(), this.name)
-        const currentScrollTop = this.$el.scrollTop
-
-        if (lastScrollTop !== currentScrollTop) {
-          addStorage(this.getRoutePath(), this.name, currentScrollTop)
-        }
+        if (!this.$route || !this.save || !this.createdScrollTop) return
+        // 储存 scrollTop
+        addStorage(this.getRoutePath(), this.name, this.$el.scrollTop)
       }
     },
     beforeDestroy () {
-      // 清除定时器
-      clearInterval(this.time)
-
       // 设定一个容器存储所有的 popup，离开当前页面时自动关闭
       popupStorage.items().forEach(item => {
         item.show = false
       })
     },
     mounted () {
+      // 初始化 scrollTop
       this.createScrollTop()
-
-      // @todo 是否可以监听 touch 和 scroll 的事件来获得最新的 scrollTop
-      this.time = setInterval(() => {
-        this.listenScrollTop()
-      }, 500)
     }
   }
 </script>
