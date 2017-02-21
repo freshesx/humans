@@ -14,7 +14,7 @@
       }
     },
     mounted () {
-      const Component = Vue.extend(this.$human.loading || defaultIcon)
+      const Component = Vue.extend(defaultIcon)
       this.icon = new Component({ el: document.createElement('span') })
 
       this.$nextTick(() => {
