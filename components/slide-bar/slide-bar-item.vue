@@ -5,12 +5,14 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-slide-bar-item',
     mounted () {
       this.$el.style.maxWidth = this.$parent.maxWidth + 'px'
     }
-  }
+  })
 </script>
 
 <style lang="scss">

@@ -11,13 +11,14 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Popup from '../popup/popup'
   import PopupCard from '../popup/popup-card'
   import CardItem from '../card/card-item'
   import CardBody from '../card/card-body'
   import LoadingIcon from '../loading-icon'
 
-  export default {
+  export default new Element({
     components: {
       [Popup.name]: Popup,
       [PopupCard.name]: PopupCard,
@@ -35,7 +36,7 @@
         this.show = false
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

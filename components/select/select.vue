@@ -10,7 +10,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-select',
     props: {
       value: {},
@@ -26,7 +28,7 @@
         this.$emit('input', event.target.value)
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

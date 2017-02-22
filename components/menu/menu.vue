@@ -5,7 +5,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-menu',
     data () {
       return {
@@ -29,7 +31,7 @@
       this.menus = map
       // Push the _uid and the index into a map.
     }
-  }
+  })
 </script>
 
 <style lang="scss">

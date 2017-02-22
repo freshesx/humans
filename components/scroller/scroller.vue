@@ -13,10 +13,11 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import { addStorage, getScrollTop } from './storage'
   import popupStorage from '../../util/popup/storage'
 
-  export default {
+  export default new Element({
     name: 'mn-scroller',
     props: {
       save: {
@@ -122,7 +123,7 @@
       // 初始化 scrollTop
       this.createScrollTop()
     }
-  }
+  })
 </script>
 
 <style lang="scss">

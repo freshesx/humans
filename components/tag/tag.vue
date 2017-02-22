@@ -8,7 +8,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-tag',
     computed: {
       style () {
@@ -69,7 +71,7 @@
         if (grayLevel >= 192) this.textColor = '#000'
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

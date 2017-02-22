@@ -7,7 +7,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-menu-content',
     data () {
       return {
@@ -29,7 +31,7 @@
         // Get the index by _uid and set the current.
       })
     }
-  }
+  })
 </script>
 
 <style lang="scss">

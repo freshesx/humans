@@ -3,9 +3,10 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Icon from '../icon/icon'
 
-  export default {
+  export default new Element({
     components: {
       [Icon.name]: Icon
     },
@@ -54,5 +55,5 @@
         return (typeof num === 'number') && (num % 1 === 0)
       }
     }
-  }
+  })
 </script>
