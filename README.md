@@ -28,11 +28,11 @@ Step 3: Import vue-human
 
 ``` javascript
 import Vue from 'vue'
-import VueHuman from 'vue-human'
-import components from 'vue-human/suits/total'
+import human from 'vue-human'
+import totalSuits from 'vue-human/suits/total'
 
-Vue.use(VueHuman)
-VueHuman.add(components)
+Vue.use(human)
+Vue.use(totalSuits)
 ```
 
 # Recommend
