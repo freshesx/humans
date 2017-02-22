@@ -12,9 +12,10 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Button from './button'
 
-  export default {
+  export default new Element({
     name: 'mn-link',
     mixins: [ Button ],
     props: {
@@ -35,5 +36,5 @@
         }
       }
     }
-  }
+  })
 </script>
