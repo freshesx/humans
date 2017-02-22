@@ -29,4 +29,15 @@ export default class Suits {
   getComponents () {
     return this.components
   }
+
+  install (Vue) {
+    this.components.forEach(component => {
+      if (component.install) {
+        Vue.use(component)
+      } else {
+        if (!component.name) return console.warn('不存在 name')
+        Vue.component(component.name, component)
+      }
+    })
+  }
 }
