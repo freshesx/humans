@@ -14,6 +14,22 @@ $ yarn add vue-human
 
 Step 2: Must set babel in your webpack
 
+> Install in Webpack 2.x
+
+``` javascript
+module: {
+  rules: [
+    {
+      test: /vue-human[-\w]*\/.*?js$/,
+      loader: 'babel-loader',
+      exclude: /vue-human[-\w]*\/node_modules/
+    }
+  ]
+}
+```
+
+> Install in Webpack 1.x
+
 ``` javascript
 loaders: [
   {
