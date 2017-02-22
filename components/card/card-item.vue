@@ -12,7 +12,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-card-item',
     props: {
       type: {
@@ -37,7 +39,7 @@
         }
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">
