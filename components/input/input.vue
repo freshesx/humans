@@ -20,10 +20,11 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Icon from '../icon/icon'
   import iosCloseOutline from 'vue-human-icons/js/ios/close-outline'
 
-  export default {
+  export default new Element({
     components: {
       [Icon.name]: Icon
     },
@@ -77,7 +78,7 @@
         return undefined
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

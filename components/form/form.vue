@@ -5,7 +5,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-form',
     props: {
       validate: Object
@@ -41,5 +43,5 @@
         this.$emit('error', $event, this)
       }
     }
-  }
+  })
 </script>
