@@ -21,12 +21,15 @@ export default {
    * @param {VueComponent}   VueComponent
    * @param {String}         name
    */
-  register (VueComponent, name = VueComponent.name) {
+  register (VueComponent, name = VueComponent.name, options) {
     if (!this.$vue) {
       return console && console.warn('可能没有执行 Vue.use(VueHuman) 来初始化。')
     }
-
-    this.$vue.component(name, VueComponent)
+    if (VueComponent.install) {
+      this.$vue.use(VueComponent, options)
+    } else {
+      this.$vue.component(name, VueComponent)
+    }
   },
 
   /**
@@ -41,8 +44,20 @@ export default {
    * @param {Object} component
    * @param {String} name
    */
-  addComponent (component, name = undefined) {
+  addComponent (component, args = {}) {
     if (typeof component !== 'object') return console.warn('必须是对象')
-    this.register(component, name)
+    this.register(component, this.$$parseName(args), args)
+  },
+
+  /**
+   * @param {Object|String} args
+   *
+   * @return {String|Undefind}
+   */
+  $$parseName (args) {
+    let name
+    if (typeof args === 'string') name = args
+    if (args.name && typeof args.name === 'string') name = args.name
+    return name
   }
 }
