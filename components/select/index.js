@@ -1,5 +1,6 @@
+import Suits from '../../util/suits'
 import Select from './select'
 
-export default [
+export default new Suits([
   Select
-]
+])

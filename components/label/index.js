@@ -1,5 +1,6 @@
+import Suits from '../../util/suits'
 import Label from './label'
 
-export default [
+export default new Suits([
   Label
-]
+])

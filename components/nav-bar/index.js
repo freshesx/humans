@@ -1,5 +1,6 @@
+import Suits from '../../util/suits'
 import NavBar from './nav-bar'
 
-export default [
+export default new Suits([
   NavBar
-]
+])
