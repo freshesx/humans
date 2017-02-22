@@ -32,12 +32,8 @@ export default class Suits {
 
   install (Vue) {
     this.components.forEach(component => {
-      if (component.install) {
-        Vue.use(component)
-      } else {
-        if (!component.name) return console.warn('不存在 name')
-        Vue.component(component.name, component)
-      }
+      if (!component.install) return console.warn(component.name + '没有 install 方法', component)
+      Vue.use(component)
     })
   }
 }
