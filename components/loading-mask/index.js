@@ -1,5 +1,6 @@
+import Suits from '../../util/suits'
 import LoadingMask from './loading-mask'
 
-export default [
+export default new Suits([
   LoadingMask
-]
+])

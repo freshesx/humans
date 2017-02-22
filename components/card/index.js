@@ -1,3 +1,4 @@
+import Suits from '../../util/suits'
 import Card from './card'
 import CardItem from './card-item'
 import CardBody from './card-body'
@@ -9,7 +10,7 @@ import CardBtns from './card-btns'
 import CardWrapper from './card-wrapper'
 import CardNote from './card-note'
 
-export default [
+export default new Suits([
   Card,
   CardItem,
   CardBody,
@@ -20,4 +21,4 @@ export default [
   CardBtns,
   CardWrapper,
   CardNote
-]
+])

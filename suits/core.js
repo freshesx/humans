@@ -1,16 +1,16 @@
-import Icon from '../components/icon'
-import LoadingIcon from '../components/loading-icon'
-import Scroller from '../components/scroller'
-import Btn from '../components/button'
-import Card from '../components/card'
-import Popup from '../components/popup'
+import Suits from '../util/suits'
+import IconSuits from '../components/icon'
+import LoadingIconSuits from '../components/loading-icon'
+import ScrollerSuits from '../components/scroller'
+import BtnSuits from '../components/button'
+import CardSuits from '../components/card'
+import PopupSuits from '../components/popup'
 
-export default [
-  // Core
-  ...Icon,
-  ...LoadingIcon,
-  ...Scroller,
-  ...Btn,
-  ...Card,
-  ...Popup
-]
+export default new Suits([
+  IconSuits,
+  LoadingIconSuits,
+  ScrollerSuits,
+  BtnSuits,
+  CardSuits,
+  PopupSuits
+])

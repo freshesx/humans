@@ -1,11 +1,12 @@
-import Section from '../components/section'
-import Column from '../components/column'
-import Row from '../components/row'
-import Letter from '../components/letter'
+import Suits from '../util/suits'
+import SectionSuits from '../components/section'
+import ColumnSuits from '../components/column'
+import RowSuits from '../components/row'
+import LetterSuits from '../components/letter'
 
-export default [
-  ...Section,
-  ...Column,
-  ...Row,
-  ...Letter
-]
+export default new Suits([
+  SectionSuits,
+  ColumnSuits,
+  RowSuits,
+  LetterSuits
+])

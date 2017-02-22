@@ -1,9 +1,10 @@
-import Core from './core'
-import Form from './form'
-import Layout from './layout'
+import Suits from '../util/suits'
+import CoreSuits from './core'
+import FormSuits from './form'
+import LayoutSuits from './layout'
 
-export default [
-  ...Core,
-  ...Form,
-  ...Layout
-]
+export default new Suits ([
+  CoreSuits,
+  FormSuits,
+  LayoutSuits
+])

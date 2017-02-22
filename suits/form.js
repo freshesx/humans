@@ -1,25 +1,26 @@
-import Form from '../components/form'
-import Label from '../components/label'
-import Input from '../components/input'
-import Datetime from '../components/datetime'
-import Textarea from '../components/textarea'
-import Select from '../components/select'
-import Switch from '../components/switch'
-import Counter from '../components/counter'
-import Check from '../components/check'
-import Radio from '../components/radio'
-import Helper from '../components/helper'
+import Suits from '../util/suits'
+import FormSuits from '../components/form'
+import LabelSuits from '../components/label'
+import InputSuits from '../components/input'
+import DatetimeSuits from '../components/datetime'
+import TextareaSuits from '../components/textarea'
+import SelectSuits from '../components/select'
+import SwitchSuits from '../components/switch'
+import CounterSuits from '../components/counter'
+import CheckSuits from '../components/check'
+import RadioSuits from '../components/radio'
+import HelperSuits from '../components/helper'
 
-export default [
-  ...Form,
-  ...Label,
-  ...Input,
-  ...Datetime,
-  ...Textarea,
-  ...Select,
-  ...Switch,
-  ...Counter,
-  ...Check,
-  ...Radio,
-  ...Helper
-]
+export default new Suits([
+  FormSuits,
+  LabelSuits,
+  InputSuits,
+  DatetimeSuits,
+  TextareaSuits,
+  SelectSuits,
+  SwitchSuits,
+  CounterSuits,
+  CheckSuits,
+  RadioSuits,
+  HelperSuits
+])

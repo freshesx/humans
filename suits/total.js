@@ -1,23 +1,22 @@
-import Basic from './basic'
-// More components
-import Article from '../components/article'
-import Tag from '../components/tag'
-import Rate from '../components/rate'
-import Menu from '../components/menu'
-import NavBar from '../components/nav-bar'
-import TabBar from '../components/tab-bar'
-import SearchBar from '../components/search-bar'
-import SlideBar from '../components/slide-bar'
+import Suits from '../util/suits'
+import BasicSuits from './basic'
+import ArticleSuits from '../components/article'
+import TagSuits from '../components/tag'
+import RateSuits from '../components/rate'
+import MenuSuits from '../components/menu'
+import NavBarSuits from '../components/nav-bar'
+import TabBarSuits from '../components/tab-bar'
+import SearchBarSuits from '../components/search-bar'
+import SlideBarSuits from '../components/slide-bar'
 
-export default [
-  ...Basic,
-  // More components
-  ...Article,
-  ...Tag,
-  ...Rate,
-  ...Menu,
-  ...NavBar,
-  ...TabBar,
-  ...SearchBar,
-  ...SlideBar
-]
+export default new Suits([
+  BasicSuits,
+  ArticleSuits,
+  TagSuits,
+  RateSuits,
+  MenuSuits,
+  NavBarSuits,
+  TabBarSuits,
+  SearchBarSuits,
+  SlideBarSuits
+])
