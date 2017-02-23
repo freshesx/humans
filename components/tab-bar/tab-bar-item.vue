@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-tab-bar-item" :class="{ 'is-active': active }" @click="click">
+  <div class="mn-tab-bar-item" :class="{ 'is-active': active }" :style="{ width: computedWidth }" @click="click">
     <div class="mn-tab-bar-icon">
       <mn-icon :name="icon"></mn-icon>
     </div>
@@ -29,6 +29,14 @@
       click (event) {
         this.$emit('click', event, this)
       }
+    },
+    computed: {
+      computedWidth () {
+        let length = this.$parent.childrenLength !== 0
+          ? this.$parent.childrenLength
+          : 1
+        return `${100 / length}%`
+      }
     }
   })
 </script>
@@ -37,10 +45,8 @@
   @import "../../scss/vars.scss";
 
   .mn-tab-bar-item {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    width: 20%;
     justify-content: center;
     text-align: center;
     color: #999;

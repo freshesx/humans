@@ -10,7 +10,14 @@
   import Element from '../../util/element'
 
   export default new Element({
-    name: 'mn-tab-bar'
+    name: 'mn-tab-bar',
+    computed: {
+      childrenLength () {
+        let items = this.$slots.default.filter(item =>
+          item.tag && item.tag.includes('mn-tab-bar-item'))
+        return items.length
+      }
+    }
   })
 </script>
 
