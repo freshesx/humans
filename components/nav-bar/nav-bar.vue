@@ -45,6 +45,7 @@
       display: flex;
       align-items: center;
       padding-right: 0.5rem;
+      justify-content: flex-end;
     }
 
     &-body {
