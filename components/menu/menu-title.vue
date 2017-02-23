@@ -5,7 +5,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-menu-title',
     data () {
       return {
@@ -34,5 +36,5 @@
         // Toggle the content
       }
     }
-  }
+  })
 </script>

@@ -12,11 +12,12 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Icon from '../icon/icon'
   import circleFilled from 'vue-human-icons/js/ios/circle-filled'
   import circleOutline from 'vue-human-icons/js/ios/circle-outline'
 
-  export default {
+  export default new Element({
     name: 'mn-radio',
     components: {
       [Icon.name]: Icon
@@ -51,7 +52,7 @@
         }
       }
     }
-  }
+  })
 </script>
 
 

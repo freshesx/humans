@@ -10,7 +10,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-card',
     props: {
       // primary, inverse
@@ -24,7 +26,7 @@
         isNoneMobileNarrow: false
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

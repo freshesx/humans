@@ -7,7 +7,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-label',
     props: {
       validate: Object
@@ -19,7 +21,7 @@
           : false
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

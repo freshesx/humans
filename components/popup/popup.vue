@@ -10,11 +10,12 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Vue from 'vue'
   import Mask from './mask'
   import { getZIndex } from './layer'
 
-  export default {
+  export default new Element({
     name: 'mn-popup',
     props: {
       show: {
@@ -97,7 +98,7 @@
         }
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

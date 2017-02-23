@@ -26,6 +26,7 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Popup from './popup'
   import PopupCard from '../popup/popup-card'
   import CardItem from '../card/card-item'
@@ -46,7 +47,7 @@
     error: { text: 'Error', icon: close, color: 'pink' }
   }
 
-  export default {
+  export default new Element({
     components: {
       [Popup.name]: Popup,
       [PopupCard.name]: PopupCard,
@@ -89,7 +90,7 @@
         }, this.duration)
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

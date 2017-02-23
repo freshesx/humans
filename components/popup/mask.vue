@@ -5,7 +5,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     methods: {
       close () {
         this.$emit('close')
@@ -17,7 +19,7 @@
         show: false
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

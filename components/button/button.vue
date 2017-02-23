@@ -11,10 +11,11 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import LoadingIcon from '../loading-icon/loading-icon'
   import Icon from '../icon/icon'
 
-  export default {
+  export default new Element({
     name: 'mn-btn',
     components: {
       [LoadingIcon.name]: LoadingIcon,
@@ -101,7 +102,7 @@
         }
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

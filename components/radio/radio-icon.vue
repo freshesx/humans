@@ -12,10 +12,11 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Icon from '../icon/icon'
   import checkmarkEmpty from 'vue-human-icons/js/ios/checkmark-empty'
 
-  export default {
+  export default new Element({
     components: {
       [Icon.name]: Icon
     },
@@ -62,5 +63,5 @@
         return this.checked
       }
     }
-  }
+  })
 </script>

@@ -12,9 +12,10 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import RateItem from './rate-item'
 
-  export default {
+  export default new Element({
     components: {
       [RateItem.name]: RateItem
     },
@@ -107,7 +108,7 @@
         // If default, show the default value.
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

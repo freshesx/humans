@@ -11,7 +11,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-card-prefix',
     props: {
       muted: Boolean,
@@ -22,7 +24,7 @@
         typeName: 'prefix'
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

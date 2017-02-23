@@ -8,9 +8,10 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Icon from '../icon/icon'
 
-  export default {
+  export default new Element({
     components: {
       [Icon.name]: Icon
     },
@@ -18,7 +19,7 @@
     props: {
       size: String
     }
-  }
+  })
 </script>
 
 <style lang="scss">

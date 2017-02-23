@@ -1,7 +1,8 @@
 <script>
+  import Element from '../../util/element'
   import MnRadioItem from '../radio/radio-item'
 
-  export default {
+  export default new Element({
     name: 'mn-check-item',
     mixins: [ MnRadioItem ],
     methods: {
@@ -16,5 +17,5 @@
         }
       }
     }
-  }
+  })
 </script>

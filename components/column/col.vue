@@ -5,11 +5,12 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import lodash from 'lodash'
 
   const MEDIA_KEYWORDS = ['span', 'offset', 'order']
 
-  export default {
+  export default new Element({
     name: 'mn-col',
     props: {
       mobile: {
@@ -80,7 +81,7 @@
         return this.queries.styles
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

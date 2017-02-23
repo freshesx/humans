@@ -5,9 +5,11 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-letter-body'
-  }
+  })
 </script>
 
 <style lang="scss">

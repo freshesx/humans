@@ -11,10 +11,10 @@
 </template>
 
 <script>
-  /* eslint-disable no-unused-vars */
-  import Input from '../input/input'  // import input for scss
+  import Element from '../../util/element'
+  import '../input/input'  // import input for scss
 
-  export default {
+  export default new Element({
     name: 'mn-datetime',
     props: {
       value: {
@@ -43,5 +43,5 @@
         this.$emit('input', event.target.value)
       }
     }
-  }
+  })
 </script>

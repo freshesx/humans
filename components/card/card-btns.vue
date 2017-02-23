@@ -5,7 +5,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-card-btns',
     props: {
       type: {
@@ -13,7 +15,7 @@
         validator: val => ['column'].includes(val)
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

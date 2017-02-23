@@ -6,9 +6,10 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Icon from '../icon/icon'
 
-  export default {
+  export default new Element({
     components: {
       [Icon.name]: Icon
     },
@@ -38,7 +39,7 @@
     mounted: function () {
       if (this.$parent.current === this.index) this.$parent.flag = this.tab._uid
     }
-  }
+  })
 </script>
 
 <style lang="scss">

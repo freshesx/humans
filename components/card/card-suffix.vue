@@ -1,7 +1,8 @@
 <script>
+  import Element from '../../util/element'
   import CardPrefix from './card-prefix'
 
-  export default {
+  export default new Element({
     name: 'mn-card-suffix',
     mixins: [ CardPrefix ],
     data () {
@@ -9,5 +10,5 @@
         typeName: 'suffix'
       }
     }
-  }
+  })
 </script>

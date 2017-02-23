@@ -18,10 +18,11 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Icon from '../icon/icon'
   import iosGridViewOutline from 'vue-human-icons/js/ios/grid-view-outline'
 
-  export default {
+  export default new Element({
     components: {
       [Icon.name]: Icon
     },
@@ -61,7 +62,7 @@
         this.$emit('input', event.target.value)
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">

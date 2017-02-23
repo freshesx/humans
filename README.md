@@ -2,7 +2,7 @@
 
 # Vue Human
 
-> vue-human 2.0-rc.7
+> vue-human 2.0-rc.8
 
 # Install in your application
 
@@ -13,6 +13,22 @@ $ yarn add vue-human
 ```
 
 Step 2: Must set babel in your webpack
+
+> Install in Webpack 2.x
+
+``` javascript
+module: {
+  rules: [
+    {
+      test: /vue-human[-\w]*\/.*?js$/,
+      loader: 'babel-loader',
+      exclude: /vue-human[-\w]*\/node_modules/
+    }
+  ]
+}
+```
+
+> Install in Webpack 1.x
 
 ``` javascript
 loaders: [
@@ -28,11 +44,11 @@ Step 3: Import vue-human
 
 ``` javascript
 import Vue from 'vue'
-import VueHuman from 'vue-human'
-import components from 'vue-human/suits/total'
+import human from 'vue-human'
+import totalSuits from 'vue-human/suits/total'
 
-Vue.use(VueHuman)
-VueHuman.add(components)
+Vue.use(human)
+Vue.use(totalSuits)
 ```
 
 # Recommend

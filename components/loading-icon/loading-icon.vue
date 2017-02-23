@@ -3,16 +3,16 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Vue from 'vue'
   import defaultIcon from './default-icon'
 
   let loadingIcon = defaultIcon
 
-  export default {
+  export default new Element({
     name: 'mn-loading-icon',
-    install (InstallVue, options = {}) {
+    beforeInstalled (Vue, options) {
       if (options.icon && typeof options.icon === 'object') loadingIcon = options.icon
-      InstallVue.component(this.name, this)
     },
     data () {
       return {
@@ -31,5 +31,5 @@
       this.$el.removeChild(this.icon.$el)
       this.icon.$destroy()
     }
-  }
+  })
 </script>

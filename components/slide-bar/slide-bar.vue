@@ -18,7 +18,9 @@
 </template>
 
 <script>
-  export default {
+  import Element from '../../util/element'
+
+  export default new Element({
     name: 'mn-slide-bar',
     props: {
       boxWidth: {
@@ -186,7 +188,7 @@
       this.maximum = this.$el.clientWidth - sum - 2 * (this.$refs.box.offsetLeft - this.$el.offsetLeft)
       // Counting the max slide value.
     }
-  }
+  })
 </script>
 
 <style lang="scss">

@@ -6,10 +6,11 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import Icon from '../icon/icon'
   import iosInformation from 'vue-human-icons/js/ios/information'
 
-  export default {
+  export default new Element({
     components: {
       [Icon.name]: Icon
     },
@@ -30,7 +31,7 @@
         return !this.validate[this.name]
       }
     }
-  }
+  })
 </script>
 
 

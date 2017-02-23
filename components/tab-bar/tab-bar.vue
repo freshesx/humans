@@ -13,9 +13,10 @@
 </template>
 
 <script>
+  import Element from '../../util/element'
   import TabBarItem from './tab-bar-item'
 
-  export default {
+  export default new Element({
     components: {
       [TabBarItem.name]: TabBarItem
     },
@@ -49,7 +50,7 @@
         // Add 'tab-click' function
       }
     }
-  }
+  })
 </script>
 
 <style lang="scss">
