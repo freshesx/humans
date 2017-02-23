@@ -1,86 +1,31 @@
 <template>
   <div class="mn-tab-bar">
-    <div class="mn-tab-bar-list" :class="{ 'is-bottom': bottom }">
-      <mn-tab-bar-item
-        v-for="(tab, index) in tabs"
-        :tab="tab"
-        :index="index"
-        @tab-item-click="changeCurrent(index, tab)"
-      ></mn-tab-bar-item>
+    <div class="mn-tab-bar-items">
+      <slot></slot>
     </div>
-    <slot></slot>
   </div>
 </template>
 
 <script>
   import Element from '../../util/element'
-  import TabBarItem from './tab-bar-item'
 
   export default new Element({
-    components: {
-      [TabBarItem.name]: TabBarItem
-    },
-    name: 'mn-tab-bar',
-    data () {
-      return {
-        tabs: [],
-        current: this.selected,
-        flag: 0
-      }
-    },
-    props: {
-      selected: {
-        type: Number,
-        default: 0
-        // automatic selected by :selected
-      },
-      bottom: {
-        type: Boolean,
-        default: false
-      }
-    },
-    mounted: function () {
-      this.$children.forEach(tab => this.tabs.push(tab))
-      // Add contents to items
-    },
-    methods: {
-      changeCurrent: function (index, tab) {
-        this.current = index
-        this.$emit('tab-click', tab)
-        // Add 'tab-click' function
-      }
-    }
+    name: 'mn-tab-bar'
   })
 </script>
 
 <style lang="scss">
-  @import "./vars";
-
   .mn-tab-bar {
-    width: 100%;
-
-    li,
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    a,
-    a:active,
-    a:hover,
-    a:visited {
-      color: $-tab-text-color;
-      text-decoration: none;
-    }
+    display: flex;
+    background: #fafafa;
+    height: 3rem;
+    white-space: nowrap;
+    justify-content: center;
   }
 
-  .mn-tab-bar-list {
+  .mn-tab-bar-items {
     display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    height: 3rem;
-    background-color: $-tab-background;
-    color: $-tab-text-color;
+    flex: 1;
+    max-width: 400px;
   }
 </style>
