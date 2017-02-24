@@ -1,6 +1,6 @@
 <template>
   <div class="mn-search-bar" :class="{ [`is-${size}`]: !!size }">
-    <mn-icon name="ios-search-strong"></mn-icon>
+    <mn-icon :name="searchStrong"></mn-icon>
     <div class="mn-search-bar-control">
       <slot></slot>
     </div>
@@ -10,6 +10,7 @@
 <script>
   import Element from '../../util/element'
   import Icon from '../icon/icon'
+  import searchStrong from 'vue-human-icons/js/ios/search-strong'
 
   export default new Element({
     components: {
@@ -18,6 +19,11 @@
     name: 'mn-search-bar',
     props: {
       size: String
+    },
+    data () {
+      return {
+        searchStrong
+      }
     }
   })
 </script>
