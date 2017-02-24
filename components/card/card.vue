@@ -41,8 +41,6 @@
     overflow: hidden;
 
     @include screen('mobile') {
-      margin-left: $grid-gutters * -1;
-      margin-right: $grid-gutters * -1;
       border-radius: 0;
     }
 
