@@ -112,8 +112,7 @@
 </script>
 
 <style lang="scss">
-  // @todo 如果使用了 span，为什么又设置为 block，如果需要块状元素，建议直接改为 div
   .mn-rate {
-    display: block;
+    // .mn-rate
   }
 </style>
