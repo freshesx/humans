@@ -74,14 +74,8 @@
         this.transitionOpen = true
         this.x = this.width * this.index
       },
-      setElWidth () {
+      setElementWidth () {
         this.width = this.$el.offsetWidth
-      },
-      initAndResize () {
-        this.setElWidth()
-        window.addEventListener('resize', () => {
-          this.setElWidth()
-        })
       }
     },
     watch: {
@@ -98,8 +92,12 @@
     },
     mounted () {
       this.$nextTick(() => {
-        this.initAndResize()
+        this.setElementWidth()
+        window.addEventListener('resize', this.setElementWidth)
       })
+    },
+    beforeDestroy () {
+      window.removeEventListener('resize', this.setElementWidth)
     }
   })
 </script>
