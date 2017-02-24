@@ -84,6 +84,14 @@
         })
       }
     },
+    watch: {
+      index (newValue) {
+        this.$emit('index', newValue)
+      },
+      length (newValue) {
+        this.$emit('length', newValue)
+      }
+    },
     created () {
       // 初始化时获得 items 数量
       this.length = this.$slots.default.filter(item => item.tag && item.tag.includes('mn-carousel-item')).length
