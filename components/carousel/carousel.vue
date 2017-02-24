@@ -59,6 +59,13 @@
         // 上下偏移小于 10 的范围内，左右偏移要大于 10 的范围，才触发
         if ((offsetY >= -10 || offsetY <= 10) && (offsetX >= 10 || offsetX <= -10)) {
           event.preventDefault()
+
+          if (this.index === 0 && offsetX < -36) {
+            return
+          }
+          if (this.index === this.length - 1 && offsetX > 26) {
+            return
+          }
           // 修改 x 的距离
           this.x = this.x + offsetX
           // 变化起始点
