@@ -73,9 +73,9 @@
         }
       },
       touchEnd (event) {
-        if (this.index < this.length - 1 && this.movePageX - this.startPageX < -36/*this.width * -0.2*/) {
+        if (this.index < this.length - 1 && this.movePageX - this.startPageX < this.width * -0.2) {
           this.index += 1
-        } else if (this.index > 0 && this.movePageX - this.startPageX > 36/*this.width * 0.2*/) {
+        } else if (this.index > 0 && this.movePageX - this.startPageX > this.width * 0.2) {
           this.index += -1
         }
         this.transitionOpen = true
