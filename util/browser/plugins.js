@@ -1,3 +1,4 @@
+// @todo 已被废弃
 import { trim } from 'lodash'
 import browser from './index.js'
 
