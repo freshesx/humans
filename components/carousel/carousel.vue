@@ -42,7 +42,7 @@
       transition () {
         return this.transitionOpen
           ? { transition: 'transform 0.5s ease-out' }
-          : {}
+          : { transition: 'transform 0.15s linear' }
       }
     },
     methods: {
