@@ -8,7 +8,10 @@
   import Element from '../../util/element'
 
   export default new Element({
-    name: 'mn-card-note'
+    name: 'mn-card-note',
+    created () {
+      console && console.warn('不推荐继续使用 mn-card-note，建议换成 mn-section-note。')
+    }
   })
 </script>
 

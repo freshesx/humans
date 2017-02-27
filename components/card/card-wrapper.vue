@@ -8,7 +8,10 @@
   import Element from '../../util/element'
 
   export default new Element({
-    name: 'mn-card-wrapper'
+    name: 'mn-card-wrapper',
+    created () {
+      console && console.warn('不推荐继续使用 mn-card-wrapper，建议换成 mn-section。')
+    }
   })
 </script>
 
