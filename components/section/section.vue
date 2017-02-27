@@ -17,5 +17,6 @@
 
   .mn-section {
     margin: 0 $grid-gutters;
+    margin-bottom: $grid-gutters;
   }
 </style>
