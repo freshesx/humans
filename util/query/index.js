@@ -16,21 +16,23 @@ export default class Query {
   orderBys = {}
 
   constructor (datasets) {
-    this.created()
+    this.beforeCreate.apply(this)
 
     for (var name in datasets) {
-      if (datasets.hasOwnProperty(name)) {
+      if (!datasets.hasOwnProperty(name)) return
+      // 储存器特殊储存
+      if (['conditions', 'orderBys'].includes(name)) {
         this.set(name, datasets[name])
+      } else {
+        this[name] = datasets[name]
       }
     }
   }
 
-  created () {
-    console.log('created')
+  beforeCreate () {
   }
 
   changed () {
-    console.log('updated')
   }
 
   addCondition (name, value) {
@@ -56,7 +58,7 @@ export default class Query {
     return { ...this.conditions, orderBys: this.orderBys }
   }
 
-  toSerialize (str) {
+  toSerialize () {
   }
 
   toString () {
@@ -75,7 +77,7 @@ export default class Query {
     if (value === null) return this.remove(storageName, name)
     this[storageName][name] = value
 
-    if (notifyChange) this.changed() // 通知更新
+    if (notifyChange) this.changed.apply(this, this[storageName]) // 通知更新
     return this
   }
 
@@ -90,7 +92,7 @@ export default class Query {
   remove (storageName, name, notifyChange = true) {
     if (name in this[storageName]) delete this[storageName][name]
 
-    if (notifyChange) this.changed() // 通知更新
+    if (notifyChange) this.changed.apply(this, this[storageName]) // 通知更新
     return this
   }
 
@@ -115,7 +117,7 @@ export default class Query {
       }
     }
 
-    if (notifyChange) this.changed() // 通知更新
+    if (notifyChange) this.changed.apply(this, this[storageName]) // 通知更新
 
     return this
   }
