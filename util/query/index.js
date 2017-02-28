@@ -71,9 +71,11 @@ export default class Query {
    *
    * @return this
    */
-  add (storageName, name, value) {
+  add (storageName, name, value, notifyChange = true) {
     if (value === null) return this.remove(storageName, name)
     this[storageName][name] = value
+
+    if (notifyChange) this.changed() // 通知更新
     return this
   }
 
