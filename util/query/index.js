@@ -15,6 +15,24 @@ export default class Query {
    */
   orderBys = {}
 
+  constructor (datasets) {
+    this.created()
+
+    for (var name in datasets) {
+      if (datasets.hasOwnProperty(name)) {
+        this.set(name, datasets[name])
+      }
+    }
+  }
+
+  created () {
+    console.log('created')
+  }
+
+  changed () {
+    console.log('updated')
+  }
+
   addCondition (name, value) {
     return this.add('conditions', name, value)
   }
