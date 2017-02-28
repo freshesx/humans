@@ -56,6 +56,12 @@ export default class Query {
     return { ...this.conditions, orderBys: this.orderBys }
   }
 
+  toSerialize (str) {
+  }
+
+  toString () {
+  }
+
   /**
    * 添加单个结果至储存器
    *
