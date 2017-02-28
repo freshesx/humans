@@ -87,8 +87,10 @@ export default class Query {
    *
    * @return this
    */
-  remove (storageName, name) {
+  remove (storageName, name, notifyChange = true) {
     if (name in this[storageName]) delete this[storageName][name]
+
+    if (notifyChange) this.changed() // 通知更新
     return this
   }
 
@@ -100,12 +102,21 @@ export default class Query {
    *
    * @return this
    */
-  set (storageName, storageValue) {
-    if (typeof storageValue === 'object' && storageValue.constructor === Object) {
-      this[storageName] = storageValue
+  set (storageName, storageValue, notifyChange = true) {
+    if (typeof storageValue !== 'object' || storageValue.constructor !== Object) {
+      // this[storageName] = storageValue
+      console && console.warn('传递的存储内容不是一个对象。')
       return this
     }
-    console && console.warn('传递的存储内容不是一个对象。')
+
+    for (var name in storageValue) {
+      if (storageValue.hasOwnProperty(name)) {
+        this.add(storageName, name, storageValue[name], false)
+      }
+    }
+
+    if (notifyChange) this.changed() // 通知更新
+
     return this
   }
 }
