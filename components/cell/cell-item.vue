@@ -1,6 +1,6 @@
 <template>
   <mn-card-item :type="type" @click="click">
-    <mn-card-prefix>
+    <mn-card-prefix @click.native="select">
       <cell-icon></cell-icon>
     </mn-card-prefix>
     <slot></slot>
@@ -17,20 +17,20 @@
       CellIcon
     },
     props: {
-      type: String,
-      id: {
-        type: Number,
-        required: true
-      }
+      type: String
     },
     mounted () {
       // console.log(this)
     },
     methods: {
-      click () {
+      click (event) {
         // console.log(this.$parent._uid)
         // console.log(this.$parent.toggleSelection)
         // this.$parent.loading
+        this.$emit('click', event, this)
+      },
+      select (event) {
+
       }
     }
   })

@@ -5,17 +5,24 @@
         <cell-icon></cell-icon> 全选 (0)
       </mn-card-prefix>
     </mn-card-item>
+    <!-- Loading -->
     <mn-card-item v-if="loading">
       <mn-card-body :class="'has-center-text'">
         <mn-loading-icon></mn-loading-icon>
       </mn-card-body>
     </mn-card-item>
-    <mn-card-item v-if="!$slots.default && !loading">
+    <mn-card-item v-if="contents.length === 0 && !loading">
       <mn-card-body :class="'has-center-text'">
         <p>没有找到合适的记录</p>
       </mn-card-body>
     </mn-card-item>
-    <slot v-if="$slots.default && !loading"></slot>
+
+    <mn-cell-item type="link" v-for="item in contents" :key="item.id" @click="clickItem($event, item)">
+      <mn-card-body>{{ item.name }}</mn-card-body>
+      <mn-card-suffix>
+        suffix
+      </mn-card-suffix>
+    </mn-cell-item>
   </mn-card>
 </template>
 
@@ -27,6 +34,12 @@
     name: 'mn-cell',
     components: {
       CellIcon
+    },
+    props: {
+      contents: {
+        type: Array,
+        default: () => []
+      }
     },
     data () {
       return {
@@ -47,6 +60,10 @@
       },
       toggleSelection (id) {
         console.log('id', id)
+      },
+      clickItem (event, item) {
+        console.log('item')
+        this.$emit('clickItem', event, item)
       }
     }
   })
