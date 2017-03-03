@@ -2,7 +2,7 @@
   <mn-card>
     <mn-card-item>
       <mn-card-prefix>
-        全选 (0)
+        <cell-icon></cell-icon> 全选 (0)
       </mn-card-prefix>
     </mn-card-item>
     <mn-card-item v-if="loading">
@@ -21,13 +21,21 @@
 
 <script>
   import Element from '../../util/element'
+  import CellIcon from './cell-icon'
 
   export default new Element({
     name: 'mn-cell',
+    components: {
+      CellIcon
+    },
     data () {
       return {
-        loading: false
+        loading: false,
+        selections: []
       }
+    },
+    mounted () {
+      console.log(this._uid)
     },
     methods: {
       update (callback) {
@@ -36,6 +44,9 @@
       },
       next () {
         this.loading = false
+      },
+      toggleSelection (id) {
+        console.log('id', id)
       }
     }
   })

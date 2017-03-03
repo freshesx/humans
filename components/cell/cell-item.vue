@@ -1,7 +1,7 @@
 <template>
-  <mn-card-item :type="type">
+  <mn-card-item :type="type" @click="click">
     <mn-card-prefix>
-      单选
+      <cell-icon></cell-icon>
     </mn-card-prefix>
     <slot></slot>
   </mn-card-item>
@@ -9,11 +9,29 @@
 
 <script>
   import Element from '../../util/element'
+  import CellIcon from './cell-icon'
 
   export default new Element({
     name: 'mn-cell-item',
+    components: {
+      CellIcon
+    },
     props: {
-      type: String
+      type: String,
+      id: {
+        type: Number,
+        required: true
+      }
+    },
+    mounted () {
+      // console.log(this)
+    },
+    methods: {
+      click () {
+        // console.log(this.$parent._uid)
+        // console.log(this.$parent.toggleSelection)
+        // this.$parent.loading
+      }
     }
   })
 </script>
