@@ -2,7 +2,9 @@
   <mn-card>
     <mn-card-item>
       <mn-card-prefix>
-        <cell-icon :checked="!loading && isAllChecked" @click.native="select"></cell-icon> 全选 ({{ selections.length }})
+        <cell-icon :checked="!loading && isAllChecked" @click.native="select"></cell-icon>
+        全选
+        ({{ loading ? 0 : selections.length }})
       </mn-card-prefix>
     </mn-card-item>
     <mn-card-item v-if="loading">
