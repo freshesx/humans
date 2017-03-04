@@ -1,6 +1,6 @@
 <template>
   <mn-card-item :type="type">
-    <mn-card-prefix @click.native="select">
+    <mn-card-prefix @click.native="select" v-if="!isHideSelection">
       <cell-icon :checked="isChecked"></cell-icon>
     </mn-card-prefix>
     <slot></slot>
@@ -33,6 +33,9 @@
     computed: {
       isChecked () {
         return this.$cell.selections.includes(this.item)
+      },
+      isHideSelection () {
+        return this.$cell.hideSelections
       },
       $cell () {
         return this.$parent.$parent
