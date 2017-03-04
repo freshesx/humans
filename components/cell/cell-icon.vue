@@ -1,5 +1,5 @@
 <template>
-  <mn-icon :name="checked ? icons.checkbox : icons.checkboxBlank" :class="[ 'mn-cell-icon', { 'is-active': checked } ]"></mn-icon>
+  <mn-icon :name="checked ? icons.checkmark : icons.circleOutline" :class="[ 'mn-cell-icon', { 'is-active': checked } ]" :scale="1.4"></mn-icon>
 </template>
 
 <script>
@@ -16,8 +16,8 @@
     data () {
       return {
         icons: {
-          checkboxBlank: require('vue-human-icons/js/android/checkbox-blank'),
-          checkbox: require('vue-human-icons/js/android/checkbox')
+          circleOutline: require('vue-human-icons/js/ios/circle-outline'),
+          checkmark: require('vue-human-icons/js/ios/checkmark')
         }
       }
     }
@@ -29,6 +29,7 @@
 
   .mn-cell-icon {
     color: #999;
+    vertical-align: -8px;
 
     &.is-active {
       color: $pink;
