@@ -2,10 +2,9 @@
   <mn-card>
     <mn-card-item>
       <mn-card-prefix>
-        <cell-icon></cell-icon> 全选 (0)
+        <cell-icon :checked="!loading && isAllChecked" @click.native="select"></cell-icon> 全选 ({{ selections.length }})
       </mn-card-prefix>
     </mn-card-item>
-    <!-- Loading -->
     <mn-card-item v-if="loading">
       <mn-card-body :class="'has-center-text'">
         <mn-loading-icon></mn-loading-icon>
@@ -16,13 +15,8 @@
         <p>没有找到合适的记录</p>
       </mn-card-body>
     </mn-card-item>
-
-    <mn-cell-item type="link" v-for="item in contents" :key="item.id" @click="clickItem($event, item)">
-      <mn-card-body>{{ item.name }}</mn-card-body>
-      <mn-card-suffix>
-        suffix
-      </mn-card-suffix>
-    </mn-cell-item>
+    <!-- <slot v-if="$slots.default && !loading"></slot> -->
+    <slot :item="item" v-for="item in contents" v-if="!loading"></slot>
   </mn-card>
 </template>
 
@@ -47,9 +41,6 @@
         selections: []
       }
     },
-    mounted () {
-      console.log(this._uid)
-    },
     methods: {
       update (callback) {
         this.loading = true
@@ -58,12 +49,41 @@
       next () {
         this.loading = false
       },
-      toggleSelection (id) {
-        console.log('id', id)
+      toggleSelection (item) {
+        let index = this.selections.indexOf(item)
+
+        if (index > -1) {
+          this.selections.splice(index, 1)
+        } else {
+          this.selections.push(item)
+        }
       },
-      clickItem (event, item) {
-        console.log('item')
-        this.$emit('clickItem', event, item)
+      select () {
+        if (this.isAllChecked) {
+          // 清除
+          this.clearSelections()
+        } else {
+          // 全部添加
+          this.contents.forEach(item => {
+            if (!this.selections.includes(item)) {
+              this.selections.push(item)
+            }
+          })
+        }
+      },
+      clearSelections () {
+        this.selections = []
+      }
+    },
+    computed: {
+      isAllChecked () {
+        if (this.contents.length === 0) return false
+        return this.contents.every(item => this.selections.includes(item))
+      }
+    },
+    watch: {
+      contents (newValue) {
+        this.clearSelections()
       }
     }
   })

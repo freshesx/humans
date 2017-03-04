@@ -1,7 +1,7 @@
 <template>
-  <mn-card-item :type="type" @click="click">
+  <mn-card-item :type="type">
     <mn-card-prefix @click.native="select">
-      <cell-icon></cell-icon>
+      <cell-icon :checked="isChecked"></cell-icon>
     </mn-card-prefix>
     <slot></slot>
   </mn-card-item>
@@ -17,20 +17,25 @@
       CellIcon
     },
     props: {
-      type: String
+      type: String,
+      item: {
+        type: Object
+      }
     },
     mounted () {
       // console.log(this)
     },
     methods: {
-      click (event) {
-        // console.log(this.$parent._uid)
-        // console.log(this.$parent.toggleSelection)
-        // this.$parent.loading
-        this.$emit('click', event, this)
-      },
       select (event) {
-
+        this.$cell.toggleSelection(this.item)
+      }
+    },
+    computed: {
+      isChecked () {
+        return this.$cell.selections.includes(this.item)
+      },
+      $cell () {
+        return this.$parent.$parent
       }
     }
   })
