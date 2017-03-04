@@ -59,6 +59,9 @@
           this.selections.push(item)
         }
       },
+      clearSelections () {
+        this.selections = []
+      },
       select () {
         if (this.isAllChecked) {
           // 清除
@@ -71,9 +74,6 @@
             }
           })
         }
-      },
-      clearSelections () {
-        this.selections = []
       }
     },
     computed: {
