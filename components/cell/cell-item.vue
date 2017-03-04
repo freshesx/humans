@@ -1,6 +1,6 @@
 <template>
-  <card-item :type="type">
-    <card-prefix @click.native="select" v-if="!isHideSelection">
+  <card-item :type="type" @click="click">
+    <card-prefix @click.native.stop="select" v-if="!isHideSelection">
       <cell-icon :checked="isChecked"></cell-icon>
     </card-prefix>
     <slot></slot>
@@ -32,6 +32,9 @@
     methods: {
       select (event) {
         this.$cell.toggleSelection(this.item)
+      },
+      click (event, cardItem) {
+        this.$emit('click', event, cardItem)
       }
     },
     computed: {
