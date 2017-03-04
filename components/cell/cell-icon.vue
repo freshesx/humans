@@ -1,5 +1,8 @@
 <template>
-  <mn-icon :name="checked ? icons.checkmark : icons.circleOutline" :class="[ 'mn-cell-icon', { 'is-active': checked } ]" :scale="1.4"></mn-icon>
+  <mn-icon
+    :name="checked ? icons.checkmark : icons.circleOutline"
+    :class="[ 'mn-cell-icon', { 'is-active': checked } ]"
+    :scale="1.4"></mn-icon>
 </template>
 
 <script>
