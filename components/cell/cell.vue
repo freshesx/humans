@@ -1,13 +1,20 @@
 <template>
   <card>
     <!-- 如果隐藏多选功能，并且 action 的 slot 不存在的话，则不显示 -->
-    <card-item v-if="!hideSelections || $slots.action">
+    <card-item v-if="!hideSelections || $slots.action || $slots.title" type="cursor">
       <!-- 如果隐藏多选功能，则不显示，并且当加载的时候，选中数量和图标变为未选中 -->
       <card-prefix v-if="!hideSelections">
         <cell-icon :checked="!loading && isAllChecked" @click.native="select"></cell-icon>
+      </card-prefix>
+      <card-prefix v-if="!hideSelections">
         全选
         ({{ loading ? 0 : selections.length }})
       </card-prefix>
+      <!-- 顶部的中间区域 -->
+      <slot name="title">
+        <card-body></card-body>
+      </slot>
+      <!-- 顶部的后部区域 -->
       <slot name="action"></slot>
     </card-item>
     <!-- 当加载的时候，显示加载条，关闭其他的渲染 -->
