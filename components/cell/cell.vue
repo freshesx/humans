@@ -34,6 +34,10 @@
       contents: {
         type: Array,
         default: () => []
+      },
+      keepSelections: {
+        type: Boolean,
+        default: false
       }
     },
     data () {
@@ -84,7 +88,9 @@
     },
     watch: {
       contents (newValue) {
-        this.clearSelections()
+        if (!this.keepSelections) {
+          this.clearSelections()
+        }
       }
     }
   })
