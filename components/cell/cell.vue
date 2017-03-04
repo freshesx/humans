@@ -17,7 +17,6 @@
         <p>没有找到合适的记录</p>
       </mn-card-body>
     </mn-card-item>
-    <!-- <slot v-if="$slots.default && !loading"></slot> -->
     <slot :item="item" v-for="item in contents" v-if="!loading"></slot>
   </mn-card>
 </template>
