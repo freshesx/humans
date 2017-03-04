@@ -57,13 +57,28 @@
       }
     },
     methods: {
+      /**
+       * 便于动画的加载和使用的方法
+       * this.$refs.cell.update(next => {
+       *   // 处理你的逻辑
+       *   next()  // 通知 cell 加载结束
+       * })
+       * @param {Function} callback - 回调函数
+       */
       update (callback) {
         this.loading = true
         callback.apply(this, [this.next])
       },
+      /**
+       * 关闭加载状态
+       */
       next () {
         this.loading = false
       },
+      /**
+       * 对比 selections，切换加入还是删除
+       * @param {*} item
+       */
       toggleSelection (item) {
         let index = this.selections.indexOf(item)
 
@@ -73,9 +88,15 @@
           this.selections.push(item)
         }
       },
+      /**
+       * 清除选中数组
+       */
       clearSelections () {
         this.selections = []
       },
+      /**
+       * 全选的点击事件
+       */
       select () {
         if (this.isAllChecked) {
           // 清除
@@ -92,12 +113,16 @@
     },
     computed: {
       isAllChecked () {
+        // 如果长度为 0 ，则代表没东西可选
         if (this.contents.length === 0) return false
+        // 对比 selections 和 contents，
+        // contents 中的每一项都存在于 selections，则为全选中
         return this.contents.every(item => this.selections.includes(item))
       }
     },
     watch: {
       contents (newValue) {
+        // 当 contents 数据刷新时，应该重置 selections
         if (!this.keepSelections) {
           this.clearSelections()
         }
