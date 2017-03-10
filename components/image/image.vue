@@ -1,11 +1,21 @@
 <template>
   <div class="mn-image" :style="{ height: height }">
-    <img :src="source.src" :title="title" :alt="alt" class="mn-image-source">
+    <img
+      ref="image"
+      class="mn-image-source"
+      :class="{ 'is-hide': loading && loadingMask && hideImageWhenLoading }"
+      :src="source.src"
+      :title="title"
+      :alt="alt">
+    <div class="mn-image-mask" v-if="loading && loadingMask" :style="{ background: maskBg }">
+      <loading-icon></loading-icon>
+    </div>
   </div>
 </template>
 
 <script>
   import Element from '../../util/element'
+  import LoadingIcon from '../loading-icon/loading-icon'
 
   const MEDIA_VALUE = {
     mobile: [0, 767],
@@ -16,16 +26,34 @@
 
   export default new Element({
     name: 'mn-image',
+    components: {
+      LoadingIcon
+    },
     props: {
       srcset: {
         type: [Array, Object]
       },
       alt: String,
-      title: String
+      title: String,
+      maskBg: {
+        type: String,
+        default: 'rgba(0, 0, 0, 0.8)'
+      },
+      // 是否显示 loading 加载的状态
+      loadingMask: {
+        type: Boolean,
+        default: true
+      },
+      // 是否在未加载成功前不显示图片
+      hideImageWhenLoading: {
+        type: Boolean,
+        default: false
+      }
     },
     data () {
       return {
-        offsetWidth: 0
+        offsetWidth: 0,
+        loading: false
       }
     },
     computed: {
@@ -64,6 +92,26 @@
         }
       }
     },
+    watch: {
+      offsetWidth () {
+        this.loading = true
+      },
+      loading (newValue) {
+        if (newValue === true) {
+          if (this.$refs.image.complete) {
+            this.loading = false
+          } else {
+            this.$refs.image.addEventListener('load', () => {
+              this.loading = false
+            })
+            this.$refs.image.addEventListener('error', function() {
+              console && console.warn('图片加载失败。')
+            })
+          }
+
+        }
+      }
+    },
     methods: {
       setOffsetWidth () {
         this.offsetWidth = document.body.offsetWidth
@@ -82,8 +130,29 @@
 </script>
 
 <style lang="scss">
+  .mn-image {
+    position: relative;
+    width: 100%;
+  }
+
   .mn-image-source {
     display: block;
     width: 100%;
+
+    &.is-hide {
+      display: none;
+    }
+  }
+
+  .mn-image-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
   }
 </style>
