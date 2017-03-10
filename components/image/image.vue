@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-image" :style="style">
+  <div class="mn-image" :style="{ height: height }">
     <img :src="source.src" :title="title" :alt="alt" class="mn-image-source">
   </div>
 </template>
@@ -57,14 +57,10 @@
         console && console.warn(`未找到匹配的 source。offsetWidth 为 ${this.offsetWidth}`)
         return this.sources[0]
       },
-      style () {
-        if (typeof this.source.scale === 'undefined') return false
-        if (this.$el) {
-          console.log(this.$el)
-          return {
-            width: `${this.$el.offsetWidth}px`,
-            height: `${this.$el.offsetWidth / this.source.scale}px`
-          }
+      height () {
+        // 不预先设定尺寸
+        if (typeof this.source.scale !== 'undefined' && this.offsetWidth && this.$el) {
+          return `${this.$el.offsetWidth / this.source.scale}px`
         }
       }
     },
