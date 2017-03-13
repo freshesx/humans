@@ -2,7 +2,7 @@
 
 # Vue Human
 
-> vue-human 2.0-rc.8
+> vue-human 2.0.0
 
 # Install in your application
 

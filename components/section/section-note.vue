@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-card-group-note">
+  <div class="mn-section-note">
     <slot></slot>
   </div>
 </template>
@@ -8,10 +8,7 @@
   import Element from '../../util/element'
 
   export default new Element({
-    name: 'mn-card-note',
-    created () {
-      console && console.warn('不推荐继续使用 mn-card-note，建议换成 mn-section-note。')
-    }
+    name: 'mn-section-note'
   })
 </script>
 
@@ -19,7 +16,7 @@
   @import "../../scss/vars";
   @import "../../scss/mixins/media";
 
-  .mn-card-group-note {
+  .mn-section-note {
     color: #666;
     font-size: 0.875rem;
     padding-left: $grid-gutters;
@@ -31,8 +28,9 @@
     }
   }
 
-  .mn-card + .mn-card-group-note {
-    margin-top: $grid-gutters / 2;
+  // @affect(../card/card.vue)
+  .mn-card + .mn-section-note {
+    margin-top: $grid-gutters * -0.5;
     margin-bottom: 0;
   }
 </style>

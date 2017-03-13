@@ -120,8 +120,13 @@
       })
     },
     mounted () {
-      // 初始化 scrollTop
-      this.createScrollTop()
+      this.$nextTick(() => {
+        // 等待 DOM 的加载
+        setTimeout(() => {
+          // 初始化 scrollTop
+          this.createScrollTop()
+        }, 100)
+      })
     }
   })
 </script>

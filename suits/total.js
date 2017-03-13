@@ -8,6 +8,9 @@ import NavBarSuits from '../components/nav-bar'
 import TabBarSuits from '../components/tab-bar'
 import SearchBarSuits from '../components/search-bar'
 import SlideBarSuits from '../components/slide-bar'
+import CarouselSuits from '../components/carousel'
+import CellSuits from '../components/cell'
+import ImageSuits from '../components/image'
 
 export default new Suits([
   BasicSuits,
@@ -18,5 +21,8 @@ export default new Suits([
   NavBarSuits,
   TabBarSuits,
   SearchBarSuits,
-  SlideBarSuits
+  SlideBarSuits,
+  CarouselSuits,
+  CellSuits,
+  ImageSuits
 ])
