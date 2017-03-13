@@ -7,9 +7,9 @@
       :src="source.src"
       :title="title"
       :alt="alt">
-    <div class="mn-image-mask" v-if="loading && loadingMask" :style="{ background: maskBg }">
+    <!-- <div class="mn-image-mask" v-if="loading && loadingMask" :style="{ background: maskBg }">
       <loading-icon></loading-icon>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -131,7 +131,7 @@
 
 <style lang="scss">
   .mn-image {
-    position: relative;
+    // position: relative;
     width: 100%;
   }
 
