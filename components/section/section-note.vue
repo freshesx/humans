@@ -27,10 +27,4 @@
       margin-right: $grid-gutters * -1;
     }
   }
-
-  // @affect(../card/card.vue)
-  .mn-card + .mn-section-note {
-    margin-top: $grid-gutters * -0.5;
-    margin-bottom: 0;
-  }
 </style>
