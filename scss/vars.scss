@@ -62,7 +62,11 @@ $sub-popup-z-index: 4000 !default;
 $panel-z-index: 6000 !default;
 $popup-z-index: 8000 !default;
 
-// Button theme
+//
+// Button
+//
+$button-mobile-radius:       $mobile-radius !default;
+$button-desktop-radius:      $desktop-radius !default;
 $button-theme: (
   // normal
   primary: (

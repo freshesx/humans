@@ -107,9 +107,12 @@
 
 <style lang="scss">
   @import "../../scss/vars";
+  @import "../../scss/mixins/media";
 
   $-button: "mn-btn";
   $-button-theme: $button-theme;
+  $-button-mobile-radius: $button-mobile-radius;
+  $-button-desktop-radius: $button-desktop-radius;
 
   //
   // @class .btn
@@ -124,12 +127,16 @@
     user-select: none;
     height: 3rem;
     padding: 0.5rem 1rem;
-    border-radius: $base-radius;
+    border-radius: $-button-mobile-radius;
     text-decoration: none;
     border: none;
     outline: none;
     background: transparent;
     line-height: 2rem;
+
+    @include min-screen('desktop') {
+      border-radius: $-button-desktop-radius;
+    }
 
     &.is-margin-bottom {
       margin-bottom: 1rem;
@@ -139,8 +146,12 @@
       height: 2rem;
       padding: 0.5rem 1rem;
       line-height: 1rem;
-      border-radius: $base-radius * 0.75;
+      border-radius: $-button-mobile-radius * 0.75;
       font-size: 0.875rem;
+
+      @include min-screen('desktop') {
+        border-radius: $-button-desktop-radius;
+      }
     }
 
     &.is-block {
