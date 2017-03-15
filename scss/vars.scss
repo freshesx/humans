@@ -153,4 +153,4 @@ $button-theme: (
     active: (color: darken(#505050, 5%)),
     disable: (color: lighten(#505050, 5%)),
   ),
-);
+) !default;
