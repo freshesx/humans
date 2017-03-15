@@ -50,6 +50,10 @@ $grid-breakpoints: (
 // Radius
 //
 $base-radius: 0.75rem !default;
+$mobile-radius: 0.75rem !default;
+$tablet-radius: 0.75rem !default;
+$desktop-radius: 0.25rem !default;
+$widescreen-radius: 0.25rem !default;
 
 // z-index
 $content-z-index: 0 !default;
