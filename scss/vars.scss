@@ -158,3 +158,9 @@ $button-theme: (
     disable: (color: lighten(#505050, 5%)),
   ),
 ) !default;
+
+//
+// card
+//
+$card-mobile-radius:   $mobile-radius !default;
+$card-desktop-radius:  $desktop-radius !default;

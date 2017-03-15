@@ -33,12 +33,12 @@
   @import "../../scss/vars";
   @import "../../scss/mixins/media";
 
-  $card-base-radius: $base-radius;
-  $card-desktop-radius: 4px;
+  $-card-mobile-radius: $card-mobile-radius;
+  $-card-desktop-radius: $card-desktop-radius;
 
   .mn-card {
     margin-bottom: $grid-gutters;
-    border-radius: $card-base-radius;
+    border-radius: $-card-mobile-radius;
     background-color: #fff;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.02);
     overflow: hidden;
@@ -50,14 +50,14 @@
     }
 
     @include min-screen('desktop') {
-      border-radius: $card-desktop-radius;
+      border-radius: $-card-desktop-radius;
     }
 
     &.is-none-mobile-narrow {
       @include screen('mobile') {
         margin-left: 0;
         margin-right: 0;
-        border-radius: $card-base-radius;
+        border-radius: $-card-mobile-radius;
       }
     }
 
