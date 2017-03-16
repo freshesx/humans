@@ -3,7 +3,7 @@
     <img
       ref="image"
       class="mn-image-source"
-      :class="{ 'is-hide': loading && loadingMask && hideImageWhenLoading }"
+      :class="{ [`is-${type}`]: !!type, 'is-hide': loading && loadingMask && hideImageWhenLoading }"
       :src="source.src"
       :title="title"
       :alt="alt">
@@ -35,6 +35,10 @@
       },
       alt: String,
       title: String,
+      type: {
+        type: String,
+        validator: val => ['rounded', 'circle'].includes(val)
+      },
       maskBg: {
         type: String,
         default: 'rgba(0, 0, 0, 0.8)'
@@ -130,6 +134,12 @@
 </script>
 
 <style lang="scss">
+  @import "../../scss/vars.scss";
+  @import "../../scss/mixins/media.scss";
+
+  $-image-mobile-radius: $image-mobile-radius;
+  $-image-desktop-radius: $image-desktop-radius;
+
   .mn-image {
     // position: relative;
     width: 100%;
@@ -138,6 +148,18 @@
   .mn-image-source {
     display: block;
     width: 100%;
+
+    &.is-rounded {
+      border-radius: $-image-mobile-radius;
+
+      @include min-screen('desktop') {
+        border-radius: $-image-desktop-radius;
+      }
+    }
+
+    &.is-circle {
+      border-radius: 50% 50%;
+    }
 
     &.is-hide {
       display: none;
