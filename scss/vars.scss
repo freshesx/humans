@@ -50,6 +50,10 @@ $grid-breakpoints: (
 // Radius
 //
 $base-radius: 0.75rem !default;
+$mobile-radius: 0.75rem !default;
+$tablet-radius: 0.75rem !default;
+$desktop-radius: 0.25rem !default;
+$widescreen-radius: 0.25rem !default;
 
 // z-index
 $content-z-index: 0 !default;
@@ -58,7 +62,11 @@ $sub-popup-z-index: 4000 !default;
 $panel-z-index: 6000 !default;
 $popup-z-index: 8000 !default;
 
-// Button theme
+//
+// Button
+//
+$button-mobile-radius:       $mobile-radius !default;
+$button-desktop-radius:      $desktop-radius !default;
 $button-theme: (
   // normal
   primary: (
@@ -153,4 +161,21 @@ $button-theme: (
     active: (color: darken(#505050, 5%)),
     disable: (color: lighten(#505050, 5%)),
   ),
-);
+) !default;
+
+//
+// Card
+//
+$card-mobile-radius:   $mobile-radius !default;
+$card-desktop-radius:  $desktop-radius !default;
+
+//
+// image
+//
+$image-mobile-radius:      $mobile-radius !default;
+$image-desktop-radius:     $desktop-radius !default;
+
+//
+// Cell
+//
+$cell-icon-active-color:    $pink !default;
