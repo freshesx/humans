@@ -42,7 +42,7 @@
 <style lang="scss">
   @import "../../scss/vars.scss";
 
-  $-cell-icon-active-color: $pink;
+  $-cell-icon-active-color: $cell-icon-active-color;
 
   .mn-cell-icon {
     z-index: 2;
