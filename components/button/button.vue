@@ -108,9 +108,10 @@
 <style lang="scss">
   @import "../../scss/vars";
   @import "../../scss/mixins/media";
+  @import "./theme";
 
   $-button: "mn-btn";
-  $-button-theme: $button-theme;
+  $-button-theme: map-merge($-button-default-theme, $button-theme);
   $-button-mobile-radius: $button-mobile-radius;
   $-button-desktop-radius: $button-desktop-radius;
 
