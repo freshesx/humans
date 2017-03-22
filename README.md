@@ -58,5 +58,5 @@ You can use vue boilerplate
 ``` bash
 npm install -g vue-cli
 
-vue init VitualReaty/webpack my-project
+vue init HumanUI/webpack my-project
 ```
