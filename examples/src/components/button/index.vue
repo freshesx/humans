@@ -15,7 +15,7 @@
         </mn-card-item>
         <mn-card-item>
           <mn-card-body>
-            <mn-btn theme="primary" :icon="icons.home">按钮</mn-btn>
+            <mn-btn theme="primary" :icon="icons.home" @click="onPressButton">按钮</mn-btn>
             <mn-btn theme="secondary">按钮</mn-btn>
             <mn-btn theme="inverse">按钮</mn-btn>
             <mn-btn theme="warning">按钮</mn-btn>
@@ -24,7 +24,8 @@
         </mn-card-item>
       </mn-card>
       <mn-section-note>
-        @todo: 调整 theme 的方案
+        <div>@todo: 调整 theme 的方案</div>
+        <div>@todo: 文档中加入关于 @ 事件的命名方式</div>
       </mn-section-note>
     </mn-section>
 
@@ -141,6 +142,16 @@
         icons: {
           home: require('vue-human-icons/js/ios/home')
         }
+      }
+    },
+    methods: {
+      onPressButton ($event, button) {
+        button.loading = true
+
+        setTimeout(() => {
+          window.alert('刚刚发生了加载动画')
+          button.loading = false
+        }, 100000)
       }
     }
   }
