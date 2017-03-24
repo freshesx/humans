@@ -25,14 +25,18 @@
       title: String,
       // Alias for MnIcon
       icon: null,
-      // is-primary, is-secondary, is-error etc.
+      // Theme, e.g: is-primary, is-secondary, is-error etc.
+      // @todo(@deprecated)
       type: {
-        type: String
+        type: String,
+        validator: val => {
+          console && console.warn('建议将 type 改为 theme，在后续的版本中即将废弃 type')
+          return true
+        }
       },
-      // is-sm
-      size: {
-        type: String
-      },
+      theme: String,
+      // Size, e.g: is-sm
+      size: String,
       // Disabled
       disabled: Boolean,
       // Has active style
@@ -50,9 +54,14 @@
       }
     },
     computed: {
+      computedTheme () {
+        return typeof this.theme === undefined
+          ? this.type
+          : this.theme
+      },
       classes () {
         return {
-          [`is-${this.type}`]: !!this.type,
+          [`is-${this.computedTheme}`]: !!this.computedTheme,
           [`is-${this.size}`]: !!this.size,
           'is-block':          this.block,
           'is-disabled':       this.disabled || this.loading,
