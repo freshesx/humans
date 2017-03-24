@@ -28,6 +28,7 @@
 
     width: 16px;
     height: 16px;
+    margin: 0 2px;
     display: inline-block;
     background: currentColor;
     border-radius: 8px;
