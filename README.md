@@ -7,9 +7,9 @@ Media response for multiple scenes, e.g. mobile, tablet, desktop. You can use vu
 
 ---
 
-### Lasted Version
+## Lasted Version
 
-v2.1.1
+v2.1.1 ([Changelog](releases))
 
 ## Using vue-human in your application
 
