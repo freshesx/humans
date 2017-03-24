@@ -69,7 +69,7 @@
         }
 
         // 2. If disabled, $emit error event
-        if (!this.disabled) {
+        if (this.disabled) {
           $event.preventDefault()
           this.$emit('error', $event, this)
           return
