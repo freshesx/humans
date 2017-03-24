@@ -50,43 +50,33 @@
     },
     computed: {
       classes () {
-        let classes = {}
-
-        // type
-        classes[`is-${this.type}`] = this.type
-
-        // size
-        classes[`is-${this.size}`] = this.size
-
-        // block
-        classes['is-block'] = this.block
-
-        // disabled
-        classes['is-disabled'] = this.disabled || this.loading
-
-        // active
-        classes['is-active'] = this.active
-
-        // circle
-        classes['is-circle'] = this.circle
-
-        // margin bottom
-        classes['is-margin-bottom'] = this.margin
-
-        return classes
+        return {
+          [`is-${this.type}`]: !!this.type,
+          [`is-${this.size}`]: !!this.size,
+          'is-block':          this.block,
+          'is-disabled':       this.disabled || this.loading,
+          'is-active':         this.active,
+          'is-circle':         this.circle,
+          'is-margin-bottom':  this.margin
+        }
       }
     },
     methods: {
       click ($event) {
-        // If loading, prevent
-        if (this.loading) return
+        // 1. If loading, prevent
+        if (this.loading) {
+          return
+        }
 
+        // 2. If disabled, $emit error event
         if (!this.disabled) {
-          this.$emit('click', $event, this)
-        } else {
           $event.preventDefault()
           this.$emit('error', $event, this)
+          return
         }
+
+        // 3. Default emit click event
+        this.$emit('click', $event, this)
       }
     }
   })
