@@ -1,10 +1,12 @@
 <p><img width="320" src="docs/vue-human.jpg"></p>
 
-## Version
+`Vue Human` Designed for high quality User Experience. Rich animation and interactive.
 
-> vue-human 2.1.1
+Media response for multiple scenes, e.g. mobile, tablet, desktop.
 
-> vue > 2.2.1
+You can use vue-human to build your mobile application, desktop dashboard and more.
+
+Lasted Version: vue-human 2.1.1
 
 ## Using vue-human in your application
 
