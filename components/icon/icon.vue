@@ -54,6 +54,9 @@
   .mn-icon {
     display: inline-block;
     fill: currentColor;
-    vertical-align: -4px;
+
+    > svg {
+      vertical-align: top;
+    }
   }
 </style>
