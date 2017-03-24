@@ -4,9 +4,9 @@
 
 [![NPM](https://nodei.co/npm/vue-human.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-human)
 
-`Vue Human` Designed for high quality User Experience. Rich animation and interactive.
+`Vue Human` is designed for high quality user experience. It has rich interactive and animation component.
 
-Media response for multiple scenes, e.g. mobile, tablet, desktop. You can use vue-human to build your mobile application, desktop dashboard and more.
+It has media response for multiple scenes, e.g. mobile, tablet, desktop. You can use vue-human to build your mobile application, desktop dashboard and more.
 
 ## Lasted Version
 
