@@ -1,5 +1,9 @@
 <p><img width="320" src="docs/vue-human.jpg"></p>
 
+<p>
+  [![npm version](https://badge.fury.io/js/vue-human.svg)](https://badge.fury.io/js/vue-human)
+</p>
+
 `Vue Human` Designed for high quality User Experience. Rich animation and interactive.
 
 Media response for multiple scenes, e.g. mobile, tablet, desktop. You can use vue-human to build your mobile application, desktop dashboard and more.
