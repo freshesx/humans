@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/vue-human.svg)](https://www.npmjs.com/package/vue-human)
 
+[![NPM](https://nodei.co/npm/vue-human.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-human)
+
 `Vue Human` Designed for high quality User Experience. Rich animation and interactive.
 
 Media response for multiple scenes, e.g. mobile, tablet, desktop. You can use vue-human to build your mobile application, desktop dashboard and more.
