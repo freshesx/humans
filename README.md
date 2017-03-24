@@ -2,11 +2,13 @@
 
 `Vue Human` Designed for high quality User Experience. Rich animation and interactive.
 
-Media response for multiple scenes, e.g. mobile, tablet, desktop.
+---
 
-You can use vue-human to build your mobile application, desktop dashboard and more.
+Media response for multiple scenes, e.g. mobile, tablet, desktop.You can use vue-human to build your mobile application, desktop dashboard and more.
 
-Lasted Version: vue-human 2.1.1
+### Lasted Version
+
+v2.1.1
 
 ## Using vue-human in your application
 
