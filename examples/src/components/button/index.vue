@@ -151,7 +151,7 @@
         setTimeout(() => {
           window.alert('刚刚发生了加载动画')
           button.loading = false
-        }, 100000)
+        }, 3000)
       }
     }
   }
