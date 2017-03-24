@@ -15,7 +15,7 @@
         </mn-card-item>
         <mn-card-item>
           <mn-card-body>
-            <mn-btn theme="primary" :icon="icons.home" @click="onPressButton">按钮</mn-btn>
+            <mn-btn theme="primary" :icon="icons.home">按钮</mn-btn>
             <mn-btn theme="secondary">按钮</mn-btn>
             <mn-btn theme="inverse">按钮</mn-btn>
             <mn-btn theme="warning">按钮</mn-btn>
@@ -58,18 +58,18 @@
     <mn-section>
       <mn-card>
         <mn-card-item>
-          <h5>状态</h5>
+          <h5>状态和事件</h5>
         </mn-card-item>
         <mn-card-item>
           <mn-card-body>
-            <mn-btn theme="primary">Normal</mn-btn>
-            <mn-btn theme="primary" active>Active</mn-btn>
-            <mn-btn theme="primary" disabled>Disabled</mn-btn>
+            <mn-btn theme="primary" @click="onPressButton">Normal</mn-btn>
+            <mn-btn theme="primary" @click="onPressButton" active>Active</mn-btn>
+            <mn-btn theme="primary" @click="onPressButton" @error="errorPressButton" disabled>Disabled</mn-btn>
           </mn-card-body>
         </mn-card-item>
       </mn-card>
       <mn-section-note>
-        @todo: 添加更多的色彩案例
+        具有 <strong>click</strong>, <strong>error</strong> 事件
       </mn-section-note>
     </mn-section>
 
@@ -88,9 +88,6 @@
           </mn-card-body>
         </mn-card-item>
       </mn-card>
-      <mn-section-note>
-        @todo: 添加更多的色彩案例
-      </mn-section-note>
     </mn-section>
 
     <mn-section>
@@ -152,6 +149,9 @@
           window.alert('刚刚发生了加载动画')
           button.loading = false
         }, 3000)
+      },
+      errorPressButton () {
+        window.alert('当前按钮被禁用')
       }
     }
   }
