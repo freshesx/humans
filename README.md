@@ -1,4 +1,4 @@
-<p><img width="320" src="docs/vue-human.jpg"></p>
+<p><img width="320" src="https://raw.githubusercontent.com/HumanUI/vue-human/master/docs/vue-human.jpg"></p>
 
 [![npm version](https://badge.fury.io/js/vue-human.svg)](https://www.npmjs.com/package/vue-human)
 
@@ -8,7 +8,7 @@ Media response for multiple scenes, e.g. mobile, tablet, desktop. You can use vu
 
 ## Lasted Version
 
-v2.1.1 ([Changelog](releases))
+v2.1.1 ([Changelog](https://github.com/HumanUI/vue-human/releases))
 
 ## Using vue-human in your application
 
