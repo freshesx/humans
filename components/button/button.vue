@@ -24,37 +24,24 @@
     props: {
       title: String,
       icon: null,
-      // is disabled
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      active: {
-        type: Boolean,
-        default: false
-      },
       // is-primary, is-secondary, is-error etc.
       type: {
         type: String
-      },
-      // is block
-      block: {
-        type: Boolean,
-        default: false
       },
       // is-sm
       size: {
         type: String
       },
-      // is circle
-      circle: {
-        type: Boolean,
-        default: false
-      },
-      margin: {
-        type: Boolean,
-        default: false
-      }
+      // Disabled
+      disabled: Boolean,
+      // Has active style
+      active: Boolean,
+      // Has block style
+      block: Boolean,
+      // Has circle style
+      circle: Boolean,
+      // Has bottom margin
+      margin: Boolean
     },
     data () {
       return {
