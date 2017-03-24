@@ -23,6 +23,7 @@
     },
     props: {
       title: String,
+      // Alias for MnIcon
       icon: null,
       // is-primary, is-secondary, is-error etc.
       type: {
