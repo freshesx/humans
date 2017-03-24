@@ -1,8 +1,6 @@
 <p><img width="320" src="docs/vue-human.jpg"></p>
 
-<p>
-  [![npm version](https://badge.fury.io/js/vue-human.svg)](https://badge.fury.io/js/vue-human)
-</p>
+[![npm version](https://badge.fury.io/js/vue-human.svg)](https://www.npmjs.com/package/vue-human)
 
 `Vue Human` Designed for high quality User Experience. Rich animation and interactive.
 
