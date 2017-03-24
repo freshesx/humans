@@ -1,10 +1,11 @@
-<p align="center"><img width="320" src="docs/vue-human.jpg"></p>
+<p><img width="320" src="docs/vue-human.jpg"></p>
 
-# Vue Human
+## Version
 
 > vue-human 2.1.1
+> vue > 2.2.1
 
-# Install in your application
+## Using vue-human in your application
 
 Step 1: In your terminal
 
@@ -51,7 +52,7 @@ Vue.use(human)
 Vue.use(totalSuits)
 ```
 
-# Recommend
+## Recommend
 
 You can use vue boilerplate
 
