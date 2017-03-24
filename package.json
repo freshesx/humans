@@ -1,6 +1,6 @@
 {
   "name": "vue-human",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Human UI for vue2, inspired by iOS Human Interface Guidelines",
   "author": "ChaselWu <chasel.wu@vitualreaty.com>",
   "main": "index.js",

@@ -2,7 +2,7 @@
 
 # Vue Human
 
-> vue-human 2.1.0
+> vue-human 2.1.1
 
 # Install in your application
 
