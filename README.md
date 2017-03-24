@@ -3,6 +3,7 @@
 ## Version
 
 > vue-human 2.1.1
+
 > vue > 2.2.1
 
 ## Using vue-human in your application
