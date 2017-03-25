@@ -63,11 +63,11 @@
         return {
           [`is-${this.computedTheme}`]: !!this.computedTheme,
           [`is-${this.size}`]: !!this.size,
-          'is-block':          this.block,
-          'is-disabled':       this.disabled || this.loading,
-          'is-active':         this.active,
-          'is-circle':         this.circle,
-          'is-margin-bottom':  this.margin
+          'is-block': this.block,
+          'is-disabled': this.disabled || this.loading,
+          'is-active': this.active,
+          'is-circle': this.circle,
+          'is-margin-bottom': this.margin
         }
       }
     },

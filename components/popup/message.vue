@@ -74,7 +74,7 @@
       return {
         show: false,
         title: undefined,
-        description: 'You have a message',
+        description: this.$t('mn.popup.messageDescription'),
         icon: undefined,
         type: 'default',  // 'default', 'primary', 'warning', 'error'
         autoClose: true,

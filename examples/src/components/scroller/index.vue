@@ -27,7 +27,7 @@
 
       <mn-section>
         <mn-card>
-          <mn-card-item v-for="item in 20" type="arrow">
+          <mn-card-item v-for="(item, key) in 20" :key="key" type="arrow">
             <mn-card-body>Row {{ item }}</mn-card-body>
           </mn-card-item>
         </mn-card>
