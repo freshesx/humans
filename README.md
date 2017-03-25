@@ -68,3 +68,16 @@ npm install -g vue-cli
 
 vue init HumanUI/webpack my-project
 ```
+
+## Develop vue-human in your computer
+
+``` bash
+# Open the vue-human folder
+# Then yarn install
+$ yarn install
+
+# Open browser in localhost:8888
+$ yarn run dev
+
+# Finally, you can help us to improve vue-human
+```
