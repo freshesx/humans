@@ -14,6 +14,9 @@
         type: Boolean,
         default: false
       }
+    },
+    created () {
+      console && console.warn('建议使用全新 MnColumns 组件取代 MnCols。')
     }
   })
 </script>
