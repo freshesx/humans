@@ -2,7 +2,7 @@
   <span
     v-html="svg"
     class="mn-icon"
-    :style="{ width: `${computedWidth}px`, height: `${computedHeight}px` }"></span>
+    :style="{ width: `${computedWidth}px`, height: `${computedHeight}px`, 'vertical-align': vertical }"></span>
 </template>
 
 <script>
@@ -26,7 +26,8 @@
       scale: {
         type: Number,
         default: 1
-      }
+      },
+      vertical: String
     },
     computed: {
       computedWidth () {
@@ -54,6 +55,10 @@
   .mn-icon {
     display: inline-block;
     fill: currentColor;
-    vertical-align: -4px;
+    vertical-align: baseline;
+
+    > svg {
+      vertical-align: top;
+    }
   }
 </style>
