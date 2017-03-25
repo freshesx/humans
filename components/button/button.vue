@@ -132,7 +132,7 @@
 
     &.is-sm {
       height: 2rem;
-      padding: 0.5rem 1rem;
+      padding: 0.375rem 1rem;
       line-height: 1rem;
       border-radius: $-button-mobile-radius * 0.75;
       font-size: 0.875rem;
