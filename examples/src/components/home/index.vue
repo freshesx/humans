@@ -69,6 +69,16 @@
             ]
           },
           {
+            name: '布局',
+            children: [
+              {
+                name: 'Column',
+                small: '列',
+                link: { name: 'column' }
+              }
+            ]
+          },
+          {
             name: '表单',
             children: [
               {
