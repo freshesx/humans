@@ -17,9 +17,9 @@
               然后判断 touch 模式下，滚动条是否滚动。
             </mn-card-body>
           </mn-card-item>
-          <mn-card-item>
+          <mn-card-item type="link" @click="onOpenConfirm">
             <mn-card-body>
-              <button @click="onOpenConfirm">点击打开 popup</button>
+              点击打开 popup 以测试
             </mn-card-body>
           </mn-card-item>
         </mn-card>
