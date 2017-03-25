@@ -144,7 +144,7 @@
       text-align: center;
       cursor: pointer;
       padding: 0;
-      -webkit-appearance: none;
+      appearance: none;
       -webkit-tap-highlight-color: transparent;
 
       &.is-disabled {
