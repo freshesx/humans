@@ -7,7 +7,7 @@
         <cell-icon :checked="!loading && isAllChecked" @click.native.stop="select"></cell-icon>
       </card-prefix>
       <card-prefix v-if="!hideSelections">
-        全选
+        {{ $t('mn.cell.allSelectedText') }}
         ({{ loading ? 0 : selections.length }})
       </card-prefix>
       <!-- 顶部的中间区域 -->
@@ -26,7 +26,7 @@
     <!-- 当没有一个记录时，则显示提示 -->
     <card-item v-if="contents.length === 0 && !loading">
       <card-body :class="'has-center-text'">
-        <p>没有找到合适的记录</p>
+        <p>{{ $t('mn.cell.noDataText') }}</p>
       </card-body>
     </card-item>
     <!-- default 的 slot 区域，外部调用时，请使用 "template slot"!! 插槽 -->
