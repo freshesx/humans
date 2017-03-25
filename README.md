@@ -1,7 +1,5 @@
 <p><img width="320" src="https://raw.githubusercontent.com/HumanUI/vue-human/master/docs/vue-human.jpg"></p>
 
-[![npm version](https://badge.fury.io/js/vue-human.svg)](https://www.npmjs.com/package/vue-human)
-
 [![NPM](https://nodei.co/npm/vue-human.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-human)
 
 `Vue Human` is designed for high quality user experience. It has rich interactive and animation component.
@@ -67,4 +65,17 @@ You can use vue boilerplate
 npm install -g vue-cli
 
 vue init HumanUI/webpack my-project
+```
+
+## Develop vue-human in your computer
+
+``` bash
+# Open the vue-human folder
+# Then yarn install
+$ yarn install
+
+# Open browser in localhost:8888
+$ yarn run dev
+
+# Finally, you can help us to improve vue-human
 ```

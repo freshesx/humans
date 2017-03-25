@@ -75,8 +75,27 @@
         if (newValue <= this.max) this.$emit('input', newValue)
       },
       input (event) {
-        const newValue = parseInt(event.target.value)
-        if (!isNaN(newValue)) this.$emit('input', newValue)
+        let newValue = parseInt(event.target.value)
+
+        // 非数字
+        if (isNaN(newValue)) {
+          return
+        }
+
+        // 不可小于最小值
+        if (newValue < this.min) {
+          newValue = this.min
+          event.target.value = newValue
+        }
+
+        // 不可大于最大值
+        if (newValue > this.max) {
+          newValue = this.max
+          event.target.value = newValue
+        }
+
+        // 输出
+        this.$emit('input', newValue)
       }
     }
   })
@@ -125,7 +144,7 @@
       text-align: center;
       cursor: pointer;
       padding: 0;
-      -webkit-appearance: none;
+      appearance: none;
       -webkit-tap-highlight-color: transparent;
 
       &.is-disabled {

@@ -3,24 +3,24 @@
     <mn-section>
       <mn-letter>
         <mn-letter-body>
-          <h1>Vue Human</h1>
+          <h1>Counter <small>计数器</small></h1>
         </mn-letter-body>
       </mn-letter>
     </mn-section>
 
-    <mn-section v-for="(menu, menuIndex) in menus" :key="menuIndex">
-      <mn-section-note>
-        {{ menu.name }}
-      </mn-section-note>
+    <mn-section>
       <mn-card>
-        <mn-card-item type="link" @click="$router.push(child.link)" v-for="(child, childIndex) in menu.children" :key="childIndex">
+        <mn-card-item>
+          <h5>基本用法</h5>
+        </mn-card-item>
+        <mn-card-item>
           <mn-card-body>
-            {{ child.name }}
-            <small>{{ child.small }}</small>
+            <mn-counter v-model="models.counter" :min="5"></mn-counter>
           </mn-card-body>
         </mn-card-item>
       </mn-card>
     </mn-section>
+
   </mn-container>
 </template>
 
@@ -34,6 +34,8 @@
   import CardItem from 'vue-human/components/card/card-item'
   import CardBody from 'vue-human/components/card/card-body'
 
+  import Counter from 'vue-human/components/counter/counter'
+
   export default {
     components: {
       [Container.name]: Container,
@@ -43,37 +45,17 @@
       [LetterBody.name]: LetterBody,
       [Card.name]: Card,
       [CardItem.name]: CardItem,
-      [CardBody.name]: CardBody
+      [CardBody.name]: CardBody,
+      [Counter.name]: Counter
     },
     data () {
       return {
-        menus: [
-          {
-            name: '核心',
-            children: [
-              {
-                name: 'Button',
-                small: '按钮',
-                link: { name: 'button' }
-              },
-              {
-                name: 'Icon',
-                small: '图标',
-                link: { name: 'icon' }
-              }
-            ]
-          },
-          {
-            name: '表单',
-            children: [
-              {
-                name: 'Counter',
-                small: '计数器',
-                link: { name: 'counter' }
-              }
-            ]
-          }
-        ]
+        icons: {
+          home: require('vue-human-icons/js/ios/home')
+        },
+        models: {
+          counter: 2
+        }
       }
     }
   }
