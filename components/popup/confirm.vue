@@ -4,7 +4,7 @@
       <mn-card-item>
         <mn-card-body class="has-center-text">
           <h4>{{ title }}</h4>
-          <small>{{ description }}</small>
+          <small v-if="description">{{ description }}</small>
         </mn-card-body>
       </mn-card-item>
       <mn-card-btns type="column">
@@ -44,10 +44,10 @@
     data () {
       return {
         show: false,
-        title: 'Confirm',
-        description: '',
-        cancelText: 'Cancel',
-        confirmText: 'OK'
+        title: this.$t('mn.popup.confirmTitle'),
+        description: undefined,
+        cancelText: this.$t('mn.popup.cancelText'),
+        confirmText: this.$t('mn.popup.confirmText')
       }
     }
   })
