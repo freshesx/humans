@@ -9,6 +9,7 @@
     "scss",
     "suits",
     "util",
+    "locale",
     "index.js"
   ],
   "scripts": {
