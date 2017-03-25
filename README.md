@@ -8,7 +8,7 @@ It has media response for multiple scenes, e.g. mobile, tablet, desktop. You can
 
 ## Lasted Version
 
-v2.1.2 ([Changelog](https://github.com/HumanUI/vue-human/releases))
+v2.2.0 ([Changelog](https://github.com/HumanUI/vue-human/releases))
 
 ## Using vue-human in your application
 
@@ -62,9 +62,14 @@ Vue.use(totalSuits)
 You can use vue boilerplate
 
 ``` bash
-npm install -g vue-cli
+# Install vue-cli
+# @see(https://github.com/vuejs/vue-cli)
+$ npm install -g vue-cli
 
-vue init HumanUI/webpack my-project
+# Init vue project with vue-human
+# How to use vue-cli and webpack boilerplate, you can
+# @see(https://github.com/humanUI/webpack)
+$ vue init HumanUI/webpack my-project
 ```
 
 ## Develop vue-human in your computer

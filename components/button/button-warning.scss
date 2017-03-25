@@ -1,0 +1,20 @@
+$-button-warning: (
+  warning: (
+    normal: (bg: $orange, color: #fff),
+    hover: (bg: darken($orange, 5%)),
+    active: (bg: darken($orange, 8%)),
+    disable: (bg: lighten($orange, 16%))
+  ),
+  warning-outline: (
+    normal: (color: $orange, border: $orange),
+    hover: (color: darken($orange, 5%), border: darken($orange, 5%)),
+    active: (color: darken($orange, 8%), border: darken($orange, 8%)),
+    disable: (color: lighten($orange, 16%), border: lighten($orange, 16%))
+  ),
+  warning-link: (
+    normal: (color: $orange),
+    hover: (color: darken($orange, 5%)),
+    active: (color: darken($orange, 8%)),
+    disable: (color: lighten($orange, 16%))
+  )
+);

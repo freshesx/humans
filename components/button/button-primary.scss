@@ -1,0 +1,20 @@
+$-button-primary: (
+  primary: (
+    normal: (bg: $green, color: #fff),
+    hover: (bg: darken($green, 10%)),
+    active: (bg: darken($green, 16%)),
+    disable: (bg: lighten($green, 16%))
+  ),
+  primary-outline: (
+    normal: (color: $green, border: $green),
+    hover: (color: darken($green, 10%), border: darken($green, 10%)),
+    active: (color: darken($green, 16%), border: darken($green, 16%)),
+    disable: (color: lighten($green, 16%), border: lighten($green, 16%))
+  ),
+  primary-link: (
+    normal: (color: $green),
+    hover: (color: darken($green, 10%)),
+    active: (color: darken($green, 10%)),
+    disable: (color: lighten($green, 16%))
+  )
+);

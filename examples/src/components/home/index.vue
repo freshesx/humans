@@ -60,6 +60,11 @@
                 name: 'Icon',
                 small: '图标',
                 link: { name: 'icon' }
+              },
+              {
+                name: 'Scroller',
+                small: '滚动条',
+                link: { name: 'scroller' }
               }
             ]
           },

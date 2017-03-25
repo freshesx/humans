@@ -7,6 +7,18 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+function includeFolders () {
+  return [
+    resolve('src'),
+    resolve('test'),
+    resolve('../components'),
+    resolve('../util'),
+    resolve('../suits'),
+    resolve('../locale'),
+    resolve('../index.js')
+  ]
+}
+
 module.exports = {
   entry: {
     polyfill: 'babel-polyfill',
@@ -32,7 +44,7 @@ module.exports = {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: "pre",
-        include: [resolve('src'), resolve('test')],
+        include: includeFolders(),
         options: {
           formatter: require('eslint-friendly-formatter')
         }
@@ -45,7 +57,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: includeFolders()
       },
       {
         test: /vue-human[-\w]*\/.*?js$/,

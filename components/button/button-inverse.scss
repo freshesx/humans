@@ -1,0 +1,20 @@
+$-button-inverse: (
+  inverse: (
+    normal: (bg: #505050, color: #fff),
+    hover: (bg: lighten(#505050, 5%)),
+    active: (bg: darken(#505050, 5%)),
+    disable: (bg: lighten(#505050, 5%), color: lighten(#505050, 30%))
+  ),
+  inverse-outline: (
+    normal: (color: #505050, border: #505050),
+    hover: (color: lighten(#505050, 5%), border: lighten(#505050, 5%)),
+    active: (color: darken(#505050, 5%), border: darken(#505050, 5%)),
+    disable: (color: lighten(#505050, 5%), border: lighten(#505050, 5%))
+  ),
+  inverse-link: (
+    normal: (color: #505050),
+    hover: (color: lighten(#505050, 5%)),
+    active: (color: darken(#505050, 5%)),
+    disable: (color: lighten(#505050, 5%))
+  )
+);
