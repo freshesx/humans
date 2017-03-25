@@ -1,95 +1,14 @@
-$-button-default-theme: (
-  // normal
-  primary: (
-    normal: (bg: $green, color: #fff),
-    hover: (bg: darken($green, 10%)),
-    active: (bg: darken($green, 16%)),
-    disable: (bg: lighten($green, 16%)),
-  ),
-  warning: (
-    normal: (bg: $orange, color: #fff),
-    hover: (bg: darken($orange, 5%)),
-    active: (bg: darken($orange, 8%)),
-    disable: (bg: lighten($orange, 16%)),
-  ),
-  error: (
-    normal: (bg: $pink, color: #fff),
-    hover: (bg: darken($pink, 20%)),
-    active: (bg: darken($pink, 20%)),
-    disable: (bg: lighten($pink, 16%)),
-  ),
-  secondary: (
-    normal: (bg: #d9d9d9, color: #000),
-    hover: (bg: darken(#d9d9d9, 10%)),
-    active: (bg: darken(#d9d9d9, 10%)),
-    disable: (bg: darken(#d9d9d9, 10%), color: darken(#d9d9d9, 30%)),
-  ),
-  inverse: (
-    normal: (bg: #505050, color: #fff),
-    hover: (bg: lighten(#505050, 5%)),
-    active: (bg: darken(#505050, 5%)),
-    disable: (bg: lighten(#505050, 5%), color: lighten(#505050, 30%)),
-  ),
-  // outline
-  primary-outline: (
-    normal: (color: $green, border: $green),
-    hover: (color: darken($green, 10%), border: darken($green, 10%)),
-    active: (color: darken($green, 16%), border: darken($green, 16%)),
-    disable: (color: lighten($green, 16%), border: lighten($green, 16%)),
-  ),
-  warning-outline: (
-    normal: (color: $orange, border: $orange),
-    hover: (color: darken($orange, 5%), border: darken($orange, 5%)),
-    active: (color: darken($orange, 8%), border: darken($orange, 8%)),
-    disable: (color: lighten($orange, 16%), border: lighten($orange, 16%)),
-  ),
-  error-outline: (
-    normal: (color: $pink, border: $pink),
-    hover: (color: darken($pink, 20%), border: darken($pink, 20%)),
-    active: (color: darken($pink, 20%), border: darken($pink, 20%)),
-    disable: (color: lighten($pink, 16%), border: lighten($pink, 16%)),
-  ),
-  secondary-outline: (
-    normal: (color: #999, border: #bbb),
-    hover: (color: darken(#999, 20%), border: darken(#bbb, 20%)),
-    active: (color: darken(#999, 20%), border: darken(#bbb, 20%)),
-    disable: (color: darken(#999, 20%), border: darken(#bbb, 20%)),
-  ),
-  inverse-outline: (
-    normal: (color: #505050, border: #505050),
-    hover: (color: lighten(#505050, 5%), border: lighten(#505050, 5%)),
-    active: (color: darken(#505050, 5%), border: darken(#505050, 5%)),
-    disable: (color: lighten(#505050, 5%), border: lighten(#505050, 5%)),
-  ),
-  // link
-  primary-link: (
-    normal: (color: $green),
-    hover: (color: darken($green, 10%)),
-    active: (color: darken($green, 10%)),
-    disable: (color: lighten($green, 16%)),
-  ),
-  warning-link: (
-    normal: (color: $orange),
-    hover: (color: darken($orange, 5%)),
-    active: (color: darken($orange, 8%)),
-    disable: (color: lighten($orange, 16%)),
-  ),
-  error-link: (
-    normal: (color: $pink),
-    hover: (color: darken($pink, 20%)),
-    active: (color: darken($pink, 20%)),
-    disable: (color: lighten($pink, 16%)),
-  ),
-  secondary-link: (
-    normal: (color: #999),
-    hover: (color: #000),
-    active: (color: #000),
-    disable: (color: #ccc),
-  ),
-  inverse-link: (
-    normal: (color: #505050),
-    hover: (color: lighten(#505050, 5%)),
-    active: (color: darken(#505050, 5%)),
-    disable: (color: lighten(#505050, 5%)),
-  ),
+@import "../../scss/mixins/merge";
+@import "./button-primary";
+@import "./button-secondary";
+@import "./button-warning";
+@import "./button-error";
+@import "./button-inverse";
+
+$-button-default-theme: map-collect(
+  $-button-primary,
+  $-button-secondary,
+  $-button-warning,
+  $-button-error,
+  $-button-inverse
 );

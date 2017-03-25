@@ -1,0 +1,20 @@
+$-button-error: (
+  error: (
+    normal: (bg: $pink, color: #fff),
+    hover: (bg: darken($pink, 20%)),
+    active: (bg: darken($pink, 20%)),
+    disable: (bg: lighten($pink, 16%))
+  ),
+  error-outline: (
+    normal: (color: $pink, border: $pink),
+    hover: (color: darken($pink, 20%), border: darken($pink, 20%)),
+    active: (color: darken($pink, 20%), border: darken($pink, 20%)),
+    disable: (color: lighten($pink, 16%), border: lighten($pink, 16%))
+  ),
+  error-link: (
+    normal: (color: $pink),
+    hover: (color: darken($pink, 20%)),
+    active: (color: darken($pink, 20%)),
+    disable: (color: lighten($pink, 16%))
+  )
+);
