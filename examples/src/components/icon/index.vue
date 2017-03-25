@@ -31,6 +31,24 @@
       </mn-section-note>
     </mn-section>
 
+    <mn-section>
+      <mn-card>
+        <mn-card-item>
+          <h5><mn-icon :name="icons.contactOutline"></mn-icon> 放大缩小</h5>
+        </mn-card-item>
+        <mn-card-item>
+          <mn-card-body>
+            <mn-icon :name="icons.contactOutline" :scale="0.6" vertical="-6px"></mn-icon> 你好
+            <mn-icon :name="icons.contactOutline" vertical="-2px"></mn-icon> 你好
+            <mn-icon :name="icons.contactOutline" :scale="2" vertical="10px"></mn-icon> 你好
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+      <mn-section-note>
+        <div>@todo 目前仅能通过 vertical 属性来调整衬线对齐</div>
+      </mn-section-note>
+    </mn-section>
+
   </mn-container>
 </template>
 
