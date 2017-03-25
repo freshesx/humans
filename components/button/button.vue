@@ -106,9 +106,9 @@
   // @class .btn
   //
   .#{$-button} {
-    display: inline-block;
+    display: inline-flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
