@@ -62,6 +62,16 @@
                 link: { name: 'icon' }
               }
             ]
+          },
+          {
+            name: '表单',
+            children: [
+              {
+                name: 'Counter',
+                small: '计数器',
+                link: { name: 'counter' }
+              }
+            ]
           }
         ]
       }

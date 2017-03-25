@@ -19,6 +19,11 @@ const router = new VueRouter({
       path: '/icon',
       name: 'icon',
       component: resolve => { require(['../components/icon'], resolve) }
+    },
+    {
+      path: '/counter',
+      name: 'counter',
+      component: resolve => { require(['../components/counter'], resolve) }
     }
   ]
 })
