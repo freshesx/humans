@@ -22,6 +22,17 @@ export default {
       .then(translations => {
         Vue.locale(this.$vue.config.lang, merge.all(translations))
       })
+
+    // Merge default screens and options screens
+    this.$screens = [
+      ...[
+        { name: 'mobile', min: 0 },
+        { name: 'tablet', min: 768 },
+        { name: 'desktop', min: 992 },
+        { name: 'widescreen', min: 1200 }
+      ],
+      ...Array.isArray(options.screens) ? options.screens : []
+    ]
   },
 
   mergeLocals (locales) {
