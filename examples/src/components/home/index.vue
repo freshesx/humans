@@ -8,12 +8,12 @@
       </mn-letter>
     </mn-section>
 
-    <mn-section v-for="menu in menus">
+    <mn-section v-for="(menu, menuIndex) in menus" :key="menuIndex">
       <mn-section-note>
         {{ menu.name }}
       </mn-section-note>
       <mn-card>
-        <mn-card-item type="link" @click="$router.push(child.link)" v-for="child in menu.children">
+        <mn-card-item type="link" @click="$router.push(child.link)" v-for="(child, childIndex) in menu.children" :key="childIndex">
           <mn-card-body>
             {{ child.name }}
             <small>{{ child.small }}</small>
