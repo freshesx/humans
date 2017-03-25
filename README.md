@@ -62,9 +62,14 @@ Vue.use(totalSuits)
 You can use vue boilerplate
 
 ``` bash
-npm install -g vue-cli
+# Install vue-cli
+# @see(https://github.com/vuejs/vue-cli)
+$ npm install -g vue-cli
 
-vue init HumanUI/webpack my-project
+# Init vue project with vue-human
+# How to use vue-cli and webpack boilerplate, you can
+# @see(https://github.com/humanUI/webpack)
+$ vue init HumanUI/webpack my-project
 ```
 
 ## Develop vue-human in your computer
