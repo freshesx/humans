@@ -10,7 +10,7 @@ It has media response for multiple scenes, e.g. mobile, tablet, desktop. You can
 
 ## Lasted Version
 
-v2.1.1 ([Changelog](https://github.com/HumanUI/vue-human/releases))
+v2.1.2 ([Changelog](https://github.com/HumanUI/vue-human/releases))
 
 ## Using vue-human in your application
 
