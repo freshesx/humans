@@ -4,7 +4,7 @@
     <card-item v-if="!hideSelections || $slots.action || $slots.title" type="cursor">
       <!-- 如果隐藏多选功能，则不显示，并且当加载的时候，选中数量和图标变为未选中 -->
       <card-prefix v-if="!hideSelections">
-        <cell-icon :checked="!loading && isAllChecked" @click.native.stop="select"></cell-icon>
+        <cell-icon :checked="!loading && isAllChecked" @click.native.stop="onAddSelections"></cell-icon>
       </card-prefix>
       <card-prefix v-if="!hideSelections">
         {{ $t('mn.cell.allSelectedText') }}
@@ -123,7 +123,7 @@
       /**
        * 全选的点击事件
        */
-      select () {
+      onAddSelections () {
         if (this.isAllChecked) {
           // 清除
           this.clearSelections()
