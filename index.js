@@ -1,7 +1,7 @@
 import './scss/bases.scss'
 import Vuelidate from 'vuelidate'
 import VueI18n from 'vue-i18n'
-import merge from 'deepmerge'
+import defaultsDeep from 'lodash/defaultsDeep'
 import componentLocales from './locale'
 
 export default {
@@ -20,7 +20,7 @@ export default {
     // Use Promise all
     this.mergeLocals([ componentLocales, options.locales ])
       .then(translations => {
-        Vue.locale(this.$vue.config.lang, merge.all(translations))
+        Vue.locale(this.$vue.config.lang, defaultsDeep(...translations))
       })
 
     // Merge default screens and options screens
