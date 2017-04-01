@@ -6,9 +6,7 @@
 
 <script>
   import Element from '../../util/element'
-  import isString from 'lodash/isString'
-  import isInteger from 'lodash/isInteger'
-  import isPlainObject from 'lodash/isPlainObject'
+  import lodash from 'lodash'
 
   const MEDIA_KEYWORDS = ['span', 'offset', 'order']
 
@@ -38,26 +36,26 @@
           ...this.widescreen ? { widescreen: this.widescreen } : undefined
         }
 
-        for (let [value, key] of Object.entries(media)) {
+        lodash.forIn(media, (value, key) => {
           let queries = {}
 
-          if (isString(value)) {
+          if (lodash.isString(value)) {
             // 字符串情况，将 `,` 和 `空格` 的字符串分解为数组
             value.split(/,\s*/).forEach((item, index) => {
               // 如果字符为数字的话，则表达其为 order
-              if (isString(item) && item.length > 0 && isInteger(Number(item))) {
+              if (lodash.isString(item) && item.length > 0 && lodash.isInteger(Number(item))) {
                 queries[MEDIA_KEYWORDS[2]] = Number(item)
               } else {
                 queries[MEDIA_KEYWORDS[index]] = item
               }
             })
-          } else if (isPlainObject(value)) {
+          } else if (lodash.isPlainObject(value)) {
             // 对象情况
             queries = value
           }
 
           media[key] = queries
-        }
+        })
 
         return media
       },
@@ -66,10 +64,10 @@
         let styles = []
         let media = this.computedMedia
 
-        Object.keys(media).forEach(mediaName => {
-          Object.keys(media[mediaName]).forEach(name => {
-            if (name === 'span') classes.push({ [`is-${mediaName}-${media[mediaName][name]}`]: true })
-            if (name === 'offset') classes.push({ [`is-${mediaName}-offset-${media[mediaName][name]}`]: true })
+        lodash.forIn(media, (mediaValue, mediaName) => {
+          lodash.forIn(mediaValue, (value, name) => {
+            if (name === 'span') classes.push({ [`is-${mediaName}-${value}`]: true })
+            if (name === 'offset') classes.push({ [`is-${mediaName}-offset-${value}`]: true })
             if (name === 'order') styles.push({ order: value })
           })
         })
