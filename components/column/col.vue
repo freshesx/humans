@@ -31,36 +31,16 @@
     },
     computed: {
       computedMedia () {
-        // const classes = []
-        let media = {
-          ...this.mobile ? { mobile: this.mobile } : undefined,
-          ...this.tablet ? { tablet: this.tablet } : undefined,
-          ...this.desktop ? { desktop: this.desktop } : undefined,
-          ...this.widescreen ? { widescreen: this.widescreen } : undefined
-        }
+        const medias = {}
+        const mediasName = ['mobile', 'tablet', 'desktop', 'widescreen']
 
-        forIn(media, (value, key) => {
-          let queries = {}
-
-          if (isString(value)) {
-            // 字符串情况，将 `,` 和 `空格` 的字符串分解为数组
-            value.split(/,\s*/).forEach((item, index) => {
-              // 如果字符为数字的话，则表达其为 order
-              if (isString(item) && item.length > 0 && isInteger(Number(item))) {
-                queries[MEDIA_KEYWORDS[2]] = Number(item)
-              } else {
-                queries[MEDIA_KEYWORDS[index]] = item
-              }
-            })
-          } else if (isPlainObject(value)) {
-            // 对象情况
-            queries = value
-          }
-
-          media[key] = queries
+        mediasName.forEach(name => {
+          // 为空不处理
+          if (typeof this[name] === 'undefined') return
+          medias[name] = this.convertMediaQueries(this[name])
         })
 
-        return media
+        return medias
       },
       queries () {
         let classes = []
@@ -82,6 +62,35 @@
       },
       styles () {
         return this.queries.styles
+      }
+    },
+    methods: {
+      convertMediaQueries (queries) {
+        if (isString(queries)) {
+          // 字符串
+          return this.convertStringMediaQueries(queries)
+        } else if (isPlainObject(queries)) {
+          // 对象
+          return queries
+        }
+        console && console.warn('Col 组件传递的 props 参数不正确。')
+      },
+      convertStringMediaQueries (queries) {
+        // 允许 x, x 或 x,x
+        const splitReg = /,\s*/
+        const computedQueries = {}
+
+        queries.split(splitReg).forEach((item, index) => {
+          if (isString(item) && item.length > 0 && isInteger(Number(item))) {
+            // 如果字符为数字的话，则表达其为 order
+            computedQueries[MEDIA_KEYWORDS[2]] = Number(item)
+          } else {
+            // 默认情况
+            computedQueries[MEDIA_KEYWORDS[index]] = item
+          }
+        })
+
+        return computedQueries
       }
     },
     created () {
