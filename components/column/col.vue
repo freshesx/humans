@@ -6,7 +6,10 @@
 
 <script>
   import Element from '../../util/element'
-  import lodash from 'lodash'
+  import forIn from 'lodash/forIn'
+  import isString from 'lodash/isString'
+  import isInteger from 'lodash/isInteger'
+  import isPlainObject from 'lodash/isPlainObject'
 
   const MEDIA_KEYWORDS = ['span', 'offset', 'order']
 
@@ -36,20 +39,20 @@
           ...this.widescreen ? { widescreen: this.widescreen } : undefined
         }
 
-        lodash.forIn(media, (value, key) => {
+        forIn(media, (value, key) => {
           let queries = {}
 
-          if (lodash.isString(value)) {
+          if (isString(value)) {
             // 字符串情况，将 `,` 和 `空格` 的字符串分解为数组
             value.split(/,\s*/).forEach((item, index) => {
               // 如果字符为数字的话，则表达其为 order
-              if (lodash.isString(item) && item.length > 0 && lodash.isInteger(Number(item))) {
+              if (isString(item) && item.length > 0 && isInteger(Number(item))) {
                 queries[MEDIA_KEYWORDS[2]] = Number(item)
               } else {
                 queries[MEDIA_KEYWORDS[index]] = item
               }
             })
-          } else if (lodash.isPlainObject(value)) {
+          } else if (isPlainObject(value)) {
             // 对象情况
             queries = value
           }
@@ -64,8 +67,8 @@
         let styles = []
         let media = this.computedMedia
 
-        lodash.forIn(media, (mediaValue, mediaName) => {
-          lodash.forIn(mediaValue, (value, name) => {
+        forIn(media, (mediaValue, mediaName) => {
+          forIn(mediaValue, (value, name) => {
             if (name === 'span') classes.push({ [`is-${mediaName}-${value}`]: true })
             if (name === 'offset') classes.push({ [`is-${mediaName}-offset-${value}`]: true })
             if (name === 'order') styles.push({ order: value })
