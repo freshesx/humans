@@ -55,6 +55,12 @@
       }
     },
     methods: {
+      /**
+       * 将字符串或对象的值转化为对象格式
+       * @protected
+       * @param {String|Object} queries
+       * @return {Object}
+       */
       convertMediaQueries (queries) {
         if (isString(queries)) {
           return this.convertStringMediaQueries(queries)
@@ -68,12 +74,17 @@
        * 将字符串的值转化为对象格式
        * @protected
        * @param {String} queries
+       * @example
+       * // return
+       * // {
+       * //   span: 'three',
+       * //   offset: 'three',
+       * //   order: 1
+       * // }
+       * convertStringMediaQueries('three, three, 1')
        * @return {Object}
        */
       convertStringMediaQueries (queries) {
-        // @params queries
-        // 'three, three, 1'
-
         // 允许 x, x 或 x,x
         const splitReg = /,\s*/
         const computedQueries = {}
@@ -93,12 +104,6 @@
           }
         })
 
-        // @return object
-        // {
-        //   span: 'three',
-        //   offset: 'three',
-        //   order: 1
-        // }
         return computedQueries
       }
     },
