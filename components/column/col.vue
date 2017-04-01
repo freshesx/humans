@@ -6,7 +6,6 @@
 
 <script>
   import Element from '../../util/element'
-  // import forIn from 'lodash/forIn'
   import isString from 'lodash/isString'
   import isInteger from 'lodash/isInteger'
   import isPlainObject from 'lodash/isPlainObject'
