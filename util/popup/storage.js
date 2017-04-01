@@ -1,5 +1,3 @@
-import lodash from 'lodash'
-
 let storage = []
 
 export default {
@@ -7,7 +5,7 @@ export default {
     storage.push(item)
   },
   removeItem (item) {
-    lodash.pull(storage, item)
+    storage.splice(storage.indexOf(item), 1)
   },
   items () {
     return storage

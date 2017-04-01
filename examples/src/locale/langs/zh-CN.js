@@ -1,1 +1,9 @@
-export default {}
+export default {
+  examples: {
+    menus: {
+      core: '核心',
+      layout: '布局',
+      form: '表单 Form'
+    }
+  }
+}

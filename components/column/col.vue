@@ -6,9 +6,9 @@
 
 <script>
   import Element from '../../util/element'
-  import lodash from 'lodash'
-
-  const MEDIA_KEYWORDS = ['span', 'offset', 'order']
+  import isString from 'lodash/isString'
+  import isInteger from 'lodash/isInteger'
+  import isPlainObject from 'lodash/isPlainObject'
 
   export default new Element({
     name: 'mn-col',
@@ -27,48 +27,21 @@
       }
     },
     computed: {
-      computedMedia () {
-        // const classes = []
-        let media = {
-          ...this.mobile ? { mobile: this.mobile } : undefined,
-          ...this.tablet ? { tablet: this.tablet } : undefined,
-          ...this.desktop ? { desktop: this.desktop } : undefined,
-          ...this.widescreen ? { widescreen: this.widescreen } : undefined
-        }
-
-        lodash.forIn(media, (value, key) => {
-          let queries = {}
-
-          if (lodash.isString(value)) {
-            // 字符串情况，将 `,` 和 `空格` 的字符串分解为数组
-            value.split(/,\s*/).forEach((item, index) => {
-              // 如果字符为数字的话，则表达其为 order
-              if (lodash.isString(item) && item.length > 0 && lodash.isInteger(Number(item))) {
-                queries[MEDIA_KEYWORDS[2]] = Number(item)
-              } else {
-                queries[MEDIA_KEYWORDS[index]] = item
-              }
-            })
-          } else if (lodash.isPlainObject(value)) {
-            // 对象情况
-            queries = value
-          }
-
-          media[key] = queries
-        })
-
-        return media
-      },
       queries () {
-        let classes = []
-        let styles = []
-        let media = this.computedMedia
+        const classes = []
+        const styles = []
+        const mediasName = ['mobile', 'tablet', 'desktop', 'widescreen']
 
-        lodash.forIn(media, (mediaValue, mediaName) => {
-          lodash.forIn(mediaValue, (value, name) => {
-            if (name === 'span') classes.push({ [`is-${mediaName}-${value}`]: true })
-            if (name === 'offset') classes.push({ [`is-${mediaName}-offset-${value}`]: true })
-            if (name === 'order') styles.push({ order: value })
+        mediasName.forEach(name => {
+          if (typeof this[name] === 'undefined') return
+
+          const media = this.convertMediaQueries(this[name])
+
+          Object.keys(media).forEach(tag => {
+            const value = media[tag]
+            if (tag === 'span') classes.push([ `is-${name}-${value}` ])
+            if (tag === 'offset') classes.push([ `is-${name}-offset-${value}` ])
+            if (tag === 'order') styles.push({ order: value })
           })
         })
 
@@ -79,6 +52,59 @@
       },
       styles () {
         return this.queries.styles
+      }
+    },
+    methods: {
+      /**
+       * 将字符串或对象的值转化为对象格式
+       * @protected
+       * @param {String|Object} queries
+       * @return {Object}
+       */
+      convertMediaQueries (queries) {
+        if (isString(queries)) {
+          return this.convertStringMediaQueries(queries)
+        } else if (isPlainObject(queries)) {
+          return queries
+        } else {
+          return {}
+        }
+      },
+      /**
+       * 将字符串的值转化为对象格式
+       * @protected
+       * @param {String} queries
+       * @example
+       * // return
+       * // {
+       * //   span: 'three',
+       * //   offset: 'three',
+       * //   order: 1
+       * // }
+       * convertStringMediaQueries('three, three, 1')
+       * @return {Object}
+       */
+      convertStringMediaQueries (queries) {
+        // 允许 x, x 或 x,x
+        const splitReg = /,\s*/
+        const computedQueries = {}
+        const MEDIA_KEYWORDS = ['span', 'offset', 'order']
+
+        // @case 1: 'three, three, 1'
+        // @case 2: 'three, 2'
+        // @case 3: '2'
+        // 将字符串拆解并遍历
+        // 如果 value 为字符串格式的数字，如 '2'，则优先转化为相对应 order 值
+        // 否则使用默认情况对应 MEDIA_KEYWORDS
+        queries.split(splitReg).forEach((value, index) => {
+          if (isString(value) && value.length > 0 && isInteger(Number(value))) {
+            computedQueries['order'] = Number(value)
+          } else {
+            computedQueries[MEDIA_KEYWORDS[index]] = value
+          }
+        })
+
+        return computedQueries
       }
     }
   })

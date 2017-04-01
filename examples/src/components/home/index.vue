@@ -49,7 +49,7 @@
       return {
         menus: [
           {
-            name: '核心',
+            name: this.$t('examples.menus.core'),
             children: [
               {
                 name: 'Button',
@@ -69,7 +69,17 @@
             ]
           },
           {
-            name: '表单',
+            name: this.$t('examples.menus.layout'),
+            children: [
+              {
+                name: 'Column',
+                small: '列',
+                link: { name: 'column' }
+              }
+            ]
+          },
+          {
+            name: this.$t('examples.menus.form'),
             children: [
               {
                 name: 'Counter',

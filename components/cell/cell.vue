@@ -4,7 +4,7 @@
     <card-item v-if="!hideSelections || $slots.action || $slots.title" type="cursor">
       <!-- 如果隐藏多选功能，则不显示，并且当加载的时候，选中数量和图标变为未选中 -->
       <card-prefix v-if="!hideSelections">
-        <cell-icon :checked="!loading && isAllChecked" @click.native.stop="select"></cell-icon>
+        <cell-icon :checked="!loading && isAllChecked" @click.native.stop="onAddSelections"></cell-icon>
       </card-prefix>
       <card-prefix v-if="!hideSelections">
         {{ $t('mn.cell.allSelectedText') }}
@@ -65,12 +65,17 @@
       hideSelections: {
         type: Boolean,
         default: false
+      },
+      selections: {
+        type: Array,
+        default: () => {
+          return []
+        }
       }
     },
     data () {
       return {
-        loading: false,
-        selections: []
+        loading: false
       }
     },
     methods: {
@@ -97,35 +102,42 @@
        * @param {*} item
        */
       toggleSelection (item) {
-        let index = this.selections.indexOf(item)
+        const selections = this.selections.concat([])
+
+        let index = selections.indexOf(item)
 
         if (index > -1) {
-          this.selections.splice(index, 1)
+          selections.splice(index, 1)
         } else {
-          this.selections.push(item)
+          selections.push(item)
         }
+
+        this.emitSelections(selections)
       },
       /**
        * 清除选中数组
        */
       clearSelections () {
-        this.selections = []
+        this.emitSelections([])
       },
       /**
        * 全选的点击事件
        */
-      select () {
+      onAddSelections () {
         if (this.isAllChecked) {
           // 清除
           this.clearSelections()
         } else {
           // 全部添加
-          this.contents.forEach(item => {
-            if (!this.selections.includes(item)) {
-              this.selections.push(item)
-            }
-          })
+          const selections = this.contents.concat([])
+          this.emitSelections(selections)
         }
+      },
+      /**
+       * 触发修改 selections
+       */
+      emitSelections (selections) {
+        this.$emit('selections', selections)
       }
     },
     computed: {
