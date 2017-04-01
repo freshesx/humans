@@ -106,9 +106,6 @@
 
         return computedQueries
       }
-    },
-    created () {
-      console && console.warn('建议使用全新 MnColumn 组件取代 MnCol。')
     }
   })
 </script>
