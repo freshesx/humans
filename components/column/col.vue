@@ -64,7 +64,16 @@
           return {}
         }
       },
+      /**
+       * 将字符串的值转化为对象格式
+       * @protected
+       * @param {String} queries
+       * @return {Object}
+       */
       convertStringMediaQueries (queries) {
+        // @params queries
+        // 'three, three, 1'
+
         // 允许 x, x 或 x,x
         const splitReg = /,\s*/
         const computedQueries = {}
@@ -84,6 +93,12 @@
           }
         })
 
+        // @return object
+        // {
+        //   span: 'three',
+        //   offset: 'three',
+        //   order: 1
+        // }
         return computedQueries
       }
     },
