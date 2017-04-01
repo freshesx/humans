@@ -35,7 +35,6 @@
         const mediasName = ['mobile', 'tablet', 'desktop', 'widescreen']
 
         mediasName.forEach(name => {
-          // 为空不处理
           if (typeof this[name] === 'undefined') return
           medias[name] = this.convertMediaQueries(this[name])
         })
