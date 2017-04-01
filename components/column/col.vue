@@ -6,12 +6,10 @@
 
 <script>
   import Element from '../../util/element'
-  import forIn from 'lodash/forIn'
+  // import forIn from 'lodash/forIn'
   import isString from 'lodash/isString'
   import isInteger from 'lodash/isInteger'
   import isPlainObject from 'lodash/isPlainObject'
-
-  const MEDIA_KEYWORDS = ['span', 'offset', 'order']
 
   export default new Element({
     name: 'mn-col',
@@ -30,27 +28,21 @@
       }
     },
     computed: {
-      computedMedia () {
-        const medias = {}
+      queries () {
+        const classes = []
+        const styles = []
         const mediasName = ['mobile', 'tablet', 'desktop', 'widescreen']
 
         mediasName.forEach(name => {
           if (typeof this[name] === 'undefined') return
-          medias[name] = this.convertMediaQueries(this[name])
-        })
 
-        return medias
-      },
-      queries () {
-        let classes = []
-        let styles = []
-        let media = this.computedMedia
+          const media = this.convertMediaQueries(this[name])
 
-        forIn(media, (mediaValue, mediaName) => {
-          forIn(mediaValue, (value, name) => {
-            if (name === 'span') classes.push({ [`is-${mediaName}-${value}`]: true })
-            if (name === 'offset') classes.push({ [`is-${mediaName}-offset-${value}`]: true })
-            if (name === 'order') styles.push({ order: value })
+          Object.keys(media).forEach(tag => {
+            const value = media[tag]
+            if (tag === 'span') classes.push([ `is-${name}-${value}` ])
+            if (tag === 'offset') classes.push([ `is-${name}-offset-${value}` ])
+            if (tag === 'order') styles.push({ order: value })
           })
         })
 
@@ -66,26 +58,30 @@
     methods: {
       convertMediaQueries (queries) {
         if (isString(queries)) {
-          // 字符串
           return this.convertStringMediaQueries(queries)
         } else if (isPlainObject(queries)) {
-          // 对象
           return queries
+        } else {
+          return {}
         }
-        console && console.warn('Col 组件传递的 props 参数不正确。')
       },
       convertStringMediaQueries (queries) {
         // 允许 x, x 或 x,x
         const splitReg = /,\s*/
         const computedQueries = {}
+        const MEDIA_KEYWORDS = ['span', 'offset', 'order']
 
-        queries.split(splitReg).forEach((item, index) => {
-          if (isString(item) && item.length > 0 && isInteger(Number(item))) {
-            // 如果字符为数字的话，则表达其为 order
-            computedQueries[MEDIA_KEYWORDS[2]] = Number(item)
+        // @case 1: 'three, three, 1'
+        // @case 2: 'three, 2'
+        // @case 3: '2'
+        // 将字符串拆解并遍历
+        // 如果 value 为字符串格式的数字，如 '2'，则优先转化为相对应 order 值
+        // 否则使用默认情况对应 MEDIA_KEYWORDS
+        queries.split(splitReg).forEach((value, index) => {
+          if (isString(value) && value.length > 0 && isInteger(Number(value))) {
+            computedQueries['order'] = Number(value)
           } else {
-            // 默认情况
-            computedQueries[MEDIA_KEYWORDS[index]] = item
+            computedQueries[MEDIA_KEYWORDS[index]] = value
           }
         })
 
