@@ -72,6 +72,11 @@
             name: this.$t('examples.menus.layout'),
             children: [
               {
+                name: 'Col',
+                small: '列',
+                link: { name: 'legacyColumn' }
+              },
+              {
                 name: 'Column',
                 small: '列',
                 link: { name: 'column' }
