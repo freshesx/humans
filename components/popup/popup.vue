@@ -14,20 +14,17 @@
   export default new Element({
     name: 'mn-popup',
     props: {
-      show: {
-        type: Boolean,
-        default: false
-      },
-      animation: {
-        type: String,
-        default: 'fadeIn'
-      },
+      show: Boolean,
       masked: {
         type: Boolean,
         default: true
       },
       zIndex: {
         type: Number
+      },
+      animation: {
+        type: String,
+        default: 'fadeIn'
       }
     },
     methods: {
