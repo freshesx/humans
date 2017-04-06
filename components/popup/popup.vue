@@ -8,7 +8,6 @@
 
 <script>
   import Element from '../../util/Element'
-  import Vue from 'vue'
   import maskElement from './mask'
   import { getZIndex } from './layer'
 
@@ -36,27 +35,24 @@
       closePopup () {
         this.$emit('close')
       },
+      /**
+       * 如果需要打开 mask，则构建 maskElement 并监听 close 事件
+       * @param {Number} zIndex
+       */
       appendMask (zIndex) {
         if (this.masked) {
-          this.mask = new (Vue.extend(maskElement))({
-            el: document.createElement('div')
-          })
-          document.body.appendChild(this.mask.$el)
+          this.mask = maskElement.create().appendToBody()
           this.mask.zIndex = zIndex
           this.mask.show = true
-
-          // Listen mask.close click event, and exec this.close()
           this.mask.$on('close', () => {
             this.closePopup()
           })
         }
       },
       destroyMask () {
-        // If extis mask instance, then destory them
         if (this.mask) {
-          this.mask.show = false
-          document.body.removeChild(this.mask.$el)
-          this.mask.$destroy()
+          this.mask.closeAndDestroy()
+          this.mask = undefined
         }
       }
     },
