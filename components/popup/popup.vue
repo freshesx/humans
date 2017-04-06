@@ -1,9 +1,6 @@
 <template>
   <transition :name="transition">
-    <div
-      class="mn-popup"
-      :style="zIndexStyle"
-      v-if="show">
+    <div class="mn-popup" :style="zIndexStyle" v-if="show">
       <slot></slot>
     </div>
   </transition>
