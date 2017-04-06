@@ -27,12 +27,12 @@
 
 <script>
   import Element from '../../util/Element'
-  import Popup from './popup'
-  import PopupCard from '../popup/popup-card'
-  import CardItem from '../card/card-item'
-  import CardBody from '../card/card-body'
-  import CardPrefix from '../card/card-prefix'
-  import CardSuffix from '../card/card-suffix'
+  import popup from '../popup/popup'
+  import popupCard from '../popup/popup-card'
+  import cardItem from '../card/card-item'
+  import cardBody from '../card/card-body'
+  import cardPrefix from '../card/card-prefix'
+  import cardSuffix from '../card/card-suffix'
   import icon from '../icon/icon'
 
   import chatbubble from 'vue-human-icons/js/ios/chatbubble'
@@ -50,12 +50,12 @@
 
   export default new Element({
     components: {
-      [Popup.name]: Popup,
-      [PopupCard.name]: PopupCard,
-      [CardItem.name]: CardItem,
-      [CardBody.name]: CardBody,
-      [CardPrefix.name]: CardPrefix,
-      [CardSuffix.name]: CardSuffix,
+      [popup.name]: popup,
+      [popupCard.name]: popupCard,
+      [cardItem.name]: cardItem,
+      [cardBody.name]: cardBody,
+      [cardPrefix.name]: cardPrefix,
+      [cardSuffix.name]: cardSuffix,
       [icon.name]: icon
     },
     methods: {
