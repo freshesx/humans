@@ -62,18 +62,12 @@
     },
     watch: {
       show (newValue) {
-        // If show is true, append mask to body, and deliver z-index
+        // 监听 show 的变化，true 则插入 mask，false 则销毁 mask
+        // mask 的 z-index 比 popup 小 1
         if (newValue) {
-          document.body.appendChild(this.$el)
           this.appendMask(this.computedZIndex - 1)
-        }
-
-        if (!newValue) {
+        } else {
           this.destroyMask()
-          setTimeout(() => {
-            document.body.removeChild(this.$el)
-            this.$destroy()
-          }, 3000)
         }
       }
     },
