@@ -7,7 +7,6 @@
   "files": [
     "components",
     "scss",
-    "suits",
     "util",
     "locale",
     "index.js"
