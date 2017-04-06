@@ -15,7 +15,7 @@
 <script>
   import Element from '../../util/Element'
   import { addStorage, getScrollTop } from './storage'
-  import popupStorage from '../../util/popup/storage'
+  import { savedPopups } from '../popup/storage'
 
   export default new Element({
     name: 'mn-scroller',
@@ -115,8 +115,8 @@
     },
     beforeDestroy () {
       // 设定一个容器存储所有的 popup，离开当前页面时自动关闭
-      popupStorage.items().forEach(item => {
-        item.show = false
+      savedPopups().forEach(popupComponent => {
+        popupComponent.close()
       })
     },
     mounted () {
