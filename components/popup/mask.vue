@@ -6,11 +6,21 @@
 
 <script>
   import Element from '../../util/Element'
+  import Vue from 'vue'
 
   export default new Element({
     methods: {
       close () {
         this.$emit('close')
+      },
+      closeAndDestroy () {
+        this.show = false
+        document.body.removeChild(this.$el)
+        this.$destroy()
+      },
+      appendToBody () {
+        document.body.appendChild(this.$el)
+        return this
       }
     },
     data () {
@@ -18,6 +28,11 @@
         zIndex: 2000,
         show: false
       }
+    },
+    create () {
+      const el = document.createElement('div')
+      const MaskComponent = Vue.extend(this)
+      return new MaskComponent({ el })
     }
   })
 </script>
