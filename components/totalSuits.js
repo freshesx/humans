@@ -11,6 +11,7 @@ import slideBarSuits from '../components/slide-bar'
 import carouselSuits from '../components/carousel'
 import cellSuits from '../components/cell'
 import imageSuits from '../components/image'
+import actionCardSuits from '../components/action-card'
 
 export default new Suits([
   basicSuits,
@@ -24,5 +25,6 @@ export default new Suits([
   slideBarSuits,
   carouselSuits,
   cellSuits,
-  imageSuits
+  imageSuits,
+  actionCardSuits
 ])
