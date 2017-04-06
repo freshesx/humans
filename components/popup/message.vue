@@ -3,7 +3,7 @@
     :show="show"
     :class="[ 'mn-popup-message' ]"
     :masked="false"
-    animation="slideInUp">
+    animation="slideInTop">
     <mn-popup-card :class="[ 'mn-popup-message-card' ]">
       <mn-card-item :class="[ 'mn-popup-message-title' ]">
         <mn-card-prefix>
