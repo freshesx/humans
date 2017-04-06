@@ -3,6 +3,7 @@
     <button @click="onOpenActionSheet">Action Sheets</button>
     <button @click="onOpenMessage">弹出一个消息</button>
     <button @click="onOpenConfirm">弹出一个确认框</button>
+    <button @click="onOpenAlert">弹出一个警告框</button>
 
     <mn-action-card v-model="showActionSheet">
       <mn-card-item>
@@ -21,6 +22,7 @@
   import Element from 'vue-human/util/Element'
   import Message from 'vue-human/util/Message'
   import Confirm from 'vue-human/util/Confirm'
+  import Alert from 'vue-human/util/Alert'
   import actionCardSuits from 'vue-human/components/action-card'
   import cardSuits from 'vue-human/components/card'
 
@@ -44,6 +46,9 @@
       },
       onOpenConfirm () {
         Confirm.create().show()
+      },
+      onOpenAlert () {
+        Alert.create().show()
       }
     }
   })
