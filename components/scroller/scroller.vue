@@ -139,15 +139,7 @@
     overflow: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    // &-contents {
-    // }
 
-    &.is-x {
-      position: relative;
-      overflow: hidden;
-      overflow-x: auto;
-    }
-  }
     &::-webkit-scrollbar {
       width: 0;
       height: 0;
