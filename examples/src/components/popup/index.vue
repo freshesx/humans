@@ -1,6 +1,8 @@
 <template>
   <div>
     <button @click="onOpenActionSheet">Action Sheets</button>
+    <button @click="onOpenMessage">弹出一个消息</button>
+    <button @click="onOpenConfirm">弹出一个确认框</button>
 
     <mn-action-card v-model="showActionSheet">
       <mn-card-item>
@@ -17,6 +19,8 @@
 
 <script>
   import Element from 'vue-human/util/Element'
+  import Message from 'vue-human/util/Message'
+  import Confirm from 'vue-human/util/Confirm'
   import actionCardSuits from 'vue-human/components/action-card'
   import cardSuits from 'vue-human/components/card'
 
@@ -34,6 +38,12 @@
     methods: {
       onOpenActionSheet () {
         this.showActionSheet = true
+      },
+      onOpenMessage () {
+        Message.create({ message: 'Hello, world.' }).show()
+      },
+      onOpenConfirm () {
+        Confirm.create().show()
       }
     }
   })
