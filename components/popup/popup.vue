@@ -41,8 +41,7 @@
        * @return {void}
        */
       closePopup () {
-        this.$emit('closePopup')
-        this.$emit('close')   // closePopup 的别名，推荐直接使用 closePopup
+        this.$emit('close')
       },
       /**
        * 如果需要打开 mask，则构建 maskElement 并监听 close 事件
