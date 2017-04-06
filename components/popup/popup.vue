@@ -9,6 +9,7 @@
 <script>
   import Element from '../../util/Element'
   import maskElement from './mask'
+  import ANIMATIONS from './animations'
   import { getZIndex } from './layer'
 
   export default new Element({
@@ -24,7 +25,13 @@
       },
       animation: {
         type: String,
-        default: 'fadeIn'
+        default: 'fadeIn',
+        validator: val => {
+          const animations = Object.keys(ANIMATIONS)
+          const valid = animations.includes(val)
+          if (!valid) console.warn(`您使用了 ${val} ，仅支持 ${Object.keys(ANIMATIONS)}`)
+          return valid
+        }
       }
     },
     methods: {
@@ -78,15 +85,8 @@
       }
     },
     computed: {
-      animations () {
-        return {
-          fadeIn: `mn-popup-fade`,
-          slideInDown: `mn-popup-slide`,
-          slideInUp: `mn-popup-slideup`
-        }
-      },
       transition () {
-        return this.animations[this.animation]
+        return ANIMATIONS[this.animation]
       },
       computedZIndex () {
         return this.zIndex ? this.zIndex : getZIndex()
@@ -107,41 +107,41 @@
     position: fixed;
 
     // Slide from down
-    &-slide-enter-active,
-    &-slide-leave-active {
+    &-slide-in-bottom-enter-active,
+    &-slide-in-bottom-leave-active {
       transition: transform 0.3s;
     }
 
-    &-slide-enter,
-    &-slide-leave-active {
+    &-slide-in-bottom-enter,
+    &-slide-in-bottom-leave-active {
       transform: translateY(100%);
     }
 
     // Fade in
-    &-fade-enter-active,
-    &-fade-leave-active {
+    &-fade-in-enter-active,
+    &-fade-in-leave-active {
       transition: opacity 0.3s linear;
     }
 
-    &-fade-enter,
-    &-fade-leave-active {
+    &-fade-in-enter,
+    &-fade-in-leave-active {
       opacity: 0;
     }
 
     // Slide from up
-    &-slideup-enter-active {
+    &-slide-in-top-enter-active {
       transition: transform 0.3s;
     }
 
-    &-slideup-leave-active {
+    &-slide-in-top-leave-active {
       transition: opacity 0.3s linear;
     }
 
-    &-slideup-enter {
+    &-slide-in-top-enter {
       transform: translateY(-100%);
     }
 
-    &-slideup-leave-active {
+    &-slide-in-top-leave-active {
       opacity: 0;
     }
   }
