@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Element from './Element'
 import isUndefined from 'lodash/isUndefined'
+import { addPopup } from '../components/popup/storage'
 
 /** Class 弹出层控制类 */
 export default class Popup {
@@ -52,6 +53,8 @@ export default class Popup {
 
     // 插入 body
     this.append(vueComponent)
+
+    addPopup(vueComponent)
 
     return vueComponent
   }
