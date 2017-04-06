@@ -33,6 +33,7 @@
   import CardBody from '../card/card-body'
   import CardPrefix from '../card/card-prefix'
   import CardSuffix from '../card/card-suffix'
+  import icon from '../icon/icon'
 
   import chatbubble from 'vue-human-icons/js/ios/chatbubble'
   import checkmark from 'vue-human-icons/js/ios/checkmark'
