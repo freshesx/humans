@@ -16,12 +16,12 @@
     name: 'mn-popup',
     props: {
       show: Boolean,
+      zIndex: {
+        type: Number
+      },
       masked: {
         type: Boolean,
         default: true
-      },
-      zIndex: {
-        type: Number
       },
       animation: {
         type: String,
