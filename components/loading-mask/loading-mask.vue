@@ -34,6 +34,7 @@
     methods: {
       close: function () {
         this.isShow = false
+        this.$emit('close')
       },
       show () {
         this.isShow = true

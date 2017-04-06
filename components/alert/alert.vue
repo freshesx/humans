@@ -32,8 +32,12 @@
     },
     methods: {
       cancel () {
-        this.isShow = false
+        this.close()
         this.$emit('cancel')
+      },
+      close () {
+        this.isShow = false
+        this.$emit('close')
       },
       show () {
         this.isShow = true
