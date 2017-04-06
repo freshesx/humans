@@ -1,9 +1,7 @@
-import { toNumber, toLower } from 'lodash'
+import toNumber from 'lodash/toNumber'
+import toLower from 'lodash/toLower'
 
-/**
- * 转化地址栏中的 query 参数
- * @class Query
- */
+/** Class 转化地址栏中的 query 参数 */
 export default class Query {
   /**
    * 遍历 queries，解析每个 query 的值，如将字符串 '1' 转化为数字 1
@@ -77,7 +75,7 @@ export default class Query {
   /**
    * 转化 'null'
    * @param {String} query
-   * @returnss {null}
+   * @returns {null}
    */
   parseNull (query) {
     return null
