@@ -34,19 +34,8 @@
   import cardPrefix from '../card/card-prefix'
   import cardSuffix from '../card/card-suffix'
   import icon from '../icon/icon'
-
-  import chatbubble from 'vue-human-icons/js/ios/chatbubble'
-  import checkmark from 'vue-human-icons/js/ios/checkmark'
   import closeEmpty from 'vue-human-icons/js/ios/close-empty'
-  import close from 'vue-human-icons/js/ios/close'
-  import information from 'vue-human-icons/js/ios/information'
-
-  const toastrTypes = {
-    default: { text: 'Message', icon: chatbubble, color: 'black' },
-    primary: { text: 'Success', icon: checkmark, color: 'green' },
-    warning: { text: 'Warning', icon: information, color: 'orange' },
-    error: { text: 'Error', icon: close, color: 'pink' }
-  }
+  import TYPES from './types'
 
   export default new Element({
     components: {
@@ -70,7 +59,7 @@
     },
     computed: {
       currentType () {
-        return toastrTypes[this.type]
+        return TYPES[this.type]
       },
       iconName () {
         return this.icon || this.currentType.icon
