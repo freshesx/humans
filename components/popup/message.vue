@@ -1,6 +1,6 @@
 <template>
   <mn-popup
-    :show="show"
+    :show="isShow"
     :class="[ 'mn-popup-message' ]"
     :masked="false"
     animation="slideInTop">
@@ -60,8 +60,12 @@
     },
     methods: {
       close () {
-        this.show = false
+        this.isShow = false
         this.$emit('close')
+      },
+      show () {
+        this.isShow = true
+        return this
       }
     },
     computed: {
@@ -74,7 +78,7 @@
     },
     data () {
       return {
-        show: false,
+        isShow: false,
         title: undefined,
         description: this.$t('mn.popup.messageDescription'),
         icon: undefined,
