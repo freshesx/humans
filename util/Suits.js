@@ -28,6 +28,29 @@ export default class Suits {
   }
 
   /**
+   * 返回组件与组件命名的对象
+   * @return {Object}
+   */
+  mapComponents () {
+    const components = {}
+
+    this.components.forEach(item => {
+      components[item.name] = item
+    })
+
+    return components
+  }
+
+  /**
+   * mapComponents 的别名
+   * @param {*} args
+   * @return {Object}
+   */
+  map (...args) {
+    return this.mapComponents(...args)
+  }
+
+  /**
    * vue.use() 的安装方法
    * @param {Vue} Vue
    */
