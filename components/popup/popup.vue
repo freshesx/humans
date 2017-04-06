@@ -1,6 +1,6 @@
 <template>
   <transition :name="transition">
-    <div class="mn-popup" :style="zIndexStyle" v-if="show">
+    <div class="mn-popup" :style="{ 'z-index': this.zIndex }" v-if="show">
       <slot></slot>
     </div>
   </transition>
@@ -17,7 +17,8 @@
     props: {
       show: Boolean,
       zIndex: {
-        type: Number
+        type: Number,
+        default: () => getZIndex()
       },
       masked: {
         type: Boolean,
@@ -78,7 +79,7 @@
        */
       show (newValue) {
         if (newValue) {
-          this.appendMask(this.computedZIndex - 1)
+          this.appendMask(this.zIndex - 1)
         } else {
           this.destroyMask()
         }
@@ -87,14 +88,6 @@
     computed: {
       transition () {
         return ANIMATIONS[this.animation]
-      },
-      computedZIndex () {
-        return this.zIndex ? this.zIndex : getZIndex()
-      },
-      zIndexStyle () {
-        return {
-          'z-index': this.computedZIndex
-        }
       }
     }
   })
