@@ -31,9 +31,13 @@
       }
     },
     methods: {
-      // Trigger close event
+      /**
+       * 抛出关闭 popup 的事件
+       * @return {void}
+       */
       closePopup () {
-        this.$emit('close')
+        this.$emit('closePopup')
+        this.$emit('close')   // closePopup 的别名，推荐直接使用 closePopup
       },
       /**
        * 如果需要打开 mask，则构建 maskElement 并监听 close 事件
@@ -62,9 +66,13 @@
       }
     },
     watch: {
+      /**
+       * 监听 show 的变化，true 则插入 mask，false 则销毁 mask，
+       * mask 的 z-index 比 popup 小 1
+       * @param {Boolean} newValue
+       * @return {void}
+       */
       show (newValue) {
-        // 监听 show 的变化，true 则插入 mask，false 则销毁 mask
-        // mask 的 z-index 比 popup 小 1
         if (newValue) {
           this.appendMask(this.computedZIndex - 1)
         } else {
