@@ -148,14 +148,12 @@
       overflow-x: auto;
     }
   }
-
-  .is-windows {
-    ::-webkit-scrollbar {
+    &::-webkit-scrollbar {
       width: 0;
       height: 0;
     }
 
-    .mn-scroller.is-bar {
+    &.is-bar {
       &::-webkit-scrollbar {
         width: 10px;
         height: 10px;
