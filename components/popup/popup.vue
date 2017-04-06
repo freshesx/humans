@@ -129,20 +129,14 @@
     }
 
     // slideInTop
-    &-slide-in-top-enter-active {
+    &-slide-in-top-enter-active,
+    &-slide-in-top-leave-active {
       transition: transform 0.3s;
     }
 
+    &-slide-in-top-enter,
     &-slide-in-top-leave-active {
-      transition: opacity 0.3s linear;
-    }
-
-    &-slide-in-top-enter {
       transform: translateY(-100%);
-    }
-
-    &-slide-in-top-leave-active {
-      opacity: 0;
     }
 
     // slideInRight
