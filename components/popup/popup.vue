@@ -38,6 +38,7 @@
       /**
        * 如果需要打开 mask，则构建 maskElement 并监听 close 事件
        * @param {Number} zIndex
+       * @return {void}
        */
       appendMask (zIndex) {
         if (this.masked) {
@@ -49,6 +50,10 @@
           })
         }
       },
+      /**
+       * 关闭和销毁 mask
+       * @return {viod}
+       */
       destroyMask () {
         if (this.mask) {
           this.mask.closeAndDestroy()
