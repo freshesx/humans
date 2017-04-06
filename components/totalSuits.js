@@ -13,6 +13,8 @@ import cellSuits from '../components/cell'
 import imageSuits from '../components/image'
 import actionCardSuits from '../components/action-card'
 
+console.warn('不建议直接使用 TotalSuits，basicSuits、coreSuits、formSuits、layoutSuits 都将在后续版本中完全弃用。建议提交更新')
+
 export default new Suits([
   basicSuits,
   articleSuits,
