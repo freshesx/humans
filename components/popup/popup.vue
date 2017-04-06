@@ -106,18 +106,7 @@
   .mn-popup {
     position: fixed;
 
-    // Slide from down
-    &-slide-in-bottom-enter-active,
-    &-slide-in-bottom-leave-active {
-      transition: transform 0.3s;
-    }
-
-    &-slide-in-bottom-enter,
-    &-slide-in-bottom-leave-active {
-      transform: translateY(100%);
-    }
-
-    // Fade in
+    // fadeIn
     &-fade-in-enter-active,
     &-fade-in-leave-active {
       transition: opacity 0.3s linear;
@@ -128,7 +117,18 @@
       opacity: 0;
     }
 
-    // Slide from up
+    // slideInBottom
+    &-slide-in-bottom-enter-active,
+    &-slide-in-bottom-leave-active {
+      transition: transform 0.3s;
+    }
+
+    &-slide-in-bottom-enter,
+    &-slide-in-bottom-leave-active {
+      transform: translateY(100%);
+    }
+
+    // slideInTop
     &-slide-in-top-enter-active {
       transition: transform 0.3s;
     }
