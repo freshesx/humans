@@ -1,6 +1,6 @@
 <template>
   <transition name="mn-popup-mask-fade">
-    <div class="mn-popup-mask" v-if="show" :style="{ 'z-index': zIndex }" @click="close"></div>
+    <div class="mn-popup-mask" v-if="show" :style="{ 'z-index': zIndex }" @click="onCloseMask"></div>
   </transition>
 </template>
 
@@ -10,8 +10,8 @@
 
   export default new Element({
     methods: {
-      close () {
-        this.$emit('close')
+      onCloseMask () {
+        this.$emit('closeMask')
       },
       closeAndDestroy () {
         this.show = false

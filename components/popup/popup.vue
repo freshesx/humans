@@ -44,7 +44,7 @@
           this.mask = maskElement.create().appendToBody()
           this.mask.zIndex = zIndex
           this.mask.show = true
-          this.mask.$on('close', () => {
+          this.mask.$on('closeMask', () => {
             this.closePopup()
           })
         }
