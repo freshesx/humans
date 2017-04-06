@@ -2,7 +2,7 @@ import Vue from 'vue'
 import isUndefined from 'lodash/isUndefined'
 
 /** Class 弹出层控制类 */
-export default class Notification {
+export default class Popup {
   /**
    * 弹出层 element 类，如 messageElement
    * @type {Object}
