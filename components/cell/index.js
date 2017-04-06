@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import Cell from './cell'
 import CellItem from './cell-item'
 

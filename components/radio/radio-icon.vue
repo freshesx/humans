@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import Icon from '../icon/icon'
   import checkmarkEmpty from 'vue-human-icons/js/ios/checkmark-empty'
 

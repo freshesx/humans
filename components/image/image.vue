@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import LoadingIcon from '../loading-icon/loading-icon'
 
   const MEDIA_VALUE = {

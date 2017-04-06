@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import Popup from '../popup/popup'
   import PopupCard from '../popup/popup-card'
   import CardItem from '../card/card-item'

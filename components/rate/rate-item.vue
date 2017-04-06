@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import Icon from '../icon/icon'
 
   export default new Element({

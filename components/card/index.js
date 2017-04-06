@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import Card from './card'
 import CardItem from './card-item'
 import CardBody from './card-body'
