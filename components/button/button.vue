@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import LoadingIcon from '../loading-icon/loading-icon'
   import Icon from '../icon/icon'
 

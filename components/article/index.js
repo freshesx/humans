@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import Article from './article'
 
 export default new Suits([

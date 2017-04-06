@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import Popup from './popup'
 import PopupCard from './popup-card'
 

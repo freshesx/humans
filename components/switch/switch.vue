@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
 
   export default new Element({
     name: 'mn-switch',

@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import Cols from './cols'
 import Col from './col'
 

@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import Section from './section'
 import SectionNote from './section-note'
 

@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import Dashboard from './dashboard'
 
 export default new Suits([

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import Button from './button'
 
   export default new Element({
