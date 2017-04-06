@@ -53,7 +53,10 @@
         Alert.create().show()
       },
       onOpenLoadingMask () {
-        LoadingMask.create().show()
+        const loadingMask = LoadingMask.create().show()
+        setTimeout(() => {
+          loadingMask.close()
+        }, 5000)
       }
     }
   })
