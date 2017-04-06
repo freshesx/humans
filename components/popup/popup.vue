@@ -86,6 +86,10 @@
       }
     },
     computed: {
+      /**
+       * 获得对应的 animation 的 css 名称
+       * @return {void}
+       */
       transition () {
         return ANIMATIONS[this.animation]
       }
