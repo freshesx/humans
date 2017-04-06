@@ -17,18 +17,14 @@
 
 <script>
   import Element from 'vue-human/util/Element'
-  import actionCard from 'vue-human/components/action-card/action-card'
-  import cardItem from 'vue-human/components/card/card-item'
-  import cardBody from 'vue-human/components/card/card-body'
-  import cardBtns from 'vue-human/components/card/card-btns'
+  import actionCardSuits from 'vue-human/components/action-card'
+  import cardSuits from 'vue-human/components/card'
 
   export default new Element({
     name: 'p-popup',
     components: {
-      [actionCard.name]: actionCard,
-      [cardItem.name]: cardItem,
-      [cardBody.name]: cardBody,
-      [cardBtns.name]: cardBtns
+      ...actionCardSuits.map(),
+      ...cardSuits.map()
     },
     data () {
       return {
