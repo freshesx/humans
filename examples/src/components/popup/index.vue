@@ -4,6 +4,7 @@
     <button @click="onOpenMessage">弹出一个消息</button>
     <button @click="onOpenConfirm">弹出一个确认框</button>
     <button @click="onOpenAlert">弹出一个警告框</button>
+    <button @click="onOpenLoadingMask">弹出一个加载框</button>
 
     <mn-action-card v-model="showActionSheet">
       <mn-card-item>
@@ -23,6 +24,7 @@
   import Message from 'vue-human/util/Message'
   import Confirm from 'vue-human/util/Confirm'
   import Alert from 'vue-human/util/Alert'
+  import LoadingMask from 'vue-human/util/LoadingMask'
   import actionCardSuits from 'vue-human/components/action-card'
   import cardSuits from 'vue-human/components/card'
 
@@ -49,6 +51,9 @@
       },
       onOpenAlert () {
         Alert.create().show()
+      },
+      onOpenLoadingMask () {
+        LoadingMask.create().show()
       }
     }
   })
