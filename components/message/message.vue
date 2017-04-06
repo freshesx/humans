@@ -18,7 +18,7 @@
       </mn-card-item>
       <mn-card-item :class="[ 'mn-popup-message-contents' ]">
         <mn-card-body>
-          {{ description }}
+          {{ message }}
         </mn-card-body>
       </mn-card-item>
     </mn-popup-card>
@@ -69,7 +69,7 @@
       return {
         isShow: false,
         title: undefined,
-        description: this.$t('mn.popup.messageDescription'),
+        message: this.$t('mn.popup.messageText'),
         icon: undefined,
         type: 'default',  // 'default', 'primary', 'warning', 'error'
         autoClose: true,
