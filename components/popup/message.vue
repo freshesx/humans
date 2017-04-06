@@ -55,7 +55,8 @@
       [CardItem.name]: CardItem,
       [CardBody.name]: CardBody,
       [CardPrefix.name]: CardPrefix,
-      [CardSuffix.name]: CardSuffix
+      [CardSuffix.name]: CardSuffix,
+      [icon.name]: icon
     },
     methods: {
       close () {
