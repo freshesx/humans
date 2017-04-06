@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Element from './Element'
 import isUndefined from 'lodash/isUndefined'
 
 /** Class 弹出层控制类 */
@@ -36,17 +37,10 @@ export default class Popup {
       return console.warn('没有配置 element')
     }
 
-    // 创建 element 实例
+    // 创建 mixined element 实例
     const el = document.createElement('div')
-    const VueComponent = Vue.extend(this.element)
+    const VueComponent = Vue.extend(this.getMixinedElement(options))
     const vueComponent = new VueComponent({ el })
-
-    // 将变量 mixins
-    Object.keys(options).forEach(propName => {
-      if (vueComponent.hasOwnProperty(propName)) {
-        vueComponent[propName] = options[propName]
-      }
-    })
 
     // 监听 close 事件，和 remove
     vueComponent.$on('close', () => {
@@ -60,6 +54,25 @@ export default class Popup {
     this.append(vueComponent)
 
     return vueComponent
+  }
+
+  /**
+   * 将 element 元素 mixin 入 options 参数
+   * 实现 options 参数传递至 messageComponent
+   * @param {Object} options
+   * @return {Element}
+   */
+  getMixinedElement (options = {}) {
+    const mixinedElement = new Element({
+      mixins: [ this.element ],
+      data () {
+        return {
+          ...options
+        }
+      }
+    })
+
+    return mixinedElement
   }
 
   /**
