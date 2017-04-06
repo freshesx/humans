@@ -144,5 +144,19 @@
     &-slide-in-top-leave-active {
       opacity: 0;
     }
+
+    // slideInRight
+    &-slide-in-right-enter {
+      transform: translateX(50%);
+    }
+
+    &-slide-in-right-enter-active {
+      transition: transform 0.2s;
+    }
+
+    &-slide-in-right-leave-active {
+      transition: opacity 0.3s linear;
+      opacity: 0;
+    }
   }
 </style>
