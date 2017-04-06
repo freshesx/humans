@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import arrowBack from 'vue-human-icons/js/ios/arrow-back'
 
   export default new Element({

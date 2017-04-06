@@ -14,8 +14,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
-  import LoadingIcon from '../loading-icon/loading-icon'
+  import Element from '../../util/Element'
 
   const MEDIA_VALUE = {
     mobile: [0, 767],
@@ -26,9 +25,6 @@
 
   export default new Element({
     name: 'mn-image',
-    components: {
-      LoadingIcon
-    },
     props: {
       srcset: {
         type: [Array, Object]

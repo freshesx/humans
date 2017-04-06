@@ -11,7 +11,7 @@ export default {
 
       confirmTitle: '确认操作',
       alertTitle: '警告',
-      messageDescription: '你有一条消息'
+      messageText: '你有一条消息'
     }
   }
 }

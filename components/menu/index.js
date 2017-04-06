@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import Menu from './menu'
 import MenuPane from './menu-pane'
 import MenuTitle from './menu-title'

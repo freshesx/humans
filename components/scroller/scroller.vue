@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import { addStorage, getScrollTop } from './storage'
   import popupStorage from '../../util/popup/storage'
 

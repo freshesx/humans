@@ -1,5 +1,5 @@
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import MnCard from '../card/card'
 
   export default new Element({

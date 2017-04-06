@@ -1,13 +1,12 @@
 {
   "name": "vue-human",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Vue Human is designed for high quality user experience. It has rich interactive and animation component. Inspired by iOS Human Interface Guidelines",
   "author": "ChaselWu <chasel.wu@vitualreaty.com>",
   "main": "index.js",
   "files": [
     "components",
     "scss",
-    "suits",
     "util",
     "locale",
     "index.js"

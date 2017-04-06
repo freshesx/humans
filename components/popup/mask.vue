@@ -1,16 +1,26 @@
 <template>
   <transition name="mn-popup-mask-fade">
-    <div class="mn-popup-mask" v-if="show" :style="{ 'z-index': zIndex }" @click="close"></div>
+    <div class="mn-popup-mask" v-if="show" :style="{ 'z-index': zIndex }" @click="onCloseMask"></div>
   </transition>
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
+  import Vue from 'vue'
 
   export default new Element({
     methods: {
-      close () {
-        this.$emit('close')
+      onCloseMask () {
+        this.$emit('closeMask')
+      },
+      closeAndDestroy () {
+        this.show = false
+        document.body.removeChild(this.$el)
+        this.$destroy()
+      },
+      appendToBody () {
+        document.body.appendChild(this.$el)
+        return this
       }
     },
     data () {
@@ -18,6 +28,11 @@
         zIndex: 2000,
         show: false
       }
+    },
+    create () {
+      const el = document.createElement('div')
+      const MaskComponent = Vue.extend(this)
+      return new MaskComponent({ el })
     }
   })
 </script>

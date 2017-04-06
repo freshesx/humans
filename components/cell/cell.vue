@@ -35,7 +35,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import Card from '../card/card'
   import CardItem from '../card/card-item'
   import CardPrefix from '../card/card-prefix'

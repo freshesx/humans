@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import Vue from 'vue'
   import defaultIcon from './default-icon'
 

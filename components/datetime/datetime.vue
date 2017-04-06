@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import '../input/input'  // import input for scss
 
   export default new Element({

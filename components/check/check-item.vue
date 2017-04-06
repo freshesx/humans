@@ -1,5 +1,5 @@
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import MnRadioItem from '../radio/radio-item'
 
   export default new Element({

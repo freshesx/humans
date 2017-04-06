@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import Page from './page'
 /* import PageGroup from './page-group' */
 

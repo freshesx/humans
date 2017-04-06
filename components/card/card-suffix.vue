@@ -1,5 +1,5 @@
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import CardPrefix from './card-prefix'
 
   export default new Element({

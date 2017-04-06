@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import SlideBar from './slide-bar'
 import SlideBarItem from './slide-bar-item'
 

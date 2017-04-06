@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" :class="[ 'mn-popup-alert' ]">
+  <mn-popup :show="isShow" :class="[ 'mn-popup-alert' ]">
     <mn-popup-card class="has-none-margin-bottom">
       <mn-card-item>
         <mn-card-body class="has-center-text">
@@ -15,30 +15,38 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
-  import Popup from './popup'
-  import PopupCard from '../popup/popup-card'
-  import CardItem from '../card/card-item'
-  import CardBody from '../card/card-body'
-  import CardBtns from '../card/card-btns'
+  import Element from '../../util/Element'
+  import popup from '../popup/popup'
+  import popupCard from '../popup/popup-card'
+  import cardItem from '../card/card-item'
+  import cardBody from '../card/card-body'
+  import cardBtns from '../card/card-btns'
 
   export default new Element({
     components: {
-      [Popup.name]: Popup,
-      [PopupCard.name]: PopupCard,
-      [CardItem.name]: CardItem,
-      [CardBody.name]: CardBody,
-      [CardBtns.name]: CardBtns
+      [popup.name]: popup,
+      [popupCard.name]: popupCard,
+      [cardItem.name]: cardItem,
+      [cardBody.name]: cardBody,
+      [cardBtns.name]: cardBtns
     },
     methods: {
       cancel () {
-        this.show = false
+        this.close()
         this.$emit('cancel')
+      },
+      close () {
+        this.isShow = false
+        this.$emit('close')
+      },
+      show () {
+        this.isShow = true
+        return this
       }
     },
     data () {
       return {
-        show: false,
+        isShow: false,
         title: this.$t('mn.popup.alertTitle'),
         description: undefined,
         cancelText: this.$t('mn.popup.closeText')

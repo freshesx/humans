@@ -20,7 +20,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import Icon from '../icon/icon'
   import iosMinusEmpty from 'vue-human-icons/js/ios/minus-empty'
   import iosPlusEmpty from 'vue-human-icons/js/ios/plus-empty'

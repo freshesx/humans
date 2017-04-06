@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 
 import Letter from './letter'
 import LetterBody from './letter-body'

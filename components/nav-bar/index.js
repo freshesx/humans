@@ -1,4 +1,4 @@
-import Suits from '../../util/suits'
+import Suits from '../../util/Suits'
 import NavBar from './nav-bar'
 import NavBarTitle from './nav-bar-title'
 import NavBarBack from './nav-bar-back'

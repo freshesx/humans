@@ -1,9 +1,9 @@
 <template>
   <mn-popup
-    :show="show"
+    :show="isShow"
     :class="[ 'mn-popup-message' ]"
     :masked="false"
-    animation="slideInUp">
+    animation="slideInTop">
     <mn-popup-card :class="[ 'mn-popup-message-card' ]">
       <mn-card-item :class="[ 'mn-popup-message-title' ]">
         <mn-card-prefix>
@@ -18,7 +18,7 @@
       </mn-card-item>
       <mn-card-item :class="[ 'mn-popup-message-contents' ]">
         <mn-card-body>
-          {{ description }}
+          {{ message }}
         </mn-card-body>
       </mn-card-item>
     </mn-popup-card>
@@ -26,45 +26,40 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
-  import Popup from './popup'
-  import PopupCard from '../popup/popup-card'
-  import CardItem from '../card/card-item'
-  import CardBody from '../card/card-body'
-  import CardPrefix from '../card/card-prefix'
-  import CardSuffix from '../card/card-suffix'
-
-  import chatbubble from 'vue-human-icons/js/ios/chatbubble'
-  import checkmark from 'vue-human-icons/js/ios/checkmark'
+  import Element from '../../util/Element'
+  import popup from '../popup/popup'
+  import popupCard from '../popup/popup-card'
+  import cardItem from '../card/card-item'
+  import cardBody from '../card/card-body'
+  import cardPrefix from '../card/card-prefix'
+  import cardSuffix from '../card/card-suffix'
+  import icon from '../icon/icon'
   import closeEmpty from 'vue-human-icons/js/ios/close-empty'
-  import close from 'vue-human-icons/js/ios/close'
-  import information from 'vue-human-icons/js/ios/information'
-
-  const toastrTypes = {
-    default: { text: 'Message', icon: chatbubble, color: 'black' },
-    primary: { text: 'Success', icon: checkmark, color: 'green' },
-    warning: { text: 'Warning', icon: information, color: 'orange' },
-    error: { text: 'Error', icon: close, color: 'pink' }
-  }
+  import TYPES from './types'
 
   export default new Element({
     components: {
-      [Popup.name]: Popup,
-      [PopupCard.name]: PopupCard,
-      [CardItem.name]: CardItem,
-      [CardBody.name]: CardBody,
-      [CardPrefix.name]: CardPrefix,
-      [CardSuffix.name]: CardSuffix
+      [popup.name]: popup,
+      [popupCard.name]: popupCard,
+      [cardItem.name]: cardItem,
+      [cardBody.name]: cardBody,
+      [cardPrefix.name]: cardPrefix,
+      [cardSuffix.name]: cardSuffix,
+      [icon.name]: icon
     },
     methods: {
       close () {
-        this.show = false
+        this.isShow = false
         this.$emit('close')
+      },
+      show () {
+        this.isShow = true
+        return this
       }
     },
     computed: {
       currentType () {
-        return toastrTypes[this.type]
+        return TYPES[this.type]
       },
       iconName () {
         return this.icon || this.currentType.icon
@@ -72,9 +67,9 @@
     },
     data () {
       return {
-        show: false,
+        isShow: false,
         title: undefined,
-        description: this.$t('mn.popup.messageDescription'),
+        message: this.$t('mn.popup.messageText'),
         icon: undefined,
         type: 'default',  // 'default', 'primary', 'warning', 'error'
         autoClose: true,

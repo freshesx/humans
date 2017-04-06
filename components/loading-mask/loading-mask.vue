@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="show" :class="[ 'mn-loading-mask' ]">
+  <mn-popup :show="isShow" :class="[ 'mn-loading-mask' ]">
     <mn-popup-card class="has-none-margin-bottom">
       <mn-card-item>
         <mn-card-body class="has-center-text">
@@ -11,29 +11,34 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
-  import Popup from '../popup/popup'
-  import PopupCard from '../popup/popup-card'
-  import CardItem from '../card/card-item'
-  import CardBody from '../card/card-body'
-  import LoadingIcon from '../loading-icon'
+  import Element from '../../util/Element'
+  import popup from '../popup/popup'
+  import popupCard from '../popup/popup-card'
+  import cardItem from '../card/card-item'
+  import cardBody from '../card/card-body'
+  import loadingIcon from '../loading-icon/loading-icon'
 
   export default new Element({
     components: {
-      [Popup.name]: Popup,
-      [PopupCard.name]: PopupCard,
-      [CardItem.name]: CardItem,
-      [CardBody.name]: CardBody,
-      [LoadingIcon.name]: LoadingIcon
+      [popup.name]: popup,
+      [popupCard.name]: popupCard,
+      [cardItem.name]: cardItem,
+      [cardBody.name]: cardBody,
+      [loadingIcon.name]: loadingIcon
     },
     data () {
       return {
-        show: false
+        isShow: false
       }
     },
     methods: {
       close: function () {
-        this.show = false
+        this.isShow = false
+        this.$emit('close')
+      },
+      show () {
+        this.isShow = true
+        return this
       }
     }
   })

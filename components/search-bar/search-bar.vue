@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import Element from '../../util/element'
+  import Element from '../../util/Element'
   import Icon from '../icon/icon'
   import searchStrong from 'vue-human-icons/js/ios/search-strong'
 
