@@ -46,8 +46,7 @@
   import Card from 'vue-human/components/card/card'
   import CardItem from 'vue-human/components/card/card-item'
   import CardBody from 'vue-human/components/card/card-body'
-
-  import confirm from 'vue-human/util/confirm'
+  import Confirm from 'vue-human/util/Confirm'
 
   export default {
     components: {
@@ -63,7 +62,7 @@
     },
     methods: {
       onOpenConfirm () {
-        confirm({ show: true, description: '观察你的滚动条' })
+        Confirm.create({ description: '观察你的滚动条' }).show()
       }
     }
   }
