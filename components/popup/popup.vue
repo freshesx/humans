@@ -12,7 +12,7 @@
 <script>
   import Element from '../../util/Element'
   import Vue from 'vue'
-  import Mask from './mask'
+  import maskElement from './mask'
   import { getZIndex } from './layer'
 
   export default new Element({
@@ -41,7 +41,9 @@
       },
       appendMask (zIndex) {
         if (this.masked) {
-          this.mask = new (Vue.extend(Mask))({ el: document.createElement('div') })
+          this.mask = new (Vue.extend(maskElement))({
+            el: document.createElement('div')
+          })
           document.body.appendChild(this.mask.$el)
           this.mask.zIndex = zIndex
           this.mask.show = true
