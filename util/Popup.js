@@ -82,7 +82,7 @@ export default class Popup {
    */
   append (vueComponent) {
     this.wrapper = document.createElement('div')
-    this.wrapper.id = `notification_${vueComponent._uid}`
+    this.wrapper.id = `mn-popup-#${vueComponent._uid}`
     document.body.appendChild(this.wrapper)
     this.wrapper.appendChild(vueComponent.$el)
     return this
