@@ -30,8 +30,12 @@ export default class AxiosHelper {
    */
   openErrorMessage (messageParams) {
     // 异步加载，优先保持其他前置组件优先完成加载
-    require(['../util/message'], (resolve) => {
-      resolve.default({ ...{ show: true, type: 'error' }, ...messageParams })
+    require(['./Message'], (resolve) => {
+      const Message = resolve.default
+      const message = Message.create({
+        ...{ show: true, type: 'error' }, ...messageParams
+      })
+      message.show()
     })
   }
 
