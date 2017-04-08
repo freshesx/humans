@@ -58,9 +58,9 @@ module.exports = {
         include: includeFolders()
       },
       {
-        test: /vue-human[-\w]*\/.*?js$/,
+        test: /vue-human-icons\/.*?js$/,
         loader: 'babel-loader',
-        exclude: /vue-human[-\w]*\/node_modules/
+        exclude: /vue-human-icons\/node_modules/
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
