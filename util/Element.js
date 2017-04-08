@@ -2,10 +2,10 @@
 export default class Element {
   /**
    * 构造函数，合并传入的 vue 配置和 this
-   * @param {Object} vueComponent vue 组件的配置对象
+   * @param {Object} vueElement vue 组件的配置对象
    */
-  constructor (vueComponent) {
-    Object.assign(this, vueComponent)
+  constructor (vueElement) {
+    Object.assign(this, vueElement)
   }
 
   /**
