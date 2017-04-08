@@ -75,12 +75,11 @@
     "npm": ">= 3.0.0"
   },
   "browserslist": [
-    "> 1%",
     "last 2 versions",
-    "iOS >= 7",
-    "Android >= 4",
+    "iOS >= 8",
+    "Android >= 4.4",
     "Samsung >= 4",
-    "UCAndroid >= 11",
-    "not ie <= 8"
+    "not ie <= 10",
+    "not Opera <= 200"
   ]
 }
