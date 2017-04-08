@@ -80,24 +80,4 @@ export default class Query {
   parseNull (query) {
     return null
   }
-
-  /**
-   * 将 JS 内的类型转化为适合游览器请求的 query 值，通常转化为 this.$router.push({ query: ** }) 可理解的值即可
-   * @param {Object} object
-   * @returns {Object}
-   */
-  handle (object) {
-    let storage = {}
-
-    for (var name in object) {
-      if (object.hasOwnProperty(name)) {
-        let prop = object[name]
-        storage[name] = typeof prop === 'string' || typeof prop === 'number'
-          ? prop
-          : JSON.stringify(prop)
-      }
-    }
-
-    return storage
-  }
 }
