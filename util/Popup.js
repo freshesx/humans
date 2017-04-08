@@ -39,9 +39,8 @@ export default class Popup {
     }
 
     // 创建 mixined element 实例
-    const el = document.createElement('div')
     const VueComponent = Vue.extend(this.getMixinedElement(options))
-    const vueComponent = new VueComponent({ el })
+    const vueComponent = new VueComponent().$mount()
 
     // 监听 close 事件，和 remove
     vueComponent.$on('close', () => {
