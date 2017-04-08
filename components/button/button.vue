@@ -14,6 +14,7 @@
   import Element from '../../util/Element'
   import LoadingIcon from '../loading-icon/loading-icon'
   import Icon from '../icon/icon'
+  import isUndefined from 'lodash/isUndefined'
 
   export default new Element({
     name: 'mn-btn',
@@ -55,9 +56,7 @@
     },
     computed: {
       computedTheme () {
-        return typeof this.theme === undefined
-          ? this.type
-          : this.theme
+        return isUndefined(this.theme) ? this.type : this.theme
       },
       classes () {
         return {
