@@ -43,7 +43,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({
       cssProcessorOptions: {
-        autoprefixer: false,
+        safe: true,
         discardComments: {
           removeAll: true
         }
