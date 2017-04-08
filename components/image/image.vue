@@ -104,11 +104,10 @@
             this.$refs.image.addEventListener('load', () => {
               this.loading = false
             })
-            this.$refs.image.addEventListener('error', function() {
+            this.$refs.image.addEventListener('error', () => {
               console && console.warn('图片加载失败。')
             })
           }
-
         }
       }
     },
