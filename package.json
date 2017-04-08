@@ -25,7 +25,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue components suits util",
     "dev": "node examples/build/dev-server.js",
-    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"
+    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js"
   },
   "dependencies": {
     "lodash": "^4.17.4",
