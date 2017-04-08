@@ -19,10 +19,10 @@
     "lodash": "^4.17.4",
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.2",
-    "vue": "^2.1.10",
+    "vue": "^2.2.1",
     "vue-human-icons": "^1.4.0",
     "vue-i18n": "^5.0.3",
-    "vuelidate": "^0.2.0"
+    "vuelidate": "^0.4.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
