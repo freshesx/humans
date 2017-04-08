@@ -10,7 +10,7 @@ function resolve (dir) {
 function includeFolders () {
   return [
     resolve('src'),
-    resolve('test'),
+    resolve('../test'),
     resolve('../components'),
     resolve('../util'),
     resolve('../locale'),
