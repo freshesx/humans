@@ -3,6 +3,17 @@
   "version": "2.3.2",
   "description": "Vue Human is designed for high quality user experience. It has rich interactive and animation component. Inspired by iOS Human Interface Guidelines",
   "author": "ChaselWu <chasel.wu@vitualreaty.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HumanUI/vue-human.git"
+  },
+  "keywords": [
+    "vue",
+    "javascript",
+    "components",
+    "scss"
+  ],
   "main": "index.js",
   "files": [
     "components",
