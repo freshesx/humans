@@ -30,9 +30,8 @@
       }
     },
     create () {
-      const el = document.createElement('div')
       const MaskComponent = Vue.extend(this)
-      return new MaskComponent({ el })
+      return new MaskComponent().$mount()
     }
   })
 </script>
