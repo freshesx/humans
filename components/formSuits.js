@@ -1,4 +1,4 @@
-import Suits from '../util/suits'
+import Suits from '../util/Suits'
 import formSuits from '../components/form'
 import labelSuits from '../components/label'
 import inputSuits from '../components/input'
