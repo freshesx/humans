@@ -3,15 +3,26 @@ import AxiosHelper from 'vue-human/util/AxiosHelper'
 describe('util/AxiosHelper', () => {
   it('.error()', () => {
     const errorDate = {
-      errorDate: {
-        response: {
-          status: 401
-        }
+      response: {
+        status: 401
       }
     }
 
     const axiosHelper = new AxiosHelper().error(errorDate)
 
+    expect(axiosHelper).to.be.equal('未定义 error 处理方式')
+  })
+
+  it('.error() # exceptionError', () => {
+    const errorDate = {}
+
+    const axiosHelper = new AxiosHelper().error(errorDate)
+
+    expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
+  })
+
+  it('.$error401()', () => {
+    const axiosHelper = new AxiosHelper().$error403()
     expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
   })
 
