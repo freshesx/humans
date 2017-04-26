@@ -87,3 +87,45 @@
     }
   })
 </script>
+
+<style lang="scss">
+  @import "../../scss/vars";
+
+  .mn-paginate {
+    display: flex;
+    justify-content: center;
+    user-select: none;
+
+    > select,
+    > button {
+      font-size: 1rem;
+      background: transparent;
+      height: 2.5rem;
+      padding: 0 1rem;
+      border-radius: 5px;
+      background: #ddd;
+      color: #666;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+      vertical-align: middle;
+      transition-duration: 500ms;
+      margin: 0 0.5rem;
+
+      &:hover {
+        background: #999;
+        color: #fff;
+        transition-duration: 500ms;
+      }
+    }
+
+    > button {
+    }
+
+    > select {
+      min-width: 50px;
+    }
+  }
+</style>
