@@ -114,6 +114,14 @@
       transition-duration: 500ms;
       margin: 0 0.5rem;
 
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
       &:hover {
         background: #999;
         color: #fff;
