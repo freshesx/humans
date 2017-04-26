@@ -92,6 +92,16 @@
                 link: { name: 'counter' }
               }
             ]
+          },
+          {
+            name: this.$t('examples.menus.components'),
+            children: [
+              {
+                name: 'Paginate',
+                small: '页码',
+                link: { name: 'paginate' }
+              }
+            ]
           }
         ]
       }

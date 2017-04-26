@@ -44,6 +44,11 @@ const router = new VueRouter({
       path: '/popup',
       name: 'popup',
       component: resolve => { require(['../components/popup'], resolve) }
+    },
+    {
+      path: '/paginate',
+      name: 'paginate',
+      component: resolve => { require(['../components/paginate'], resolve) }
     }
   ]
 })
