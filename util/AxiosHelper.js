@@ -20,6 +20,8 @@ export default class AxiosHelper {
     if (isFunction(this[funcName])) {
       return this[funcName](errorDate)
     }
+
+    return '未定义 error 处理方式'
   }
 
   /**
