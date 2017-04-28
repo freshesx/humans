@@ -17,6 +17,7 @@
   import cardItem from '../card/card-item'
   import cardBody from '../card/card-body'
   import loadingIcon from '../loading-icon/loading-icon'
+  import popupManager from '../popup/popupManager'
 
   export default new Element({
     components: {
@@ -26,21 +27,12 @@
       [cardBody.name]: cardBody,
       [loadingIcon.name]: loadingIcon
     },
-    data () {
-      return {
-        isShow: false
-      }
-    },
-    methods: {
-      close: function () {
-        this.isShow = false
-        this.$emit('close')
-      },
-      show () {
-        this.isShow = true
-        return this
-      }
-    }
+    mixins: [
+      /**
+       * Add isShow, close(), show() mixins
+       */
+      popupManager
+    ]
   })
 </script>
 

@@ -21,6 +21,7 @@
   import cardItem from '../card/card-item'
   import cardBody from '../card/card-body'
   import cardBtns from '../card/card-btns'
+  import popupManager from '../popup/popupManager'
 
   export default new Element({
     components: {
@@ -30,23 +31,20 @@
       [cardBody.name]: cardBody,
       [cardBtns.name]: cardBtns
     },
+    mixins: [
+      /**
+       * Add isShow, close(), show() mixins
+       */
+      popupManager
+    ],
     methods: {
       cancel () {
         this.close()
         this.$emit('cancel')
-      },
-      close () {
-        this.isShow = false
-        this.$emit('close')
-      },
-      show () {
-        this.isShow = true
-        return this
       }
     },
     data () {
       return {
-        isShow: false,
         title: this.$t('mn.popup.alertTitle'),
         description: undefined,
         cancelText: this.$t('mn.popup.closeText')

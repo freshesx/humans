@@ -36,6 +36,7 @@
   import icon from '../icon/icon'
   import closeEmpty from 'vue-human-icons/js/ios/close-empty'
   import TYPES from './types'
+  import popupManager from '../popup/popupManager'
 
   export default new Element({
     components: {
@@ -47,16 +48,12 @@
       [cardSuffix.name]: cardSuffix,
       [icon.name]: icon
     },
-    methods: {
-      close () {
-        this.isShow = false
-        this.$emit('close')
-      },
-      show () {
-        this.isShow = true
-        return this
-      }
-    },
+    mixins: [
+      /**
+       * Add isShow, close(), show() mixins
+       */
+      popupManager
+    ],
     computed: {
       currentType () {
         return TYPES[this.type]
@@ -67,7 +64,6 @@
     },
     data () {
       return {
-        isShow: false,
         title: undefined,
         message: this.$t('mn.popup.messageText'),
         icon: undefined,
