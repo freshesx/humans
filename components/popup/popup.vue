@@ -8,86 +8,118 @@
 
 <script>
   import Element from '../../util/Element'
-  import maskElement from './mask'
+  import Mask from '../../util/Mask'
   import ANIMATIONS from './animations'
   import { getZIndex } from './layer'
 
   export default new Element({
     name: 'mn-popup',
     props: {
+      /**
+       * Popup show prop
+       */
       show: Boolean,
+
+      /**
+       * Popup z-index
+       */
       zIndex: {
         type: Number,
         default: () => getZIndex()
       },
+
+      /**
+       * Whether to use mask component
+       */
       masked: {
         type: Boolean,
         default: true
       },
+
+      /**
+       * Which transition
+       */
       animation: {
         type: String,
         default: 'fadeIn',
         validator: val => {
           const animations = Object.keys(ANIMATIONS)
           const valid = animations.includes(val)
-          if (!valid) console.warn(`您使用了 ${val} ，仅支持 ${Object.keys(ANIMATIONS)}`)
+          if (!valid) {
+            console.warn(`
+              Only support ${Object.keys(ANIMATIONS)}, and you use '${val}'
+            `)
+          }
           return valid
         }
       }
     },
     methods: {
       /**
-       * 抛出关闭 popup 的事件
-       * @return {void}
+       * When mask notify this component to close,
+       * this component notify the parent component to close itself,
+       * and this component watch `isShow`, when isShow is false,
+       * close this component and mask component.
+       *
+       * @return {this}
        */
       closePopup () {
         this.$emit('close')
+        return this
       },
+
       /**
-       * 如果需要打开 mask，则构建 maskElement 并监听 close 事件
+       * If masked is true, create and append mask component,
+       * and listen mask `notifyCloseMask` event.
+       *
        * @param {Number} zIndex
-       * @return {void}
+       * @return {this}
        */
-      appendMask (zIndex) {
+      showMask (zIndex) {
         if (this.masked) {
-          this.mask = maskElement.create().appendToBody()
-          this.mask.zIndex = zIndex
-          this.mask.show = true
-          this.mask.$on('closeMask', () => {
+          // Create mask with z-index
+          this.mask = Mask.create({ zIndex }).show()
+
+          // Only listen mask notifyCloseMask event
+          this.mask.$on('notifyCloseMask', () => {
             this.closePopup()
           })
         }
+
+        return this
       },
+
       /**
-       * 关闭和销毁 mask
-       * @return {viod}
+       * Excute to close mask
+       * @return {this}
        */
-      destroyMask () {
+      closeMask () {
         if (this.mask) {
-          this.mask.closeAndDestroy()
+          this.mask.close()
           this.mask = undefined
         }
+
+        return this
       }
     },
     watch: {
       /**
-       * 监听 show 的变化，true 则插入 mask，false 则销毁 mask，
-       * mask 的 z-index 比 popup 小 1
-       * @param {Boolean} newValue
+       * Listen isShow. When isShow is true, excute to show mask.
+       * When isShow is false, excute to close mask.
+       * Mask's z-index less than this component's z-index.
+       *
+       * @param {Boolean} newVal
        * @return {void}
        */
-      show (newValue) {
-        if (newValue) {
-          this.appendMask(this.zIndex - 1)
-        } else {
-          this.destroyMask()
-        }
+      show (newVal) {
+        newVal ? this.showMask(this.zIndex - 1) : this.closeMask()
       }
     },
     computed: {
       /**
-       * 获得对应的 animation 的 css 名称
-       * @return {void}
+       * Transition map
+       *
+       * @return {String}
        */
       transition () {
         return ANIMATIONS[this.animation]
