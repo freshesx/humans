@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import { closeAllPopups } from 'vue-human/components/popup/storage'
 
 Vue.use(VueRouter)
 
@@ -51,6 +52,11 @@ const router = new VueRouter({
       component: resolve => { require(['../components/paginate'], resolve) }
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  closeAllPopups()
+  next()
 })
 
 export default router
