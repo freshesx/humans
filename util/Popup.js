@@ -18,6 +18,16 @@ export default class Popup {
   wrapper
 
   /**
+   * Whether store instance component in popup storage.
+   * If isNeedStore is true, this component will store in popup storage,
+   * and close this component when $route change.
+   * Mask component will set false.
+   *
+   * @type {Boolean}
+   */
+  isNeedStore = true
+
+  /**
    * 工厂模式创建一个实例
    * @static
    * @param {Object} options
@@ -53,7 +63,9 @@ export default class Popup {
     // 插入 body
     this.append(vueComponent)
 
-    addPopup(vueComponent)
+    if (this.isNeedStore) {
+      addPopup(vueComponent)
+    }
 
     return vueComponent
   }
