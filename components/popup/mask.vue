@@ -1,37 +1,41 @@
 <template>
   <transition name="mn-popup-mask-fade">
-    <div class="mn-popup-mask" v-if="show" :style="{ 'z-index': zIndex }" @click="onCloseMask"></div>
+    <div class="mn-popup-mask"
+      v-if="isShow"
+      :style="{ 'z-index': zIndex }"
+      @click="onCloseMask"></div>
   </transition>
 </template>
 
 <script>
   import Element from '../../util/Element'
-  import Vue from 'vue'
+  import popupManager from './popupManager'
 
   export default new Element({
+    mixins: [
+      /**
+       * Add isShow, close(), show() mixins
+       */
+      popupManager
+    ],
     methods: {
+      /**
+       * Mask want to close itself, and notify the parent compoennt to handle,
+       * PS: just notify parent component, don't close by itself.
+       *
+       * @return {void}
+       */
       onCloseMask () {
-        this.$emit('closeMask')
-      },
-      closeAndDestroy () {
-        this.show = false
-        document.body.removeChild(this.$el)
-        this.$destroy()
-      },
-      appendToBody () {
-        document.body.appendChild(this.$el)
-        return this
+        this.$emit('notifyCloseMask')
       }
     },
     data () {
       return {
-        zIndex: 2000,
-        show: false
+        /**
+         * Default z-index
+         */
+        zIndex: 2000
       }
-    },
-    create () {
-      const MaskComponent = Vue.extend(this)
-      return new MaskComponent().$mount()
     }
   })
 </script>
