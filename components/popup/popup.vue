@@ -112,7 +112,11 @@
        * @return {void}
        */
       show (newVal) {
-        newVal ? this.showMask(this.zIndex - 1) : this.closeMask()
+        if (newVal) {
+          this.showMask(this.zIndex - 1)
+        } else {
+          this.closeMask()
+        }
       }
     },
     computed: {
