@@ -65,6 +65,11 @@
                 name: 'Scroller',
                 small: '滚动条',
                 link: { name: 'scroller' }
+              },
+              {
+                name: 'Popup',
+                small: '浮层',
+                link: { name: 'popup' }
               }
             ]
           },
