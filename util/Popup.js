@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Element from './Element'
 import isUndefined from 'lodash/isUndefined'
-import { addPopup } from '../components/popup/storage'
+import { addPopup, removePopup } from '../components/popup/storage'
 
 /** Class 弹出层控制类 */
 export default class Popup {
@@ -63,9 +63,11 @@ export default class Popup {
     // 插入 body
     this.append(vueComponent)
 
-    if (this.isNeedStore) {
-      addPopup(vueComponent)
-    }
+    // Store component in popup storage
+    this.store(vueComponent)
+
+    // Object prop
+    this.vueComponent = vueComponent
 
     return vueComponent
   }
@@ -90,6 +92,19 @@ export default class Popup {
   }
 
   /**
+   * When isNeedStore is true, store component in popup storage
+   *
+   * @param {vueComponent} vueComponent
+   * @return {this}
+   */
+  store (vueComponent) {
+    if (this.isNeedStore) {
+      addPopup(vueComponent)
+    }
+    return this
+  }
+
+  /**
    * 将 vueComponent 插入 wrapper
    * @param {vueComponent} vueComponent
    * @return {this}
@@ -103,13 +118,22 @@ export default class Popup {
   }
 
   /**
-   * 将 wrapper 移除 DOM
+   * Remove child wrap in DOM
    * @return {this}
    */
   remove () {
-    if (this.wrapper) {
-      document.body.removeChild(this.wrapper)
+    if (!isUndefined(this.vueComponent)) {
+      // Remove vueComponent from popup storage
+      removePopup(this.vueComponent)
+
+      // Remove component and wrapper
+      if (this.wrapper) document.body.removeChild(this.wrapper)
+
+      // Set undefined
+      this.vueComponent = undefined
+      this.wrapper = undefined
     }
+
     return this
   }
 }
