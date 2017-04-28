@@ -11,6 +11,6 @@ export function removePopup (vueComponent) {
 export function closeAllPopups (callback) {
   storage.forEach(popupComponent => {
     popupComponent.close()
-    if (callback) callback.apply(this)
+    if (callback) callback.apply(this, [popupComponent])
   })
 }
