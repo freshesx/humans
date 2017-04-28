@@ -8,6 +8,9 @@ export function removePopup (vueComponent) {
   storage.splice(storage.indexOf(vueComponent), 1)
 }
 
-export function savedPopups () {
-  return storage
+export function closeAllPopups (callback) {
+  storage.forEach(popupComponent => {
+    popupComponent.close()
+    if (callback) callback.apply(this)
+  })
 }
