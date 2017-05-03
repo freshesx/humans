@@ -116,6 +116,11 @@
                 name: 'Cell',
                 small: '单位列表',
                 link: { name: 'cell' }
+              },
+              {
+                name: 'Image',
+                small: '图片',
+                link: { name: 'image' }
               }
             ]
           }
