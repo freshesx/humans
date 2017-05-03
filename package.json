@@ -31,7 +31,7 @@
     "lodash": "^4.17.4",
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.2",
-    "vue": "^2.2.6",
+    "vue": "^2.3.2",
     "vue-human-icons": "^1.4.0",
     "vue-i18n": "^5.0.3",
     "vuelidate": "^0.4.3"
@@ -96,7 +96,7 @@
     "vue-loader": "^11.3.4",
     "vue-router": "^2.2.0",
     "vue-style-loader": "^2.0.5",
-    "vue-template-compiler": "^2.2.6",
+    "vue-template-compiler": "^2.3.2",
     "webpack": "^2.3.3",
     "webpack-bundle-analyzer": "^2.3.1",
     "webpack-dev-middleware": "^1.10.1",
