@@ -2,7 +2,7 @@
   <mn-scroller>
     <mn-container>
       <mn-section>
-        <mn-cell :contents="contents" :selections="selections" @selections="selections = arguments[0]">
+        <mn-cell :contents="contents" :selections.sync="selections">
           <mn-card-suffix slot="action" action>
             <mn-btn theme="secondary" size="sm">删除</mn-btn>
           </mn-card-suffix>
