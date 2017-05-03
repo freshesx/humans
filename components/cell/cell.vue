@@ -149,7 +149,3 @@
     }
   })
 </script>
-
-<style lang="scss">
-  // component scss
-</style>
