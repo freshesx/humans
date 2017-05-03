@@ -9,7 +9,7 @@
     </mn-section>
 
     <mn-cols>
-      <mn-col desktop="three" v-for="(menu, menuIndex) in menus" :key="menuIndex">
+      <mn-col tablet="four" desktop="three" v-for="(menu, menuIndex) in menus" :key="menuIndex">
         <mn-section>
           <mn-section-note>
             {{ menu.name }}
