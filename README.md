@@ -1,6 +1,6 @@
 <p><img width="320" src="https://raw.githubusercontent.com/HumanUI/vue-human/master/docs/vue-human.jpg"></p>
 
-[![NPM](https://nodei.co/npm/vue-human.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-human)
+[![npm](https://img.shields.io/badge/npm-v2.3.5-orange.svg?style=flat-square)](https://www.npmjs.com/package/vue-human)
 
 `Vue Human` is designed for high quality user experience. It has rich interactive and animation component.
 
