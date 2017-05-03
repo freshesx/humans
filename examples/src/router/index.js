@@ -50,6 +50,11 @@ const router = new VueRouter({
       path: '/paginate',
       name: 'paginate',
       component: resolve => { require(['../components/paginate'], resolve) }
+    },
+    {
+      path: '/cell',
+      name: 'cell',
+      component: resolve => { require(['../components/cell'], resolve) }
     }
   ]
 })
