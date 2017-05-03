@@ -94,6 +94,11 @@
             name: this.$t('examples.menus.form'),
             children: [
               {
+                name: 'Form',
+                small: '表单',
+                link: { name: 'form' }
+              },
+              {
                 name: 'Input',
                 small: '单行文本框',
                 link: { name: 'input' }
