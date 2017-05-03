@@ -1,33 +1,30 @@
 <template>
-  <card-item :type="type" @click="click">
-    <card-prefix @click.native.stop="select" v-if="!isHideSelection">
-      <cell-icon :checked="isChecked"></cell-icon>
-    </card-prefix>
+  <mn-card-item :type="type" @click="click">
+    <mn-card-prefix @click.native.stop="select" v-if="!isHideSelection">
+      <mn-cell-icon :checked="isChecked"></mn-cell-icon>
+    </mn-card-prefix>
     <slot></slot>
-  </card-item>
+  </mn-card-item>
 </template>
 
 <script>
   import Element from '../../util/Element'
-  import CardItem from '../card/card-item'
-  import CardPrefix from '../card/card-prefix'
-  import CellIcon from './cell-icon'
+  import cardItem from '../card/card-item'
+  import cardPrefix from '../card/card-prefix'
+  import cellIcon from './cell-icon'
 
   export default new Element({
     name: 'mn-cell-item',
     components: {
-      CellIcon,
-      CardItem,
-      CardPrefix
+      ...cardItem.inject(),
+      ...cardPrefix.inject(),
+      ...cellIcon.inject()
     },
     props: {
       type: String,
       item: {
         type: Object
       }
-    },
-    mounted () {
-      // console.log(this)
     },
     methods: {
       select (event) {
@@ -50,7 +47,3 @@
     }
   })
 </script>
-
-<style lang="scss">
-  // component scss
-</style>
