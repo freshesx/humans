@@ -2,6 +2,8 @@
 
 [![npm](https://img.shields.io/badge/npm-v2.3.5-orange.svg?style=flat-square)](https://www.npmjs.com/package/vue-human)
 
+[![NPM](https://nodei.co/npm/vue-human.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-human)
+
 `Vue Human` is designed for high quality user experience. It has rich interactive and animation component.
 
 It has media response for multiple scenes, e.g. mobile, tablet, desktop. You can use vue-human to build your mobile application, desktop dashboard and more.
