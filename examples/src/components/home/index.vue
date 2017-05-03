@@ -18,8 +18,10 @@
             <mn-card-item type="link" @click="$router.push(child.link)" v-for="(child, childIndex) in menu.children" :key="childIndex">
               <mn-card-body>
                 {{ child.name }}
-                <small>{{ child.small }}</small>
               </mn-card-body>
+              <mn-card-suffix>
+                <small>{{ child.small }}</small>
+              </mn-card-suffix>
             </mn-card-item>
           </mn-card>
         </mn-section>
