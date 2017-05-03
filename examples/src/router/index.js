@@ -60,6 +60,11 @@ const router = new VueRouter({
       path: '/image',
       name: 'image',
       component: resolve => { require(['../components/image'], resolve) }
+    },
+    {
+      path: '/input',
+      name: 'input',
+      component: resolve => { require(['../components/input'], resolve) }
     }
   ]
 })
