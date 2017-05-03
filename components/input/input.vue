@@ -101,6 +101,7 @@
 
     &-clear {
       flex-shrink: 0;
+      cursor: pointer;
     }
 
     &-clear-enter-active {
