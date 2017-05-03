@@ -1,6 +1,13 @@
 <p><img width="320" src="https://raw.githubusercontent.com/HumanUI/vue-human/master/docs/vue-human.jpg"></p>
 
-[![npm](https://img.shields.io/badge/npm-v2.3.5-orange.svg?style=flat-square)](https://www.npmjs.com/package/vue-human)
+<div>
+  <a href="https://www.npmjs.com/package/vue-human" title="npm">
+    <img src="https://img.shields.io/badge/npm-v2.3.5-orange.svg?style=flat-square">
+  </a>
+  <a href="https://minowu.gitbooks.io/vue-human" title="gitbook">
+    <img src="https://img.shields.io/badge/gitbook-docs-brightgreen.svg?style=flat-square">
+  </a>
+</div>
 
 [![NPM](https://nodei.co/npm/vue-human.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-human)
 
