@@ -3,14 +3,14 @@
     <mn-section>
       <mn-letter>
         <mn-letter-body>
-          <h1>Legacy Column <small>列</small></h1>
+          <h1>Column <small>列</small></h1>
         </mn-letter-body>
       </mn-letter>
     </mn-section>
 
     <mn-section>
-      <mn-cols>
-        <mn-col tablet="four" desktop="three" v-for="item in 10" :key="item">
+      <mn-flexes>
+        <mn-flex :tablet="{ flex: '0 1 33.3%' }" :desktop="{ flex: '0 1 20%' }" v-for="item in 10" :key="item">
           <mn-card>
             <mn-card-item>
               <mn-card-body>
@@ -18,8 +18,18 @@
               </mn-card-body>
             </mn-card-item>
           </mn-card>
-        </mn-col>
-      </mn-cols>
+        </mn-flex>
+      </mn-flexes>
+    </mn-section>
+
+    <mn-section>
+      <mn-flexes :desktop="{ margin: 0, 'margin-left': '1px' }">
+        <mn-flex :mobile="{ flex: '1 1 50%' }" :tablet="{ flex: '1 1 25%' }" :desktop="{ flex: '1 1 20%' }" :style="{ 'border': 'solid 1px #e5e5e5', 'margin-left': '-1px', 'margin-top': '-1px', padding: 0 }" v-for="item in 10" :key="item">
+          <div :style="{ height: '160px', display: 'flex', 'justify-content': 'center', 'align-items': 'center', background: '#fff' }">
+            <h5>奈好</h5>
+          </div>
+        </mn-flex>
+      </mn-flexes>
     </mn-section>
   </mn-container>
 </template>
@@ -35,8 +45,8 @@
   import CardItem from 'vue-human/components/card/card-item'
   import CardBody from 'vue-human/components/card/card-body'
 
-  import Cols from 'vue-human/components/column/cols'
-  import Col from 'vue-human/components/column/col'
+  import flexes from 'vue-human/components/flex/flexes'
+  import flex from 'vue-human/components/flex/flex'
 
   export default {
     components: {
@@ -49,8 +59,8 @@
       [Card.name]: Card,
       [CardItem.name]: CardItem,
       [CardBody.name]: CardBody,
-      [Cols.name]: Cols,
-      [Col.name]: Col
+      ...flexes.inject(),
+      ...flex.inject()
     }
   }
 </script>

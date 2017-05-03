@@ -37,9 +37,9 @@ const router = new VueRouter({
       component: resolve => { require(['../components/column'], resolve) }
     },
     {
-      path: '/legacy-column',
-      name: 'legacyColumn',
-      component: resolve => { require(['../components/column/legacy'], resolve) }
+      path: '/flex',
+      name: 'flex',
+      component: resolve => { require(['../components/flex'], resolve) }
     },
     {
       path: '/popup',

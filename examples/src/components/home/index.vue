@@ -83,14 +83,14 @@
             name: this.$t('examples.menus.layout'),
             children: [
               {
-                name: 'Col',
-                small: '列',
-                link: { name: 'legacyColumn' }
+                name: 'Column',
+                small: '12 列布局',
+                link: { name: 'column' }
               },
               {
-                name: 'Column',
-                small: '列',
-                link: { name: 'column' }
+                name: 'Flex',
+                small: '弹性盒子',
+                link: { name: 'flex' }
               }
             ]
           },
