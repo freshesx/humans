@@ -127,7 +127,8 @@
        * 触发修改 selections
        */
       emitSelections (selections) {
-        this.$emit('selections', selections)
+        this.$emit('selections', selections) // @todo plan to remove
+        this.$emit('update:selections', selections) // Add for vue2.3
       }
     },
     computed: {
