@@ -8,9 +8,11 @@ describe('util/Element', () => {
     }
 
     const element = new Element(vueElement)
+    const injected = element.inject()
 
     expect(element).to.be.an.instanceof(Element)
     expect(element).to.have.property('install')
+    expect(injected.name).to.be.equal('mn-test')
   })
 
   it('.beforeInstalled() & .afterInstalled()', () => {
