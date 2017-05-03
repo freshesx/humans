@@ -10,9 +10,13 @@
 
 <script>
   import Element from '../../util/Element'
+  import iconElement from '../icon/icon'
 
   export default new Element({
     name: 'mn-cell-icon',
+    components: {
+      [iconElement.name]: iconElement
+    },
     props: {
       checked: {
         type: Boolean,
