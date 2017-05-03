@@ -8,19 +8,23 @@
       </mn-letter>
     </mn-section>
 
-    <mn-section v-for="(menu, menuIndex) in menus" :key="menuIndex">
-      <mn-section-note>
-        {{ menu.name }}
-      </mn-section-note>
-      <mn-card>
-        <mn-card-item type="link" @click="$router.push(child.link)" v-for="(child, childIndex) in menu.children" :key="childIndex">
-          <mn-card-body>
-            {{ child.name }}
-            <small>{{ child.small }}</small>
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
-    </mn-section>
+    <mn-cols>
+      <mn-col desktop="three" v-for="(menu, menuIndex) in menus" :key="menuIndex">
+        <mn-section>
+          <mn-section-note>
+            {{ menu.name }}
+          </mn-section-note>
+          <mn-card>
+            <mn-card-item type="link" @click="$router.push(child.link)" v-for="(child, childIndex) in menu.children" :key="childIndex">
+              <mn-card-body>
+                {{ child.name }}
+                <small>{{ child.small }}</small>
+              </mn-card-body>
+            </mn-card-item>
+          </mn-card>
+        </mn-section>
+      </mn-col>
+    </mn-cols>
   </mn-container>
 </template>
 
@@ -33,6 +37,7 @@
   import Card from 'vue-human/components/card/card'
   import CardItem from 'vue-human/components/card/card-item'
   import CardBody from 'vue-human/components/card/card-body'
+  import columnSuit from 'vue-human/components/column'
 
   export default {
     components: {
@@ -43,7 +48,8 @@
       [LetterBody.name]: LetterBody,
       [Card.name]: Card,
       [CardItem.name]: CardItem,
-      [CardBody.name]: CardBody
+      [CardBody.name]: CardBody,
+      ...columnSuit.map()
     },
     data () {
       return {
@@ -105,6 +111,11 @@
                 name: 'Paginate',
                 small: '页码',
                 link: { name: 'paginate' }
+              },
+              {
+                name: 'Cell',
+                small: '单位列表',
+                link: { name: 'cell' }
               }
             ]
           }
