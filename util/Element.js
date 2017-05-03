@@ -25,4 +25,15 @@ export default class Element {
       this.afterInstalled(Vue, options)
     }
   }
+
+  /**
+   * For components
+   *
+   * @return {Object}
+   */
+  inject () {
+    return {
+      [this.name]: this
+    }
+  }
 }
