@@ -9,13 +9,15 @@
     </mn-section>
 
     <mn-cols>
-      <mn-col tablet="four" desktop="three" v-for="(menu, menuIndex) in menus" :key="menuIndex">
+      <mn-col tablet="four" desktop="three"
+        v-for="(menu, menuIndex) in menus" :key="menuIndex">
         <mn-section>
           <mn-section-note>
             {{ menu.name }}
           </mn-section-note>
           <mn-card>
-            <mn-card-item type="link" @click="$router.push(child.link)" v-for="(child, childIndex) in menu.children" :key="childIndex">
+            <mn-card-item type="link" @click="$router.push(child.link)"
+              v-for="(child, childIndex) in menu.children" :key="childIndex">
               <mn-card-body>
                 {{ child.name }}
               </mn-card-body>
@@ -31,26 +33,18 @@
 </template>
 
 <script>
-  import Container from 'vue-human/components/container/container'
-  import Section from 'vue-human/components/section/section'
-  import SectionNote from 'vue-human/components/section/section-note'
-  import Letter from 'vue-human/components/letter/letter'
-  import LetterBody from 'vue-human/components/letter/letter-body'
-  import Card from 'vue-human/components/card/card'
-  import CardItem from 'vue-human/components/card/card-item'
-  import CardBody from 'vue-human/components/card/card-body'
+  import containerSuit from 'vue-human/components/container'
+  import sectionSuit from 'vue-human/components/section'
+  import letterSuit from 'vue-human/components/letter'
+  import cardSuit from 'vue-human/components/card'
   import columnSuit from 'vue-human/components/column'
 
   export default {
     components: {
-      [Container.name]: Container,
-      [Section.name]: Section,
-      [SectionNote.name]: SectionNote,
-      [Letter.name]: Letter,
-      [LetterBody.name]: LetterBody,
-      [Card.name]: Card,
-      [CardItem.name]: CardItem,
-      [CardBody.name]: CardBody,
+      ...containerSuit.map(),
+      ...sectionSuit.map(),
+      ...letterSuit.map(),
+      ...cardSuit.map(),
       ...columnSuit.map()
     },
     data () {
