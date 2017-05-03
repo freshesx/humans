@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-column" :style="[ mediaStyle ]">
+  <div class="mn-flex" :style="[ mediaStyle ]">
     <slot></slot>
   </div>
 </template>
@@ -9,7 +9,7 @@
   import Human from 'vue-human'
 
   export default new Element({
-    name: 'mn-column',
+    name: 'mn-flex',
     props: {
       mobile: {
         type: [String, Object]
@@ -63,7 +63,7 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  .mn-column {
+  .mn-flex {
     width: 100%;
     padding: 0 $grid-gutters * 0.5;
   }
