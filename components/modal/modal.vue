@@ -1,0 +1,116 @@
+<template>
+  <mn-popup class="mn-modal"
+    animation="slideInBottom"
+    :show="value"
+    @close="onClosePopup">
+    <div class="mn-modal-prefix">
+      <div class="mn-modal-title">
+        <h5>标题</h5>
+      </div>
+      <div class="mn-modal-close" @click="onClosePopup">
+        <mn-icon :name="icons.closeEmpty" :scale="2"></mn-icon>
+      </div>
+    </div>
+    <div class="mn-modal-body">
+      <slot></slot>
+    </div>
+    <div class="mn-modal-suffix" v-if="$slots.suffix">
+      <slot name="suffix"></slot>
+    </div>
+  </mn-popup>
+</template>
+
+<script>
+  import Element from '../../util/Element'
+  import popup from '../popup/popup'
+  import popupCard from '../popup/popup-card'
+  import icon from '../icon/icon'
+  import cardItem from '../card/card-item'
+  import cardBody from '../card/card-body'
+  import cardBtns from '../card/card-btns'
+
+  export default new Element({
+    name: 'mn-modal',
+    components: {
+      [popup.name]: popup,
+      [popupCard.name]: popupCard,
+      [cardItem.name]: cardItem,
+      [cardBody.name]: cardBody,
+      [cardBtns.name]: cardBtns,
+      ...icon.inject()
+    },
+    props: {
+      value: Boolean,
+      cancelButton: {
+        type: Boolean,
+        default: true
+      }
+    },
+    data () {
+      return {
+        icons: {
+          closeEmpty: require('vue-human-icons/js/ios/close-empty')
+        }
+      }
+    },
+    methods: {
+      onClosePopup () {
+        this.$emit('input', false)
+      }
+    }
+  })
+</script>
+
+<style lang="scss">
+  @import "../../scss/mixins/media";
+
+  .mn-modal {
+    display: flex;
+    flex-direction: column;
+    top: 1.5rem;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    @include min-screen('desktop') {
+      width: 600px;
+      left: 50%;
+      right: auto;
+      margin-left: -300px;
+      top: 10%;
+      bottom: 10%;
+      border-radius: 0.5rem;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .mn-modal-prefix {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 1;
+  }
+
+  .mn-modal-title {
+    padding-left: 1rem;
+  }
+
+  .mn-modal-close {
+    padding-right: 0.5rem;
+    cursor: pointer;
+  }
+
+  .mn-modal-body {
+    flex: 1;
+    position: relative;
+  }
+
+  .mn-modal-suffix {
+    flex-shrink: 1;
+    min-height: 2.75rem;
+  }
+</style>
