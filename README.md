@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/badge/npm-v2.3.5-orange.svg?style=flat-square">
   </a>
   <a href="https://minowu.gitbooks.io/vue-human" title="gitbook">
-    <img src="https://img.shields.io/badge/gitbook-docs-brightgreen.svg?style=flat-square">
+    <img src="https://img.shields.io/badge/gitbook-中文文档-brightgreen.svg?style=flat-square">
   </a>
 </div>
 
