@@ -7,6 +7,9 @@
   <a href="https://minowu.gitbooks.io/vue-human" title="gitbook">
     <img src="https://img.shields.io/badge/gitbook-中文文档-brightgreen.svg?style=flat-square">
   </a>
+  <span title="License MIT">
+    <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square">
+  </span>
 </div>
 
 [![NPM](https://nodei.co/npm/vue-human.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-human)
