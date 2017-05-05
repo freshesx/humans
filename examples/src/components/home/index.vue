@@ -127,6 +127,11 @@
                 name: 'Image',
                 small: '图片',
                 link: { name: 'image' }
+              },
+              {
+                name: 'Modal',
+                small: '模态对话框',
+                link: { name: 'modal' }
               }
             ]
           }

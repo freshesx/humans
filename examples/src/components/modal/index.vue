@@ -1,0 +1,55 @@
+<template>
+  <mn-container>
+    <mn-section>
+      <mn-card>
+        <mn-card-item>
+          <mn-card-body>
+            <mn-btn theme="primary" @click="onOpenModal" block>Open Modal</mn-btn>
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+    </mn-section>
+
+    <mn-modal v-model="showModal">
+      <mn-scroller>
+        <mn-section>
+          <p>Example Data</p>
+        </mn-section>
+      </mn-scroller>
+      <mn-modal-action slot="suffix">
+        <mn-btn theme="secondary-link">Cancel</mn-btn>
+        <mn-btn theme="primary">Confirm</mn-btn>
+      </mn-modal-action>
+    </mn-modal>
+  </mn-container>
+</template>
+
+<script>
+  import scrollerSuits from 'vue-human/components/scroller'
+  import containerSuits from 'vue-human/components/container'
+  import sectionSuits from 'vue-human/components/section'
+  import cardSuits from 'vue-human/components/card'
+  import buttonSuits from 'vue-human/components/button'
+  import modalSuits from 'vue-human/components/modal'
+
+  export default {
+    components: {
+      ...scrollerSuits.map(),
+      ...containerSuits.map(),
+      ...sectionSuits.map(),
+      ...cardSuits.map(),
+      ...buttonSuits.map(),
+      ...modalSuits.map()
+    },
+    data () {
+      return {
+        showModal: false
+      }
+    },
+    methods: {
+      onOpenModal () {
+        this.showModal = true
+      }
+    }
+  }
+</script>
