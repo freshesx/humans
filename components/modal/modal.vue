@@ -3,14 +3,6 @@
     animation="slideInBottom"
     :show="value"
     @close="onClosePopup">
-    <div class="mn-modal-prefix">
-      <div class="mn-modal-title">
-        <h5>标题</h5>
-      </div>
-      <div class="mn-modal-close" @click="onClosePopup">
-        <mn-icon :name="icons.closeEmpty" :scale="2"></mn-icon>
-      </div>
-    </div>
     <div class="mn-modal-body">
       <slot></slot>
     </div>
@@ -46,13 +38,6 @@
         default: true
       }
     },
-    data () {
-      return {
-        icons: {
-          closeEmpty: require('vue-human-icons/js/ios/close-empty')
-        }
-      }
-    },
     methods: {
       onClosePopup () {
         this.$emit('input', false)
@@ -67,13 +52,13 @@
   .mn-modal {
     display: flex;
     flex-direction: column;
-    top: 1.5rem;
+    top: 5rem;
     bottom: 0;
     width: 100%;
     background: #fff;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4);
     overflow: hidden;
 
     @include min-screen('desktop') {
@@ -84,24 +69,8 @@
       top: 10%;
       bottom: 10%;
       border-radius: 0.5rem;
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4);
     }
-  }
-
-  .mn-modal-prefix {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-shrink: 1;
-  }
-
-  .mn-modal-title {
-    padding-left: 1rem;
-  }
-
-  .mn-modal-close {
-    padding-right: 0.5rem;
-    cursor: pointer;
   }
 
   .mn-modal-body {
