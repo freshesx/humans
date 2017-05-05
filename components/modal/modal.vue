@@ -68,8 +68,8 @@
       margin-left: -300px;
       top: 10%;
       bottom: 10%;
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4);
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 100px rgba(0, 0, 0, 0.1);
     }
   }
 
