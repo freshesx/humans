@@ -1,12 +1,6 @@
 <template>
   <mn-popup :show="isShow" :class="[ 'mn-loading-mask' ]">
-    <mn-popup-card class="has-none-margin-bottom">
-      <mn-card-item>
-        <mn-card-body class="has-center-text">
-          <mn-loading-icon></mn-loading-icon>
-        </mn-card-body>
-      </mn-card-item>
-    </mn-popup-card>
+    <mn-loading-icon></mn-loading-icon>
   </mn-popup>
 </template>
 
@@ -38,11 +32,19 @@
 
 <style lang="scss">
   .mn-loading-mask {
-    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 66px;
+    height: 66px;
     top: 45%;
     right: auto;
     bottom: auto;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 1);
+    color: #333;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
   }
 </style>
