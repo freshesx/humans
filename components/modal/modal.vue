@@ -56,9 +56,9 @@
     bottom: 0;
     width: 100%;
     background: #fff;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.4);
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.02);
     overflow: hidden;
 
     @include min-screen('desktop') {
