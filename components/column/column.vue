@@ -127,9 +127,15 @@
 
 <style lang="scss">
   @import "../../scss/vars";
+  @import "../../scss/mixins/media";
 
   .mn-column {
     width: 100%;
-    padding: 0 $grid-gutters * 0.5;
+
+    // When `mobile` media query, padding is 0, and use single column forcely.
+    // When equal and more than `tablet` media query, padding is 0.5rem.
+    @include min-screen(tablet) {
+      padding: 0 $grid-gutters * 0.5;
+    }
   }
 </style>
