@@ -116,9 +116,9 @@
         const [span, offset, order] = mediaValue.split(splitReg)
 
         return {
-          span: span ? parseInt(span) : undefined,
-          offset: offset ? parseInt(offset) : undefined,
-          order: order ? parseInt(order) : undefined
+          span: span ? parseInt(span) : 12,
+          offset: offset ? parseInt(offset) : 0,
+          order: order ? parseInt(order) : 0
         }
       }
     }
