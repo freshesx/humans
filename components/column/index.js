@@ -1,8 +1,12 @@
 import Suits from '../../util/Suits'
-import Cols from './cols'
-import Col from './col'
+import columns from './columns'
+import column from './column'
+import cols from './cols'
+import col from './col'
 
 export default new Suits([
-  Cols,
-  Col
+  columns,
+  column,
+  cols,
+  col
 ])
