@@ -12,23 +12,6 @@
   export default new Element({
     name: 'mn-column',
     mixins: [ media ],
-    data () {
-      return {
-        /**
-         * Clear padding-left
-         *
-         * @type {Boolean}
-         */
-        clearLeftPadding: false,
-
-        /**
-         * Clear padding-right
-         *
-         * @type {Boolean}
-         */
-        clearRightPadding: false
-      }
-    },
     computed: {
       /**
        * Adapted column config
@@ -88,18 +71,6 @@
           order: this.columnConfig.order > 0
             ? this.columnConfig.order
             : undefined
-        }
-      },
-
-      /**
-       * Flex padding
-       *
-       * @return {Object}
-       */
-      paddingStyle () {
-        return {
-          'padding-left': this.clearLeftPadding ? 0 : undefined,
-          'padding-right': this.clearRightPadding ? 0 : undefined
         }
       }
     },
