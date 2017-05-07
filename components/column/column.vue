@@ -21,15 +21,16 @@
     },
     computed: {
       current () {
-        if (isUndefined(this.mediaStyle)) {
+        // Return default span
+        if (isUndefined(this.adaptedMedia)) {
           return { span: 12 }
         }
 
-        const mediaStyle = this.mediaStyle
+        const adaptedMedia = this.adaptedMedia
 
-        if (isString(mediaStyle)) {
+        if (isString(adaptedMedia)) {
           return {
-            span: parseInt(mediaStyle)
+            span: parseInt(adaptedMedia)
           }
         }
       },
