@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-column" :style="[ widthStyle, offsetStyle, orderStyle, paddingStyle]">
+  <div class="mn-column" :style="[ widthStyle, offsetStyle, orderStyle]">
     <slot></slot>
   </div>
 </template>

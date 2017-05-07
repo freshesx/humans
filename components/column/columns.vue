@@ -17,29 +17,38 @@
         let lastSpans = 0
 
         this.$children.forEach((child, index) => {
-          console.log(child._uid)
+          // console.log(child._uid)
           // 第一个默认添加
-          if (lastSpans === 0) {
-            lastStorage.push(child)
-            lastSpans += child.currentSpan
-            return
-          }
+          // if (lastSpans === 0) {
+          //   lastStorage.push(child)
+          //   lastSpans += child.columnConfig.span
+          // } else
+          // if (lastSpans + child.columnConfig.span <= 12) {
+          //   // 第二个预判是否小于等于 12，true 则添加，false 则清空后添加
+          //   // lastStorage.push(child)
+          //   // lastSpans += child.columnConfig.span
+          // } else {
+          //   // 赋值给总的
+          //   storage.push([...lastStorage])
+          //   // 清空
+          //   lastStorage = []
+          //   lastSpans = 0
+          //   // 重新赋值
+          //   // lastStorage.push(child)
+          //   // lastSpans += child.columnConfig.span
+          // }
+          // console.log(child.columnConfig.span, child.columnConfig.span + child.columnConfig.offset)
+          const span = child.columnConfig.span
+          const offset = child.columnConfig.offset ? child.columnConfig.offset : 0
 
-          // 第二个预判是否小于等于 12，true 则添加，false 则清空后添加
-          console.log(lastSpans, child.currentSpan)
-          if (lastSpans + child.currentSpan <= 12) {
-            lastStorage.push(child)
-            lastSpans += child.currentSpan
-          } else {
-            // 赋值给总的
+          if (lastSpans + span + offset > 12) {
             storage.push([...lastStorage])
-            // 清空
             lastStorage = []
             lastSpans = 0
-            // 重新赋值
-            lastStorage.push(child)
-            lastSpans += child.currentSpan
           }
+
+          lastStorage.push(child)
+          lastSpans += (span + offset)
 
           // 最后一个默认再给一次总的数组
           if (length - 1 === index) {
@@ -51,22 +60,22 @@
         // console.log(storage)
         storage.forEach(items => {
           items.forEach(item => {
-            item.leftNoneSpan = false
-            item.rightNoneSpan = false
+            item.clearLeftPadding = false
+            item.clearRightPadding = false
           })
-          items[0].leftNoneSpan = true
-          items[items.length - 1].rightNoneSpan = true
+          items[0].clearLeftPadding = true
+          items[items.length - 1].clearRightPadding = true
         })
       }
     },
     mounted () {
       this.$nextTick(() => {
         this.setSpans()
-        // window.addEventListener('resize', this.setSpans)
+        window.addEventListener('resize', this.setSpans)
       })
     },
     beforeDestroy () {
-      // window.removeEventListener('resize', this.setSpans)
+      window.removeEventListener('resize', this.setSpans)
     }
   })
 </script>
