@@ -37,10 +37,18 @@
        * @return {Object}
        */
       columnConfig () {
-        let columnConfig = { span: 12, offset: 0, order: 0 }
+        // Default config
+        const columnConfig = { span: 12, offset: 0, order: 0 }
 
-        if (isString(this.adaptedMedia)) {
-          Object.assign(columnConfig, this.convertQuery(this.adaptedMedia))
+        // Parse string media query value
+        if (isString(this.adaptedMediaConfig)) {
+          Object.assign(columnConfig, this.convertQuery(this.adaptedMediaConfig))
+        }
+
+        // !important sets
+        // Only use single column (12 span, 0 offset) under `mobile` screen
+        if (this.adaptedMediaName === 'mobile') {
+          Object.assign(columnConfig, { span: 12, offset: 0 })
         }
 
         return columnConfig
