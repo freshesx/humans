@@ -32,7 +32,7 @@ $ yarn add vue-human
 
 Step 2: Must set babel in your webpack
 
-> Install in Webpack 2.x
+> Install in Webpack 2
 
 ``` javascript
 module: {
@@ -46,27 +46,29 @@ module: {
 }
 ```
 
-> Install in Webpack 1.x
-
-``` javascript
-loaders: [
-  {
-    test: /vue-human[-\w]*\/.*?js$/,
-    loader: 'babel',
-    exclude: /vue-human[-\w]*\/node_modules/
-  }
-]
-```
-
-Step 3: Import vue-human
+Step 3: Import vue-human core and form components
 
 ``` javascript
 import Vue from 'vue'
 import human from 'vue-human'
-import totalSuits from 'vue-human/suits/total'
+import coreSuits from 'vue-human/components/coreSuits'
+import formSuits from 'vue-human/components/formSuits'
 
 Vue.use(human)
-Vue.use(totalSuits)
+Vue.use(coreSuits)
+Vue.use(formSuits)
+```
+
+Step 4: Import some components in component
+
+``` javascript
+import carousel from 'vue-human/components/carousel'
+
+export default {
+  components: {
+    ...carousel.map()
+  }
+}
 ```
 
 ## Recommend
