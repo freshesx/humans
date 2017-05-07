@@ -13,7 +13,12 @@
     <mn-modal v-model="showModal">
       <mn-scroller>
         <mn-section>
-          <p>Example Data</p>
+          <mn-card>
+            <mn-card-item v-for="item in 20" type="link">
+              <mn-card-body>奈好</mn-card-body>
+              <mn-card-suffix>{{ item }}</mn-card-suffix>
+            </mn-card-item>
+          </mn-card>
         </mn-section>
       </mn-scroller>
       <mn-modal-action slot="suffix">
