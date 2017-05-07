@@ -25,6 +25,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue components suits util",
     "dev": "node examples/build/dev-server.js",
+    "example": "node examples/build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js"
   },
   "dependencies": {
