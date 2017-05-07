@@ -44,8 +44,6 @@
     overflow: hidden;
 
     @include screen('mobile') {
-      margin-left: $grid-gutters * -1;
-      margin-right: $grid-gutters * -1;
       border-radius: 0;
     }
 
@@ -55,8 +53,6 @@
 
     &.is-none-mobile-narrow {
       @include screen('mobile') {
-        margin-left: 0;
-        margin-right: 0;
         border-radius: $-card-mobile-radius;
       }
     }
