@@ -21,17 +21,31 @@ export default {
     }
   },
   computed: {
-    adaptedMedia () {
+    /**
+     * Adapted media query config
+     *
+     * @return {Object}
+     */
+    adaptedMediaConfig () {
       let screens = Human.$screens.filter(item => {
         return this.offsetWidth > item.min && typeof this[item.name] !== 'undefined'
-      })
+      }).reverse()
 
       // 取结果集中的最后一个匹配值
-      let screen = screens.reverse()[0]
+      return screens.length > 0 ? this[screens[0].name] : {}
+    },
 
-      if (screen) {
-        return this[screen.name]
-      }
+    /**
+     * Adapted media query's name
+     *
+     * @return {String}
+     */
+    adaptedMediaName () {
+      let screens = Human.$screens.filter(item => {
+        return this.offsetWidth > item.min
+      }).reverse()
+
+      return screens.length > 0 ? screens[0].name : 'mobile'
     }
   },
   methods: {
