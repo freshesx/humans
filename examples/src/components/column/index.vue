@@ -9,8 +9,8 @@
     </mn-section>
 
     <mn-section>
-      <mn-cols>
-        <mn-col tablet="four" desktop="three" v-for="item in 10" :key="item">
+      <mn-columns>
+        <mn-column mobile="6" tablet="four" desktop="three" v-for="item in 10" :key="item">
           <mn-card>
             <mn-card-item>
               <mn-card-body>
@@ -18,8 +18,8 @@
               </mn-card-body>
             </mn-card-item>
           </mn-card>
-        </mn-col>
-      </mn-cols>
+        </mn-column>
+      </mn-columns>
     </mn-section>
   </mn-container>
 </template>
@@ -35,8 +35,10 @@
   import CardItem from 'vue-human/components/card/card-item'
   import CardBody from 'vue-human/components/card/card-body'
 
-  import Cols from 'vue-human/components/column/cols'
-  import Col from 'vue-human/components/column/col'
+  // import Cols from 'vue-human/components/column/cols'
+  // import Col from 'vue-human/components/column/col'
+  import columns from 'vue-human/components/column/columns'
+  import column from 'vue-human/components/column/column'
 
   export default {
     components: {
@@ -49,8 +51,8 @@
       [Card.name]: Card,
       [CardItem.name]: CardItem,
       [CardBody.name]: CardBody,
-      [Cols.name]: Cols,
-      [Col.name]: Col
+      ...columns.inject(),
+      ...column.inject()
     }
   }
 </script>
