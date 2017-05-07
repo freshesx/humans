@@ -104,6 +104,11 @@
                 link: { name: 'input' }
               },
               {
+                name: 'Check',
+                small: '多选',
+                link: { name: 'check' }
+              },
+              {
                 name: 'Counter',
                 small: '计数器',
                 link: { name: 'counter' }

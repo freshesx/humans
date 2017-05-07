@@ -75,6 +75,11 @@ const router = new VueRouter({
       path: '/modal',
       name: 'modal',
       component: resolve => { require(['../components/modal'], resolve) }
+    },
+    {
+      path: '/check',
+      name: 'check',
+      component: resolve => { require(['../components/check'], resolve) }
     }
   ]
 })
