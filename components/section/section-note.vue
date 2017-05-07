@@ -21,10 +21,5 @@
     font-size: 0.875rem;
     padding-left: $grid-gutters;
     margin-bottom: $grid-gutters / 2;
-
-    @include screen('mobile') {
-      margin-left: $grid-gutters * -1;
-      margin-right: $grid-gutters * -1;
-    }
   }
 </style>
