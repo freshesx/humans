@@ -55,32 +55,32 @@
             children: [
               {
                 name: 'Button',
-                small: '按钮',
+                small: this.$t('examples.submenus.core.button'),
                 link: { name: 'button' }
               },
               {
                 name: 'Icon',
-                small: '图标',
+                small: this.$t('examples.submenus.core.icon'),
                 link: { name: 'icon' }
               },
               {
                 name: 'Scroller',
-                small: '滚动条',
+                small: this.$t('examples.submenus.core.scroller'),
                 link: { name: 'scroller' }
               },
               {
                 name: 'Column',
-                small: '12 列布局',
+                small: this.$t('examples.submenus.core.column'),
                 link: { name: 'column' }
               },
               {
                 name: 'Flex',
-                small: '弹性盒子',
+                small: this.$t('examples.submenus.core.flex'),
                 link: { name: 'flex' }
               },
               {
                 name: 'Image',
-                small: '图片',
+                small: this.$t('examples.submenus.core.image'),
                 link: { name: 'image' }
               }
             ]
@@ -90,12 +90,12 @@
             children: [
               {
                 name: 'Popup',
-                small: '浮层',
+                small: this.$t('examples.submenus.popup.popup'),
                 link: { name: 'popup' }
               },
               {
                 name: 'Modal',
-                small: '模态对话框',
+                small: this.$t('examples.submenus.popup.modal'),
                 link: { name: 'modal' }
               }
             ]
@@ -105,22 +105,22 @@
             children: [
               {
                 name: 'Form',
-                small: '表单',
+                small: this.$t('examples.submenus.form.form'),
                 link: { name: 'form' }
               },
               {
                 name: 'Input',
-                small: '单行文本框',
+                small: this.$t('examples.submenus.form.input'),
                 link: { name: 'input' }
               },
               {
                 name: 'Check',
-                small: '多选',
+                small: this.$t('examples.submenus.form.check'),
                 link: { name: 'check' }
               },
               {
                 name: 'Counter',
-                small: '计数器',
+                small: this.$t('examples.submenus.form.counter'),
                 link: { name: 'counter' }
               }
             ]
@@ -130,12 +130,12 @@
             children: [
               {
                 name: 'Paginate',
-                small: '页码',
+                small: this.$t('examples.submenus.components.paginate'),
                 link: { name: 'paginate' }
               },
               {
                 name: 'Cell',
-                small: '单位列表',
+                small: this.$t('examples.submenus.components.cell'),
                 link: { name: 'cell' }
               }
             ]
