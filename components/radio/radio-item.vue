@@ -6,9 +6,13 @@
 
 <script>
   import Element from '../../util/Element'
+  import cardItem from '../card/card-item'
 
   export default new Element({
     name: 'mn-radio-item',
+    components: {
+      ...cardItem.inject()
+    },
     props: {
       value: null,
       data: null,
