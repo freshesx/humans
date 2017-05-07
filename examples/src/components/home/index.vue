@@ -69,16 +69,6 @@
                 link: { name: 'scroller' }
               },
               {
-                name: 'Popup',
-                small: '浮层',
-                link: { name: 'popup' }
-              }
-            ]
-          },
-          {
-            name: this.$t('examples.menus.layout'),
-            children: [
-              {
                 name: 'Column',
                 small: '12 列布局',
                 link: { name: 'column' }
@@ -87,6 +77,26 @@
                 name: 'Flex',
                 small: '弹性盒子',
                 link: { name: 'flex' }
+              },
+              {
+                name: 'Image',
+                small: '图片',
+                link: { name: 'image' }
+              }
+            ]
+          },
+          {
+            name: this.$t('examples.menus.popup'),
+            children: [
+              {
+                name: 'Popup',
+                small: '浮层',
+                link: { name: 'popup' }
+              },
+              {
+                name: 'Modal',
+                small: '模态对话框',
+                link: { name: 'modal' }
               }
             ]
           },
@@ -127,16 +137,6 @@
                 name: 'Cell',
                 small: '单位列表',
                 link: { name: 'cell' }
-              },
-              {
-                name: 'Image',
-                small: '图片',
-                link: { name: 'image' }
-              },
-              {
-                name: 'Modal',
-                small: '模态对话框',
-                link: { name: 'modal' }
               }
             ]
           }
