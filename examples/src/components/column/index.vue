@@ -42,7 +42,7 @@
 
     <mn-section>
       <mn-columns>
-        <mn-column mobile="2, 2" desktop="6">
+        <mn-column mobile="2, 2" desktop="6, 6">
           <mn-card>
             <mn-card-item>
               <mn-card-body>
