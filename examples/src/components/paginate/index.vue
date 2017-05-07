@@ -1,6 +1,6 @@
 <template>
-  <mn-cols>
-    <mn-col desktop="six, three">
+  <mn-columns>
+    <mn-column desktop="6, 3">
       <mn-card>
         <mn-card-item><h5>total 20</h5></mn-card-item>
         <mn-card-item>
@@ -20,21 +20,17 @@
           </mn-card-body>
         </mn-card-item>
       </mn-card>
-    </mn-col>
-  </mn-cols>
+    </mn-column>
+  </mn-columns>
 </template>
 
 <script>
-  import Element from 'vue-human/util/Element'
-  import columnSuits from 'vue-human/components/column'
-  import cardSuits from 'vue-human/components/card'
+  import coreSuits from 'vue-human/components/coreSuits'
   import paginateSuits from 'vue-human/components/paginate'
 
-  export default new Element({
-    name: 'p-paginate',
+  export default {
     components: {
-      ...columnSuits.map(),
-      ...cardSuits.map(),
+      ...coreSuits.map(),
       ...paginateSuits.map()
     },
     data () {
@@ -50,5 +46,5 @@
         console.log(pageNumber)
       }
     }
-  })
+  }
 </script>
