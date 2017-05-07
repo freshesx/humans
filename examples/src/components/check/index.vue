@@ -13,13 +13,17 @@
       <mn-section>
         <mn-section-note>What do you like?</mn-section-note>
         <mn-card>
-          <mn-check-item :data="option.value" v-model="models.like" v-for="(option, key) in likeOptions" :key="key">
+          <mn-check-item :data="option.value"
+            v-model="models.like"
+            v-for="(option, key) in likeOptions" :key="key">
             <mn-card-prefix action>
-              <mn-check-icon :data="option.value" :value="models.like"></mn-check-icon>
+              <mn-check-icon :data="option.value"
+                :value="models.like"></mn-check-icon>
             </mn-card-prefix>
             <mn-card-body>{{ option.label }}</mn-card-body>
             <mn-card-suffix>
-              <mn-icon :name="icons.information" @click.native.stop="onOpenTip"></mn-icon>
+              <mn-icon :name="icons.information"
+                @click.native.stop="onOpenTip"></mn-icon>
             </mn-card-suffix>
           </mn-check-item>
         </mn-card>
