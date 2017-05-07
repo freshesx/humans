@@ -8,8 +8,8 @@
       </mn-letter>
     </mn-section>
 
-    <mn-cols>
-      <mn-col tablet="four" desktop="three"
+    <mn-columns>
+      <mn-column tablet="4" desktop="3"
         v-for="(menu, menuIndex) in menus" :key="menuIndex">
         <mn-section>
           <mn-section-note>
@@ -27,8 +27,8 @@
             </mn-card-item>
           </mn-card>
         </mn-section>
-      </mn-col>
-    </mn-cols>
+      </mn-column>
+    </mn-columns>
   </mn-container>
 </template>
 
