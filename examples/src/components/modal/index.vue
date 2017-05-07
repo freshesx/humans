@@ -14,7 +14,7 @@
       <mn-scroller>
         <mn-section>
           <mn-card>
-            <mn-card-item v-for="item in 20" type="link">
+            <mn-card-item v-for="item in 20" :key="item" type="link">
               <mn-card-body>奈好</mn-card-body>
               <mn-card-suffix>{{ item }}</mn-card-suffix>
             </mn-card-item>
@@ -22,7 +22,7 @@
         </mn-section>
       </mn-scroller>
       <mn-modal-action slot="suffix">
-        <mn-btn theme="secondary-link">Cancel</mn-btn>
+        <mn-btn theme="secondary-link" @click="showModal = false">Cancel</mn-btn>
         <mn-btn theme="primary">Confirm</mn-btn>
       </mn-modal-action>
     </mn-modal>
