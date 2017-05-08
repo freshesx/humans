@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-column" :class="computedClass">
+  <div class="mn-column" :class="[ widthClass ]" :style="[ orderStyle ]">
     <slot></slot>
   </div>
 </template>
@@ -36,12 +36,13 @@
        * @return {Array}
        */
       mediaQueries () {
-        const screens = Human.$screens.map(item => item.name)
-        return screens.map(screen => {
-          if (!isUndefined(this[screen])) {
-            return { name: screen, ...this.parseConfig(this[screen]) }
+        const configOfScreens = Human.$screens.map(screen => {
+          if (!isUndefined(this[screen.name])) {
+            return { ...screen, ...this.parseConfig(this[screen.name]) }
           }
         })
+
+        return configOfScreens.filter(item => !isUndefined(item))
       },
 
       /**
@@ -49,12 +50,10 @@
        *
        * @return {Array}
        */
-      computedClass () {
+      widthClass () {
         const classes = []
 
         this.mediaQueries.forEach(config => {
-          if (isUndefined(config)) return
-
           if (!isUndefined(config.span)) {
             classes.push([ `is-${config.name}-${config.span}` ])
           }
