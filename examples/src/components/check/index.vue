@@ -65,12 +65,14 @@
 <script>
   import coreSuits from 'vue-human/components/coreSuits'
   import formSuits from 'vue-human/components/formSuits'
+  import checkSuits from 'vue-human/components/check'
   import required from 'vuelidate/lib/validators/required'
   import Message from 'vue-human/util/Message'
 
   export default {
     components: {
       ...coreSuits.map(),
+      ...checkSuits.map(),
       ...formSuits.map()
     },
     validations: {
