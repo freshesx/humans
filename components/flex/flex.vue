@@ -65,6 +65,5 @@
 
   .mn-flex {
     width: 100%;
-    padding: 0 $grid-gutters * 0.5;
   }
 </style>

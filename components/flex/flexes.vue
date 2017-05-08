@@ -19,7 +19,6 @@
 
   .mn-flexes {
     display: flex;
-    margin: 0 $grid-gutters * -0.5;
     flex-wrap: wrap;
   }
 </style>
