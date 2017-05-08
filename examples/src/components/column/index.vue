@@ -19,11 +19,11 @@
             </mn-card-item>
           </mn-card>
         </mn-column>
-        <mn-column mobile="4">
+        <mn-column mobile="4, , -1">
           <mn-card>
             <mn-card-item>
               <mn-card-body>
-                <h5>奈好1</h5>
+                <h5>奈好2</h5>
               </mn-card-body>
             </mn-card-item>
           </mn-card>
@@ -32,7 +32,7 @@
           <mn-card>
             <mn-card-item>
               <mn-card-body>
-                <h5>奈好1</h5>
+                <h5>奈好3</h5>
               </mn-card-body>
             </mn-card-item>
           </mn-card>
