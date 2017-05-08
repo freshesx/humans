@@ -11,11 +11,16 @@
     <mn-section>
       <mn-card>
         <mn-card-item>
-          <h5>基本用法</h5>
+          <mn-card-prefix>
+            <mn-icon :name="icons.home"></mn-icon>
+          </mn-card-prefix>
+          <mn-card-body>
+            <h5>基本用法</h5>
+          </mn-card-body>
         </mn-card-item>
         <mn-card-item>
           <mn-card-body>
-            <mn-btn theme="primary" :icon="icons.home">按钮</mn-btn>
+            <mn-btn theme="primary" :icon="icons.home" @click="onPressButton">按钮</mn-btn>
             <mn-btn theme="secondary">按钮</mn-btn>
             <mn-btn theme="inverse">按钮</mn-btn>
             <mn-btn theme="warning">按钮</mn-btn>
