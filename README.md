@@ -49,22 +49,22 @@ Step 3: Import vue-human core and form components
 ``` javascript
 import Vue from 'vue'
 import human from 'vue-human'
-import coreSuits from 'vue-human/components/coreSuits'
-import formSuits from 'vue-human/components/formSuits'
 
 Vue.use(human)
-Vue.use(coreSuits)
-Vue.use(formSuits)
 ```
 
 Step 4: Import some components in component
 
 ``` javascript
+import coreSuits from 'vue-human/components/coreSuits'
 import carousel from 'vue-human/components/carousel'
+// import formSuits from 'vue-human/components/formSuits'
 
 export default {
   components: {
+    ...coreSuits.map(),
     ...carousel.map()
+    // ...formSuits.map()   // If you need add form control
   }
 }
 ```
