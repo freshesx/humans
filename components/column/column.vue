@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-column" :class="classes">
+  <div class="mn-column" :class="computedClass">
     <slot></slot>
   </div>
 </template>
@@ -28,16 +28,26 @@
       }
     },
     computed: {
+      /**
+       * Media queries config
+       *
+       * @return {Array}
+       */
       mediaQueries () {
         const screens = Human.$screens.map(item => item.name)
         return screens.map(screen => {
           if (!isUndefined(this[screen])) {
-            return { name: screen, ...this.convertMediaQueries(this[screen]) }
+            return { name: screen, ...this.parseConfig(this[screen]) }
           }
         })
       },
 
-      classes () {
+      /**
+       * Computed class
+       *
+       * @return {Array}
+       */
+      computedClass () {
         const classes = []
 
         this.mediaQueries.forEach(config => {
@@ -56,14 +66,15 @@
     },
     methods: {
       /**
-       * 将字符串或对象的值转化为对象格式
+       * Parse media query config
        * @protected
-       * @param {String|Object} queries
+       *
+       * @param {String|Object} query
        * @return {Object}
        */
-      convertMediaQueries (queries) {
-        if (isString(queries)) {
-          const [span, offset, order] = queries.split(/,\s*/)
+      parseConfig (query) {
+        if (isString(query)) {
+          const [span, offset, order] = query.split(/,\s*/)
           return {
             span: this.parseString(span),
             offset: this.parseString(offset),
@@ -71,13 +82,20 @@
           }
         }
 
-        if (isPlainObject(queries)) {
-          return queries
+        if (isPlainObject(query)) {
+          return query
         }
 
         return {}
       },
 
+      /**
+       * Parse string to number
+       * @private
+       *
+       * @param  {String|undefined}    value
+       * @return {Number|undefined}
+       */
       parseString (value) {
         return !isUndefined(value) && value !== ''
           ? parseInt(value)
