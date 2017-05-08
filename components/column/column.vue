@@ -9,10 +9,12 @@
   import isString from 'lodash/isString'
   import isUndefined from 'lodash/isUndefined'
   import isPlainObject from 'lodash/isPlainObject'
+  import order from './order'
   import Human from '../../index.js'
 
   export default new Element({
     name: 'mn-column',
+    mixins: [ order ],
     props: {
       mobile: {
         type: [String, Object]
