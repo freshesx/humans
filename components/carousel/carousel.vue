@@ -95,7 +95,11 @@
     },
     created () {
       // 初始化时获得 items 数量
-      this.length = this.$slots.default.filter(item => item.tag && item.tag.includes('mn-carousel-item')).length
+      if (!this.$slots.default) {
+        this.length = 0
+      } else {
+        this.length = this.$slots.default.filter(item => item.tag && item.tag.includes('mn-carousel-item')).length
+      }
     },
     mounted () {
       this.$nextTick(() => {
