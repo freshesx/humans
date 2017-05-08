@@ -1,96 +1,87 @@
 <template>
-  <div class="mn-column" :style="[ widthStyle, offsetStyle, orderStyle]">
+  <div class="mn-column" :class="classes">
     <slot></slot>
   </div>
 </template>
 
 <script>
   import Element from '../../util/Element'
-  import media from './media'
   import isString from 'lodash/isString'
+  import isUndefined from 'lodash/isUndefined'
+  import isPlainObject from 'lodash/isPlainObject'
+  import Human from '../../index.js'
 
   export default new Element({
     name: 'mn-column',
-    mixins: [ media ],
+    props: {
+      mobile: {
+        type: [String, Object]
+      },
+      tablet: {
+        type: [String, Object]
+      },
+      desktop: {
+        type: [String, Object]
+      },
+      widescreen: {
+        type: [String, Object]
+      }
+    },
     computed: {
-      /**
-       * Adapted column config
-       * @todo Convert object media query
-       *
-       * @return {Object}
-       */
-      columnConfig () {
-        // Default config
-        const columnConfig = { span: 12, offset: 0, order: 0 }
-
-        // Parse string media query value
-        if (isString(this.adaptedMediaConfig)) {
-          Object.assign(columnConfig, this.convertQuery(this.adaptedMediaConfig))
-        }
-
-        // !important sets
-        // Only use single column (12 span, 0 offset) under `mobile` screen
-        if (this.adaptedMediaName === 'mobile') {
-          Object.assign(columnConfig, { span: 12, offset: 0 })
-        }
-
-        return columnConfig
+      mediaQueries () {
+        const screens = Human.$screens.map(item => item.name)
+        return screens.map(screen => {
+          if (!isUndefined(this[screen])) {
+            return { name: screen, ...this.convertMediaQueries(this[screen]) }
+          }
+        })
       },
 
-      /**
-       * Flex width
-       *
-       * @return {Object}
-       */
-      widthStyle () {
-        return {
-          width: `${(100 / 12) * this.columnConfig.span}%`
-        }
-      },
+      classes () {
+        const classes = []
 
-      /**
-       * Flex marginLeft
-       *
-       * @return {Object}
-       */
-      offsetStyle () {
-        return {
-          'margin-left': this.columnConfig.offset > 0
-            ? `${(100 / 12) * this.columnConfig.offset}%`
-            : undefined
-        }
-      },
+        this.mediaQueries.forEach(config => {
+          if (isUndefined(config)) return
 
-      /**
-       * Flex order
-       *
-       * @return {Object}
-       */
-      orderStyle () {
-        return {
-          order: this.columnConfig.order > 0
-            ? this.columnConfig.order
-            : undefined
-        }
+          if (!isUndefined(config.span)) {
+            classes.push([ `is-${config.name}-${config.span}` ])
+          }
+          if (!isUndefined(config.offset)) {
+            classes.push([ `is-${config.name}-offset-${config.offset}` ])
+          }
+        })
+
+        return classes
       }
     },
     methods: {
       /**
-       * Convert string media value to number object
-       *
-       * @method convertQuery
-       * @param  {String}     mediaValue
+       * 将字符串或对象的值转化为对象格式
+       * @protected
+       * @param {String|Object} queries
        * @return {Object}
        */
-      convertQuery (mediaValue) {
-        const splitReg = /,\s*/
-        const [span, offset, order] = mediaValue.split(splitReg)
-
-        return {
-          span: span ? parseInt(span) : 12,
-          offset: offset ? parseInt(offset) : 0,
-          order: order ? parseInt(order) : 0
+      convertMediaQueries (queries) {
+        if (isString(queries)) {
+          const [span, offset, order] = queries.split(/,\s*/)
+          return {
+            span: this.parseString(span),
+            offset: this.parseString(offset),
+            order: this.parseString(order)
+          }
         }
+
+        if (isPlainObject(queries)) {
+          return queries
+        }
+
+        return {}
+      },
+
+      parseString (value) {
+        return !isUndefined(value) && value !== ''
+          ? parseInt(value)
+          : undefined
       }
     }
   })
@@ -107,6 +98,33 @@
     // When equal and more than `tablet` media query, padding is 0.5rem.
     @include min-screen(tablet) {
       padding: 0 $grid-gutters * 0.5;
+    }
+
+    @each $breakpoint in map-keys($grid-breakpoints) {
+      @include min-screen($breakpoint) {
+        @for $number from 1 through 12 {
+          &.is-#{$breakpoint}-#{$number} {
+            width: (100% / 12) * $number;
+          }
+
+          &.is-#{$breakpoint}-offset-#{$number} {
+            margin-left: (100% / 12) * $number;
+          }
+        }
+      }
+
+      // When `mobile` media query, only use single column.
+      @include max-screen('tablet') {
+        @for $number from 1 through 12 {
+          &.is-#{$breakpoint}-#{$number} {
+            width: 100%;
+          }
+
+          &.is-#{$breakpoint}-offset-#{$number} {
+            margin-left: 0;
+          }
+        }
+      }
     }
   }
 </style>
