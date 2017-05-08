@@ -27,7 +27,8 @@ export default {
       },
       components: {
         paginate: '页码',
-        cell: '单元列表'
+        cell: '单元列表',
+        carousel: '轮播图'
       }
     }
   }

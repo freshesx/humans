@@ -137,6 +137,11 @@
                 name: 'Cell',
                 small: this.$t('examples.submenus.components.cell'),
                 link: { name: 'cell' }
+              },
+              {
+                name: 'Carousel',
+                small: this.$t('examples.submenus.components.carousel'),
+                link: { name: 'carousel' }
               }
             ]
           }

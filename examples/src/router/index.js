@@ -80,6 +80,11 @@ const router = new VueRouter({
       path: '/check',
       name: 'check',
       component: resolve => { require(['../components/check'], resolve) }
+    },
+    {
+      path: '/carousel',
+      name: 'carousel',
+      component: resolve => { require(['../components/carousel'], resolve) }
     }
   ]
 })
