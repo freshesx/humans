@@ -85,7 +85,10 @@
         this.x = this.width * this.index
       },
       setElementWidth () {
-        this.width = this.$el.offsetWidth
+        if (this.width !== this.$el.offsetWidth) {
+          this.width = this.$el.offsetWidth
+        }
+      },
       onChangeItem (item) {
         this.index = item - 1
         this.x = this.width * this.index
