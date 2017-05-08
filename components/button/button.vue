@@ -4,8 +4,8 @@
     :class="classes"
     :title="title"
     @click="click">
-    <mn-loading-icon :class="{ 'has-one-margin-right': !!$slots.default }" v-if="loading"></mn-loading-icon>
-    <mn-icon :class="{ 'has-one-margin-right': !!$slots.default }" :name="icon" v-if="icon && !loading"></mn-icon>
+    <mn-loading-icon v-if="loading"></mn-loading-icon>
+    <mn-icon class="mn-btn-icon" :name="icon" v-if="icon && !loading"></mn-icon>
     <slot></slot>
   </button>
 </template>
@@ -105,9 +105,7 @@
   // @class .btn
   //
   .#{$-button} {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
@@ -129,6 +127,10 @@
       margin-bottom: 1rem;
     }
 
+    &-icon {
+      vertical-align: -5px;
+    }
+
     &.is-sm {
       height: 2rem;
       padding: 0.375rem 1rem;
@@ -139,6 +141,10 @@
       @include min-screen('desktop') {
         border-radius: $-button-desktop-radius;
       }
+    }
+
+    &.is-sm > &-icon {
+      vertical-align: 3px;
     }
 
     &.is-block {
