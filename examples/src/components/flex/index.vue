@@ -10,22 +10,8 @@
 
     <mn-section>
       <mn-flexes>
-        <mn-flex :tablet="{ flex: '0 1 33.3%' }" :desktop="{ flex: '0 1 20%' }" v-for="item in 10" :key="item">
-          <mn-card>
-            <mn-card-item>
-              <mn-card-body>
-                <h5>奈好</h5>
-              </mn-card-body>
-            </mn-card-item>
-          </mn-card>
-        </mn-flex>
-      </mn-flexes>
-    </mn-section>
-
-    <mn-section>
-      <mn-flexes :desktop="{ margin: 0, 'margin-left': '1px' }">
-        <mn-flex :mobile="{ flex: '1 1 50%' }" :tablet="{ flex: '1 1 25%' }" :desktop="{ flex: '1 1 20%' }" :style="{ 'border': 'solid 1px #e5e5e5', 'margin-left': '-1px', 'margin-top': '-1px', padding: 0 }" v-for="item in 10" :key="item">
-          <div :style="{ height: '160px', display: 'flex', 'justify-content': 'center', 'align-items': 'center', background: '#fff' }">
+        <mn-flex class="square-box" :mobile="{ flex: '1 1 50%' }" :tablet="{ flex: '1 1 25%' }" :desktop="{ flex: '1 1 20%' }" v-for="item in 10" :key="item">
+          <div class="square">
             <h5>奈好</h5>
           </div>
         </mn-flex>
@@ -64,3 +50,19 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  .square-box {
+    border: solid 1px #e5e5e5;
+    margin-left: -1px;
+    margin-top: -1px;
+  }
+
+  .square {
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+  }
+</style>
