@@ -11,6 +11,7 @@ export default {
         button: '按钮',
         icon: '图标',
         scroller: '滚动条',
+        container: '页面容器',
         column: '12 列布局',
         flex: '弹性盒子',
         image: '图片'

@@ -85,6 +85,11 @@ const router = new VueRouter({
       path: '/carousel',
       name: 'carousel',
       component: resolve => { require(['../components/carousel'], resolve) }
+    },
+    {
+      path: '/container',
+      name: 'container',
+      component: resolve => { require(['../components/container'], resolve) }
     }
   ]
 })

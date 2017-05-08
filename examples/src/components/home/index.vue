@@ -69,6 +69,11 @@
                 link: { name: 'scroller' }
               },
               {
+                name: 'Container',
+                small: this.$t('examples.submenus.core.container'),
+                link: { name: 'container' }
+              },
+              {
                 name: 'Column',
                 small: this.$t('examples.submenus.core.column'),
                 link: { name: 'column' }
