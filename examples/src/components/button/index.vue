@@ -111,28 +111,11 @@
 </template>
 
 <script>
-  import Container from 'vue-human/components/container/container'
-  import Section from 'vue-human/components/section/section'
-  import SectionNote from 'vue-human/components/section/section-note'
-  import Letter from 'vue-human/components/letter/letter'
-  import LetterBody from 'vue-human/components/letter/letter-body'
-  import Card from 'vue-human/components/card/card'
-  import CardItem from 'vue-human/components/card/card-item'
-  import CardBody from 'vue-human/components/card/card-body'
-
-  import Button from 'vue-human/components/button/button'
+  import coreSuits from 'vue-human/components/coreSuits'
 
   export default {
     components: {
-      [Container.name]: Container,
-      [Section.name]: Section,
-      [SectionNote.name]: SectionNote,
-      [Letter.name]: Letter,
-      [LetterBody.name]: LetterBody,
-      [Card.name]: Card,
-      [CardItem.name]: CardItem,
-      [CardBody.name]: CardBody,
-      [Button.name]: Button
+      ...coreSuits.map()
     },
     data () {
       return {
