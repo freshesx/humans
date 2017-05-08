@@ -13,7 +13,10 @@
     </div>
     <slot name="indicators">
       <div class="mn-carousel-indicators">
-        <div class="mn-carousel-indicator" :class="{ 'is-active': item === index + 1 }" v-for="item in length"></div>
+        <div class="mn-carousel-indicator"
+          @click.prevent.stop="onChangeItem(item)"
+          :class="{ 'is-active': item === index + 1 }"
+          v-for="item in length"></div>
       </div>
     </slot>
   </div>
@@ -83,6 +86,9 @@
       },
       setElementWidth () {
         this.width = this.$el.offsetWidth
+      onChangeItem (item) {
+        this.index = item - 1
+        this.x = this.width * this.index
       }
     },
     watch: {
