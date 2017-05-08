@@ -6,7 +6,7 @@
 
 <script>
   import Element from '../../util/Element'
-  import Human from 'vue-human'
+  import Human from '../../index.js'
 
   export default new Element({
     name: 'mn-flex',
