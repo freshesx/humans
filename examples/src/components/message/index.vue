@@ -7,7 +7,7 @@
         </mn-letter>
 
         <mn-section>
-          <mn-card v-for="type in types">
+          <mn-card v-for="(type, key) in types" :key="key">
             <mn-card-item>
               <mn-card-body>
                 {{ type }}
