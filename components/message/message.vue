@@ -1,10 +1,13 @@
 <template>
   <mn-popup class="mn-message" :show="isShow" :masked="false"
     animation="slideInTop">
-    <mn-card :class="[ 'mn-message-card' ]">
-      <mn-card-item :class="[ 'mn-message-title' ]">
+    <mn-card class="mn-message-card">
+      <!-- Title -->
+      <mn-card-item class="mn-message-title">
         <mn-card-prefix>
-          <mn-icon :class="{ [`has-${currentType.color}-text`]: true }" :name="iconName"></mn-icon>
+          <mn-icon :class="`has-${currentType.color}-text`"
+            :name="iconName"
+            vertical="-3px"></mn-icon>
         </mn-card-prefix>
         <mn-card-body>
           <h4><small>{{ title || currentType.text }}</small></h4>
@@ -13,7 +16,8 @@
           <mn-icon :name="closeSvg"></mn-icon>
         </mn-card-suffix>
       </mn-card-item>
-      <mn-card-item :class="[ 'mn-message-contents' ]">
+      <!-- Main contents -->
+      <mn-card-item>
         <mn-card-body>
           {{ message }}
         </mn-card-body>
@@ -25,7 +29,6 @@
 <script>
   import Element from '../../util/Element'
   import popup from '../popup/popup'
-  // import popupCard from '../popup/popup-card'
   import card from '../card/card'
   import cardItem from '../card/card-item'
   import cardBody from '../card/card-body'
@@ -83,24 +86,27 @@
 </script>
 
 <style lang="scss">
+  @import "../../scss/mixins/media";
+
   .mn-message {
     top: 0.5rem;
     right: 0.5rem;
     left: 0.5rem;
     bottom: auto;
 
+    @include min-screen('tablet') {
+      width: 600px;
+      left: 50%;
+      margin-left: -300px;
+    }
+
     &-card {
-      max-width: 600px;
-      margin: 0 auto;
-      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3)
+      margin-bottom: 0 !important;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) !important;
     }
 
     &-title {
-      padding: 0.3rem 1rem;
-    }
-
-    &-contents {
-      padding: 1rem 1rem;
+      padding: 0.5rem 1rem !important;
     }
   }
 </style>
