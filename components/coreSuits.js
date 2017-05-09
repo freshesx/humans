@@ -4,7 +4,6 @@ import loadingIconSuits from '../components/loading-icon'
 import scrollerSuits from '../components/scroller'
 import buttonSuits from '../components/button'
 import cardSuits from '../components/card'
-import imageSuits from '../components/image'
 import containerSuits from '../components/container'
 import sectionSuits from '../components/section'
 import columnSuits from '../components/column'
@@ -19,7 +18,6 @@ export default new Suits([
   scrollerSuits,
   buttonSuits,
   cardSuits,
-  imageSuits,
   containerSuits,
   sectionSuits,
   columnSuits,
