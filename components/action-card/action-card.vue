@@ -1,52 +1,53 @@
 <template>
   <mn-popup class="mn-action-card"
     animation="slideInBottom"
-    :show="value"
+    :show="show"
     @close="onClosePopup">
-    <mn-popup-card :class="[
-      cancelButton
-      ? 'has-one-margin-bottom'
-      : 'has-none-margin-bottom'
-    ]">
+    <!-- Main contents -->
+    <div :style="hasCancelButtonStyle">
       <slot></slot>
-    </mn-popup-card>
-    <mn-popup-card class="has-none-margin-bottom" v-if="cancelButton">
+    </div>
+    <!-- Cancel button -->
+    <mn-card class="has-none-margin-bottom" v-if="cancelButton">
       <mn-card-btns>
         <button class="has-blue-text" @click="onClosePopup">
           <strong>{{ $t('mn.popup.cancelText') }}</strong>
         </button>
       </mn-card-btns>
-    </mn-popup-card>
+    </mn-card>
   </mn-popup>
 </template>
 
 <script>
   import Element from '../../util/Element'
   import popup from '../popup/popup'
-  import popupCard from '../popup/popup-card'
-  import cardItem from '../card/card-item'
-  import cardBody from '../card/card-body'
+  import card from '../card/card'
   import cardBtns from '../card/card-btns'
 
   export default new Element({
     name: 'mn-action-card',
     components: {
-      [popup.name]: popup,
-      [popupCard.name]: popupCard,
-      [cardItem.name]: cardItem,
-      [cardBody.name]: cardBody,
-      [cardBtns.name]: cardBtns
+      ...popup.inject(),
+      ...card.inject(),
+      ...cardBtns.inject()
     },
     props: {
-      value: Boolean,
+      show: Boolean,
       cancelButton: {
         type: Boolean,
         default: true
       }
     },
+    computed: {
+      hasCancelButtonStyle () {
+        return {
+          'margin-bottom': this.cancelButton ? '-0.5rem' : '-1rem'
+        }
+      }
+    },
     methods: {
       onClosePopup () {
-        this.$emit('input', false)
+        this.$emit('update:show', false)
       }
     }
   })
