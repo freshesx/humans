@@ -82,11 +82,6 @@
                 name: 'Flex',
                 small: this.$t('examples.submenus.core.flex'),
                 link: { name: 'flex' }
-              },
-              {
-                name: 'Image',
-                small: this.$t('examples.submenus.core.image'),
-                link: { name: 'image' }
               }
             ]
           },
@@ -159,6 +154,11 @@
           {
             name: this.$t('examples.menus.components'),
             children: [
+              {
+                name: 'Image',
+                small: this.$t('examples.submenus.core.image'),
+                link: { name: 'image' }
+              },
               {
                 name: 'Paginate',
                 small: this.$t('examples.submenus.components.paginate'),

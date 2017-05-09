@@ -25,10 +25,12 @@
 
 <script>
   import coreSuits from 'vue-human/components/coreSuits'
+  import imageSuits from 'vue-human/components/image'
 
   export default {
     components: {
-      ...coreSuits.map()
+      ...coreSuits.map(),
+      ...imageSuits.map()
     },
     data () {
       return {
