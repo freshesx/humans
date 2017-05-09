@@ -97,6 +97,21 @@ const router = new VueRouter({
       component: resolve => { require(['../components/message'], resolve) }
     },
     {
+      path: '/confirm',
+      name: 'confirm',
+      component: resolve => { require(['../components/confirm'], resolve) }
+    },
+    {
+      path: '/alert',
+      name: 'alert',
+      component: resolve => { require(['../components/alert'], resolve) }
+    },
+    {
+      path: '/loading-mask',
+      name: 'loadingMask',
+      component: resolve => { require(['../components/loading-mask'], resolve) }
+    },
+    {
       path: '/action-sheet',
       name: 'actionSheet',
       component: resolve => { require(['../components/action-sheet'], resolve) }

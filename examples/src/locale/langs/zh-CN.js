@@ -19,6 +19,9 @@ export default {
       popup: {
         popup: '浮层',
         message: '消息框',
+        confirm: '确认框',
+        alert: '警告框',
+        loadingMask: '加载动画',
         modal: '模态对话框',
         actionSheet: '操作列表'
       },
