@@ -22,9 +22,18 @@
       ...popup.inject()
     },
     props: {
+      /**
+       * Show or hide popup and mask
+       */
       show: Boolean
     },
     methods: {
+      /**
+       * Trigger close method
+       * @method onClosePopup
+       *
+       * @return {void}
+       */
       onClosePopup () {
         this.$emit('update:show', false)
       }
