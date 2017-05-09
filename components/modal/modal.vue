@@ -24,11 +24,11 @@
   export default new Element({
     name: 'mn-modal',
     components: {
-      [popup.name]: popup,
-      [popupCard.name]: popupCard,
-      [cardItem.name]: cardItem,
-      [cardBody.name]: cardBody,
-      [cardBtns.name]: cardBtns,
+      ...popup.inject(),
+      ...popupCard.inject(),
+      ...cardItem.inject(),
+      ...cardBody.inject(),
+      ...cardBtns.inject(),
       ...icon.inject()
     },
     props: {
