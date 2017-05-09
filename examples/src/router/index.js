@@ -90,6 +90,11 @@ const router = new VueRouter({
       path: '/container',
       name: 'container',
       component: resolve => { require(['../components/container'], resolve) }
+    },
+    {
+      path: '/message',
+      name: 'message',
+      component: resolve => { require(['../components/message'], resolve) }
     }
   ]
 })

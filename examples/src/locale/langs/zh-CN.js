@@ -18,6 +18,7 @@ export default {
       },
       popup: {
         popup: '浮层',
+        message: '消息框',
         modal: '模态对话框'
       },
       form: {

@@ -99,6 +99,11 @@
                 link: { name: 'popup' }
               },
               {
+                name: 'Message',
+                small: this.$t('examples.submenus.popup.message'),
+                link: { name: 'message' }
+              },
+              {
                 name: 'Modal',
                 small: this.$t('examples.submenus.popup.modal'),
                 link: { name: 'modal' }
