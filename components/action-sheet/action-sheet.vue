@@ -1,5 +1,5 @@
 <template>
-  <mn-popup class="mn-action-card"
+  <mn-popup class="mn-action-sheet"
     animation="slideInBottom"
     :show="show"
     @close="onClosePopup">
@@ -25,7 +25,7 @@
   import cardBtns from '../card/card-btns'
 
   export default new Element({
-    name: 'mn-action-card',
+    name: 'mn-action-sheet',
     components: {
       ...popup.inject(),
       ...card.inject(),
@@ -56,7 +56,7 @@
 <style lang="scss">
   @import "../../scss/mixins/media";
 
-  .mn-action-card {
+  .mn-action-sheet {
     right: 8px;
     bottom: 8px;
     left: 8px;

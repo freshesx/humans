@@ -1,6 +1,6 @@
 import Suits from '../../util/Suits'
-import actionCard from './action-card'
+import actionSheet from './action-sheet'
 
 export default new Suits([
-  actionCard
+  actionSheet
 ])
