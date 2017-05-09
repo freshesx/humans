@@ -93,15 +93,31 @@
           {
             name: this.$t('examples.menus.popup'),
             children: [
-              {
-                name: 'Popup',
-                small: this.$t('examples.submenus.popup.popup'),
-                link: { name: 'popup' }
-              },
+              // @todo update to custom popup docs
+              // {
+              //   name: 'Popup',
+              //   small: this.$t('examples.submenus.popup.popup'),
+              //   link: { name: 'popup' }
+              // },
               {
                 name: 'Message',
                 small: this.$t('examples.submenus.popup.message'),
                 link: { name: 'message' }
+              },
+              {
+                name: 'Confirm',
+                small: this.$t('examples.submenus.popup.confirm'),
+                link: { name: 'confirm' }
+              },
+              {
+                name: 'Alert',
+                small: this.$t('examples.submenus.popup.alert'),
+                link: { name: 'alert' }
+              },
+              {
+                name: 'LoadingMask',
+                small: this.$t('examples.submenus.popup.loadingMask'),
+                link: { name: 'loadingMask' }
               },
               {
                 name: 'Modal',
