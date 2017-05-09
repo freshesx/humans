@@ -9,6 +9,7 @@ import containerSuits from '../components/container'
 import sectionSuits from '../components/section'
 import columnSuits from '../components/column'
 import rowSuits from '../components/row'
+import flexSuits from '../components/flex'
 import letterSuits from '../components/letter'
 import pageSuits from '../components/page'
 
@@ -23,6 +24,7 @@ export default new Suits([
   sectionSuits,
   columnSuits,
   rowSuits,
+  flexSuits,
   letterSuits,
   pageSuits
 ])
