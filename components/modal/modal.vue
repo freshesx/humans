@@ -32,11 +32,7 @@
       ...icon.inject()
     },
     props: {
-      show: Boolean,
-      cancelButton: {
-        type: Boolean,
-        default: true
-      }
+      show: Boolean
     },
     methods: {
       onClosePopup () {
