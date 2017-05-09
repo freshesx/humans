@@ -107,6 +107,11 @@
                 name: 'Modal',
                 small: this.$t('examples.submenus.popup.modal'),
                 link: { name: 'modal' }
+              },
+              {
+                name: 'ActionSheet',
+                small: this.$t('examples.submenus.popup.actionSheet'),
+                link: { name: 'actionSheet' }
               }
             ]
           },
