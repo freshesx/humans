@@ -15,21 +15,11 @@
 <script>
   import Element from '../../util/Element'
   import popup from '../popup/popup'
-  import popupCard from '../popup/popup-card'
-  import icon from '../icon/icon'
-  import cardItem from '../card/card-item'
-  import cardBody from '../card/card-body'
-  import cardBtns from '../card/card-btns'
 
   export default new Element({
     name: 'mn-modal',
     components: {
-      ...popup.inject(),
-      ...popupCard.inject(),
-      ...cardItem.inject(),
-      ...cardBody.inject(),
-      ...cardBtns.inject(),
-      ...icon.inject()
+      ...popup.inject()
     },
     props: {
       show: Boolean
