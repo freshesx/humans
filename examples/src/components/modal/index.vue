@@ -10,7 +10,7 @@
       </mn-card>
     </mn-section>
 
-    <mn-modal v-model="showModal">
+    <mn-modal :show.sync="showModal">
       <mn-scroller>
         <mn-section>
           <mn-card>
@@ -22,7 +22,7 @@
         </mn-section>
       </mn-scroller>
       <mn-modal-action slot="suffix">
-        <mn-btn theme="secondary-link" @click="showModal = false">Cancel</mn-btn>
+        <mn-btn theme="secondary-link" @click="onCloseModal">Cancel</mn-btn>
         <mn-btn theme="primary">Confirm</mn-btn>
       </mn-modal-action>
     </mn-modal>
@@ -54,6 +54,9 @@
     methods: {
       onOpenModal () {
         this.showModal = true
+      },
+      onCloseModal () {
+        this.showModal = false
       }
     }
   }
