@@ -26,20 +26,12 @@
 </template>
 
 <script>
-  import scrollerSuits from 'vue-human/components/scroller'
-  import containerSuits from 'vue-human/components/container'
-  import sectionSuits from 'vue-human/components/section'
-  import cardSuits from 'vue-human/components/card'
-  import buttonSuits from 'vue-human/components/button'
+  import coreSuits from 'vue-human/components/coreSuits'
   import actionSheetSuits from 'vue-human/components/action-sheet'
 
   export default {
     components: {
-      ...scrollerSuits.map(),
-      ...containerSuits.map(),
-      ...sectionSuits.map(),
-      ...cardSuits.map(),
-      ...buttonSuits.map(),
+      ...coreSuits.map(),
       ...actionSheetSuits.map()
     },
     data () {
