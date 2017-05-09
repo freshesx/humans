@@ -1,7 +1,7 @@
 <template>
   <mn-popup class="mn-modal"
     animation="slideInBottom"
-    :show="value"
+    :show="show"
     @close="onClosePopup">
     <div class="mn-modal-body">
       <slot></slot>
@@ -32,7 +32,7 @@
       ...icon.inject()
     },
     props: {
-      value: Boolean,
+      show: Boolean,
       cancelButton: {
         type: Boolean,
         default: true
@@ -40,7 +40,7 @@
     },
     methods: {
       onClosePopup () {
-        this.$emit('input', false)
+        this.$emit('update:show', false)
       }
     }
   })
