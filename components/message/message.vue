@@ -1,11 +1,8 @@
 <template>
-  <mn-popup
-    :show="isShow"
-    :class="[ 'mn-popup-message' ]"
-    :masked="false"
+  <mn-popup class="mn-message" :show="isShow" :masked="false"
     animation="slideInTop">
-    <mn-popup-card :class="[ 'mn-popup-message-card' ]">
-      <mn-card-item :class="[ 'mn-popup-message-title' ]">
+    <mn-card :class="[ 'mn-message-card' ]">
+      <mn-card-item :class="[ 'mn-message-title' ]">
         <mn-card-prefix>
           <mn-icon :class="{ [`has-${currentType.color}-text`]: true }" :name="iconName"></mn-icon>
         </mn-card-prefix>
@@ -16,19 +13,20 @@
           <mn-icon :name="closeSvg"></mn-icon>
         </mn-card-suffix>
       </mn-card-item>
-      <mn-card-item :class="[ 'mn-popup-message-contents' ]">
+      <mn-card-item :class="[ 'mn-message-contents' ]">
         <mn-card-body>
           {{ message }}
         </mn-card-body>
       </mn-card-item>
-    </mn-popup-card>
+    </mn-card>
   </mn-popup>
 </template>
 
 <script>
   import Element from '../../util/Element'
   import popup from '../popup/popup'
-  import popupCard from '../popup/popup-card'
+  // import popupCard from '../popup/popup-card'
+  import card from '../card/card'
   import cardItem from '../card/card-item'
   import cardBody from '../card/card-body'
   import cardPrefix from '../card/card-prefix'
@@ -40,13 +38,13 @@
 
   export default new Element({
     components: {
-      [popup.name]: popup,
-      [popupCard.name]: popupCard,
-      [cardItem.name]: cardItem,
-      [cardBody.name]: cardBody,
-      [cardPrefix.name]: cardPrefix,
-      [cardSuffix.name]: cardSuffix,
-      [icon.name]: icon
+      ...popup.inject(),
+      ...card.inject(),
+      ...cardItem.inject(),
+      ...cardBody.inject(),
+      ...cardPrefix.inject(),
+      ...cardSuffix.inject(),
+      ...icon.inject()
     },
     mixins: [
       /**
@@ -85,7 +83,7 @@
 </script>
 
 <style lang="scss">
-  .mn-popup-message {
+  .mn-message {
     top: 0.5rem;
     right: 0.5rem;
     left: 0.5rem;
