@@ -77,11 +77,6 @@
                 name: 'Column',
                 small: this.$t('examples.submenus.core.column'),
                 link: { name: 'column' }
-              },
-              {
-                name: 'Flex',
-                small: this.$t('examples.submenus.core.flex'),
-                link: { name: 'flex' }
               }
             ]
           },
