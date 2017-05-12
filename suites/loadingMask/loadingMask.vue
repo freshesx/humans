@@ -7,7 +7,7 @@
 <script>
   import Element from '../../utils/Element'
   import popup from '../popup/popup'
-  import loadingIcon from '../loading-icon/loading-icon'
+  import loadingIcon from '../loadingIcon/loadingIcon'
   import popupManager from '../popup/popupManager'
 
   export default new Element({
