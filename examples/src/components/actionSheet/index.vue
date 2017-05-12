@@ -27,7 +27,7 @@
 
 <script>
   import core from 'vue-human/suites/core'
-  import actionSheet from 'vue-human/suites/action-sheet'
+  import actionSheet from 'vue-human/suites/actionSheet'
 
   export default {
     components: {

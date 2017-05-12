@@ -109,7 +109,7 @@ const router = new VueRouter({
     {
       path: '/action-sheet',
       name: 'actionSheet',
-      component: resolve => { require(['../components/action-sheet'], resolve) }
+      component: resolve => { require(['../components/actionSheet'], resolve) }
     }
   ]
 })
