@@ -9,21 +9,39 @@
       </div>
     </div>
     <div class="mn-dashboard-body">
-      <div class="mn-dashboard-side">
+      <div class="mn-dashboard-side" :class="{ 'is-active': showSidebar }">
         <slot name="side"></slot>
       </div>
       <div class="mn-dashboard-main">
         <slot></slot>
       </div>
     </div>
+    <mn-dashboard-status :menu="status" @showSidebar="showSidebar = arguments[0]"></mn-dashboard-status>
   </div>
 </template>
 
 <script>
   import Element from '../../utils/Element'
+  import dashboardStatus from './dashboardStatus'
 
   export default new Element({
-    name: 'mn-dashboard'
+    name: 'mn-dashboard',
+    components: {
+      ...dashboardStatus.inject()
+    },
+    props: {
+      status: {
+        type: Array,
+        default: val => {
+          return []
+        }
+      }
+    },
+    data () {
+      return {
+        showSidebar: false
+      }
+    }
   })
 </script>
 
