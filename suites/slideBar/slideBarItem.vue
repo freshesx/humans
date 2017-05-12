@@ -21,7 +21,7 @@
     flex-wrap: nowrap;
     padding: 0 0.5rem;
 
-    // @affect(./slide-bar.vue)
+    // @affect(./slideBar.vue)
     .mn-slide-bar-contents.is-full & {
       flex: 0 0 100%;
     }

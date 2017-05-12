@@ -204,7 +204,7 @@
     backface-visibility: hidden;
     perspective: 1000;
 
-    // @affect(./slide-bar-item.vue)
+    // @affect(./slideBarItem.vue)
     &.is-full {
       width: 100%;
     }

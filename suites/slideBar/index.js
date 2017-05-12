@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import SlideBar from './slide-bar'
-import SlideBarItem from './slide-bar-item'
+import SlideBar from './SlideBar'
+import SlideBarItem from './SlideBarItem'
 
 export default new Suites([
   SlideBar,
