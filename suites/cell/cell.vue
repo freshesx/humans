@@ -40,7 +40,7 @@
   import cardItem from '../card/card-item'
   import cardPrefix from '../card/card-prefix'
   import cardBody from '../card/card-body'
-  import loadingIcon from '../loading-icon/loading-icon'
+  import loadingIcon from '../loadingIcon/loadingIcon'
   import cellIcon from './cell-icon'
 
   export default new Element({

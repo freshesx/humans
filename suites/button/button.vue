@@ -12,7 +12,7 @@
 
 <script>
   import Element from '../../utils/Element'
-  import LoadingIcon from '../loading-icon/loading-icon'
+  import LoadingIcon from '../loadingIcon/loadingIcon'
   import Icon from '../icon/icon'
   import isUndefined from 'lodash/isUndefined'
 
