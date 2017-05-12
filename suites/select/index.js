@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import Select from './select'
+import select from './select'
 
 export default new Suites([
-  Select
+  select
 ])
