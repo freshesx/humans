@@ -1,4 +1,4 @@
-import Suites from 'vue-human/util/Suites'
+import Suites from 'vue-human/utils/Suites'
 import iconSuites from 'vue-human/suites/icon'
 import iconElement from 'vue-human/suites/icon/icon'
 

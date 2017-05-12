@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Element from 'vue-human/util/Element'
+import Element from 'vue-human/utils/Element'
 
 describe('util/Element', () => {
   it('.constructor()', () => {

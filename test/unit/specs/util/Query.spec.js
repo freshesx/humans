@@ -1,4 +1,4 @@
-import Query from 'vue-human/util/Query'
+import Query from 'vue-human/utils/Query'
 
 describe('util/Query', () => {
   it('.parse()', () => {

@@ -1,5 +1,5 @@
-import AxiosHelper from 'vue-human/util/AxiosHelper'
-import Message from 'vue-human/util/Message'
+import AxiosHelper from 'vue-human/utils/AxiosHelper'
+import Message from 'vue-human/utils/Message'
 
 describe('util/AxiosHelper', () => {
   it('#error', () => {
