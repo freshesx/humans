@@ -12,7 +12,7 @@ describe('util/Element', () => {
 
     expect(element).to.be.an.instanceof(Element)
     expect(element).to.have.property('install')
-    expect(injected.name).to.be.equal('mn-test')
+    expect(Object.keys(injected)[0]).to.be.equal('mn-test')
   })
 
   it('.beforeInstalled() & .afterInstalled()', () => {
