@@ -1,8 +1,8 @@
 import Suites from '../../utils/Suites'
-import Helper from './helper'
-import HelperItem from './helper-item'
+import helper from './helper'
+import helperItem from './helperItem'
 
 export default new Suites([
-  Helper,
-  HelperItem
+  helper,
+  helperItem
 ])
