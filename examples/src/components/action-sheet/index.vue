@@ -27,12 +27,12 @@
 
 <script>
   import core from 'vue-human/suites/core'
-  import actionSheetSuits from 'vue-human/suites/action-sheet'
+  import actionSheet from 'vue-human/suites/action-sheet'
 
   export default {
     components: {
       ...core.map(),
-      ...actionSheetSuits.map()
+      ...actionSheet.map()
     },
     data () {
       return {

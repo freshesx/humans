@@ -30,21 +30,13 @@
 </template>
 
 <script>
-  import scrollerSuits from 'vue-human/suites/scroller'
-  import containerSuits from 'vue-human/suites/container'
-  import sectionSuits from 'vue-human/suites/section'
-  import cardSuits from 'vue-human/suites/card'
-  import buttonSuits from 'vue-human/suites/button'
-  import modalSuits from 'vue-human/suites/modal'
+  import core from 'vue-human/suites/core'
+  import modal from 'vue-human/suites/modal'
 
   export default {
     components: {
-      ...scrollerSuits.map(),
-      ...containerSuits.map(),
-      ...sectionSuits.map(),
-      ...cardSuits.map(),
-      ...buttonSuits.map(),
-      ...modalSuits.map()
+      ...core.map(),
+      ...modal.map()
     },
     data () {
       return {

@@ -26,12 +26,12 @@
 
 <script>
   import core from 'vue-human/suites/core'
-  import paginateSuits from 'vue-human/suites/paginate'
+  import paginate from 'vue-human/suites/paginate'
 
   export default {
     components: {
       ...core.map(),
-      ...paginateSuits.map()
+      ...paginate.map()
     },
     data () {
       return {

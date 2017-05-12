@@ -30,12 +30,12 @@
 
 <script>
   import core from 'vue-human/suites/core'
-  import carouselSuits from 'vue-human/suites/carousel'
+  import carousel from 'vue-human/suites/carousel'
 
   export default {
     components: {
       ...core.map(),
-      ...carouselSuits.map()
+      ...carousel.map()
     },
     data () {
       return {
