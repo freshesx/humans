@@ -56,15 +56,13 @@ Vue.use(human)
 Step 4: Import and load some components in vue file
 
 ``` javascript
-import coreSuits from 'vue-human/components/coreSuits'
+import core from 'vue-human/components/core'
 import carousel from 'vue-human/components/carousel'
-// import formSuits from 'vue-human/components/formSuits'
 
 export default {
   components: {
-    ...coreSuits.map(),
+    ...core.map(),
     ...carousel.map()
-    // ...formSuits.map()   // If you need add form control
   }
 }
 ```
