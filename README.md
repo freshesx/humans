@@ -56,8 +56,8 @@ Vue.use(human)
 Step 4: Import and load some components in vue file
 
 ``` javascript
-import core from 'vue-human/components/core'
-import carousel from 'vue-human/components/carousel'
+import core from 'vue-human/suites/core'
+import carousel from 'vue-human/suites/carousel'
 
 export default {
   components: {
