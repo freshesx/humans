@@ -12,15 +12,15 @@
 
 <script>
   import Element from '../../utils/Element'
-  import LoadingIcon from '../loadingIcon/loadingIcon'
-  import Icon from '../icon/icon'
+  import loadingIcon from '../loadingIcon/loadingIcon'
+  import icon from '../icon/icon'
   import isUndefined from 'lodash/isUndefined'
 
   export default new Element({
     name: 'mn-btn',
     components: {
-      [LoadingIcon.name]: LoadingIcon,
-      [Icon.name]: Icon
+      ...loadingIcon.inject(),
+      ...icon.inject()
     },
     props: {
       title: String,
