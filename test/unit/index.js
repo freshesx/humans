@@ -7,7 +7,7 @@ const testsContext = require.context('./specs', true, /\.spec$/)
 testsContext.keys().forEach(testsContext)
 
 // For components coverage
-// const componentsContext = require.context('../../components', true, /\.*?(js|vue|scss)$/)
+// const componentsContext = require.context('../../suites', true, /\.*?(js|vue|scss)$/)
 // componentsContext.keys().forEach(componentsContext)
 
 const utilContext = require.context('../../util', true, /\.*?(js|scss|sass|css)$/)

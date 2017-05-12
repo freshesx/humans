@@ -1,6 +1,6 @@
 import Suites from 'vue-human/util/Suites'
-import iconSuites from 'vue-human/components/icon'
-import iconElement from 'vue-human/components/icon/icon'
+import iconSuites from 'vue-human/suites/icon'
+import iconElement from 'vue-human/suites/icon/icon'
 
 describe('util/Suites', () => {
   it('#constructor using suites', () => {
