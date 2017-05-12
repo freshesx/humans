@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import Tag from './tag'
 
 export default new Suites([

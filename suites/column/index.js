@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import columns from './columns'
 import column from './column'
 import cols from './cols'

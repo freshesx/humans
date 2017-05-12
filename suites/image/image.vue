@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
 
   const MEDIA_VALUE = {
     mobile: [0, 767],

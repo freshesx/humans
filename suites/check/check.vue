@@ -1,5 +1,5 @@
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import MnRadio from '../radio/radio'
   import checkmarkOutline from 'vue-human-icons/js/ios/checkmark-outline'
   import circleOutline from 'vue-human-icons/js/ios/circle-outline'

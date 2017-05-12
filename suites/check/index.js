@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import Check from './check'
 import CheckItem from './check-item'
 import CheckIcon from './check-icon'

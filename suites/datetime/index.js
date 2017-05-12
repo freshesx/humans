@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import Datetime from './datetime'
 
 export default new Suites([

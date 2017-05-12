@@ -7,8 +7,8 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
-  import Mask from '../../util/Mask'
+  import Element from '../../utils/Element'
+  import Mask from '../../utils/Mask'
   import ANIMATIONS from './animations'
   import { getZIndex } from './layer'
 

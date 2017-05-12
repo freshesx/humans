@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 
 import Letter from './letter'
 import LetterBody from './letter-body'

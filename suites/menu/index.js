@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import Menu from './menu'
 import MenuPane from './menu-pane'
 import MenuTitle from './menu-title'

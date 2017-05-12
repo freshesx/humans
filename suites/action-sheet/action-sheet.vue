@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import popup from '../popup/popup'
   import card from '../card/card'
   import cardBtns from '../card/card-btns'

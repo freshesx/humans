@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import icon from '../icon'
 import loadingIcon from '../loading-icon'
 import scroller from '../scroller'

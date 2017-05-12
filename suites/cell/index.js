@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import Cell from './cell'
 import CellItem from './cell-item'
 

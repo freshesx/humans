@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import Helper from './helper'
 import HelperItem from './helper-item'
 

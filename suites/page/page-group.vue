@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import Page from './page'
 
   export default new Element({

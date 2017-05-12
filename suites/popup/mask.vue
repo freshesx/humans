@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import popupManager from './popupManager'
 
   export default new Element({

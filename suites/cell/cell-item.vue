@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import cardItem from '../card/card-item'
   import cardPrefix from '../card/card-prefix'
   import cellIcon from './cell-icon'

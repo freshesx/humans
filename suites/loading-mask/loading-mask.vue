@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import popup from '../popup/popup'
   import loadingIcon from '../loading-icon/loading-icon'
   import popupManager from '../popup/popupManager'

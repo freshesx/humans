@@ -20,7 +20,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
 
   export default new Element({
     name: 'mn-dashboard'

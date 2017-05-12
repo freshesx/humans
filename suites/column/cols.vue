@@ -1,5 +1,5 @@
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import columns from './columns'
 
   export default new Element({

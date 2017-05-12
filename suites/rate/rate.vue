@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import RateItem from './rate-item'
 
   export default new Element({

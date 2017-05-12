@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import Carousel from './carousel'
 import CarouselItem from './carousel-item'
 

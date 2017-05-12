@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import modal from './modal'
 import modalAction from './modal-action'
 

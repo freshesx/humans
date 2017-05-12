@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import Page from './page'
 /* import PageGroup from './page-group' */
 

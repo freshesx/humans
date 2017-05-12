@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import cardItem from '../card/card-item'
 
   export default new Element({

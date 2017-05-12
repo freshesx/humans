@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import Icon from '../icon/icon'
   import circleFilled from 'vue-human-icons/js/ios/circle-filled'
   import circleOutline from 'vue-human-icons/js/ios/circle-outline'

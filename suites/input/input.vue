@@ -20,7 +20,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import Icon from '../icon/icon'
   import iosCloseOutline from 'vue-human-icons/js/ios/close-outline'
 

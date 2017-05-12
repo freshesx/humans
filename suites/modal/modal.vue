@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import popup from '../popup/popup'
 
   export default new Element({

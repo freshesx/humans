@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import SlideBar from './slide-bar'
 import SlideBarItem from './slide-bar-item'
 

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import isString from 'lodash/isString'
   import isUndefined from 'lodash/isUndefined'
   import isPlainObject from 'lodash/isPlainObject'

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import Icon from '../icon/icon'
   import iosGridViewOutline from 'vue-human-icons/js/ios/grid-view-outline'
 

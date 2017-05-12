@@ -12,7 +12,7 @@
   // @todo: 增加点击反馈
   // @todo: 增加 loading 的控制
   // @todo: 增加 badge 的支持
-  import Element from '../../util/Element'
+  import Element from '../../utils/Element'
   import Icon from '../icon/icon'
 
   export default new Element({

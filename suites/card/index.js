@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import Card from './card'
 import CardItem from './card-item'
 import CardBody from './card-body'

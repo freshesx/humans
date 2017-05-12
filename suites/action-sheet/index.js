@@ -1,4 +1,4 @@
-import Suites from '../../util/Suites'
+import Suites from '../../utils/Suites'
 import actionSheet from './action-sheet'
 
 export default new Suites([
