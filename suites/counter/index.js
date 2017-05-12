@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import Counter from './counter'
+import counter from './counter'
 
 export default new Suites([
-  Counter
+  counter
 ])

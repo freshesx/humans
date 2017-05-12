@@ -21,13 +21,13 @@
 
 <script>
   import Element from '../../utils/Element'
-  import Icon from '../icon/icon'
+  import icon from '../icon/icon'
   import iosMinusEmpty from 'vue-human-icons/js/ios/minus-empty'
   import iosPlusEmpty from 'vue-human-icons/js/ios/plus-empty'
 
   export default new Element({
     components: {
-      [Icon.name]: Icon
+      ...icon.inject()
     },
     name: 'mn-counter',
     props: {
