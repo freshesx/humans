@@ -1,7 +1,7 @@
 import AxiosHelper from 'vue-human/util/AxiosHelper'
 
 describe('util/AxiosHelper', () => {
-  it('.error()', () => {
+  it('#error', () => {
     const errorDate = {
       response: {
         status: 401
@@ -13,7 +13,7 @@ describe('util/AxiosHelper', () => {
     expect(axiosHelper).to.be.equal('未定义 error 处理方式')
   })
 
-  it('#error', () => {
+  it('#error with custom method', () => {
     const errorDate = {
       response: {
         status: 401
@@ -28,7 +28,7 @@ describe('util/AxiosHelper', () => {
     expect(message).to.be.equal('error401')
   })
 
-  it('.error() # exceptionError', () => {
+  it('#error with errorDate being none', () => {
     const errorDate = {}
 
     const axiosHelper = new AxiosHelper().error(errorDate)
@@ -36,27 +36,27 @@ describe('util/AxiosHelper', () => {
     expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
   })
 
-  it('.$error401()', () => {
+  it('#$error401', () => {
     const axiosHelper = new AxiosHelper().$error403()
     expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
   })
 
-  it('.$error403()', () => {
+  it('#$error403', () => {
     const axiosHelper = new AxiosHelper().$error403()
     expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
   })
 
-  it('.$error404()', () => {
+  it('#$error404', () => {
     const axiosHelper = new AxiosHelper().$error404()
     expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
   })
 
-  it('.$error500()', () => {
+  it('#$error500', () => {
     const axiosHelper = new AxiosHelper().$error500()
     expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
   })
 
-  it('.errorException()', () => {
+  it('#errorException', () => {
     const axiosHelper = new AxiosHelper().errorException()
     expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
   })
