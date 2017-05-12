@@ -1,8 +1,8 @@
 import Suites from '../../utils/Suites'
-import Rate from './rate'
-import RateItem from './rate-item'
+import rate from './rate'
+import rateItem from './rateItem'
 
 export default new Suites([
-  Rate,
-  RateItem
+  rate,
+  rateItem
 ])

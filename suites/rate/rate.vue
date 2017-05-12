@@ -13,7 +13,7 @@
 
 <script>
   import Element from '../../utils/Element'
-  import RateItem from './rate-item'
+  import RateItem from './rateItem'
 
   export default new Element({
     components: {
