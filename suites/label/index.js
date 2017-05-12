@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import Label from './label'
+import label from './label'
 
 export default new Suites([
-  Label
+  label
 ])
