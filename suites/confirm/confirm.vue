@@ -20,7 +20,7 @@
   import popup from '../popup/popup'
   import card from '../card/card'
   import cardItem from '../card/card-item'
-  import cardBody from '../card/card-body'
+  import cardBody from '../card/cardBody'
   import cardBtns from '../card/card-btns'
   import popupManager from '../popup/popupManager'
 

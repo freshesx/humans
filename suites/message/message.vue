@@ -31,7 +31,7 @@
   import popup from '../popup/popup'
   import card from '../card/card'
   import cardItem from '../card/card-item'
-  import cardBody from '../card/card-body'
+  import cardBody from '../card/cardBody'
   import cardPrefix from '../card/card-prefix'
   import cardSuffix from '../card/card-suffix'
   import icon from '../icon/icon'

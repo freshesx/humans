@@ -39,7 +39,7 @@
   import card from '../card/card'
   import cardItem from '../card/card-item'
   import cardPrefix from '../card/card-prefix'
-  import cardBody from '../card/card-body'
+  import cardBody from '../card/cardBody'
   import loadingIcon from '../loadingIcon/loadingIcon'
   import cellIcon from './cell-icon'
 
