@@ -1,6 +1,6 @@
-import Suits from '../../util/Suits'
+import Suites from '../../util/Suites'
 import Tag from './tag'
 
-export default new Suits([
+export default new Suites([
   Tag
 ])

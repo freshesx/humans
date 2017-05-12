@@ -1,10 +1,10 @@
-import Suits from '../../util/Suits'
+import Suites from '../../util/Suites'
 
 import Letter from './letter'
 import LetterBody from './letter-body'
 import LetterAction from './letter-action'
 
-export default new Suits([
+export default new Suites([
   Letter,
   LetterBody,
   LetterAction

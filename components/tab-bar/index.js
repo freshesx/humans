@@ -1,8 +1,8 @@
-import Suits from '../../util/Suits'
+import Suites from '../../util/Suites'
 import TabBar from './tab-bar'
 import TabBarItem from './tab-bar-item'
 
-export default new Suits([
+export default new Suites([
   TabBar,
   TabBarItem
 ])

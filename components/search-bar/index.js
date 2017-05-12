@@ -1,6 +1,6 @@
-import Suits from '../../util/Suits'
+import Suites from '../../util/Suites'
 import SearchBar from './search-bar'
 
-export default new Suits([
+export default new Suites([
   SearchBar
 ])

@@ -1,8 +1,8 @@
-import Suits from '../../util/Suits'
+import Suites from '../../util/Suites'
 import Rate from './rate'
 import RateItem from './rate-item'
 
-export default new Suits([
+export default new Suites([
   Rate,
   RateItem
 ])

@@ -1,6 +1,6 @@
-import Suits from '../../util/Suits'
+import Suites from '../../util/Suites'
 import Container from './container'
 
-export default new Suits([
+export default new Suites([
   Container
 ])

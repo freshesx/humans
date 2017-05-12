@@ -1,6 +1,6 @@
-import Suits from '../../util/Suits'
+import Suites from '../../util/Suites'
 import Switch from './switch'
 
-export default new Suits([
+export default new Suites([
   Switch
 ])

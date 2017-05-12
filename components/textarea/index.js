@@ -1,6 +1,6 @@
-import Suits from '../../util/Suits'
+import Suites from '../../util/Suites'
 import Textarea from './textarea'
 
-export default new Suits([
+export default new Suites([
   Textarea
 ])

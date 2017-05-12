@@ -1,4 +1,4 @@
-import Suits from '../../util/Suits'
+import Suites from '../../util/Suites'
 import Card from './card'
 import CardItem from './card-item'
 import CardBody from './card-body'
@@ -7,7 +7,7 @@ import CardSuffix from './card-suffix'
 import CardMedia from './card-media'
 import CardBtns from './card-btns'
 
-export default new Suits([
+export default new Suites([
   Card,
   CardItem,
   CardBody,

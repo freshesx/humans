@@ -1,6 +1,6 @@
-import Suits from '../../util/Suits'
+import Suites from '../../util/Suites'
 import LoadingIcon from './loading-icon'
 
-export default new Suits([
+export default new Suites([
   LoadingIcon
 ])
