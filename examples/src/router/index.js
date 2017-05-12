@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { closeAllPopups } from 'vue-human/components/popup/storage'
+import { closeAllPopups } from 'vue-human/suites/popup/storage'
 
 Vue.use(VueRouter)
 

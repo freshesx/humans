@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import core from 'vue-human/components/core'
+  import core from 'vue-human/suites/core'
   import Message from 'vue-human/util/Message'
 
   export default {

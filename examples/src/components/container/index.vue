@@ -33,7 +33,7 @@
 </template>
 
 <script>
-  import core from 'vue-human/components/core'
+  import core from 'vue-human/suites/core'
   import Human from 'vue-human'
 
   export default {

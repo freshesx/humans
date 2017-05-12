@@ -37,15 +37,15 @@
 </template>
 
 <script>
-  import Scroller from 'vue-human/components/scroller/scroller'
-  import Container from 'vue-human/components/container/container'
-  import Section from 'vue-human/components/section/section'
-  import SectionNote from 'vue-human/components/section/section-note'
-  import Letter from 'vue-human/components/letter/letter'
-  import LetterBody from 'vue-human/components/letter/letter-body'
-  import Card from 'vue-human/components/card/card'
-  import CardItem from 'vue-human/components/card/card-item'
-  import CardBody from 'vue-human/components/card/card-body'
+  import Scroller from 'vue-human/suites/scroller/scroller'
+  import Container from 'vue-human/suites/container/container'
+  import Section from 'vue-human/suites/section/section'
+  import SectionNote from 'vue-human/suites/section/section-note'
+  import Letter from 'vue-human/suites/letter/letter'
+  import LetterBody from 'vue-human/suites/letter/letter-body'
+  import Card from 'vue-human/suites/card/card'
+  import CardItem from 'vue-human/suites/card/card-item'
+  import CardBody from 'vue-human/suites/card/card-body'
   import Confirm from 'vue-human/util/Confirm'
 
   export default {

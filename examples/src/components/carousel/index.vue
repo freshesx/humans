@@ -29,8 +29,8 @@
 </template>
 
 <script>
-  import core from 'vue-human/components/core'
-  import carouselSuits from 'vue-human/components/carousel'
+  import core from 'vue-human/suites/core'
+  import carouselSuits from 'vue-human/suites/carousel'
 
   export default {
     components: {

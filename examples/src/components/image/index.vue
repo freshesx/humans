@@ -24,8 +24,8 @@
 </template>
 
 <script>
-  import core from 'vue-human/components/core'
-  import imageSuits from 'vue-human/components/image'
+  import core from 'vue-human/suites/core'
+  import imageSuits from 'vue-human/suites/image'
 
   export default {
     components: {

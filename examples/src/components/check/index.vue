@@ -63,9 +63,9 @@
 </template>
 
 <script>
-  import core from 'vue-human/components/core'
-  import form from 'vue-human/components/form'
-  import checkSuits from 'vue-human/components/check'
+  import core from 'vue-human/suites/core'
+  import form from 'vue-human/suites/form'
+  import checkSuits from 'vue-human/suites/check'
   import required from 'vuelidate/lib/validators/required'
   import Message from 'vue-human/util/Message'
 

@@ -98,7 +98,7 @@
 </template>
 
 <script>
-  import core from 'vue-human/components/core'
+  import core from 'vue-human/suites/core'
 
   export default {
     components: {

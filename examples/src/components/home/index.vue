@@ -33,11 +33,11 @@
 </template>
 
 <script>
-  import containerSuit from 'vue-human/components/container'
-  import sectionSuit from 'vue-human/components/section'
-  import letterSuit from 'vue-human/components/letter'
-  import cardSuit from 'vue-human/components/card'
-  import columnSuit from 'vue-human/components/column'
+  import containerSuit from 'vue-human/suites/container'
+  import sectionSuit from 'vue-human/suites/section'
+  import letterSuit from 'vue-human/suites/letter'
+  import cardSuit from 'vue-human/suites/card'
+  import columnSuit from 'vue-human/suites/column'
 
   export default {
     components: {

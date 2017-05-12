@@ -20,12 +20,12 @@
 </template>
 
 <script>
-  import scrollerSuit from 'vue-human/components/scroller'
-  import containerSuit from 'vue-human/components/container'
-  import sectionSuit from 'vue-human/components/section'
-  import cellSuit from 'vue-human/components/cell'
-  import cardSuit from 'vue-human/components/card'
-  import buttonSuit from 'vue-human/components/button'
+  import scrollerSuit from 'vue-human/suites/scroller'
+  import containerSuit from 'vue-human/suites/container'
+  import sectionSuit from 'vue-human/suites/section'
+  import cellSuit from 'vue-human/suites/cell'
+  import cardSuit from 'vue-human/suites/card'
+  import buttonSuit from 'vue-human/suites/button'
   import { getDistrict } from './api'
 
   export default {

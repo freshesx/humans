@@ -28,9 +28,9 @@
 </template>
 
 <script>
-  import core from 'vue-human/components/core'
-  import form from 'vue-human/components/form'
-  import inputSuit from 'vue-human/components/input'
+  import core from 'vue-human/suites/core'
+  import form from 'vue-human/suites/form'
+  import inputSuit from 'vue-human/suites/input'
 
   export default {
     components: {

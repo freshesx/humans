@@ -25,8 +25,8 @@
 </template>
 
 <script>
-  import core from 'vue-human/components/core'
-  import paginateSuits from 'vue-human/components/paginate'
+  import core from 'vue-human/suites/core'
+  import paginateSuits from 'vue-human/suites/paginate'
 
   export default {
     components: {

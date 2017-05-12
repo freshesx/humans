@@ -11,8 +11,8 @@
 </template>
 
 <script>
-  import formSuit from 'vue-human/components/form'
-  import cardSuit from 'vue-human/components/card'
+  import formSuit from 'vue-human/suites/form'
+  import cardSuit from 'vue-human/suites/card'
 
   export default {
     components: {
