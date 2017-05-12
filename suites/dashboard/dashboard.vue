@@ -60,16 +60,20 @@
   }
 
   .mn-dashboard-side {
+    display: none;
     background: #fff;
     position: absolute;
     top: 100px;
-    left: 1rem;
-    right: 1rem;
-    bottom: 0;
-    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
-    border-top-left-radius: 0.75rem;
-    border-top-right-radius: 0.75rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 1rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 0.75rem;
     z-index: 200;
+
+    &.is-active {
+      display: block;
+    }
 
     @include min-screen(desktop) {
       position: relative;
