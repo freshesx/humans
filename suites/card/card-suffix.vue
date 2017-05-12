@@ -1,6 +1,6 @@
 <script>
   import Element from '../../utils/Element'
-  import CardPrefix from './card-prefix'
+  import CardPrefix from './cardPrefix'
 
   export default new Element({
     name: 'mn-card-suffix',

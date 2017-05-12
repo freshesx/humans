@@ -38,7 +38,7 @@
   import Element from '../../utils/Element'
   import card from '../card/card'
   import cardItem from '../card/cardItem'
-  import cardPrefix from '../card/card-prefix'
+  import cardPrefix from '../card/cardPrefix'
   import cardBody from '../card/cardBody'
   import loadingIcon from '../loadingIcon/loadingIcon'
   import cellIcon from './cell-icon'

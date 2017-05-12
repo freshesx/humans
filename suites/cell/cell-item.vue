@@ -10,7 +10,7 @@
 <script>
   import Element from '../../utils/Element'
   import cardItem from '../card/cardItem'
-  import cardPrefix from '../card/card-prefix'
+  import cardPrefix from '../card/cardPrefix'
   import cellIcon from './cell-icon'
 
   export default new Element({
