@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import Scroller from './scroller'
+import scroller from './scroller'
 
 export default new Suites([
-  Scroller
+  scroller
 ])
