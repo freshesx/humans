@@ -13,6 +13,21 @@ describe('util/AxiosHelper', () => {
     expect(axiosHelper).to.be.equal('未定义 error 处理方式')
   })
 
+  it('#error', () => {
+    const errorDate = {
+      response: {
+        status: 401
+      }
+    }
+
+    AxiosHelper.prototype.error401 = () => {
+      return 'error401'
+    }
+
+    const message = new AxiosHelper().error(errorDate)
+    expect(message).to.be.equal('error401')
+  })
+
   it('.error() # exceptionError', () => {
     const errorDate = {}
 
