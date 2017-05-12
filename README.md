@@ -2,7 +2,7 @@
 
 <div>
   <a href="https://www.npmjs.com/package/vue-human" title="npm">
-    <img src="https://img.shields.io/badge/npm-v2.4.3-orange.svg?style=flat-square">
+    <img src="https://img.shields.io/badge/npm-v2.4.4-orange.svg?style=flat-square">
   </a>
   <a href="https://minowu.gitbooks.io/vue-human" title="gitbook">
     <img src="https://img.shields.io/badge/gitbook-中文文档-brightgreen.svg?style=flat-square">
