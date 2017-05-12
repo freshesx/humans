@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import Container from './container'
+import container from './container'
 
 export default new Suites([
-  Container
+  container
 ])
