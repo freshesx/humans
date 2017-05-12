@@ -1,6 +1,6 @@
 <script>
   import Element from '../../utils/Element'
-  import MnRadioItem from '../radio/radio-item'
+  import MnRadioItem from '../radio/radioItem'
 
   export default new Element({
     name: 'mn-check-item',

@@ -1,6 +1,6 @@
 <script>
   import Element from '../../utils/Element'
-  import MnRadioIcon from '../radio/radio-icon'
+  import MnRadioIcon from '../radio/radioIcon'
   import checkmarkOutline from 'vue-human-icons/js/ios/checkmark-outline'
   import circleOutline from 'vue-human-icons/js/ios/circle-outline'
 

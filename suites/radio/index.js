@@ -1,10 +1,10 @@
 import Suites from '../../utils/Suites'
-import Radio from './radio'
-import RadioItem from './radio-item'
-import RadioIcon from './radio-icon'
+import radio from './radio'
+import radioItem from './radioItem'
+import radioIcon from './radioIcon'
 
 export default new Suites([
-  Radio,
-  RadioItem,
-  RadioIcon
+  radio,
+  radioItem,
+  radioIcon
 ])
