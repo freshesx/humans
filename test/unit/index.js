@@ -10,5 +10,5 @@ testsContext.keys().forEach(testsContext)
 // const componentsContext = require.context('../../suites', true, /\.*?(js|vue|scss)$/)
 // componentsContext.keys().forEach(componentsContext)
 
-const utilContext = require.context('../../util', true, /\.*?(js|scss|sass|css)$/)
+const utilContext = require.context('../../utils', true, /\.*?(js|scss|sass|css)$/)
 utilContext.keys().forEach(utilContext)
