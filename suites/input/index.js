@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import Input from './input'
+import input from './input'
 
 export default new Suites([
-  Input
+  input
 ])

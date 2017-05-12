@@ -21,12 +21,12 @@
 
 <script>
   import Element from '../../utils/Element'
-  import Icon from '../icon/icon'
+  import icon from '../icon/icon'
   import iosCloseOutline from 'vue-human-icons/js/ios/close-outline'
 
   export default new Element({
     components: {
-      [Icon.name]: Icon
+      ...icon.inject()
     },
     name: 'mn-input',
     props: {
