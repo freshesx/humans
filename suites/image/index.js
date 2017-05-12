@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import Image from './image'
+import image from './image'
 
 export default new Suites([
-  Image
+  image
 ])
