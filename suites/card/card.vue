@@ -1,10 +1,5 @@
 <template>
-  <div
-    class="mn-card"
-    :class="{
-      [`is-${type}`]: true,
-      'is-none-mobile-narrow': isNoneMobileNarrow
-    }">
+  <div class="mn-card" :class="`is-${theme}`">
     <slot></slot>
   </div>
 </template>
@@ -15,15 +10,12 @@
   export default new Element({
     name: 'mn-card',
     props: {
-      // primary, inverse
-      type: {
+      /**
+       * Card theme
+       */
+      theme: {
         type: String,
         default: 'primary'
-      }
-    },
-    data () {
-      return {
-        isNoneMobileNarrow: false
       }
     }
   })
@@ -50,18 +42,6 @@
     @include min-screen('desktop') {
       border-radius: $-card-desktop-radius;
     }
-
-    &.is-none-mobile-narrow {
-      @include screen('mobile') {
-        border-radius: $-card-mobile-radius;
-      }
-    }
-
-    // &.is-light {
-    //   background-color: rgba(255, 255, 255, 0.75);
-    // }
-
-    // &.is-primary {}
 
     &.is-inverse {
       background-color: #333;
