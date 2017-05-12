@@ -16,9 +16,9 @@
   ],
   "main": "index.js",
   "files": [
-    "components",
+    "suites",
     "scss",
-    "util",
+    "utils",
     "locale",
     "index.js"
   ],
