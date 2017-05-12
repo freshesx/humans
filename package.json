@@ -23,7 +23,7 @@
     "index.js"
   ],
   "scripts": {
-    "lint": "eslint --ext .js,.vue components suits util",
+    "lint": "eslint --ext .js,.vue components util examples locale",
     "dev": "node examples/build/dev-server.js",
     "example": "node examples/build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js"
