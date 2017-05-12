@@ -1,3 +1,4 @@
+import isUndefined from 'lodash/isUndefined'
 import isString from 'lodash/isString'
 import toNumber from 'lodash/toNumber'
 import toLower from 'lodash/toLower'
@@ -86,5 +87,26 @@ export default class Query {
    */
   static parseNull (query) {
     return null
+  }
+
+  /**
+   * 解析 queries 并与 models 同步
+   * @static
+   *
+   * @param  {Object} queris
+   * @param  {Object} models
+   *
+   * @return {Object}
+   */
+  static sync (queris, models) {
+    const parsedQueries = this.parse(queris)
+
+    Object.keys(models).forEach(name => {
+      if (!isUndefined(parsedQueries[name])) {
+        models[name] = parsedQueries[name]
+      }
+    })
+
+    return models
   }
 }
