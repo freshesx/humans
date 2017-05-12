@@ -1,8 +1,10 @@
 import Suites from '../../utils/Suites'
-import Cell from './cell'
-import CellItem from './cell-item'
+import cell from './cell'
+import cellItem from './cellItem'
+import cellIcon from './cellIcon'
 
 export default new Suites([
-  Cell,
-  CellItem
+  cell,
+  cellItem,
+  cellIcon
 ])

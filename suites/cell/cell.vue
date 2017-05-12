@@ -41,7 +41,7 @@
   import cardPrefix from '../card/cardPrefix'
   import cardBody from '../card/cardBody'
   import loadingIcon from '../loadingIcon/loadingIcon'
-  import cellIcon from './cell-icon'
+  import cellIcon from './cellIcon'
 
   export default new Element({
     name: 'mn-cell',

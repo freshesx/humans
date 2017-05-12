@@ -11,7 +11,7 @@
   import Element from '../../utils/Element'
   import cardItem from '../card/cardItem'
   import cardPrefix from '../card/cardPrefix'
-  import cellIcon from './cell-icon'
+  import cellIcon from './cellIcon'
 
   export default new Element({
     name: 'mn-cell-item',
