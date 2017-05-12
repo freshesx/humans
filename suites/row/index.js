@@ -1,8 +1,8 @@
 import Suites from '../../utils/Suites'
-import Rows from './rows'
-import Row from './row'
+import rows from './rows'
+import row from './row'
 
 export default new Suites([
-  Rows,
-  Row
+  rows,
+  row
 ])
