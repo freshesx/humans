@@ -19,12 +19,12 @@
 
 <script>
   import Element from '../../utils/Element'
-  import Icon from '../icon/icon'
+  import icon from '../icon/icon'
   import iosGridViewOutline from 'vue-human-icons/js/ios/grid-view-outline'
 
   export default new Element({
     components: {
-      [Icon.name]: Icon
+      ...icon.inject()
     },
     name: 'mn-textarea',
     props: {

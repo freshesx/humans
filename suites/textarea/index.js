@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import Textarea from './textarea'
+import textarea from './textarea'
 
 export default new Suites([
-  Textarea
+  textarea
 ])
