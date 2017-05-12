@@ -1,5 +1,5 @@
 import Popup from './Popup'
-import messageElement from '../components/message/message'
+import messageElement from '../suites/message/message'
 
 export default class Message extends Popup {
   element = messageElement

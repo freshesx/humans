@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Element from './Element'
 import isUndefined from 'lodash/isUndefined'
-import { addPopup, removePopup } from '../components/popup/storage'
+import { addPopup, removePopup } from '../suites/popup/storage'
 
 /** Class 弹出层控制类 */
 export default class Popup {
