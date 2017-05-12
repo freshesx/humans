@@ -22,13 +22,13 @@ It has media response for multiple scenes, e.g. mobile, tablet, desktop. You can
 
 ## Using vue-human in your application
 
-Step 1: In your terminal
+Step 1: Install vue-human to your project in your terminal.
 
 ``` bash
 $ yarn add vue-human
 ```
 
-Step 2: Must set babel in your webpack
+Step 2: Must set babel loader for vue-human in your webpack.
 
 > Install in Webpack 2
 
@@ -44,7 +44,7 @@ module: {
 }
 ```
 
-Step 3: Import vue-human core and form components
+Step 3: Import vue-human and configuare it.
 
 ``` javascript
 import Vue from 'vue'
@@ -53,7 +53,7 @@ import human from 'vue-human'
 Vue.use(human)
 ```
 
-Step 4: Import some components in component
+Step 4: Import and load some components in vue file
 
 ``` javascript
 import coreSuits from 'vue-human/components/coreSuits'
@@ -68,6 +68,11 @@ export default {
   }
 }
 ```
+
+Step 5: More components and how to use them
+
+* English Documentation (Need to contribute)
+* [组件的中文文档](https://minowu.gitbooks.io/vue-human)
 
 ## Recommend
 
