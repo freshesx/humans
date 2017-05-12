@@ -28,7 +28,7 @@ describe('util/Suits', () => {
   })
 
   it('#install with component install', () => {
-    let installedComponent = undefined
+    let installedComponent
     const suits = new Suits([iconElement])
     const Vue = {
       use (component) {
@@ -40,7 +40,7 @@ describe('util/Suits', () => {
   })
 
   it('#install without component install', () => {
-    let installedComponent = undefined
+    let installedComponent
     const element = { name: 'test-component' }
     const suits = new Suits([element])
     const Vue = {
