@@ -68,7 +68,7 @@
     }
   }
 
-  // @affect(./card-btns.vue, ./card-media.vue)
+  // @affect(./cardBtns.vue, ./card-media.vue)
   .mn-card-item + .mn-card-item,
   .mn-card-media + .mn-card-item,
   .mn-card-btns + .mn-card-item {

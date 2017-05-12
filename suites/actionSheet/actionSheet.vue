@@ -22,7 +22,7 @@
   import Element from '../../utils/Element'
   import popup from '../popup/popup'
   import card from '../card/card'
-  import cardBtns from '../card/card-btns'
+  import cardBtns from '../card/cardBtns'
 
   export default new Element({
     name: 'mn-action-sheet',

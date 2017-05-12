@@ -21,7 +21,7 @@
   import card from '../card/card'
   import cardItem from '../card/cardItem'
   import cardBody from '../card/cardBody'
-  import cardBtns from '../card/card-btns'
+  import cardBtns from '../card/cardBtns'
   import popupManager from '../popup/popupManager'
 
   export default new Element({

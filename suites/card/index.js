@@ -5,7 +5,7 @@ import cardBody from './cardBody'
 import CardPrefix from './card-prefix'
 import CardSuffix from './card-suffix'
 import CardMedia from './card-media'
-import CardBtns from './card-btns'
+import CardBtns from './cardBtns'
 
 export default new Suites([
   card,
