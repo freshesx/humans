@@ -60,13 +60,24 @@
   }
 
   .mn-dashboard-side {
-    display: none;
-    width: $-dashboard-side-width;
     background: #fff;
-    position: relative;
+    position: absolute;
+    top: 100px;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    z-index: 200;
 
     @include min-screen(desktop) {
-      display: block;
+      position: relative;
+      width: $-dashboard-side-width;
+      box-shadow: none;
+      border-radius: 0;
+      top: 0;
+      left: 0;
     }
   }
 
