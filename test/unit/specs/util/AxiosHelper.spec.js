@@ -37,7 +37,7 @@ describe('util/AxiosHelper', () => {
   })
 
   it('#$error401', () => {
-    const axiosHelper = new AxiosHelper().$error403()
+    const axiosHelper = new AxiosHelper().$error401()
     expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
   })
 
