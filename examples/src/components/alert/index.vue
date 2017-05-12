@@ -18,7 +18,7 @@
 
 <script>
   import core from 'vue-human/suites/core'
-  import Alert from 'vue-human/util/Alert'
+  import Alert from 'vue-human/utils/Alert'
 
   export default {
     components: {

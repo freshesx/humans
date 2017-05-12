@@ -18,7 +18,7 @@
 
 <script>
   import core from 'vue-human/suites/core'
-  import LoadingMask from 'vue-human/util/LoadingMask'
+  import LoadingMask from 'vue-human/utils/LoadingMask'
 
   export default {
     components: {

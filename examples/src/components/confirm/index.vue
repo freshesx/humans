@@ -18,7 +18,7 @@
 
 <script>
   import core from 'vue-human/suites/core'
-  import Confirm from 'vue-human/util/Confirm'
+  import Confirm from 'vue-human/utils/Confirm'
 
   export default {
     components: {

@@ -27,7 +27,7 @@
 
 <script>
   import core from 'vue-human/suites/core'
-  import Message from 'vue-human/util/Message'
+  import Message from 'vue-human/utils/Message'
 
   export default {
     components: {

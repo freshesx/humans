@@ -67,7 +67,7 @@
   import form from 'vue-human/suites/form'
   import checkSuits from 'vue-human/suites/check'
   import required from 'vuelidate/lib/validators/required'
-  import Message from 'vue-human/util/Message'
+  import Message from 'vue-human/utils/Message'
 
   export default {
     components: {

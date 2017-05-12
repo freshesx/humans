@@ -46,7 +46,7 @@
   import Card from 'vue-human/suites/card/card'
   import CardItem from 'vue-human/suites/card/card-item'
   import CardBody from 'vue-human/suites/card/card-body'
-  import Confirm from 'vue-human/util/Confirm'
+  import Confirm from 'vue-human/utils/Confirm'
 
   export default {
     components: {
