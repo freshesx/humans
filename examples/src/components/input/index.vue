@@ -28,14 +28,14 @@
 </template>
 
 <script>
-  import coreSuit from 'vue-human/components/coreSuits'
-  import formSuit from 'vue-human/components/formSuits'
+  import core from 'vue-human/components/core'
+  import form from 'vue-human/components/form'
   import inputSuit from 'vue-human/components/input'
 
   export default {
     components: {
-      ...coreSuit.map(),
-      ...formSuit.map(),
+      ...core.map(),
+      ...form.map(),
       ...inputSuit.map()
     },
     data () {

@@ -29,12 +29,12 @@
 </template>
 
 <script>
-  import coreSuits from 'vue-human/components/coreSuits'
+  import core from 'vue-human/components/core'
   import carouselSuits from 'vue-human/components/carousel'
 
   export default {
     components: {
-      ...coreSuits.map(),
+      ...core.map(),
       ...carouselSuits.map()
     },
     data () {

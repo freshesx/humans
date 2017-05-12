@@ -33,12 +33,12 @@
 </template>
 
 <script>
-  import coreSuits from 'vue-human/components/coreSuits'
+  import core from 'vue-human/components/core'
   import Human from 'vue-human'
 
   export default {
     components: {
-      ...coreSuits.map()
+      ...core.map()
     },
     data () {
       return {

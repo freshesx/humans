@@ -24,12 +24,12 @@
 </template>
 
 <script>
-  import coreSuits from 'vue-human/components/coreSuits'
+  import core from 'vue-human/components/core'
   import imageSuits from 'vue-human/components/image'
 
   export default {
     components: {
-      ...coreSuits.map(),
+      ...core.map(),
       ...imageSuits.map()
     },
     data () {

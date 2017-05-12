@@ -26,12 +26,12 @@
 </template>
 
 <script>
-  import coreSuits from 'vue-human/components/coreSuits'
+  import core from 'vue-human/components/core'
   import actionSheetSuits from 'vue-human/components/action-sheet'
 
   export default {
     components: {
-      ...coreSuits.map(),
+      ...core.map(),
       ...actionSheetSuits.map()
     },
     data () {
