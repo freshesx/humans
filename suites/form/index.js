@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import Form from './form'
+import form from './form'
 
 export default new Suites([
-  Form
+  form
 ])
