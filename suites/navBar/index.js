@@ -1,10 +1,10 @@
 import Suites from '../../utils/Suites'
-import NavBar from './navBar'
-import NavBarTitle from './navBarTitle'
-import NavBarBack from './navBarBack'
+import navBar from './navBar'
+import navBarTitle from './navBarTitle'
+import navBarBack from './navBarBack'
 
 export default new Suites([
-  NavBar,
-  NavBarTitle,
-  NavBarBack
+  navBar,
+  navBarTitle,
+  navBarBack
 ])

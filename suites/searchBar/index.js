@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import SearchBar from './searchBar'
+import searchBar from './searchBar'
 
 export default new Suites([
-  SearchBar
+  searchBar
 ])
