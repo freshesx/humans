@@ -1,6 +1,8 @@
 import Suites from '../../utils/Suites'
-import Dashboard from './dashboard'
+import dashboard from './dashboard'
+import dashboardMenu from './dashboardMenu'
 
 export default new Suites([
-  Dashboard
+  dashboard,
+  dashboardMenu
 ])
