@@ -1,8 +1,8 @@
 import Suites from '../../utils/Suites'
-import Carousel from './carousel'
-import CarouselItem from './carousel-item'
+import carousel from './carousel'
+import carouselItem from './carouselItem'
 
 export default new Suites([
-  Carousel,
-  CarouselItem
+  carousel,
+  carouselItem
 ])
