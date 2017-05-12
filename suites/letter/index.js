@@ -1,11 +1,10 @@
 import Suites from '../../utils/Suites'
-
-import Letter from './letter'
-import LetterBody from './letter-body'
-import LetterAction from './letter-action'
+import letter from './letter'
+import letterBody from './letterBody'
+import letterAction from './letterAction'
 
 export default new Suites([
-  Letter,
-  LetterBody,
-  LetterAction
+  letter,
+  letterBody,
+  letterAction
 ])
