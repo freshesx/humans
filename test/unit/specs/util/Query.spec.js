@@ -28,4 +28,20 @@ describe('util/Query', () => {
 
     expect(output).to.deep.equal(hope)
   })
+
+  it('.sync()', () => {
+    const queris = {
+      page: '1'
+    }
+
+    const models = {
+      page: undefined,
+      status: undefined
+    }
+
+    Query.sync(queris, models)
+
+    expect(models.page).to.equal(1)
+    expect(models.status).to.equal(undefined)
+  })
 })
