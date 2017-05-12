@@ -1,10 +1,10 @@
 import Suites from '../../utils/Suites'
-import Check from './check'
-import CheckItem from './check-item'
-import CheckIcon from './check-icon'
+import check from './check'
+import chcekItem from './chcekItem'
+import chcekIcon from './chcekIcon'
 
 export default new Suites([
-  Check,
-  CheckItem,
-  CheckIcon
+  check,
+  chcekItem,
+  chcekIcon
 ])
