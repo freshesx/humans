@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
 import icon from '../icon'
-import loadingIcon from '../loading-icon'
+import loadingIcon from '../loadingIcon'
 import scroller from '../scroller'
 import button from '../button'
 import card from '../card'
