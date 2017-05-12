@@ -3,7 +3,7 @@ import card from './card'
 import cardItem from './cardItem'
 import cardBody from './cardBody'
 import cardPrefix from './cardPrefix'
-import CardSuffix from './card-suffix'
+import cardSuffix from './cardSuffix'
 import cardMedia from './cardMedia'
 import cardBtns from './cardBtns'
 
@@ -12,7 +12,7 @@ export default new Suites([
   cardItem,
   cardBody,
   cardPrefix,
-  CardSuffix,
+  cardSuffix,
   cardMedia,
   cardBtns
 ])

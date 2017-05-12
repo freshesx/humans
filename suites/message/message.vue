@@ -33,7 +33,7 @@
   import cardItem from '../card/cardItem'
   import cardBody from '../card/cardBody'
   import cardPrefix from '../card/cardPrefix'
-  import cardSuffix from '../card/card-suffix'
+  import cardSuffix from '../card/cardSuffix'
   import icon from '../icon/icon'
   import closeEmpty from 'vue-human-icons/js/ios/close-empty'
   import TYPES from './types'
