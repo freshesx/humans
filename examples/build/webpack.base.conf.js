@@ -11,7 +11,7 @@ function includeFolders () {
   return [
     resolve('src'),
     resolve('../test'),
-    resolve('../components'),
+    resolve('../suites'),
     resolve('../util'),
     resolve('../locale'),
     resolve('../index.js')
