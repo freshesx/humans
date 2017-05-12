@@ -33,7 +33,8 @@ export default {
       components: {
         paginate: '页码',
         cell: '单元列表',
-        carousel: '轮播图'
+        carousel: '轮播图',
+        dashboard: '后台管理'
       }
     }
   }

@@ -168,6 +168,11 @@
                 name: 'Carousel',
                 small: this.$t('examples.submenus.components.carousel'),
                 link: { name: 'carousel' }
+              },
+              {
+                name: 'Dashboard',
+                small: this.$t('examples.submenus.components.dashboard'),
+                link: { name: 'dashboard' }
               }
             ]
           }

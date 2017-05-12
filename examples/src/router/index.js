@@ -110,6 +110,11 @@ const router = new VueRouter({
       path: '/action-sheet',
       name: 'actionSheet',
       component: resolve => { require(['../components/actionSheet'], resolve) }
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: resolve => { require(['../components/dashboard'], resolve) }
     }
   ]
 })
