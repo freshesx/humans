@@ -1,8 +1,8 @@
 import Suites from '../../utils/Suites'
-import Section from './section'
-import SectionNote from './section-note'
+import section from './section'
+import sectionNote from './sectionNote'
 
 export default new Suites([
-  Section,
-  SectionNote
+  section,
+  sectionNote
 ])
