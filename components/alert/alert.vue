@@ -1,6 +1,6 @@
 <template>
   <mn-popup :show="isShow" :class="[ 'mn-popup-alert' ]">
-    <mn-popup-card class="has-none-margin-bottom">
+    <mn-card class="has-none-margin-bottom">
       <mn-card-item>
         <mn-card-body class="has-center-text">
           <h4>{{ title }}</h4>
@@ -10,14 +10,14 @@
       <mn-card-btns type="column">
         <button class="has-blue-text" @click="cancel">{{ cancelText }}</button>
       </mn-card-btns>
-    </mn-popup-card>
+    </mn-card>
   </mn-popup>
 </template>
 
 <script>
   import Element from '../../util/Element'
   import popup from '../popup/popup'
-  import popupCard from '../popup/popup-card'
+  import card from '../card/card'
   import cardItem from '../card/card-item'
   import cardBody from '../card/card-body'
   import cardBtns from '../card/card-btns'
@@ -25,11 +25,11 @@
 
   export default new Element({
     components: {
-      [popup.name]: popup,
-      [popupCard.name]: popupCard,
-      [cardItem.name]: cardItem,
-      [cardBody.name]: cardBody,
-      [cardBtns.name]: cardBtns
+      ...popup.inject(),
+      ...card.inject(),
+      ...cardItem.inject(),
+      ...cardBody.inject(),
+      ...cardBtns.inject()
     },
     mixins: [
       /**

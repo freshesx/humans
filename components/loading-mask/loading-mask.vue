@@ -7,19 +7,13 @@
 <script>
   import Element from '../../util/Element'
   import popup from '../popup/popup'
-  import popupCard from '../popup/popup-card'
-  import cardItem from '../card/card-item'
-  import cardBody from '../card/card-body'
   import loadingIcon from '../loading-icon/loading-icon'
   import popupManager from '../popup/popupManager'
 
   export default new Element({
     components: {
-      [popup.name]: popup,
-      [popupCard.name]: popupCard,
-      [cardItem.name]: cardItem,
-      [cardBody.name]: cardBody,
-      [loadingIcon.name]: loadingIcon
+      ...popup.inject(),
+      ...loadingIcon.inject()
     },
     mixins: [
       /**
