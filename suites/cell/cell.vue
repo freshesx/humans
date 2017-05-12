@@ -37,7 +37,7 @@
 <script>
   import Element from '../../utils/Element'
   import card from '../card/card'
-  import cardItem from '../card/card-item'
+  import cardItem from '../card/cardItem'
   import cardPrefix from '../card/card-prefix'
   import cardBody from '../card/cardBody'
   import loadingIcon from '../loadingIcon/loadingIcon'

@@ -9,7 +9,7 @@
 
 <script>
   import Element from '../../utils/Element'
-  import cardItem from '../card/card-item'
+  import cardItem from '../card/cardItem'
   import cardPrefix from '../card/card-prefix'
   import cellIcon from './cell-icon'
 

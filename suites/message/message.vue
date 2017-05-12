@@ -30,7 +30,7 @@
   import Element from '../../utils/Element'
   import popup from '../popup/popup'
   import card from '../card/card'
-  import cardItem from '../card/card-item'
+  import cardItem from '../card/cardItem'
   import cardBody from '../card/cardBody'
   import cardPrefix from '../card/card-prefix'
   import cardSuffix from '../card/card-suffix'

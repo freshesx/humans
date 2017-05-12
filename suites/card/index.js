@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
 import card from './card'
-import CardItem from './card-item'
+import cardItem from './cardItem'
 import cardBody from './cardBody'
 import CardPrefix from './card-prefix'
 import CardSuffix from './card-suffix'
@@ -9,7 +9,7 @@ import CardBtns from './card-btns'
 
 export default new Suites([
   card,
-  CardItem,
+  cardItem,
   cardBody,
   CardPrefix,
   CardSuffix,

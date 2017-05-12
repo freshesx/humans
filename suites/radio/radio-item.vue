@@ -6,7 +6,7 @@
 
 <script>
   import Element from '../../utils/Element'
-  import cardItem from '../card/card-item'
+  import cardItem from '../card/cardItem'
 
   export default new Element({
     name: 'mn-radio-item',

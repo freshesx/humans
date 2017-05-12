@@ -18,7 +18,7 @@
   import Element from '../../utils/Element'
   import popup from '../popup/popup'
   import card from '../card/card'
-  import cardItem from '../card/card-item'
+  import cardItem from '../card/cardItem'
   import cardBody from '../card/cardBody'
   import cardBtns from '../card/card-btns'
   import popupManager from '../popup/popupManager'
