@@ -1,17 +1,17 @@
-/** Class 封装多个组件的 Suits 类 */
-export default class Suits {
+/** Class 封装多个组件的 Suites 类 */
+export default class Suites {
   /**
    * @var {Array}
    */
   components = []
 
   /**
-   * 构造函数，判断传入的对象是 Suits 对象还是数组，并合并
+   * 构造函数，判断传入的对象是 Suites 对象还是数组，并合并
    * @param {Array} components
    */
   constructor (components) {
     components.forEach(item => {
-      let items = item instanceof Suits
+      let items = item instanceof Suites
         ? item.getComponents()
         : item
 
@@ -20,7 +20,7 @@ export default class Suits {
   }
 
   /**
-   * 返回 Suits 内的所有组件
+   * 返回 Suites 内的所有组件
    * @return {Array}
    */
   getComponents () {
