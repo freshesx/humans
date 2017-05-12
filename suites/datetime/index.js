@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import Datetime from './datetime'
+import datetime from './datetime'
 
 export default new Suites([
-  Datetime
+  datetime
 ])
