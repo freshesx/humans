@@ -1,6 +1,6 @@
 <template>
   <mn-popup :show="isShow" :class="[ 'mn-popup-confirm' ]">
-    <mn-card class="has-none-margin-bottom">
+    <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-body class="has-center-text">
           <h4>{{ title }}</h4>

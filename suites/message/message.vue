@@ -1,7 +1,7 @@
 <template>
   <mn-popup class="mn-message" :show="isShow" :masked="false"
     animation="slideInTop">
-    <mn-card class="mn-message-card">
+    <mn-card class="mn-message-card" rounded>
       <!-- Title -->
       <mn-card-item class="mn-message-title">
         <mn-card-prefix>

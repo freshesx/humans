@@ -8,7 +8,7 @@
       <slot></slot>
     </div>
     <!-- Cancel button -->
-    <mn-card class="has-none-margin-bottom" v-if="cancelButton">
+    <mn-card class="has-none-margin-bottom" v-if="cancelButton" rounded>
       <mn-card-btns>
         <button class="has-blue-text" @click="onClosePopup">
           <strong>{{ $t('mn.popup.cancelText') }}</strong>
