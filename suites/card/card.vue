@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-card" :class="`is-${theme}`">
+  <div class="mn-card" :class="[ `is-${theme}`, { 'is-rounded': rounded } ]">
     <slot></slot>
   </div>
 </template>
@@ -16,7 +16,9 @@
       theme: {
         type: String,
         default: 'primary'
-      }
+      },
+
+      rounded: Boolean
     }
   })
 </script>
@@ -46,6 +48,14 @@
     &.is-inverse {
       background-color: #333;
       color: #fff;
+    }
+  }
+
+  .mn-card.is-rounded {
+    border-radius: $card-mobile-radius;
+
+    @include min-screen('desktop') {
+      border-radius: $-card-desktop-radius;
     }
   }
 </style>
