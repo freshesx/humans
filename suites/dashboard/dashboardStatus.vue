@@ -17,6 +17,7 @@
       ...icon.inject()
     },
     props: {
+      show: Boolean,
       menu: {
         type: Array,
         default: val => {
@@ -47,7 +48,7 @@
       },
       onOpen (item) {
         if (item.method && item.method === 'openSide') {
-          this.$emit('showSidebar', true)
+          this.$emit('update:show', true)
         }
       }
     }
