@@ -33,21 +33,13 @@
 </template>
 
 <script>
-  import containerSuit from 'vue-human/suites/container'
-  import sectionSuit from 'vue-human/suites/section'
-  import letterSuit from 'vue-human/suites/letter'
-  import cardSuit from 'vue-human/suites/card'
-  import columnSuit from 'vue-human/suites/column'
+  import core from 'vue-human/suites/core'
   import menu from '../base/menu'
 
   export default {
     mixins: [ menu ],
     components: {
-      ...containerSuit.map(),
-      ...sectionSuit.map(),
-      ...letterSuit.map(),
-      ...cardSuit.map(),
-      ...columnSuit.map()
+      ...core.map()
     }
   }
 </script>
