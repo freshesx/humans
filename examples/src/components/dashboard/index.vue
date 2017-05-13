@@ -31,12 +31,14 @@
       </mn-scroller>
     </mn-dashboard-sidebar>
 
-    <mn-dashboard-status slot="suffix"
+    <mn-dashboard-status slot="navbar"
       :menu="statusMenu" :show.sync="showSidebar"></mn-dashboard-status>
 
-    <mn-scroller>
-      <div>Mainarea</div>
-    </mn-scroller>
+    <mn-dashboard-body>
+      <mn-scroller>
+        <div>Mainarea</div>
+      </mn-scroller>
+    </mn-dashboard-body>
   </mn-dashboard>
 </template>
 
