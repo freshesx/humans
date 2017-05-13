@@ -16,20 +16,25 @@
         <slot></slot>
       </div>
     </div>
-    <mn-dashboard-status :menu="status" @showSidebar="showSidebar = arguments[0]"></mn-dashboard-status>
+    <mn-dashboard-status :menu="status" @showSidebar="onShowSidebar"></mn-dashboard-status>
   </div>
 </template>
 
 <script>
   import Element from '../../utils/Element'
   import dashboardStatus from './dashboardStatus'
+  import maskManager from './maskManager'
 
   export default new Element({
     name: 'mn-dashboard',
+    mixins: [ maskManager ],
     components: {
       ...dashboardStatus.inject()
     },
     props: {
+      /**
+       * Status menu configuare
+       */
       status: {
         type: Array,
         default: val => {
@@ -40,6 +45,35 @@
     data () {
       return {
         showSidebar: false
+      }
+    },
+    methods: {
+      /**
+       * Control to show and hide sidebar
+       *
+       * @param  {Boolean}      show
+       * @return {this}
+       */
+      onShowSidebar (show) {
+        if (show) {
+          this.showSidebar = true
+          this.showMask(190)
+        } else {
+          this.showSidebar = false
+          this.closeMask()
+        }
+        return this
+      },
+
+      /**
+       * Rewrite maskManager closePopup method
+       * To notify onShowSidebar method
+       *
+       * @return {this}
+       */
+      closePopup () {
+        this.onShowSidebar(false)
+        return this
       }
     }
   })
@@ -78,7 +112,6 @@
   }
 
   .mn-dashboard-side {
-    display: none;
     background: #fff;
     position: absolute;
     top: 100px;
@@ -88,9 +121,12 @@
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     border-radius: 0.75rem;
     z-index: 200;
+    transform: translateY(120%);
+    transition-duration: 500ms;
 
     &.is-active {
-      display: block;
+      transform: translateY(0);
+      transition-duration: 500ms;
     }
 
     @include min-screen(tablet) {
@@ -107,6 +143,8 @@
       border-radius: 0;
       top: 0;
       left: 0;
+      transition-duration: 0;
+      transform: translateY(0);
     }
   }
 
