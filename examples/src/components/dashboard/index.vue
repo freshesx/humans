@@ -1,38 +1,12 @@
 <template>
-  <mn-dashboard :status="statusMenu">
+  <mn-dashboard>
     <mn-dashboard-brand slot="brand" class="brand">
       <mn-icon :name="icons.logo" :width="44"></mn-icon>
     </mn-dashboard-brand>
 
-    <mn-dashboard-sidebar slot="sidebar" :show.sync="showSidebar">
-      <mn-scroller name="dashboard-side">
-        <mn-section class="has-one-padding-all">
-          <mn-search-bar>
-            <mn-input v-model="search" placeholder="全局搜索"></mn-input>
-          </mn-search-bar>
-        </mn-section>
+    <sidebar slot="sidebar"></sidebar>
 
-        <mn-section>
-          <mn-dashboard-menu :menu="menu"></mn-dashboard-menu>
-        </mn-section>
-
-        <mn-section class="has-one-padding-all">
-          <mn-card theme="inverse">
-            <mn-card-item>
-              <mn-card-prefix>
-                <mn-icon :name="icons.logo"></mn-icon>
-              </mn-card-prefix>
-              <mn-card-body>
-                ChaselWu
-              </mn-card-body>
-            </mn-card-item>
-          </mn-card>
-        </mn-section>
-      </mn-scroller>
-    </mn-dashboard-sidebar>
-
-    <mn-dashboard-navbar slot="navbar"
-      :menu="statusMenu" :show.sync="showSidebar"></mn-dashboard-navbar>
+    <navbar slot="navbar"></navbar>
 
     <mn-dashboard-body>
       <mn-scroller>
@@ -45,47 +19,21 @@
 <script>
   import core from 'vue-human/suites/core'
   import dashboard from 'vue-human/suites/dashboard'
-  import searchBar from 'vue-human/suites/searchBar'
-  import input from 'vue-human/suites/input'
-  import menu from '../base/menu'
+  import sidebar from './sidebar'
+  import navbar from './navbar'
 
   export default {
-    mixins: [ menu ],
     components: {
       ...core.map(),
       ...dashboard.map(),
-      ...searchBar.map(),
-      ...input.map()
+      sidebar,
+      navbar
     },
     data () {
       return {
         icons: {
           logo: require('vue-human-icons/js/ios/analytics')
-        },
-        showSidebar: false,
-        search: undefined,
-        statusMenu: [
-          {
-            name: '首页',
-            icon: require('vue-human-icons/js/ios/world'),
-            push: { name: 'dashboard' }
-          },
-          {
-            name: '资料库',
-            icon: require('vue-human-icons/js/ios/box'),
-            push: { name: 'homepage' }
-          },
-          {
-            name: '购物袋',
-            icon: require('vue-human-icons/js/ios/cart'),
-            push: { name: 'homepage' }
-          },
-          {
-            name: '我的',
-            icon: require('vue-human-icons/js/ios/contact'),
-            push: { name: 'homepage' }
-          }
-        ]
+        }
       }
     }
   }
