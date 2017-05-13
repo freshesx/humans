@@ -1,8 +1,8 @@
 <template>
   <mn-dashboard :status="statusMenu">
-    <div class="brand" slot="brand">
+    <mn-dashboard-brand slot="brand" class="brand">
       <mn-icon :name="icons.logo" :width="44"></mn-icon>
-    </div>
+    </mn-dashboard-brand>
 
     <mn-dashboard-sidebar slot="sidebar" :show.sync="showSidebar">
       <mn-scroller name="dashboard-side">
