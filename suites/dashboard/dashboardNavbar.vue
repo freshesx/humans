@@ -53,7 +53,10 @@
       },
       onOpen (item) {
         if (item.method && item.method === 'openSide') {
-          this.$emit('update:show', true)
+          return this.$emit('update:show', true)
+        }
+        if (item.push) {
+          return this.$router && this.$router.push(item.push)
         }
       }
     }
