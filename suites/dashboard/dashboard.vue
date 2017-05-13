@@ -1,5 +1,6 @@
 <template>
   <div class="mn-dashboard">
+    <!-- Header -->
     <div class="mn-dashboard-header">
       <div class="mn-dashboard-brand">
         <slot name="brand"></slot>
@@ -8,12 +9,14 @@
         <slot name="nav"></slot>
       </div>
     </div>
+    <!-- Body -->
     <div class="mn-dashboard-mainarea">
       <slot name="sidebar"></slot>
       <slot></slot>
     </div>
-    <div class="mn-dashboard-navbar">
-      <slot name="suffix"></slot>
+    <!-- Navbar -->
+    <div>
+      <slot name="navbar"></slot>
     </div>
   </div>
 </template>
