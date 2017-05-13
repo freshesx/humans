@@ -31,8 +31,8 @@
       </mn-scroller>
     </mn-dashboard-sidebar>
 
-    <mn-dashboard-status slot="navbar"
-      :menu="statusMenu" :show.sync="showSidebar"></mn-dashboard-status>
+    <mn-dashboard-navbar slot="navbar"
+      :menu="statusMenu" :show.sync="showSidebar"></mn-dashboard-navbar>
 
     <mn-dashboard-body>
       <mn-scroller>
