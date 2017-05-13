@@ -11,7 +11,7 @@
         <mn-dashboard-menu :menu="menu"></mn-dashboard-menu>
       </mn-section>
 
-      <mn-section class="has-one-padding-all">
+      <mn-section class="profile-box">
         <mn-card theme="inverse">
           <mn-card-item>
             <mn-card-prefix>
@@ -54,3 +54,13 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  @import "~vue-human/scss/mixins/media.scss";
+
+  .profile-box {
+    @include min-screen(tablet) {
+      padding: 0 1rem;
+    }
+  }
+</style>
