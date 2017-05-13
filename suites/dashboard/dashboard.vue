@@ -93,6 +93,13 @@
       display: block;
     }
 
+    @include min-screen(tablet) {
+      top: 500px;
+      left: 6rem;
+      right: 6rem;
+      bottom: 1rem;
+    }
+
     @include min-screen(desktop) {
       position: relative;
       width: $-dashboard-side-width;
