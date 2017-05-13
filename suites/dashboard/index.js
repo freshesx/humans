@@ -1,14 +1,14 @@
 import Suites from '../../utils/Suites'
 import dashboard from './dashboard'
 import dashboardMenu from './dashboardMenu'
-import dashboardStatus from './dashboardStatus'
+import dashboardNavbar from './dashboardNavbar'
 import dashboardSidebar from './dashboardSidebar'
 import dashboardBody from './dashboardBody'
 
 export default new Suites([
   dashboard,
   dashboardMenu,
-  dashboardStatus,
+  dashboardNavbar,
   dashboardSidebar,
   dashboardBody
 ])
