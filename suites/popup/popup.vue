@@ -8,12 +8,13 @@
 
 <script>
   import Element from '../../utils/Element'
-  import Mask from '../../utils/Mask'
+  import maskManager from '../popup/maskManager'
   import ANIMATIONS from './animations'
   import { getZIndex } from './layer'
 
   export default new Element({
     name: 'mn-popup',
+    mixins: [ maskManager ],
     props: {
       /**
        * Popup show prop
@@ -26,14 +27,6 @@
       zIndex: {
         type: Number,
         default: () => getZIndex()
-      },
-
-      /**
-       * Whether to use mask component
-       */
-      masked: {
-        type: Boolean,
-        default: true
       },
 
       /**
@@ -65,40 +58,6 @@
        */
       closePopup () {
         this.$emit('close')
-        return this
-      },
-
-      /**
-       * If masked is true, create and append mask component,
-       * and listen mask `notifyCloseMask` event.
-       *
-       * @param {Number} zIndex
-       * @return {this}
-       */
-      showMask (zIndex) {
-        if (this.masked) {
-          // Create mask with z-index
-          this.mask = Mask.create({ zIndex }).show()
-
-          // Only listen mask notifyCloseMask event
-          this.mask.$on('notifyCloseMask', () => {
-            this.closePopup()
-          })
-        }
-
-        return this
-      },
-
-      /**
-       * Excute to close mask
-       * @return {this}
-       */
-      closeMask () {
-        if (this.mask) {
-          this.mask.close()
-          this.mask = undefined
-        }
-
         return this
       }
     },

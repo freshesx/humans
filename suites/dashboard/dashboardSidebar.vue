@@ -6,7 +6,7 @@
 
 <script>
   import Element from '../../utils/Element'
-  import maskManager from './maskManager'
+  import maskManager from '../popup/maskManager'
 
   export default new Element({
     name: 'mn-dashboard-sidebar',
