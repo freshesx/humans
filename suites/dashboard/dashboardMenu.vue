@@ -6,7 +6,11 @@
         @click="$router.push(item.push)">
         <div class="mn-dashboard-body">{{ item.name }}</div>
         <div class="mn-dashboard-action">
-          <mn-tag v-if="item.badge" :name="item.badge.type" :bg="item.badge.bg" :text="item.badge.text" :size="item.badge.size">{{ item.badge.content }}</mn-tag>
+          <mn-tag v-if="item.badge"
+            :name="item.badge.theme"
+            :bg="item.badge.bg"
+            :text="item.badge.text"
+            :size="item.badge.size">{{ item.badge.content }}</mn-tag>
         </div>
       </div>
       <!-- Children -->
