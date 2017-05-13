@@ -2,12 +2,8 @@
   <div class="mn-dashboard">
     <!-- Header -->
     <div class="mn-dashboard-header">
-      <div class="mn-dashboard-brand">
-        <slot name="brand"></slot>
-      </div>
-      <div class="mn-dashboard-toolbar">
-        <slot name="nav"></slot>
-      </div>
+      <slot name="brand"></slot>
+      <slot name="toolbar"></slot>
     </div>
     <!-- Body -->
     <div class="mn-dashboard-mainarea">
