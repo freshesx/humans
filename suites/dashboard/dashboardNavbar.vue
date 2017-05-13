@@ -1,7 +1,12 @@
 <template>
   <div class="mn-dashboard-navbar">
-    <div class="mn-dashboard-navbar-item" :class="{ 'is-active': matchActive(item.push) }" @click="onOpen(item)" v-for="item in statusMenu">
-      <div class="mn-dashboard-navbar-icon"><mn-icon :name="item.icon" :scale="1.2"></mn-icon></div>
+    <div class="mn-dashboard-navbar-item"
+      :class="{ 'is-active': matchActive(item.push) }"
+      @click="onOpen(item)"
+      v-for="item in statusMenu">
+      <div class="mn-dashboard-navbar-icon">
+        <mn-icon :name="item.icon" :scale="1.2"></mn-icon>
+      </div>
       <div class="mn-dashboard-navbar-title">{{ item.name }}</div>
     </div>
   </div>
