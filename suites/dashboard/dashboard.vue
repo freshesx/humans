@@ -8,11 +8,9 @@
         <slot name="nav"></slot>
       </div>
     </div>
-    <div class="mn-dashboard-body">
+    <div class="mn-dashboard-mainarea">
       <slot name="sidebar"></slot>
-      <div class="mn-dashboard-mainarea">
-        <slot></slot>
-      </div>
+      <slot></slot>
     </div>
     <div class="mn-dashboard-navbar">
       <slot name="suffix"></slot>
@@ -55,13 +53,8 @@
     }
   }
 
-  .mn-dashboard-body {
+  .mn-dashboard-mainarea {
     flex: 1;
     display: flex;
-  }
-
-  .mn-dashboard-mainarea {
-    position: relative;
-    flex: 1;
   }
 </style>
