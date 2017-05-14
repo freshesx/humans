@@ -1,6 +1,7 @@
 <template>
   <mn-dashboard>
-    <mn-dashboard-brand slot="brand" class="brand">
+    <mn-dashboard-brand slot="brand" class="brand"
+      @click.native="$router.push({ name: 'homepage' })">
       <mn-icon :name="icons.logo" :width="44"></mn-icon>
     </mn-dashboard-brand>
 
@@ -43,5 +44,6 @@
   .brand {
     padding: 7px 0 0 1rem;
     color: #fff;
+    cursor: pointer;
   }
 </style>
