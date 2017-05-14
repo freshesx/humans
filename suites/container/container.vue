@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-container" :class="{}">
+  <div class="mn-container" :class="[{ 'is-fluid': fluid }]">
     <slot></slot>
   </div>
 </template>
@@ -8,7 +8,10 @@
   import Element from '../../utils/Element'
 
   export default new Element({
-    name: 'mn-container'
+    name: 'mn-container',
+    props: {
+      fluid: Boolean
+    }
   })
 </script>
 
@@ -29,6 +32,15 @@
       width: media-breakpoint-get(widescreen);
       margin-left: auto;
       margin-right: auto;
+    }
+  }
+
+  .mn-container.is-fluid {
+    width: 100%;
+
+    @include min-screen(tablet) {
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
   }
 </style>
