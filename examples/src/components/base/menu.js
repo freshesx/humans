@@ -4,6 +4,10 @@ export default {
       menu: [
         {
           name: this.$t('examples.menus.core'),
+          badge: {
+            theme: 'gray-darkest',
+            content: 5
+          },
           children: [
             {
               name: 'Button',
