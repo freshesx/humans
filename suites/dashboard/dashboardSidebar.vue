@@ -21,6 +21,9 @@
         } else {
           this.closeMask()
         }
+      },
+      '$route.path' () {
+        this.closePopup()
       }
     },
     methods: {
