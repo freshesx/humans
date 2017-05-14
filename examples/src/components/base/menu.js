@@ -3,14 +3,6 @@ export default {
     return {
       menu: [
         {
-          name: this.$t('examples.menus.home'),
-          push: { name: 'homepage' },
-          badge: {
-            theme: 'gray-darkest',
-            content: 5
-          }
-        },
-        {
           name: this.$t('examples.menus.core'),
           children: [
             {
