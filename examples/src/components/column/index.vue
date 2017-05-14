@@ -1,5 +1,5 @@
 <template>
-  <mn-container>
+  <page>
     <mn-section>
       <mn-letter>
         <mn-letter-body>
@@ -94,15 +94,17 @@
         </mn-column>
       </mn-columns>
     </mn-section>
-  </mn-container>
+  </page>
 </template>
 
 <script>
   import core from 'vue-human/suites/core'
+  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map()
+      ...core.map(),
+      page
     }
   }
 </script>

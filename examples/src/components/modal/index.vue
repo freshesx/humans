@@ -1,5 +1,9 @@
 <template>
-  <mn-container>
+  <page>
+    <mn-letter>
+      <mn-letter-body><h1>Modal</h1></mn-letter-body>
+    </mn-letter>
+
     <mn-section>
       <mn-card>
         <mn-card-item>
@@ -26,17 +30,19 @@
         <mn-btn theme="primary">Confirm</mn-btn>
       </mn-modal-action>
     </mn-modal>
-  </mn-container>
+  </page>
 </template>
 
 <script>
   import core from 'vue-human/suites/core'
+  import page from '../base/page'
   import modal from 'vue-human/suites/modal'
 
   export default {
     components: {
       ...core.map(),
-      ...modal.map()
+      ...modal.map(),
+      page
     },
     data () {
       return {

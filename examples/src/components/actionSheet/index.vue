@@ -1,5 +1,9 @@
 <template>
-  <mn-container>
+  <page>
+    <mn-letter>
+      <mn-letter-body><h1>Action Sheet</h1></mn-letter-body>
+    </mn-letter>
+
     <mn-section>
       <mn-card>
         <mn-card-item>
@@ -22,17 +26,19 @@
         </mn-card-btns>
       </mn-card>
     </mn-action-sheet>
-  </mn-container>
+  </page>
 </template>
 
 <script>
   import core from 'vue-human/suites/core'
   import actionSheet from 'vue-human/suites/actionSheet'
+  import page from '../base/page'
 
   export default {
     components: {
       ...core.map(),
-      ...actionSheet.map()
+      ...actionSheet.map(),
+      page
     },
     data () {
       return {

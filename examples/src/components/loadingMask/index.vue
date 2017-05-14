@@ -1,28 +1,30 @@
 <template>
-  <mn-page>
-    <mn-scroller>
-      <mn-container>
-        <mn-section>
-          <mn-card>
-            <mn-card-item>
-              <mn-card-body>
-                <mn-btn theme="primary" block @click="onOpenLoadingMask">Open loading mask</mn-btn>
-              </mn-card-body>
-            </mn-card-item>
-          </mn-card>
-        </mn-section>
-      </mn-container>
-    </mn-scroller>
-  </mn-page>
+  <page>
+    <mn-letter>
+      <mn-letter-body><h1>Loading Mask</h1></mn-letter-body>
+    </mn-letter>
+
+    <mn-section>
+      <mn-card>
+        <mn-card-item>
+          <mn-card-body>
+            <mn-btn theme="primary" block @click="onOpenLoadingMask">Open loading mask</mn-btn>
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+    </mn-section>
+  </page>
 </template>
 
 <script>
   import core from 'vue-human/suites/core'
+  import page from '../base/page'
   import LoadingMask from 'vue-human/utils/LoadingMask'
 
   export default {
     components: {
-      ...core.map()
+      ...core.map(),
+      page
     },
     methods: {
       onOpenLoadingMask () {
