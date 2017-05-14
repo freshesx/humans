@@ -6,6 +6,7 @@ import dashboardSidebar from './dashboardSidebar'
 import dashboardBody from './dashboardBody'
 import dashboardBrand from './dashboardBrand'
 import dashboardToolbar from './dashboardToolbar'
+import dashboardContainer from './dashboardContainer'
 
 export default new Suites([
   dashboard,
@@ -14,5 +15,6 @@ export default new Suites([
   dashboardSidebar,
   dashboardBody,
   dashboardBrand,
-  dashboardToolbar
+  dashboardToolbar,
+  dashboardContainer
 ])
