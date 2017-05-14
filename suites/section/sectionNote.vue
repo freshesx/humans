@@ -20,6 +20,7 @@
     color: #666;
     font-size: 0.875rem;
     padding-left: $grid-gutters;
+    padding-right: $grid-gutters;
     margin-bottom: $grid-gutters / 2;
   }
 </style>
