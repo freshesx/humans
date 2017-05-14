@@ -1,18 +1,20 @@
 <template>
-  <page>
-    <mn-letter>
-      <mn-letter-body><h1>Action Sheet</h1></mn-letter-body>
-    </mn-letter>
+  <div>
+    <page>
+      <mn-letter>
+        <mn-letter-body><h1>Action Sheet</h1></mn-letter-body>
+      </mn-letter>
 
-    <mn-section>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-body>
-            <mn-btn theme="primary" @click="onOpenActionSheet" block>Open Action Sheet</mn-btn>
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
-    </mn-section>
+      <mn-section>
+        <mn-card>
+          <mn-card-item>
+            <mn-card-body>
+              <mn-btn theme="primary" @click="onOpenActionSheet" block>Open Action Sheet</mn-btn>
+            </mn-card-body>
+          </mn-card-item>
+        </mn-card>
+      </mn-section>
+    </page>
 
     <mn-action-sheet :show.sync="showActionSheet">
       <mn-card rounded>
@@ -26,7 +28,7 @@
         </mn-card-btns>
       </mn-card>
     </mn-action-sheet>
-  </page>
+  </div>
 </template>
 
 <script>

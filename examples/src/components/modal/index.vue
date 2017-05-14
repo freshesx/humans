@@ -1,18 +1,20 @@
 <template>
-  <page>
-    <mn-letter>
-      <mn-letter-body><h1>Modal</h1></mn-letter-body>
-    </mn-letter>
+  <div>
+    <page>
+      <mn-letter>
+        <mn-letter-body><h1>Modal</h1></mn-letter-body>
+      </mn-letter>
 
-    <mn-section>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-body>
-            <mn-btn theme="primary" @click="onOpenModal" block>Open Modal</mn-btn>
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
-    </mn-section>
+      <mn-section>
+        <mn-card>
+          <mn-card-item>
+            <mn-card-body>
+              <mn-btn theme="primary" @click="onOpenModal" block>Open Modal</mn-btn>
+            </mn-card-body>
+          </mn-card-item>
+        </mn-card>
+      </mn-section>
+    </page>
 
     <mn-modal :show.sync="showModal">
       <mn-scroller>
@@ -30,7 +32,7 @@
         <mn-btn theme="primary">Confirm</mn-btn>
       </mn-modal-action>
     </mn-modal>
-  </page>
+  </div>
 </template>
 
 <script>
