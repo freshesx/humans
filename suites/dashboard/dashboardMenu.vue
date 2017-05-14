@@ -2,7 +2,7 @@
   <ul class="mn-dashboard-menu" :class="{ 'is-root': level > 0 }">
     <li v-for="(item, key) in menu" :key="key">
       <div class="mn-dashboard-link"
-        :class="{ 'is-link': item.push, 'is-active': matchActive(item.push) }"
+        :class="{ 'is-link': item.push, 'is-active': item.push && matchActive(item.push) }"
         @click="$router.push(item.push)">
         <div class="mn-dashboard-body">{{ item.name }}</div>
         <div class="mn-dashboard-action">
