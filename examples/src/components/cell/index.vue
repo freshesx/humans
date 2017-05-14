@@ -1,41 +1,39 @@
 <template>
-  <mn-scroller>
-    <mn-container>
-      <mn-section>
-        <mn-cell :contents="contents" :selections.sync="selections">
-          <mn-card-suffix slot="action" action>
-            <mn-btn theme="secondary" size="sm">删除</mn-btn>
-          </mn-card-suffix>
-          <template scope="scope">
-            <mn-cell-item type="link" :item="scope.item">
-              <mn-card-body>
-                <h2>{{ scope.item.name }} <small>{{ scope.item.zip }}</small></h2>
-              </mn-card-body>
-            </mn-cell-item>
-          </template>
-        </mn-cell>
-      </mn-section>
-    </mn-container>
-  </mn-scroller>
+  <page>
+    <mn-letter>
+      <mn-letter-body>
+        <h1>Cell</h1>
+      </mn-letter-body>
+    </mn-letter>
+
+    <mn-section>
+      <mn-cell :contents="contents" :selections.sync="selections">
+        <mn-card-suffix slot="action" action>
+          <mn-btn theme="secondary" size="sm">删除</mn-btn>
+        </mn-card-suffix>
+        <template scope="scope">
+          <mn-cell-item type="link" :item="scope.item">
+            <mn-card-body>
+              <h2>{{ scope.item.name }} <small>{{ scope.item.zip }}</small></h2>
+            </mn-card-body>
+          </mn-cell-item>
+        </template>
+      </mn-cell>
+    </mn-section>
+  </page>
 </template>
 
 <script>
-  import scrollerSuit from 'vue-human/suites/scroller'
-  import containerSuit from 'vue-human/suites/container'
-  import sectionSuit from 'vue-human/suites/section'
-  import cellSuit from 'vue-human/suites/cell'
-  import cardSuit from 'vue-human/suites/card'
-  import buttonSuit from 'vue-human/suites/button'
+  import core from 'vue-human/suites/core'
+  import cell from 'vue-human/suites/cell'
+  import page from '../base/page'
   import { getDistrict } from './api'
 
   export default {
     components: {
-      ...scrollerSuit.map(),
-      ...containerSuit.map(),
-      ...sectionSuit.map(),
-      ...cellSuit.map(),
-      ...cardSuit.map(),
-      ...buttonSuit.map()
+      ...core.map(),
+      ...cell.map(),
+      page
     },
     data () {
       return {

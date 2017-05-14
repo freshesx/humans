@@ -1,5 +1,5 @@
 <template>
-  <mn-container>
+  <page>
     <mn-section>
       <mn-letter>
         <mn-letter-body>
@@ -20,18 +20,19 @@
         </mn-card-item>
       </mn-card>
     </mn-section>
-
-  </mn-container>
+  </page>
 </template>
 
 <script>
   import core from 'vue-human/suites/core'
   import counter from 'vue-human/suites/counter'
+  import page from '../base/page'
 
   export default {
     components: {
       ...core.map(),
-      ...counter.map()
+      ...counter.map(),
+      page
     },
     data () {
       return {

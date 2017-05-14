@@ -1,36 +1,36 @@
 <template>
-  <mn-scroller>
-    <mn-container>
-      <mn-section>
-        <mn-columns>
-          <mn-column tablet="10, 1" desktop="8, 2">
-            <mn-letter>
-              <mn-letter-body>
-                <h1>Hi</h1>
-                <small>I am Vue Human!</small>
-              </mn-letter-body>
-            </mn-letter>
+  <page>
+    <mn-section>
+      <mn-columns>
+        <mn-column tablet="10, 1" desktop="8, 2">
+          <mn-letter>
+            <mn-letter-body>
+              <h1>Hi</h1>
+              <small>I am Vue Human!</small>
+            </mn-letter-body>
+          </mn-letter>
 
-            <mn-card>
-              <mn-card-media>
-                <mn-image :srcset="imageSets"></mn-image>
-              </mn-card-media>
-            </mn-card>
-          </mn-column>
-        </mn-columns>
-      </mn-section>
-    </mn-container>
-  </mn-scroller>
+          <mn-card>
+            <mn-card-media>
+              <mn-image :srcset="imageSets"></mn-image>
+            </mn-card-media>
+          </mn-card>
+        </mn-column>
+      </mn-columns>
+    </mn-section>
+  </page>
 </template>
 
 <script>
   import core from 'vue-human/suites/core'
   import image from 'vue-human/suites/image'
+  import page from '../base/page'
 
   export default {
     components: {
       ...core.map(),
-      ...image.map()
+      ...image.map(),
+      page
     },
     data () {
       return {

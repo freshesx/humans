@@ -1,5 +1,5 @@
 <template>
-  <mn-scroller>
+  <page>
     <mn-section>
       <mn-letter>
         <mn-letter-body>
@@ -58,14 +58,13 @@
 
       <mn-btn theme="primary" margin block ref="submit">Submit</mn-btn>
     </mn-form>
-
-  </mn-scroller>
+  </page>
 </template>
 
 <script>
   import core from 'vue-human/suites/core'
-  import form from 'vue-human/suites/form'
   import check from 'vue-human/suites/check'
+  import page from '../base/page'
   import required from 'vuelidate/lib/validators/required'
   import Message from 'vue-human/utils/Message'
 
@@ -73,7 +72,7 @@
     components: {
       ...core.map(),
       ...check.map(),
-      ...form.map()
+      page
     },
     validations: {
       models: {
