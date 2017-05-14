@@ -11,3 +11,12 @@
     name: 'mn-dashboard-brand'
   })
 </script>
+
+<style lang="scss">
+  @import "./theme";
+
+  .mn-dashboard-brand {
+    width: $-dashboard-sidebar-width;
+    flex-shrink: 0;
+  }
+</style>
