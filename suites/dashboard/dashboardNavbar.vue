@@ -1,7 +1,7 @@
 <template>
   <div class="mn-dashboard-navbar">
     <div class="mn-dashboard-navbar-item"
-      :class="{ 'is-active': matchActive(item.push) }"
+      :class="{ 'is-active': item.push && matchActive(item.push) }"
       @click="onOpen(item)"
       v-for="item in statusMenu">
       <div class="mn-dashboard-navbar-icon">
