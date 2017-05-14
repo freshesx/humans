@@ -44,8 +44,7 @@
 <style lang="scss">
   @import "../../scss/vars.scss";
   @import "../../scss/mixins/media.scss";
-
-  $-dashboard-side-width: 220px;
+  @import "./theme";
 
   .mn-dashboard-sidebar {
     background: #fff;
@@ -74,7 +73,7 @@
 
     @include min-screen(desktop) {
       position: relative;
-      width: $-dashboard-side-width;
+      width: $-dashboard-sidebar-width;
       box-shadow: none;
       border-radius: 0;
       top: 0;

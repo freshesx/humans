@@ -29,8 +29,6 @@
   @import "../../scss/vars.scss";
   @import "../../scss/mixins/media.scss";
 
-  $-dashboard-side-width: 220px;
-
   .mn-dashboard {
     position: absolute;
     width: 100%;
