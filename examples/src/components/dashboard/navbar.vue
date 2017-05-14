@@ -20,22 +20,19 @@
           {
             name: '首页',
             icon: require('vue-human-icons/js/ios/world'),
-            push: { name: 'dashboard' }
+            push: { name: 'homepage' }
           },
           {
             name: '资料库',
-            icon: require('vue-human-icons/js/ios/box'),
-            push: { name: 'homepage' }
+            icon: require('vue-human-icons/js/ios/box')
           },
           {
             name: '购物袋',
-            icon: require('vue-human-icons/js/ios/cart'),
-            push: { name: 'homepage' }
+            icon: require('vue-human-icons/js/ios/cart')
           },
           {
             name: '我的',
-            icon: require('vue-human-icons/js/ios/contact'),
-            push: { name: 'homepage' }
+            icon: require('vue-human-icons/js/ios/contact')
           }
         ]
       }
