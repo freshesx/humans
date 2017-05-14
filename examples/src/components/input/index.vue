@@ -16,9 +16,11 @@
             </mn-card-body>
           </mn-card-item>
         </mn-card>
-      </mn-section>
 
-      <mn-btn theme="primary">Sumbit</mn-btn>
+        <mn-section-btn>
+          <mn-btn theme="primary">Sumbit</mn-btn>
+        </mn-section-btn>
+      </mn-section>
     </mn-form>
   </page>
 </template>

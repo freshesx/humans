@@ -54,9 +54,11 @@
             <mn-helper-item name="required">Must choose one</mn-helper-item>
           </mn-helper>
         </mn-section-note>
-      </mn-section>
 
-      <mn-btn theme="primary" margin block ref="submit">Submit</mn-btn>
+        <mn-section-btn>
+          <mn-btn theme="primary" margin block ref="submit">Submit</mn-btn>
+        </mn-section-btn>
+      </mn-section>
     </mn-form>
   </page>
 </template>
