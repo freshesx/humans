@@ -9,7 +9,9 @@
     <navbar slot="navbar"></navbar>
 
     <mn-dashboard-body>
-      <slot></slot>
+      <slot>
+        <router-view></router-view>
+      </slot>
     </mn-dashboard-body>
   </mn-dashboard>
 </template>
