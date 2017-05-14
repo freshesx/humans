@@ -48,22 +48,31 @@
     display: flex;
     flex-direction: column;
     top: 5rem;
-    bottom: 0;
-    width: 100%;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
     background: #fff;
-    border-top-left-radius: 0.2rem;
-    border-top-right-radius: 0.2rem;
+    border-radius: 0.75rem;
     box-shadow: 0 0px 3px rgba(0, 0, 0, 0.02);
     overflow: hidden;
 
+    @include screen('tablet') {
+      width: 600px;
+      top: 30%;
+      right: auto;
+      bottom: 2rem;
+      left: 50%;
+      margin-left: -300px;
+    }
+
+    // @todo 通过 JS 动态计算高度
     @include min-screen('desktop') {
       width: 600px;
-      left: 50%;
-      right: auto;
-      margin-left: -300px;
       top: 10%;
+      right: auto;
       bottom: 10%;
-      border-radius: 0.75rem;
+      left: 50%;
+      margin-left: -300px;
       box-shadow: 0 2px 100px rgba(0, 0, 0, 0.1);
     }
   }
