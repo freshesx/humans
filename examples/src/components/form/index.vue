@@ -1,23 +1,31 @@
 <template>
-  <mn-form>
-    <mn-card>
-      <mn-card-item>
-        <mn-card-body>
-          form
-        </mn-card-body>
-      </mn-card-item>
-    </mn-card>
-  </mn-form>
+  <page>
+    <mn-letter>
+      <mn-letter-body>
+        <h1>Validation Form</h1>
+      </mn-letter-body>
+    </mn-letter>
+
+    <mn-form>
+      <mn-card>
+        <mn-card-item>
+          <mn-card-body>
+            form
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+    </mn-form>
+  </page>
 </template>
 
 <script>
-  import formSuit from 'vue-human/suites/form'
-  import cardSuit from 'vue-human/suites/card'
+  import core from 'vue-human/suites/core'
+  import page from '../base/page'
 
   export default {
     components: {
-      ...formSuit.map(),
-      ...cardSuit.map()
+      ...core.map(),
+      page
     }
   }
 </script>
