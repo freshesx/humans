@@ -22,6 +22,11 @@
   .mn-container {
     width: 100%;
 
+    @include screen(tablet) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
     @include min-screen(desktop) {
       width: media-breakpoint-get(desktop);
       margin-left: auto;
