@@ -43,6 +43,7 @@
 
     @include min-screen(desktop) {
       display: flex;
+      justify-content: space-between;
       flex-shrink: 1;
       height: 60px;
       background: $blue;
