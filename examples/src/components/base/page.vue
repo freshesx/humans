@@ -1,19 +1,21 @@
 <template>
   <mn-page>
     <mn-scroller>
-      <mn-container>
+      <mn-dashboard-container>
         <slot></slot>
-      </mn-container>
+      </mn-dashboard-container>
     </mn-scroller>
   </mn-page>
 </template>
 
 <script>
   import core from 'vue-human/suites/core'
+  import dashboard from 'vue-human/suites/dashboard'
 
   export default {
     components: {
-      ...core.map()
+      ...core.map(),
+      ...dashboard.map()
     }
   }
 </script>
