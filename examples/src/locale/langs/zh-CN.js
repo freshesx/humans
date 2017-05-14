@@ -1,6 +1,7 @@
 export default {
   examples: {
     menus: {
+      home: '首页',
       core: '核心',
       form: '表单',
       popup: '浮层',
