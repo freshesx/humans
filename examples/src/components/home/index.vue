@@ -34,7 +34,7 @@
 
 <script>
   import core from 'vue-human/suites/core'
-  import page from '../dashboard/page'
+  import page from '../base/page'
   import menu from '../base/menu'
 
   export default {
