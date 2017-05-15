@@ -29,7 +29,8 @@ export default {
         form: '表单',
         input: '单行文本框',
         check: '多选',
-        counter: '计数器'
+        counter: '计数器',
+        datetime: '日期时间'
       },
       components: {
         paginate: '页码',

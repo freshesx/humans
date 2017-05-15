@@ -99,6 +99,11 @@ export default {
               name: 'Counter',
               small: this.$t('examples.submenus.form.counter'),
               push: { name: 'counter' }
+            },
+            {
+              name: 'Datetime',
+              small: this.$t('examples.submenus.form.datetime'),
+              push: { name: 'datetime' }
             }
           ]
         },
