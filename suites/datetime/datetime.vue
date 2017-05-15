@@ -1,6 +1,6 @@
 <template>
   <mn-popup class="mn-datetime" :show="isShow">
-    <mn-card class="has-one-margin-bottom">
+    <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-prefix>
           <p class="mn-datetime-time">01:56</p>
@@ -14,22 +14,34 @@
           <p class="mn-datetime-date">2017年12月17日 周一</p>
         </mn-card-suffix>
       </mn-card-item>
-      <mn-card-item class="has-none-padding-x">
+      <mn-card-item style="height: 91px; padding-left: 0; padding-right: 0;">
         <mn-card-body>
           <div class="mn-datetime-input">
             <div class="mn-datetime-item">
-              <mn-datetime-picker :options="monthOptions" v-model="models.month"></mn-datetime-picker>
+              <select>
+                <option :value="option.value" v-for="option in yearOptions">{{ option.label }}</option>
+              </select>
             </div>
             <div class="mn-datetime-item">
-              <mn-datetime-picker :options="dateOptions"></mn-datetime-picker>
+              <select v-model="models.month">
+                <option :value="option.value" v-for="option in monthOptions">{{ option.label }}</option>
+              </select>
             </div>
             <div class="mn-datetime-item">
-              <mn-datetime-picker :options="hourOptions"></mn-datetime-picker>
+              <select>
+                <option :value="option.value" v-for="option in dateOptions">{{ option.label }}</option>
+              </select>
             </div>
             <div class="mn-datetime-item">
-              <mn-datetime-picker :options="minOptions"></mn-datetime-picker>
+              <select>
+                <option :value="option.value" v-for="option in hourOptions">{{ option.label }}</option>
+              </select>
             </div>
-            <div class="mn-datetime-line"></div>
+            <div class="mn-datetime-item">
+              <select>
+                <option :value="option.value" v-for="option in minOptions">{{ option.label }}</option>
+              </select>
+            </div>
           </div>
         </mn-card-body>
       </mn-card-item>
@@ -94,11 +106,20 @@
       }
     },
     computed: {
+      yearOptions () {
+        const options = []
+
+        for (let i = 1970; i <= 2050; i++) {
+          options.push({ label: i, value: i })
+        }
+
+        return options
+      },
       monthOptions () {
         const options = []
 
         for (let i = 1; i <= 12; i++) {
-          options.push({ label: i, value: i })
+          options.push({ label: i + '月', value: i })
         }
 
         return options
@@ -107,7 +128,7 @@
         const options = []
 
         for (let i = 1; i <= 31; i++) {
-          options.push({ label: i, value: i })
+          options.push({ label: i + ' 日', value: i })
         }
 
         return options
@@ -116,7 +137,7 @@
         const options = []
 
         for (let i = 0; i <= 23; i++) {
-          options.push({ label: i, value: i })
+          options.push({ label: '0' + i, value: i })
         }
 
         return options
@@ -125,7 +146,7 @@
         const options = []
 
         for (let i = 0; i <= 59; i++) {
-          options.push({ label: i, value: i })
+          options.push({ label: '0' + i, value: i })
         }
 
         return options
@@ -135,13 +156,22 @@
 </script>
 
 <style lang="scss">
+  @import "../../scss/mixins/media";
+
   .mn-datetime {
-    width: 400px;
     top: 45%;
-    right: auto;
+    right: 0.5rem;
     bottom: auto;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 0.5rem;
+    transform: translateY(-50%);
+
+    @include min-screen(tablet) {
+      width: 400px;
+      top: 45%;
+      right: auto;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   .mn-datetime-date,
@@ -162,24 +192,22 @@
   .mn-datetime-input {
     display: flex;
     width: 100%;
-    position: relative;
+    justify-content: space-between;
   }
 
   .mn-datetime-item {
-    position: relative;
     flex: 1;
     text-align: center;
-    z-index: 20010;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.2rem;
 
-  .mn-datetime-line {
-    position: absolute;
-    width: 100%;
-    height: 42px;
-    border-top: solid 1px #ddd;
-    border-bottom: solid 1px #ddd;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 20000;
+    > select {
+      border: none;
+      background: transparent;
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
   }
 </style>
