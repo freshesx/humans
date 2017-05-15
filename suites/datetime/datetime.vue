@@ -3,8 +3,8 @@
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-prefix>
-          <p class="mn-datetime-time">01:56</p>
-          <p class="mn-datetime-date">2017年12月17日 周一</p>
+          <p class="mn-datetime-time">{{ computedAt | formatTime }}</p>
+          <p class="mn-datetime-date">{{ computedAt | formatDate }}</p>
         </mn-card-prefix>
         <mn-card-body>
           <div class="has-center-text"></div>
@@ -132,6 +132,16 @@
           isFebruary(this.models.month) && this.models.date > 29) {
           this.models.date = 29
         }
+      },
+      buildAt (models) {
+        const at = new Date()
+        at.setFullYear(models.fullYear)
+        at.setMonth(models.month)
+        at.setDate(models.date)
+        at.setHours(models.hours)
+        at.setMinutes(models.minutes)
+        at.setSeconds(models.seconds)
+        return at
       }
     },
     watch: {
@@ -216,10 +226,22 @@
         }
 
         return options
+      },
+      computedAt () {
+        return this.buildAt(this.models)
       }
     },
     mounted () {
       this.updateModels(this.datetime)
+    },
+    filters: {
+      formatDate (at) {
+        // 2017年12月17日 周一
+        return `${at.getFullYear()}年${at.getMonth() + 1}月${at.getDate()}日 周${at.getDay() + 1}`
+      },
+      formatTime (at) {
+        return `${at.getHours()}:${at.getMinutes()}:${at.getSeconds()}`
+      }
     }
   })
 </script>
