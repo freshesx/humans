@@ -3,8 +3,8 @@
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-prefix>
-          <p class="mn-datetime-time">{{ computedAt | formatTime }}</p>
-          <p class="mn-datetime-date">{{ computedAt | formatDate }}</p>
+          <p class="mn-datetime-time">{{ fromAt | formatTime }}</p>
+          <p class="mn-datetime-date">{{ fromAt | formatDate }}</p>
         </mn-card-prefix>
         <mn-card-body>
           <div class="has-center-text"></div>
@@ -70,6 +70,7 @@
   import cardBtns from '../card/cardBtns'
   import datetimePicker from './datetimePicker'
   import { isLunarMonth, isLeapYear, isFebruary } from './dateChecker'
+  import vars from './vars'
 
   export default new Element({
     name: 'mn-datetime',
@@ -87,32 +88,10 @@
       /**
        * Add isShow, close(), show() mixins
        */
-      popupManager
+      popupManager,
+      vars
     ],
-    data () {
-      return {
-        datetime: '2017-05-15 19:19:00',
-        models: {
-          fullYear: 2017,
-          month: 0,    // 0 - 11
-          date: 1,
-          hours: 0,    // 0 - 23
-          minutes: 0,  // 0 - 59
-          seconds: 0    // 0 - 59
-        }
-      }
-    },
     methods: {
-      updateModels (datetime) {
-        const at = new Date(datetime)
-        this.models.fullYear = at.getFullYear()
-        console.log(this.models.fullYear)
-        this.models.month = at.getMonth()
-        this.models.date = at.getDate()
-        this.models.hours = at.getHours()
-        this.models.minutes = at.getMinutes()
-        this.models.seconds = at.getSeconds()
-      },
       parseDoubleNumber (number) {
         return number < 10 ? '0' + number : number
       },
@@ -132,22 +111,9 @@
           isFebruary(this.models.month) && this.models.date > 29) {
           this.models.date = 29
         }
-      },
-      buildAt (models) {
-        const at = new Date()
-        at.setFullYear(models.fullYear)
-        at.setMonth(models.month)
-        at.setDate(models.date)
-        at.setHours(models.hours)
-        at.setMinutes(models.minutes)
-        at.setSeconds(models.seconds)
-        return at
       }
     },
     watch: {
-      datetime (newValue) {
-        this.updateModels(newValue)
-      },
       'models.fullYear' () {
         this.checkSomeDate()
       },
@@ -226,13 +192,7 @@
         }
 
         return options
-      },
-      computedAt () {
-        return this.buildAt(this.models)
       }
-    },
-    mounted () {
-      this.updateModels(this.datetime)
     },
     filters: {
       formatDate (at) {
