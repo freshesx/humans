@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import datetime from './datetime'
+import datetimePicker from './datetimePicker'
 
 export default new Suites([
-  datetime
+  datetimePicker
 ])
