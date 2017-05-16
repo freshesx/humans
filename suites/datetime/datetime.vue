@@ -88,23 +88,11 @@
       vars
     ],
     methods: {
-      onNext () {
-        this.currentStep = 1
-
-        if (this.fromAt > this.toAt) {
-          this.toAt = this.fromAt
-        }
-
-        this.currentMinAt = this.fromAt
-
-        this.updateModels(this.toAt)
+      onCancel () {
+        this.$emit('cancel', this.fromAt)
       },
-      onBack () {
-        this.currentStep = 0
-
-        this.currentMinAt = this.minAt
-
-        this.updateModels(this.fromAt)
+      onConfirm () {
+        this.$emit('confirm', this.fromAt)
       },
       parseDoubleNumber (number) {
         return number < 10 ? '0' + number : number
