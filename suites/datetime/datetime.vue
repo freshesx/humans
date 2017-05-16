@@ -3,8 +3,8 @@
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-body>
-          <p class="mn-datetime-time">{{ fromAt | formatTime }}</p>
-          <p class="mn-datetime-date">{{ fromAt | formatDate }}</p>
+          <p class="mn-datetime-time">{{ currentAt | formatTime }}</p>
+          <p class="mn-datetime-date">{{ currentAt | formatDate }}</p>
         </mn-card-body>
         <mn-card-suffix>
           {{ title }}
@@ -91,7 +91,7 @@
     ],
     data () {
       return {
-        fromAt: new Date(), // 初始开始时间
+        currentAt: new Date(), // 初始开始时间
         minAt: new Date('1970-01-01 00:00:00'),  // 最小时间
         maxAt: new Date('2049-12-31 23:59:59'),  // 最大时间
         title: '选择时间日期',
@@ -123,10 +123,7 @@
 
       emit (name) {
         this.close()
-        this.$emit(name, {
-          from: this.formatDisplay(this.fromAt),
-          fromAt: this.fromAt
-        })
+        this.$emit(name, this.formatDisplay(this.currentAt), this.currentAt)
       },
 
       formatDisplay (at) {
@@ -143,8 +140,11 @@
           displayDate = `${fullYear}-${month}-${date}`
         }
 
-        if (this.showHours) {
+        if (this.showDate && this.showHours) {
           displayDate += ' '
+        }
+
+        if (this.showHours) {
           displayTime += formatDoubleNumber(hours)
         }
 
@@ -206,20 +206,20 @@
         deep: true,
         handler (newValue) {
           this.checkSpecialDate()
-          this.fromAt = this.updateAt(newValue)
+          this.currentAt = this.updateAt(newValue)
         }
       }
     },
     created () {
       if (!this.showMintues) {
-        this.fromAt.setMinutes(0)
+        this.currentAt.setMinutes(0)
       }
 
       if (!this.showSeconds) {
-        this.fromAt.setSeconds(0)
+        this.currentAt.setSeconds(0)
       }
 
-      this.updateModels(this.fromAt)
+      this.updateModels(this.currentAt)
     }
   })
 </script>
