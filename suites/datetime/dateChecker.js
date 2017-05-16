@@ -50,6 +50,12 @@ export function addDay (at, day) {
   return new Date(at.getTime() + day * 24 * 60 * 60 * 1000)
 }
 
+export function addHours (at, hours) {
+  // day 必须为数字
+  if (!Number.isInteger(hours)) return console && console.warn('新增量必须为数字')
+  return new Date(at.getTime() + hours * 60 * 60 * 1000)
+}
+
 export function parseDatetime (currentAt) {
   if (currentAt instanceof Date) {
     return currentAt
