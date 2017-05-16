@@ -1,6 +1,6 @@
 import Datetime from './Datetime'
 import Message from './Message'
-import { formatStandrad } from '../suites/datetime/dateChecker'
+import { formatStandrad, addDay } from '../suites/datetime/dateChecker'
 
 export default class DatetimeRange {
   fromAt
@@ -42,7 +42,7 @@ export default class DatetimeRange {
 
       setTimeout(() => {
         // 开始时间将作为结束时间的初始时间值
-        this.showToAt({ fromAt })
+        this.showToAt({ fromAt: addDay(fromAt, 1) })
       }, 500)
     })
 
