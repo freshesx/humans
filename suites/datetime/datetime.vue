@@ -28,17 +28,19 @@
                 <option :value="option.value" v-for="option in dateOptions">{{ option.label }}</option>
               </select>
             </div>
-            <div class="mn-datetime-item">
+            <div class="mn-datetime-item" v-if="showHours">
               <select v-model="models.hours">
                 <option :value="option.value" v-for="option in hoursOptions">{{ option.label }}</option>
               </select>
             </div>
-            <div class="mn-datetime-item">
+            <div v-if="showHours && showMintues">:</div>
+            <div class="mn-datetime-item" v-if="showHours && showMintues">
               <select v-model="models.minutes">
                 <option :value="option.value" v-for="option in minutesOptions">{{ option.label }}</option>
               </select>
             </div>
-            <div class="mn-datetime-item">
+            <div v-if="showHours && showMintues && showSeconds">:</div>
+            <div class="mn-datetime-item" v-if="showHours && showMintues && showSeconds">
               <select v-model="models.seconds">
                 <option :value="option.value" v-for="option in secondsOptions">{{ option.label }}</option>
               </select>
