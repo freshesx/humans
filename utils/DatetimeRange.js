@@ -1,4 +1,5 @@
 import Datetime from './Datetime'
+import Message from './Message'
 import { formatStandrad } from '../suites/datetime/dateChecker'
 
 export default class DatetimeRange {
@@ -61,7 +62,7 @@ export default class DatetimeRange {
     this.toAtPopup.$on('confirm', (toAt) => {
       // 开始时间是否大于等于结束时间，则错误
       if (this.fromAt >= toAt) {
-        console.warn('时间选择不正确')
+        Message.create({ type: 'error', message: '结束时间应晚于开始时间' }).show()
         return
       }
 
