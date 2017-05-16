@@ -1,11 +1,20 @@
+import Vue from 'vue'
+import { formatDoubleNumber } from './dateChecker'
+
 export default {
   filters: {
     formatDate (at) {
-      // 2017年12月17日 周一
-      return `${at.getFullYear()}年${at.getMonth() + 1}月${at.getDate()}日 周${at.getDay() + 1}`
+      const month = Vue.t(`mn.datetime.months.${at.getMonth()}`)
+      const date = Vue.t(`mn.datetime.dates.${at.getDate()}`)
+      const week = Vue.t(`mn.datetime.weeks.${at.getDay()}`)
+      return `${at.getFullYear()} ${month}${date} ${week}`
     },
+
     formatTime (at) {
-      return `${at.getHours()}:${at.getMinutes()}:${at.getSeconds()}`
+      const hours = formatDoubleNumber(at.getHours())
+      const minutes = formatDoubleNumber(at.getMinutes())
+      const seconds = formatDoubleNumber(at.getSeconds())
+      return `${hours}:${minutes}:${seconds}`
     }
   }
 }
