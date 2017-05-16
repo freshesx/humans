@@ -66,7 +66,6 @@
   import cardPrefix from '../card/cardPrefix'
   import cardSuffix from '../card/cardSuffix'
   import cardBtns from '../card/cardBtns'
-  import datetimePicker from './datetimePicker'
   import { isLunarMonth, isLeapYear, isFebruary } from './dateChecker'
   import vars from './vars'
   import options from './options'
@@ -80,8 +79,7 @@
       ...cardBody.inject(),
       ...cardPrefix.inject(),
       ...cardSuffix.inject(),
-      ...cardBtns.inject(),
-      [datetimePicker.name]: datetimePicker
+      ...cardBtns.inject()
     },
     mixins: [
       /**
