@@ -13,17 +13,17 @@
       <mn-card-item style="height: 91px;">
         <mn-card-body>
           <div class="mn-datetime-input">
-            <div class="mn-datetime-item">
+            <div class="mn-datetime-item" v-if="showDate">
               <select v-model="models.fullYear">
                 <option :value="option.value" v-for="option in fullYearOptions">{{ option.label }}</option>
               </select>
             </div>
-            <div class="mn-datetime-item">
+            <div class="mn-datetime-item" v-if="showDate">
               <select v-model="models.month">
                 <option :value="option.value" v-for="option in monthOptions">{{ option.label }}</option>
               </select>
             </div>
-            <div class="mn-datetime-item">
+            <div class="mn-datetime-item" v-if="showDate">
               <select v-model="models.date">
                 <option :value="option.value" v-for="option in dateOptions">{{ option.label }}</option>
               </select>
@@ -66,7 +66,7 @@
   import cardPrefix from '../card/cardPrefix'
   import cardSuffix from '../card/cardSuffix'
   import cardBtns from '../card/cardBtns'
-  import { isLunarMonth, isLeapYear, isFebruary } from './dateChecker'
+  import { isLunarMonth, isLeapYear, isFebruary, formatDoubleNumber } from './dateChecker'
   import options from './options'
   import filters from './filters'
 
@@ -97,7 +97,7 @@
         title: '选择时间日期',
         cancelText: '取消',
         confirmText: '确认',
-        showFullYear: true,
+        showDate: true,
         showHours: true,
         showMintues: true,
         showSeconds: true,
@@ -114,13 +114,51 @@
     },
     methods: {
       onCancel () {
-        this.close()
-        this.$emit('cancel', this.fromAt)
+        this.emit('cancel')
       },
 
       onConfirm () {
+        this.emit('confirm')
+      },
+
+      emit (name) {
         this.close()
-        this.$emit('confirm', this.fromAt)
+        this.$emit(name, {
+          from: this.formatDisplay(this.fromAt),
+          fromAt: this.fromAt
+        })
+      },
+
+      formatDisplay (at) {
+        let displayDate = ''
+        let displayTime = ''
+        const fullYear = at.getFullYear()
+        const month = at.getMonth() + 1
+        const date = at.getDate()
+        const hours = at.getHours()
+        const minutes = at.getMinutes()
+        const seconds = at.getSeconds()
+
+        if (this.showDate) {
+          displayDate = `${fullYear}-${month}-${date}`
+        }
+
+        if (this.showHours) {
+          displayDate += ' '
+          displayTime += formatDoubleNumber(hours)
+        }
+
+        if (this.showHours && this.showMintues) {
+          displayTime += ':'
+          displayTime += formatDoubleNumber(minutes)
+        }
+
+        if (this.showHours && this.showMintues && this.showSeconds) {
+          displayTime += ':'
+          displayTime += formatDoubleNumber(seconds)
+        }
+
+        return displayDate + displayTime
       },
 
       updateModels (at) {
