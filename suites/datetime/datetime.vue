@@ -4,7 +4,7 @@
       <mn-card-item>
         <mn-card-body>
           <p class="mn-datetime-time" v-if="showHours">{{ formatTime(currentAt) }}</p>
-          <p class="mn-datetime-date" v-if="showDate">{{ currentAt | formatDate }}</p>
+          <p class="mn-datetime-date" v-if="showDate">{{ formatDate(currentAt) }}</p>
         </mn-card-body>
         <mn-card-suffix>
           {{ title }}
@@ -68,7 +68,6 @@
   import cardBtns from '../card/cardBtns'
   import { isLunarMonth, isLeapYear, isFebruary, formatDoubleNumber } from './dateChecker'
   import options from './options'
-  import filters from './filters'
 
   export default new Element({
     name: 'mn-datetime',
@@ -86,8 +85,7 @@
        * Add isShow, close(), show() mixins
        */
       popupManager,
-      options,
-      filters
+      options
     ],
     data () {
       return {
@@ -184,6 +182,13 @@
         }
 
         return display.join(':')
+      },
+
+      formatDate (at) {
+        const month = this.$t(`mn.datetime.months.${at.getMonth()}`)
+        const date = this.$t(`mn.datetime.dates.${at.getDate()}`)
+        const week = this.$t(`mn.datetime.weeks.${at.getDay()}`)
+        return `${at.getFullYear()} ${month}${date} ${week}`
       },
 
       updateModels (at) {
