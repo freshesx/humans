@@ -1,5 +1,5 @@
 <template>
-  <mn-popup class="mn-datetime" animation="slideInBottom" :show="isShow">
+  <mn-popup class="mn-datetime" animation="slideInBottom" :show="isShow" @close="onClosePopup">
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-body>
@@ -113,6 +113,10 @@
       }
     },
     methods: {
+      onClosePopup  () {
+        this.onCancel()
+      },
+
       onCancel () {
         this.emit('cancel')
       },
