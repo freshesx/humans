@@ -31,6 +31,38 @@
         </mn-card-item>
       </mn-card>
     </mn-section>
+
+    <mn-section>
+      <mn-section-note>Time Single Mode</mn-section-note>
+      <mn-card>
+        <mn-card-item>
+          <mn-card-prefix>
+            <mn-label>Time</mn-label>
+          </mn-card-prefix>
+          <mn-card-body>
+            <mn-datetime-picker :display="models.time" @openPicker="onOpenSingleTime"></mn-datetime-picker>
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+    </mn-section>
+
+    <mn-section>
+      <mn-section-note>Time Range Mode</mn-section-note>
+      <mn-card>
+        <mn-card-item>
+          <mn-card-prefix>
+            <mn-label>Time</mn-label>
+          </mn-card-prefix>
+          <mn-card-body>
+            <mn-datetime-picker :display="`${models.fromTime} 到 ${models.toTime}`" @openPicker="onOpenRangeTime"></mn-datetime-picker>
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+      <mn-section-note>
+        <div>@todo 新增 type 属性，参数有 “datetime”、“date”、“time”，用于简化配置。并根据不同的参数形式来设定 toAt 的增量为 1 天，1 小时等。</div>
+        <div>从而重新比较 toAt，判断是 datetime，date，time 三个层面是否大于 fromAt。</div>
+      </mn-section-note>
+    </mn-section>
   </page>
 </template>
 
@@ -54,27 +86,40 @@
         models: {
           datetime: '2017-03-12 12:00:00',
           fromDatetime: '2017-05-20 08:30:00',
-          toDatetime: '2017-05-21 17:30:00'
+          toDatetime: '2017-05-21 17:30:00',
+          time: '12:00:00',
+          fromTime: '08:00:00',
+          toTime: '17:00:00'
         }
       }
     },
     methods: {
       onOpenSingle () {
-        const currentAt = new Date(this.models.datetime)
-        Datetime.create({ currentAt }).show().$on('confirm', display => {
+        Datetime.create({ currentAt: this.models.datetime }).show().$on('confirm', display => {
           this.models.datetime = display
         })
       },
+      onOpenSingleTime () {
+        Datetime.create({ currentAt: this.models.time, showDate: false }).show().$on('confirm', display => {
+          this.models.time = display
+        })
+      },
       onOpenRange () {
-        const fromAt = new Date(this.models.fromDatetime)
-        const toAt = new Date(this.models.toDatetime)
-
-        DatetimeRange.fromAt({ currentAt: fromAt })
-          .toAt({ currentAt: toAt })
+        DatetimeRange.fromAt({ currentAt: this.models.fromDatetime })
+          .toAt({ currentAt: this.models.toDatetime })
           .show()
           .change(formats => {
             this.models.fromDatetime = formats.from
             this.models.toDatetime = formats.to
+          })
+      },
+      onOpenRangeTime () {
+        DatetimeRange.fromAt({ currentAt: this.models.fromTime, showDate: false })
+          .toAt({ currentAt: this.models.toTime, showDate: false })
+          .show()
+          .change(formats => {
+            this.models.fromTime = formats.from
+            this.models.toTime = formats.to
           })
       }
     }
