@@ -1,5 +1,5 @@
 <template>
-  <mn-popup class="mn-datetime" :show="isShow">
+  <mn-popup class="mn-datetime" animation="slideInBottom" :show="isShow">
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-prefix>
@@ -239,16 +239,15 @@
   .mn-datetime {
     top: 45%;
     right: 0.5rem;
-    bottom: auto;
     left: 0.5rem;
-    transform: translateY(-50%);
+    height: 240px;
+    margin-top: -120px;
 
     @include min-screen(tablet) {
       width: 400px;
-      top: 45%;
       right: auto;
       left: 50%;
-      transform: translate(-50%, -50%);
+      margin-left: -200px;
     }
   }
 
