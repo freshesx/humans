@@ -1,6 +1,11 @@
 import Datetime from './Datetime'
+import { formatStandrad } from '../suites/datetime/dateChecker'
 
 export default class DatetimeRange {
+  fromAt
+
+  toAt
+
   fromAtPopup
 
   toAtPopup
@@ -24,38 +29,86 @@ export default class DatetimeRange {
     return this.showFromAt()
   }
 
-  showFromAt () {
-    this.fromAtPopup = Datetime.create().show()
-    this.fromAtPopup.$on('confirm', () => {
+  showFromAt (options) {
+    // Create popup
+    this.fromAtPopup = Datetime.create({ ...this.fromAtConfig, ...options }).show()
+
+    // Listen confirm
+    this.fromAtPopup.$on('confirm', (fromAt) => {
+      // Get computed datetime (fromAt)
+      this.fromAt = fromAt
       this.fromAtPopup.close()
+
       setTimeout(() => {
-        this.showToAt()
+        // 开始时间将作为结束时间的初始时间值
+        this.showToAt({ fromAt })
       }, 500)
     })
+
+    // Listen cancel
     this.fromAtPopup.$on('cancel', () => {
       this.fromAtPopup.close()
     })
+
     return this
   }
 
-  showToAt () {
-    this.toAtPopup = Datetime.create().show()
-    this.toAtPopup.$on('confirm', () => {
+  showToAt (options) {
+    // Create popup
+    this.toAtPopup = Datetime.create({ ...this.toAtConfig, ...options }).show()
+
+    // Listen confirm
+    this.toAtPopup.$on('confirm', (toAt) => {
+      // 开始时间是否大于等于结束时间，则错误
+      if (this.fromAt >= toAt) {
+        console.warn('时间选择不正确')
+        return
+      }
+
+      this.toAt = toAt
       this.toAtPopup.close()
+      this.excuteConfirm()
     })
+
+    // Listen cancel
     this.toAtPopup.$on('cancel', () => {
       this.toAtPopup.close()
       setTimeout(() => {
-        this.showFromAt()
+        // 将保存好的 fromAt 的值传递回去
+        this.showFromAt({ fromAt: this.fromAt })
       }, 500)
     })
   }
 
   setFromAtConfig (config) {
-    this.fromAtConfig = config
+    this.fromAtConfig = {
+      title: '选择开始时间',
+      confirmText: '下一步',
+      ...config
+    }
   }
 
   setToAtConfig (config) {
-    this.toAtConfig = config
+    this.toAtConfig = {
+      title: '选择结束时间',
+      cancelText: '上一步',
+      ...config
+    }
+  }
+
+  change (callback) {
+    this.callback = callback
+    return this
+  }
+
+  excuteConfirm () {
+    if (this.callback) {
+      this.callback({
+        from: formatStandrad(this.fromAt),
+        to: formatStandrad(this.toAt),
+        fromAt: this.fromAt,
+        toAt: this.toAt
+      })
+    }
   }
 }
