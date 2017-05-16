@@ -3,8 +3,8 @@
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-body>
-          <p class="mn-datetime-time">{{ currentAt | formatTime }}</p>
-          <p class="mn-datetime-date">{{ currentAt | formatDate }}</p>
+          <p class="mn-datetime-time" v-if="showHours">{{ formatTime(currentAt) }}</p>
+          <p class="mn-datetime-date" v-if="showDate">{{ currentAt | formatDate }}</p>
         </mn-card-body>
         <mn-card-suffix>
           {{ title }}
@@ -163,6 +163,27 @@
         }
 
         return displayDate + displayTime
+      },
+
+      formatTime (at) {
+        const display = []
+        const hours = formatDoubleNumber(at.getHours())
+        const minutes = formatDoubleNumber(at.getMinutes())
+        const seconds = formatDoubleNumber(at.getSeconds())
+
+        if (this.showHours) {
+          display.push(hours)
+        }
+
+        if (this.showHours && this.showMintues) {
+          display.push(minutes)
+        }
+
+        if (this.showHours && this.showMintues && this.showSeconds) {
+          display.push(seconds)
+        }
+
+        return display.join(':')
       },
 
       updateModels (at) {
