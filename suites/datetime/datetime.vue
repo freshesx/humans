@@ -2,21 +2,16 @@
   <mn-popup class="mn-datetime" animation="slideInBottom" :show="isShow">
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
-        <mn-card-prefix>
+        <mn-card-body>
           <p class="mn-datetime-time">{{ fromAt | formatTime }}</p>
           <p class="mn-datetime-date">{{ fromAt | formatDate }}</p>
-        </mn-card-prefix>
-        <mn-card-body>
-          <div class="has-center-text"></div>
         </mn-card-body>
-        <mn-card-suffix v-if="type === 'range'">
-          <p class="mn-datetime-time">{{ toAt | formatTime }}</p>
-          <p class="mn-datetime-date">{{ toAt | formatDate }}</p>
+        <mn-card-suffix>
+          {{ title }}
         </mn-card-suffix>
       </mn-card-item>
       <mn-card-item style="height: 91px;">
         <mn-card-body>
-          <div v-if="type === 'range'">{{ currentStep === 0 ? '开始时间' : '结束时间' }}</div>
           <div class="mn-datetime-input">
             <div class="mn-datetime-item">
               <select v-model="models.fullYear">
@@ -51,17 +46,9 @@
           </div>
         </mn-card-body>
       </mn-card-item>
-      <mn-card-btns type="column" v-if="type === 'range' && currentStep === 0">
-        <button class="has-red-text">取消</button>
-        <button @click="onNext">下一步</button>
-      </mn-card-btns>
-      <mn-card-btns type="column" v-if="type === 'range' && currentStep === 1">
-        <button @click="onBack">上一步</button>
-        <button class="has-blue-text">确认</button>
-      </mn-card-btns>
-      <mn-card-btns type="column" v-if="type === 'single'">
-        <button class="has-red-text">取消</button>
-        <button class="has-blue-text">确认</button>
+      <mn-card-btns type="column">
+        <button class="has-red-text" @click="onCancel">{{ cancelText }}</button>
+        <button class="has-blue-text" @click="onConfirm">{{ confirmText }}</button>
       </mn-card-btns>
     </mn-card>
   </mn-popup>
