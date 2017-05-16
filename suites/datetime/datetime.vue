@@ -118,6 +118,15 @@
         }
       }
     },
+    computed: {
+      isDateType () {
+        return this.showDate && !this.showHours
+      },
+
+      isTimeType () {
+        return !this.showDate && this.showHours
+      }
+    },
     methods: {
       onClosePopup  () {
         this.onCancel()
