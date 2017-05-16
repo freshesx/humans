@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Datetime from './Datetime'
-import { addDay } from '../suites/datetime/dateChecker'
+import { addDay, addHours } from '../suites/datetime/dateChecker'
 
 export default class DatetimeRange {
   fromAt
@@ -40,11 +40,16 @@ export default class DatetimeRange {
       this.displayFromAt = display
       this.fromAt = fromAt
 
+      // 根据 fromAt 计算 toAt，增加一小时或一天
+      const currentAt = this.fromAtPopup.isTimeType
+        ? addHours(fromAt, 1)
+        : addDay(fromAt, 1)
+
       setTimeout(() => {
         // 开始时间将作为结束时间的初始时间值
         this.showToAt({
           minAt: fromAt,
-          currentAt: addDay(fromAt, 1)
+          currentAt
         })
       }, 500)
     })
