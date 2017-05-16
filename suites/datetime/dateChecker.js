@@ -41,3 +41,9 @@ export function formatStandrad (at) {
   const seconds = at.getSeconds()
   return `${fullYear}-${month}-${date} ${formatDoubleNumber(hours)}:${formatDoubleNumber(minutes)}:${formatDoubleNumber(seconds)}`
 }
+
+export function addDay (at, day) {
+  // day 必须为数字
+  if (!Number.isInteger(day)) return console && console.warn('新增量必须为数字')
+  return new Date(at.getTime() + day * 24 * 60 * 60 * 1000)
+}
