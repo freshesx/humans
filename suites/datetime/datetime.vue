@@ -165,7 +165,7 @@
         }
 
         for (let i = 1; i <= max; i++) {
-          options.push({ label: i + ' 日', value: i })
+          options.push({ label: i + '日', value: i })
         }
 
         return options
