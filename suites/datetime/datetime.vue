@@ -114,10 +114,12 @@
     },
     methods: {
       onCancel () {
+        this.close()
         this.$emit('cancel', this.fromAt)
       },
 
       onConfirm () {
+        this.close()
         this.$emit('confirm', this.fromAt)
       },
 
