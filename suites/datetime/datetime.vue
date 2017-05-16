@@ -232,7 +232,7 @@
   @import "../../scss/mixins/media";
 
   .mn-datetime {
-    top: 45%;
+    top: 50%;
     right: 0.5rem;
     left: 0.5rem;
     height: 240px;
