@@ -27,3 +27,17 @@ export function isLeapYear (fullYear) {
 export function isFebruary (month) {
   return month === 1
 }
+
+export function formatDoubleNumber (number) {
+  return number < 10 ? '0' + number : number
+}
+
+export function formatStandrad (at) {
+  const fullYear = at.getFullYear()
+  const month = at.getMonth() + 1
+  const date = at.getDate()
+  const hours = at.getHours()
+  const minutes = at.getMinutes()
+  const seconds = at.getSeconds()
+  return `${fullYear}-${month}-${date} ${formatDoubleNumber(hours)}:${formatDoubleNumber(minutes)}:${formatDoubleNumber(seconds)}`
+}
