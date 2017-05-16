@@ -1,5 +1,5 @@
+import Vue from 'vue'
 import Datetime from './Datetime'
-import Message from './Message'
 import { addDay } from '../suites/datetime/dateChecker'
 
 export default class DatetimeRange {
@@ -42,7 +42,10 @@ export default class DatetimeRange {
 
       setTimeout(() => {
         // 开始时间将作为结束时间的初始时间值
-        this.showToAt({ currentAt: addDay(fromAt, 1) })
+        this.showToAt({
+          minAt: fromAt,
+          currentAt: addDay(fromAt, 1)
+        })
       }, 500)
     })
 
@@ -55,12 +58,6 @@ export default class DatetimeRange {
 
     // Listen confirm
     this.toAtPopup.$on('confirm', (display, toAt) => {
-      // 开始时间是否大于等于结束时间，则错误
-      if (this.fromAt >= toAt) {
-        Message.create({ type: 'error', message: '结束时间应晚于开始时间' }).show()
-        return
-      }
-
       this.toAt = toAt
       this.displayToAt = display
 
@@ -78,16 +75,17 @@ export default class DatetimeRange {
 
   setFromAtConfig (config) {
     this.fromAtConfig = {
-      title: '选择开始时间',
-      confirmText: '下一步',
+      title: Vue.t('mn.datetime.fromAtTitle'),
+      confirmText: Vue.t('mn.datetime.next'),
       ...config
     }
   }
 
   setToAtConfig (config) {
     this.toAtConfig = {
-      title: '选择结束时间',
-      cancelText: '上一步',
+      title: Vue.t('mn.datetime.toAtTitle'),
+      cancelText: Vue.t('mn.datetime.prev'),
+      smallerText: Vue.t('mn.datetime.smallerToAtText'),
       ...config
     }
   }

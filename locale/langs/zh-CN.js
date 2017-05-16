@@ -14,6 +14,14 @@ export default {
       messageText: '你有一条消息'
     },
     datetime: {
+      title: '选择日期时间',
+      fromAtTitle: '选择开始时间',
+      toAtTitle: '选择结束时间',
+      smallerText: '不可小于最小时间',
+      biggerText: '不可大于最大时间',
+      smallerToAtText: '结束时间应晚于开始时间',
+      next: '下一步',
+      prev: '上一步',
       weeks: {
         0: '周日',
         1: '周一',

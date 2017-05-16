@@ -58,6 +58,7 @@
 
 <script>
   import Element from '../../utils/Element'
+  import Message from '../../utils/Message'
   import popup from '../popup/popup'
   import popupManager from '../popup/popupManager'
   import card from '../card/card'
@@ -92,9 +93,11 @@
         currentAt: new Date(), // 初始开始时间
         minAt: new Date('1970-01-01 00:00:00'),  // 最小时间
         maxAt: new Date('2049-12-31 23:59:59'),  // 最大时间
-        title: '选择时间日期',
-        cancelText: '取消',
-        confirmText: '确认',
+        title: this.$t('mn.datetime.title'),
+        cancelText: this.$t('mn.popup.cancelText'),
+        confirmText: this.$t('mn.popup.confirmText'),
+        smallerText: this.$t('mn.popup.smallerText'),
+        biggerText: this.$t('mn.popup.biggerText'),
         showDate: true,
         showHours: true,
         showMintues: true,
@@ -120,6 +123,17 @@
       },
 
       onConfirm () {
+        // 开始时间是否大于等于结束时间，则错误
+        if (this.minAt > this.currentAt) {
+          Message.create({ type: 'error', message: this.smallerText }).show()
+          return
+        }
+
+        if (this.currentAt > this.maxAt) {
+          Message.create({ type: 'error', message: this.biggerText }).show()
+          return
+        }
+
         this.emit('confirm')
       },
 
