@@ -10,12 +10,14 @@ export function isLunarMonth (month) {
 
 /**
  * Leap year 闰年
+ * 1.普通年能被 4 整除且不能被 100 整除的为闰年，如 2004 年就是闰年，1900年不是闰年；
+ * 2.世纪年能被 400 整除的是闰年，如 2000 年是闰年，1900 年不是闰年。
  *
  * @param  {Number}   fullYear e.g. 2017
  * @return {Boolean}
  */
 export function isLeapYear (fullYear) {
-  return fullYear % 4 === 0
+  return !(fullYear % (fullYear % 100 ? 4 : 400))
 }
 
 /**
