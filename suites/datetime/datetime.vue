@@ -153,7 +153,7 @@
         const seconds = at.getSeconds()
 
         if (this.showDate) {
-          displayDate = `${fullYear}-${month}-${date}`
+          displayDate = `${fullYear}-${formatDoubleNumber(month)}-${date}`
         }
 
         if (this.showDate && this.showHours) {
