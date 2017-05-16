@@ -38,7 +38,6 @@ export default class DatetimeRange {
     this.fromAtPopup.$on('confirm', (fromAt) => {
       // Get computed datetime (fromAt)
       this.fromAt = fromAt
-      this.fromAtPopup.close()
 
       setTimeout(() => {
         // 开始时间将作为结束时间的初始时间值
@@ -67,7 +66,7 @@ export default class DatetimeRange {
       }
 
       this.toAt = toAt
-      this.toAtPopup.close()
+
       this.excuteConfirm()
     })
 
