@@ -69,6 +69,7 @@
   import { isLunarMonth, isLeapYear, isFebruary } from './dateChecker'
   import vars from './vars'
   import options from './options'
+  import filters from './filters'
 
   export default new Element({
     name: 'mn-datetime',
@@ -87,7 +88,8 @@
        */
       popupManager,
       vars,
-      options
+      options,
+      filters
     ],
     methods: {
       onCancel () {
@@ -112,15 +114,6 @@
           isFebruary(this.models.month) && this.models.date > 29) {
           this.models.date = 29
         }
-      }
-    },
-    filters: {
-      formatDate (at) {
-        // 2017年12月17日 周一
-        return `${at.getFullYear()}年${at.getMonth() + 1}月${at.getDate()}日 周${at.getDay() + 1}`
-      },
-      formatTime (at) {
-        return `${at.getHours()}:${at.getMinutes()}:${at.getSeconds()}`
       }
     }
   })
