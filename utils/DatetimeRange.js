@@ -1,6 +1,6 @@
 import Datetime from './Datetime'
 import Message from './Message'
-import { formatStandrad, addDay } from '../suites/datetime/dateChecker'
+import { addDay } from '../suites/datetime/dateChecker'
 
 export default class DatetimeRange {
   fromAt
@@ -35,19 +35,15 @@ export default class DatetimeRange {
     this.fromAtPopup = Datetime.create({ ...this.fromAtConfig, ...options }).show()
 
     // Listen confirm
-    this.fromAtPopup.$on('confirm', (fromAt) => {
+    this.fromAtPopup.$on('confirm', (display, fromAt) => {
       // Get computed datetime (fromAt)
+      this.displayFromAt = display
       this.fromAt = fromAt
 
       setTimeout(() => {
         // 开始时间将作为结束时间的初始时间值
-        this.showToAt({ fromAt: addDay(fromAt, 1) })
+        this.showToAt({ currentAt: addDay(fromAt, 1) })
       }, 500)
-    })
-
-    // Listen cancel
-    this.fromAtPopup.$on('cancel', () => {
-      this.fromAtPopup.close()
     })
 
     return this
@@ -58,7 +54,7 @@ export default class DatetimeRange {
     this.toAtPopup = Datetime.create({ ...this.toAtConfig, ...options }).show()
 
     // Listen confirm
-    this.toAtPopup.$on('confirm', (toAt) => {
+    this.toAtPopup.$on('confirm', (display, toAt) => {
       // 开始时间是否大于等于结束时间，则错误
       if (this.fromAt >= toAt) {
         Message.create({ type: 'error', message: '结束时间应晚于开始时间' }).show()
@@ -66,16 +62,16 @@ export default class DatetimeRange {
       }
 
       this.toAt = toAt
+      this.displayToAt = display
 
       this.excuteConfirm()
     })
 
     // Listen cancel
     this.toAtPopup.$on('cancel', () => {
-      this.toAtPopup.close()
       setTimeout(() => {
         // 将保存好的 fromAt 的值传递回去
-        this.showFromAt({ fromAt: this.fromAt })
+        this.showFromAt({ currentAt: this.fromAt })
       }, 500)
     })
   }
@@ -104,8 +100,8 @@ export default class DatetimeRange {
   excuteConfirm () {
     if (this.callback) {
       this.callback({
-        from: formatStandrad(this.fromAt),
-        to: formatStandrad(this.toAt),
+        from: this.displayFromAt,
+        to: this.displayToAt,
         fromAt: this.fromAt,
         toAt: this.toAt
       })
