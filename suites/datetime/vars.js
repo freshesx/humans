@@ -53,6 +53,7 @@ export default {
     models: {
       deep: true,
       handler (newValue) {
+        this.checkSpecialDate()
         this.fromAt = this.updateAt(newValue)
       }
     }

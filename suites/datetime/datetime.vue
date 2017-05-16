@@ -96,7 +96,7 @@
       onConfirm () {
         this.$emit('confirm', this.fromAt)
       },
-      checkSomeDate () {
+      checkSpecialDate () {
         if (isLunarMonth(this.models.month) && this.models.date > 30) {
           this.models.date = 30
         }
@@ -112,14 +112,6 @@
           isFebruary(this.models.month) && this.models.date > 29) {
           this.models.date = 29
         }
-      }
-    },
-    watch: {
-      'models.fullYear' () {
-        this.checkSomeDate()
-      },
-      'models.month' () {
-        this.checkSomeDate()
       }
     },
     filters: {
