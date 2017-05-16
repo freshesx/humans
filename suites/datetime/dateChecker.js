@@ -47,3 +47,62 @@ export function addDay (at, day) {
   if (!Number.isInteger(day)) return console && console.warn('新增量必须为数字')
   return new Date(at.getTime() + day * 24 * 60 * 60 * 1000)
 }
+
+export function parseDatetime (currentAt) {
+  if (currentAt instanceof Date) {
+    return currentAt
+  }
+
+  // 2007-01-01
+  if (/^\d{4}-\d{2}-\d{2}$/.test(currentAt)) {
+    currentAt = `${currentAt} 00:00:00`
+  }
+
+  // 2007-01-01 17
+  if (/^\d{4}-\d{2}-\d{2}\s{1}\d{2}$/.test(currentAt)) {
+    currentAt = `${currentAt}:00:00`
+  }
+
+  // 2007-01-01 17:00
+  if (/^\d{4}-\d{2}-\d{2}\s{1}\d{2}:\d{2}$/.test(currentAt)) {
+    currentAt = `${currentAt}:00`
+  }
+
+  // 2007-01-01 17:00:00
+  if (/^\d{4}-\d{2}-\d{2}\s{1}\d{2}:\d{2}:\d{2}$/.test(currentAt)) {
+    const [date, time] = currentAt.split(/\s/)
+    const at = parseDate(new Date(), date)
+    return parseTime(at, time)
+  }
+
+  // 17
+  if (/^\d{2}$/.test(currentAt)) {
+    currentAt = `${currentAt}:00:00`
+  }
+
+  // 17:00
+  if (/^\d{2}:\d{2}$/.test(currentAt)) {
+    currentAt = `${currentAt}:00`
+  }
+
+  // 17:00:00
+  if (/^\d{2}:\d{2}:\d{2}$/.test(currentAt)) {
+    return parseTime(new Date(), currentAt)
+  }
+}
+
+export function parseDate (at, currentDate) {
+  const [fullYear, month, date] = currentDate.split('-')
+  at.setFullYear(fullYear)
+  at.setMonth(parseInt(month) - 1)
+  at.setDate(parseInt(date))
+  return at
+}
+
+export function parseTime (at, time) {
+  const [ hours, minutes, seconds ] = time.split(':')
+  at.setHours(hours)
+  at.setMinutes(minutes)
+  at.setSeconds(seconds)
+  return at
+}

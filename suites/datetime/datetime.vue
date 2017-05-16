@@ -67,7 +67,12 @@
   import cardPrefix from '../card/cardPrefix'
   import cardSuffix from '../card/cardSuffix'
   import cardBtns from '../card/cardBtns'
-  import { isLunarMonth, isLeapYear, isFebruary, formatDoubleNumber } from './dateChecker'
+  import {
+    isLunarMonth,
+    isLeapYear,
+    isFebruary,
+    formatDoubleNumber,
+    parseDatetime } from './dateChecker'
   import options from './options'
 
   export default new Element({
@@ -205,52 +210,6 @@
         return `${at.getFullYear()} ${month}${date} ${week}`
       },
 
-      formatCurrentAt (currentAt) {
-        if (currentAt instanceof Date) {
-          return currentAt
-        }
-
-        // 2007-01-01
-        if (/^\d{4}-\d{2}-\d{2}$/.test(currentAt)) {
-          currentAt = `${currentAt} 00:00:00`
-        }
-
-        // 2007-01-01 17
-        if (/^\d{4}-\d{2}-\d{2}\s{1}\d{2}$/.test(currentAt)) {
-          currentAt = `${currentAt}:00:00`
-        }
-
-        // 2007-01-01 17:00
-        if (/^\d{4}-\d{2}-\d{2}\s{1}\d{2}:\d{2}$/.test(currentAt)) {
-          currentAt = `${currentAt}:00`
-        }
-
-        // 2007-01-01 17:00:00
-        if (/^\d{4}-\d{2}-\d{2}\s{1}\d{2}:\d{2}:\d{2}$/.test(currentAt)) {
-          return new Date(currentAt)
-        }
-
-        // 17
-        if (/^\d{2}$/.test(currentAt)) {
-          currentAt = `${currentAt}:00:00`
-        }
-
-        // 17:00
-        if (/^\d{2}:\d{2}$/.test(currentAt)) {
-          currentAt = `${currentAt}:00`
-        }
-
-        // 17:00:00
-        if (/^\d{2}:\d{2}:\d{2}$/.test(currentAt)) {
-          const [ hours, minutes, seconds ] = currentAt.split(':')
-          const at = new Date()
-          at.setHours(hours)
-          at.setMinutes(minutes)
-          at.setSeconds(seconds)
-          return at
-        }
-      },
-
       updateModels (at) {
         this.models = {
           fullYear: at.getFullYear(),
@@ -309,7 +268,7 @@
         this.currentAt.setSeconds(0)
       }
 
-      this.currentAt = this.formatCurrentAt(this.currentAt)
+      this.currentAt = parseDatetime(this.currentAt)
 
       this.updateModels(this.currentAt)
     }
