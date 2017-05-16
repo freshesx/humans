@@ -9,13 +9,14 @@
         <mn-card-body>
           <div class="has-center-text"></div>
         </mn-card-body>
-        <mn-card-suffix v-if="false">
-          <p class="mn-datetime-time">01:56</p>
-          <p class="mn-datetime-date">2017年12月17日 周一</p>
+        <mn-card-suffix v-if="type === 'range'">
+          <p class="mn-datetime-time">{{ toAt | formatTime }}</p>
+          <p class="mn-datetime-date">{{ toAt | formatDate }}</p>
         </mn-card-suffix>
       </mn-card-item>
       <mn-card-item style="height: 91px;">
         <mn-card-body>
+          <div v-if="type === 'range'">{{ currentStep === 0 ? '开始时间' : '结束时间' }}</div>
           <div class="mn-datetime-input">
             <div class="mn-datetime-item">
               <select v-model="models.fullYear">
@@ -50,9 +51,17 @@
           </div>
         </mn-card-body>
       </mn-card-item>
-      <mn-card-btns type="column">
-        <button class="has-red-text">Cancel</button>
-        <button class="has-blue-text">Confirm</button>
+      <mn-card-btns type="column" v-if="type === 'range' && currentStep === 0">
+        <button class="has-red-text">取消</button>
+        <button @click="onNext">下一步</button>
+      </mn-card-btns>
+      <mn-card-btns type="column" v-if="type === 'range' && currentStep === 1">
+        <button @click="onBack">上一步</button>
+        <button class="has-blue-text">确认</button>
+      </mn-card-btns>
+      <mn-card-btns type="column" v-if="type === 'single'">
+        <button class="has-red-text">取消</button>
+        <button class="has-blue-text">确认</button>
       </mn-card-btns>
     </mn-card>
   </mn-popup>
@@ -92,6 +101,24 @@
       vars
     ],
     methods: {
+      onNext () {
+        this.currentStep = 1
+
+        if (this.fromAt > this.toAt) {
+          this.toAt = this.fromAt
+        }
+
+        this.currentMinAt = this.fromAt
+
+        this.updateModels(this.toAt)
+      },
+      onBack () {
+        this.currentStep = 0
+
+        this.currentMinAt = this.minAt
+
+        this.updateModels(this.fromAt)
+      },
       parseDoubleNumber (number) {
         return number < 10 ? '0' + number : number
       },
