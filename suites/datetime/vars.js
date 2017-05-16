@@ -1,17 +1,17 @@
-import isUndefined from 'lodash/isUndefined'
-
 export default {
   data () {
     return {
-      fromAt: undefined, // 初始开始时间
-      toAt: undefined, // 初始结束时间
-      type: 'single',  // 'single', 'range'
+      fromAt: new Date(), // 初始开始时间
       minAt: new Date('1970-01-01 00:00:00'),  // 最小时间
       maxAt: new Date('2049-12-31 23:59:59'),  // 最大时间
+      title: '选择时间日期',
+      cancelText: '取消',
+      confirmText: '确认',
+      showFullYear: true,
+      showHours: true,
+      showMintues: true,
+      showSeconds: true,
 
-      currentMinAt: undefined, // 在选择时的最小时间
-      currentMaxAt: undefined, // 在选择时的最大时间
-      currentStep: 0,   // 当前步速，第一步开始时间
       models: {
         fullYear: 2017,
         month: 0,
@@ -24,9 +24,7 @@ export default {
   },
   methods: {
     emitAt () {
-      return this.type === 'single'
-        ? this.fromAt
-        : { fromAt: this.fromAt, toAt: this.toAt }
+      this.$emit('update:fromAt', this.fromAt)
     },
 
     updateModels (at) {
@@ -55,26 +53,18 @@ export default {
     models: {
       deep: true,
       handler (newValue) {
-        if (this.currentStep === 0) {
-          this.fromAt = this.updateAt(newValue)
-        } else {
-          this.toAt = this.updateAt(newValue)
-        }
+        this.fromAt = this.updateAt(newValue)
       }
     }
   },
   created () {
-    if (isUndefined(this.fromAt)) {
-      this.fromAt = new Date()
+    if (!this.showMintues) {
+      this.fromAt.setMinutes(0)
     }
 
-    if (isUndefined(this.toAt)) {
-      this.toAt = this.fromAt
+    if (!this.showSeconds) {
+      this.fromAt.setSeconds(0)
     }
-
-    this.currentMinAt = this.minAt
-
-    this.currentMaxAt = this.maxAt
 
     this.updateModels(this.fromAt)
   }
