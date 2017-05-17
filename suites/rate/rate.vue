@@ -1,10 +1,12 @@
 <template>
-  <span class="mn-rate" :style="{ color }">
+  <span class="mn-rate" @mouseleave="onLeave">
     <span class="mn-rate-item" :class="{ 'is-disabled': disabled }"
+      @mouseenter="onEnter($event, item)"
+      @click="onClick($event, item)"
       v-for="(item, key) in max" :key="key">
-      <slot name="active" v-if="showActive(key)"><mn-icon :name="icons.active"></mn-icon></slot>
-      <slot name="unactive" v-if="showUnactive(key)"><mn-icon :name="icons.unactive"></mn-icon></slot>
-      <slot name="half" v-if="showHalf(key)"><mn-icon :name="icons.half"></mn-icon></slot>
+      <slot name="active" v-if="showActive(item)"><mn-icon :name="icons.active"></mn-icon></slot>
+      <slot name="unactive" v-if="showUnactive(item)"><mn-icon :name="icons.unactive"></mn-icon></slot>
+      <slot name="half" v-if="showHalf(item)"><mn-icon :name="icons.half"></mn-icon></slot>
     </span>
   </span>
 </template>
@@ -32,11 +34,7 @@
         type: Number,
         default: 0
       },
-      disabled: Boolean,
-      color: {
-        type: String,
-        default: 'rgb(255, 204, 0)'
-      }
+      disabled: Boolean
     },
     data () {
       return {
@@ -49,21 +47,30 @@
       }
     },
     methods: {
+      onEnter (event, item) {
+        this.showValue = item
+      },
+      onLeave () {
+        this.showValue = this.value
+      },
+      onClick (event, item) {
+        this.$emit('update:value', item)
+        this.$emit('input', item)
+      },
       syncShowValue () {
         this.showValue = this.value
       },
-      showActive (key) {
-        return key + 1 <= this.value
+      showActive (item) {
+        return item <= this.showValue
       },
-      showUnactive (key) {
-        const number = key + 1
-        return Number.isInteger(this.value)
-          ? number > this.value               // 整数
-          : number > Math.ceil(this.value)    // 具有小数点
+      showUnactive (item) {
+        return Number.isInteger(this.showValue)
+          ? item > this.showValue               // 整数
+          : item > Math.ceil(this.showValue)    // 具有小数点
       },
-      showHalf (key) {
-        if (!Number.isInteger(this.value)) {
-          return key + 1 === Math.ceil(this.value)
+      showHalf (item) {
+        if (!Number.isInteger(this.showValue)) {
+          return item === Math.ceil(this.showValue)
         }
       }
     },
