@@ -1,6 +1,7 @@
 <template>
-  <span class="mn-rate">
-    <span class="mn-rate-item" v-for="(item, key) in max" :key="key">
+  <span class="mn-rate" :style="{ color }">
+    <span class="mn-rate-item" :class="{ 'is-disabled': disabled }"
+      v-for="(item, key) in max" :key="key">
       <slot name="active" v-if="showActive(key)"><mn-icon :name="icons.active"></mn-icon></slot>
       <slot name="unactive" v-if="showUnactive(key)"><mn-icon :name="icons.unactive"></mn-icon></slot>
       <slot name="half" v-if="showHalf(key)"><mn-icon :name="icons.half"></mn-icon></slot>
@@ -77,3 +78,17 @@
     }
   })
 </script>
+
+<style lang="scss">
+  .mn-rate {
+
+  }
+
+  .mn-rate-item {
+    cursor: pointer;
+
+    &.is-disabled {
+      cursor: default;
+    }
+  }
+</style>
