@@ -148,6 +148,11 @@ const router = new VueRouter({
           path: '/textarea',
           name: 'textarea',
           component: resolve => { require(['../components/textarea'], resolve) }
+        },
+        {
+          path: '/tag',
+          name: 'tag',
+          component: resolve => { require(['../components/tag'], resolve) }
         }
       ]
     }

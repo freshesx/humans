@@ -149,6 +149,11 @@ export default {
               name: 'Carousel',
               small: this.$t('examples.submenus.components.carousel'),
               push: { name: 'carousel' }
+            },
+            {
+              name: 'Tag',
+              small: this.$t('examples.submenus.components.tag'),
+              push: { name: 'tag' }
             }
           ]
         }
