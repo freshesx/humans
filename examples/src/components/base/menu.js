@@ -164,6 +164,11 @@ export default {
               name: 'Rate',
               small: this.$t('examples.submenus.components.rate'),
               push: { name: 'rate' }
+            },
+            {
+              name: 'tabBar',
+              small: this.$t('examples.submenus.components.tabBar'),
+              push: { name: 'tabBar' }
             }
           ]
         }

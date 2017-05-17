@@ -163,6 +163,11 @@ const router = new VueRouter({
           path: '/rate',
           name: 'rate',
           component: resolve => { require(['../components/rate'], resolve) }
+        },
+        {
+          path: '/tab-bar',
+          name: 'tabBar',
+          component: resolve => { require(['../components/tabBar'], resolve) }
         }
       ]
     }
