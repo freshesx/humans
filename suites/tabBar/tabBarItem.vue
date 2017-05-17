@@ -1,9 +1,11 @@
 <template>
   <div class="mn-tab-bar-item" :class="{ 'is-active': active }" :style="{ width: computedWidth }" @click="click">
-    <div class="mn-tab-bar-icon">
-      <mn-icon :name="icon"></mn-icon>
-    </div>
-    <div class="mn-tab-bar-title">{{ title }}</div>
+    <slot>
+      <div class="mn-tab-bar-icon">
+        <mn-icon :name="icon"></mn-icon>
+      </div>
+      <div class="mn-tab-bar-title">{{ title }}</div>
+    </slot>
   </div>
 </template>
 
