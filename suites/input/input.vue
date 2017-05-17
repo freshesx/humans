@@ -7,8 +7,6 @@
       :placeholder="placeholder"
       :readonly="readonly"
       :disabled="disabled"
-      :min="min"
-      :max="max"
       @input="changeValue">
     <transition name="mn-input-clear">
       <div
@@ -41,11 +39,9 @@
         type: String,
         default: 'text',
         validator: val => {
-          return ['text', 'number', 'password'].includes(val)
+          return ['text', 'password'].includes(val)
         }
       },
-      min: null,
-      max: null,
       placeholder: {
         type: String
       },
