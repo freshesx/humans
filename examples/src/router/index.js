@@ -128,6 +128,11 @@ const router = new VueRouter({
           path: '/datetime',
           name: 'datetime',
           component: resolve => { require(['../components/datetime'], resolve) }
+        },
+        {
+          path: '/radio',
+          name: 'radio',
+          component: resolve => { require(['../components/radio'], resolve) }
         }
       ]
     }

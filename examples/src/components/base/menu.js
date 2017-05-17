@@ -91,6 +91,11 @@ export default {
               push: { name: 'input' }
             },
             {
+              name: 'Radio',
+              small: this.$t('examples.submenus.form.radio'),
+              push: { name: 'radio' }
+            },
+            {
               name: 'Check',
               small: this.$t('examples.submenus.form.check'),
               push: { name: 'check' }

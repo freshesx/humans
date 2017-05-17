@@ -28,6 +28,7 @@ export default {
       form: {
         form: '表单',
         input: '单行文本框',
+        radio: '单选',
         check: '多选',
         counter: '计数器',
         datetime: '日期时间'
