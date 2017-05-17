@@ -52,6 +52,7 @@
     justify-content: center;
     text-align: center;
     color: #999;
+    cursor: pointer;
 
     &.is-active {
       color: $pink;
