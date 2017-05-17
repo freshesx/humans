@@ -86,7 +86,11 @@
 </script>
 
 <style lang="scss">
-  .mn-rate {}
+  @import "../../scss/vars";
+
+  .mn-rate {
+    color: $orange;
+  }
 
   .mn-rate-item {
     cursor: pointer;
