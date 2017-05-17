@@ -7,6 +7,8 @@
       :placeholder="placeholder"
       :readonly="readonly"
       :disabled="disabled"
+      :min="min"
+      :max="max"
       @input="changeValue">
     <transition name="mn-input-clear">
       <div
@@ -42,6 +44,8 @@
           return ['text', 'number', 'password'].includes(val)
         }
       },
+      min: null,
+      max: null,
       placeholder: {
         type: String
       },
