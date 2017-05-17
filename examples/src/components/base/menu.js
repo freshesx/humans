@@ -159,6 +159,11 @@ export default {
               name: 'searchBar',
               small: this.$t('examples.submenus.components.searchBar'),
               push: { name: 'searchBar' }
+            },
+            {
+              name: 'Rate',
+              small: this.$t('examples.submenus.components.rate'),
+              push: { name: 'rate' }
             }
           ]
         }

@@ -42,7 +42,8 @@ export default {
         carousel: '轮播图',
         dashboard: '后台管理',
         tag: '标签',
-        searchBar: '搜索条'
+        searchBar: '搜索条',
+        rate: '星标'
       }
     }
   }
