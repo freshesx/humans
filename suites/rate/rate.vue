@@ -53,18 +53,17 @@
         this.showValue = this.value
       },
       showActive (key) {
-        const number = key + 1
-
-        return Number.isInteger(this.value)
-          ? number <= this.value               // 整数
-          : number < Math.floor(this.value)    // 具有小数点
+        return key + 1 <= this.value
       },
       showUnactive (key) {
-        return key + 1 > this.value
+        const number = key + 1
+        return Number.isInteger(this.value)
+          ? number > this.value               // 整数
+          : number > Math.ceil(this.value)    // 具有小数点
       },
       showHalf (key) {
         if (!Number.isInteger(this.value)) {
-          return key + 1 === Math.floor(this.value)
+          return key + 1 === Math.ceil(this.value)
         }
       }
     },
