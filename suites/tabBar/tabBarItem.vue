@@ -15,11 +15,11 @@
   // @todo: 增加 loading 的控制
   // @todo: 增加 badge 的支持
   import Element from '../../utils/Element'
-  import Icon from '../icon/icon'
+  import iconElement from '../icon/icon'
 
   export default new Element({
     components: {
-      [Icon.name]: Icon
+      ...iconElement.inject()
     },
     name: 'mn-tab-bar-item',
     props: {
@@ -54,6 +54,7 @@
     color: #999;
     cursor: pointer;
 
+    // @todo 增加 scss 配置至 vars
     &.is-active {
       color: $pink;
     }
