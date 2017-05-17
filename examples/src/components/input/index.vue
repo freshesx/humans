@@ -9,10 +9,28 @@
         <mn-card>
           <mn-card-item>
             <mn-card-prefix>
-              Username
+              <mn-label>Username</mn-label>
             </mn-card-prefix>
             <mn-card-body>
               <mn-input v-model="models.username" placeholder="Username"></mn-input>
+            </mn-card-body>
+          </mn-card-item>
+
+          <mn-card-item>
+            <mn-card-prefix>
+              <mn-label>Password</mn-label>
+            </mn-card-prefix>
+            <mn-card-body>
+              <mn-input type="password" v-model="models.password" placeholder="Password"></mn-input>
+            </mn-card-body>
+          </mn-card-item>
+
+          <mn-card-item>
+            <mn-card-prefix>
+              <mn-label>Year</mn-label>
+            </mn-card-prefix>
+            <mn-card-body>
+              <mn-input type="number" min="0" v-model="models.year" placeholder="Year"></mn-input>
             </mn-card-body>
           </mn-card-item>
         </mn-card>
@@ -39,7 +57,9 @@
     data () {
       return {
         models: {
-          username: undefined
+          username: undefined,
+          password: undefined,
+          year: 18
         }
       }
     }
