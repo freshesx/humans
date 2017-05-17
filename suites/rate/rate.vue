@@ -1,118 +1,79 @@
 <template>
   <span class="mn-rate">
-    <!-- 建议用 span 替换 i 标签 -->
-    <i
-      v-for="item in this.max"
-      @mouseenter="mouseEnterEvent(item)"
-      @mouseleave="mouseLeaveEvent(item)"
-      @click="clickItem(item)">
-      <mn-rate-item :index="item" :count="current"></mn-rate-item>
-    </i>
+    <span class="mn-rate-item" v-for="(item, key) in max" :key="key">
+      <slot name="active" v-if="showActive(key)"><mn-icon :name="icons.active"></mn-icon></slot>
+      <slot name="unactive" v-if="showUnactive(key)"><mn-icon :name="icons.unactive"></mn-icon></slot>
+      <slot name="half" v-if="showHalf(key)"><mn-icon :name="icons.half"></mn-icon></slot>
+    </span>
   </span>
 </template>
 
 <script>
   import Element from '../../utils/Element'
-  import RateItem from './rateItem'
+  import iconElement from '../icon/icon'
 
   export default new Element({
-    components: {
-      [RateItem.name]: RateItem
-    },
     name: 'mn-rate',
+    components: {
+      ...iconElement.inject()
+    },
     props: {
-      // Provide some options.
       max: {
         type: Number,
         default: 5
       },
-      // option: the quantity of the stars
-      default: {
+      /**
+       * 如果为 3 的话，前三个为实星，后两个为空星。
+       * 如果为 3.6 的话，前两个为实星，中间为半星，后两个为空星。
+       * 如果为 3.2 的话，前两个为实星，中间为半星，后两个为空星。
+       */
+      value: {
         type: Number,
         default: 0
       },
-      // option: the default value of the rate
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      // option: is clickable or not
+      disabled: Boolean,
       color: {
         type: String,
         default: 'rgb(255, 204, 0)'
       }
-      // option: The color of the stars.
     },
     data () {
       return {
-        status: -1,
-        //
-        // If status === -1, no default value and no selected value.
-        // If status === 1, it has the default value.
-        // If status === 2, it has the selected value.
-        //
-        current: -1,
-        // Pass the data to the children component 'rate-item'
-        lastSelected: -1
-        // Record the last selected value for mouseLeaveEvent
-      }
-    },
-    watch: {
-      current: function (val) {
-        if (val > 0) {
-          this.$emit('change', val)
-          // Provide function 'change' for every change of current
+        showValue: 0,
+        icons: {
+          unactive: require('vue-human-icons/js/ios/star-outline'),
+          active: require('vue-human-icons/js/ios/star'),
+          half: require('vue-human-icons/js/ios/star-half')
         }
       }
     },
     methods: {
-      mouseEnterEvent: function (item) {
-        if (this.disabled) {
-          return
-        }
-        this.current = item
-        // If disabled, readonly. If not, change the color on real time.
+      syncShowValue () {
+        this.showValue = this.value
       },
-      mouseLeaveEvent: function (item) {
-        if (this.disabled) {
-          return
-        }
-        if (this.status === 1) {
-          this.current = this.default
-        } else if (this.status === 2) {
-          this.current = this.lastSelected
-        } else {
-          this.current = -1
-        }
-        //
-        // Change the current value by status.
-        //
-        // If disabled, readonly. If not, change the color on real time.
+      showActive (key) {
+        const number = key + 1
+
+        return Number.isInteger(this.value)
+          ? number <= this.value               // 整数
+          : number < Math.floor(this.value)    // 具有小数点
       },
-      clickItem: function (item) {
-        if (this.disabled) {
-          return
+      showUnactive (key) {
+        return key + 1 > this.value
+      },
+      showHalf (key) {
+        if (!Number.isInteger(this.value)) {
+          return key + 1 === Math.floor(this.value)
         }
-        this.status = 2
-        this.current = item
-        this.lastSelected = item
-        // If disabled, readonly. If not, change the color on real time.
-        this.$emit('select', item)
-        // Provide function 'select' for selecting the item
       }
     },
-    mounted () {
-      if (this.default > 0) {
-        this.status = 1
-        this.current = this.default
-        // If default, show the default value.
+    watch: {
+      value () {
+        this.syncShowValue()
       }
+    },
+    created () {
+      this.syncShowValue()
     }
   })
 </script>
-
-<style lang="scss">
-  .mn-rate {
-    // .mn-rate
-  }
-</style>
