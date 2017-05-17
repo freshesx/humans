@@ -79,9 +79,7 @@
 </script>
 
 <style lang="scss">
-  .mn-rate {
-
-  }
+  .mn-rate {}
 
   .mn-rate-item {
     cursor: pointer;
