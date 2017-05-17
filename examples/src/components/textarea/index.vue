@@ -11,6 +11,7 @@
     <mn-form :validate="$v" @success="success">
       <!-- radio item -->
       <mn-section>
+        <mn-section-note>Profile</mn-section-note>
         <mn-card>
           <mn-card-item>
             <mn-card-body>
