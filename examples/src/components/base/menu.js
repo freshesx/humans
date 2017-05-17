@@ -106,6 +106,11 @@ export default {
               push: { name: 'select' }
             },
             {
+              name: 'Switch',
+              small: this.$t('examples.submenus.form.switch'),
+              push: { name: 'switch' }
+            },
+            {
               name: 'Counter',
               small: this.$t('examples.submenus.form.counter'),
               push: { name: 'counter' }

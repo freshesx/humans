@@ -138,6 +138,11 @@ const router = new VueRouter({
           path: '/select',
           name: 'select',
           component: resolve => { require(['../components/select'], resolve) }
+        },
+        {
+          path: '/switch',
+          name: 'switch',
+          component: resolve => { require(['../components/switch'], resolve) }
         }
       ]
     }

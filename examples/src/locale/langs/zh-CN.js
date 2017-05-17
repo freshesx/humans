@@ -31,6 +31,7 @@ export default {
         radio: '单选',
         check: '多选',
         select: '下拉菜单',
+        switch: '开关',
         counter: '计数器',
         datetime: '日期时间'
       },
