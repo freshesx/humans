@@ -133,6 +133,11 @@ const router = new VueRouter({
           path: '/radio',
           name: 'radio',
           component: resolve => { require(['../components/radio'], resolve) }
+        },
+        {
+          path: '/select',
+          name: 'select',
+          component: resolve => { require(['../components/select'], resolve) }
         }
       ]
     }

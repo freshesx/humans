@@ -30,6 +30,7 @@ export default {
         input: '单行文本框',
         radio: '单选',
         check: '多选',
+        select: '下拉菜单',
         counter: '计数器',
         datetime: '日期时间'
       },

@@ -101,6 +101,11 @@ export default {
               push: { name: 'check' }
             },
             {
+              name: 'Select',
+              small: this.$t('examples.submenus.form.select'),
+              push: { name: 'select' }
+            },
+            {
               name: 'Counter',
               small: this.$t('examples.submenus.form.counter'),
               push: { name: 'counter' }
