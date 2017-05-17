@@ -24,15 +24,6 @@
               <mn-input type="password" v-model="models.password" placeholder="Password"></mn-input>
             </mn-card-body>
           </mn-card-item>
-
-          <mn-card-item>
-            <mn-card-prefix>
-              <mn-label>Year</mn-label>
-            </mn-card-prefix>
-            <mn-card-body>
-              <mn-input type="number" min="0" v-model="models.year" placeholder="Year"></mn-input>
-            </mn-card-body>
-          </mn-card-item>
         </mn-card>
 
         <mn-section-btn>
