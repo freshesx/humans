@@ -153,6 +153,11 @@ const router = new VueRouter({
           path: '/tag',
           name: 'tag',
           component: resolve => { require(['../components/tag'], resolve) }
+        },
+        {
+          path: '/search-bar',
+          name: 'searchBar',
+          component: resolve => { require(['../components/searchBar'], resolve) }
         }
       ]
     }

@@ -41,7 +41,8 @@ export default {
         cell: '单元列表',
         carousel: '轮播图',
         dashboard: '后台管理',
-        tag: '标签'
+        tag: '标签',
+        searchBar: '搜索条'
       }
     }
   }

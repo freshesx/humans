@@ -154,6 +154,11 @@ export default {
               name: 'Tag',
               small: this.$t('examples.submenus.components.tag'),
               push: { name: 'tag' }
+            },
+            {
+              name: 'searchBar',
+              small: this.$t('examples.submenus.components.searchBar'),
+              push: { name: 'searchBar' }
             }
           ]
         }
