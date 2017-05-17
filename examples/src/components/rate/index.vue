@@ -8,27 +8,16 @@
       <mn-section-note>Read only rate component. Support for half-star.</mn-section-note>
       <mn-card>
         <mn-card-item>
-          <mn-card-body>
-            <mn-rate :default="3.5" disabled></mn-rate>
-            <mn-rate :default="5" disabled></mn-rate>
-          </mn-card-body>
+          <mn-card-body><mn-rate :value="3" disabled></mn-rate></mn-card-body>
+          <mn-card-suffix>Disabled 3</mn-card-suffix>
         </mn-card-item>
-      </mn-card>
-    </mn-section>
-
-    <mn-section>
-      <mn-section-note>Clickable rate</mn-section-note>
-      <mn-card>
         <mn-card-item>
-          <mn-card-body>
-            <mn-rate></mn-rate>
-            <mn-rate
-              color="rgb(255, 45, 85)"
-              :default="3.5"
-              @change="show"
-              @select="select"
-              ></mn-rate>
-          </mn-card-body>
+          <mn-card-body><mn-rate :value="3.6" disabled></mn-rate></mn-card-body>
+          <mn-card-suffix>Disabled 3.6</mn-card-suffix>
+        </mn-card-item>
+        <mn-card-item>
+          <mn-card-body><mn-rate v-model="rate" @input="onChange"></mn-rate></mn-card-body>
+          <mn-card-suffix>Writable Rate: {{ rate }}</mn-card-suffix>
         </mn-card-item>
       </mn-card>
     </mn-section>
@@ -46,12 +35,14 @@
       ...rate.map(),
       page
     },
+    data () {
+      return {
+        rate: 3
+      }
+    },
     methods: {
-      show (val) {
-        console.log(val)
-      },
-      select (val) {
-        console.log('selected: ', val)
+      onChange (value) {
+        console.log(value)
       }
     }
   }
