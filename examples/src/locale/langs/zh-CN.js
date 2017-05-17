@@ -43,7 +43,7 @@ export default {
         dashboard: '后台管理',
         tag: '标签',
         searchBar: '搜索条',
-        rate: '星标'
+        rate: '评分'
       }
     }
   }
