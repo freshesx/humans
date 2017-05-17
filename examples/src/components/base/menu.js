@@ -111,6 +111,11 @@ export default {
               push: { name: 'switch' }
             },
             {
+              name: 'Textarea',
+              small: this.$t('examples.submenus.form.textarea'),
+              push: { name: 'textarea' }
+            },
+            {
               name: 'Counter',
               small: this.$t('examples.submenus.form.counter'),
               push: { name: 'counter' }
