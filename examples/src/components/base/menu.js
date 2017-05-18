@@ -5,7 +5,8 @@ export default [
     name: Vue.t('examples.menus.core'),
     badge: {
       theme: 'gray-darkest',
-      content: 5
+      content: 'core',
+      size: 'sm'
     },
     children: [
       {
