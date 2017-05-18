@@ -109,9 +109,9 @@
       setOffset () {
         this.width = document.body.offsetWidth
         this.height = document.body.offsetHeight
-        this.x = 16
-        this.y = this.height - 44 - 16
         this.btnWidth = this.$refs.btn.offsetWidth
+        this.x = this.width - this.btnWidth - 16
+        this.y = this.height - 44 - 16
       }
     },
     mounted () {
