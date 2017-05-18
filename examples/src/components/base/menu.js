@@ -156,7 +156,7 @@ export default {
               push: { name: 'tag' }
             },
             {
-              name: 'searchBar',
+              name: 'Search Bar',
               small: this.$t('examples.submenus.components.searchBar'),
               push: { name: 'searchBar' }
             },
@@ -166,17 +166,17 @@ export default {
               push: { name: 'rate' }
             },
             {
-              name: 'tabBar',
+              name: 'Tab Bar',
               small: this.$t('examples.submenus.components.tabBar'),
               push: { name: 'tabBar' }
             },
             {
-              name: 'navBar',
+              name: 'Nav Bar',
               small: this.$t('examples.submenus.components.navBar'),
               push: { name: 'navBar' }
             },
             {
-              name: 'menu',
+              name: 'Menu',
               small: this.$t('examples.submenus.components.menu'),
               push: { name: 'menu' }
             }
