@@ -4,22 +4,19 @@
     :class="classes"
     :title="title"
     @click="click">
-    <mn-loading-icon v-if="loading"></mn-loading-icon>
-    <mn-icon class="mn-btn-icon" :name="icon" v-if="icon && !loading"></mn-icon>
+    <mn-icon :name="icon" :loading="loading" v-if="icon || loading"></mn-icon>
     <slot></slot>
   </button>
 </template>
 
 <script>
   import Element from '../../utils/Element'
-  import loadingIcon from '../loadingIcon/loadingIcon'
   import icon from '../icon/icon'
   import isUndefined from 'lodash/isUndefined'
 
   export default new Element({
     name: 'mn-btn',
     components: {
-      ...loadingIcon.inject(),
       ...icon.inject()
     },
     props: {
@@ -100,6 +97,8 @@
   $-button-theme: map-merge($-button-default-theme, $button-theme);
   $-button-mobile-radius: $button-mobile-radius;
   $-button-desktop-radius: $button-desktop-radius;
+  $-button-height: 2.75rem;
+  $-button-sm-height: 2rem;
 
   //
   // @class .btn
@@ -107,17 +106,17 @@
   .#{$-button} {
     display: inline-block;
     white-space: nowrap;
-    vertical-align: middle;
     cursor: pointer;
     user-select: none;
-    height: 3rem;
-    padding: 0.5rem 1rem;
+    height: $-button-height;
+    line-height: 1.5rem;
+    padding: (($-button-height - 1.5rem) / 2) 1rem;
     border-radius: $-button-mobile-radius;
     text-decoration: none;
     border: none;
     outline: none;
     background: transparent;
-    line-height: 2rem;
+    vertical-align: middle;
 
     @include min-screen('desktop') {
       border-radius: $-button-desktop-radius;
@@ -127,24 +126,15 @@
       margin-bottom: 1rem;
     }
 
-    &-icon {
-      vertical-align: -5px;
-    }
-
     &.is-sm {
-      height: 2rem;
-      padding: 0.375rem 1rem;
-      line-height: 1rem;
+      height: $-button-sm-height;
+      padding: (($-button-sm-height - 1.5rem) / 2) 1rem;
       border-radius: $-button-mobile-radius * 0.75;
       font-size: 0.875rem;
 
       @include min-screen('desktop') {
         border-radius: $-button-desktop-radius;
       }
-    }
-
-    &.is-sm > &-icon {
-      vertical-align: 3px;
     }
 
     &.is-block {
