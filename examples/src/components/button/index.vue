@@ -12,7 +12,7 @@
       <mn-card>
         <mn-card-item>
           <mn-card-prefix>
-            <mn-icon :name="icons.home"></mn-icon>
+            <mn-icon :name="icons.cart"></mn-icon>
           </mn-card-prefix>
           <mn-card-body>
             <h5>基本用法</h5>
@@ -20,8 +20,12 @@
         </mn-card-item>
         <mn-card-item>
           <mn-card-body>
-            <mn-btn theme="primary" :icon="icons.home" @click="onPressButton">按钮</mn-btn>
+            <mn-btn theme="primary" :icon="icons.cart" @click="onPressButton">按钮</mn-btn>
             <mn-btn theme="secondary" @click="onPressButton">按钮 glass</mn-btn>
+          </mn-card-body>
+        </mn-card-item>
+        <mn-card-item>
+          <mn-card-body>
             <mn-btn theme="inverse">按钮</mn-btn>
             <mn-btn theme="warning">按钮</mn-btn>
             <mn-btn theme="error">按钮</mn-btn>
@@ -49,9 +53,9 @@
 
         <mn-card-item>
           <mn-card-body>
-            <mn-btn theme="primary" :icon="icons.home" size="xs">按钮</mn-btn>
-            <mn-btn theme="primary" :icon="icons.home" size="sm">按钮</mn-btn>
-            <mn-btn theme="primary" :icon="icons.home">按钮</mn-btn>
+            <mn-btn theme="primary" :icon="icons.cart" size="xs">按钮</mn-btn>
+            <mn-btn theme="primary" :icon="icons.cart" size="sm">按钮</mn-btn>
+            <mn-btn theme="primary" :icon="icons.cart">按钮</mn-btn>
           </mn-card-body>
         </mn-card-item>
       </mn-card>
@@ -87,9 +91,9 @@
           <mn-card-body>
             <mn-btn theme="primary">按钮</mn-btn>
             <mn-btn theme="primary" circle>按钮</mn-btn>
-            <mn-btn theme="primary" :icon="icons.home" circle></mn-btn>
+            <mn-btn theme="primary" :icon="icons.cart" circle></mn-btn>
             <mn-btn theme="primary" circle size="sm">A</mn-btn>
-            <mn-btn theme="primary" :icon="icons.home" circle size="sm"></mn-btn>
+            <mn-btn theme="primary" :icon="icons.cart" circle size="sm"></mn-btn>
           </mn-card-body>
         </mn-card-item>
       </mn-card>
@@ -102,7 +106,7 @@
         </mn-card-item>
         <mn-card-item>
           <mn-card-body>
-            <mn-btn theme="primary" :icon="icons.home" block margin>按钮</mn-btn>
+            <mn-btn theme="primary" :icon="icons.cart" block margin>按钮</mn-btn>
             <mn-btn theme="secondary" block margin>按钮</mn-btn>
           </mn-card-body>
         </mn-card-item>
@@ -127,7 +131,7 @@
     data () {
       return {
         icons: {
-          home: require('vue-human-icons/js/ios/home')
+          cart: require('vue-human-icons/js/ios/cart')
         }
       }
     },
