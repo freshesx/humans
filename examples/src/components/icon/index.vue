@@ -11,7 +11,27 @@
     <mn-section>
       <mn-card>
         <mn-card-item>
-          <h5><mn-icon :name="icons.contactOutline"></mn-icon> 基本用法</h5>
+          <mn-card-body>
+            <img src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=&w=24&h=24" alt="" width="24px" height="24px" style="vertical-align: bottom;"> image 24px
+          </mn-card-body>
+        </mn-card-item>
+        <mn-card-item>
+          <mn-card-body>
+            <img src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=&w=24&h=24" alt="" width="24px" height="24px" style="vertical-align: bottom;"> <small>image 16px</small>
+          </mn-card-body>
+        </mn-card-item>
+        <mn-card-item>
+          <mn-card-body style="line-height: 40px; font-size: 20px;">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=&w=40&h=40" alt="" width="40px" height="40px" style="vertical-align: bottom;"> image 16px
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+    </mn-section>
+
+    <mn-section>
+      <mn-card>
+        <mn-card-item>
+          <h5><mn-icon :name="icons.contactOutline"></mn-icon> 基本用法 Baseline group</h5>
         </mn-card-item>
         <mn-card-item>
           <mn-card-body>
@@ -21,7 +41,7 @@
         <mn-card-item>
           <mn-card-body>
             <h1>
-              <mn-icon :name="icons.contactOutline" vertical="-25px"></mn-icon> 你好
+              <mn-icon :name="icons.contactOutline" :scale="2.25"></mn-icon> 你好
             </h1>
           </mn-card-body>
         </mn-card-item>
@@ -32,21 +52,19 @@
     </mn-section>
 
     <mn-section>
+      <mn-section-note>Loading status icon</mn-section-note>
       <mn-card>
         <mn-card-item>
-          <h5><mn-icon :name="icons.contactOutline"></mn-icon> 放大缩小</h5>
+          <mn-card-body>
+            <mn-icon :name="icons.contactOutline" :loading="loading"></mn-icon> 通讯录
+          </mn-card-body>
         </mn-card-item>
         <mn-card-item>
           <mn-card-body>
-            <mn-icon :name="icons.contactOutline" :scale="0.6" vertical="-6px"></mn-icon> 你好
-            <mn-icon :name="icons.contactOutline" vertical="-2px"></mn-icon> 你好
-            <mn-icon :name="icons.contactOutline" :scale="2" vertical="10px"></mn-icon> 你好
+            <mn-btn theme="primary" size="sm" @click="loading = !loading">{{ loading ? 'close' : 'open' }} icon loading</mn-btn>
           </mn-card-body>
         </mn-card-item>
       </mn-card>
-      <mn-section-note>
-        <div>@todo 目前仅能通过 vertical 属性来调整衬线对齐</div>
-      </mn-section-note>
     </mn-section>
 
   </page>
@@ -65,7 +83,8 @@
       return {
         icons: {
           contactOutline: require('vue-human-icons/js/ios/contact-outline')
-        }
+        },
+        loading: false
       }
     }
   }
