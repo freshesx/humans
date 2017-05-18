@@ -70,13 +70,15 @@
       },
       onEnd (event) {
         this.enableAnimation = true
+        const leftPadding = 16
+        const rightPadding = this.width - this.btnWidth - 16
 
-        if (this.x < 16) {
-          this.x = 16
+        if (this.x < leftPadding || (this.x !== leftPadding && this.x <= this.width / 2 - this.btnWidth / 2)) {
+          this.x = leftPadding
         }
 
-        if (this.x > this.width - this.btnWidth - 16) {
-          this.x = this.width - this.btnWidth - 16
+        if (this.x > rightPadding || (this.x !== rightPadding && this.x > this.width / 2 - this.btnWidth / 2)) {
+          this.x = rightPadding
         }
 
         if (this.y < 16) {
