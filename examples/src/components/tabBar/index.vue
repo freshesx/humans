@@ -9,6 +9,7 @@
       <mn-tab-bar-item :icon="active === key ? item.activeIcon : item.icon"
         :title="item.title"
         :active="active === key"
+        :badge="item.badge"
         @click="active = key"
         v-for="(item, key) in menu" :key="key"></mn-tab-bar-item>
     </mn-tab-bar>
@@ -29,11 +30,18 @@
     data () {
       return {
         active: 0,
-        menu: [
+        newMessageBadge: 2,
+        newMomentBadge: 20
+      }
+    },
+    computed: {
+      menu () {
+        return [
           {
             title: 'WeChat',
             icon: require('vue-human-icons/js/ios/chatbubble-outline'),
-            activeIcon: require('vue-human-icons/js/ios/chatbubble')
+            activeIcon: require('vue-human-icons/js/ios/chatbubble'),
+            badge: this.newMessageBadge
           },
           {
             title: 'Contact',
@@ -43,7 +51,8 @@
           {
             title: 'Moments',
             icon: require('vue-human-icons/js/ios/world-outline'),
-            activeIcon: require('vue-human-icons/js/ios/world')
+            activeIcon: require('vue-human-icons/js/ios/world'),
+            badge: this.newMomentBadge
           },
           {
             title: 'Mine',
