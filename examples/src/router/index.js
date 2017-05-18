@@ -192,11 +192,14 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  // Clear popups when route changed
   closeAllPopups()
+  // Next
   next()
 })
 
 router.afterEach(route => {
+  // Change document title
   require(['../components/base/menu'], resolve => {
     const menu = resolve.default
     let title = defaultTitle
