@@ -1,6 +1,8 @@
 <template>
   <div class="mn-tab-bar-item" :class="{ 'is-active': active }" :style="{ width: computedWidth }" @click="click">
     <slot>
+      <div class="mn-tab-bar-badge" :class="{ 'is-more': badge && badge > 9 }"
+        v-if="badge && badge > 0">{{ badge && badge <= 9 ? badge : '' }}</div>
       <div class="mn-tab-bar-icon">
         <mn-icon :name="icon"></mn-icon>
       </div>
@@ -25,7 +27,10 @@
     props: {
       icon: null,
       title: String,
-      active: Boolean
+      active: Boolean,
+      badge: {
+        type: Number
+      }
     },
     methods: {
       click (event) {
@@ -47,6 +52,7 @@
   @import "../../scss/vars.scss";
 
   .mn-tab-bar-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,11 +62,30 @@
 
     // @todo 增加 scss 配置至 vars
     &.is-active {
-      color: $pink;
+      color: darken($green, 10%);
     }
   }
 
   .mn-tab-bar-title {
     font-size: 12px;
+  }
+
+  .mn-tab-bar-badge {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background: $pink;
+    font-size: 10px;
+    color: #fff;
+    top: 3px;
+    left: 50%;
+    margin-left: 6px;
+
+    &.is-more {
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+    }
   }
 </style>
