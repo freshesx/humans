@@ -1,14 +1,11 @@
 <template>
   <div class="mn-dashboard-breadcrumb">
     <div class="mn-dashboard-breadcrumb-btn" ref="btn" @touchstart="onStart" @touchmove="onMove" @touchend="onEnd" :class="{ 'is-animation': enableAnimation }" :style="{ top: `${y}px`, left: `${x}px` }">
-      <div class="mn-dashboard-breadcrumb-item" @click="onBack" v-if="!loading">
-        <mn-icon :name="isRootRoute ? icons.home : icons.back" vertical="-2px"></mn-icon>
-      </div>
-      <div class="mn-dashboard-breadcrumb-item" v-if="loading">
-        <mn-loading-icon></mn-loading-icon>
+      <div class="mn-dashboard-breadcrumb-item" @click="onBack">
+        <mn-icon :name="isRootRoute ? icons.home : icons.back" :loading="backLoading"></mn-icon>
       </div>
       <div class="mn-dashboard-breadcrumb-item" @click="onOpen">
-        <mn-icon :name="icons.keypad" vertical="-2px"></mn-icon>
+        <mn-icon :name="icons.keypad" :loading="menuLoading"></mn-icon>
       </div>
     </div>
   </div>
@@ -31,7 +28,8 @@
     data () {
       return {
         enableAnimation: false,
-        loading: false,
+        backLoading: false,
+        menuLoading: false,
         x: 0,
         y: 0,
         width: 0,
@@ -90,7 +88,7 @@
         }
       },
       onBack () {
-        this.openLoading()
+        this.openLoading('backLoading')
         if (this.isRootRoute) {
           this.$router.push({ name: 'homepage' })
         } else {
@@ -98,12 +96,13 @@
         }
       },
       onOpen () {
+        this.openLoading('menuLoading')
         this.$emit('update:show', true)
       },
-      openLoading (time = 600) {
-        this.loading = true
+      openLoading (name, time = 600) {
+        this[name] = true
         setTimeout(() => {
-          this.loading = false
+          this[name] = false
         }, time)
       },
       setOffset () {
