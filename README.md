@@ -90,6 +90,9 @@ $ vue init HumanUI/webpack my-project
 ## Develop vue-human in your computer
 
 ``` bash
+# Copy env file
+$ cp ./examples/src/env/app.js ./examples/src/env/local.js
+
 # Open the vue-human folder
 # Then yarn install
 $ yarn install
