@@ -21,7 +21,7 @@
         <mn-card-item>
           <mn-card-body>
             <mn-btn theme="primary" :icon="icons.home" @click="onPressButton">按钮</mn-btn>
-            <mn-btn theme="secondary">按钮</mn-btn>
+            <mn-btn theme="secondary" @click="onPressButton">按钮 glass</mn-btn>
             <mn-btn theme="inverse">按钮</mn-btn>
             <mn-btn theme="warning">按钮</mn-btn>
             <mn-btn theme="error">按钮</mn-btn>
