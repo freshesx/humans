@@ -77,6 +77,8 @@
     top: 3px;
     left: 50%;
     margin-left: 6px;
+    line-height: 18px;
+    text-align: center;
 
     &.is-more {
       width: 10px;
