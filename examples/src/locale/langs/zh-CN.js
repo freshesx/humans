@@ -14,7 +14,8 @@ export default {
         scroller: '滚动条',
         container: '页面容器',
         column: '12 列布局',
-        image: '图片'
+        image: '图片',
+        card: '卡片列表'
       },
       popup: {
         popup: '浮层',

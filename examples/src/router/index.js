@@ -180,6 +180,11 @@ const router = new VueRouter({
           path: '/menu',
           name: 'menu',
           component: resolve => { require(['../components/menu'], resolve) }
+        },
+        {
+          path: '/card',
+          name: 'card',
+          component: resolve => { require(['../components/card'], resolve) }
         }
       ]
     }

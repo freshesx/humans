@@ -32,6 +32,11 @@ export default [
         name: 'Column',
         small: Vue.t('examples.submenus.core.column'),
         push: { name: 'column' }
+      },
+      {
+        name: 'Card',
+        small: Vue.t('examples.submenus.core.card'),
+        push: { name: 'card' }
       }
     ]
   },
