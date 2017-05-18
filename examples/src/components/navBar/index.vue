@@ -9,6 +9,9 @@
     <mn-nav-bar>
       <mn-nav-bar-back slot="prefix">返回</mn-nav-bar-back>
       <mn-nav-bar-title slot="body">HumanUI</mn-nav-bar-title>
+      <div slot="suffix">
+        <mn-icon :name="icons.keypad"></mn-icon>
+      </div>
     </mn-nav-bar>
   </page>
 </template>
@@ -23,6 +26,13 @@
       ...core.map(),
       ...navBar.map(),
       page
+    },
+    data () {
+      return {
+        icons: {
+          keypad: require('vue-human-icons/js/ios/keypad')
+        }
+      }
     }
   }
 </script>
