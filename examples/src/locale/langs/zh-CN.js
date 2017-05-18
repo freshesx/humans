@@ -44,7 +44,8 @@ export default {
         tag: '标签',
         searchBar: '搜索条',
         rate: '评分',
-        tabBar: '底部栏'
+        tabBar: '底部栏',
+        navBar: '顶部栏'
       }
     }
   }

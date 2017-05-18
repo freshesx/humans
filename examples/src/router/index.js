@@ -168,6 +168,11 @@ const router = new VueRouter({
           path: '/tab-bar',
           name: 'tabBar',
           component: resolve => { require(['../components/tabBar'], resolve) }
+        },
+        {
+          path: '/nav-bar',
+          name: 'navBar',
+          component: resolve => { require(['../components/navBar'], resolve) }
         }
       ]
     }
