@@ -2,7 +2,7 @@
   <div class="mn-dashboard-breadcrumb">
     <div class="mn-dashboard-breadcrumb-btn" ref="btn" @touchstart="onStart" @touchmove="onMove" @touchend="onEnd" :class="{ 'is-animation': enableAnimation }" :style="{ top: `${y}px`, left: `${x}px` }">
       <div class="mn-dashboard-breadcrumb-item" @click="onBack" v-if="!loading">
-        <mn-icon :name="icons.back" vertical="-2px"></mn-icon>
+        <mn-icon :name="isRootRoute ? icons.home : icons.back" vertical="-2px"></mn-icon>
       </div>
       <div class="mn-dashboard-breadcrumb-item" v-if="loading">
         <mn-loading-icon></mn-loading-icon>
@@ -37,10 +37,17 @@
         width: 0,
         height: 0,
         btnWidth: 118,
+        isRootRoute: true,
         icons: {
           back: require('vue-human-icons/js/ios/arrow-back'),
+          home: require('vue-human-icons/js/android/home'),
           keypad: require('vue-human-icons/js/ios/keypad')
         }
+      }
+    },
+    watch: {
+      $route () {
+        this.isRootRoute = false
       }
     },
     methods: {
@@ -82,7 +89,11 @@
       },
       onBack () {
         this.openLoading()
-        this.$router.go(-1)
+        if (this.isRootRoute) {
+          this.$router.push({ name: 'homepage' })
+        } else {
+          this.$router.go(-1)
+        }
       },
       onOpen () {
         this.$emit('update:show', true)
@@ -109,8 +120,6 @@
           this.enableAnimation = true
         }, 2000)
       })
-
-      console.log(this.$route)
     },
     beforeDestroy () {
       window.removeEventListener('resize', this.setOffset)
