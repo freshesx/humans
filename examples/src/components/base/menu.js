@@ -174,6 +174,11 @@ export default {
               name: 'navBar',
               small: this.$t('examples.submenus.components.navBar'),
               push: { name: 'navBar' }
+            },
+            {
+              name: 'menu',
+              small: this.$t('examples.submenus.components.menu'),
+              push: { name: 'menu' }
             }
           ]
         }

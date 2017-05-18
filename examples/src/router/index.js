@@ -173,6 +173,11 @@ const router = new VueRouter({
           path: '/nav-bar',
           name: 'navBar',
           component: resolve => { require(['../components/navBar'], resolve) }
+        },
+        {
+          path: '/menu',
+          name: 'menu',
+          component: resolve => { require(['../components/menu'], resolve) }
         }
       ]
     }
