@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-card" :class="[ `is-${theme}`, { 'is-rounded': rounded } ]">
+  <div class="mn-card" :class="[ `is-${theme}`, { 'is-rounded': rounded, 'is-backdrop': enableBackdrop } ]">
     <slot></slot>
   </div>
 </template>
@@ -19,6 +19,16 @@
       },
 
       rounded: Boolean
+    },
+    data () {
+      return {
+        enableBackdrop: false
+      }
+    },
+    mounted () {
+      if (this.$el && this.$el.style && this.$el.style.hasOwnProperty('webkitBackdropFilter')) {
+        this.enableBackdrop = true
+      }
     }
   })
 </script>
@@ -48,6 +58,11 @@
     &.is-inverse {
       background-color: #333;
       color: #fff;
+    }
+
+    &.is-glass.is-backdrop {
+      background: rgba(255, 255, 255, 0.8);
+      -webkit-backdrop-filter: blur(20px);
     }
   }
 
