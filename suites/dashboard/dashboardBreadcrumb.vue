@@ -1,10 +1,12 @@
 <template>
   <div class="mn-dashboard-breadcrumb">
     <div class="mn-dashboard-breadcrumb-btn" style="left: 1rem;">
-      <mn-icon :name="icons.back"></mn-icon>
-    </div>
-    <div class="mn-dashboard-breadcrumb-btn" style="right: 1rem;">
-      <mn-icon :name="icons.keypad"></mn-icon>
+      <div class="mn-dashboard-breadcrumb-item" @click="$router.go(-1)">
+        <mn-icon :name="icons.back" vertical="-2px"></mn-icon>
+      </div>
+      <div class="mn-dashboard-breadcrumb-item" @click="onOpen">
+        <mn-icon :name="icons.keypad" vertical="-2px"></mn-icon>
+      </div>
     </div>
   </div>
 </template>
@@ -28,6 +30,12 @@
           keypad: require('vue-human-icons/js/ios/keypad')
         }
       }
+    },
+    methods: {
+      onOpen () {
+        console.log('nihao')
+        this.$emit('update:show', true)
+      }
     }
   })
 </script>
@@ -46,12 +54,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    bottom: 2rem;
+    bottom: 1rem;
     min-width: 44px;
     height: 44px;
     border-radius: 22px;
     background: rgba(0, 0, 0, 0.8);
     color: #fff;
-    padding: 0.5rem;
+  }
+
+  .mn-dashboard-breadcrumb-item {
+    padding: 0 1.2rem;
+
+    & + & {
+      border-left: solid 1px rgba(255, 255, 255, 0.1);
+    }
   }
 </style>
