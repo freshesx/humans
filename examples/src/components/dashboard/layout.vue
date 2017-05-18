@@ -7,7 +7,7 @@
 
     <sidebar slot="sidebar"></sidebar>
 
-    <navbar slot="navbar"></navbar>
+    <breadcrumb slot="navbar"></breadcrumb>
 
     <mn-dashboard-body>
       <slot>
@@ -22,13 +22,15 @@
   import dashboard from 'vue-human/suites/dashboard'
   import sidebar from './sidebar'
   import navbar from './navbar'
+  import breadcrumb from './breadcrumb'
 
   export default {
     components: {
       ...core.map(),
       ...dashboard.map(),
       sidebar,
-      navbar
+      navbar,
+      breadcrumb
     },
     data () {
       return {
