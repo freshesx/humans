@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { closeAllPopups } from 'vue-human/suites/popup/storage'
 
+const defaultTitle = document.title
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -187,6 +189,25 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   closeAllPopups()
   next()
+})
+
+router.afterEach(route => {
+  require(['../components/base/menu'], resolve => {
+    const menu = resolve.default
+    let title = defaultTitle
+
+    if (route.name) {
+      menu.forEach(item => {
+        item.children.forEach(item => {
+          if (item.push && item.push.name && item.push.name === route.name) {
+            title = item.small
+          }
+        })
+      })
+    }
+
+    document.title = title
+  })
 })
 
 export default router
