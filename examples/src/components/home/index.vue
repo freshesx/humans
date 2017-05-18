@@ -38,10 +38,14 @@
   import menu from '../base/menu'
 
   export default {
-    mixins: [ menu ],
     components: {
       ...core.map(),
       page
+    },
+    data () {
+      return {
+        menu
+      }
     }
   }
 </script>

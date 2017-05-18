@@ -36,7 +36,6 @@
   import storage from './storage'
 
   export default {
-    mixins: [ menu ],
     components: {
       ...core.map(),
       ...dashboard.map(),
@@ -49,7 +48,8 @@
           logo: require('vue-human-icons/js/ios/analytics')
         },
         search: undefined,
-        storage
+        storage,
+        menu
       }
     }
   }
