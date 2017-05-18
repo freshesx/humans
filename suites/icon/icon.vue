@@ -1,33 +1,39 @@
 <template>
-  <span
-    v-html="svg"
-    class="mn-icon"
-    :style="{ width: `${computedWidth}px`, height: `${computedHeight}px`, 'vertical-align': vertical }"></span>
+  <span class="mn-icon" :style="{ width: `${computedWidth}px`, height: `${computedHeight}px` }">
+      <span class="mn-icon-svg" v-html="svg" v-if="!loading" :style="{ width: `${width * svgScale}px`, height: `${height * svgScale}px` }"></span>
+      <mn-loading-icon v-if="loading"></mn-loading-icon>
+    </span>
 </template>
 
 <script>
   import Element from '../../utils/Element'
+  import loadingIconElement from '../loadingIcon/loadingIcon'
 
   export default new Element({
     name: 'mn-icon',
+    components: {
+      ...loadingIconElement.inject()
+    },
     props: {
-      name: {
-        type: [String, Object],
-        required: true
-      },
+      name: null,
       width: {
         type: Number,
-        default: 20
+        default: 24
       },
       height: {
         type: Number,
-        default: 20
+        default: 24
       },
       scale: {
         type: Number,
         default: 1
       },
-      vertical: String
+      svgScale: {
+        type: Number,
+        default: 1
+      },
+      vertical: String,
+      loading: Boolean
     },
     computed: {
       computedWidth () {
@@ -55,7 +61,13 @@
   .mn-icon {
     display: inline-block;
     fill: currentColor;
-    vertical-align: baseline;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .mn-icon-svg {
+    width: 1.5rem;
+    height: 1.5rem;
 
     > svg {
       vertical-align: top;
