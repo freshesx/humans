@@ -43,3 +43,13 @@ body {
 [tabindex="-1"]:focus {
   outline: none !important;
 }
+
+html.has-full {
+  &,
+  body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
