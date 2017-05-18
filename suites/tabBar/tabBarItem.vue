@@ -12,10 +12,6 @@
 </template>
 
 <script>
-  // @todo: 增加对于超链接的支持
-  // @todo: 增加点击反馈
-  // @todo: 增加 loading 的控制
-  // @todo: 增加 badge 的支持
   import Element from '../../utils/Element'
   import iconElement from '../icon/icon'
 
