@@ -81,6 +81,8 @@ export default {
         locale.translation(file => {
           resolve(file.default)
         })
+      } else if (locale.translation.default) {
+        resolve(locale.translation.default)
       } else {
         resolve(locale.translation)
       }
