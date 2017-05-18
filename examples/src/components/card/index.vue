@@ -3,7 +3,7 @@
     <mn-letter>
       <mn-letter-body>
         <h1>Card</h1>
-        <small>与其他的组件库相比，Card 是 Human 中最重要的一个组件。</small>
+        <small><mn-tag name="pink" size="sm">H!</mn-tag> 与其他的组件库相比，Card 是 Human 中最重要的一个组件。</small>
       </mn-letter-body>
     </mn-letter>
 
@@ -116,13 +116,13 @@
 
 <script>
   import core from 'vue-human/suites/core'
-  import image from 'vue-human/suites/image'
+  import tag from 'vue-human/suites/tag'
   import page from '../base/page'
 
   export default {
     components: {
       ...core.map(),
-      ...image.map(),
+      ...tag.map(),
       page
     }
   }

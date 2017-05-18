@@ -36,7 +36,12 @@ export default [
       {
         name: 'Card',
         small: Vue.t('examples.submenus.core.card'),
-        push: { name: 'card' }
+        push: { name: 'card' },
+        badge: {
+          content: 'H!',
+          size: 'sm',
+          theme: 'pink'
+        }
       }
     ]
   },
