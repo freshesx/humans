@@ -129,12 +129,16 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars.scss";
+  @import "../../scss/vars";
+  @import "../../scss/mixins/media";
 
   .mn-dashboard-breadcrumb {
-    // position: relative;
     width: 100%;
     height: 0;
+
+    @include min-screen(desktop) {
+      display: none;
+    }
   }
 
   .mn-dashboard-breadcrumb-btn {
