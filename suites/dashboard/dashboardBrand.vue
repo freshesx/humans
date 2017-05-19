@@ -13,10 +13,10 @@
 </script>
 
 <style lang="scss">
-  @import "./theme";
+  $-dashboard-brand-width: 220px;
 
   .mn-dashboard-brand {
-    width: $-dashboard-sidebar-width;
+    width: $-dashboard-brand-width;
     flex-shrink: 0;
   }
 </style>
