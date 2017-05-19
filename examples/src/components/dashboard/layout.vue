@@ -7,7 +7,7 @@
 
     <sidebar slot="sidebar"></sidebar>
 
-    <breadcrumb slot="navbar"></breadcrumb>
+    <mn-assistive-bar slot="navbar" :show.sync="showSidebar"></mn-assistive-bar>
 
     <mn-dashboard-body>
       <slot>
@@ -20,18 +20,19 @@
 <script>
   import core from 'vue-human/suites/core'
   import dashboard from 'vue-human/suites/dashboard'
+  import assistiveBar from 'vue-human/suites/assistiveBar'
   import sidebar from './sidebar'
-  import breadcrumb from './breadcrumb'
 
   export default {
     components: {
       ...core.map(),
       ...dashboard.map(),
-      sidebar,
-      breadcrumb
+      ...assistiveBar.map(),
+      sidebar
     },
     data () {
       return {
+        showSidebar: false,
         icons: {
           logo: require('vue-human-icons/js/ios/analytics')
         }
