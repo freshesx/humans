@@ -14,7 +14,7 @@ const router = new VueRouter({
     },
     {
       path: '/dashboard',
-      component: resolve => { require(['../components/dashboard/layout'], resolve) },
+      component: resolve => { require(['../components/base'], resolve) },
       children: [
         {
           path: '/',

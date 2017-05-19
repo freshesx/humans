@@ -53,7 +53,7 @@
   import searchBar from 'vue-human/suites/searchBar'
   import sideBar from 'vue-human/suites/sideBar'
   import input from 'vue-human/suites/input'
-  import menu from '../base/menu'
+  import menu from './menu'
 
   export default {
     components: {
