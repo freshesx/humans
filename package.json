@@ -110,8 +110,8 @@
   },
   "browserslist": [
     "last 2 versions",
-    "iOS >= 8",
-    "Android >= 4.4",
+    "iOS >= 7.1",
+    "Android >= 4.3",
     "Samsung >= 4",
     "not ie <= 10",
     "not Opera <= 200"
