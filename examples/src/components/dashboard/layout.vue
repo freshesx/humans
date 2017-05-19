@@ -6,18 +6,8 @@
       <mn-icon :name="icons.logo" :width="44"></mn-icon>
     </mn-dashboard-brand>
 
-    <!-- Body -->
-    <mn-dashboard-body>
-      <slot>
-        <router-view></router-view>
-      </slot>
-    </mn-dashboard-body>
-
-    <!-- Assistive Bar -->
-    <mn-assistive-bar slot="navbar" :show.sync="showSidebar"></mn-assistive-bar>
-
     <!-- Side Bar -->
-    <mn-side-bar slot="sidebar" :show.sync="showSidebar">
+    <mn-side-bar slot="sideBar" :show.sync="showSidebar">
       <mn-scroller name="dashboard-side">
         <mn-section class="has-one-padding-all">
           <mn-search-bar>
@@ -43,6 +33,16 @@
         </mn-section>
       </mn-scroller>
     </mn-side-bar>
+
+    <!-- Body -->
+    <mn-dashboard-body>
+      <slot>
+        <router-view></router-view>
+      </slot>
+    </mn-dashboard-body>
+
+    <!-- Assistive Bar -->
+    <mn-assistive-bar slot="footer" :show.sync="showSidebar"></mn-assistive-bar>
   </mn-dashboard>
 </template>
 
