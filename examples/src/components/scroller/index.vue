@@ -35,15 +35,9 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
-  import page from '../base/page'
   import Confirm from 'vue-human/utils/Confirm'
 
   export default {
-    components: {
-      ...core.map(),
-      page
-    },
     methods: {
       onOpenConfirm () {
         Confirm.create({ description: '观察你的滚动条' }).show()

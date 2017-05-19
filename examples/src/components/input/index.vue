@@ -35,15 +35,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import input from 'vue-human/suites/input'
-  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
-      ...input.map(),
-      page
+      ...input.map()
     },
     data () {
       return {

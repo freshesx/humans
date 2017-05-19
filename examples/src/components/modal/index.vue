@@ -36,15 +36,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
-  import page from '../base/page'
   import modal from 'vue-human/suites/modal'
 
   export default {
     components: {
-      ...core.map(),
-      ...modal.map(),
-      page
+      ...modal.map()
     },
     data () {
       return {

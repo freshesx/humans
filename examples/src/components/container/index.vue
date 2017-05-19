@@ -29,15 +29,9 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
-  import page from '../base/page'
   import Human from 'vue-human'
 
   export default {
-    components: {
-      ...core.map(),
-      page
-    },
     data () {
       return {
         screens: Human.$screens

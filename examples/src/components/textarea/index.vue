@@ -37,18 +37,14 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import textarea from 'vue-human/suites/textarea'
-  import page from '../base/page'
   import required from 'vuelidate/lib/validators/required'
   import maxLength from 'vuelidate/lib/validators/maxLength'
   import Message from 'vue-human/utils/Message'
 
   export default {
     components: {
-      ...core.map(),
-      ...textarea.map(),
-      page
+      ...textarea.map()
     },
     validations: {
       models: {

@@ -27,15 +27,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import paginate from 'vue-human/suites/paginate'
-  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
-      ...paginate.map(),
-      page
+      ...paginate.map()
     },
     data () {
       return {

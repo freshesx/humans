@@ -22,15 +22,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import image from 'vue-human/suites/image'
-  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
-      ...image.map(),
-      page
+      ...image.map()
     },
     data () {
       return {

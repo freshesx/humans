@@ -24,16 +24,12 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import cell from 'vue-human/suites/cell'
-  import page from '../base/page'
   import { getDistrict } from './api'
 
   export default {
     components: {
-      ...core.map(),
-      ...cell.map(),
-      page
+      ...cell.map()
     },
     data () {
       return {

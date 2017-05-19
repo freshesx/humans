@@ -17,15 +17,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import tabBar from 'vue-human/suites/tabBar'
-  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
-      ...tabBar.map(),
-      page
+      ...tabBar.map()
     },
     data () {
       return {

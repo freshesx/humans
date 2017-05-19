@@ -64,17 +64,13 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import check from 'vue-human/suites/check'
-  import page from '../base/page'
   import required from 'vuelidate/lib/validators/required'
   import Message from 'vue-human/utils/Message'
 
   export default {
     components: {
-      ...core.map(),
-      ...check.map(),
-      page
+      ...check.map()
     },
     validations: {
       models: {

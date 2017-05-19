@@ -36,17 +36,13 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import switchSuites from 'vue-human/suites/switch'
-  import page from '../base/page'
   import required from 'vuelidate/lib/validators/required'
   import Message from 'vue-human/utils/Message'
 
   export default {
     components: {
-      ...core.map(),
-      ...switchSuites.map(),
-      page
+      ...switchSuites.map()
     },
     validations: {
       models: {

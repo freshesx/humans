@@ -24,15 +24,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import counter from 'vue-human/suites/counter'
-  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
-      ...counter.map(),
-      page
+      ...counter.map()
     },
     data () {
       return {

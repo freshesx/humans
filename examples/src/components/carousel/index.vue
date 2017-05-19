@@ -31,15 +31,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import carousel from 'vue-human/suites/carousel'
-  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
-      ...carousel.map(),
-      page
+      ...carousel.map()
     },
     data () {
       return {

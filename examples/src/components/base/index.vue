@@ -47,7 +47,6 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import dashboard from 'vue-human/suites/dashboard'
   import assistiveBar from 'vue-human/suites/assistiveBar'
   import searchBar from 'vue-human/suites/searchBar'
@@ -57,7 +56,6 @@
 
   export default {
     components: {
-      ...core.map(),
       ...dashboard.map(),
       ...assistiveBar.map(),
       ...searchBar.map(),

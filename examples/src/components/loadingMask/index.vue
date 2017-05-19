@@ -17,15 +17,9 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
-  import page from '../base/page'
   import LoadingMask from 'vue-human/utils/LoadingMask'
 
   export default {
-    components: {
-      ...core.map(),
-      page
-    },
     methods: {
       onOpenLoadingMask () {
         const loadingMask = LoadingMask.create().show()

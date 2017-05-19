@@ -71,14 +71,7 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
-  import page from '../base/page'
-
   export default {
-    components: {
-      ...core.map(),
-      page
-    },
     data () {
       return {
         icons: {

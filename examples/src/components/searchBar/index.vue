@@ -19,17 +19,13 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import searchBar from 'vue-human/suites/searchBar'
   import input from 'vue-human/suites/input'
-  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
       ...searchBar.map(),
-      ...input.map(),
-      page
+      ...input.map()
     },
     data () {
       return {

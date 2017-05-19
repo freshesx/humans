@@ -67,19 +67,15 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import input from 'vue-human/suites/input'
-  import page from '../base/page'
   import datetime from 'vue-human/suites/datetime'
   import Datetime from 'vue-human/utils/Datetime'
   import DatetimeRange from 'vue-human/utils/DatetimeRange'
 
   export default {
     components: {
-      ...core.map(),
       ...input.map(),
-      ...datetime.map(),
-      page
+      ...datetime.map()
     },
     data () {
       return {

@@ -33,15 +33,9 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
-  import page from '../base/page'
   import menu from '../base/menu'
 
   export default {
-    components: {
-      ...core.map(),
-      page
-    },
     data () {
       return {
         menu

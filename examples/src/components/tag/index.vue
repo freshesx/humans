@@ -38,15 +38,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import tag from 'vue-human/suites/tag'
-  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
-      ...tag.map(),
-      page
+      ...tag.map()
     },
     data () {
       return {

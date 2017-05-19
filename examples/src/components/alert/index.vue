@@ -17,15 +17,9 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
-  import page from '../base/page'
   import Alert from 'vue-human/utils/Alert'
 
   export default {
-    components: {
-      ...core.map(),
-      page
-    },
     methods: {
       onOpenAlert () {
         Alert.create().show()

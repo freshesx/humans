@@ -22,15 +22,9 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
-  import page from '../base/page'
   import Message from 'vue-human/utils/Message'
 
   export default {
-    components: {
-      ...core.map(),
-      page
-    },
     data () {
       return {
         types: ['Default', 'Primary', 'Warning', 'Error']

@@ -66,17 +66,13 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import radio from 'vue-human/suites/radio'
-  import page from '../base/page'
   import required from 'vuelidate/lib/validators/required'
   import Message from 'vue-human/utils/Message'
 
   export default {
     components: {
-      ...core.map(),
-      ...radio.map(),
-      page
+      ...radio.map()
     },
     validations: {
       models: {

@@ -7,13 +7,3 @@
     </mn-scroller>
   </mn-page>
 </template>
-
-<script>
-  import core from 'vue-human/suites/core'
-
-  export default {
-    components: {
-      ...core.map()
-    }
-  }
-</script>

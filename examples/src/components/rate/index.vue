@@ -25,15 +25,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import rate from 'vue-human/suites/rate'
-  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
-      ...rate.map(),
-      page
+      ...rate.map()
     },
     data () {
       return {

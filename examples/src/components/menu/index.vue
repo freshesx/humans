@@ -100,15 +100,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import menu from 'vue-human/suites/menu'
-  import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
-      ...menu.map(),
-      page
+      ...menu.map()
     }
   }
 </script>

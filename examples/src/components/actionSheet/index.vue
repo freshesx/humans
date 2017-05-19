@@ -32,13 +32,11 @@
 </template>
 
 <script>
-  import core from 'vue-human/suites/core'
   import actionSheet from 'vue-human/suites/actionSheet'
   import page from '../base/page'
 
   export default {
     components: {
-      ...core.map(),
       ...actionSheet.map(),
       page
     },
