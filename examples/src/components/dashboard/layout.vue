@@ -21,7 +21,6 @@
   import core from 'vue-human/suites/core'
   import dashboard from 'vue-human/suites/dashboard'
   import sidebar from './sidebar'
-  import navbar from './navbar'
   import breadcrumb from './breadcrumb'
 
   export default {
@@ -29,7 +28,6 @@
       ...core.map(),
       ...dashboard.map(),
       sidebar,
-      navbar,
       breadcrumb
     },
     data () {
