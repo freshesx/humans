@@ -3,16 +3,15 @@
     <!-- Header -->
     <div class="mn-dashboard-header">
       <slot name="brand"></slot>
-      <slot name="toolbar"></slot>
     </div>
     <!-- Body -->
     <div class="mn-dashboard-mainarea">
-      <slot name="sidebar"></slot>
+      <slot name="sideBar"></slot>
       <slot></slot>
     </div>
-    <!-- Navbar -->
-    <div>
-      <slot name="navbar"></slot>
+    <!-- footer -->
+    <div class="mn-dashboard-footer">
+      <slot name="footer"></slot>
     </div>
   </div>
 </template>
