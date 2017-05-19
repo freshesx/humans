@@ -1,10 +1,10 @@
 <template>
-  <div class="mn-dashboard-breadcrumb">
-    <div class="mn-dashboard-breadcrumb-btn" ref="btn" @touchstart="onStart" @touchmove="onMove" @touchend="onEnd" :class="{ 'is-animation': enableAnimation }" :style="{ top: `${y}px`, left: `${x}px` }">
-      <div class="mn-dashboard-breadcrumb-item" @click="onBack">
+  <div class="mn-assistive-bar">
+    <div class="mn-assistive-bar-btn" ref="btn" @touchstart="onStart" @touchmove="onMove" @touchend="onEnd" :class="{ 'is-animation': enableAnimation }" :style="{ top: `${y}px`, left: `${x}px` }">
+      <div class="mn-assistive-bar-item" @click="onBack">
         <mn-icon :name="isRootRoute ? icons.home : icons.back" :loading="backLoading"></mn-icon>
       </div>
-      <div class="mn-dashboard-breadcrumb-item" @click="onOpen">
+      <div class="mn-assistive-bar-item" @click="onOpen">
         <mn-icon :name="icons.keypad" :loading="menuLoading"></mn-icon>
       </div>
     </div>
@@ -17,7 +17,7 @@
   import loadingIconElement from '../loadingIcon/loadingIcon'
 
   export default new Element({
-    name: 'mn-dashboard-breadcrumb',
+    name: 'mn-assistive-bar',
     components: {
       ...iconElement.inject(),
       ...loadingIconElement.inject()
@@ -132,7 +132,7 @@
   @import "../../scss/vars";
   @import "../../scss/mixins/media";
 
-  .mn-dashboard-breadcrumb {
+  .mn-assistive-bar {
     width: 100%;
     height: 0;
 
@@ -141,7 +141,7 @@
     }
   }
 
-  .mn-dashboard-breadcrumb-btn {
+  .mn-assistive-bar-btn {
     position: fixed;
     display: flex;
     align-items: center;
@@ -159,7 +159,7 @@
     }
   }
 
-  .mn-dashboard-breadcrumb-item {
+  .mn-assistive-bar-item {
     padding: 0 1.2rem;
 
     & + & {
