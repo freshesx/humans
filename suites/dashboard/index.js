@@ -4,7 +4,6 @@ import dashboardMenu from './dashboardMenu'
 import dashboardSidebar from './dashboardSidebar'
 import dashboardBody from './dashboardBody'
 import dashboardBrand from './dashboardBrand'
-import dashboardToolbar from './dashboardToolbar'
 import dashboardBreadcrumb from './dashboardBreadcrumb'
 
 export default new Suites([
@@ -13,6 +12,5 @@ export default new Suites([
   dashboardSidebar,
   dashboardBody,
   dashboardBrand,
-  dashboardToolbar,
   dashboardBreadcrumb
 ])
