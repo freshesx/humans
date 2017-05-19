@@ -1,11 +1,11 @@
 <template>
-  <ul class="mn-dashboard-menu" :class="{ 'is-root': level > 0 }">
+  <ul class="mn-side-bar-menu" :class="{ 'is-root': level > 0 }">
     <li v-for="(item, key) in menu" :key="key">
-      <div class="mn-dashboard-link"
+      <div class="mn-side-bar-link"
         :class="{ 'is-link': item.push, 'is-active': item.push && matchActive(item.push) }"
         @click="$router.push(item.push)">
-        <div class="mn-dashboard-body">{{ item.name }}</div>
-        <div class="mn-dashboard-action">
+        <div class="mn-side-bar-title">{{ item.name }}</div>
+        <div class="mn-side-bar-badge">
           <mn-tag v-if="item.badge"
             :name="item.badge.theme"
             :bg="item.badge.bg"
@@ -14,20 +14,20 @@
         </div>
       </div>
       <!-- Children -->
-      <mn-dashboard-menu :menu="item.children" :level="level + 1" v-if="item.children"></mn-dashboard-menu>
+      <mn-side-bar-menu :menu="item.children" :level="level + 1" v-if="item.children"></mn-side-bar-menu>
     </li>
   </ul>
 </template>
 
 <script>
   import Element from '../../utils/Element'
-  import dashboardMenu from './dashboardMenu'
+  import sideBarMenu from './sideBarMenu'
   import tag from '../tag/tag'
 
   export default new Element({
-    name: 'mn-dashboard-menu',
+    name: 'mn-side-bar-menu',
     components: {
-      [dashboardMenu.name]: dashboardMenu,  // For Recursive Components
+      [sideBarMenu.name]: sideBarMenu,  // For Recursive Components
       ...tag.inject()
     },
     props: {
@@ -52,7 +52,7 @@
 </script>
 
 <style lang="scss">
-  ul.mn-dashboard-menu {
+  ul.mn-side-bar-menu {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -61,9 +61,10 @@
     }
   }
 
-  .mn-dashboard-link {
+  .mn-side-bar-link {
     display: flex;
     padding: 1rem 1rem;
+    justify-content: space-between;
 
     &.is-link {
       cursor: pointer;
@@ -77,19 +78,19 @@
     }
   }
 
-  .mn-dashboard-body {
+  .mn-side-bar-title {
   }
 
-  .mn-dashboard-action {
+  .mn-side-bar-badge {
     flex-shrink: 0;
   }
 
-  ul.mn-dashboard-menu.is-root {
-    .mn-dashboard-link {
+  ul.mn-side-bar-menu.is-root {
+    .mn-side-bar-link {
       padding: 0.5rem 1rem 0.5rem 2rem;
     }
 
-    .mn-dashboard-body {
+    .mn-side-bar-title {
       font-size: 0.875rem;
       color: #666;
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-dashboard-sidebar" :class="{ 'is-active': show }">
+  <div class="mn-side-bar" :class="{ 'is-active': show }">
     <slot></slot>
   </div>
 </template>
@@ -9,7 +9,7 @@
   import maskManager from '../popup/maskManager'
 
   export default new Element({
-    name: 'mn-dashboard-sidebar',
+    name: 'mn-side-bar',
     mixins: [ maskManager ],
     props: {
       show: Boolean
@@ -44,9 +44,10 @@
 <style lang="scss">
   @import "../../scss/vars.scss";
   @import "../../scss/mixins/media.scss";
-  @import "./theme";
 
-  .mn-dashboard-sidebar {
+  $-side-bar-width: 220px;
+
+  .mn-side-bar {
     background: #fff;
     position: absolute;
     top: 100px;
@@ -73,7 +74,7 @@
 
     @include min-screen(desktop) {
       position: relative;
-      width: $-dashboard-sidebar-width;
+      width: $-side-bar-width;
       box-shadow: none;
       border-radius: 0;
       top: 0;
