@@ -17,7 +17,7 @@
     <mn-assistive-bar slot="navbar" :show.sync="showSidebar"></mn-assistive-bar>
 
     <!-- Side Bar -->
-    <mn-dashboard-sidebar slot="sidebar" :show.sync="showSidebar">
+    <mn-side-bar slot="sidebar" :show.sync="showSidebar">
       <mn-scroller name="dashboard-side">
         <mn-section class="has-one-padding-all">
           <mn-search-bar>
@@ -26,7 +26,7 @@
         </mn-section>
 
         <mn-section>
-          <mn-dashboard-menu :menu="menu"></mn-dashboard-menu>
+          <mn-side-bar-menu :menu="menu"></mn-side-bar-menu>
         </mn-section>
 
         <mn-section class="profile-box">
@@ -42,7 +42,7 @@
           </mn-card>
         </mn-section>
       </mn-scroller>
-    </mn-dashboard-sidebar>
+    </mn-side-bar>
   </mn-dashboard>
 </template>
 
@@ -51,6 +51,7 @@
   import dashboard from 'vue-human/suites/dashboard'
   import assistiveBar from 'vue-human/suites/assistiveBar'
   import searchBar from 'vue-human/suites/searchBar'
+  import sideBar from 'vue-human/suites/sideBar'
   import input from 'vue-human/suites/input'
   import menu from '../base/menu'
 
@@ -60,6 +61,7 @@
       ...dashboard.map(),
       ...assistiveBar.map(),
       ...searchBar.map(),
+      ...sideBar.map(),
       ...input.map()
     },
     data () {
