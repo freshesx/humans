@@ -91,18 +91,18 @@
     },
     methods: {
       onOpenSingle () {
-        Datetime.create({ currentAt: this.models.datetime }).show().$on('confirm', display => {
+        Datetime.create({ default: this.models.datetime }).show().$on('confirm', display => {
           this.models.datetime = display
         })
       },
       onOpenSingleTime () {
-        Datetime.create({ currentAt: this.models.time, showDate: false }).show().$on('confirm', display => {
+        Datetime.create({ default: this.models.time, showDate: false }).show().$on('confirm', display => {
           this.models.time = display
         })
       },
       onOpenRange () {
-        DatetimeRange.fromAt({ currentAt: this.models.fromDatetime })
-          .toAt({ currentAt: this.models.toDatetime })
+        DatetimeRange.fromAt({ default: this.models.fromDatetime })
+          .toAt({ default: this.models.toDatetime })
           .show()
           .change(formats => {
             this.models.fromDatetime = formats.from
@@ -110,8 +110,8 @@
           })
       },
       onOpenRangeTime () {
-        DatetimeRange.fromAt({ currentAt: this.models.fromTime, showDate: false })
-          .toAt({ currentAt: this.models.toTime, showDate: false })
+        DatetimeRange.fromAt({ default: this.models.fromTime, showDate: false })
+          .toAt({ default: this.models.toTime, showDate: false })
           .show()
           .change(formats => {
             this.models.fromTime = formats.from
