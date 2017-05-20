@@ -6,11 +6,11 @@
 
 <script>
   import Element from '../../utils/Element'
-  import maskManager from '../popup/maskManager'
+  import maskMixin from '../popup/maskMixin'
 
   export default new Element({
     name: 'mn-side-bar',
-    mixins: [ maskManager ],
+    mixins: [ maskMixin ],
     props: {
       show: Boolean
     },
@@ -28,7 +28,7 @@
     },
     methods: {
       /**
-       * Rewrite maskManager closePopup method
+       * Rewrite maskMixin closePopup method
        * To notify onShowSidebar method
        *
        * @return {this}

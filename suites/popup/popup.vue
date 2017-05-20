@@ -8,13 +8,13 @@
 
 <script>
   import Element from '../../utils/Element'
-  import maskManager from '../popup/maskManager'
+  import maskMixin from '../popup/maskMixin'
   import ANIMATIONS from './animations'
   import { getZIndex } from './layer'
 
   export default new Element({
     name: 'mn-popup',
-    mixins: [ maskManager ],
+    mixins: [ maskMixin ],
     props: {
       /**
        * Popup show prop
