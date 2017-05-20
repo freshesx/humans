@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="isShow" :class="[ 'mn-popup-confirm' ]">
+  <mn-popup class="mn-popup-confirm" :show="isShow">
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-body class="has-center-text">
@@ -33,11 +33,23 @@
       ...cardBtns.inject()
     },
     mixins: [
-      /**
-       * Add isShow, close(), show() mixins
-       */
       popupManager
     ],
+    props: {
+      title: {
+        type: String,
+        default () { return this.$t('mn.popup.confirmTitle') }
+      },
+      description: String,
+      cancelText: {
+        type: String,
+        default () { return this.$t('mn.popup.cancelText') }
+      },
+      confirmText: {
+        type: String,
+        default () { return this.$t('mn.popup.confirmText') }
+      }
+    },
     methods: {
       cancel () {
         this.close()
@@ -46,14 +58,6 @@
       confirm () {
         this.close()
         this.$emit('confirm')
-      }
-    },
-    data () {
-      return {
-        title: this.$t('mn.popup.confirmTitle'),
-        description: undefined,
-        cancelText: this.$t('mn.popup.cancelText'),
-        confirmText: this.$t('mn.popup.confirmText')
       }
     }
   })
