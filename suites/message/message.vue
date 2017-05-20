@@ -62,7 +62,7 @@
        */
       message: {
         type: String,
-        default: () => this.$t('mn.popup.messageText')
+        default () { return this.$t('mn.popup.messageText') }
       },
 
       /**
@@ -98,7 +98,7 @@
        * 默认的关闭按钮的图标
        */
       closeIcon: {
-        default: () => require('vue-human-icons/js/ios/close-empty')
+        default () { return require('vue-human-icons/js/ios/close-empty') }
       }
     },
     computed: {
