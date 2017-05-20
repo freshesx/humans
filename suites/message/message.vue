@@ -1,5 +1,5 @@
 <template>
-  <mn-popup class="mn-message" :show="isShow" :masked="false"
+  <mn-popup class="mn-message" :show="show" :masked="false"
     animation="slideInTop">
     <mn-card theme="glass" class="mn-message-card" rounded>
       <!-- Title -->
@@ -13,7 +13,7 @@
           <h4><small>{{ title || currentType.text }}</small></h4>
         </mn-card-body>
         <mn-card-suffix @click.native="close">
-          <mn-icon :name="closeSvg"></mn-icon>
+          <mn-icon :name="closeIcon"></mn-icon>
         </mn-card-suffix>
       </mn-card-item>
       <!-- Main contents -->
@@ -35,7 +35,6 @@
   import cardPrefix from '../card/cardPrefix'
   import cardSuffix from '../card/cardSuffix'
   import icon from '../icon/icon'
-  import closeEmpty from 'vue-human-icons/js/ios/close-empty'
   import TYPES from './types'
   import popupManager from '../popup/popupManager'
 
@@ -50,32 +49,79 @@
       ...icon.inject()
     },
     mixins: [
-      /**
-       * Add isShow, close(), show() mixins
-       */
       popupManager
     ],
+    props: {
+      /**
+       * 消息框的标题
+       */
+      title: String,
+
+      /**
+       * 消息框的主体消息
+       */
+      message: {
+        type: String,
+        default: () => this.$t('mn.popup.messageText')
+      },
+
+      /**
+       * 消息框的图标，默认为空，为空时显示系统设置的图标
+       */
+      icon: null,
+
+      /**
+       * 消息的类型，参考 TYPES
+       */
+      type: {
+        type: String,
+        default: 'default'
+      },
+
+      /**
+       * 是否自动关闭消息框
+       */
+      autoClose: {
+        type: Boolean,
+        default: true
+      },
+
+      /**
+       * 多久后自动关闭消息框
+       */
+      duration: {
+        type: Number,
+        default: 3000
+      },
+
+      /**
+       * 默认的关闭按钮的图标
+       */
+      closeIcon: {
+        default: () => require('vue-human-icons/js/ios/close-empty')
+      }
+    },
     computed: {
+      /**
+       * 计算出当前的类型名称
+       * @method currentType
+       * @return {String}
+       */
       currentType () {
         return TYPES[this.type]
       },
+
+      /**
+       * 计算出当前使用的图标
+       * @method iconName
+       * @return {String}
+       */
       iconName () {
         return this.icon || this.currentType.icon
       }
     },
-    data () {
-      return {
-        title: undefined,
-        message: this.$t('mn.popup.messageText'),
-        icon: undefined,
-        type: 'default',  // 'default', 'primary', 'warning', 'error'
-        autoClose: true,
-        duration: 3000,
-        closeSvg: closeEmpty
-      }
-    },
     mounted: function () {
-      // automatic close after 2s
+      // 设定的时间后自动关闭
       if (this.autoClose) {
         setTimeout(() => {
           this.close()

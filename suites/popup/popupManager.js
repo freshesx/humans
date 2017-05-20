@@ -1,11 +1,6 @@
 export default {
-  data () {
-    return {
-      /**
-       * Control the component is show or hide
-       */
-      isShow: false
-    }
+  props: {
+    show: Boolean
   },
   methods: {
     /**
@@ -14,8 +9,7 @@ export default {
      * @return {this}
      */
     close () {
-      this.isShow = false
-      this.$emit('close')
+      this.$emit('update:show', false)
       return this
     },
 
@@ -24,9 +18,8 @@ export default {
      *
      * @return {this}
      */
-    show () {
-      this.isShow = true
-      this.$emit('show')
+    open () {
+      this.$emit('update:show', true)
       return this
     }
   }
