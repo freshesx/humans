@@ -60,7 +60,7 @@
   import Element from '../../utils/Element'
   import Message from '../../utils/Message'
   import popup from '../popup/popup'
-  import popupManager from '../popup/popupManager'
+  import popupMixin from '../popup/popupMixin'
   import card from '../card/card'
   import cardItem from '../card/cardItem'
   import cardBody from '../card/cardBody'
@@ -87,7 +87,7 @@
       ...cardBtns.inject()
     },
     mixins: [
-      popupManager,
+      popupMixin,
       options
     ],
     props: {

@@ -8,7 +8,7 @@
   import Element from '../../utils/Element'
   import popup from '../popup/popup'
   import loadingIcon from '../loadingIcon/loadingIcon'
-  import popupManager from '../popup/popupManager'
+  import popupMixin from '../popup/popupMixin'
 
   export default new Element({
     components: {
@@ -16,7 +16,7 @@
       ...loadingIcon.inject()
     },
     mixins: [
-      popupManager
+      popupMixin
     ]
   })
 </script>

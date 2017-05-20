@@ -22,7 +22,7 @@
   import cardItem from '../card/cardItem'
   import cardBody from '../card/cardBody'
   import cardBtns from '../card/cardBtns'
-  import popupManager from '../popup/popupManager'
+  import popupMixin from '../popup/popupMixin'
 
   export default new Element({
     components: {
@@ -33,7 +33,7 @@
       ...cardBtns.inject()
     },
     mixins: [
-      popupManager
+      popupMixin
     ],
     props: {
       title: {

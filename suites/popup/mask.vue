@@ -9,14 +9,14 @@
 
 <script>
   import Element from '../../utils/Element'
-  import popupManager from './popupManager'
+  import popupMixin from './popupMixin'
 
   export default new Element({
     mixins: [
       /**
        * Add isShow, close(), show() mixins
        */
-      popupManager
+      popupMixin
     ],
     props: {
       zIndex: {

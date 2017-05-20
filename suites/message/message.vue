@@ -36,7 +36,7 @@
   import cardSuffix from '../card/cardSuffix'
   import icon from '../icon/icon'
   import TYPES from './types'
-  import popupManager from '../popup/popupManager'
+  import popupMixin from '../popup/popupMixin'
 
   export default new Element({
     components: {
@@ -49,7 +49,7 @@
       ...icon.inject()
     },
     mixins: [
-      popupManager
+      popupMixin
     ],
     props: {
       /**
