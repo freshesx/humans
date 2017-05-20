@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="isShow" :class="[ 'mn-popup-alert' ]">
+  <mn-popup class="mn-popup-alert" :show="isShow">
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-body class="has-center-text">
@@ -32,22 +32,23 @@
       ...cardBtns.inject()
     },
     mixins: [
-      /**
-       * Add isShow, close(), show() mixins
-       */
       popupManager
     ],
+    props: {
+      title: {
+        type: String,
+        default () { return this.$t('mn.popup.alertTitle') }
+      },
+      description: String,
+      cancelText: {
+        type: String,
+        default () { return this.$t('mn.popup.closeText') }
+      }
+    },
     methods: {
       cancel () {
         this.close()
         this.$emit('cancel')
-      }
-    },
-    data () {
-      return {
-        title: this.$t('mn.popup.alertTitle'),
-        description: undefined,
-        cancelText: this.$t('mn.popup.closeText')
       }
     }
   })
