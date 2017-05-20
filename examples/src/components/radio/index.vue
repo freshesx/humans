@@ -76,7 +76,7 @@
     },
     validations: {
       models: {
-        like: { required }
+        sex: { required }
       }
     },
     data () {
