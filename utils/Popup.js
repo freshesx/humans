@@ -49,15 +49,19 @@ export default class Popup {
     }
 
     // 创建 mixined element 实例
-    const VueComponent = Vue.extend(this.getMixinedElement(options))
-    const vueComponent = new VueComponent().$mount()
+    const VueComponent = Vue.extend(this.element)
+    const vueComponent = new VueComponent({ propsData: options }).$mount()
 
-    // 监听 close 事件，和 remove
-    vueComponent.$on('close', () => {
-      setTimeout(() => {
-        vueComponent.$destroy()
-        this.remove()
-      }, 3000)
+    // 监听 show 事件，判断是否打开或关闭
+    vueComponent.$on('update:showPopup', show => {
+      vueComponent.$props.showPopup = show
+
+      if (!show) {
+        setTimeout(() => {
+          vueComponent.$destroy()
+          this.remove()
+        }, 3000)
+      }
     })
 
     // 插入 body

@@ -1,26 +1,53 @@
 export default {
   props: {
-    show: Boolean
+    /**
+     * 用于控制 MnPopup 是否打开显示
+     */
+    showPopup: Boolean
   },
   methods: {
     /**
-     * Set isShow to false, and emit close event.
+     * Emit showPopup event
      *
+     * @method emitShowPopup
+     * @param  {Boolean}      val
      * @return {this}
      */
-    close () {
-      this.$emit('update:show', false)
+    emitShowPopup (val) {
+      this.$emit('update:showPopup', val)
       return this
     },
 
     /**
-     * Set isShow to true, and emit show event.
+     * 关闭 Popup 的指令
      *
+     * @method close
+     * @return {this}
+     */
+    close () {
+      this.emitShowPopup(false)
+      return this
+    },
+
+    /**
+     * 打开 Popup 的指令
+     *
+     * @method close
+     * @return {this}
+     */
+    show () {
+      this.emitShowPopup(true)
+      return this
+    },
+
+    /**
+     * show 的别名
+     *
+     * @method open
      * @return {this}
      */
     open () {
-      this.$emit('update:show', true)
-      return this
+      return this.show()
     }
   }
 }
