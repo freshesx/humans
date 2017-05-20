@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import Element from './Element'
 import isUndefined from 'lodash/isUndefined'
 import { addPopup, removePopup } from '../suites/popup/storage'
 
@@ -74,25 +73,6 @@ export default class Popup {
     this.vueComponent = vueComponent
 
     return vueComponent
-  }
-
-  /**
-   * 将 element 元素 mixin 入 options 参数
-   * 实现 options 参数传递至 messageComponent
-   * @param {Object} options
-   * @return {Element}
-   */
-  getMixinedElement (options = {}) {
-    const mixinedElement = new Element({
-      mixins: [ this.element ],
-      data () {
-        return {
-          ...options
-        }
-      }
-    })
-
-    return mixinedElement
   }
 
   /**
