@@ -1,20 +1,16 @@
 <script>
   import Element from '../../utils/Element'
-  import MnRadio from '../radio/radio'
-  import checkmarkOutline from 'vue-human-icons/js/ios/checkmark-outline'
-  import circleOutline from 'vue-human-icons/js/ios/circle-outline'
+  import radioElement from '../radio/radio'
 
   export default new Element({
     name: 'mn-check',
-    mixins: [ MnRadio ],
+    mixins: [ radioElement ],
     props: {
       active: {
-        type: [String, Object],
-        default: () => checkmarkOutline
+        default () { return require('vue-human-icons/js/ios/checkmark-outline') }
       },
       unactive: {
-        type: [String, Object],
-        default: () => circleOutline
+        default () { return require('vue-human-icons/js/ios/circle-outline') }
       }
     },
     computed: {

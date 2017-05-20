@@ -1,9 +1,6 @@
 <template>
   <label class="mn-radio-label" @click="click">
-    <mn-icon
-      :class="['mn-radio-checkmark', {
-        'is-active': checked
-      }]"
+    <mn-icon class="mn-radio-checkmark" :class="{ 'is-active': checked }"
       :name="icon"></mn-icon>
     <span v-if="$slots.default">
       <slot>placeholder</slot>
@@ -13,26 +10,22 @@
 
 <script>
   import Element from '../../utils/Element'
-  import Icon from '../icon/icon'
-  import circleFilled from 'vue-human-icons/js/ios/circle-filled'
-  import circleOutline from 'vue-human-icons/js/ios/circle-outline'
+  import iconElement from '../icon/icon'
 
   export default new Element({
     name: 'mn-radio',
     components: {
-      [Icon.name]: Icon
+      ...iconElement.inject()
     },
     props: {
       value: null,
       data: null,
       disabled: Boolean,
       active: {
-        type: [String, Object],
-        default: () => circleFilled
+        default () { return require('vue-human-icons/js/ios/circle-filled') }
       },
       unactive: {
-        type: [String, Object],
-        default: () => circleOutline
+        default () { return require('vue-human-icons/js/ios/circle-outline') }
       }
     },
     computed: {
