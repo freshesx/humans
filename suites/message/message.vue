@@ -1,5 +1,5 @@
 <template>
-  <mn-popup class="mn-message" :show="showPopup" :masked="false"
+  <mn-popup class="mn-message" :show="isShow" :masked="false"
     animation="slideInTop">
     <mn-card theme="glass" class="mn-message-card" rounded>
       <!-- Title -->

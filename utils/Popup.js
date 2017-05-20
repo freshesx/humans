@@ -53,8 +53,8 @@ export default class Popup {
     const vueComponent = new VueComponent({ propsData: options }).$mount()
 
     // 监听 show 事件，判断是否打开或关闭
-    vueComponent.$on('update:showPopup', show => {
-      vueComponent.$props.showPopup = show
+    vueComponent.$on('update:isShow', show => {
+      vueComponent.$props.isShow = show
 
       if (!show) {
         setTimeout(() => {

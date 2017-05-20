@@ -3,18 +3,18 @@ export default {
     /**
      * 用于控制 MnPopup 是否打开显示
      */
-    showPopup: Boolean
+    isShow: Boolean
   },
   methods: {
     /**
      * Emit showPopup event
      *
-     * @method emitShowPopup
+     * @method emitIsShow
      * @param  {Boolean}      val
      * @return {this}
      */
-    emitShowPopup (val) {
-      this.$emit('update:showPopup', val)
+    emitIsShow (val) {
+      this.$emit('update:isShow', val)
       return this
     },
 
@@ -25,7 +25,7 @@ export default {
      * @return {this}
      */
     close () {
-      this.emitShowPopup(false)
+      this.emitIsShow(false)
       return this
     },
 
@@ -36,7 +36,7 @@ export default {
      * @return {this}
      */
     show () {
-      this.emitShowPopup(true)
+      this.emitIsShow(true)
       return this
     },
 
