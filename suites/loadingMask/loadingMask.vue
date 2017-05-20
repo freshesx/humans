@@ -1,5 +1,5 @@
 <template>
-  <mn-popup :show="isShow" :class="[ 'mn-loading-mask' ]">
+  <mn-popup class="mn-loading-mask" :show="isShow">
     <mn-loading-icon></mn-loading-icon>
   </mn-popup>
 </template>
@@ -16,9 +16,6 @@
       ...loadingIcon.inject()
     },
     mixins: [
-      /**
-       * Add isShow, close(), show() mixins
-       */
       popupManager
     ]
   })
