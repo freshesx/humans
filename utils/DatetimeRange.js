@@ -41,15 +41,15 @@ export default class DatetimeRange {
       this.fromAt = fromAt
 
       // 根据 fromAt 计算 toAt，增加一小时或一天
-      const currentAt = this.fromAtPopup.isTimeType
+      const defaultToAt = this.fromAtPopup.isTimeType
         ? addHours(fromAt, 1)
         : addDay(fromAt, 1)
 
       setTimeout(() => {
         // 开始时间将作为结束时间的初始时间值
         this.showToAt({
-          minAt: fromAt,
-          currentAt
+          min: fromAt,
+          default: defaultToAt
         })
       }, 500)
     })
@@ -73,7 +73,7 @@ export default class DatetimeRange {
     this.toAtPopup.$on('cancel', () => {
       setTimeout(() => {
         // 将保存好的 fromAt 的值传递回去
-        this.showFromAt({ currentAt: this.fromAt })
+        this.showFromAt({ default: this.fromAt })
       }, 500)
     })
   }

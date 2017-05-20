@@ -1,6 +1,6 @@
 <template>
   <mn-popup class="mn-datetime" animation="slideInBottom" :show="isShow" @close="onClosePopup">
-    <mn-card class="has-none-margin-bottom" rounded>
+    <mn-card class="has-none-margin-bottom" :theme="theme" rounded>
       <mn-card-item>
         <mn-card-body>
           <p class="mn-datetime-time" v-if="showHours">{{ formatTime(currentAt) }}</p>
@@ -87,27 +87,65 @@
       ...cardBtns.inject()
     },
     mixins: [
-      /**
-       * Add isShow, close(), show() mixins
-       */
       popupManager,
       options
     ],
+    props: {
+      theme: String,
+      default: {
+        type: [String, Date, Object],
+        default () { return new Date() }
+      },
+      min: {
+        type: [String, Date, Object],
+        default: '1970-01-01 00:00:00'
+      },
+      max: {
+        type: [String, Date, Object],
+        default: '2049-12-31 23:59:59'
+      },
+      title: {
+        type: String,
+        default () { return this.$t('mn.datetime.title') }
+      },
+      cancelText: {
+        type: String,
+        default () { return this.$t('mn.popup.cancelText') }
+      },
+      confirmText: {
+        type: String,
+        default () { return this.$t('mn.popup.confirmText') }
+      },
+      smallerText: {
+        type: String,
+        default () { return this.$t('mn.datetime.smallerText') }
+      },
+      biggerText: {
+        type: String,
+        default () { return this.$t('mn.datetime.biggerText') }
+      },
+      showDate: {
+        type: Boolean,
+        default: true
+      },
+      showHours: {
+        type: Boolean,
+        default: true
+      },
+      showMintues: {
+        type: Boolean,
+        default: true
+      },
+      showSeconds: {
+        type: Boolean,
+        default: true
+      }
+    },
     data () {
       return {
-        currentAt: new Date(), // 初始开始时间
-        minAt: new Date('1970-01-01 00:00:00'),  // 最小时间
-        maxAt: new Date('2049-12-31 23:59:59'),  // 最大时间
-        title: this.$t('mn.datetime.title'),
-        cancelText: this.$t('mn.popup.cancelText'),
-        confirmText: this.$t('mn.popup.confirmText'),
-        smallerText: this.$t('mn.datetime.smallerText'),
-        biggerText: this.$t('mn.datetime.biggerText'),
-        showDate: true,
-        showHours: true,
-        showMintues: true,
-        showSeconds: true,
-
+        currentAt: undefined, // 初始开始时间
+        minAt: undefined,
+        maxAt: undefined,
         models: {
           fullYear: 2017,
           month: 0,
@@ -269,15 +307,16 @@
       }
     },
     created () {
-      if (!this.showMintues) {
-        this.currentAt.setMinutes(0)
-      }
-
-      if (!this.showSeconds) {
-        this.currentAt.setSeconds(0)
-      }
-
-      this.currentAt = parseDatetime(this.currentAt)
+      // if (!this.showMintues) {
+      //   this.currentAt.setMinutes(0)
+      // }
+      //
+      // if (!this.showSeconds) {
+      //   this.currentAt.setSeconds(0)
+      // }
+      this.currentAt = parseDatetime(this.default)
+      this.minAt = parseDatetime(this.min)
+      this.maxAt = parseDatetime(this.max)
 
       this.updateModels(this.currentAt)
     }
