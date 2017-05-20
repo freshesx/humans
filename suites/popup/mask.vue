@@ -18,6 +18,12 @@
        */
       popupManager
     ],
+    props: {
+      zIndex: {
+        type: Number,
+        default: 2000
+      }
+    },
     methods: {
       /**
        * Mask want to close itself, and notify the parent compoennt to handle,
@@ -27,14 +33,6 @@
        */
       onCloseMask () {
         this.$emit('notifyCloseMask')
-      }
-    },
-    data () {
-      return {
-        /**
-         * Default z-index
-         */
-        zIndex: 2000
       }
     }
   })
