@@ -48,13 +48,14 @@ describe('utils/Env', () => {
       email: 'sun@example.com'
     }
 
-    const env = Env.set('userToken', user)
+    Env.set('userToken', user)
+    Env.set('someName', user)
 
-    const userToken = env.get('userToken')
-
-    expect(userToken).to.be.deep.equal({
+    expect(Env.get('userToken')).to.be.deep.equal({
       name: 'Sun',
       email: 'sun@example.com'
     })
+
+    expect(Env.get('someName')).to.be.undefined
   })
 })
