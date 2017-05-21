@@ -1,9 +1,8 @@
 import defaultsDeep from 'lodash/defaultsDeep'
 
 const state = {
-  $debug: true,
-  $info: false,
-  $fromRoute: undefined
+  _$debug: true,
+  _$info: false
 }
 
 export default class Env {
@@ -23,10 +22,10 @@ export default class Env {
 
   static set (name, value) {
     if (state.hasOwnProperty(name)) {
-      state.$info && console.info(`New valud of '${name}' is:`, value)
+      state._$info && console.info(`New valud of '${name}' is:`, value)
       state[name] = value
     } else {
-      state.$debug && console.error(`You don't declare '${name}'.`)
+      state._$debug && console.error(`You don't declare '${name}'.`)
     }
     return this
   }
