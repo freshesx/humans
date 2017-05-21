@@ -6,10 +6,19 @@ const state = {
 }
 
 export default class Env {
-  static merge (...objects) {
-    Object.assign(state, defaultsDeep(state, ...objects))
-    state.$info && console.info('Merge:', state)
-    return state
+  static merge (...setsOfParams) {
+    let store = {}
+
+    // defaultsDeep 第一位为新对象，第二位为被合并的原对象
+    setsOfParams.forEach(params => store = defaultsDeep(params, store))
+
+    // 合并原有 state
+    Object.assign(state, store)
+
+    // 修改通知
+    state._$info && console.info('Merge:', state)
+
+    return this
   }
 
   static all () {
