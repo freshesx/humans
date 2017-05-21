@@ -58,17 +58,20 @@
 <style lang="scss">
   @import "../../scss/vars";
 
+  $-icon-width: $icon-width;
+  $-icon-height: $icon-height;
+
   .mn-icon {
     display: inline-block;
     fill: currentColor;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: $-icon-width;
+    height: $-icon-height;
     text-align: center;
   }
 
   .mn-icon-svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: $-icon-width;
+    height: $-icon-height;
 
     > svg {
       vertical-align: top;
