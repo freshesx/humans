@@ -63,6 +63,12 @@ $panel-z-index: 6000 !default;
 $popup-z-index: 8000 !default;
 
 //
+// icon
+//
+$icon-width: $reboot-font-size * $reboot-line-height !default; // 24px
+$icon-height: $reboot-font-size * $reboot-line-height !default; // 24px
+
+//
 // Button
 //
 $button-mobile-radius:       $mobile-radius !default;
