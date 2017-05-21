@@ -1,4 +1,5 @@
 import defaultsDeep from 'lodash/defaultsDeep'
+import defaults from 'lodash/defaults'
 
 const state = {
   _$debug: true,
@@ -7,10 +8,20 @@ const state = {
 
 export default class Env {
   static merge (...setsOfParams) {
-    let store = {}
+    return this.baseMerge(setsOfParams)
+  }
+
+  static deepMerge (...setsOfParams) {
+    return this.baseMerge(setsOfParams, true)
+  }
+
+  static baseMerge (setsOfParams, deep = false) {
+    // 选择是否深度合并
+    const merge = deep ? defaultsDeep : defaults
 
     // defaultsDeep 第一位为新对象，第二位为被合并的原对象
-    setsOfParams.forEach(params => store = defaultsDeep(params, store))
+    // @see {@link https://lodash.com/docs/4.17.4#defaults}
+    const store = merge(...setsOfParams.reverse(), {})
 
     // 合并原有 state
     Object.assign(state, store)
