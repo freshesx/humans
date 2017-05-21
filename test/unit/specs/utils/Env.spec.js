@@ -10,7 +10,7 @@ describe('utils/Env', () => {
     })
   })
 
-  it('#merge', () => {
+  it('#deepMerge', () => {
     const params1 = {
       _$debug: false,
       userToken: {
@@ -25,7 +25,7 @@ describe('utils/Env', () => {
       }
     }
 
-    const env = Env.merge(params1, params2)
+    const env = Env.deepMerge(params1, params2)
 
     const state = env.all()
 
@@ -33,12 +33,23 @@ describe('utils/Env', () => {
     expect(state._$debug).to.be.false
   })
 
+  it('#merge', () => {
+    const params = {
+      userToken: {
+        name: 'Jeffery'
+      }
+    }
+
+    expect(Env.merge(params).get('userToken')).to.be.deep.equal({
+      name: 'Jeffery'
+    })
+  })
+
   it('#get', () => {
     const userToken = Env.get('userToken')
 
     expect(userToken).to.be.deep.equal({
-      name: 'ChaselWu',
-      email: 'chasel.wu@vitualreaty.com'
+      name: 'Jeffery'
     })
   })
 
