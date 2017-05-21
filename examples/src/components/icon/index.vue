@@ -31,17 +31,17 @@
     <mn-section>
       <mn-card>
         <mn-card-item>
-          <h5><mn-icon :name="icons.contactOutline"></mn-icon> 基本用法 Baseline group</h5>
+          <h5><mn-icon :name="icons.contact"></mn-icon> 基本用法 Baseline group</h5>
         </mn-card-item>
         <mn-card-item>
           <mn-card-body>
-            <mn-icon :name="icons.contactOutline"></mn-icon> 你好
+            <mn-icon :name="icons.contact"></mn-icon> 你好
           </mn-card-body>
         </mn-card-item>
         <mn-card-item>
           <mn-card-body>
             <h1>
-              <mn-icon :name="icons.contactOutline" :scale="2.25"></mn-icon> 你好
+              <mn-icon :name="icons.contact" :scale="2.25"></mn-icon> 你好
             </h1>
           </mn-card-body>
         </mn-card-item>
@@ -52,11 +52,19 @@
     </mn-section>
 
     <mn-section>
+      <mn-card>
+        <mn-card-item>
+          <h5><mn-icon :name="icons.nothing"></mn-icon> svg 不存在</h5>
+        </mn-card-item>
+      </mn-card>
+    </mn-section>
+
+    <mn-section>
       <mn-section-note>Loading status icon</mn-section-note>
       <mn-card>
         <mn-card-item>
           <mn-card-body>
-            <mn-icon :name="icons.contactOutline" :loading="loading"></mn-icon> 通讯录
+            <mn-icon :name="icons.contact" :loading="loading"></mn-icon> 通讯录
           </mn-card-body>
         </mn-card-item>
         <mn-card-item>
@@ -75,7 +83,8 @@
     data () {
       return {
         icons: {
-          contactOutline: require('vue-human-icons/js/ios/contact-outline')
+          contact: require('vue-human-icons/js/ios/contact-outline'),
+          nothing: undefined
         },
         loading: false
       }
