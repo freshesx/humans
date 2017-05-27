@@ -13,10 +13,10 @@
 </script>
 
 <style lang="scss">
-  $-dashboard-brand-width: 220px;
+  @import "./vars";
 
   .mn-dashboard-brand {
-    width: $-dashboard-brand-width;
+    width: $mn-dashboard-brand-width;
     flex-shrink: 0;
   }
 </style>

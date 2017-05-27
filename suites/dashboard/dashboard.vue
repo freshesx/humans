@@ -25,8 +25,8 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars.scss";
-  @import "../../scss/mixins/media.scss";
+  @import "../../scss/mixins/media";
+  @import "./vars";
 
   .mn-dashboard {
     position: absolute;
@@ -45,8 +45,7 @@
       justify-content: space-between;
       flex-shrink: 1;
       height: 60px;
-      background: $blue;
-      background: linear-gradient(90deg, $blue, $blue 45%, $green);
+      background: $mn-dashboard-bg;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
   }
