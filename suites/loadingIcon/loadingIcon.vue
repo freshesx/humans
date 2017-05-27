@@ -21,7 +21,7 @@
     },
     mounted () {
       const Component = Vue.extend(loadingIcon)
-      this.icon = new Component({ el: document.createElement('span') })
+      this.icon = new Component().$mount()
 
       this.$nextTick(() => {
         this.$el.appendChild(this.icon.$el)
