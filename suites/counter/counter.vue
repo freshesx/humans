@@ -118,8 +118,6 @@
     // 去除游览器默认样式
     appearance: none;
     outline: none;
-    // 去除 iOS
-    // -webkit-tap-highlight-color: transparent;
     border-radius: 0;
 
     width: 100%;
