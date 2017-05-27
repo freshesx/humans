@@ -13,7 +13,7 @@
 </script>
 
 <style lang="scss">
-  @import "./vars"
+  @import "./vars";
 
   .mn-letter-body {
     flex: 1;
