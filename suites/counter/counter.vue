@@ -122,7 +122,6 @@
 
     width: 100%;
     display: block;
-    // padding: 0.25rem 0.5rem;
     padding: (($-mn-counter-height - 1.5rem) / 2) 0.5rem;
     height: $-mn-counter-height;
     text-align: center;
