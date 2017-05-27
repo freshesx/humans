@@ -56,6 +56,7 @@
 <style lang="scss">
   @import "../../scss/vars";
   @import "../../scss/mixins/media";
+  @import "./vars";
 
   .mn-action-sheet {
     right: $grid-gutters / 2;
@@ -63,10 +64,11 @@
     left: $grid-gutters / 2;
 
     @include min-screen('desktop') {
-      width: $mnActionSheetDesktopWidth;
+      width: $mn-action-sheet-desktop-width;
+      width: $mn-action-sheet-desktop-width;
       left: 50%;
       right: auto;
-      margin-left: $mnActionSheetDesktopWidth * -0.5;
+      margin-left: $mn-action-sheet-desktop-width * -0.5;
     }
   }
 </style>
