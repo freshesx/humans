@@ -128,7 +128,7 @@
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
-      -webkit-appearance: none !important;
+      appearance: none !important;
       margin: 0;
     }
 
