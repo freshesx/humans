@@ -123,7 +123,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars.scss";
+  @import "./vars";
 
   .mn-carousel {
     width: 100%;
@@ -144,18 +144,18 @@
     }
 
     &-indicator {
-      $radius: 0.5rem;
-      width: $radius;
-      height: $radius;
+      $-radius: 0.5rem;
+      width: $-radius;
+      height: $-radius;
       background: rgba(255, 255, 255, 0.8);
-      border-radius: $radius * 0.5;
+      border-radius: $-radius * 0.5;
       margin: 0 0.25rem;
       transition: width 0.2s, background 0.8s;
 
       &.is-active {
-        width: $radius * 1.6;
-        height: $radius * 1.1;
-        background: $pink;
+        width: $-radius * 1.6;
+        height: $-radius * 1.1;
+        background: $mn-carousel-active-bg;
       }
     }
   }
