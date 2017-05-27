@@ -1,18 +1,17 @@
 <template>
   <div class="mn-helper-item" :class="{ 'is-error': true }" v-if="someIsInvalid">
-    <mn-icon :name="iosInformation"></mn-icon>
+    <mn-icon :name="icons.information" :scale="0.875"></mn-icon>
     <slot></slot>
   </div>
 </template>
 
 <script>
   import Element from '../../utils/Element'
-  import Icon from '../icon/icon'
-  import iosInformation from 'vue-human-icons/js/ios/information'
+  import iconElement from '../icon/icon'
 
   export default new Element({
     components: {
-      [Icon.name]: Icon
+      ...iconElement.inject()
     },
     name: 'mn-helper-item',
     props: {
@@ -20,7 +19,9 @@
     },
     data () {
       return {
-        iosInformation
+        icons: {
+          information: require('vue-human-icons/js/ios/information')
+        }
       }
     },
     computed: {
@@ -36,11 +37,11 @@
 
 
 <style lang="scss">
-  @import "../../scss/vars";
+  @import "./vars";
 
   .mn-helper-item {
     &.is-error {
-      color: $pink;
+      color: $mn-helper-error-color;
     }
   }
 </style>
