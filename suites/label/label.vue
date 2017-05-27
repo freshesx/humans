@@ -25,14 +25,14 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
+  @import "./vars";
 
   .mn-label {
     display: block;
-    width: 6rem;
+    width: $mn-label-width;
 
     &.is-error {
-      color: $pink;
+      color: $mn-label-error-color;
     }
   }
 </style>
