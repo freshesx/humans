@@ -54,14 +54,13 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
   @import "../../scss/mixins/media";
   @import "./vars";
 
   .mn-action-sheet {
-    right: $grid-gutters / 2;
-    bottom: $grid-gutters / 2;
-    left: $grid-gutters / 2;
+    right: $mn-action-sheet-grid-gutter / 2;
+    bottom: $mn-action-sheet-grid-gutter / 2;
+    left: $mn-action-sheet-grid-gutter / 2;
 
     @include min-screen('desktop') {
       width: $mn-action-sheet-desktop-width;

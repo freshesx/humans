@@ -1,2 +1,6 @@
+@import "../../scss/vars";
+
+$mn-action-sheet-grid-gutter: $grid-gutters;
+
 // # 大于等于 desktop 尺寸下的固定宽度
 $mn-action-sheet-desktop-width: 600px;
