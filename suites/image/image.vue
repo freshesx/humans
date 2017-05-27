@@ -129,11 +129,8 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars.scss";
   @import "../../scss/mixins/media.scss";
-
-  $-image-mobile-radius: $image-mobile-radius;
-  $-image-desktop-radius: $image-desktop-radius;
+  @import "./vars";
 
   .mn-image {
     // position: relative;
@@ -145,10 +142,10 @@
     width: 100%;
 
     &.is-rounded {
-      border-radius: $-image-mobile-radius;
+      border-radius: $mn-image-mobile-radius;
 
       @include min-screen('desktop') {
-        border-radius: $-image-desktop-radius;
+        border-radius: $mn-image-desktop-radius;
       }
     }
 
