@@ -102,31 +102,36 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
+  @import "../../scss/mixins/media";
+  @import "./vars";
 
   .mn-counter {
     display: flex;
-    max-width: 8rem;
+    max-width: 10rem;
   }
 
   .mn-counter-box {
     flex-shrink: 1;
-    border-top: solid 1px #ddd;
-    border-bottom: solid 1px #ddd;
   }
 
   .mn-counter-control {
-    width: 100%;
-    display: block;
-    padding: 0.25rem 0.5rem;
-    text-align: center;
-    border: none;
-    background: transparent;
     // 去除游览器默认样式
     appearance: none;
     outline: none;
     // 去除 iOS
     // -webkit-tap-highlight-color: transparent;
+    border-radius: 0;
+
+    width: 100%;
+    display: block;
+    // padding: 0.25rem 0.5rem;
+    padding: (($-mn-counter-height - 1.5rem) / 2) 0.5rem;
+    height: $-mn-counter-height;
+    text-align: center;
+    border: none;
+    background: transparent;
+    border-top: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
 
     // 去除 chrome, safari 右侧的上下控制条
     &::-webkit-outer-spin-button,
@@ -148,29 +153,38 @@
     flex-shrink: 0;
     border: solid 1px #ddd;
     background: transparent;
-    width: 2.375rem;
+    width: 3rem;
+    height: $-mn-counter-height;
     text-align: center;
     cursor: pointer;
     padding: 0;
     appearance: none;
     outline: none;
 
-    &:focus {
-      background: #eee;
-    }
-
     &.is-disabled {
       background: #eee;
     }
 
     &:first-child {
-      border-top-left-radius: $base-radius;
-      border-bottom-left-radius: $base-radius;
+      border-top-left-radius: $mn-counter-mobile-radius;
+      border-bottom-left-radius: $mn-counter-mobile-radius;
     }
 
     &:last-child {
-      border-top-right-radius: $base-radius;
-      border-bottom-right-radius: $base-radius;
+      border-top-right-radius: $mn-counter-mobile-radius;
+      border-bottom-right-radius: $mn-counter-mobile-radius;
+    }
+
+    @include min-screen(desktop) {
+      &:first-child {
+        border-top-left-radius: $mn-counter-desktop-radius;
+        border-bottom-left-radius: $mn-counter-desktop-radius;
+      }
+
+      &:last-child {
+        border-top-right-radius: $mn-counter-desktop-radius;
+        border-bottom-right-radius: $mn-counter-desktop-radius;
+      }
     }
   }
 </style>
