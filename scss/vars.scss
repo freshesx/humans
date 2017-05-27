@@ -62,32 +62,39 @@ $sub-popup-z-index: 4000 !default;
 $panel-z-index: 6000 !default;
 $popup-z-index: 8000 !default;
 
-//
-// icon
-//
-$icon-width: $reboot-font-size * $reboot-line-height !default; // 24px
-$icon-height: $reboot-font-size * $reboot-line-height !default; // 24px
+// ================================================
+// Suits
+// ================================================
 
 //
-// Button
+// button
 //
 $button-mobile-radius:       $mobile-radius !default;
 $button-desktop-radius:      $desktop-radius !default;
 $button-theme:               () !default;
 
 //
-// Card
+// card
 //
 $card-mobile-radius:   $mobile-radius !default;
 $card-desktop-radius:  $desktop-radius !default;
+
+//
+// Cell
+//
+// # cell 组件选中被激活的图标的默认颜色
+$cell-icon-active-color:    $pink !default;
+
+//
+// icon
+//
+// # 等于 24px 图标默认宽度
+$icon-width: $reboot-font-size * $reboot-line-height !default;
+// # 等于 24px 图标默认高度
+$icon-height: $reboot-font-size * $reboot-line-height !default;
 
 //
 // image
 //
 $image-mobile-radius:      $mobile-radius !default;
 $image-desktop-radius:     $desktop-radius !default;
-
-//
-// Cell
-//
-$cell-icon-active-color:    $pink !default;
