@@ -1,5 +1,5 @@
 <template>
-  <mn-popup class="mn-popup-confirm" :show="isShow">
+  <mn-popup class="mn-confirm" :show="isShow">
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-body class="has-center-text">
@@ -25,6 +25,7 @@
   import popupMixin from '../popup/popupMixin'
 
   export default new Element({
+    name: 'mn-confirm',
     components: {
       ...popup.inject(),
       ...card.inject(),
@@ -64,8 +65,10 @@
 </script>
 
 <style lang="scss">
-  .mn-popup-confirm {
-    width: 280px;
+  @import "./vars";
+
+  .mn-confirm {
+    width: $mn-confirm-width;
     top: 45%;
     right: auto;
     bottom: auto;
