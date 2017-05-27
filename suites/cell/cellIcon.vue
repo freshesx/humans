@@ -1,8 +1,9 @@
 <template>
   <div class="mn-cell-icon-wrapper">
     <mn-icon
+      class="mn-cell-icon"
       :name="checked ? icons.checkmark : icons.circleOutline"
-      :class="[ 'mn-cell-icon', { 'is-active': checked } ]"
+      :class="{ 'is-active': checked }"
       :scale="1.4"></mn-icon>
     <div class="mn-cell-icon-mask" :class="{ 'is-active': isActiveMask }"></div>
   </div>
@@ -15,7 +16,7 @@
   export default new Element({
     name: 'mn-cell-icon',
     components: {
-      [iconElement.name]: iconElement
+      ...iconElement.inject()
     },
     props: {
       checked: {
@@ -44,42 +45,39 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars.scss";
-
-  $-cell-icon-active-color: $cell-icon-active-color;
-
-  .mn-cell-icon {
-    z-index: 2;
-    color: #999;
-    vertical-align: -8px;
-
-    &.is-active {
-      color: $-cell-icon-active-color;
-    }
-  }
+  @import "./vars";
 
   .mn-cell-icon-wrapper {
     position: relative;
   }
 
+  .mn-cell-icon {
+    z-index: 2;
+    color: $mn-cell-icon-color;
+
+    &.is-active {
+      color: $mn-cell-icon-active-color;
+    }
+  }
+
   .mn-cell-icon-mask {
-    $width: 120px;
-    $height: 120px;
+    $-width: 120px;
+    $-height: 120px;
     position: absolute;
     z-index: 1;
-    width: $width;
-    height: $height;
+    width: $-width;
+    height: $-height;
     top: 50%;
     left: 50%;
-    margin-top: $height * -0.5;
-    margin-left: $width * -0.5;
-    border-radius: $width / 2;
+    margin-top: $-height * -0.5;
+    margin-left: $-width * -0.5;
+    border-radius: $-width / 2;
     transition-duration: 366ms;
     transition-timing-function: ease-in-out;
     transform: scale(0);
 
     &.is-active {
-      background: rgba($-cell-icon-active-color, 0.3);
+      background: rgba($mn-cell-icon-mask-active-bg, 0.3);
       transform: scale(1);
     }
   }
