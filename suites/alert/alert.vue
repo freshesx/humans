@@ -1,5 +1,5 @@
 <template>
-  <mn-popup class="mn-popup-alert" :show="isShow">
+  <mn-popup class="mn-alert" :show="isShow">
     <mn-card class="has-none-margin-bottom" rounded>
       <mn-card-item>
         <mn-card-body class="has-center-text">
@@ -24,6 +24,7 @@
   import popupMixin from '../popup/popupMixin'
 
   export default new Element({
+    name: 'mn-alert',
     components: {
       ...popup.inject(),
       ...card.inject(),
@@ -55,8 +56,10 @@
 </script>
 
 <style lang="scss">
-  .mn-popup-alert {
-    width: 280px;
+  @import "./vars";
+
+  .mn-alert {
+    width: $mn-alert-width;
     top: 45%;
     right: auto;
     bottom: auto;
