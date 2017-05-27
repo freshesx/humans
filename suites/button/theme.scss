@@ -6,7 +6,7 @@
 @import "./button-error";
 @import "./button-inverse";
 
-$-button-default-theme: map-collect(
+$-mn-button-default-theme: map-collect(
   $-button-primary,
   $-button-secondary,
   $-button-warning,

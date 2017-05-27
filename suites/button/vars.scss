@@ -7,8 +7,6 @@ $mn-button-mobile-radius:       $mobile-radius !default;
 $mn-button-desktop-radius:      $desktop-radius !default;
 
 // 私有属性
-// # todo 删除
-$-mn-button-default-theme: $-button-default-theme;
 $-mn-button-theme: map-merge($-mn-button-default-theme, $mn-button-theme);
 $-mn-button-height: 2.75rem;
 $-mn-button-sm-height: 2rem;
