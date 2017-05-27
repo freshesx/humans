@@ -107,8 +107,8 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
   @import "../../scss/mixins/media";
+  @import "./vars";
 
   .mn-column {
     width: 100%;
@@ -116,30 +116,30 @@
     // When `mobile` media query, padding is 0, and use single column forcely.
     // When equal and more than `tablet` media query, padding is 0.5rem.
     @include min-screen(tablet) {
-      padding: 0 $grid-gutters * 0.5;
+      padding: 0 $mn-column-grid-gutters * 0.5;
     }
 
-    @each $breakpoint in map-keys($grid-breakpoints) {
-      @include min-screen($breakpoint) {
-        @for $number from 1 through 12 {
-          &.is-#{$breakpoint}-#{$number} {
-            width: (100% / 12) * $number;
+    @each $-breakpoint in map-keys($mn-column-grid-breakpoints) {
+      @include min-screen($-breakpoint) {
+        @for $-number from 1 through 12 {
+          &.is-#{$-breakpoint}-#{$-number} {
+            width: (100% / 12) * $-number;
           }
 
-          &.is-#{$breakpoint}-offset-#{$number} {
-            margin-left: (100% / 12) * $number;
+          &.is-#{$-breakpoint}-offset-#{$-number} {
+            margin-left: (100% / 12) * $-number;
           }
         }
       }
 
       // When `mobile` media query, only use single column.
       @include max-screen('tablet') {
-        @for $number from 1 through 12 {
-          &.is-#{$breakpoint}-#{$number} {
+        @for $-number from 1 through 12 {
+          &.is-#{$-breakpoint}-#{$-number} {
             width: 100%;
           }
 
-          &.is-#{$breakpoint}-offset-#{$number} {
+          &.is-#{$-breakpoint}-offset-#{$-number} {
             margin-left: 0;
           }
         }
