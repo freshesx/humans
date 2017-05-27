@@ -75,22 +75,19 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  $-icon-width: $icon-width;
-  $-icon-height: $icon-height;
+  @import "./vars";
 
   .mn-icon {
     display: inline-block;
     fill: currentColor;
-    width: $-icon-width;
-    height: $-icon-height;
+    width: $-mn-icon-width;
+    height: $-mn-icon-height;
     text-align: center;
   }
 
   .mn-icon-svg {
-    width: $-icon-width;
-    height: $-icon-height;
+    width: $-mn-icon-width;
+    height: $-mn-icon-height;
 
     > svg {
       vertical-align: top;
