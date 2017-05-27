@@ -19,7 +19,3 @@
     }
   })
 </script>
-
-<style lang="scss">
-  .mn-datetime-picker {}
-</style>
