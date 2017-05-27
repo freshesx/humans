@@ -16,15 +16,15 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
   @import "../../scss/mixins/media";
+  @import "./vars";
 
   .mn-container {
     width: 100%;
 
     @include screen(tablet) {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: $mn-container-grid-gutters;
+      padding-right: $mn-container-grid-gutters;
     }
 
     @include min-screen(desktop) {
@@ -44,8 +44,8 @@
     width: 100%;
 
     @include min-screen(tablet) {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: $mn-container-grid-gutters;
+      padding-right: $mn-container-grid-gutters;
     }
   }
 </style>
