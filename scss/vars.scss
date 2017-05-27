@@ -3,8 +3,9 @@
 //
 
 //
-// Colors
+// 颜色 Colors
 //
+
 $white:                    rgb(255, 255, 255) !default;  // #fff
 $black:                    rgb(0, 0, 0) !default;        // #000
 $black-lighter:            rgb(3, 3, 3) !default;        // #030303
@@ -25,20 +26,33 @@ $purple:                   rgb(88, 86, 214) !default;    // #5856d6
 $pink:                     rgb(255, 45, 85) !default;    // #ff2d55
 
 //
-// Reboot
+// 根配置 Reboot
 //
+
+// # 根字体的尺寸，决定 rem 的基数，不建议修改
 $reboot-size-root:    16px !default;
-$reboot-font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+
+// # 默认字体，不建议修改
+$reboot-font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif !default;
+
+// # 默认字体的尺寸，不建议修改
 $reboot-font-size:    1rem !default;
+
+// # 默认行高，为 $reboot-size-root 的倍数，不建议修改
 $reboot-line-height:  1.5 !default;
+
+// # 默认 html, body 背景色
 $reboot-bg:           $gray-lighter !default;
 
 //
-// Grids
+// 网格 Grids
 //
+
+// # 等于 16px 网格间隙的尺寸
 $grid-gutters: 1rem !default;
 
-// media query
+// # 响应式查询的断点
 $grid-breakpoints: (
   mobile: 0,
   tablet: 768px,
@@ -47,19 +61,44 @@ $grid-breakpoints: (
 ) !default;
 
 //
-// Radius
+// 圆角配置 Radius
 //
+
+// # 基础圆角
 $base-radius: 0.75rem !default;
+
+// # Mobile 圆角
 $mobile-radius: 0.75rem !default;
+
+// # Tablet 圆角
 $tablet-radius: 0.75rem !default;
+
+// # Desktop 圆角
 $desktop-radius: 0.25rem !default;
+
+// # Widescreen 圆角
 $widescreen-radius: 0.25rem !default;
 
-// z-index
+//
+// Z 轴高度 z-index
+//
+
+// # 内容层高度
 $content-z-index: 0 !default;
+
+// @todo
+// # 导航层高度（待修改，暂无作用）
 $navigation-z-index: 2000 !default;
+
+// @todo
+// # 次弹出层高度（待修改，暂无作用）
 $sub-popup-z-index: 4000 !default;
+
+// @todo
+// # 面板高度（待修改，暂无作用）
 $panel-z-index: 6000 !default;
+
+// # 弹出层高度
 $popup-z-index: 8000 !default;
 
 // ================================================
