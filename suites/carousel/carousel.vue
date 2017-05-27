@@ -129,34 +129,34 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+  }
 
-    &-content {
-      display: flex;
-    }
+  .mn-carousel-content {
+    display: flex;
+  }
 
-    &-indicators {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      bottom: 0.5rem;
-    }
+  .mn-carousel-indicators {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    bottom: 0.5rem;
+  }
 
-    &-indicator {
-      $-radius: 0.5rem;
-      width: $-radius;
-      height: $-radius;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: $-radius * 0.5;
-      margin: 0 0.25rem;
-      transition: width 0.2s, background 0.8s;
+  .mn-carousel-indicator {
+    $-radius: 0.5rem;
+    width: $-radius;
+    height: $-radius;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: $-radius * 0.5;
+    margin: 0 0.25rem;
+    transition: width 0.2s, background 0.8s;
 
-      &.is-active {
-        width: $-radius * 1.6;
-        height: $-radius * 1.1;
-        background: $mn-carousel-active-bg;
-      }
+    &.is-active {
+      width: $-radius * 1.6;
+      height: $-radius * 1.1;
+      background: $mn-carousel-active-bg;
     }
   }
 </style>
