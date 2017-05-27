@@ -28,7 +28,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
+  @import "./vars";
 
   .mn-card-item-addon {
     flex-shrink: 0;
@@ -47,8 +47,8 @@
 
     &.is-action {
       display: flex;
-      margin-top: -$grid-gutters;
-      margin-bottom: -$grid-gutters;
+      margin-top: -$mn-card-grid-gutters;
+      margin-bottom: -$mn-card-grid-gutters;
       align-items: center;
     }
   }

@@ -19,7 +19,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
+  @import "./vars";
 
   .mn-card-btns {
     > .button,
@@ -30,7 +30,7 @@
       width: 100%;
       border: none;
       background-color: transparent;
-      padding: $grid-gutters;
+      padding: $mn-card-grid-gutters;
       text-align: center;
       cursor: pointer;
       text-decoration: none;

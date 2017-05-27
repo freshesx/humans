@@ -43,12 +43,12 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
   @import "../../scss/mixins/arrow";
+  @import "./vars";
 
   .mn-card-item {
     display: flex;
-    padding: $grid-gutters;
+    padding: $mn-card-grid-gutters;
     align-items: center;
 
     &.is-focus {

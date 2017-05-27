@@ -34,15 +34,12 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
   @import "../../scss/mixins/media";
-
-  $-card-mobile-radius: $card-mobile-radius;
-  $-card-desktop-radius: $card-desktop-radius;
+  @import "./vars";
 
   .mn-card {
-    margin-bottom: $grid-gutters;
-    border-radius: $-card-mobile-radius;
+    margin-bottom: $mn-card-grid-gutters;
+    border-radius: $mn-card-mobile-radius;
     background-color: #fff;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.02);
     overflow: hidden;
@@ -52,7 +49,7 @@
     }
 
     @include min-screen('desktop') {
-      border-radius: $-card-desktop-radius;
+      border-radius: $mn-card-desktop-radius;
     }
 
     &.is-inverse {
@@ -70,7 +67,7 @@
     border-radius: $card-mobile-radius;
 
     @include min-screen('desktop') {
-      border-radius: $-card-desktop-radius;
+      border-radius: $mn-card-desktop-radius;
     }
   }
 </style>
