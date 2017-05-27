@@ -82,8 +82,6 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
   .mn-input {
     display: flex;
 
