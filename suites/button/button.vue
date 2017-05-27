@@ -89,29 +89,18 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
   @import "../../scss/mixins/media";
-  @import "./theme";
+  @import "./vars";
 
-  $-button: "mn-btn";
-  $-button-theme: map-merge($-button-default-theme, $button-theme);
-  $-button-mobile-radius: $button-mobile-radius;
-  $-button-desktop-radius: $button-desktop-radius;
-  $-button-height: 2.75rem;
-  $-button-sm-height: 2rem;
-
-  //
-  // @class .btn
-  //
-  .#{$-button} {
+  .mn-btn {
     display: inline-block;
     white-space: nowrap;
     cursor: pointer;
     user-select: none;
-    height: $-button-height;
+    height: $-mn-button-height;
     line-height: 1.5rem;
-    padding: (($-button-height - 1.5rem) / 2) 1rem;
-    border-radius: $-button-mobile-radius;
+    padding: (($-mn-button-height - 1.5rem) / 2) 1rem;
+    border-radius: $mn-button-mobile-radius;
     text-decoration: none;
     border: none;
     outline: none;
@@ -119,7 +108,7 @@
     vertical-align: middle;
 
     @include min-screen('desktop') {
-      border-radius: $-button-desktop-radius;
+      border-radius: $mn-button-desktop-radius;
     }
 
     &.is-margin-bottom {
@@ -127,13 +116,13 @@
     }
 
     &.is-sm {
-      height: $-button-sm-height;
-      padding: (($-button-sm-height - 1.5rem) / 2) 1rem;
-      border-radius: $-button-mobile-radius * 0.75;
+      height: $-mn-button-sm-height;
+      padding: (($-mn-button-sm-height - 1.5rem) / 2) 1rem;
+      border-radius: $mn-button-mobile-radius * 0.75;
       font-size: 0.875rem;
 
       @include min-screen('desktop') {
-        border-radius: $-button-desktop-radius;
+        border-radius: $mn-button-desktop-radius;
       }
     }
 
@@ -247,11 +236,11 @@
     }
   }
 
-  .#{$-button} {
+  .mn-btn {
     //
     // @class .btn.is-success, etc.
     //
-    @each $name, $value in $-button-theme {
+    @each $name, $value in $-mn-button-theme {
       @include btn-set-type($name, $value);
     }
   }
