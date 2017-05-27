@@ -15,13 +15,17 @@
 
 <script>
   import Element from '../../utils/Element'
+  import Human from '../../index.js'
 
-  const MEDIA_VALUE = {
-    mobile: [0, 767],
-    tablet: [768, 991],
-    desktop: [992, 1199],
-    widescreen: [1200, 9999]
-  }
+  const MEDIA_VALUE = {}
+
+  Human.$screens.forEach((screen, index) => {
+    const min = screen.min
+    const max = index + 1 < Human.$screens.length
+      ? Human.$screens[index + 1].min - 1
+      : 9999
+    MEDIA_VALUE[screen.name] = [min, max]
+  })
 
   export default new Element({
     name: 'mn-image',
