@@ -13,12 +13,12 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
+  @import "./vars";
 
   .mn-letter-action {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    margin: $grid-gutters;
+    margin: $mn-letter-grid-gutters;
   }
 </style>

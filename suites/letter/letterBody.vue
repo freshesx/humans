@@ -13,11 +13,10 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-  @import "../../scss/mixins/media";
+  @import "./vars"
 
   .mn-letter-body {
     flex: 1;
-    margin: $grid-gutters;
+    margin: $mn-letter-grid-gutters;
   }
 </style>
