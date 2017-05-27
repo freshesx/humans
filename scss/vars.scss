@@ -1,6 +1,6 @@
-//
-// Globla variables
-//
+// ================================================
+// Global Vars
+// ================================================
 
 //
 // 颜色 Colors
@@ -105,35 +105,8 @@ $popup-z-index: 8000 !default;
 // Suits
 // ================================================
 
-//
-// button
-//
-$button-mobile-radius:       $mobile-radius !default;
-$button-desktop-radius:      $desktop-radius !default;
-$button-theme:               () !default;
-
-//
-// card
-//
-$card-mobile-radius:   $mobile-radius !default;
-$card-desktop-radius:  $desktop-radius !default;
-
-//
-// Cell
-//
-// # cell 组件选中被激活的图标的默认颜色
-$cell-icon-active-color:    $pink !default;
-
-//
-// icon
-//
-// # 等于 24px 图标默认宽度
-$icon-width: $reboot-font-size * $reboot-line-height !default;
-// # 等于 24px 图标默认高度
-$icon-height: $reboot-font-size * $reboot-line-height !default;
-
-//
-// image
-//
-$image-mobile-radius:      $mobile-radius !default;
-$image-desktop-radius:     $desktop-radius !default;
+@import "./suites/button";
+@import "./suites/card";
+@import "./suites/cell";
+@import "./suites/icon";
+@import "./suites/image";
