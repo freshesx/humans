@@ -64,7 +64,7 @@
   }
 
   .mn-card.is-rounded {
-    border-radius: $card-mobile-radius;
+    border-radius: $mn-card-mobile-radius;
 
     @include min-screen('desktop') {
       border-radius: $mn-card-desktop-radius;
