@@ -120,21 +120,28 @@
     display: block;
     padding: 0.25rem 0.5rem;
     text-align: center;
-    outline: none;
-    appearance: none;
-    -webkit-tap-highlight-color: transparent;
     border: none;
     background: transparent;
+    // 去除游览器默认样式
+    appearance: none;
+    outline: none;
+    // 去除 iOS
+    // -webkit-tap-highlight-color: transparent;
 
+    // 去除 chrome, safari 右侧的上下控制条
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
-      appearance: none !important;
       margin: 0;
+      -webkit-appearance: none;
     }
 
+    // 去除 firefox 右侧的上下控制条
     &[type="number"] {
       -moz-appearance: textfield;
     }
+
+    // @todo 检查 IE 右侧的上下控制条
+    // @todo 检查 Android 右侧的上下控制条
   }
 
   .mn-counter-btn {
@@ -146,11 +153,14 @@
     cursor: pointer;
     padding: 0;
     appearance: none;
-    -webkit-tap-highlight-color: transparent;
+    outline: none;
+
+    &:focus {
+      background: #eee;
+    }
 
     &.is-disabled {
       background: #eee;
-      outline: none;
     }
 
     &:first-child {
