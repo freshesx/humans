@@ -33,7 +33,7 @@
     },
     data () {
       return {
-        textColor: this.text
+        textColor: undefined
       }
     },
     computed: {
@@ -44,31 +44,37 @@
         }
       }
     },
+    methods: {
+      parseTextColor () {
+        if (this.name && !this.bg && !this.text &&
+          ['white', 'gray-lighter', 'gray-lightest'].includes(this.name)) {
+          return '#000'
+        }
+
+        if (this.bg && !this.text) {
+          const bg = this.$el.style.backgroundColor
+          const reg = /\s?\d{1,3},\s?\d{1,3},\s?\d{1,3}/
+          const match = bg.replace(/\s+/g, '').match(reg)
+
+          if (match && match.length > 0 && match[0].length > 0) {
+            const [r, g, b] = match[0].split(',').map(item => parseInt(item))
+            const grayLevel = r * 0.299 + g * 0.587 + b * 0.114
+            if (grayLevel >= 192) return '#000'
+          }
+        }
+
+        return this.text
+      }
+    },
+    watch: {
+      '$el.style.backgroundColor' () {
+        this.textColor = this.parseTextColor()
+      }
+    },
     mounted () {
-      if (this.name && !this.bg && !this.text) {
-        if (this.name === 'white' || this.name === 'gray-lighter' || this.name === 'gray-lightest') this.textColor = '#000'
-      }
-
-      if (this.bg && !this.text) {
-        const rgb = this.$el.style.backgroundColor
-        // If the color is 'red' or something like that, the font color is '#fff'
-        if (rgb.indexOf('rgb') === -1) return
-
-        const rRgba = /rgba?\((\d{1,3}),(\d{1,3}),(\d{1,3})(,([.\d]+))?\)/
-
-        const rsa = rgb.replace(/\s+/g, '').match(rRgba)
-
-        // get the r, g, b value
-        const r = (+rsa[1])
-        const g = (+rsa[2])
-        const b = (+rsa[3])
-
-        // count the grayLevel
-        const grayLevel = r * 0.299 + g * 0.587 + b * 0.114
-
-        // count the font color
-        if (grayLevel >= 192) this.textColor = '#000'
-      }
+      this.$nextTick(() => {
+        this.textColor = this.parseTextColor()
+      })
     }
   })
 </script>
