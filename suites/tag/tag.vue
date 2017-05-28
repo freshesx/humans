@@ -12,19 +12,6 @@
 
   export default new Element({
     name: 'mn-tag',
-    computed: {
-      computedStyle () {
-        return {
-          background: this.bg || undefined,
-          color: this.textColor || undefined
-        }
-      }
-    },
-    data () {
-      return {
-        textColor: this.text
-      }
-    },
     props: {
       // is-red, is-green, is-pink etc.
       name: {
@@ -42,6 +29,19 @@
       size: {
         type: String,
         default: 'md'
+      }
+    },
+    data () {
+      return {
+        textColor: this.text
+      }
+    },
+    computed: {
+      computedStyle () {
+        return {
+          background: this.bg || undefined,
+          color: this.textColor || undefined
+        }
       }
     },
     mounted () {
