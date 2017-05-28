@@ -42,10 +42,8 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars.scss";
-  @import "../../scss/mixins/media.scss";
-
-  $-side-bar-width: 220px;
+  @import "./vars";
+  @import "../../scss/mixins/media";
 
   .mn-side-bar {
     background: #fff;
@@ -55,7 +53,7 @@
     right: 0.5rem;
     bottom: 1rem;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    border-radius: 0.75rem;
+    border-radius: $mn-side-bar-mobile-radius;
     z-index: 200;
     transform: translateY(120%);
     transition-duration: 500ms;
@@ -74,7 +72,7 @@
 
     @include min-screen(desktop) {
       position: relative;
-      width: $-side-bar-width;
+      width: $mn-side-bar-width;
       box-shadow: none;
       border-radius: 0;
       top: 0;
