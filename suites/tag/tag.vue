@@ -2,7 +2,7 @@
   <span
     class="mn-tag"
     :class="{ [`has-${name}-bg`]: !!name, [`is-${size}`]: !!size }"
-    :style="style">
+    :style="computedStyle">
     <slot></slot>
   </span>
 </template>
@@ -13,12 +13,11 @@
   export default new Element({
     name: 'mn-tag',
     computed: {
-      style () {
-        // If there is background or text, set the style
-        let style = ''
-        if (this.bg) style += `background-color: ${this.bg};`
-        if (this.textColor) style += `color: ${this.textColor};`
-        return style
+      computedStyle () {
+        return {
+          background: this.bg || undefined,
+          color: this.textColor || undefined
+        }
       }
     },
     data () {
