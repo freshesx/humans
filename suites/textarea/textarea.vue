@@ -67,23 +67,21 @@
 </script>
 
 <style lang="scss">
-  .mn-textarea {
-    &-control {
-      display: block;
-      width: 100%;
-      border: none;
-      padding: 0;
-      background: transparent;
-      outline: none;
-      -webkit-appearance: none;
-      resize: none;
-      line-height: 1.5;
-    }
+  .mn-textarea-control {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    background: transparent;
+    outline: none;
+    -webkit-appearance: none;
+    resize: none;
+    line-height: 1.5;
+  }
 
-    &-counter {
-      border-top: solid 1px #eee;
-      padding-top: 0.5rem;
-      text-align: right;
-    }
+  .mn-textarea-counter {
+    border-top: solid 1px #eee;
+    padding-top: 0.5rem;
+    text-align: right;
   }
 </style>
