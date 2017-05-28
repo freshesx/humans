@@ -39,17 +39,17 @@
     background: $mn-search-bar-bg;
     color: $mn-search-bar-color;
     border-radius: $mn-search-bar-mobile-radius;
-    padding: 0.5rem;
+    padding: $mn-search-bar-grid-gutters / 2;
     transition: width 0.2s;
 
     &-control {
       flex: 1;
-      margin-left: 0.5rem;
+      margin-left: $mn-search-bar-grid-gutters / 2;
     }
 
     &.is-sm {
-      padding-top: 0.25rem;
-      padding-bottom: 0.25rem;
+      padding-top: $mn-search-bar-grid-gutters / 4;
+      padding-bottom: $mn-search-bar-grid-gutters / 4;
     }
   }
 </style>
