@@ -8,7 +8,7 @@
       :disabled="disabled"
       @input="changeValue">{{ value }}</textarea>
     <div class="mn-textarea-counter">
-      <mn-icon :name="iosGridViewOutline"></mn-icon>
+      <mn-icon :name="icons.tip"></mn-icon>
       {{ value ? value.length : 0 }}
       <span v-if="maxLength">
         / {{ maxLength }}
@@ -19,12 +19,11 @@
 
 <script>
   import Element from '../../utils/Element'
-  import icon from '../icon/icon'
-  import iosGridViewOutline from 'vue-human-icons/js/ios/grid-view-outline'
+  import iconElement from '../icon/icon'
 
   export default new Element({
     components: {
-      ...icon.inject()
+      ...iconElement.inject()
     },
     name: 'mn-textarea',
     props: {
@@ -54,7 +53,9 @@
     },
     data () {
       return {
-        iosGridViewOutline
+        icons: {
+          tip: require('vue-human-icons/js/ios/grid-view-outline')
+        }
       }
     },
     methods: {
