@@ -77,6 +77,7 @@
       outline: none;
       -webkit-appearance: none;
       resize: none;
+      line-height: 1.5;
     }
 
     &-counter {
