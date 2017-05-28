@@ -74,7 +74,7 @@
     padding: 0;
     background: transparent;
     outline: none;
-    -webkit-appearance: none;
+    appearance: none;
     resize: none;
     line-height: 1.5;
   }
