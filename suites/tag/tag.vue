@@ -13,22 +13,30 @@
   export default new Element({
     name: 'mn-tag',
     props: {
-      // is-red, is-green, is-pink etc.
+      /**
+       * 色彩名称，如 'pink'，将转化为 'has-pink-bg' 的类
+       */
       name: {
         type: String
       },
-      // set background-color
+      /**
+       * 背景色
+       */
       bg: {
         type: String
       },
-      // set color
+      /**
+       * 字体颜色，如果没有设置字体颜色，则根据 name 和 bg 自动生成
+       */
       text: {
         type: String
       },
-      // is-sm, is-md, is-lg
+      /**
+       * 尺寸
+       * 可选值：sm, lg，默认为默认尺寸
+       */
       size: {
-        type: String,
-        default: 'md'
+        type: String
       }
     },
     data () {
@@ -51,6 +59,7 @@
           return '#000'
         }
 
+        // 生成 text 的颜色
         if (this.bg && !this.text) {
           const bg = this.$el.style.backgroundColor
           const reg = /\s?\d{1,3},\s?\d{1,3},\s?\d{1,3}/
