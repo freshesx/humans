@@ -29,15 +29,16 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
+  @import "./vars";
 
   .mn-search-bar {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
     align-items: center;
-    background: #eee;
-    border-radius: $base-radius;
+    background: $mn-search-bar-bg;
+    color: $mn-search-bar-color;
+    border-radius: $mn-search-bar-mobile-radius;
     padding: 0.5rem;
     transition: width 0.2s;
 
