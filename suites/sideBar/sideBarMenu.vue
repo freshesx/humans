@@ -2,7 +2,10 @@
   <ul class="mn-side-bar-menu" :class="{ 'is-root': level > 0 }">
     <li v-for="(item, key) in menu" :key="key">
       <div class="mn-side-bar-link"
-        :class="{ 'is-link': item.push, 'is-active': item.push && matchActive(item.push) }"
+        :class="{
+          'is-link': item.push,
+          'is-active': item.push && matchActive(item.push)
+        }"
         @click="$router.push(item.push)">
         <div class="mn-side-bar-title">{{ item.name }}</div>
         <div class="mn-side-bar-badge">
@@ -14,7 +17,8 @@
         </div>
       </div>
       <!-- Children -->
-      <mn-side-bar-menu :menu="item.children" :level="level + 1" v-if="item.children"></mn-side-bar-menu>
+      <mn-side-bar-menu :menu="item.children"
+        :level="level + 1" v-if="item.children"></mn-side-bar-menu>
     </li>
   </ul>
 </template>
