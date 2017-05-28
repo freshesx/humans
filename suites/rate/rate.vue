@@ -86,10 +86,10 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
+  @import "./vars";
 
   .mn-rate {
-    color: $orange;
+    color: $mn-rate-color;
   }
 
   .mn-rate-item {
