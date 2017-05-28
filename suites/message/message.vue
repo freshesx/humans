@@ -145,14 +145,14 @@
       left: 50%;
       margin-left: -300px;
     }
+  }
 
-    &-card {
-      margin-bottom: 0 !important;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) !important;
-    }
+  .mn-message-card {
+    margin-bottom: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
 
-    &-title {
-      padding: 0.5rem 1rem !important;
-    }
+  .mn-message-title {
+    padding: 0.5rem 1rem;
   }
 </style>
