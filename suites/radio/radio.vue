@@ -50,7 +50,7 @@
 
 
 <style lang="scss">
-  @import "../../scss/vars";
+  @import "./vars";
 
   .mn-radio {
     &-label {
@@ -58,15 +58,15 @@
       user-select: none;
 
       & + & {
-        margin-left: 0.5rem;
+        margin-left: $mn-radio-grid-gutters;
       }
     }
 
     &-checkmark {
-      color: #999;
+      color: $mn-radio-color;
 
       &.is-active {
-        color: $green;
+        color: $mn-radio-active-color;
       }
     }
   }
