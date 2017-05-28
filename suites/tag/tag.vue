@@ -1,7 +1,7 @@
 <template>
   <span
     class="mn-tag"
-    :class="{ [`is-${name}`]: !!name, [`is-${size}`]: !!size }"
+    :class="{ [`has-${name}-bg`]: !!name, [`is-${size}`]: !!size }"
     :style="style">
     <slot></slot>
   </span>
@@ -75,50 +75,14 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
-
-  $-tag: "mn-tag";
-
-  $-tag-style: (
-    white: $white,
-    black: $black,
-    black-lighter: $black-lighter,
-    black-lightest: $black-lightest,
-    gray-darkest: $gray-darkest,
-    gray-darker: $gray-darker,
-    gray: $gray,
-    gray-lighter: $gray-lighter,
-    gray-lightest: $gray-lightest,
-    red: $red,
-    orange: $orange,
-    yellow: $yellow,
-    green: $green,
-    teal-blue: $teal-blue,
-    blue: $blue,
-    purple: $purple,
-    pink: $pink
-  );
-
-  @mixin get-color($type) {
-    background-color: map-get($-tag-style, $type);
-  }
-
-  .#{$-tag} {
+  .mn-tag {
     font-size: 0.9rem;
     padding: 0.1rem 0.6rem;
     display: inline-block;
     border-radius: 2rem;
-    font-style: normal;
     cursor: default;
     color: #fff;
-    background-color: #000;
-
-    // is-primary, is-secondary, is-error etc.
-    @each $name, $value in $-tag-style {
-      &.is-#{$name} {
-        @include get-color($name);
-      }
-    }
+    background: #000;
 
     &.is-sm {
       font-size: 0.7rem;
