@@ -13,14 +13,14 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
   @import "../../scss/mixins/media";
+  @import "./vars";
 
   .mn-section-note {
     color: #666;
     font-size: 0.875rem;
-    padding-left: $grid-gutters;
-    padding-right: $grid-gutters;
-    margin-bottom: $grid-gutters / 2;
+    padding-left: $mn-section-grid-gutters;
+    padding-right: $mn-section-grid-gutters;
+    margin-bottom: $mn-section-grid-gutters / 2;
   }
 </style>

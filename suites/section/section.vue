@@ -13,9 +13,9 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
+  @import "./vars";
 
   .mn-section {
-    margin-bottom: $grid-gutters;
+    margin-bottom: $mn-section-grid-gutters;
   }
 </style>

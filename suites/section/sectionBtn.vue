@@ -13,12 +13,12 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars";
   @import "../../scss/mixins/media";
+  @import "./vars";
 
   .mn-section-btn {
-    padding: 0 $grid-gutters;
-    margin-bottom: $grid-gutters / 2;
+    padding: 0 $mn-section-grid-gutters;
+    margin-bottom: $mn-section-grid-gutters / 2;
 
     @include min-screen(tablet) {
       padding: 0;
