@@ -47,14 +47,14 @@
 
 <style lang="scss">
   .mn-select {
-    border: 0;
-    outline: 0;
+    border: none;
     background: transparent;
     width: 100%;
     height: 3.5rem;
     line-height: 3.5rem;
     margin: -1rem 0;
-    -webkit-appearance: none;
+    outline: none;
+    appearance: none;
     -webkit-tap-highlight-color: transparent;
   }
 </style>
