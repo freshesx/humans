@@ -45,7 +45,7 @@
 </script>
 
 <style lang="scss">
-  @import "../../scss/vars.scss";
+  @import "./vars";
 
   .mn-tab-bar-item {
     position: relative;
@@ -53,12 +53,12 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    color: #999;
+    color: $mn-tab-bar-item-color;
     cursor: pointer;
 
     // @todo 增加 scss 配置至 vars
     &.is-active {
-      color: darken($green, 10%);
+      color: $mn-tab-bar-item-active-color;
     }
   }
 
@@ -71,7 +71,7 @@
     width: 18px;
     height: 18px;
     border-radius: 9px;
-    background: $pink;
+    background: $mn-tab-bar-item-badge-bg;
     font-size: 10px;
     color: #fff;
     top: 3px;
