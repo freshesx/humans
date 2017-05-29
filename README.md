@@ -1,11 +1,10 @@
-<p><img width="320" src="https://raw.githubusercontent.com/HumanUI/vue-human/master/docs/vue-human.jpg"></p>
+<p align="center">
+  <img width="320" src="https://raw.githubusercontent.com/HumanUI/vue-human/master/docs/vue-human.jpg">
+</p>
 
-<div>
+<p align="center">
   <a href="https://www.npmjs.com/package/vue-human" title="npm">
     <img src="https://badge.fury.io/js/vue-human.svg">
-  </a>
-  <a href="https://circleci.com/gh/HumanUI/vue-human/tree/master" title="CircleCI">
-    <img src="https://circleci.com/gh/HumanUI/vue-human/tree/master.svg?style=svg">
   </a>
   <a href="https://minowu.gitbooks.io/vue-human" title="gitbook">
     <img src="https://img.shields.io/badge/gitbook-中文文档-brightgreen.svg?style=flat-square">
@@ -13,9 +12,13 @@
   <span title="License MIT">
     <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square">
   </span>
-</div>
+</p>
 
-[![NPM](https://nodei.co/npm/vue-human.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vue-human)
+<p align="center">
+  <a href="https://circleci.com/gh/HumanUI/vue-human/tree/master" title="CircleCI">
+    <img src="https://circleci.com/gh/HumanUI/vue-human/tree/master.svg?style=svg">
+  </a>
+</p>
 
 `Vue Human` is designed for high quality user experience. It has rich interactive and animation component.
 
