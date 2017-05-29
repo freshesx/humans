@@ -36,7 +36,11 @@ $ yarn add vue-human
 
 Step 2: Must set babel loader for vue-human in your webpack.
 
-> Install in Webpack 2
+> Before you use `vue-human`, You must add `vue-loader`, `vue-style-loader`, `vue-template-compile`, `sass-loader`, `node-sass` to build your project!
+
+You can see https://github.com/humanUI/webpack or https://github.com/vuejs-templates/webpack
+
+> Use babel to parse vue-human in Webpack 2
 
 ``` javascript
 module: {
