@@ -1,5 +1,4 @@
 import AxiosHelper from 'vue-human/utils/AxiosHelper'
-import Message from 'vue-human/utils/Message'
 
 describe('util/AxiosHelper', () => {
   it('#error', () => {
@@ -60,9 +59,5 @@ describe('util/AxiosHelper', () => {
   it('#errorException', () => {
     const axiosHelper = new AxiosHelper().errorException()
     expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
-  })
-
-  it('#buildMessage', () => {
-    new AxiosHelper().createMessage(Message, {})
   })
 })
