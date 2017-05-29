@@ -2,7 +2,10 @@
 
 <div>
   <a href="https://www.npmjs.com/package/vue-human" title="npm">
-    <img src="https://img.shields.io/badge/npm-v2.5.7-orange.svg?style=flat-square">
+    <img src="https://badge.fury.io/js/vue-human.svg">
+  </a>
+  <a href="https://circleci.com/gh/HumanUI/vue-human/tree/master" title="CircleCI">
+    <img src="https://circleci.com/gh/HumanUI/vue-human/tree/master.svg?style=svg">
   </a>
   <a href="https://minowu.gitbooks.io/vue-human" title="gitbook">
     <img src="https://img.shields.io/badge/gitbook-中文文档-brightgreen.svg?style=flat-square">
