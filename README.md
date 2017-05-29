@@ -59,19 +59,19 @@ Step 3: Import vue-human and configuare it.
 ``` javascript
 import Vue from 'vue'
 import human from 'vue-human'
+import core from 'vue-human/suites/core'
 
 Vue.use(human)
+Vue.use(core)
 ```
 
 Step 4: Import and load some components in vue file
 
 ``` javascript
-import core from 'vue-human/suites/core'
 import carousel from 'vue-human/suites/carousel'
 
 export default {
   components: {
-    ...core.map(),
     ...carousel.map()
   }
 }
