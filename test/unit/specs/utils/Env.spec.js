@@ -30,7 +30,7 @@ describe('utils/Env', () => {
     const state = env.all()
 
     expect(state.userToken.name).to.be.equal('ChaselWu')
-    expect(state._$debug).to.be.false
+    expect(state._$debug).to.be.equal(false)
   })
 
   it('#merge', () => {
@@ -67,6 +67,6 @@ describe('utils/Env', () => {
       email: 'sun@example.com'
     })
 
-    expect(Env.get('someName')).to.be.undefined
+    expect(Env.get('someName')).to.be.equal(undefined)
   })
 })
