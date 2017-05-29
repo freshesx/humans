@@ -1,7 +1,7 @@
 import Query from 'vue-human/utils/Query'
 
 describe('util/Query', () => {
-  it('.parse()', () => {
+  it('parse() # change query value to js value', () => {
     const input = {
       n1: '10',
       n2: '0.6',
@@ -29,7 +29,7 @@ describe('util/Query', () => {
     expect(output).to.deep.equal(hope)
   })
 
-  it('.sync()', () => {
+  it('sync() # sync models with some queris', () => {
     const queris = {
       page: '1'
     }

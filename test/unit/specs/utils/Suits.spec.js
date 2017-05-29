@@ -3,7 +3,7 @@ import iconSuites from 'vue-human/suites/icon'
 import iconElement from 'vue-human/suites/icon/icon'
 
 describe('util/Suites', () => {
-  it('#constructor using suites', () => {
+  it('constructor() # When value is Suites object.', () => {
     const suites = new Suites([iconSuites])
     const components = suites.getComponents()
 
@@ -11,7 +11,7 @@ describe('util/Suites', () => {
     expect(components[0]).to.be.equal(iconElement)
   })
 
-  it('#constructor using element', () => {
+  it('constructor() # When value is Element object.', () => {
     const suites = new Suites([iconElement])
     const components = suites.getComponents()
 
@@ -19,7 +19,7 @@ describe('util/Suites', () => {
     expect(components[0]).to.be.equal(iconElement)
   })
 
-  it('#map and mapComponents', () => {
+  it('map(), mapComponents() # Map components.', () => {
     const suites = new Suites([iconElement])
     const map = suites.map()
     const icon = map['mn-icon']
@@ -27,7 +27,7 @@ describe('util/Suites', () => {
     expect(icon).to.be.equal(iconElement)
   })
 
-  it('#install with component install', () => {
+  it('install() # Has component install method.', () => {
     let installedComponent
     const suites = new Suites([iconElement])
     const Vue = {
@@ -39,7 +39,7 @@ describe('util/Suites', () => {
     expect(installedComponent).to.be.equal(iconElement)
   })
 
-  it('#install without component install', () => {
+  it('install() # Doesn\'t has component install method.', () => {
     let installedComponent
     const element = { name: 'test-component' }
     const suites = new Suites([element])
