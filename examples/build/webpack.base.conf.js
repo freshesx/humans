@@ -20,7 +20,7 @@ function includeFolders () {
 
 module.exports = {
   entry: {
-    app: ['babel-polyfill', resolve('src/main.js')]
+    app: resolve('src/main.js')
   },
   output: {
     path: config.build.assetsRoot,
