@@ -1,7 +1,7 @@
 <template>
   <div
     class="mn-scroller"
-    :class="{ 'is-bar': scrollbar }"
+    :class="{ 'is-hide-bar': !scrollbar }"
     @touchstart="touchStart"
     @touchmove="touchMove"
     @touchend="touchEnd"
@@ -138,27 +138,12 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
-    &::-webkit-scrollbar {
-      width: 0;
-      height: 0;
-    }
+    &.is-hide-bar {
+      -ms-overflow-style: none;
 
-    &.is-bar {
       &::-webkit-scrollbar {
-        width: 10px;
-        height: 10px;
-      }
-
-      &::-webkit-scrollbar-track {
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        background: rgba(255, 255, 255, 0.6);
-      }
-
-      &::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 10px;
-        border-radius: 10px;
-        background: rgba(0, 0, 0, 0.2);
+        width: 0;
+        height: 0;
       }
     }
   }
