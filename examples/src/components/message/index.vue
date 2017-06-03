@@ -27,7 +27,7 @@
   export default {
     data () {
       return {
-        types: ['Default', 'Primary', 'Warning', 'Error']
+        types: ['Default', 'Success', 'Warning', 'Error']
       }
     },
     methods: {
