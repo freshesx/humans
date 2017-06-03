@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-input">
+  <div class="mn-input" :class="{ [`is-${size}`]: !!size }">
     <input
       :type="type"
       class="mn-input-control"
@@ -52,7 +52,8 @@
       disabled: {
         type: Boolean,
         default: false
-      }
+      },
+      size: String
     },
     data () {
       return {
@@ -91,13 +92,20 @@
       flex: 1 1;
       display: block;
       width: 100%;
-      height: 3.5rem;
-      line-height: 3.5;
+      height: 1.5rem;
+      line-height: 1.5;
       border: none;
       padding: 0;
       background: transparent;
       outline: none;
       -webkit-appearance: none;
+    }
+
+    &.is-lg {
+      .mn-input-control {
+        height: 3.5rem;
+        line-height: 3.5;
+      }
     }
 
     &-clear {
