@@ -1,6 +1,5 @@
 import 'babel-polyfill'
 import Vue from 'vue'
-import './env'
 import './human'
 import App from './app'
 import router from './router'
