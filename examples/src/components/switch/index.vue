@@ -62,7 +62,7 @@
         this.$refs.submit.loading = true
         setTimeout(() => {
           Message.create({
-            type: 'primary',
+            type: 'success',
             message: 'Success to validate.'
           }).show()
           form.loading = false
