@@ -20,16 +20,15 @@
   </a>
 </p>
 
-`Vue Human` is designed for high quality user experience. It has rich interactive and animation component.
+`Vue Human` 是为高质量用户体验而设计的组件库。他有丰富的交互和动画组件，有时他会比较顽固，坚持自己的设计理念，有时他又会比较性感，让你不经意间产生爱意。
 
-It has media response for multiple scenes, e.g. mobile, tablet, desktop. You can use vue-human to build your mobile application, desktop dashboard and more.
-
-[Changelog](https://github.com/HumanUI/vue-human/releases)
+他坚持响应式设计，各个组件兼顾移动端、平板、桌面游览器等多个不同屏幕尺寸的场景，你可以使用 Vue Human 构建自己的移动应用、中后台管理界面或者你想要做的别的事。
 
 ### 资料
 
 * [HumanUI.github.io](https://HumanUI.github.io)
 * [中文文档](https://minowu.gitbooks.io/vue-human)
+* [Changelog](https://github.com/HumanUI/vue-human/releases)
 
 ### 参与和改进 Human 的开发
 
