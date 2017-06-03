@@ -1,13 +1,13 @@
 <script>
   import Element from '../../utils/Element'
-  import CardPrefix from './cardPrefix'
+  import cardBody from './cardBody'
 
   export default new Element({
     name: 'mn-card-suffix',
-    mixins: [ CardPrefix ],
+    mixins: [ cardBody ],
     data () {
       return {
-        typeName: 'suffix'
+        columnName: 'suffix'
       }
     }
   })
