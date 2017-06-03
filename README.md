@@ -39,9 +39,6 @@
 项目克隆至本地后，执行如下命令
 
 ``` bash
-# 复制本地环境文件，不然 start 后会报错
-$ cp ./examples/src/env/app.js ./examples/src/env/local.js
-
 # 安装依赖包
 $ yarn install
 
