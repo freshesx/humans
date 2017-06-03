@@ -31,32 +31,29 @@ It has media response for multiple scenes, e.g. mobile, tablet, desktop. You can
 * [HumanUI.github.io](https://HumanUI.github.io)
 * [中文文档](https://minowu.gitbooks.io/vue-human)
 
-### 改进 Human
+### 参与和改进 Human 的开发
 
 项目克隆至本地后，执行如下命令
 
 ``` bash
-# Copy env file
+# 复制本地环境文件，不然 start 后会报错
 $ cp ./examples/src/env/app.js ./examples/src/env/local.js
 
-# Open the vue-human folder
-# Then yarn install
+# 安装依赖包
 $ yarn install
 
-# Open browser in localhost:8888
+# 游览器访问 localhost:8888
 $ yarn start
 
-# Finally, you can help us to improve vue-human
-
-# Unit tests
+# 单元测试的命令
 $ yarn run unit
 ```
 
-### 在项目中使用
+### 在你的项目中使用
 
-vue-human 依赖非常的 npm 包，需要 babel 转换，sass 编译，vue-loader 处理等等，所以建议先通过 vue-cli 来创建 vue-human 专属的脚手架来熟悉 vue-human 的依赖，我们 fork 了 vuejs-templates/webpack 项目，并添加了 vue-human 需要的各种插件。
+vue-human 为了实现按需加载，所以采用了大量的 ES6 语法，以及未编译成固定的 JS 文件，所以在开发中会依赖非常多的 npm 包，需要 babel 转换，sass 编译，vue-loader 处理等等，所以建议通过 vue-cli 来创建 vue-human 项目。
 
-通过查看 [HumanUI/webpack 的文档](https://github.com/HumanUI/webpack) 来了解如何创建和使用 vue-human 项目。
+非常重要的部分，具体安装方法查看 [HumanUI/webpack](https://github.com/HumanUI/webpack) 的文档来了解如何创建和使用 vue-human 项目。
 
 展示部分 vue-human 的使用语法，但具体如何使用建议查看文档与脚手架。
 
@@ -71,7 +68,7 @@ Vue.use(core)
 ```
 
 ``` vue
-// 某个页面内使用轮播图 carousel.vue
+<!-- 某个页面内使用轮播图 carousel.vue -->
 <script>
   import carousel from 'vue-human/suites/carousel'
 
