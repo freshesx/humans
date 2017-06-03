@@ -83,14 +83,16 @@
 
 <style lang="scss">
   .mn-input {
+    width: 100%;
     display: flex;
+    align-items: center;
 
     &-control {
       flex: 1 1;
       display: block;
       width: 100%;
-      height: 1.5rem;
-      line-height: 1.5;
+      height: 3.5rem;
+      line-height: 3.5;
       border: none;
       padding: 0;
       background: transparent;
