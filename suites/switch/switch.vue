@@ -1,13 +1,13 @@
 <template>
-  <input
+  <div
     class="mn-switch"
-    type="checkbox"
-    :checked="data === value"
-    @change="onInput">
+    :class="{ 'is-checked': data === value }"
+    @click="onInput"></div>
 </template>
 
 <script>
   import Element from '../../utils/Element'
+  import isUndefined from 'lodash/isUndefined'
 
   export default new Element({
     name: 'mn-switch',
@@ -17,7 +17,7 @@
     },
     methods: {
       onInput (event) {
-        this.$emit('input', event.target.checked ? this.data : undefined)
+        this.$emit('input', isUndefined(this.value) ? this.data : undefined)
       }
     }
   })
@@ -63,7 +63,7 @@
       box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
     }
 
-    &:checked {
+    &.is-checked {
       border-color: $mn-switch-active-bg;
       background-color: $mn-switch-active-bg;
 
