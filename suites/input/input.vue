@@ -90,6 +90,7 @@
       display: block;
       width: 100%;
       height: 1.5rem;
+      line-height: 1.5;
       border: none;
       padding: 0;
       background: transparent;
