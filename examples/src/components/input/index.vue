@@ -11,7 +11,7 @@
             <mn-card-prefix>
               <mn-label>Username</mn-label>
             </mn-card-prefix>
-            <mn-card-body>
+            <mn-card-body action>
               <mn-input v-model="models.username" placeholder="Username"></mn-input>
             </mn-card-body>
           </mn-card-item>
@@ -20,7 +20,7 @@
             <mn-card-prefix>
               <mn-label>Password</mn-label>
             </mn-card-prefix>
-            <mn-card-body>
+            <mn-card-body action>
               <mn-input type="password" v-model="models.password" placeholder="Password"></mn-input>
             </mn-card-body>
           </mn-card-item>
