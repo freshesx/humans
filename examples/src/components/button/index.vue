@@ -116,6 +116,19 @@
       </mn-section-note>
     </mn-section>
 
+    <mn-section>
+      <mn-card>
+        <mn-card-item>
+          <h5>超链接按钮</h5>
+        </mn-card-item>
+        <mn-card-item>
+          <mn-card-body>
+            <mn-link theme="primary" :to="{ name: 'icon' }" :icon="icons.cart" block margin>按钮</mn-link>
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+    </mn-section>
+
   </page>
 </template>
 

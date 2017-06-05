@@ -23,7 +23,7 @@
         type: String
       },
       to: {
-        type: String
+        type: [String, Object]
       }
     },
     computed: {
