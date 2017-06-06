@@ -3,10 +3,10 @@
     <li v-for="(item, key) in menu" :key="key">
       <div class="mn-side-bar-link"
         :class="{
-          'is-link': item.push,
+          'is-link': item.push || item.link || item.external,
           'is-active': item.push && matchActive(item.push)
         }"
-        @click="$router.push(item.push)">
+        @click="onOpen($event, item)">
         <div class="mn-side-bar-title">{{ item.name }}</div>
         <div class="mn-side-bar-badge">
           <mn-tag v-if="item.badge"
@@ -50,6 +50,24 @@
       matchActive (push) {
         let name = push ? push.name : undefined
         return this.$route.matched.filter(item => item.name === name).length > 0
+      },
+
+      /**
+       * 打开链接，可以是外部链接，普通链接或 router 链接
+       * @method onOpen
+       *
+       * @param  {Event}          event
+       * @param  {Object}         item
+       * @param  {String}         item.external 外部链接，新建标签页打开
+       * @param  {String}         item.link     普通链接，在当前页面打开
+       * @param  {String|Object}  item.push     $router 链接，大部分情况采用当前方案
+
+       * @return {undefined}
+       */
+      onOpen (event, item) {
+        if (item.external) window.open(item.external)
+        else if (item.link) window.location.href = item.link
+        else if (item.push) this.$router.push(item.push)
       }
     }
   })
