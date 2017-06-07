@@ -10,7 +10,7 @@
       @input="changeValue">
     <transition name="mn-input-clear">
       <div
-        v-if="value"
+        v-if="value && !hideClear"
         class="mn-input-clear"
         @click="clearValue">
         <mn-icon :name="iosCloseOutline"></mn-icon>
@@ -53,7 +53,8 @@
         type: Boolean,
         default: false
       },
-      size: String
+      size: String,
+      hideClear: Boolean
     },
     data () {
       return {
