@@ -24,6 +24,18 @@
               <mn-input type="password" v-model="models.password" placeholder="Password" size="lg"></mn-input>
             </mn-card-body>
           </mn-card-item>
+
+          <mn-card-item>
+            <mn-card-prefix>
+              <mn-label>Code</mn-label>
+            </mn-card-prefix>
+            <mn-card-body action>
+              <mn-input v-model="models.code" placeholder="Code" size="lg" hide-clear></mn-input>
+            </mn-card-body>
+            <mn-card-suffix>
+              <mn-btn theme="warning" size="sm">Send code</mn-btn>
+            </mn-card-suffix>
+          </mn-card-item>
         </mn-card>
 
         <mn-section-btn>
@@ -46,7 +58,7 @@
         models: {
           username: undefined,
           password: undefined,
-          year: 18
+          code: undefined
         }
       }
     }
