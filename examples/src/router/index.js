@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { closeAllPopups } from 'vue-human/suites/popup/storage'
+import LoadingBar from 'vue-human/utils/LoadingBar'
 
 const defaultTitle = document.title
+const loadingBar = new LoadingBar()
 
 Vue.use(VueRouter)
 
@@ -194,6 +196,8 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // Clear popups when route changed
   closeAllPopups()
+  // Start loading bar
+  loadingBar.finish(70)
   // Next
   next()
 })
@@ -216,6 +220,9 @@ router.afterEach(route => {
 
     document.title = title
   })
+
+  // Finish loadingBar
+  loadingBar.finish()
 })
 
 export default router
