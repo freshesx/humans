@@ -11,10 +11,12 @@ export default class LoadingBar {
   /**
    * 构造函数
    * @method constructor
+   *
+   * @param {Object} options 初始化数据
    */
-  constructor () {
+  constructor (options = {}) {
     const VueComponent = Vue.extend(loadingBarElement)
-    const vueComponent = new VueComponent().$mount()
+    const vueComponent = new VueComponent({ propsData: options }).$mount()
     document.body.appendChild(vueComponent.$el)
     this.loadingBar = vueComponent
   }
