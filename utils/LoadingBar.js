@@ -6,7 +6,7 @@ export default class LoadingBar {
    * loadingBar 组件储存
    * @type {Object}
    */
-  loadingBar
+  vueComponent
 
   /**
    * 构造函数
@@ -18,7 +18,7 @@ export default class LoadingBar {
     const VueComponent = Vue.extend(loadingBarElement)
     const vueComponent = new VueComponent({ propsData: options }).$mount()
     document.body.appendChild(vueComponent.$el)
-    this.loadingBar = vueComponent
+    this.vueComponent = vueComponent
   }
 
   /**
@@ -43,23 +43,25 @@ export default class LoadingBar {
    */
   async finish (percent = 100, processTime = 1000, initTime = 0) {
     // 显示加载条
-    this.loadingBar.$props.isShow = true
-    this.loadingBar.$props.millisecond = processTime
+    this.vueComponent.$props.isShow = true
+    this.vueComponent.$props.millisecond = processTime
 
     // 等待加载显示的初始化
     await this.timeout(initTime)
 
     // 启动加载条变化
-    this.loadingBar.$props.percent = percent
+    this.vueComponent.$props.percent = percent
 
     // 等待动画完成
     await this.timeout(processTime)
 
     // 还原初始化
     if (percent === 0 || percent === 100) {
-      this.loadingBar.$props.isShow = false
-      this.loadingBar.$props.millisecond = 0
-      this.loadingBar.$props.percent = 0
+      this.vueComponent.$props.isShow = false
+      this.vueComponent.$props.millisecond = 0
+      this.vueComponent.$props.percent = 0
     }
+
+    return this
   }
 }
