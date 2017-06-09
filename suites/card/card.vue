@@ -1,5 +1,9 @@
 <template>
-  <div class="mn-card" :class="[ `is-${theme}`, { 'is-rounded': rounded, 'is-backdrop': enableBackdrop } ]">
+  <div class="mn-card" :class="{
+    [`is-${theme}`]: !!theme,
+    'is-rounded': rounded,
+    'is-backdrop': enableBackdrop
+  }">
     <slot></slot>
   </div>
 </template>
@@ -10,17 +14,13 @@
   /**
    * mn-card (卡片组件）
    * @module suites/card/card
-   * @param {string} [theme='primary'] - 主题的名称，和 scss 对应
-   * @param {boolean} [rounded=false] - 是否强制圆角
+   * @param {string}   [theme]           - 主题的名称，有 “inverse” 或 “glass” 可选
+   * @param {boolean}  [rounded=false]   - 是否强制圆角
    */
   export default new Element({
     name: 'mn-card',
     props: {
-      theme: {
-        type: String,
-        default: 'primary'
-      },
-
+      theme: String,
       rounded: Boolean
     },
     data () {
@@ -29,7 +29,8 @@
       }
     },
     mounted () {
-      if (this.$el && this.$el.style && this.$el.style.hasOwnProperty('webkitBackdropFilter')) {
+      if (this.$el && this.$el.style &&
+        this.$el.style.hasOwnProperty('webkitBackdropFilter')) {
         this.enableBackdrop = true
       }
     }
