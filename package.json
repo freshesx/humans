@@ -28,7 +28,8 @@
     "lint": "eslint --ext .js,.vue components util examples locale",
     "example": "node examples/build/build.js",
     "test": "karma start test/unit/karma.conf.js --single-run",
-    "test:unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js"
+    "test:unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js",
+    "docs": "jsdoc -r -c ./docs/jsdoc.json"
   },
   "dependencies": {
     "lodash": "^4.17.4",
