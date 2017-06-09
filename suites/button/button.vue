@@ -14,6 +14,20 @@
   import icon from '../icon/icon'
   import isUndefined from 'lodash/isUndefined'
 
+  /**
+   * mn-btn（按钮组件）
+   * @module suites/button/button
+   *
+   * @param {string}   [title]            - 按钮的文本
+   * @param {*}        [icon]             - 按钮的图标
+   * @param {string}   [theme]            - 按钮的主题，由 scss 控制
+   * @param {string}   [size]             - 按钮的尺寸，目前仅提供 “sm”
+   * @param {boolean}  [disabled=false]   - 是否禁用该按钮
+   * @param {boolean}  [active=false]     - 按钮是否生效
+   * @param {boolean}  [block=false]      - 按钮是否为块状元素
+   * @param {boolean}  [circle=false]     - 按钮是否为圆形
+   * @param {boolean}  [margin=false]     - 按钮是否具有 margin-bottom 值
+   */
   export default new Element({
     name: 'mn-btn',
     components: {
@@ -77,12 +91,31 @@
         // 2. If disabled, $emit error event
         if (this.disabled) {
           $event.preventDefault()
-          this.$emit('error', $event, this)
+          this.emitError($event)
           return
         }
 
         // 3. Default emit click event
+        this.emitClick($event)
+      },
+      /**
+       * click（成功点击事件）
+       * @event click
+       * @prop {Event}          $event
+       * @prop {VueComponent}   button   - 自身
+       */
+      emitClick ($event) {
         this.$emit('click', $event, this)
+      },
+
+      /**
+       * error（失败点击事件）
+       * @event error
+       * @prop {Event}          $event
+       * @prop {VueComponent}   button   - 自身
+       */
+      emitError ($event) {
+        this.$emit('error', $event, this)
       }
     }
   })
