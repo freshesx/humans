@@ -7,12 +7,15 @@
 <script>
   import Element from '../../utils/Element'
 
+  /**
+   * mn-card (卡片组件）
+   * @module suites/card/card
+   * @param {string} [theme='primary'] - 主题的名称，和 scss 对应
+   * @param {boolean} [rounded=false] - 是否强制圆角
+   */
   export default new Element({
     name: 'mn-card',
     props: {
-      /**
-       * Card theme
-       */
       theme: {
         type: String,
         default: 'primary'

@@ -1,0 +1,10 @@
+{
+  "plugins": ["node_modules/jsdoc-vue"],
+  "source": {
+    "include": ["suites"],
+    "includePattern": "\\.(vue|js)$"
+  },
+  "opts": {
+    "destination": "./docs/jsdoc"
+  }
+}
