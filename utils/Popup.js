@@ -44,7 +44,7 @@ export default class Popup {
    */
   createComponent (options = {}) {
     if (isUndefined(this.element)) {
-      return console.warn('没有配置 element')
+      throw new Error('没有配置 element')
     }
 
     // 创建 mixined element 实例
