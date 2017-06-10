@@ -1,63 +1,43 @@
 import AxiosHelper from 'vue-human/utils/AxiosHelper'
 
 describe('util/AxiosHelper', () => {
-  it('#error', () => {
-    const errorDate = {
-      response: {
-        status: 401
-      }
-    }
-
-    const axiosHelper = new AxiosHelper().error(errorDate)
-
-    expect(axiosHelper).to.be.equal('未定义 error 处理方式')
+  it('error # Handle error response by status code without 401 method.', () => {
+    const errorResponse = { response: { status: 401 } }
+    const output = new AxiosHelper().error(errorResponse)
+    expect(output).to.be.equal(undefined)
   })
 
-  it('#error with custom method', () => {
-    const errorDate = {
-      response: {
-        status: 401
-      }
-    }
-
-    AxiosHelper.prototype.error401 = () => {
-      return 'error401'
-    }
-
-    const message = new AxiosHelper().error(errorDate)
-    expect(message).to.be.equal('error401')
+  it('error # Handle error response by status code with 401 method.', () => {
+    const errorTip = 'show status code: 401.'
+    const errorResponse = { response: { status: 401 } }
+    AxiosHelper.prototype.error401 = () => errorTip
+    const output = new AxiosHelper().error(errorResponse)
+    expect(output).to.be.equal(errorTip)
   })
 
-  it('#error with errorDate being none', () => {
-    const errorDate = {}
+  it('error # Handle error response without empty response', done => {
+    const errorResponse = {}
+    const output = new AxiosHelper().error(errorResponse)
 
-    const axiosHelper = new AxiosHelper().error(errorDate)
-
-    expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
+    // 返回的 openExceptionMessage 的 Promise
+    expect(output).to.be.an.instanceof(Promise)
+    output.then(messagePopup => {
+      expect(messagePopup.message).to.be.equal('网络异常错误，请刷新。')
+      done()
+    })
   })
 
-  it('#$error401', () => {
-    const axiosHelper = new AxiosHelper().$error401()
-    expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
+  it('openMessage # Async loading Message popup and show it.', done => {
+    new AxiosHelper().openMessage().then(messagePopup => {
+      expect(messagePopup.type).to.be.equal('error')
+      done()
+    })
   })
 
-  it('#$error403', () => {
-    const axiosHelper = new AxiosHelper().$error403()
-    expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
-  })
-
-  it('#$error404', () => {
-    const axiosHelper = new AxiosHelper().$error404()
-    expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
-  })
-
-  it('#$error500', () => {
-    const axiosHelper = new AxiosHelper().$error500()
-    expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
-  })
-
-  it('#errorException', () => {
-    const axiosHelper = new AxiosHelper().errorException()
-    expect(axiosHelper).to.be.an.instanceof(AxiosHelper)
+  it('openExceptionMessage # Open exception message by openMessage.', done => {
+    new AxiosHelper().openExceptionMessage().then(messagePopup => {
+      expect(messagePopup.message).to.be.equal('网络异常错误，请刷新。')
+      done()
+    })
   })
 })
