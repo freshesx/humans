@@ -38,7 +38,7 @@ export default class LoadingBar {
    *
    * @param  {Number}  [percent=70]       加载条百分比，0 - 100
    * @param  {Number}  [processTime=1000] 加载条加载过程
-   * @param  {Number}  [initTime=200]     加载条初始化时间
+   * @param  {Number}  [initTime=0]       加载条初始化时间
    * @return {Promise}
    */
   async finish (percent = 100, processTime = 1000, initTime = 0) {
