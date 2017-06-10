@@ -1,5 +1,8 @@
 import 'babel-polyfill'
 import Vue from 'vue'
+import Human from '../../index.js'
+
+Vue.use(Human)
 
 Vue.config.productionTip = false
 
