@@ -57,7 +57,7 @@ export default class Suites {
   install (Vue) {
     this.components.forEach(component => {
       if (!component.install) {
-        return console.warn(`${component.name} 没有 install 方法`, component)
+        throw new Error(`${component.name} 没有 install 方法`)
       }
       Vue.use(component)
     })
