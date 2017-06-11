@@ -7,27 +7,19 @@
 
 <script>
   import Element from '../../utils/Element'
+  import layerMixin from '../layer/layerMixin'
 
   export default new Element({
     name: 'mn-shade',
+    mixins: [
+      layerMixin
+    ],
     props: {
-      theme: String,
-      visible: Boolean,
-      zIndex: {
-        type: Number,
-        default: 2000
-      },
-      transition: {
-        type: String,
-        default: 'mn-shade-fade'
-      }
+      theme: String
     },
     methods: {
       onHide () {
         this.hide()
-      },
-      hide () {
-        this.$emit('update:visible', false)
       }
     }
   })
