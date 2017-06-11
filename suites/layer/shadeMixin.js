@@ -26,7 +26,7 @@ export default {
      * @return {undefined}
      */
     visible (visible) {
-      visible ? this.shade.show() : this.shade.close()
+      visible ? this.shade.show() : this.shade.destroy()
     }
   },
   /**

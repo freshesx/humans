@@ -101,7 +101,7 @@ export default class Layer {
    */
   listen (vueComponent) {
     vueComponent.$on('update:visible', visible => {
-      visible ? this.open() : this.close()
+      visible ? this.open() : this.destroy()
     })
     return this
   }
