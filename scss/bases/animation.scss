@@ -1,0 +1,54 @@
+//
+// 渐变进入（has-fade）
+//
+.has-fade-in-enter-active,
+.has-fade-in-leave-active {
+  transition: opacity 0.3s linear;
+}
+
+.has-fade-in-enter,
+.has-fade-in-leave-active {
+  opacity: 0;
+}
+
+//
+// 从底部移入（has-slide-in-bottom）
+//
+.has-slide-in-bottom-enter-active,
+.has-slide-in-bottom-leave-active {
+  transition: transform 0.3s;
+}
+
+.has-slide-in-bottom-enter,
+.has-slide-in-bottom-leave-active {
+  transform: translateY(100%);
+}
+
+//
+// 从顶部移入（has-slide-in-top）
+//
+.has-slide-in-top-enter-active,
+.has-slide-in-top-leave-active {
+  transition: transform 0.3s;
+}
+
+.has-slide-in-top-enter,
+.has-slide-in-top-leave-active {
+  transform: translateY(-100%);
+}
+
+//
+// 从右边移入（has-slide-in-right）
+//
+.has-slide-in-right-enter {
+  transform: translateX(50%);
+}
+
+.has-slide-in-right-enter-active {
+  transition: transform 0.2s;
+}
+
+.has-slide-in-right-leave-active {
+  transition: opacity 0.3s linear;
+  opacity: 0;
+}
