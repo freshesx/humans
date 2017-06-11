@@ -95,7 +95,6 @@ export default class Layer {
    */
   remove () {
     if (!isUndefined(this.vm)) {
-      this.removeStore()
       this.vm.$destroy()
       this.removeWrapper()
     }
