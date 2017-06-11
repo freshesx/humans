@@ -163,26 +163,14 @@ export default class Layer {
   }
 
   /**
-   * 隐藏 vueComponent
-   * @method hide
-   * @public
-   * @return {Layer}
-   */
-  hide () {
-    if (!this.vm) throw new Error('vueComponent 已经被销毁。')
-    this.vm.$props.visible = false
-    return this
-  }
-
-  /**
    * 先关闭后销毁 vueComponent
    * @public
-   * @method close
+   * @method destroy
    * @return {Promise}
    */
-  async close () {
+  async destroy () {
     if (this.vm) {
-      this.hide()
+      this.vm.$props.visible = false
       await this.timeout()
       return this.remove()
     }
