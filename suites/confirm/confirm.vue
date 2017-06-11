@@ -1,41 +1,43 @@
 <template>
-  <mn-popup class="mn-confirm" :show="isShow">
-    <mn-card class="has-none-margin-bottom" rounded>
-      <mn-card-item>
-        <mn-card-body class="has-center-text">
-          <h4>{{ title }}</h4>
-          <small v-if="description">{{ description }}</small>
-        </mn-card-body>
-      </mn-card-item>
-      <mn-card-btns type="column">
-        <button class="has-blue-text" @click="cancel">{{ cancelText }}</button>
-        <button class="has-blue-text" @click="confirm">{{ confirmText }}</button>
-      </mn-card-btns>
-    </mn-card>
-  </mn-popup>
+  <transition :name="transition || 'has-fade-in'">
+    <div class="mn-confirm" v-if="visible" :style="{ zIndex }">
+      <mn-card class="has-none-margin-bottom" rounded>
+        <mn-card-item>
+          <mn-card-body class="has-center-text">
+            <h4>{{ title }}</h4>
+            <small v-if="description">{{ description }}</small>
+          </mn-card-body>
+        </mn-card-item>
+        <mn-card-btns type="column">
+          <button class="has-blue-text" @click="cancel">{{ cancelText }}</button>
+          <button class="has-blue-text" @click="confirm">{{ confirmText }}</button>
+        </mn-card-btns>
+      </mn-card>
+    </div>
+  </transition>
 </template>
 
 <script>
   import Element from '../../utils/Element'
-  import popup from '../popup/popup'
   import card from '../card/card'
   import cardItem from '../card/cardItem'
   import cardBody from '../card/cardBody'
   import cardBtns from '../card/cardBtns'
-  import popupMixin from '../popup/popupMixin'
+  import layerMixin from '../layer/layerMixin'
+  import shadeMixin from '../layer/shadeMixin'
 
   export default new Element({
     name: 'mn-confirm',
+    mixins: [
+      layerMixin,
+      shadeMixin
+    ],
     components: {
-      ...popup.inject(),
       ...card.inject(),
       ...cardItem.inject(),
       ...cardBody.inject(),
       ...cardBtns.inject()
     },
-    mixins: [
-      popupMixin
-    ],
     props: {
       title: {
         type: String,
@@ -53,11 +55,11 @@
     },
     methods: {
       cancel () {
-        this.close()
+        this.hide()
         this.$emit('cancel')
       },
       confirm () {
-        this.close()
+        this.hide()
         this.$emit('confirm')
       }
     }
@@ -68,6 +70,7 @@
   @import "./vars";
 
   .mn-confirm {
+    position: fixed;
     width: $mn-confirm-width;
     top: 45%;
     right: auto;
