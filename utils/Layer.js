@@ -2,6 +2,13 @@ import Vue from 'vue'
 import isUndefined from 'lodash/isUndefined'
 
 /**
+ * 浮层的 zIndex 存储值
+ * @private
+ * @type {number}
+ */
+let zIndex = 8000
+
+/**
  * 控制浮层的类
  * @class
  */
@@ -50,12 +57,39 @@ export default class Layer {
     }
 
     const VueComponent = Vue.extend(this.element)
-    const vueComponent = new VueComponent({ propsData }).$mount()
+    const vueComponent = new VueComponent({
+      propsData: this.mergePropsData(propsData)
+    }).$mount()
 
     this.listen(vueComponent)
     this.append(vueComponent)
     this.vm = vueComponent
     return this
+  }
+
+  /**
+   * 合并 propsData 的默认值
+   * @method mergePropsData
+   * @protected
+   * @param  {Object}       propsData
+   * @return {Object}
+   */
+  mergePropsData (propsData) {
+    return {
+      zIndex: this.generateZindex(),
+      ...propsData
+    }
+  }
+
+  /**
+   * 生成 zIndex
+   * @method generateZindex
+   * @private
+   * @return {number}
+   */
+  generateZindex () {
+    zIndex += 10
+    return zIndex
   }
 
   /**
