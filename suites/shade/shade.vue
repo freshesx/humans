@@ -26,9 +26,6 @@
       onHide () {
         this.hide()
       },
-      show () {
-        this.$emit('update:visible', true)
-      },
       hide () {
         this.$emit('update:visible', false)
       }
