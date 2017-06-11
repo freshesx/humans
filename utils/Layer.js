@@ -157,6 +157,7 @@ export default class Layer {
    * @return {Layer}
    */
   show () {
+    if (!this.vm) throw new Error('vueComponent 已经被销毁。')
     this.vm.$props.visible = true
     return this
   }
@@ -168,6 +169,7 @@ export default class Layer {
    * @return {Layer}
    */
   hide () {
+    if (!this.vm) throw new Error('vueComponent 已经被销毁。')
     this.vm.$props.visible = false
     return this
   }
@@ -179,9 +181,12 @@ export default class Layer {
    * @return {Promise}
    */
   async close () {
-    this.hide()
-    await this.timeout()
-    return this.remove()
+    if (this.vm) {
+      this.hide()
+      await this.timeout()
+      return this.remove()
+    }
+    return this
   }
 
   /**
