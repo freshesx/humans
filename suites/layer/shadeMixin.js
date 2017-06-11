@@ -2,7 +2,11 @@ import Shade from '../../utils/Shade'
 
 export default {
   props: {
-    visible: Boolean
+    visible: Boolean,
+    zIndex: {
+      type: Number,
+      default: 2000
+    }
   },
   data () {
     return {
@@ -32,7 +36,7 @@ export default {
    * @return {undefined}
    */
   created () {
-    this.shade = Shade.create()
+    this.shade = Shade.create({ zIndex: this.zIndex - 1 })
     this.shade.vm.$on('update:visible', visible => {
       if (!visible) this.hide()
     })
