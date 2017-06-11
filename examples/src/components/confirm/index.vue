@@ -22,8 +22,11 @@
   export default {
     methods: {
       onOpenConfirm () {
-        Confirm.create().show()
+        this.confirmLayer = Confirm.create().show()
       }
+    },
+    beforeDestroy () {
+      this.confirmLayer.close()
     }
   }
 </script>
