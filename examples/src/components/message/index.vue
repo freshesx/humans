@@ -5,18 +5,19 @@
     </mn-letter>
 
     <mn-section>
-      <mn-card v-for="(type, key) in types" :key="key">
+      <mn-card>
         <mn-card-item>
-          <mn-card-body>
-            {{ type }}
-          </mn-card-body>
+          <mn-card-body>Message</mn-card-body>
           <mn-card-suffix action>
-            <mn-btn theme="primary" @click="onOpenMessage(type)" size="sm">
+            <mn-btn theme="primary" @click="onOpenMessage" size="sm">
               Open message
             </mn-btn>
           </mn-card-suffix>
         </mn-card-item>
       </mn-card>
+      <mn-section-note>
+        可以有多种不同类型的 Message: success, warning, error。
+      </mn-section-note>
     </mn-section>
   </page>
 </template>
@@ -31,9 +32,12 @@
       }
     },
     methods: {
-      onOpenMessage (type) {
-        Message.create({ type: type.toLowerCase(), message: 'new' }).show()
+      onOpenMessage () {
+        this.messageLayer = Message.create().show()
       }
+    },
+    beforeDestroy () {
+      if (this.messageLayer) this.messageLayer.destroy()
     }
   }
 </script>
