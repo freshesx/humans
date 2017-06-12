@@ -26,7 +26,7 @@
       }
     },
     beforeDestroy () {
-      this.confirmLayer.destroy()
+      if (this.confirmLayer) this.confirmLayer.destroy()
     }
   }
 </script>
