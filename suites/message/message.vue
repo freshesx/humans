@@ -1,34 +1,34 @@
 <template>
-  <mn-popup class="mn-message" :show="isShow" :masked="false"
-    animation="slideInTop">
-    <mn-card theme="glass" class="mn-message-card" rounded>
-      <!-- Title -->
-      <mn-card-item class="mn-message-title">
-        <mn-card-prefix>
-          <mn-icon :class="`has-${currentType.color}-text`"
-            :name="iconName"
-            vertical="-3px"></mn-icon>
-        </mn-card-prefix>
-        <mn-card-body>
-          <h4><small>{{ title || currentType.text }}</small></h4>
-        </mn-card-body>
-        <mn-card-suffix @click.native="close">
-          <mn-icon :name="closeIcon"></mn-icon>
-        </mn-card-suffix>
-      </mn-card-item>
-      <!-- Main contents -->
-      <mn-card-item>
-        <mn-card-body>
-          {{ message }}
-        </mn-card-body>
-      </mn-card-item>
-    </mn-card>
-  </mn-popup>
+  <transition :name="transition || 'has-slide-in-top'">
+    <div class="mn-message" v-if="visible">
+      <mn-card theme="glass" class="mn-message-card" rounded>
+        <!-- Title -->
+        <mn-card-item class="mn-message-title">
+          <mn-card-prefix>
+            <mn-icon :class="`has-${currentType.color}-text`"
+              :name="iconName"
+              vertical="-3px"></mn-icon>
+          </mn-card-prefix>
+          <mn-card-body>
+            <h4><small>{{ title || currentType.text }}</small></h4>
+          </mn-card-body>
+          <mn-card-suffix @click.native="hide">
+            <mn-icon :name="closeIcon"></mn-icon>
+          </mn-card-suffix>
+        </mn-card-item>
+        <!-- Main contents -->
+        <mn-card-item>
+          <mn-card-body>
+            {{ message }}
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+    </div>
+  </transition>
 </template>
 
 <script>
   import Element from '../../utils/Element'
-  import popup from '../popup/popup'
   import card from '../card/card'
   import cardItem from '../card/cardItem'
   import cardBody from '../card/cardBody'
@@ -36,11 +36,10 @@
   import cardSuffix from '../card/cardSuffix'
   import icon from '../icon/icon'
   import TYPES from './types'
-  import popupMixin from '../popup/popupMixin'
+  import layerMixin from '../layer/layerMixin'
 
   export default new Element({
     components: {
-      ...popup.inject(),
       ...card.inject(),
       ...cardItem.inject(),
       ...cardBody.inject(),
@@ -49,7 +48,7 @@
       ...icon.inject()
     },
     mixins: [
-      popupMixin
+      layerMixin
     ],
     props: {
       /**
@@ -124,7 +123,7 @@
       // 设定的时间后自动关闭
       if (this.autoClose) {
         setTimeout(() => {
-          this.close()
+          this.hide()
         }, this.duration)
       }
     }
@@ -135,6 +134,7 @@
   @import "../../scss/mixins/media";
 
   .mn-message {
+    position: fixed;
     top: 0.5rem;
     right: 0.5rem;
     left: 0.5rem;

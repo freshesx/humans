@@ -1,6 +1,6 @@
-import Popup from './Popup'
+import Layer from './Layer'
 import messageElement from '../suites/message/message'
 
-export default class Message extends Popup {
+export default class Message extends Layer {
   element = messageElement
 }
