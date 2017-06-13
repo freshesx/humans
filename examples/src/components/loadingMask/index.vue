@@ -12,6 +12,9 @@
           </mn-card-body>
         </mn-card-item>
       </mn-card>
+      <mn-section-note>
+        此 LoadingMask 打开后，会在 3s 后自动关闭。
+      </mn-section-note>
     </mn-section>
   </page>
 </template>
@@ -22,11 +25,18 @@
   export default {
     methods: {
       onOpenLoadingMask () {
-        const loadingMask = LoadingMask.create().show()
+        this.loadingMaskLayer = LoadingMask.create().show()
+
         setTimeout(() => {
-          loadingMask.close()
-        }, 5000)
+          this.destroyLoadingMask()
+        }, 3000)
+      },
+      destroyLoadingMask () {
+        if (this.loadingMaskLayer) this.loadingMaskLayer.destroy()
       }
+    },
+    beforeDestroy () {
+      this.destroyLoadingMask()
     }
   }
 </script>
