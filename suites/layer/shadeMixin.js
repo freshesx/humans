@@ -29,6 +29,20 @@ export default {
       visible ? this.shade.show() : this.shade.destroy()
     }
   },
+  methods: {
+    /**
+     * 封装 shade 请求隐藏的方法
+     * @method shadeCallHiding
+     * @public
+     * @param  {Function}      callback - 回调函数
+     * @return {undefined}
+     */
+    shadeCallHiding (callback) {
+      this.shade.vm.$on('update:visible', visible => {
+        if (!visible) callback.call(this, this.shade)
+      })
+    }
+  },
   /**
    * 创建 Shade Layer 对象，并监听 update:visible 事件
    * @method created
@@ -37,8 +51,5 @@ export default {
    */
   created () {
     this.shade = Shade.create({ zIndex: this.zIndex - 1 })
-    this.shade.vm.$on('update:visible', visible => {
-      if (!visible) this.hide()
-    })
   }
 }
