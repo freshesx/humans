@@ -22,8 +22,11 @@
   export default {
     methods: {
       onOpenAlert () {
-        Alert.create().show()
+        this.alertLayer = Alert.create().show()
       }
+    },
+    beforeDestroy () {
+      if (this.alertLayer) this.alertLayer.destroy()
     }
   }
 </script>
