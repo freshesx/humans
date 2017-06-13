@@ -1,7 +1,7 @@
 <template>
   <transition :name="transition">
     <div class="mn-shade" v-if="visible" :style="{ 'z-index': zIndex }"
-      @click="onHide"></div>
+      @click.prevent.stop="onHide"></div>
   </transition>
 </template>
 
