@@ -1,6 +1,6 @@
-import Popup from './Popup'
+import Layer from './Layer'
 import loadingMaskElement from '../suites/loadingMask/loadingMask'
 
-export default class LoadingMask extends Popup {
+export default class LoadingMask extends Layer {
   element = loadingMaskElement
 }

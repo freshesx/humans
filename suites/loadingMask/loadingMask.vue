@@ -1,28 +1,38 @@
 <template>
-  <mn-popup class="mn-loading-mask" :show="isShow">
-    <mn-loading-icon></mn-loading-icon>
-  </mn-popup>
+  <transition :name="transition || 'has-fade-in'">
+    <div class="mn-loading-mask" v-if="visible" :style="{ zIndex }">
+      <mn-loading-icon></mn-loading-icon>
+    </div>
+  </transition>
 </template>
 
 <script>
   import Element from '../../utils/Element'
-  import popup from '../popup/popup'
   import loadingIcon from '../loadingIcon/loadingIcon'
-  import popupMixin from '../popup/popupMixin'
+  import layerMixin from '../layer/layerMixin'
+  import shadeMixin from '../layer/shadeMixin'
 
   export default new Element({
+    name: 'mn-loading-mask',
     components: {
-      ...popup.inject(),
       ...loadingIcon.inject()
     },
     mixins: [
-      popupMixin
-    ]
+      layerMixin,
+      shadeMixin
+    ],
+    props: {
+      shadePropsData: {
+        type: Object,
+        default () { return { disableClosing: true } }
+      }
+    }
   })
 </script>
 
 <style lang="scss">
   .mn-loading-mask {
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
