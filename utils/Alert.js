@@ -1,6 +1,6 @@
-import Popup from './Popup'
+import Layer from './Layer'
 import alertElement from '../suites/alert/alert'
 
-export default class Alert extends Popup {
+export default class Alert extends Layer {
   element = alertElement
 }
