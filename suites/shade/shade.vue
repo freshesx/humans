@@ -9,6 +9,12 @@
   import Element from '../../utils/Element'
   import layerMixin from '../layer/layerMixin'
 
+  /**
+   * mn-shade（遮盖浮层）
+   * @module suites/shade/shade
+   * @param {string}    [theme]           - 主题
+   * @parma {boolean}   [disableClosing]  - 禁用 “关闭” 事件
+   */
   export default new Element({
     name: 'mn-shade',
     mixins: [
