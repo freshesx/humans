@@ -62,6 +62,9 @@
         this.hide()
         this.$emit('confirm')
       }
+    },
+    created () {
+      this.shadeCallHiding(shade => this.cancel())
     }
   })
 </script>
