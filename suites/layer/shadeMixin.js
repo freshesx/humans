@@ -3,6 +3,7 @@ import Shade from '../../utils/Shade'
 export default {
   props: {
     visible: Boolean,
+    shadePropsData: Object,
     zIndex: {
       type: Number,
       default: 2000
@@ -50,6 +51,6 @@ export default {
    * @return {undefined}
    */
   created () {
-    this.shade = Shade.create({ zIndex: this.zIndex - 1 })
+    this.shade = Shade.create({ zIndex: this.zIndex - 1, ...this.shadePropsData })
   }
 }
