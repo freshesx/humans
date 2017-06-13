@@ -15,11 +15,12 @@
       layerMixin
     ],
     props: {
-      theme: String
+      theme: String,
+      disableClosing: Boolean
     },
     methods: {
       onHide () {
-        this.hide()
+        if (!this.disableClosing) this.hide()
       }
     }
   })
