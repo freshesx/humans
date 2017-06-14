@@ -16,7 +16,7 @@
       </mn-section>
     </page>
 
-    <mn-modal :show.sync="showModal">
+    <mn-modal :visible.sync="showModal">
       <mn-scroller>
         <mn-section>
           <mn-card>
