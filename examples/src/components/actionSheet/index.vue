@@ -16,7 +16,7 @@
       </mn-section>
     </page>
 
-    <mn-action-sheet :show.sync="showActionSheet">
+    <mn-action-sheet :visible.sync="showActionSheet">
       <mn-card rounded>
         <mn-card-item>
           <mn-card-body class="has-center-text">
