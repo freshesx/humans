@@ -94,13 +94,19 @@ export default class DatetimeRange {
     return this.showFromAt()
   }
 
-  showFromAt (propsData) {
-    // Create popup
+  /**
+   * 显示开始时间的浮层，并监听关闭
+   * @method showFromAt
+   * @param  {Object}   [propsData={}]
+   * @return {DatetimeRange}
+   */
+  showFromAt (propsData = {}) {
+    // 创建浮层
     this.fromAtLayer = Datetime.create({ ...this.fromAtConfig, ...propsData }).show()
 
-    // Listen confirm
+    // 监听浮层的事件
     this.fromAtLayer.on('confirm', (display, fromAt) => {
-      // Get computed datetime (fromAt)
+      // 获得确认后的开始时间
       this.displayFromAt = display
       this.fromAt = fromAt
 
