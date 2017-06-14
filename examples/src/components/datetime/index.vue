@@ -91,12 +91,17 @@
     },
     methods: {
       onOpenSingle () {
-        Datetime.create({ default: this.models.datetime }).show().$on('confirm', display => {
+        this.singleDatetime = Datetime.create({
+          default: this.models.datetime
+        }).show().on('confirm', display => {
           this.models.datetime = display
         })
       },
       onOpenSingleTime () {
-        Datetime.create({ default: this.models.time, showDate: false }).show().$on('confirm', display => {
+        this.singleTime = Datetime.create({
+          default: this.models.time,
+          showDate: false
+        }).show().on('confirm', display => {
           this.models.time = display
         })
       },
@@ -118,6 +123,10 @@
             this.models.toTime = formats.to
           })
       }
+    },
+    beforeDestroy () {
+      if (this.singleDatetime) this.singleDatetime.destroy()
+      if (this.singleTime) this.singleTime.destroy()
     }
   }
 </script>
