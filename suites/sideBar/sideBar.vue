@@ -6,34 +6,31 @@
 
 <script>
   import Element from '../../utils/Element'
-  import maskMixin from '../popup/maskMixin'
+  import Shade from '../../utils/Shade'
 
   export default new Element({
     name: 'mn-side-bar',
-    mixins: [ maskMixin ],
     props: {
       show: Boolean
     },
     watch: {
       show (newVal) {
         if (newVal) {
-          this.showMask(190)
+          this.shadeLayer = Shade.create({
+            zIndex: 190
+          }).show().on('update:visible', visible => {
+            if (!visible) this.hide()
+          })
         } else {
-          this.closeMask()
+          if (this.shadeLayer) this.shadeLayer.destroy()
         }
       },
       '$route.path' () {
-        this.closePopup()
+        this.hide()
       }
     },
     methods: {
-      /**
-       * Rewrite maskMixin closePopup method
-       * To notify onShowSidebar method
-       *
-       * @return {this}
-       */
-      closePopup () {
+      hide () {
         this.$emit('update:show', false)
         return this
       }
