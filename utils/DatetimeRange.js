@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import isUndefined from 'lodash/isUndefined'
 import Datetime from './Datetime'
 import { addDay, addHours } from '../suites/datetime/dateChecker'
 
