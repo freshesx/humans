@@ -7,7 +7,6 @@ import card from '../card'
 import container from '../container'
 import section from '../section'
 import column from '../column'
-import row from '../row'
 import letter from '../letter'
 import page from '../page'
 import form from '../form'
@@ -23,7 +22,6 @@ export default new Suites([
   container,
   section,
   column,
-  row,
   letter,
   page,
   form,
