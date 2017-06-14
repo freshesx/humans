@@ -52,10 +52,15 @@
       cancel () {
         this.hide()
         this.$emit('cancel')
+      },
+      /**
+       * 覆盖 shadeMixin 内的方法
+       * @method whenShadeCallHiding
+       * @return {[type]}            [description]
+       */
+      whenShadeCallHiding () {
+        this.cancel()
       }
-    },
-    created () {
-      this.shadeCallHiding(shade => this.cancel())
     }
   })
 </script>
