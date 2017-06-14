@@ -1,5 +1,10 @@
 @import "../../scss/vars";
 
-$mn-turn-bg: $gray-lighter;
-$mn-turn-active-bg: $green;
-$mn-turn-border: $gray-darker;
+// 公有属性，可修改
+$mn-turn-theme:               () !default;
+
+// 私有属性
+$-mn-turn-default-theme: (
+  primary: (bg: $gray-lighter, active: $green, border: $gray-darker)
+);
+$-mn-turn-theme: map-merge($-mn-turn-default-theme, $mn-turn-theme) !default;

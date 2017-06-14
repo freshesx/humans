@@ -1,7 +1,7 @@
 <template>
   <div
     class="mn-turn"
-    :class="{ 'is-checked': data === value }"
+    :class="{ [`is-${theme}`]: !!theme, 'is-checked': data === value }"
     @click="onInput"></div>
 </template>
 
@@ -13,7 +13,11 @@
     name: 'mn-turn',
     props: {
       value: null,
-      data: null
+      data: null,
+      theme: {
+        type: String,
+        default: 'primary'
+      }
     },
     methods: {
       onInput (event) {
@@ -34,8 +38,7 @@
     width: $-height * 1.625;
     height: $-height;
     border-radius: $-height;
-    background-color: $mn-turn-bg;
-    border: 1px solid $mn-turn-border;
+    border: 1px solid transparent;
     cursor: pointer;
     outline: 0;
     appearance: none;
@@ -54,7 +57,6 @@
 
     &::before {
       width: 100%;
-      background-color: $mn-turn-bg;
     }
 
     &::after {
@@ -64,15 +66,28 @@
     }
 
     &.is-checked {
-      border-color: $mn-turn-active-bg;
-      background-color: $mn-turn-active-bg;
-
       &::before {
         transform: scale(0);
       }
 
       &::after {
         transform: translateX($-height * 0.625);
+      }
+    }
+
+    @each $name, $theme in $-mn-turn-theme {
+      &.is-#{$name} {
+        background: map-get($theme, 'bg');
+        border-color: map-get($theme, 'border');
+
+        &::before {
+          background-color: map-get($theme, 'bg');
+        }
+
+        &.is-checked {
+          border-color: map-get($theme, 'active');
+          background-color: map-get($theme, 'active');
+        }
       }
     }
   }
