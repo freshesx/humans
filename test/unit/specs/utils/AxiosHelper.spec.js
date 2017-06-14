@@ -21,22 +21,22 @@ describe('util/AxiosHelper', () => {
 
     // 返回的 openExceptionMessage 的 Promise
     expect(output).to.be.an.instanceof(Promise)
-    output.then(messagePopup => {
-      expect(messagePopup.message).to.be.equal('网络异常错误，请刷新。')
+    output.then(messageLayer => {
+      expect(messageLayer.vm.message).to.be.equal('网络异常错误，请刷新。')
       done()
     })
   })
 
   it('openMessage # Async loading Message popup and show it.', done => {
-    new AxiosHelper().openMessage().then(messagePopup => {
-      expect(messagePopup.type).to.be.equal('error')
+    new AxiosHelper().openMessage().then(messageLayer => {
+      expect(messageLayer.vm.type).to.be.equal('error')
       done()
     })
   })
 
   it('openExceptionMessage # Open exception message by openMessage.', done => {
-    new AxiosHelper().openExceptionMessage().then(messagePopup => {
-      expect(messagePopup.message).to.be.equal('网络异常错误，请刷新。')
+    new AxiosHelper().openExceptionMessage().then(messageLayer => {
+      expect(messageLayer.vm.message).to.be.equal('网络异常错误，请刷新。')
       done()
     })
   })
