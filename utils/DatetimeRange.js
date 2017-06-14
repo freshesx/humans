@@ -63,7 +63,7 @@ export default class DatetimeRange {
    * 请使用 create 方法实现，fromAt 方法即将弃用
    * 配置开始时间
    * @method fromAt
-   * @param  {Object} [options={}]
+   * @param  {Object} [propsData={}]
    * @return {DatetimeRange}
    */
   static fromAt (propsData = {}) {
@@ -76,7 +76,7 @@ export default class DatetimeRange {
   /**
    * 请使用 create 方法的第二个参数实现，toAt 方法即将弃用
    * @method toAt
-   * @param  {Object} [options={}]
+   * @param  {Object} [propsData={}]
    * @return {DatetimeRange}
    */
   toAt (propsData = {}) {
@@ -94,9 +94,9 @@ export default class DatetimeRange {
     return this.showFromAt()
   }
 
-  showFromAt (options) {
+  showFromAt (propsData) {
     // Create popup
-    this.fromAtLayer = Datetime.create({ ...this.fromAtConfig, ...options }).show()
+    this.fromAtLayer = Datetime.create({ ...this.fromAtConfig, ...propsData }).show()
 
     // Listen confirm
     this.fromAtLayer.on('confirm', (display, fromAt) => {
@@ -121,9 +121,9 @@ export default class DatetimeRange {
     return this
   }
 
-  showToAt (options) {
+  showToAt (propsData) {
     // Create popup
-    this.toAtLayer = Datetime.create({ ...this.toAtConfig, ...options }).show()
+    this.toAtLayer = Datetime.create({ ...this.toAtConfig, ...propsData }).show()
 
     // Listen confirm
     this.toAtLayer.on('confirm', (display, toAt) => {
