@@ -66,10 +66,10 @@ export default class DatetimeRange {
    * @param  {Object} [options={}]
    * @return {DatetimeRange}
    */
-  static fromAt (options = {}) {
+  static fromAt (propsData = {}) {
     console.warn('该 static fromAt 方法将被弃用，建议使用 create 实现。')
     const instance = new this()
-    instance.setFromAtConfig(options)
+    instance.setFromAtConfig(propsData)
     return instance
   }
 
@@ -79,9 +79,9 @@ export default class DatetimeRange {
    * @param  {Object} [options={}]
    * @return {DatetimeRange}
    */
-  toAt (options = {}) {
+  toAt (propsData = {}) {
     console.warn('该 toAt 方法将被弃用，建议使用 create 实现。')
-    this.setToAtConfig(options)
+    this.setToAtConfig(propsData)
     return this
   }
 
@@ -142,20 +142,20 @@ export default class DatetimeRange {
     })
   }
 
-  setFromAtConfig (config) {
+  setFromAtConfig (propsData) {
     this.fromAtConfig = {
       title: Vue.t('mn.datetime.fromAtTitle'),
       confirmText: Vue.t('mn.datetime.next'),
-      ...config
+      ...propsData
     }
   }
 
-  setToAtConfig (config) {
+  setToAtConfig (propsData) {
     this.toAtConfig = {
       title: Vue.t('mn.datetime.toAtTitle'),
       cancelText: Vue.t('mn.datetime.prev'),
       smallerText: Vue.t('mn.datetime.smallerToAtText'),
-      ...config
+      ...propsData
     }
   }
 
