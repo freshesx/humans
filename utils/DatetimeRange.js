@@ -110,4 +110,16 @@ export default class DatetimeRange {
       })
     }
   }
+
+  /**
+   * 新增销毁方法
+   * @method destroy
+   * @public
+   * @return {DatetimeRange}
+   */
+  destroy () {
+    if (this.fromAtPopup) this.fromAtPopup.destroy()
+    if (this.toAtPopup) this.toAtPopup.destroy()
+    return this
+  }
 }
