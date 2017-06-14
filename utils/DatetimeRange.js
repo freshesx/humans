@@ -139,35 +139,60 @@ export default class DatetimeRange {
    * 定时器
    * @method timeout
    * @public
-   * @param  {Number} [ms=3000]
+   * @param  {Number} [ms=1500]
    * @return {Promise}
    */
   timeout (ms = 1500) {
     return new Promise(resolve => setTimeout(resolve, ms))
   }
 
-  showToAt (propsData) {
-    // Create popup
-    this.toAtLayer = Datetime.create({ ...this.toAtConfig, ...propsData }).show()
-
-    // Listen confirm
-    this.toAtLayer.on('confirm', (display, toAt) => {
-      this.toAt = toAt
-      this.displayToAt = display
-
-      this.excuteConfirm()
+  /**
+   * 显示结束时间的浮层，并监听
+   * @method showToAt
+   * @param  {Object} [propsData={}]
+   * @return {DatetimeRange}
+   */
+  showToAt (propsData = {}) {
+    this.toAtLayer = Datetime.create({
+      ...this.toAtConfig,
+      ...propsData
+    }).show().on('confirm', (display, toAt) => {
+      this.whenConfirm(display, toAt)
+    }).on('cancel', () => {
+      this.whenToAtLayerHiding()
     })
-
-    // Listen cancel
-    this.toAtLayer.on('cancel', () => {
-      setTimeout(() => {
-        // 将保存好的 fromAt 的值传递回去
-        this.showFromAt({ default: this.fromAt })
-      }, 500)
-    })
+    return this
   }
 
-  setFromAtConfig (propsData) {
+  /**
+   * 当 toAt layer 隐藏时请求
+   * @method whenToAtLayerHiding
+   * @return {Promise}
+   */
+  async whenToAtLayerHiding () {
+    await this.timeout(500)
+    this.showFromAt({ default: this.fromAt })
+  }
+
+  /**
+   * 当确认时间时请求
+   * @method whenConfirm
+   * @param  {string}    display   - 显示时间的字符串
+   * @param  {Date}      toAt
+   * @return {Promise}
+   */
+  async whenConfirm (display, toAt) {
+    this.toAt = toAt
+    this.displayToAt = display
+    this.excuteConfirm()
+  }
+
+  /**
+   * 设置开始时间的配置
+   * @method setFromAtConfig
+   * @param  {Object}        [propsData={}]
+   */
+  setFromAtConfig (propsData = {}) {
     this.fromAtConfig = {
       title: Vue.t('mn.datetime.fromAtTitle'),
       confirmText: Vue.t('mn.datetime.next'),
@@ -175,7 +200,12 @@ export default class DatetimeRange {
     }
   }
 
-  setToAtConfig (propsData) {
+  /**
+   * 设置结束时间的配置
+   * @method setToAtConfig
+   * @param  {Object}      [propsData={}] [description]
+   */
+  setToAtConfig (propsData = {}) {
     this.toAtConfig = {
       title: Vue.t('mn.datetime.toAtTitle'),
       cancelText: Vue.t('mn.datetime.prev'),
@@ -184,11 +214,22 @@ export default class DatetimeRange {
     }
   }
 
+  /**
+   * 添加监听事件
+   * @method change
+   * @param  {Function} callback - 回调函数
+   * @return {DatetimeRange}
+   */
   change (callback) {
     this.callback = callback
     return this
   }
 
+  /**
+   * 执行确认
+   * @method excuteConfirm
+   * @return {undefined}
+   */
   excuteConfirm () {
     if (this.callback) {
       this.callback({
