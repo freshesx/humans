@@ -12,8 +12,8 @@
   export default new Element({
     name: 'mn-turn',
     props: {
-      value: {},
-      data: {}
+      value: null,
+      data: null
     },
     methods: {
       onInput (event) {
