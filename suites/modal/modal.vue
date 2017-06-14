@@ -1,41 +1,30 @@
 <template>
-  <mn-popup class="mn-modal"
-    animation="slideInBottom"
-    :show="show"
-    @close="onClosePopup">
-    <div class="mn-modal-body">
-      <slot></slot>
+  <transition :name="transition || 'has-slide-in-bottom'">
+    <div class="mn-modal" v-if="visible" :style="{ zIndex }">
+      <div class="mn-modal-body">
+        <slot></slot>
+      </div>
+      <div class="mn-modal-suffix" v-if="$slots.suffix">
+        <slot name="suffix"></slot>
+      </div>
     </div>
-    <div class="mn-modal-suffix" v-if="$slots.suffix">
-      <slot name="suffix"></slot>
-    </div>
-  </mn-popup>
+  </transition>
 </template>
 
 <script>
   import Element from '../../utils/Element'
-  import popup from '../popup/popup'
+  import layerMixin from '../layer/layerMixin'
+  import shadeMixin from '../layer/shadeMixin'
 
   export default new Element({
     name: 'mn-modal',
-    components: {
-      ...popup.inject()
-    },
-    props: {
-      /**
-       * Show or hide popup and mask
-       */
-      show: Boolean
-    },
+    mixins: [
+      layerMixin,
+      shadeMixin
+    ],
     methods: {
-      /**
-       * Trigger close method
-       * @method onClosePopup
-       *
-       * @return {void}
-       */
-      onClosePopup () {
-        this.$emit('update:show', false)
+      whenShadeCallHiding () {
+        this.hide()
       }
     }
   })
@@ -45,6 +34,7 @@
   @import "../../scss/mixins/media";
 
   .mn-modal {
+    position: fixed;
     display: flex;
     flex-direction: column;
     top: 5rem;
