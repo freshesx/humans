@@ -15,7 +15,6 @@
 <script>
   import Element from '../../utils/Element'
   import { addStorage, getScrollTop } from './storage'
-  import { closeAllPopups } from '../popup/storage'
 
   export default new Element({
     name: 'mn-scroller',
@@ -112,10 +111,6 @@
         // 储存 scrollTop
         addStorage(this.getRoutePath(), this.name, this.$el.scrollTop)
       }
-    },
-    beforeDestroy () {
-      // 设定一个容器存储所有的 popup，离开当前页面时自动关闭
-      closeAllPopups()
     },
     mounted () {
       this.$nextTick(() => {

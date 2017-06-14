@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import { closeAllPopups } from 'vue-human/suites/popup/storage'
 import loadingBar from '../loadingBar'
 
 const defaultTitle = document.title
@@ -193,8 +192,6 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  // Clear popups when route changed
-  closeAllPopups()
   // Start loading bar
   loadingBar.finish(70)
   // Next
