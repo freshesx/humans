@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mn-switch"
+    class="mn-turn"
     :class="{ 'is-checked': data === value }"
     @click="onInput"></div>
 </template>
@@ -10,7 +10,7 @@
   import isUndefined from 'lodash/isUndefined'
 
   export default new Element({
-    name: 'mn-switch',
+    name: 'mn-turn',
     props: {
       value: {},
       data: {}
@@ -26,7 +26,7 @@
 <style lang="scss">
   @import "./vars";
 
-  .mn-switch {
+  .mn-turn {
     $-height: 2rem;
 
     display: inline-flex;
@@ -34,8 +34,8 @@
     width: $-height * 1.625;
     height: $-height;
     border-radius: $-height;
-    background-color: $mn-switch-bg;
-    border: 1px solid $mn-switch-border;
+    background-color: $mn-turn-bg;
+    border: 1px solid $mn-turn-border;
     cursor: pointer;
     outline: 0;
     appearance: none;
@@ -54,7 +54,7 @@
 
     &::before {
       width: 100%;
-      background-color: $mn-switch-bg;
+      background-color: $mn-turn-bg;
     }
 
     &::after {
@@ -64,8 +64,8 @@
     }
 
     &.is-checked {
-      border-color: $mn-switch-active-bg;
-      background-color: $mn-switch-active-bg;
+      border-color: $mn-turn-active-bg;
+      background-color: $mn-turn-active-bg;
 
       &::before {
         transform: scale(0);

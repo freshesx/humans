@@ -1,6 +1,6 @@
 import Suites from '../../utils/Suites'
-import switchElement from './switch'
+import turn from './turn'
 
 export default new Suites([
-  switchElement
+  turn
 ])
