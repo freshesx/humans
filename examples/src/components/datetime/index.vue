@@ -93,16 +93,16 @@
       onOpenSingle () {
         this.singleDatetime = Datetime.create({
           default: this.models.datetime
-        }).show().on('confirm', display => {
-          this.models.datetime = display
+        }).show().on('confirm', format => {
+          this.models.datetime = format
         })
       },
       onOpenSingleTime () {
         this.singleTime = Datetime.create({
           default: this.models.time,
           showDate: false
-        }).show().on('confirm', display => {
-          this.models.time = display
+        }).show().on('confirm', format => {
+          this.models.time = format
         })
       },
       onOpenRange () {
