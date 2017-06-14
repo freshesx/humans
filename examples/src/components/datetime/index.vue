@@ -106,27 +106,31 @@
         })
       },
       onOpenRange () {
-        DatetimeRange.fromAt({ default: this.models.fromDatetime })
-          .toAt({ default: this.models.toDatetime })
-          .show()
-          .change(formats => {
-            this.models.fromDatetime = formats.from
-            this.models.toDatetime = formats.to
-          })
+        this.rangeDatetime = DatetimeRange.create({
+          default: this.models.fromDatetime
+        }, {
+          default: this.models.toDatetime
+        }).show().change(formats => {
+          this.models.fromDatetime = formats.from
+          this.models.toDatetime = formats.to
+        })
       },
       onOpenRangeTime () {
-        DatetimeRange.fromAt({ default: this.models.fromTime, showDate: false })
-          .toAt({ default: this.models.toTime, showDate: false })
-          .show()
-          .change(formats => {
-            this.models.fromTime = formats.from
-            this.models.toTime = formats.to
-          })
+        this.rangeTime = DatetimeRange.create({
+          default: this.models.fromTime, showDate: false
+        }, {
+          default: this.models.toTime, showDate: false
+        }).show().change(formats => {
+          this.models.fromTime = formats.from
+          this.models.toTime = formats.to
+        })
       }
     },
     beforeDestroy () {
       if (this.singleDatetime) this.singleDatetime.destroy()
       if (this.singleTime) this.singleTime.destroy()
+      if (this.rangeDatetime) this.rangeDatetime.destroy()
+      if (this.rangeTime) this.rangeTime.destroy()
     }
   }
 </script>
