@@ -35,13 +35,13 @@ export default class DatetimeRange {
     this.fromAtPopup = Datetime.create({ ...this.fromAtConfig, ...options }).show()
 
     // Listen confirm
-    this.fromAtPopup.$on('confirm', (display, fromAt) => {
+    this.fromAtPopup.on('confirm', (display, fromAt) => {
       // Get computed datetime (fromAt)
       this.displayFromAt = display
       this.fromAt = fromAt
 
       // 根据 fromAt 计算 toAt，增加一小时或一天
-      const defaultToAt = this.fromAtPopup.isTimeType
+      const defaultToAt = this.fromAtPopup.vm.isTimeType
         ? addHours(fromAt, 1)
         : addDay(fromAt, 1)
 
@@ -62,7 +62,7 @@ export default class DatetimeRange {
     this.toAtPopup = Datetime.create({ ...this.toAtConfig, ...options }).show()
 
     // Listen confirm
-    this.toAtPopup.$on('confirm', (display, toAt) => {
+    this.toAtPopup.on('confirm', (display, toAt) => {
       this.toAt = toAt
       this.displayToAt = display
 
@@ -70,7 +70,7 @@ export default class DatetimeRange {
     })
 
     // Listen cancel
-    this.toAtPopup.$on('cancel', () => {
+    this.toAtPopup.on('cancel', () => {
       setTimeout(() => {
         // 将保存好的 fromAt 的值传递回去
         this.showFromAt({ default: this.fromAt })
