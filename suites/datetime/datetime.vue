@@ -1,66 +1,68 @@
 <template>
-  <mn-popup class="mn-datetime" animation="slideInBottom" :show="isShow" @close="onClosePopup">
-    <mn-card class="has-none-margin-bottom" :theme="theme" rounded>
-      <mn-card-item>
-        <mn-card-body>
-          <p class="mn-datetime-time" v-if="showHours">{{ formatTime(currentAt) }}</p>
-          <p class="mn-datetime-date" v-if="showDate">{{ formatDate(currentAt) }}</p>
-        </mn-card-body>
-        <mn-card-suffix>
-          {{ title }}
-        </mn-card-suffix>
-      </mn-card-item>
-      <mn-card-item style="height: 91px;">
-        <mn-card-body>
-          <div class="mn-datetime-input">
-            <div class="mn-datetime-item" v-if="showDate">
-              <select v-model="models.fullYear">
-                <option :value="option.value" v-for="option in fullYearOptions">{{ option.label }}</option>
-              </select>
+  <transition :name="transition || 'has-slide-in-bottom'">
+    <div class="mn-datetime" v-if="visible" :style="{ zIndex }">
+      <mn-card class="has-none-margin-bottom" :theme="theme" rounded>
+        <mn-card-item>
+          <mn-card-body>
+            <p class="mn-datetime-time" v-if="showHours">{{ formatTime(currentAt) }}</p>
+            <p class="mn-datetime-date" v-if="showDate">{{ formatDate(currentAt) }}</p>
+          </mn-card-body>
+          <mn-card-suffix>
+            {{ title }}
+          </mn-card-suffix>
+        </mn-card-item>
+        <mn-card-item style="height: 91px;">
+          <mn-card-body>
+            <div class="mn-datetime-input">
+              <div class="mn-datetime-item" v-if="showDate">
+                <select v-model="models.fullYear">
+                  <option :value="option.value" v-for="option in fullYearOptions">{{ option.label }}</option>
+                </select>
+              </div>
+              <div class="mn-datetime-item" v-if="showDate">
+                <select v-model="models.month">
+                  <option :value="option.value" v-for="option in monthOptions">{{ option.label }}</option>
+                </select>
+              </div>
+              <div class="mn-datetime-item" v-if="showDate">
+                <select v-model="models.date">
+                  <option :value="option.value" v-for="option in dateOptions">{{ option.label }}</option>
+                </select>
+              </div>
+              <div class="mn-datetime-item" v-if="showHours">
+                <select v-model="models.hours">
+                  <option :value="option.value" v-for="option in hoursOptions">{{ option.label }}</option>
+                </select>
+              </div>
+              <div v-if="showHours && showMintues">:</div>
+              <div class="mn-datetime-item" v-if="showHours && showMintues">
+                <select v-model="models.minutes">
+                  <option :value="option.value" v-for="option in minutesOptions">{{ option.label }}</option>
+                </select>
+              </div>
+              <div v-if="showHours && showMintues && showSeconds">:</div>
+              <div class="mn-datetime-item" v-if="showHours && showMintues && showSeconds">
+                <select v-model="models.seconds">
+                  <option :value="option.value" v-for="option in secondsOptions">{{ option.label }}</option>
+                </select>
+              </div>
             </div>
-            <div class="mn-datetime-item" v-if="showDate">
-              <select v-model="models.month">
-                <option :value="option.value" v-for="option in monthOptions">{{ option.label }}</option>
-              </select>
-            </div>
-            <div class="mn-datetime-item" v-if="showDate">
-              <select v-model="models.date">
-                <option :value="option.value" v-for="option in dateOptions">{{ option.label }}</option>
-              </select>
-            </div>
-            <div class="mn-datetime-item" v-if="showHours">
-              <select v-model="models.hours">
-                <option :value="option.value" v-for="option in hoursOptions">{{ option.label }}</option>
-              </select>
-            </div>
-            <div v-if="showHours && showMintues">:</div>
-            <div class="mn-datetime-item" v-if="showHours && showMintues">
-              <select v-model="models.minutes">
-                <option :value="option.value" v-for="option in minutesOptions">{{ option.label }}</option>
-              </select>
-            </div>
-            <div v-if="showHours && showMintues && showSeconds">:</div>
-            <div class="mn-datetime-item" v-if="showHours && showMintues && showSeconds">
-              <select v-model="models.seconds">
-                <option :value="option.value" v-for="option in secondsOptions">{{ option.label }}</option>
-              </select>
-            </div>
-          </div>
-        </mn-card-body>
-      </mn-card-item>
-      <mn-card-btns type="column">
-        <button class="has-red-text" @click="onCancel">{{ cancelText }}</button>
-        <button class="has-blue-text" @click="onConfirm">{{ confirmText }}</button>
-      </mn-card-btns>
-    </mn-card>
-  </mn-popup>
+          </mn-card-body>
+        </mn-card-item>
+        <mn-card-btns type="column">
+          <button class="has-red-text" @click="onCancel">{{ cancelText }}</button>
+          <button class="has-blue-text" @click="onConfirm">{{ confirmText }}</button>
+        </mn-card-btns>
+      </mn-card>
+    </div>
+  </transition>
 </template>
 
 <script>
   import Element from '../../utils/Element'
   import Message from '../../utils/Message'
-  import popup from '../popup/popup'
-  import popupMixin from '../popup/popupMixin'
+  import layerMixin from '../layer/layerMixin'
+  import shadeMixin from '../layer/shadeMixin'
   import card from '../card/card'
   import cardItem from '../card/cardItem'
   import cardBody from '../card/cardBody'
@@ -78,7 +80,6 @@
   export default new Element({
     name: 'mn-datetime',
     components: {
-      ...popup.inject(),
       ...card.inject(),
       ...cardItem.inject(),
       ...cardBody.inject(),
@@ -87,7 +88,8 @@
       ...cardBtns.inject()
     },
     mixins: [
-      popupMixin,
+      layerMixin,
+      shadeMixin,
       options
     ],
     props: {
@@ -190,7 +192,7 @@
       },
 
       emit (name) {
-        this.close()
+        this.hide()
         this.$emit(name, this.formatDisplay(this.currentAt), this.currentAt)
       },
 
@@ -295,6 +297,10 @@
           isFebruary(this.models.month) && this.models.date > 29) {
           this.models.date = 29
         }
+      },
+
+      whenShadeCallHiding () {
+        this.onCancel()
       }
     },
     watch: {
@@ -327,6 +333,7 @@
   @import "../../scss/mixins/media";
 
   .mn-datetime {
+    position: fixed;
     top: 50%;
     right: 0.5rem;
     left: 0.5rem;
