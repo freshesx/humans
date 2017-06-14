@@ -101,30 +101,49 @@ export default class DatetimeRange {
    * @return {DatetimeRange}
    */
   showFromAt (propsData = {}) {
-    // 创建浮层
-    this.fromAtLayer = Datetime.create({ ...this.fromAtConfig, ...propsData }).show()
-
-    // 监听浮层的事件
-    this.fromAtLayer.on('confirm', (display, fromAt) => {
-      // 获得确认后的开始时间
-      this.displayFromAt = display
-      this.fromAt = fromAt
-
-      // 根据 fromAt 计算 toAt，增加一小时或一天
-      const defaultToAt = this.fromAtLayer.vm.isTimeType
-        ? addHours(fromAt, 1)
-        : addDay(fromAt, 1)
-
-      setTimeout(() => {
-        // 开始时间将作为结束时间的初始时间值
-        this.showToAt({
-          min: fromAt,
-          default: defaultToAt
-        })
-      }, 500)
+    // 创建浮层，显示，并监听
+    this.fromAtLayer = Datetime.create({
+      ...this.fromAtConfig,
+      ...propsData
+    }).show().on('confirm', (display, formats) => {
+      this.whenFromAtLayerHiding(display, formats)
     })
 
     return this
+  }
+
+  /**
+   * 当 fromAt layer 隐藏时
+   * @method whenFromAtLayerHiding
+   * @param  {string}              display - 显示时间的字符串
+   * @param  {Date}                fromAt
+   * @return {Promise}
+   */
+  async whenFromAtLayerHiding (display, fromAt) {
+    // 存储确认后的开始时间
+    this.displayFromAt = display
+    this.fromAt = fromAt
+
+    // 根据 fromAt 计算 toAt，增加一小时或一天
+    const isTimeType = this.fromAtLayer.vm.isTimeType
+    const defaultToAt = isTimeType ? addHours(fromAt, 1) : addDay(fromAt, 1)
+
+    // 等待 500 毫秒
+    await this.timeout(500)
+
+    // 开始时间将作为结束时间的初始时间值
+    this.showToAt({ min: fromAt, default: defaultToAt })
+  }
+
+  /**
+   * 定时器
+   * @method timeout
+   * @public
+   * @param  {Number} [ms=3000]
+   * @return {Promise}
+   */
+  timeout (ms = 1500) {
+    return new Promise(resolve => setTimeout(resolve, ms))
   }
 
   showToAt (propsData) {
