@@ -187,4 +187,16 @@ export default class Layer {
   timeout (ms = 1500) {
     return new Promise(resolve => setTimeout(resolve, ms))
   }
+
+  /**
+   * 封装 vm.$on 方法，返回 this，实现操作链
+   * @method on
+   * @param  {string}   name       - 事件名称
+   * @param  {Function} callback
+   * @return {Layer}
+   */
+  on (name, callback) {
+    this.vm.$on(name, callback)
+    return this
+  }
 }
