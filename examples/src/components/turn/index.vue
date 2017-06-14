@@ -3,7 +3,7 @@
     <mn-section>
       <mn-letter>
         <mn-letter-body>
-          <h1>Switch</h1>
+          <h1>Turn</h1>
         </mn-letter-body>
       </mn-letter>
     </mn-section>
@@ -15,7 +15,7 @@
           <mn-card-item>
             <mn-card-body>Agree Terms & Policy</mn-card-body>
             <mn-card-suffix action>
-              <mn-switch :data="true" v-model="models.policy"></mn-switch>
+              <mn-turn :data="true" v-model="models.policy"></mn-turn>
             </mn-card-suffix>
           </mn-card-item>
         </mn-card>
@@ -36,13 +36,13 @@
 </template>
 
 <script>
-  import switchSuites from 'vue-human/suites/switch'
+  import turn from 'vue-human/suites/turn'
   import required from 'vuelidate/lib/validators/required'
   import Message from 'vue-human/utils/Message'
 
   export default {
     components: {
-      ...switchSuites.map()
+      ...turn.map()
     },
     validations: {
       models: {

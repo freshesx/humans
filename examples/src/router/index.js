@@ -142,9 +142,9 @@ const router = new VueRouter({
           component: resolve => { require(['../components/select'], resolve) }
         },
         {
-          path: '/switch',
-          name: 'switch',
-          component: resolve => { require(['../components/switch'], resolve) }
+          path: '/turn',
+          name: 'turn',
+          component: resolve => { require(['../components/turn'], resolve) }
         },
         {
           path: '/textarea',

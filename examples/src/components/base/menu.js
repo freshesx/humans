@@ -116,9 +116,9 @@ export default [
         push: { name: 'select' }
       },
       {
-        name: 'Switch',
-        small: Vue.t('examples.submenus.form.switch'),
-        push: { name: 'switch' }
+        name: 'Turn',
+        small: Vue.t('examples.submenus.form.turn'),
+        push: { name: 'turn' }
       },
       {
         name: 'Textarea',
