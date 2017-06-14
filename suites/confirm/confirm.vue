@@ -61,10 +61,10 @@
       confirm () {
         this.hide()
         this.$emit('confirm')
+      },
+      whenShadeCallHiding () {
+        this.cancel()
       }
-    },
-    created () {
-      this.shadeCallHiding(shade => this.cancel())
     }
   })
 </script>
