@@ -7,7 +7,7 @@
     <mn-section>
       <mn-slide-bar>
         <mn-slide-bar-item v-for="(picture, key) in pictures" :key="key">
-          <img :src="picture.src">
+          <img :src="picture.src" width="300">
         </mn-slide-bar-item>
       </mn-slide-bar>
     </mn-section>
