@@ -41,7 +41,6 @@ export default {
         paginate: '页码',
         cell: '单元列表',
         carousel: '轮播图',
-        slideBar: '横向滚动',
         dashboard: '后台管理',
         tag: '标签',
         searchBar: '搜索条',

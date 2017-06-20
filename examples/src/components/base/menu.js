@@ -161,11 +161,6 @@ export default [
         push: { name: 'carousel' }
       },
       {
-        name: 'Slide Bar',
-        small: Vue.t('examples.submenus.components.slideBar'),
-        push: { name: 'slideBar' }
-      },
-      {
         name: 'Tag',
         small: Vue.t('examples.submenus.components.tag'),
         push: { name: 'tag' }
