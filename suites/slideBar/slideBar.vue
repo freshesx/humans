@@ -5,7 +5,10 @@
     @touchend="touchEnd"
     :style="{ height: `${itemsMaxHeight}px` }">
     <div class="mn-slide-bar-contents"
-      :style="{ transform: `translate(${this.left * -1}px, 0)` }">
+      :style="{
+        transform: `translate(${this.left * -1}px, 0)`,
+        'transition-duration': `${500}ms`
+      }">
       <slot></slot>
     </div>
   </div>
