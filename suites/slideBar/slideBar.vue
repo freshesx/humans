@@ -66,8 +66,8 @@
       },
       // 计算 move 的偏移值，计算在 left 上
       touchMove (event) {
-        const minLeft = document.body.offsetWidth * -0.3
-        const maxLeft = this.itemsMaxWidth - document.body.offsetWidth * 0.7
+        const minLeft = document.body.offsetWidth * -0.15
+        const maxLeft = this.itemsMaxWidth - document.body.offsetWidth * 0.85
 
         this.touchMoveX = event.touches[0].pageX
         let left = this.touchStartLeft + (this.touchMoveX - this.touchStartX) * -1
