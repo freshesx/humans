@@ -8,16 +8,17 @@
 
     <mn-section>
       <mn-slide-bar>
-        <mn-slide-bar-item>
+        <mn-slide-bar-item mobile="300, 200">
           <img class="image" src="https://ois1yok9v.qnssl.com/home-banner-1.jpg">
         </mn-slide-bar-item>
-        <mn-slide-bar-item>
+        <mn-slide-bar-item mobile="300, 200">
           <img class="image" src="https://ois1yok9v.qnssl.com/home-banner-2.jpg">
         </mn-slide-bar-item>
-        <mn-slide-bar-item>
+        <mn-slide-bar-item mobile="300, 200">
           <img class="image" src="https://ois1yok9v.qnssl.com/home-banner-3.jpg">
         </mn-slide-bar-item>
       </mn-slide-bar>
+      nihaohao
     </mn-section>
   </page>
 </template>
@@ -35,7 +36,7 @@
 <style lang="scss" scoped>
   .image {
     display: block;
-    width: 200px;
-    margin-left: 1rem;
+    width: 100%;
+    padding-left: 1rem;
   }
 </style>
