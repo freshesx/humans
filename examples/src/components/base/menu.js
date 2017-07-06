@@ -189,11 +189,6 @@ export default [
         name: 'Menu',
         small: Vue.t('examples.submenus.components.menu'),
         push: { name: 'menu' }
-      },
-      {
-        name: 'Slide Bar',
-        small: Vue.t('examples.submenus.components.slideBar'),
-        push: { name: 'slideBar' }
       }
     ]
   }

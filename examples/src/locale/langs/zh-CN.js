@@ -47,8 +47,7 @@ export default {
         rate: '评分',
         tabBar: '底部栏',
         navBar: '顶部栏',
-        menu: '手风琴',
-        slideBar: '横向滚动'
+        menu: '手风琴'
       }
     }
   }
