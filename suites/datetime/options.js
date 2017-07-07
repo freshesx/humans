@@ -9,7 +9,10 @@ export default {
     fullYearOptions () {
       const options = []
 
-      for (let i = 1970; i <= 2050; i++) {
+      const minFullYear = this.minAt ? this.minAt.getFullYear() : 1970
+      const maxFullYear = this.maxAt ? this.maxAt.getFullYear() : 2049
+
+      for (let i = minFullYear; i <= maxFullYear; i++) {
         options.push({ label: i + '年', value: i })
       }
 
