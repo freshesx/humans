@@ -185,6 +185,11 @@ const router = new VueRouter({
           path: '/card',
           name: 'card',
           component: resolve => { require(['../components/card'], resolve) }
+        },
+        {
+          path: '/table',
+          name: 'table',
+          component: resolve => { require(['../components/table'], resolve) }
         }
       ]
     }

@@ -189,6 +189,11 @@ export default [
         name: 'Menu',
         small: Vue.t('examples.submenus.components.menu'),
         push: { name: 'menu' }
+      },
+      {
+        name: 'Table',
+        small: Vue.t('examples.submenus.components.table'),
+        push: { name: 'table' }
       }
     ]
   }
