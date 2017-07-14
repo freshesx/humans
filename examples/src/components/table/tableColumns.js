@@ -1,38 +1,42 @@
 export default [
   {
+    name: 'cover',
+    title: '图片'
+  },
+  {
     name: 'id',
     title: 'ID',
-    width: '60px'
+    width: '120px'
   },
   {
-    name: 'name',
-    title: '城市名称'
+    name: 'title',
+    title: '影片名称',
+    width: '180px'
   },
   {
-    name: 'population',
-    title: '人口数'
+    name: 'rating',
+    title: '评分'
   },
   {
-    name: 'gdp',
-    title: 'GDP'
+    name: 'tags',
+    title: '标签',
+    width: '160px'
   },
   {
-    name: 'perGdp',
-    title: '人均 GDP'
-  },
-  {
-    name: 'rate',
-    title: '增长率'
+    name: 'year',
+    title: '上映时间'
   },
   {
     name: '$action',
-    title: '操作',
+    width: 1,
     actions: [
       {
+        icon: require('vue-human-icons/js/ios/gear'),
         name: 'edit',
         title: '查看'
       },
       {
+        icon: require('vue-human-icons/js/ios/trash'),
         name: 'remove',
         title: '删除'
       }
