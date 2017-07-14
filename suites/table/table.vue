@@ -58,8 +58,6 @@
   .mn-table-hd {
     display: flex;
     flex-wrap: nowrap;
-    // border-top-left-radius: 0.5rem;
-    // border-top-right-radius: 0.5rem;
     border-radius: 0.25rem;
     background: #007aff;
     color: rgba(255, 255, 255, 1);
