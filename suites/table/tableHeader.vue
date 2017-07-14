@@ -40,11 +40,17 @@
 
 <style lang="scss">
   .mn-table-hd {
+    position: relative;
     display: flex;
     flex-wrap: nowrap;
-    border-radius: 0.25rem;
-    background: #007aff;
-    color: rgba(255, 255, 255, 1);
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    // background: #007aff;
+    // color: rgba(255, 255, 255, 1);
+    // color: rgba(#007aff, 0.6);
+    background: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
   }
 
   .mn-table-hd-col {
