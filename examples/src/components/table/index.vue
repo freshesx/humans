@@ -6,9 +6,10 @@
       </mn-letter-body>
     </mn-letter>
 
-    <mn-table :items="tableItems | updateItems" :columns="tableColumns">
+    <mn-table :items="tableItems | updateItems"
+      :columns="tableColumns">
       <template scope="scope" slot="cover">
-        <img :src="scope.item.cover" alt="scope.cover.title" height="80">
+        <img :src="scope.item.cover" alt="scope.cover.title" height="80" style="display: block;">
       </template>
     </mn-table>
   </page>
