@@ -1,20 +1,31 @@
 <template>
   <div class="mn-table">
     <mn-table-header :columns="columns"></mn-table-header>
-    <div class="mn-table-bd" style="height: 400px;">
+    <div class="mn-table-loading" v-if="items === undefined">
+      <mn-loading-icon></mn-loading-icon> 努力加载中
+    </div>
+    <div class="mn-table-bd" style="height: 400px;" v-else>
       <mn-scroller>
         <div class="mn-table-bd-col" v-for="item in items">
           <div class="mn-table-bd-cell" v-for="column in columns" :style="[ calcWidth(column.width) ]">
+            <!-- 组件自留的列展示方式 -->
             <div class="mn-table-bd-actions" v-if="column.name === '$action'">
-              <mn-btn class="mn-table-bd-btn" :icon="button.icon" :theme="button.theme || 'secondary-link'" size="sm" v-for="button in column.actions">{{ button.title }}</mn-btn>
+              <mn-btn class="mn-table-bd-btn"
+                :icon="button.icon"
+                :theme="button.theme || 'secondary-link'"
+                size="sm"
+                v-for="(button, buttonIndex) in column.actions"
+                :key="buttonIndex">{{ button.title }}</mn-btn>
             </div>
-            <span v-else>{{ item[column.name] }}</span>
+            <!-- 用户定义的列展示方式 -->
+            <div v-else-if="$scopedSlots.hasOwnProperty(column.name)">
+              <slot :name="column.name" :item="item"></slot>
+            </div>
+            <!-- 默认展示方式 -->
+            <div v-else>{{ item[column.name] }}</div>
           </div>
         </div>
       </mn-scroller>
-    </div>
-    <div class="mn-table-loading" v-if="items === undefined">
-      <mn-loading-icon></mn-loading-icon> 努力加载中
     </div>
   </div>
 </template>
@@ -86,6 +97,7 @@
     overflow: hidden;
     position: relative;
     width: 100%;
+    -webkit-overflow-scrolling: touch;
   }
 
   .mn-table-bd-col {
