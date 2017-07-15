@@ -2,9 +2,11 @@
   <div class="mn-table">
 
     <!-- 表格头 -->
-    <div class="mn-table-hd">
-      <div class="mn-table-hd-col" v-for="(column, key) in columns" :key="key" :style="[ calcWidth(column.width) ]">
-        {{ column.title }}
+    <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
+      <div class="mn-table-hd-contents" :style="{ transform: `translateX(${scrollLeft * -1}px)` }">
+        <div class="mn-table-hd-col" v-for="(column, key) in columns" :key="key" :style="[ calcWidth(column.width) ]">
+          {{ column.title }}
+        </div>
       </div>
     </div>
 
@@ -14,8 +16,8 @@
     </div>
 
     <!-- 表格主体 -->
-    <div class="mn-table-bd" style="height: 400px;" v-else>
-      <mn-scroller>
+    <div class="mn-table-bd" style="height: 400px;" v-else @scroll="onScroll">
+      <div class="mn-table-bd-contents">
         <div class="mn-table-bd-col" v-for="item in items">
           <div class="mn-table-bd-cell" v-for="column in columns" :style="[ calcWidth(column.width) ]">
             <!-- 组件自留的列展示方式 -->
@@ -35,7 +37,7 @@
             <div v-else>{{ item[column.name] }}</div>
           </div>
         </div>
-      </mn-scroller>
+      </div>
     </div>
 
   </div>
@@ -63,12 +65,22 @@
         }
       }
     },
+    data () {
+      return {
+        scrollLeft: 0,
+        scrollTop: 0
+      }
+    },
     methods: {
       emitActions () {
 
       },
       emitChoices () {
 
+      },
+      onScroll (event) {
+        this.scrollLeft = event.srcElement.scrollLeft
+        this.scrollTop = event.srcElement.scrollTop
       },
       calcWidth (width) {
         if (isUndefined(width)) {
@@ -90,25 +102,29 @@
 <style lang="scss">
   .mn-table-hd {
     position: relative;
-    display: flex;
-    flex-wrap: nowrap;
+    width: 100%;
+    height: 3.5rem;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
-    // background: #007aff;
-    // color: rgba(255, 255, 255, 1);
-    // color: rgba(#007aff, 0.6);
     background: #fff;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    overflow: hidden;
+    transition-duration: 500ms;
+
+    &.is-shadow {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .mn-table-hd-contents {
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
   }
 
   .mn-table-hd-col {
-    padding: 0.75rem 1rem;
+    padding: 1rem 1rem;
     font-weight: 500;
-
-    & + & {
-      border-left: solid 2px rgba(255, 255, 255, 0.3);
-    }
   }
 
   .mn-table-loading {
@@ -128,27 +144,24 @@
     position: relative;
     width: 100%;
     -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+  }
+
+  .mn-table-bd-contents {
+    position: absolute;
   }
 
   .mn-table-bd-col {
     display: flex;
     transition-duration: 500ms;
-    & + & {
-      // border-top: solid 1px rgba(0, 0, 0, 0.08);
-    }
-    &:nth-child(even) {
-      background: rgba(#007aff, 0.05);
-    }
-    &:hover {
-      background: rgba(#007aff, 0.1);
+
+    &:nth-child(odd) {
+      background: rgba(0, 0, 0, 0.03);
     }
   }
 
   .mn-table-bd-cell {
     padding: 0.75rem 1rem;
-    & + & {
-      // border-left: solid 1px rgba(0, 0, 0, 0.1);
-    }
   }
 
   .mn-table-bd-actions {
