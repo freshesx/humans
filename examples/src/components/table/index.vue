@@ -7,7 +7,9 @@
     </mn-letter>
 
     <mn-table :items="tableItems | updateItems"
-      :columns="tableColumns">
+      :columns="tableColumns"
+      @changeSort="onSort"
+      @changeHighlight="onHighlight">
       <template scope="scope" slot="cover">
         <img :src="scope.item.cover" alt="scope.cover.title" height="80" style="display: block;">
       </template>
@@ -35,6 +37,12 @@
       async fetchMovie (start, count) {
         const response = await axios.get('/api/movie/in_theaters')
         this.tableItems = response.data.subjects
+      },
+      onSort (sortName, column) {
+        this.$set(column, 'sort', sortName)
+      },
+      onHighlight (highlight, column) {
+        this.$set(column, 'highlight', highlight)
       }
     },
     created () {

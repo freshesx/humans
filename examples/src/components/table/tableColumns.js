@@ -17,7 +17,8 @@ export default [
   {
     name: 'rating',
     title: '评分',
-    sort: 'desc'
+    sort: 'desc',
+    highlight: true
   },
   {
     name: 'tags',
