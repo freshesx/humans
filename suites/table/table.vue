@@ -144,6 +144,7 @@
   .mn-table-hd-col {
     padding: 1rem 1rem;
     font-weight: 500;
+    transition-duration: 500ms;
 
     &.is-highlight {
       background: $highlight-bg;
@@ -187,6 +188,7 @@
     display: flex;
     padding: 0.75rem 1rem;
     align-items: center;
+    transition-duration: 500ms;
 
     &.is-highlight {
       background: $highlight-bg;
