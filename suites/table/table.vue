@@ -1,9 +1,19 @@
 <template>
   <div class="mn-table">
-    <mn-table-header :columns="columns"></mn-table-header>
+
+    <!-- 表格头 -->
+    <div class="mn-table-hd">
+      <div class="mn-table-hd-col" v-for="(column, key) in columns" :key="key" :style="[ calcWidth(column.width) ]">
+        {{ column.title }}
+      </div>
+    </div>
+
+    <!-- 表格加载 -->
     <div class="mn-table-loading" v-if="items === undefined">
       <mn-loading-icon></mn-loading-icon> 努力加载中
     </div>
+
+    <!-- 表格主体 -->
     <div class="mn-table-bd" style="height: 400px;" v-else>
       <mn-scroller>
         <div class="mn-table-bd-col" v-for="item in items">
@@ -27,19 +37,16 @@
         </div>
       </mn-scroller>
     </div>
+
   </div>
 </template>
 
 <script>
   import Element from '../../utils/Element'
-  import tableHeader from './tableHeader'
   import isUndefined from 'lodash/isUndefined'
 
   export default new Element({
     name: 'mn-table',
-    components: {
-      ...tableHeader.inject()
-    },
     props: {
       // undefined 为加载状态、空数组为无数据、非空数组展示内容
       items: Array,
@@ -81,6 +88,29 @@
 </script>
 
 <style lang="scss">
+  .mn-table-hd {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    // background: #007aff;
+    // color: rgba(255, 255, 255, 1);
+    // color: rgba(#007aff, 0.6);
+    background: #fff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  .mn-table-hd-col {
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+
+    & + & {
+      border-left: solid 2px rgba(255, 255, 255, 0.3);
+    }
+  }
+
   .mn-table-loading {
     background: #fff;
     text-align: center;
