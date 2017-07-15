@@ -5,7 +5,7 @@
     <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
       <div class="mn-table-hd-contents" :style="{ transform: `translateX(${scrollLeft * -1}px)` }">
         <div class="mn-table-hd-col" v-for="(column, key) in columns" :key="key" :style="[ calcWidth(column.width) ]">
-          {{ column.title }}
+          <mn-table-sort-bar :title="column.title" :sort="column.sort"></mn-table-sort-bar>
         </div>
       </div>
     </div>
@@ -46,9 +46,13 @@
 <script>
   import Element from '../../utils/Element'
   import isUndefined from 'lodash/isUndefined'
+  import tableSortBar from './tableSortBar'
 
   export default new Element({
     name: 'mn-table',
+    components: {
+      ...tableSortBar.inject()
+    },
     props: {
       // undefined 为加载状态、空数组为无数据、非空数组展示内容
       items: Array,
