@@ -4,12 +4,15 @@
     <!-- 表格头 -->
     <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
       <div class="mn-table-hd-contents" :style="{ transform: `translateX(${scrollLeft * -1}px)` }">
-        <div class="mn-table-hd-col" :class="{ 'is-highlight': column.highlight }" v-for="(column, key) in columns" :key="key" :style="[ calcWidth(column.width) ]">
-          <mn-table-sort-bar :title="column.title"
-            :sort="column.sort"
-            @changeSort="onSort(arguments[0], column, arguments[1])"
-            @changeHighlight="onHighlight(column, arguments[0])"></mn-table-sort-bar>
-        </div>
+        <mn-table-header-column
+          :title="column.title"
+          :sort="column.sort"
+          :highlight="column.highlight"
+          :width="column.width"
+          @changeSort="onSort(arguments[0], column, arguments[1])"
+          @changeHighlight="onHighlight(column, arguments[0])"
+          v-for="(column, key) in columns"
+          :key="key"></mn-table-header-column>
       </div>
     </div>
 
@@ -49,12 +52,12 @@
 <script>
   import Element from '../../utils/Element'
   import isUndefined from 'lodash/isUndefined'
-  import tableSortBar from './tableSortBar'
+  import tableHeaderColumn from './tableHeaderColumn'
 
   export default new Element({
     name: 'mn-table',
     components: {
-      ...tableSortBar.inject()
+      ...tableHeaderColumn.inject()
     },
     props: {
       // undefined 为加载状态、空数组为无数据、非空数组展示内容
