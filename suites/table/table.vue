@@ -4,7 +4,7 @@
     <!-- 表格头 -->
     <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
       <div class="mn-table-hd-contents" :style="{ transform: `translateX(${scrollLeft * -1}px)` }">
-        <div class="mn-table-hd-col" v-for="(column, key) in columns" :key="key" :style="[ calcWidth(column.width) ]">
+        <div class="mn-table-hd-col" :class="{ 'is-highlight': column.highlight }" v-for="(column, key) in columns" :key="key" :style="[ calcWidth(column.width) ]">
           <mn-table-sort-bar :title="column.title" :sort="column.sort"></mn-table-sort-bar>
         </div>
       </div>
@@ -19,7 +19,7 @@
     <div class="mn-table-bd" style="height: 400px;" v-else @scroll="onScroll">
       <div class="mn-table-bd-contents">
         <div class="mn-table-bd-row" v-for="item in items">
-          <div class="mn-table-bd-col" v-for="column in columns" :style="[ calcWidth(column.width) ]">
+          <div class="mn-table-bd-col" :class="{ 'is-highlight': column.highlight }" v-for="column in columns" :style="[ calcWidth(column.width) ]">
             <!-- 组件自留的列展示方式 -->
             <div class="mn-table-bd-actions" v-if="column.name === '$action'">
               <mn-btn class="mn-table-bd-btn"
@@ -105,6 +105,8 @@
 </script>
 
 <style lang="scss">
+  $highlight-bg: rgba(#007aff, 0.15);
+
   .mn-table-hd {
     position: relative;
     width: 100%;
@@ -130,6 +132,10 @@
   .mn-table-hd-col {
     padding: 1rem 1rem;
     font-weight: 500;
+
+    &.is-highlight {
+      background: $highlight-bg;
+    }
   }
 
   .mn-table-loading {
@@ -169,6 +175,10 @@
     display: flex;
     padding: 0.75rem 1rem;
     align-items: center;
+
+    &.is-highlight {
+      background: $highlight-bg;
+    }
   }
 
   .mn-table-bd-actions {
