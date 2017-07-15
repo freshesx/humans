@@ -1,15 +1,15 @@
 <template>
   <div class="mn-table-sort-bar">
-    <div class="mn-table-sort-bar-title">
+    <div class="mn-table-sort-bar-title" @click.prevent.stop="onHighlight">
       {{ title }}
     </div>
     <div class="mn-table-sort-bar-action" v-if="sort !== 'none'">
       <div class="mn-table-sort-bar-dropup"
         :class="{ 'is-active': sort === 'asc' }"
-        @click.prevent="onSort($event, 'asc')"></div>
+        @click.prevent.stop="onSort($event, 'asc')"></div>
       <div class="mn-table-sort-bar-dropdown"
         :class="{ 'is-active': sort === 'desc' }"
-        @click.prevent="onSort($event, 'desc')"></div>
+        @click.prevent.stop="onSort($event, 'desc')"></div>
     </div>
   </div>
 </template>
@@ -43,6 +43,9 @@
       onSort (event, value) {
         value = this.sort === value ? 'sortable' : value
         this.$emit('changeSort', value, event)
+      },
+      onHighlight (event) {
+        this.$emit('changeHighlight', event)
       }
     }
   })

@@ -5,7 +5,10 @@
     <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
       <div class="mn-table-hd-contents" :style="{ transform: `translateX(${scrollLeft * -1}px)` }">
         <div class="mn-table-hd-col" :class="{ 'is-highlight': column.highlight }" v-for="(column, key) in columns" :key="key" :style="[ calcWidth(column.width) ]">
-          <mn-table-sort-bar :title="column.title" :sort="column.sort" @changeSort="onSort(arguments[0], column, arguments[1])"></mn-table-sort-bar>
+          <mn-table-sort-bar :title="column.title"
+            :sort="column.sort"
+            @changeSort="onSort(arguments[0], column, arguments[1])"
+            @changeHighlight="onHighlight(column, arguments[0])"></mn-table-sort-bar>
         </div>
       </div>
     </div>
@@ -102,6 +105,9 @@
       },
       onSort (sortName, column, event) {
         this.$emit('changeSort', sortName, column, event)
+      },
+      onHighlight (column, event) {
+        this.$emit('changeHighlight', !column.highlight, column, event)
       }
     }
   })
