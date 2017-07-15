@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-table">
+  <div class="mn-table" :class="{ [`is-${size}`]: !!size }">
 
     <!-- 表格头 -->
     <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
@@ -18,8 +18,8 @@
     <!-- 表格主体 -->
     <div class="mn-table-bd" style="height: 400px;" v-else @scroll="onScroll">
       <div class="mn-table-bd-contents">
-        <div class="mn-table-bd-col" v-for="item in items">
-          <div class="mn-table-bd-cell" v-for="column in columns" :style="[ calcWidth(column.width) ]">
+        <div class="mn-table-bd-row" v-for="item in items">
+          <div class="mn-table-bd-col" v-for="column in columns" :style="[ calcWidth(column.width) ]">
             <!-- 组件自留的列展示方式 -->
             <div class="mn-table-bd-actions" v-if="column.name === '$action'">
               <mn-btn class="mn-table-bd-btn"
@@ -63,7 +63,8 @@
         default () {
           return []
         }
-      }
+      },
+      size: String
     },
     data () {
       return {
@@ -151,7 +152,7 @@
     position: absolute;
   }
 
-  .mn-table-bd-col {
+  .mn-table-bd-row {
     display: flex;
     transition-duration: 500ms;
 
@@ -160,8 +161,10 @@
     }
   }
 
-  .mn-table-bd-cell {
+  .mn-table-bd-col {
+    display: flex;
     padding: 0.75rem 1rem;
+    align-items: center;
   }
 
   .mn-table-bd-actions {
@@ -178,9 +181,15 @@
     }
   }
 
-  .mn-table-bd-col:hover {
+  .mn-table-bd-row:hover {
     .mn-table-bd-actions {
       opacity: 1;
+    }
+  }
+
+  .mn-table.is-sm {
+    .mn-table-bd-col {
+      padding: 0.25rem 1rem;
     }
   }
 </style>
