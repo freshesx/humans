@@ -11,11 +11,13 @@ export default [
   {
     name: 'title',
     title: '影片名称',
-    width: '180px'
+    width: '180px',
+    sort: 'sortable'
   },
   {
     name: 'rating',
-    title: '评分'
+    title: '评分',
+    sort: 'desc'
   },
   {
     name: 'tags',
