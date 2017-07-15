@@ -20,7 +20,7 @@ export default [
   {
     name: 'tags',
     title: '标签',
-    width: '160px'
+    width: '500px'
   },
   {
     name: 'year',
@@ -28,7 +28,7 @@ export default [
   },
   {
     name: '$action',
-    width: 1,
+    width: '180px',
     actions: [
       {
         icon: require('vue-human-icons/js/ios/gear'),
