@@ -4,8 +4,12 @@
       {{ title }}
     </div>
     <div class="mn-table-sort-bar-action" v-if="sort !== 'none'">
-      <div class="mn-table-sort-bar-dropup" :class="{ 'is-active': sort === 'asc' }"></div>
-      <div class="mn-table-sort-bar-dropdown" :class="{ 'is-active': sort === 'desc' }"></div>
+      <div class="mn-table-sort-bar-dropup"
+        :class="{ 'is-active': sort === 'asc' }"
+        @click.prevent="onSort($event, 'asc')"></div>
+      <div class="mn-table-sort-bar-dropdown"
+        :class="{ 'is-active': sort === 'desc' }"
+        @click.prevent="onSort($event, 'desc')"></div>
     </div>
   </div>
 </template>
@@ -25,7 +29,7 @@
         type: String,
         default: 'none',
         validator (val) {
-          ['none', 'sortable', 'asc', 'desc'].includes(val)
+          return ['none', 'sortable', 'asc', 'desc'].includes(val)
         }
       }
     },
@@ -33,6 +37,12 @@
       return {
         dropup: require('vue-human-icons/js/android/arrow-dropup'),
         dropdown: require('vue-human-icons/js/android/arrow-dropdown')
+      }
+    },
+    methods: {
+      onSort (event, value) {
+        value = this.sort === value ? 'sortable' : value
+        this.$emit('changeSort', value, event)
       }
     }
   })
@@ -51,7 +61,6 @@
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
-    cursor: pointer;
   }
 
   .mn-table-sort-bar-dropup,
@@ -60,6 +69,7 @@
     width: 6px;
     height: 6px;
     transform: rotate(-45deg);
+    cursor: pointer;
 
     &.is-active {
       border-color: #666;
