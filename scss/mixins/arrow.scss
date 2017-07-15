@@ -1,15 +1,14 @@
 @import "../vars";
 
-@mixin make-arrow() {
+@mixin make-arrow($border-width: 2px) {
   content: '';
   display: block;
   flex-shrink: 0;
   align-content: flex-end;
   height: 8px;
   width: 8px;
-  border-width: 2px 2px 0 0;
+  border-width: $border-width $border-width 0 0;
   border-color: #c8c8cd;
   border-style: solid;
-  margin-left: $grid-gutters / 2;
-  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: rotate(45deg);
 }
