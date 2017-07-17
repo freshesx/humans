@@ -19,6 +19,8 @@
 </script>
 
 <style lang="scss">
+  @import "./vars";
+
   @keyframes mn-table-check-bounce {
     0% {
       transform: translate(0);
@@ -38,7 +40,7 @@
   }
 
   .mn-table-check {
-    border: solid 2px #666;
+    border: solid 2px $mn-table-check-bg;
     border-radius: 0.25rem;
     width: 16px;
     height: 16px;
@@ -46,8 +48,8 @@
     transition-duration: 200ms;
 
     &.is-active {
-      background: rgb(76, 217, 100);
-      border-color: darken(rgb(76, 217, 100), 5%);
+      background: $mn-table-check-active-bg;
+      border-color: darken($mn-table-check-active-bg, 5%);
       animation: 800ms mn-table-check-bounce;
     }
   }
