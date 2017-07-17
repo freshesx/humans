@@ -1,12 +1,7 @@
 export default [
   {
     name: 'cover',
-    title: '图片'
-  },
-  {
-    name: 'id',
-    title: 'ID',
-    width: '120px'
+    title: '封面'
   },
   {
     name: 'title',
@@ -21,13 +16,22 @@ export default [
     highlight: true
   },
   {
+    name: 'director',
+    title: '导演'
+  },
+  {
+    name: 'actor',
+    title: '主演',
+    width: '200px'
+  },
+  {
     name: 'tags',
     title: '标签',
-    width: '500px'
+    width: '200px'
   },
   {
     name: 'year',
-    title: '上映时间'
+    title: '年份'
   },
   {
     name: '$action',
