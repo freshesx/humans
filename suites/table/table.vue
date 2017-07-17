@@ -29,7 +29,7 @@
       <div class="mn-table-bd-contents">
         <div class="mn-table-bd-row" v-for="item in items">
           <div class="mn-table-bd-col">
-            <mn-table-check :checked="isSelectionHas(item)" @click="onCheckSelections(item)"></mn-table-check>
+            <mn-table-check :checked="isOneSelected(item)" @click="onOneSelected(item)"></mn-table-check>
           </div>
           <div class="mn-table-bd-col" :class="{ 'is-highlight': column.highlight }" v-for="column in columns" :style="[ calcWidth(column.width) ]">
             <!-- 组件自留的列展示方式 -->
@@ -83,7 +83,7 @@
         }
       },
       size: String,
-      selection: Array
+      selections: Array
     },
     data () {
       return {
@@ -123,18 +123,18 @@
       },
       /**
        * 触发多选
-       * @method onCheckSelections
+       * @method onOneSelected
        * @param  {Object}          item        内容项目
        * @param  {String|Number}   item.$key   内容项目的唯一编号
        */
-      onCheckSelections (item) {
+      onOneSelected (item) {
         // 必须存在 $key
         if (isUndefined(item.$key)) {
           throw new Error('没有在 item内定义 $key')
         }
 
         const key = item.$key
-        const newSelection = [ ...this.selection ]
+        const newSelection = [ ...this.selections ]
         const index = newSelection.indexOf(key)
 
         // 加入或者移除
@@ -144,11 +144,11 @@
           newSelection.push(key)
         }
 
-        this.$emit('update:selection', newSelection, key)
+        this.$emit('update:selections', newSelection, key)
       },
-      isSelectionHas (item) {
+      isOneSelected (item) {
         // 如果没有开启多选
-        if (isUndefined(this.selection)) {
+        if (isUndefined(this.selections)) {
           return false
         }
         // 如果开启多选，但缺少 $key 字段
@@ -156,7 +156,7 @@
           throw new Error('如果启动多选功能的话，必须在对象中新增 $key 字段。')
         }
         // 检查是否包含
-        return this.selection.includes(item.$key)
+        return this.selections.includes(item.$key)
       }
     }
   })

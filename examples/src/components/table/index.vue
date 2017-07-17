@@ -8,7 +8,7 @@
 
     <mn-table :items="tableItems | updateItems"
       :columns="tableColumns"
-      :selection.sync="selection"
+      :selections.sync="selections"
       @changeSort="onSort"
       @changeHighlight="onHighlight">
       <template scope="scope" slot="cover">
@@ -37,7 +37,7 @@
       return {
         tableColumns,
         tableItems: undefined,
-        selection: []
+        selections: []
       }
     },
     methods: {
