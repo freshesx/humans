@@ -7,7 +7,9 @@
       :placeholder="placeholder"
       :readonly="readonly"
       :disabled="disabled"
-      @input="changeValue">
+      @input="changeValue"
+      @focus="onFocus">
+    <div class="mn-input-mask" :class="{ 'is-active': isFocus }"></div>
     <transition name="mn-input-clear">
       <div
         v-if="value && !hideClear"
@@ -58,7 +60,8 @@
     },
     data () {
       return {
-        iosCloseOutline
+        iosCloseOutline,
+        isFocus: false
       }
     },
     methods: {
@@ -78,16 +81,34 @@
       },
       parseClear () {
         return undefined
+      },
+      onFocus () {
+        this.isFocus = true
+        setTimeout(() => {
+          this.isFocus = false
+        }, 672)
       }
     }
   })
 </script>
 
 <style lang="scss">
+  @import "../../scss/vars";
+
+  @keyframes mn-input-mask {
+    0%, 100% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+
   .mn-input {
     width: 100%;
     display: flex;
     align-items: center;
+    position: relative;
 
     &-control {
       flex: 1 1;
@@ -106,6 +127,21 @@
       .mn-input-control {
         height: 3.5rem;
         line-height: 3.5;
+      }
+    }
+
+    &-mask {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba($green, 0.3);
+      transition-duration: 366ms;
+      transform: scale(0);
+      border-radius: 50px;
+      left: -25px;
+
+      &.is-active {
+        animation: 800ms mn-input-mask;
       }
     }
 
