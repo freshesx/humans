@@ -33,12 +33,13 @@
             <mn-table-check :checked="isOneSelected(item)" @click="onOneSelected(item)"></mn-table-check>
           </div>
           <div class="mn-table-bd-col" :class="{ 'is-highlight': column.highlight }" v-for="column in columns" :style="[ calcWidth(column.width) ]">
-            <!-- 组件自留的列展示方式 -->
+            <!-- 组件自留的列展示方式：按钮 -->
             <div class="mn-table-bd-actions" v-if="column.name === '$action'">
               <mn-btn class="mn-table-bd-btn"
                 :icon="button.icon"
                 :theme="button.theme || 'secondary-link'"
                 size="sm"
+                @click="onClickAction(button.name, item, arguments[1], arguments[0])"
                 v-for="(button, buttonIndex) in column.actions"
                 :key="buttonIndex">{{ button.title }}</mn-btn>
             </div>
@@ -135,6 +136,9 @@
       },
       onHighlight (column, event) {
         this.$emit('changeHighlight', !column.highlight, column, event)
+      },
+      onClickAction (actionName, item, button, event) {
+        this.$emit('onActions', actionName, item, button, event)
       },
       /**
        * 触发 全选 / 全不选 事件
