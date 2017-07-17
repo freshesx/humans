@@ -4,7 +4,7 @@
     <!-- 表格头 -->
     <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
       <div class="mn-table-hd-contents" :style="{ transform: `translateX(${scrollLeft * -1}px)` }">
-        <div class="mn-table-hd-col">
+        <div class="mn-table-hd-col" v-if="isEnableSelections">
           <mn-table-check :checked="allSelected" @click="onAllSelected"></mn-table-check>
         </div>
         <mn-table-header-column
@@ -28,7 +28,8 @@
     <div class="mn-table-bd" style="height: 400px;" v-else @scroll="onScroll">
       <div class="mn-table-bd-contents">
         <div class="mn-table-bd-row" v-for="item in items">
-          <div class="mn-table-bd-col">
+          <!-- 多选 -->
+          <div class="mn-table-bd-col" v-if="isEnableSelections">
             <mn-table-check :checked="isOneSelected(item)" @click="onOneSelected(item)"></mn-table-check>
           </div>
           <div class="mn-table-bd-col" :class="{ 'is-highlight': column.highlight }" v-for="column in columns" :style="[ calcWidth(column.width) ]">
@@ -100,6 +101,9 @@
         return this.items.every(item => {
           return this.selections.includes(item.$key)
         })
+      },
+      isEnableSelections () {
+        return !isUndefined(this.selections)
       }
     },
     methods: {
