@@ -4,6 +4,9 @@
     <!-- 表格头 -->
     <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
       <div class="mn-table-hd-contents" :style="{ transform: `translateX(${scrollLeft * -1}px)` }">
+        <div class="mn-table-hd-col">
+          <mn-table-check></mn-table-check>
+        </div>
         <mn-table-header-column
           :title="column.title"
           :sort="column.sort"
@@ -25,6 +28,9 @@
     <div class="mn-table-bd" style="height: 400px;" v-else @scroll="onScroll">
       <div class="mn-table-bd-contents">
         <div class="mn-table-bd-row" v-for="item in items">
+          <div class="mn-table-bd-col">
+            <mn-table-check></mn-table-check>
+          </div>
           <div class="mn-table-bd-col" :class="{ 'is-highlight': column.highlight }" v-for="column in columns" :style="[ calcWidth(column.width) ]">
             <!-- 组件自留的列展示方式 -->
             <div class="mn-table-bd-actions" v-if="column.name === '$action'">
@@ -53,11 +59,13 @@
   import Element from '../../utils/Element'
   import isUndefined from 'lodash/isUndefined'
   import tableHeaderColumn from './tableHeaderColumn'
+  import tableCheck from './tableCheck'
 
   export default new Element({
     name: 'mn-table',
     components: {
-      ...tableHeaderColumn.inject()
+      ...tableHeaderColumn.inject(),
+      ...tableCheck.inject()
     },
     props: {
       // undefined 为加载状态、空数组为无数据、非空数组展示内容
