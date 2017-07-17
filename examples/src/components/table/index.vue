@@ -9,6 +9,7 @@
     <mn-table :items="tableItems | updateItems"
       :columns="tableColumns"
       :selections.sync="selections"
+      @onActions="onActions"
       @changeSort="onSort"
       @changeHighlight="onHighlight">
       <template scope="scope" slot="cover">
@@ -50,6 +51,9 @@
       },
       onHighlight (highlight, column) {
         this.$set(column, 'highlight', highlight)
+      },
+      onActions (name, item) {
+        console.log(name, item)
       }
     },
     created () {
