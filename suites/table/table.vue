@@ -196,7 +196,6 @@
   }
 
   .mn-table-bd-actions {
-    opacity: 0;
     transition-duration: 500ms;
   }
 
@@ -206,12 +205,6 @@
 
     & + & {
       margin-left: 0.5rem;
-    }
-  }
-
-  .mn-table-bd-row:hover {
-    .mn-table-bd-actions {
-      opacity: 1;
     }
   }
 
