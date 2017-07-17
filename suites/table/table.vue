@@ -138,7 +138,7 @@
         this.$emit('changeHighlight', !column.highlight, column, event)
       },
       onClickAction (actionName, item, button, event) {
-        this.$emit('onActions', actionName, item, button, event)
+        this.$emit('clickAction', actionName, item, button, event)
       },
       /**
        * 触发 全选 / 全不选 事件

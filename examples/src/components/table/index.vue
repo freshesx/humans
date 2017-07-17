@@ -9,7 +9,7 @@
     <mn-table :items="tableItems | updateItems"
       :columns="tableColumns"
       :selections.sync="selections"
-      @onActions="onActions"
+      @clickAction="onActions"
       @changeSort="onSort"
       @changeHighlight="onHighlight">
       <template scope="scope" slot="cover">
