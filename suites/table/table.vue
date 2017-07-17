@@ -5,7 +5,7 @@
     <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
       <div class="mn-table-hd-contents" :style="{ transform: `translateX(${scrollLeft * -1}px)` }">
         <div class="mn-table-hd-col">
-          <mn-table-check></mn-table-check>
+          <mn-table-check :checked="allSelected"></mn-table-check>
         </div>
         <mn-table-header-column
           :title="column.title"
@@ -89,6 +89,17 @@
       return {
         scrollLeft: 0,
         scrollTop: 0
+      }
+    },
+    computed: {
+      allSelected () {
+        if (!Array.isArray(this.selections) || !Array.isArray(this.items)) {
+          return false
+        }
+
+        return this.items.every(item => {
+          return this.selections.includes(item.$key)
+        })
       }
     },
     methods: {
