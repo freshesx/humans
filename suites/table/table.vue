@@ -27,7 +27,7 @@
     <!-- 表格主体 -->
     <div class="mn-table-bd" style="height: 400px;" v-else @scroll="onScroll">
       <div class="mn-table-bd-contents">
-        <div class="mn-table-bd-row" v-for="item in items">
+        <div class="mn-table-bd-row" v-for="item in items" @click="onClickRow(item, $event)">
           <!-- 多选 -->
           <div class="mn-table-bd-col" v-if="isEnableSelections">
             <mn-table-check :checked="isOneSelected(item)" @click="onOneSelected(item)"></mn-table-check>
@@ -137,7 +137,11 @@
       onHighlight (column, event) {
         this.$emit('changeHighlight', !column.highlight, column, event)
       },
+      onClickRow (item, event) {
+        this.$emit('clickRow', item, event)
+      },
       onClickAction (actionName, item, button, event) {
+        event.stopPropagation()
         this.$emit('clickAction', actionName, item, button, event)
       },
       /**
