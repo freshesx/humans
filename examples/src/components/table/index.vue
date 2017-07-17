@@ -60,6 +60,7 @@
         if (isUndefined(items)) return undefined
         return items.map(item => {
           return {
+            $key: item.id,
             cover: item.images.small,
             title: item.title,
             director: item.directors.map(item => item.name).join(', '),
