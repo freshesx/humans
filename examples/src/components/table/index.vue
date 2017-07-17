@@ -9,7 +9,7 @@
     <mn-table :items="tableItems | updateItems"
       :columns="tableColumns"
       :selections.sync="selections"
-      @clickAction="onActions"
+      @clickAction="onAction"
       @changeSort="onSort"
       @changeHighlight="onHighlight">
       <template scope="scope" slot="cover">
@@ -52,7 +52,7 @@
       onHighlight (highlight, column) {
         this.$set(column, 'highlight', highlight)
       },
-      onActions (name, item) {
+      onAction (name, item) {
         console.log(name, item)
       }
     },
