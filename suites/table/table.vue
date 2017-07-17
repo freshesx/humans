@@ -5,7 +5,7 @@
     <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
       <div class="mn-table-hd-contents" :style="{ transform: `translateX(${scrollLeft * -1}px)` }">
         <div class="mn-table-hd-col">
-          <mn-table-check :checked="allSelected"></mn-table-check>
+          <mn-table-check :checked="allSelected" @click="onAllSelected"></mn-table-check>
         </div>
         <mn-table-header-column
           :title="column.title"
@@ -133,7 +133,20 @@
         this.$emit('changeHighlight', !column.highlight, column, event)
       },
       /**
-       * 触发多选
+       * 触发 全选 / 全不选 事件
+       * @method onAllSelected
+       */
+      onAllSelected () {
+        let newSelection = []
+
+        if (!this.allSelected) {
+          newSelection = this.items.map(item => item.$key)
+        }
+
+        this.$emit('update:selections', newSelection)
+      },
+      /**
+       * 触发 选中 / 取消 事件
        * @method onOneSelected
        * @param  {Object}          item        内容项目
        * @param  {String|Number}   item.$key   内容项目的唯一编号
