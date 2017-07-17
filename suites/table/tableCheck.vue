@@ -25,9 +25,11 @@
     width: 16px;
     height: 16px;
     cursor: pointer;
+    transition-duration: 500ms;
 
     &.is-active {
-      background: #666;
+      background: rgb(76, 217, 100);
+      border-color: darken(rgb(76, 217, 100), 5%);
     }
   }
 </style>
