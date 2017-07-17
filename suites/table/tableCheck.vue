@@ -19,17 +19,36 @@
 </script>
 
 <style lang="scss">
+  @keyframes mn-table-check-bounce {
+    0% {
+      transform: translate(0);
+    }
+    25% {
+      transform: translate(0, -2px);
+    }
+    50% {
+      transform: translate(0, 1px);
+    }
+    75% {
+      transform: translate(0, -3px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+
   .mn-table-check {
     border: solid 2px #666;
     border-radius: 0.25rem;
     width: 16px;
     height: 16px;
     cursor: pointer;
-    transition-duration: 500ms;
+    transition-duration: 200ms;
 
     &.is-active {
       background: rgb(76, 217, 100);
       border-color: darken(rgb(76, 217, 100), 5%);
+      animation: 800ms mn-table-check-bounce;
     }
   }
 </style>
