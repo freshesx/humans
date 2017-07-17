@@ -3,13 +3,14 @@
     <input
       :type="type"
       class="mn-input-control"
+      :class="{ 'is-focus': isFocus }"
       :value="parseBefore(value)"
       :placeholder="placeholder"
       :readonly="readonly"
       :disabled="disabled"
       @input="changeValue"
       @focus="onFocus">
-    <div class="mn-input-mask" :class="{ 'is-active': isFocus }"></div>
+    <div class="mn-input-mask" :class="{ 'is-focus': isFocus }"></div>
     <transition name="mn-input-clear">
       <div
         v-if="value && !hideClear"
@@ -95,11 +96,23 @@
 <style lang="scss">
   @import "../../scss/vars";
 
-  @keyframes mn-input-mask {
-    0%, 100% {
-      transform: scale(0);
+  @keyframes mn-input-control {
+    0% {
+      transform: translateY(0);
     }
     50% {
+      transform: translateY(3px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes mn-input-mask {
+    0% {
+      transform: scale(0);
+    }
+    100% {
       transform: scale(1);
     }
   }
@@ -121,27 +134,33 @@
       background: transparent;
       outline: none;
       -webkit-appearance: none;
+
+      &.is-focus {
+        animation: 900ms mn-input-control;
+      }
     }
 
     &.is-lg {
       .mn-input-control {
         height: 3.5rem;
-        line-height: 3.5;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
       }
     }
 
     &-mask {
+      $radius: 80px;
       position: absolute;
-      width: 100px;
-      height: 100px;
-      background: rgba($green, 0.3);
-      transition-duration: 366ms;
+      width: $radius;
+      height: $radius;
+      background: rgba($blue, 0.03);
       transform: scale(0);
-      border-radius: 50px;
-      left: -25px;
+      border-radius: $radius / 2;
+      top: $radius * -0.5 + 28px;
+      left: $radius * -0.1;
 
-      &.is-active {
-        animation: 800ms mn-input-mask;
+      &.is-focus {
+        animation: 366ms mn-input-mask;
       }
     }
 
