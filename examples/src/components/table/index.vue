@@ -9,6 +9,7 @@
     <mn-table :items="tableItems | updateItems"
       :columns="tableColumns"
       :selections.sync="selections"
+      @clickRow="onRow"
       @clickAction="onAction"
       @changeSort="onSort"
       @changeHighlight="onHighlight">
@@ -53,7 +54,10 @@
         this.$set(column, 'highlight', highlight)
       },
       onAction (name, item) {
-        console.log(name, item)
+        console.log('onAction', name, item)
+      },
+      onRow (item, event) {
+        console.log('onRow', item)
       }
     },
     created () {
