@@ -8,6 +8,8 @@
 
     <mn-table-view :size.sync="tableSize"></mn-table-view>
 
+    <mn-table-column :columns="tableColumns" @changeHide="onHide"></mn-table-column>
+
     <mn-table :items="tableItems | updateItems"
       :columns="tableColumns"
       :selections.sync="selections"
@@ -56,6 +58,9 @@
       },
       onHighlight (highlight, column) {
         this.$set(column, 'highlight', highlight)
+      },
+      onHide (hide, column) {
+        this.$set(column, 'hide', hide)
       },
       onAction (name, item) {
         console.log('onAction', name, item)
