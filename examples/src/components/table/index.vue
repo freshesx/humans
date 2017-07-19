@@ -6,9 +6,17 @@
       </mn-letter-body>
     </mn-letter>
 
-    <mn-table-view :size.sync="tableSize"></mn-table-view>
-
-    <mn-table-column :columns="tableColumns" @changeHide="onHide"></mn-table-column>
+    <div class="table-tools">
+      <div>
+        <mn-table-column :columns="tableColumns" @changeHide="onHide"></mn-table-column>
+      </div>
+      <div style="flex: 1; margin-left: 0.5rem;">
+        <mn-table-view :size.sync="tableSize"></mn-table-view>
+      </div>
+      <div>
+        <mn-table-paginate :start="start" :total="total" :count="count" @change="onPaginate"></mn-table-paginate>
+      </div>
+    </div>
 
     <mn-table :items="tableItems | updateItems"
       :columns="tableColumns"
@@ -25,8 +33,6 @@
         <mn-tag bg="#ddd" v-for="(tag, key) in scope.item.tags" :key="key">{{ tag }}</mn-tag>
       </template>
     </mn-table>
-
-    <mn-table-paginate :start="start" :total="total" :count="count" @change="onPaginate"></mn-table-paginate>
   </page>
 </template>
 
@@ -108,3 +114,10 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  .table-tools {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
