@@ -26,7 +26,7 @@
       </template>
     </mn-table>
 
-    <mn-paginate :total="total" v-model="page" @input="onPaginate"></mn-paginate>
+    <mn-table-paginate :start="start" :total="total" :count="count" @change="onPaginate"></mn-table-paginate>
   </page>
 </template>
 
@@ -50,23 +50,21 @@
         tableItems: undefined,
         tableSize: 'sm',
         selections: [],
-        page: 1,
-        total: 1,
-        rows: 20
+        start: 0,
+        total: 0,
+        count: 20
       }
     },
     methods: {
-      async fetchMovie (page, rows) {
+      async fetchMovie (start, count) {
         this.tableItems = undefined
         const response = await axios.get('/api/movie/in_theaters', {
-          params: {
-            start: (page - 1) * rows
-          }
+          params: { start, count }
         })
-        const { count, start, total, subjects } = response.data
-        this.tableItems = subjects
-        this.page = Math.ceil((start + 1) / count)
-        this.total = Math.ceil(total / count)
+        this.tableItems = response.data.subjects
+        this.total = response.data.total
+        this.start = response.data.start
+        this.count = response.data.count
       },
       onSort (sortName, column) {
         this.$set(column, 'sort', sortName)
@@ -83,12 +81,13 @@
       onRow (item, event) {
         console.log('onRow', item)
       },
-      onPaginate (page) {
-        this.fetchMovie(page, this.rows)
+      onPaginate (start, count) {
+        console.log(start, count)
+        this.fetchMovie(start, count)
       }
     },
     created () {
-      this.fetchMovie(this.page, this.rows)
+      this.fetchMovie(this.start, this.count)
     },
     filters: {
       updateItems (items) {
