@@ -228,6 +228,10 @@
 <style lang="scss">
   $highlight-bg: rgba(#007aff, 0.15);
 
+  .mn-table {
+    margin-bottom: 1rem;
+  }
+
   .mn-table-hd {
     position: relative;
     width: 100%;
