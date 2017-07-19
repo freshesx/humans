@@ -14,7 +14,8 @@
           @changeSort="onSort(arguments[0], column, arguments[1])"
           @changeHighlight="onHighlight(column, arguments[0])"
           v-for="(column, key) in columns"
-          :key="key"></mn-table-header-column>
+          :key="key"
+          v-if="!column.hide"></mn-table-header-column>
       </div>
     </div>
 
@@ -31,7 +32,7 @@
           <div class="mn-table-bd-col" v-if="isEnableSelections">
             <mn-table-check :checked="isOneSelected(item)" @click="onOneSelected(item)"></mn-table-check>
           </div>
-          <div class="mn-table-bd-col" :class="{ 'is-highlight': column.highlight }" v-for="column in columns" :style="[ calcWidth(column.width) ]">
+          <div class="mn-table-bd-col" :class="{ 'is-highlight': column.highlight }" v-for="column in columns" :style="[ calcWidth(column.width) ]" v-if="!column.hide">
             <!-- 组件自留的列展示方式：按钮 -->
             <div class="mn-table-bd-actions" v-if="column.name === '$action'">
               <mn-btn class="mn-table-bd-btn"
