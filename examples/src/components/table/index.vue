@@ -25,12 +25,15 @@
         <mn-tag bg="#ddd" v-for="(tag, key) in scope.item.tags" :key="key">{{ tag }}</mn-tag>
       </template>
     </mn-table>
+
+    <mn-paginate :total="total" v-model="page" @input="onPaginate"></mn-paginate>
   </page>
 </template>
 
 <script>
   import table from 'vue-human/suites/table'
   import tag from 'vue-human/suites/tag'
+  import paginate from 'vue-human/suites/paginate'
   import tableColumns from './tableColumns'
   import axios from 'axios'
   import isUndefined from 'lodash/isUndefined'
@@ -38,20 +41,32 @@
   export default {
     components: {
       ...table.map(),
-      ...tag.map()
+      ...tag.map(),
+      ...paginate.map()
     },
     data () {
       return {
         tableColumns,
         tableItems: undefined,
         tableSize: 'sm',
-        selections: []
+        selections: [],
+        page: 1,
+        total: 1,
+        rows: 20
       }
     },
     methods: {
-      async fetchMovie (start, count) {
-        const response = await axios.get('/api/movie/in_theaters')
-        this.tableItems = response.data.subjects
+      async fetchMovie (page, rows) {
+        this.tableItems = undefined
+        const response = await axios.get('/api/movie/in_theaters', {
+          params: {
+            start: (page - 1) * rows
+          }
+        })
+        const { count, start, total, subjects } = response.data
+        this.tableItems = subjects
+        this.page = Math.ceil((start + 1) / count)
+        this.total = Math.ceil(total / count)
       },
       onSort (sortName, column) {
         this.$set(column, 'sort', sortName)
@@ -67,10 +82,13 @@
       },
       onRow (item, event) {
         console.log('onRow', item)
+      },
+      onPaginate (page) {
+        this.fetchMovie(page, this.rows)
       }
     },
     created () {
-      this.fetchMovie()
+      this.fetchMovie(this.page, this.rows)
     },
     filters: {
       updateItems (items) {
