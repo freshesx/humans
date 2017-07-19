@@ -1,15 +1,5 @@
 <template>
   <div class="mn-table" :class="{ [`is-${size}`]: !!size }">
-
-    <div class="mn-table-tools">
-      <div class="mn-table-tools-action">
-        <slot name="somesome"></slot>
-      </div>
-      <div class="mn-table-tools-view">
-        <mn-table-view :size="size" @update:size="onSize"></mn-table-view>
-      </div>
-    </div>
-
     <!-- 表格头 -->
     <div class="mn-table-hd" :class="{ 'is-shadow': scrollTop > 1 }">
       <div class="mn-table-hd-contents" :style="{ transform: `translateX(${scrollLeft * -1}px)` }">
@@ -71,14 +61,12 @@
   import isUndefined from 'lodash/isUndefined'
   import tableHeaderColumn from './tableHeaderColumn'
   import tableCheck from './tableCheck'
-  import tableView from './tableView'
 
   export default new Element({
     name: 'mn-table',
     components: {
       ...tableHeaderColumn.inject(),
-      ...tableCheck.inject(),
-      ...tableView.inject()
+      ...tableCheck.inject()
     },
     props: {
       // undefined 为加载状态、空数组为无数据、非空数组展示内容
@@ -124,9 +112,6 @@
       },
       emitChoices () {
 
-      },
-      onSize (...args) {
-        this.$emit('update:size', ...args)
       },
       onScroll (event) {
         this.scrollLeft = event.srcElement.scrollLeft
