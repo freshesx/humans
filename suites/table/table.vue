@@ -70,15 +70,48 @@
       ...tableCheck.inject()
     },
     props: {
-      // undefined 为加载状态、空数组为无数据、非空数组展示内容
+      /**
+       * 内容列表
+       * @prop {Array}           items                        - 内容列表，空数组时显示 “无数据”
+       * @prop {String|Number}   items[].$key                 - 表示行的唯一标志
+       * @prop {Undefined}       items                        - 表示加载状态
+       */
       items: Array,
+
+      /**
+       * 列配置
+       * @prop {Array}           columns                      -
+       * @prop {String}          columns[].title              - 显示名称
+       * @prop {String}          columns[].name               - 列唯一名称，$action 和 $key 为系统保留
+       * @prop {String|Number}   columns[].width              - 列宽度，支持 width 和 flex
+       * @prop {String}          columns[].sort               - 筛选图标 none, sortable, desc, asc, 默认为 undefined
+       * @prop {Boolean}         columns[].highlight          - 是否高亮
+       * @prop {Array}           columns[].actions            - 事件按钮
+       * @prop {*}               columns[].actions[].icon     - 事件按钮的图标
+       * @prop {String}          columns[].actions[].name     - 事件按钮的唯一名称
+       * @prop {String}          columns[].actions[].title    - 事件按钮的显示名称
+       */
       columns: {
         type: Array,
         default () {
           return []
         }
       },
+
+      /**
+       * 表格尺寸
+       * @prop {Undefined}       size                         - 正常尺寸
+       * @prop {String}          size="md"                    - 正常尺寸
+       * @prop {String}          size="sm"                    - 较小尺寸
+       */
       size: String,
+
+      /**
+       * 多选结果
+       * 多选结果依赖 items[].$key
+       * @prop {Undefined}       selections                   - 关闭多选功能
+       * @prop {Array}           selections                   - 多选结果
+       */
       selections: Array
     },
     data () {
