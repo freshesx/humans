@@ -6,10 +6,12 @@
       </mn-letter-body>
     </mn-letter>
 
+    <mn-table-view :size.sync="tableSize"></mn-table-view>
+
     <mn-table :items="tableItems | updateItems"
       :columns="tableColumns"
       :selections.sync="selections"
-      :size.sync="tableSize"
+      :size="tableSize"
       @clickRow="onRow"
       @clickAction="onAction"
       @changeSort="onSort"
