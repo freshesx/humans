@@ -6,17 +6,36 @@
       </mn-letter-body>
     </mn-letter>
 
-    <div class="table-tools">
-      <div>
+    <mn-table-tool>
+      <template slot="prefix">
         <mn-table-column :columns="tableColumns" @changeHide="onHide"></mn-table-column>
-      </div>
-      <div style="flex: 1; margin-left: 0.5rem;">
         <mn-table-view :size.sync="tableSize"></mn-table-view>
-      </div>
-      <div>
-        <mn-table-paginate :start="start" :total="total" :count="count" @change="onPaginate"></mn-table-paginate>
-      </div>
-    </div>
+      </template>
+      <template slot="suffix">
+        <mn-btn theme="primary" size="sm">新建</mn-btn>
+      </template>
+      <mn-columns>
+        <mn-column desktop="4">
+          <mn-table-filter label="影片名称">
+            <mn-input v-model="models.title" placeholder="搜索名称"></mn-input>
+          </mn-table-filter>
+        </mn-column>
+        <mn-column desktop="8">
+          <mn-table-filter label="标签">
+            <div>
+              <mn-tag v-for="i in 2" :name="i === 2 ? 'black-lightest' : 'gray-darkest'">标签 {{ i }}</mn-tag>
+            </div>
+          </mn-table-filter>
+        </mn-column>
+      </mn-columns>
+      <mn-columns>
+        <mn-column>
+          <mn-btn theme="primary" size="sm">查询</mn-btn>
+          <mn-btn theme="secondary-link" size="sm">批量导入</mn-btn>
+          <mn-btn theme="secondary-link" size="sm">导出 EXCEL</mn-btn>
+        </mn-column>
+      </mn-columns>
+    </mn-table-tool>
 
     <mn-table :items="tableItems | updateItems"
       :columns="tableColumns"
@@ -33,13 +52,15 @@
         <mn-tag bg="#ddd" v-for="(tag, key) in scope.item.tags" :key="key">{{ tag }}</mn-tag>
       </template>
     </mn-table>
+
+    <mn-table-paginate :start="start" :total="total" :count="count" @change="onPaginate"></mn-table-paginate>
   </page>
 </template>
 
 <script>
   import table from 'vue-human/suites/table'
   import tag from 'vue-human/suites/tag'
-  import paginate from 'vue-human/suites/paginate'
+  import input from 'vue-human/suites/input'
   import tableColumns from './tableColumns'
   import axios from 'axios'
   import isUndefined from 'lodash/isUndefined'
@@ -48,7 +69,7 @@
     components: {
       ...table.map(),
       ...tag.map(),
-      ...paginate.map()
+      ...input.map()
     },
     data () {
       return {
@@ -58,7 +79,10 @@
         selections: [],
         start: 0,
         total: 0,
-        count: 20
+        count: 20,
+        models: {
+          title: undefined
+        }
       }
     },
     methods: {
@@ -115,7 +139,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .table-tools {
     display: flex;
     justify-content: space-between;
