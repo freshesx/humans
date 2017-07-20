@@ -86,8 +86,8 @@
 <style lang="scss">
   .mn-table-paginate {
     display: flex;
-    margin-bottom: 1rem;
     align-items: center;
+    height: 2.25rem;
   }
 
   .mn-table-paginate-select {

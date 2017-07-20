@@ -51,10 +51,12 @@
 <style lang="scss">
   .mn-table-view {
     display: flex;
-    margin-bottom: 1rem;
+    margin-right: 0.5rem;
   }
 
   .mn-table-view-control {
+    width: 2.25rem;
+    height: 2.25rem;
     background: #fff;
     display: flex;
     justify-content: center;
