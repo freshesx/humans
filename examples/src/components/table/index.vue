@@ -12,7 +12,8 @@
         <mn-table-view :size.sync="tableSize"></mn-table-view>
       </template>
       <template slot="suffix">
-        <mn-btn theme="primary" size="sm">新建</mn-btn>
+        <!-- <mn-btn theme="primary" size="sm">新建</mn-btn> -->
+        <mn-table-paginate :start="start" :total="total" :count="count" @change="onPaginate"></mn-table-paginate>
       </template>
       <mn-columns>
         <mn-column desktop="4">
@@ -52,8 +53,6 @@
         <mn-tag bg="#ddd" v-for="(tag, key) in scope.item.tags" :key="key">{{ tag }}</mn-tag>
       </template>
     </mn-table>
-
-    <mn-table-paginate :start="start" :total="total" :count="count" @change="onPaginate"></mn-table-paginate>
   </page>
 </template>
 
