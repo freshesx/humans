@@ -13,6 +13,14 @@
     </div>
     <div class="mn-table-tool-filter" v-if="hasFilters">
       <slot></slot>
+      <div class="mn-table-tool-filter-box">
+        <div class="mn-table-tool-filter-action">
+          <slot name="action"></slot>
+        </div>
+        <div class="mn-table-tool-filter-operate">
+          <slot name="operate"></slot>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -69,5 +77,17 @@
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+  }
+
+  .mn-table-tool-filter-box {
+    display: flex;
+  }
+
+  .mn-table-tool-filter-action {
+    flex: 1;
+  }
+
+  .mn-table-tool-filter-operate {
+
   }
 </style>
