@@ -29,13 +29,14 @@
           </mn-table-filter>
         </mn-column>
       </mn-columns>
-      <mn-columns>
-        <mn-column>
-          <mn-btn theme="primary" size="sm">查询</mn-btn>
-          <mn-btn theme="secondary-link" size="sm">批量导入</mn-btn>
-          <mn-btn theme="secondary-link" size="sm">导出 EXCEL</mn-btn>
-        </mn-column>
-      </mn-columns>
+      <template slot="action">
+        <mn-btn theme="primary" size="sm">查询</mn-btn>
+        <mn-btn theme="secondary-link" size="sm">批量导入</mn-btn>
+        <mn-btn theme="secondary-link" size="sm">导出 EXCEL</mn-btn>
+      </template>
+      <template slot="operate">
+        <mn-btn theme="primary" size="sm">新建影片</mn-btn>
+      </template>
     </mn-table-tool>
 
     <mn-table :items="tableItems | updateItems"
