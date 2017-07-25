@@ -45,35 +45,6 @@ export default [
     ]
   },
   {
-    name: Vue.t('examples.menus.popup'),
-    children: [
-      {
-        name: Vue.t('examples.submenus.popup.message'),
-        push: { name: 'message' }
-      },
-      {
-        name: Vue.t('examples.submenus.popup.confirm'),
-        push: { name: 'confirm' }
-      },
-      {
-        name: Vue.t('examples.submenus.popup.alert'),
-        push: { name: 'alert' }
-      },
-      {
-        name: Vue.t('examples.submenus.popup.loadingMask'),
-        push: { name: 'loadingMask' }
-      },
-      {
-        name: Vue.t('examples.submenus.popup.modal'),
-        push: { name: 'modal' }
-      },
-      {
-        name: Vue.t('examples.submenus.popup.actionSheet'),
-        push: { name: 'actionSheet' }
-      }
-    ]
-  },
-  {
     name: Vue.t('examples.menus.form'),
     children: [
       {
@@ -107,6 +78,35 @@ export default [
       {
         name: Vue.t('examples.submenus.form.datetime'),
         push: { name: 'datetime' }
+      }
+    ]
+  },
+  {
+    name: Vue.t('examples.menus.popup'),
+    children: [
+      {
+        name: Vue.t('examples.submenus.popup.message'),
+        push: { name: 'message' }
+      },
+      {
+        name: Vue.t('examples.submenus.popup.confirm'),
+        push: { name: 'confirm' }
+      },
+      {
+        name: Vue.t('examples.submenus.popup.alert'),
+        push: { name: 'alert' }
+      },
+      {
+        name: Vue.t('examples.submenus.popup.loadingMask'),
+        push: { name: 'loadingMask' }
+      },
+      {
+        name: Vue.t('examples.submenus.popup.modal'),
+        push: { name: 'modal' }
+      },
+      {
+        name: Vue.t('examples.submenus.popup.actionSheet'),
+        push: { name: 'actionSheet' }
       }
     ]
   },
