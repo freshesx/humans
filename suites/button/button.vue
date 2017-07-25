@@ -116,6 +116,26 @@
        */
       emitError ($event) {
         this.$emit('error', $event, this)
+      },
+
+      /**
+       * 启动加载状态
+       * @method start
+       * @return {this}
+       */
+      start () {
+        this.loading = true
+        return this
+      },
+
+      /**
+       * 完成载入状态
+       * @method finish
+       * @return {this}
+       */
+      finish () {
+        this.loading = false
+        return this
       }
     }
   })
