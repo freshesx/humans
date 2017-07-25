@@ -15,7 +15,8 @@ export default {
         container: '页面容器',
         column: '12 列布局',
         image: '图片',
-        card: '卡片列表'
+        card: '卡片列表',
+        form: '表单与验证'
       },
       popup: {
         popup: '浮层',
@@ -27,7 +28,6 @@ export default {
         actionSheet: '操作列表'
       },
       form: {
-        form: '表单',
         input: '单行文本框',
         radio: '单选',
         check: '多选',
