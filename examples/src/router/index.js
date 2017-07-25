@@ -24,6 +24,9 @@ const router = new VueRouter({
         {
           path: '/button',
           name: 'button',
+          meta: {
+            title: '按钮'
+          },
           component: resolve => { require(['../components/button'], resolve) }
         },
         {
@@ -205,22 +208,7 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(route => {
   // Change document title
-  require(['../components/base/menu'], resolve => {
-    const menu = resolve.default
-    let title = defaultTitle
-
-    if (route.name) {
-      menu.forEach(item => {
-        item.children.forEach(item => {
-          if (item.push && item.push.name && item.push.name === route.name) {
-            title = item.small
-          }
-        })
-      })
-    }
-
-    document.title = title
-  })
+  document.title = (route.meta && route.meta.title) || defaultTitle
 
   // Finish loadingBar
   loadingBar.finish()
