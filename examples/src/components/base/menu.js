@@ -47,11 +47,6 @@ export default [
   {
     name: Vue.t('examples.menus.popup'),
     children: [
-      // @todo update to custom popup docs
-      // {
-      //   name: Vue.t('examples.submenus.popup.popup'),
-      //   push: { name: 'popup' }
-      // },
       {
         name: Vue.t('examples.submenus.popup.message'),
         push: { name: 'message' }
