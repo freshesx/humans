@@ -3,7 +3,7 @@ export default {
     menus: {
       home: '首页',
       core: '核心',
-      form: '表单',
+      form: '控件',
       popup: '浮层',
       components: '组件库'
     },
