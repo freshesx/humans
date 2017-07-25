@@ -56,7 +56,7 @@
       /**
        * 覆盖 shadeMixin 内的方法
        * @method whenShadeCallHiding
-       * @return {[type]}            [description]
+       * @return {undefined}
        */
       whenShadeCallHiding () {
         this.cancel()
