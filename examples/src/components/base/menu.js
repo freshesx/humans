@@ -2,6 +2,10 @@ import Vue from 'vue'
 
 export default [
   {
+    name: Vue.t('examples.menus.home'),
+    push: { name: 'homepage' }
+  },
+  {
     name: Vue.t('examples.menus.core'),
     badge: {
       theme: 'gray-darkest',
