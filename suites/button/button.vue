@@ -21,6 +21,7 @@
    * <mn-btn>按钮</mn-btn>
    *
    * @param {string}   [name]             - 按钮的唯一名称
+   * @param {string}   [title]            - 按钮的 SEO 标题
    * @param {*}        [icon]             - 按钮的图标
    * @param {string}   [theme]            - 按钮的主题，由 scss 控制
    * @param {string}   [size]             - 按钮的尺寸，目前仅提供 “sm”
@@ -39,6 +40,7 @@
     },
     props: {
       name: String,
+      title: String,
       icon: null,
       theme: String,
       size: String,
