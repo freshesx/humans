@@ -40,15 +40,6 @@
     props: {
       name: String,
       icon: null,
-      // Theme, e.g: is-primary, is-secondary, is-error etc.
-      // @todo(@deprecated)
-      type: {
-        type: String,
-        validator: val => {
-          console && console.warn('建议将 type 改为 theme，在后续的版本中即将废弃 type')
-          return true
-        }
-      },
       theme: String,
       size: String,
       disabled: Boolean,
