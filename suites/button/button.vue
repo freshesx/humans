@@ -84,25 +84,25 @@
       }
     },
     methods: {
-      click ($event) {
+      click (event) {
         // 1. If loading, prevent
         if (this.loading) {
-          $event.preventDefault()
-          $event.stopPropagation()
-          this.emitLoading($event)
+          event.preventDefault()
+          event.stopPropagation()
+          this.emitLoading(event)
           return
         }
 
         // 2. If disabled, $emit error event
         if (this.disabled) {
-          $event.preventDefault()
-          $event.stopPropagation()
-          this.emitError($event)
+          event.preventDefault()
+          event.stopPropagation()
+          this.emitError(event)
           return
         }
 
         // 3. Default emit click event
-        this.emitClick($event)
+        this.emitClick(event)
       },
 
       /**
