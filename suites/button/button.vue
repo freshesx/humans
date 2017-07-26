@@ -113,7 +113,6 @@
 
       /**
        * 按钮处于载入状态时触发 loading 事件。
-       * @since 2.6.4
        * @event loading
        * @prop {Event}    - 事件对象
        * @prop {this}     - 按钮实例
@@ -124,7 +123,6 @@
 
       /**
        * 启动加载状态
-       * @since 2.6.4
        * @method start
        * @return {this}     - 按钮实例
        */
@@ -135,7 +133,6 @@
 
       /**
        * 完成载入状态
-       * @since 2.6.4
        * @method finish
        * @return {this}     - 按钮实例
        */
