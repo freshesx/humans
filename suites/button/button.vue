@@ -87,6 +87,9 @@
       click ($event) {
         // 1. If loading, prevent
         if (this.loading) {
+          $event.preventDefault()
+          $event.stopPropagation()
+          this.emitLoading($event)
           return
         }
 
@@ -120,6 +123,16 @@
        */
       emitError (event) {
         this.$emit('error', event, this)
+      },
+
+      /**
+       * 按钮处于载入状态时触发 loading 事件。
+       * @event loading
+       * @prop {Event}    - 事件对象
+       * @prop {this}     - 按钮实例
+       */
+      emitLoading (event) {
+        this.$emit('loading', event, this)
       },
 
       /**
