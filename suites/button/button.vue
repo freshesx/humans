@@ -15,8 +15,10 @@
   import isUndefined from 'lodash/isUndefined'
 
   /**
-   * mn-btn（按钮组件）
+   * 按钮组件
    * @module suites/button/button
+   * @example
+   * <mn-btn>按钮</mn-btn>
    *
    * @param {string}   [title]            - 按钮的文本
    * @param {*}        [icon]             - 按钮的图标
@@ -98,30 +100,32 @@
         // 3. Default emit click event
         this.emitClick($event)
       },
+
       /**
-       * click（成功点击事件）
+       * 允许点击的情况的触发的事件，
+       * 如果是载入状态或者禁用状态将无法触发。
        * @event click
-       * @prop {Event}          $event
-       * @prop {VueComponent}   button   - 自身
+       * @prop {Event}     - 事件对象
+       * @prop {this}      - 按钮实例
        */
-      emitClick ($event) {
-        this.$emit('click', $event, this)
+      emitClick (event) {
+        this.$emit('click', event, this)
       },
 
       /**
-       * error（失败点击事件）
+       * 禁用状态下将触发 error 事件。
        * @event error
-       * @prop {Event}          $event
-       * @prop {VueComponent}   button   - 自身
+       * @prop {Event}    - 事件对象
+       * @prop {this}     - 按钮实例
        */
-      emitError ($event) {
-        this.$emit('error', $event, this)
+      emitError (event) {
+        this.$emit('error', event, this)
       },
 
       /**
        * 启动加载状态
        * @method start
-       * @return {this}
+       * @return {this}     - 按钮实例
        */
       start () {
         this.loading = true
@@ -131,7 +135,7 @@
       /**
        * 完成载入状态
        * @method finish
-       * @return {this}
+       * @return {this}     - 按钮实例
        */
       finish () {
         this.loading = false
