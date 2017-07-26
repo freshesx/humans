@@ -96,6 +96,7 @@
         // 2. If disabled, $emit error event
         if (this.disabled) {
           $event.preventDefault()
+          $event.stopPropagation()
           this.emitError($event)
           return
         }
