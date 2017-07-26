@@ -20,7 +20,7 @@
    * @example
    * <mn-btn>按钮</mn-btn>
    *
-   * @param {string}   [title]            - 按钮的文本
+   * @param {string}   [name]             - 按钮的唯一名称
    * @param {*}        [icon]             - 按钮的图标
    * @param {string}   [theme]            - 按钮的主题，由 scss 控制
    * @param {string}   [size]             - 按钮的尺寸，目前仅提供 “sm”
@@ -29,6 +29,8 @@
    * @param {boolean}  [block=false]      - 按钮是否为块状元素
    * @param {boolean}  [circle=false]     - 按钮是否为圆形
    * @param {boolean}  [margin=false]     - 按钮是否具有 margin-bottom 值
+   *
+   * @slot  default                       - 显示按钮的文本
    */
   export default new Element({
     name: 'mn-btn',
@@ -36,8 +38,7 @@
       ...icon.inject()
     },
     props: {
-      title: String,
-      // Alias for MnIcon
+      name: String,
       icon: null,
       // Theme, e.g: is-primary, is-secondary, is-error etc.
       // @todo(@deprecated)
@@ -49,17 +50,11 @@
         }
       },
       theme: String,
-      // Size, e.g: is-sm
       size: String,
-      // Disabled
       disabled: Boolean,
-      // Has active style
       active: Boolean,
-      // Has block style
       block: Boolean,
-      // Has circle style
       circle: Boolean,
-      // Has bottom margin
       margin: Boolean
     },
     data () {
