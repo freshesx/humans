@@ -3,6 +3,7 @@
     class="mn-btn"
     :class="classes"
     :title="title"
+    :name="name"
     @click="click">
     <mn-icon :name="icon" :loading="loading" v-if="icon || loading"></mn-icon>
     <slot></slot>
