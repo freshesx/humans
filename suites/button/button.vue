@@ -13,7 +13,6 @@
 <script>
   import Element from '../../utils/Element'
   import icon from '../icon/icon'
-  import isUndefined from 'lodash/isUndefined'
 
   /**
    * 按钮组件
@@ -57,12 +56,9 @@
       }
     },
     computed: {
-      computedTheme () {
-        return isUndefined(this.theme) ? this.type : this.theme
-      },
       classes () {
         return {
-          [`is-${this.computedTheme}`]: !!this.computedTheme,
+          [`is-${this.theme}`]: !!this.theme,
           [`is-${this.size}`]: !!this.size,
           'is-block': this.block,
           'is-disabled': this.disabled || this.loading,
