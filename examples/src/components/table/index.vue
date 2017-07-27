@@ -24,7 +24,7 @@
         <mn-column desktop="8">
           <mn-table-filter label="标签">
             <div>
-              <mn-tag v-for="i in 2" :name="i === 2 ? 'black-lightest' : 'gray-darkest'">标签 {{ i }}</mn-tag>
+              <mn-tag :key="i" v-for="i in 2" :name="i === 2 ? 'black-lightest' : 'gray-darkest'">标签 {{ i }}</mn-tag>
             </div>
           </mn-table-filter>
         </mn-column>
