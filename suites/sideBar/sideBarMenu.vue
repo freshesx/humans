@@ -31,7 +31,7 @@
   export default new Element({
     name: 'mn-side-bar-menu',
     components: {
-      [sideBarMenu.name]: sideBarMenu,  // For Recursive Components
+      'mn-side-bar-menu': sideBarMenu,  // For Recursive Components
       ...tag.inject()
     },
     props: {
