@@ -92,7 +92,7 @@
       },
       // 指定页码
       onPage (event) {
-        const start = (parseInt(event.target.value) - 1) / this.count
+        const start = (parseInt(event.target.value) - 1) * this.count
         this.emitChange(start, this.count, event)
       },
       /**
