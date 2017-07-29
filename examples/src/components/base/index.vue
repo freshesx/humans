@@ -4,6 +4,7 @@
     <mn-dashboard-brand slot="brand" class="brand"
       @click.native="$router.push({ name: 'homepage' })">
       <mn-icon :name="icons.logo" :width="44"></mn-icon>
+      <span class="title">Freshes</span>
     </mn-dashboard-brand>
 
     <!-- Side Bar -->
@@ -82,6 +83,12 @@
     padding: 7px 0 0 1rem;
     color: #fff;
     cursor: pointer;
+    line-height: 44px;
+
+    .title {
+      font-size: 18px;
+      padding-left: 1rem;
+    }
   }
 
   .profile-box {
