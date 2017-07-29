@@ -21,16 +21,12 @@
         </mn-section>
 
         <mn-section class="profile-box">
-          <mn-card theme="inverse">
-            <mn-card-item>
-              <mn-card-prefix>
-                <mn-icon :name="icons.logo"></mn-icon>
-              </mn-card-prefix>
-              <mn-card-body>
-                ChaselWu
-              </mn-card-body>
-            </mn-card-item>
-          </mn-card>
+          <img src="https://ois1yok9v.qnssl.com/example-avator.png"
+            class="profile-box-avator">
+          <div class="profile-box-summary">
+            <div class="profile-box-title">Some</div>
+            <small class="profile-box-action">个人设置</small>
+          </div>
         </mn-section>
       </mn-scroller>
     </mn-side-bar>
@@ -77,8 +73,6 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "~vue-human/scss/mixins/media.scss";
-
   .brand {
     padding: 7px 0 0 1rem;
     color: #fff;
@@ -92,8 +86,35 @@
   }
 
   .profile-box {
-    @include min-screen(tablet) {
-      padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition-duration: 500ms;
+    background: rgba(0, 0, 0, 0.03);
+    margin-bottom: 0;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    &-avator {
+      display: block;
+      height: 48px;
+      margin-right: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    &-summary {
+      line-height: 20px;
+    }
+
+    &-title {
+      color: #666;
+    }
+
+    &-action {
+      color: #999;
     }
   }
 </style>
