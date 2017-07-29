@@ -60,8 +60,8 @@
 <script>
   import Element from '../../utils/Element'
   import isUndefined from 'lodash/isUndefined'
-  import tableHeaderColumn from './tableHeaderColumn'
-  import tableCheck from './tableCheck'
+  import tableHeaderColumn from './_tableHeaderColumn'
+  import tableCheck from './_tableCheck'
 
   export default new Element({
     name: 'mn-table',

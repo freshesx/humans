@@ -29,7 +29,7 @@
 <script>
   import Element from '../../utils/Element'
   import modal from 'vue-human/suites/modal'
-  import tableCheck from './tableCheck'
+  import tableCheck from './_tableCheck'
 
   export default new Element({
     name: 'mn-table-column',
