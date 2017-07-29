@@ -22,6 +22,17 @@
 <script>
   import Element from '../../utils/Element'
 
+  /**
+   * 表格分页功能
+   * @module suites/table/tablePaginate
+   * @example
+   * <mn-table-paginate :start="0" :total="20" :count="20"></mn-table-paginate>
+   *
+   * @param {Number}     [start=0]          ``- 查询起始数（0 为第一条）
+   * @param {Number}     [total=0]            - 总条数
+   * @param {Number}     [count=20]           - 每页显示多少条
+   * @param {Array}      [countOptions=[20, 50, 100]]  - 每页显示多少条的选项
+   */
   export default new Element({
     name: 'mn-table-paginate',
     props: {
@@ -62,22 +73,37 @@
       }
     },
     methods: {
-      onPrev () {
+      // 上一页
+      onPrev (event) {
         if (this.currentPage > 1) {
-          this.$emit('change', this.start - this.count, this.count)
+          this.emitChange(this.start - this.count, this.count, event)
         }
       },
-      onNext () {
+      // 下一页
+      onNext (event) {
         if (this.currentPage < this.totalPages) {
-          this.$emit('change', this.start + this.count, this.count)
+          this.emitChange(this.start + this.count, this.count, event)
         }
       },
+
+      // 修改每页显示多少条
       onCount (event) {
-        this.$emit('change', 0, parseInt(event.target.value))
+        this.emitChange(0, parseInt(event.target.value), event)
       },
+      // 指定页码
       onPage (event) {
         const start = (parseInt(event.target.value) - 1) / this.count
-        this.$emit('change', start, this.count)
+        this.emitChange(start, this.count, event)
+      },
+      /**
+       * 触发起始点和条数修改的事件
+       * @event emitChange
+       * @prop  {Number}   start   - 起始查询点
+       * @prop  {Number}   count   - 查询条数
+       * @prop  {Event}    event   - DOM Event 对象
+       */
+      emitChange (start, count, event) {
+        this.$emit('change', start, count, event)
       }
     }
   })
