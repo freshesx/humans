@@ -1,12 +1,5 @@
 <template>
   <div class="mn-table-paginate">
-    <!-- 共多少条文字，每页显示多少条，第几页，上一页，下一页 -->
-    <div class="mn-table-paginate-descript">
-      共 {{ total }} 条数据
-    </div>
-    <select class="mn-table-paginate-select" :value="count" @change="onCount">
-      <option :value="item" v-for="item in countOptions">每页 {{ item }} 条</option>
-    </select>
     <select class="mn-table-paginate-select" :value="currentPage" @change="onPage">
       <option :value="item" v-for="item in totalPages">第 {{ item }} 页</option>
     </select>
@@ -26,33 +19,21 @@
    * 表格分页功能
    * @module suites/table/tablePaginate
    * @example
-   * <mn-table-paginate :start="0" :total="20" :count="20"></mn-table-paginate>
+   * <mn-table-paginate :currentPage="1" :totalPages="10" @changePage="onPage"></mn-table-paginate>
    *
-   * @param {Number}     [start=0]          ``- 查询起始数（0 为第一条）
-   * @param {Number}     [total=0]            - 总条数
-   * @param {Number}     [count=20]           - 每页显示多少条
-   * @param {Array}      [countOptions=[20, 50, 100]]  - 每页显示多少条的选项
+   * @param {Number}     [currentPage=1]      - 当前页码
+   * @param {Number}     [totalPages=1]       - 总页数
    */
   export default new Element({
     name: 'mn-table-paginate',
     props: {
-      start: {
+      currentPage: {
         type: Number,
-        default: 0
+        default: 1
       },
-      total: {
+      totalPages: {
         type: Number,
-        default: 0
-      },
-      count: {
-        type: Number,
-        default: 20
-      },
-      countOptions: {
-        type: Array,
-        default () {
-          return [ 20, 50, 100 ]
-        }
+        default: 1
       }
     },
     data () {
@@ -63,47 +44,31 @@
         }
       }
     },
-    computed: {
-      totalPages () {
-        if (this.total === 0) return 1
-        return Math.ceil(this.total / this.count)
-      },
-      currentPage () {
-        return Math.ceil((this.start + 1) / this.count)
-      }
-    },
     methods: {
       // 上一页
       onPrev (event) {
         if (this.currentPage > 1) {
-          this.emitChange(this.start - this.count, this.count, event)
+          this.emitChange(this.currentPage - 1, event)
         }
       },
       // 下一页
       onNext (event) {
         if (this.currentPage < this.totalPages) {
-          this.emitChange(this.start + this.count, this.count, event)
+          this.emitChange(this.currentPage + 1, event)
         }
-      },
-
-      // 修改每页显示多少条
-      onCount (event) {
-        this.emitChange(0, parseInt(event.target.value), event)
       },
       // 指定页码
       onPage (event) {
-        const start = (parseInt(event.target.value) - 1) * this.count
-        this.emitChange(start, this.count, event)
+        this.emitChange(parseInt(event.target.value), event)
       },
       /**
        * 触发起始点和条数修改的事件
-       * @event emitChange
-       * @prop  {Number}   start   - 起始查询点
-       * @prop  {Number}   count   - 查询条数
-       * @prop  {Event}    event   - DOM Event 对象
+       * @event changePage
+       * @prop  {Number}   currentPage   - 当前页码
+       * @prop  {Event}    event         - DOM Event 对象
        */
-      emitChange (start, count, event) {
-        this.$emit('change', start, count, event)
+      emitChange (currentPage, event) {
+        this.$emit('changePage', currentPage, event)
       }
     }
   })
@@ -120,7 +85,6 @@
     font-size: 1rem;
     background: transparent;
     height: 2.25rem;
-    padding: 0 1rem;
     border-radius: 0.25rem;
     background: #fff;
     border: none;
@@ -130,7 +94,7 @@
     text-decoration: none;
     vertical-align: middle;
     transition-duration: 500ms;
-    margin-left: 0.5rem;
+    background: rgba(0, 0, 0, 0.075);
   }
 
   .mn-table-paginate-btn {
@@ -145,6 +109,7 @@
     transition-duration: 500ms;
     border-radius: 0.25rem;
     margin-left: 0.5rem;
+    background: rgba(0, 0, 0, 0.075);
 
     &.is-active {
       background: #ccc;
