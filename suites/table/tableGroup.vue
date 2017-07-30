@@ -87,8 +87,6 @@
 
   .mn-table-group-info {
     flex: 1;
-    padding: 0.5rem 1rem;
-    align-items: center;
   }
 
   .mn-table-group-paginate {
