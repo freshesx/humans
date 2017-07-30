@@ -25,6 +25,16 @@
 <script>
   import Element from '../../utils/Element'
 
+  /**
+   * 表格组
+   * @module /suites/table/tableGroup
+   *
+   * @slot default                       - 表格插槽，居中显示
+   * @slot action                        - 操作功能区插槽，目前位于左上角
+   * @slot view                          - 调整表格视图相关的功能插槽，目前位于右上角
+   * @slot info                          - 信息插槽，目前位于左下角，暂时不使用
+   * @slot paginate                      - 页码插槽，目前位于右下角
+   */
   export default new Element({
     name: 'mn-table-group'
   })
