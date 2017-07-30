@@ -229,15 +229,12 @@
   $highlight-bg: rgba(#007aff, 0.15);
 
   .mn-table {
-    margin-bottom: 1rem;
   }
 
   .mn-table-hd {
     position: relative;
     width: 100%;
     height: 3.5rem;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
     background: #fff;
     z-index: 100;
     overflow: hidden;
@@ -275,8 +272,6 @@
 
   .mn-table-bd {
     background: #fff;
-    border-bottom-left-radius: 0.25rem;
-    border-bottom-right-radius: 0.25rem;
     overflow: hidden;
     position: relative;
     width: 100%;
