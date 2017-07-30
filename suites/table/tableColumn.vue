@@ -80,7 +80,6 @@
 <style lang="scss">
   .mn-table-column {
     display: flex;
-    margin-right: 0.5rem;
   }
 
   .mn-table-column-control {
@@ -94,9 +93,6 @@
     cursor: pointer;
     transition-duration: 500ms;
     border-radius: 0.25rem;
-
-    &.is-active {
-      background: #ccc;
-    }
+    background: rgba(0, 0, 0, 0.075);
   }
 </style>

@@ -51,7 +51,6 @@
 <style lang="scss">
   .mn-table-view {
     display: flex;
-    margin-right: 0.5rem;
   }
 
   .mn-table-view-control {
@@ -64,6 +63,7 @@
     padding: 0.5rem;
     cursor: pointer;
     transition-duration: 500ms;
+    background: rgba(0, 0, 0, 0.075);
 
     &:first-child {
       border-top-left-radius: 0.25rem;
@@ -75,7 +75,7 @@
     }
 
     &.is-active {
-      background: #ccc;
+      background: rgba(0, 0, 0, 0.2);
     }
   }
 </style>

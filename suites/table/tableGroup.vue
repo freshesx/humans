@@ -31,6 +31,8 @@
 </script>
 
 <style lang="scss">
+  @import "../../scss/mixins/media";
+
   .mn-table-group {
     border-radius: 0.25rem;
     overflow: hidden;
@@ -40,10 +42,12 @@
   .mn-table-group-prefix,
   .mn-table-group-suffix {
     background: #fff;
-    display: flex;
     border-bottom: solid 1px rgba(0, 0, 0, 0.05);
-    padding: 0.5rem 1rem;
-    align-items: center;
+
+    @include min-screen(tablet) {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .mn-table-group-suffix {
@@ -54,10 +58,27 @@
   .mn-table-group-action {
     flex: 1;
     display: flex;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.05);
+    padding: 0.5rem 1rem;
+    align-items: center;
+
+    @include min-screen(tablet) {
+      border: none;
+    }
   }
 
   .mn-table-group-view {
     display: flex;
+    padding: 0.5rem 1rem;
+    align-items: center;
+
+    > div {
+      margin-right: 0.5rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 
   .mn-table-group-body {
@@ -66,9 +87,12 @@
 
   .mn-table-group-info {
     flex: 1;
+    padding: 0.5rem 1rem;
+    align-items: center;
   }
 
   .mn-table-group-paginate {
-
+    padding: 0.5rem 1rem;
+    align-items: center;
   }
 </style>
