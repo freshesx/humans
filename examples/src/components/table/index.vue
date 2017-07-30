@@ -7,14 +7,6 @@
     </mn-letter>
 
     <mn-table-tool>
-      <template slot="prefix">
-        <mn-table-column :columns="tableColumns" @changeHide="onHide"></mn-table-column>
-        <mn-table-view :size.sync="tableSize"></mn-table-view>
-      </template>
-      <template slot="suffix">
-        <!-- <mn-btn theme="primary" size="sm">新建</mn-btn> -->
-        <mn-table-paginate :start="start" :total="total" :count="count" @change="onPaginate"></mn-table-paginate>
-      </template>
       <mn-columns>
         <mn-column desktop="4">
           <mn-table-filter label="影片名称">
@@ -31,29 +23,42 @@
       </mn-columns>
       <template slot="action">
         <mn-btn theme="primary" size="sm">查询</mn-btn>
-        <mn-btn theme="secondary-link" size="sm">批量导入</mn-btn>
         <mn-btn theme="secondary-link" size="sm">导出 EXCEL</mn-btn>
-      </template>
-      <template slot="operate">
-        <mn-btn theme="primary" size="sm">新建影片</mn-btn>
       </template>
     </mn-table-tool>
 
-    <mn-table :items="tableItems | updateItems"
-      :columns="tableColumns"
-      :selections.sync="selections"
-      :size="tableSize"
-      @clickRow="onRow"
-      @clickAction="onAction"
-      @changeSort="onSort"
-      @changeHighlight="onHighlight">
-      <template scope="scope" slot="cover">
-        <img :src="scope.item.cover" alt="scope.cover.title" height="80" style="display: block;">
+    <mn-table-group>
+      <mn-table :items="tableItems | updateItems"
+        :columns="tableColumns"
+        :selections.sync="selections"
+        :size="tableSize"
+        @clickRow="onRow"
+        @clickAction="onAction"
+        @changeSort="onSort"
+        @changeHighlight="onHighlight">
+        <template scope="scope" slot="cover">
+          <img :src="scope.item.cover" alt="scope.cover.title" height="80" style="display: block;">
+        </template>
+        <template scope="scope" slot="tags">
+          <mn-tag bg="#ddd" v-for="(tag, key) in scope.item.tags" :key="key">{{ tag }}</mn-tag>
+        </template>
+      </mn-table>
+
+      <template slot="action">
+        <mn-btn theme="primary" size="sm">新建影片</mn-btn>
+        <mn-btn theme="secondary-link" size="sm">批量导入</mn-btn>
       </template>
-      <template scope="scope" slot="tags">
-        <mn-tag bg="#ddd" v-for="(tag, key) in scope.item.tags" :key="key">{{ tag }}</mn-tag>
+
+      <template slot="view">
+        <mn-table-count :count="count" @changeCount="onCount"></mn-table-count>
+        <mn-table-column :columns="tableColumns" @changeHide="onHide"></mn-table-column>
+        <mn-table-view :size.sync="tableSize"></mn-table-view>
       </template>
-    </mn-table>
+
+      <template slot="paginate">
+        <mn-table-paginate :currentPage="currentPage" :totalPages="totalPages" @changePage="onPage"></mn-table-paginate>
+      </template>
+    </mn-table-group>
   </page>
 </template>
 
@@ -85,8 +90,17 @@
         }
       }
     },
+    computed: {
+      currentPage () {
+        return Math.ceil(this.start / this.count) + 1
+      },
+      totalPages () {
+        return Math.ceil(this.total / this.count)
+      }
+    },
     methods: {
       async fetchMovie (start, count) {
+        console.log('start', start, count)
         this.tableItems = undefined
         const response = await axios.get('/api/movie/in_theaters', {
           params: { start, count }
@@ -111,9 +125,14 @@
       onRow (item, event) {
         console.log('onRow', item)
       },
-      onPaginate (start, count) {
-        console.log(start, count)
-        this.fetchMovie(start, count)
+      onCount (count) {
+        this.fetchMovie(0, count)
+      },
+      onPage (currentPage) {
+        // start 为 查询的下标数
+        // count 为 查询多少条结果
+        // currentPage 为当前页数，所以 currentPage 要转化成相应的 start
+        this.fetchMovie((currentPage - 1) * this.count, this.count)
       }
     },
     created () {
