@@ -1,16 +1,5 @@
 <template>
   <div class="mn-table-tool">
-    <div class="mn-table-tool-action">
-      <div class="mn-table-tool-btn" v-if="hasFilters">
-        <mn-icon :name="cog" :scale="0.8"></mn-icon>
-      </div>
-      <div class="mn-table-tool-prefix">
-        <slot name="prefix"></slot>
-      </div>
-      <div class="mn-table-tool-suffix">
-        <slot name="suffix"></slot>
-      </div>
-    </div>
     <div class="mn-table-tool-filter" v-if="hasFilters">
       <slot></slot>
       <div class="mn-table-tool-filter-box">
@@ -45,11 +34,14 @@
 
 <style lang="scss">
   .mn-table-tool {
-    margin-bottom: 1rem;
   }
 
   .mn-table-tool-action {
     display: flex;
+    background: #fff;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.05);
   }
 
   .mn-table-tool-prefix {
@@ -77,6 +69,7 @@
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+    margin-bottom: 1rem;
   }
 
   .mn-table-tool-filter-box {
