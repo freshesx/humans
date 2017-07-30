@@ -36,7 +36,7 @@
       },
       /**
        * 触发修改每页显示多少条
-       * @event emitChange
+       * @event changeCount
        * @prop  {Number}   count     - 新的每页显示多少条
        * @prop  {Event}    event     - DOM Event
        */
