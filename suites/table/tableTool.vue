@@ -16,6 +16,13 @@
 <script>
   import Element from '../../utils/Element'
 
+  /**
+   * 表格工具栏
+   * @module /suites/table/tableTool
+   *
+   * @slot default               - 工具栏主体插槽
+   * @slot action                - 工具栏操作区插槽
+   */
   export default new Element({
     name: 'mn-table-tool'
   })
