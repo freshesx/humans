@@ -6,6 +6,7 @@ import tablePaginate from './tablePaginate'
 import tableTool from './tableTool'
 import tableFilter from './tableFilter'
 import tableGroup from './tableGroup'
+import tableCount from './tableCount'
 
 export default new Suites([
   table,
@@ -14,5 +15,6 @@ export default new Suites([
   tablePaginate,
   tableTool,
   tableFilter,
-  tableGroup
+  tableGroup,
+  tableCount
 ])
