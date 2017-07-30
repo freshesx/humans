@@ -157,10 +157,3 @@
     }
   }
 </script>
-
-<style lang="scss">
-  .table-tools {
-    display: flex;
-    justify-content: space-between;
-  }
-</style>
