@@ -102,7 +102,7 @@ export function parseDatetime (currentAt) {
 export function parseDate (at, currentDate) {
   const [fullYear, month, date] = currentDate.split('-')
   at.setFullYear(fullYear)
-  at.setMonth(parseInt(month) - 1)
+  at.setMonth(parseInt(month) - 1, parseInt(date))
   at.setDate(parseInt(date))
   return at
 }

@@ -273,7 +273,7 @@
       updateAt (models) {
         const at = new Date()
         at.setFullYear(models.fullYear)
-        at.setMonth(models.month)
+        at.setMonth(models.month, models.date)
         at.setDate(models.date)
         at.setHours(models.hours)
         at.setMinutes(models.minutes)
