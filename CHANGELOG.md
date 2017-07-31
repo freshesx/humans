@@ -1,3 +1,9 @@
+## 2.6.7
+
+### /suites/datetime/datetime
+
+* 修复 setMonth 使用 bug（https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth）。
+
 ## 2.6.6
 
 ### 表格
