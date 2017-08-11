@@ -57,6 +57,20 @@
       </mn-section>
 
       <mn-section>
+        <mn-section-note>单选标签</mn-section-note>
+        <mn-card>
+          <mn-card-item>
+            <mn-card-body>
+              <mn-radio-tag :data="option.value"
+                v-model="models.sex"
+                v-for="(option, key) in sexOptions"
+                :key="key">{{ option.label }}</mn-radio-tag>
+            </mn-card-body>
+          </mn-card-item>
+        </mn-card>
+      </mn-section>
+
+      <mn-section>
         <mn-section-btn>
           <mn-btn theme="primary" margin block ref="submit">Submit</mn-btn>
         </mn-section-btn>
