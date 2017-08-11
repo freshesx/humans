@@ -55,6 +55,18 @@
           </mn-helper>
         </mn-section-note>
 
+        <mn-section-note>多选标签</mn-section-note>
+        <mn-card>
+          <mn-card-item>
+            <mn-card-body>
+              <mn-check-tag :data="option.value"
+                v-model="models.like"
+                v-for="(option, key) in likeOptions"
+                :key="key">{{ option.label }}</mn-check-tag>
+            </mn-card-body>
+          </mn-card-item>
+        </mn-card>
+
         <mn-section-btn>
           <mn-btn theme="primary" margin block ref="submit">Submit</mn-btn>
         </mn-section-btn>
