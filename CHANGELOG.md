@@ -1,3 +1,9 @@
+## 2.6.8
+
+### /suites/button/link
+
+* 修复 link 与 button 表现不一致的 bug，由为 button 更换 icon loading 导致。
+
 ## 2.6.7
 
 ### /suites/datetime/datetime
