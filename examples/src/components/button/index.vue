@@ -67,6 +67,21 @@
     <mn-section>
       <mn-card>
         <mn-card-item>
+          <h5>纯图标</h5>
+        </mn-card-item>
+        <mn-card-item>
+          <mn-card-body>
+            <mn-btn theme="primary" :icon="icons.cart" size="sm"></mn-btn>
+            <mn-btn theme="primary" :icon="icons.cart"></mn-btn>
+            <mn-link theme="primary" :icon="icons.cart" size="sm"></mn-link>
+          </mn-card-body>
+        </mn-card-item>
+      </mn-card>
+    </mn-section>
+
+    <mn-section>
+      <mn-card>
+        <mn-card-item>
           <h5>状态和事件</h5>
         </mn-card-item>
         <mn-card-item>
