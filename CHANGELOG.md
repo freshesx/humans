@@ -4,6 +4,10 @@
 
 * 【样式】更新 input 清除按钮的样式
 
+## 2.6.10
+
+* 无更新
+
 ## 2.6.9
 
 ### /suites/counter/counter
