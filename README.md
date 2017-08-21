@@ -30,7 +30,7 @@
 ### 资料
 
 * [HumanUI.github.io](https://HumanUI.github.io)
-* [Changelog](https://github.com/HumanUI/vue-human/releases)
+* [Changelog](./CHANGELOG.md)
 * [GITTER 交流群](https://gitter.im/HumanUI/Lobby)
 * [中文文档](https://minowu.gitbooks.io/vue-human)
 
