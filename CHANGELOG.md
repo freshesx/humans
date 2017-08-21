@@ -1,3 +1,9 @@
+## 2.6.9
+
+### /suites/counter/counter
+
+* 【修复】当计数器内输入非数字时，应该默认修正为原数字，仅允许输入数字。
+
 ## 2.6.8
 
 ### /suites/button/link
