@@ -16,7 +16,7 @@
         v-if="value && !hideClear"
         class="mn-input-clear"
         @click="clearValue">
-        <mn-icon :name="iosCloseOutline"></mn-icon>
+        <mn-icon class="mn-input-clear-icon" :name="clearIcon"></mn-icon>
       </div>
     </transition>
   </div>
@@ -25,7 +25,6 @@
 <script>
   import Element from '../../utils/Element'
   import icon from '../icon/icon'
-  import iosCloseOutline from 'vue-human-icons/js/ios/close-outline'
 
   export default new Element({
     components: {
@@ -61,7 +60,7 @@
     },
     data () {
       return {
-        iosCloseOutline,
+        clearIcon: require('vue-human-icons/js/ios/close'),
         isFocus: false
       }
     },
@@ -180,6 +179,10 @@
     &-clear-enter,
     &-clear-leave-active {
       opacity: 0;
+    }
+
+    &-clear-icon {
+      color: rgba(0, 0, 0, 0.2);
     }
   }
 </style>
