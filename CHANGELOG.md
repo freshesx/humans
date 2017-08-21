@@ -1,3 +1,9 @@
+## dev
+
+### /suites/input/input
+
+* 【样式】更新 input 清除按钮的样式
+
 ## 2.6.9
 
 ### /suites/counter/counter
