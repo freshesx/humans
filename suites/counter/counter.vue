@@ -8,7 +8,7 @@
     </button>
     <div
       class="mn-counter-box">
-      <input type="number" class="mn-counter-control" :value="value" @input="input">
+      <input type="number" class="mn-counter-control" :value="value" @blur="input">
     </div>
     <button
       class="mn-counter-btn"
@@ -79,7 +79,8 @@
 
         // 非数字
         if (isNaN(newValue)) {
-          return
+          newValue = this.value
+          event.target.value = this.value
         }
 
         // 不可小于最小值
