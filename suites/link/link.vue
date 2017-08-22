@@ -12,7 +12,7 @@
 
 <script>
   import Element from '../../utils/Element'
-  import Button from './button'
+  import Button from '../button/button'
 
   export default new Element({
     name: 'mn-link',

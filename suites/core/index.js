@@ -3,6 +3,7 @@ import icon from '../icon'
 import loadingIcon from '../loadingIcon'
 import scroller from '../scroller'
 import button from '../button'
+import link from '../link'
 import card from '../card'
 import container from '../container'
 import section from '../section'
@@ -18,6 +19,7 @@ export default new Suites([
   loadingIcon,
   scroller,
   button,
+  link,
   card,
   container,
   section,
