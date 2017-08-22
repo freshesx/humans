@@ -4,6 +4,11 @@
 
 * 【样式】更新 input 清除按钮的样式
 
+### /suites/link/link
+
+* 【结构】将 link 组件从 button 组件目录下独立
+* 【功能】link 组件未设定 href 和 to 值时，默认设置 javascript:void(0)
+
 ## 2.6.10
 
 * 无更新

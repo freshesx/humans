@@ -31,7 +31,7 @@
           const { href } = this.$router.resolve(this.to)
           return href
         } else {
-          return this.href || ''
+          return this.href || 'javascript:void(0);'
         }
       }
     }
