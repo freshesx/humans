@@ -9,6 +9,11 @@
 * 【结构】将 link 组件从 button 组件目录下独立
 * 【功能】link 组件未设定 href 和 to 值时，默认设置 javascript:void(0)
 
+### /utils/Query
+
+* 【辅助】新增 merge, reset 和 format 方法
+* 【辅助】将 Query.sync 方法标记为即将删除
+
 ## 2.6.10
 
 * 无更新
