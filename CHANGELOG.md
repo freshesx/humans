@@ -1,4 +1,4 @@
-## dev
+## 2.6.11
 
 ### /suites/input/input
 
@@ -11,7 +11,7 @@
 
 ### /utils/Query
 
-* 【辅助】新增 merge, reset 和 format 方法
+* 【辅助】新增 merge 方法
 * 【辅助】将 Query.sync 方法标记为即将删除
 
 ## 2.6.10
