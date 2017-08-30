@@ -1,7 +1,7 @@
 import Query from 'vue-human/utils/Query'
 
 describe('util/Query', () => {
-  it('parse & format', () => {
+  it('parse', () => {
     const input = {
       n1: '10',
       n2: '0.6',
@@ -24,11 +24,9 @@ describe('util/Query', () => {
       n8: null,
       n9: undefined
     }
-    const output1 = Query.parse(input)
-    const output2 = Query.format(input)
+    const output = Query.parse(input)
 
-    expect(output1).to.deep.equal(hope)
-    expect(output2).to.deep.equal(hope)
+    expect(output).to.deep.equal(hope)
   })
 
   it('sync() # sync models with some queris', () => {
@@ -83,22 +81,6 @@ describe('util/Query', () => {
     }
 
     const output = Query.merge(x, y)
-    console.log(output)
-
-    expect(output).to.deep.equal(hope)
-  })
-
-  it('reset', () => {
-    const x = {
-      title: 'world'
-    }
-    const y = {
-    }
-    const hope = {
-      title: undefined
-    }
-
-    const output = Query.reset(x, y)
 
     expect(output).to.deep.equal(hope)
   })

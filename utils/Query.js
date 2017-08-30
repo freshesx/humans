@@ -92,7 +92,7 @@ export default class Query {
   /**
    * 解析 queries 并与 models 同步
    * 【该方法即将取消】
-   * 请使用 Query.merge(x, Query.format(this.$route.query))
+   * 请使用 Query.merge(x, Query.parse(this.$route.query))
    * @deprecated
    * @static
    *
@@ -102,7 +102,7 @@ export default class Query {
    * @return {Object}
    */
   static sync (queris, models) {
-    console.warn('该方法即将废弃，请改用 `Query.merge(x, Query.format(this.$route.query))` ')
+    console.warn('该方法即将废弃，请改用 `Query.merge(x, Query.parse(this.$route.query))` ')
     const parsedQueries = this.parse(queris)
 
     Object.keys(models).forEach(name => {
@@ -117,36 +117,11 @@ export default class Query {
   /**
    * y 合并至 x
    * @method merge
-   * @param  {[type]} x [description]
-   * @param  {[type]} y [description]
-   * @return {[type]}   [description]
+   * @param  {Object} x 原对象
+   * @param  {Object} y 新对象
+   * @return {Object}   合并的对象
    */
   static merge (x, y) {
     return Object.assign({}, x, y)
-  }
-
-  /**
-   * y 替换 x 内值
-   * @method reset
-   * @param  {[type]} x [description]
-   * @param  {[type]} y [description]
-   * @return {[type]}   [description]
-   */
-  static reset (x, y) {
-    const newX = Object.assign({}, x)
-    Object.keys(newX).forEach(xName => {
-      newX[xName] = y.hasOwnProperty(xName) ? y[xName] : undefined
-    })
-    return newX
-  }
-
-  /**
-   * 格式化 vue route queries
-   * @method format
-   * @param  {[type]} vueRouteQuries [description]
-   * @return {[type]}                [description]
-   */
-  static format (vueRouteQuries) {
-    return this.parse(vueRouteQuries)
   }
 }
