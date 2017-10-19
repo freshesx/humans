@@ -46,12 +46,12 @@
   export default new Element({
     name: 'mn-cell',
     components: {
-      ...card.inject(),
-      ...cardItem.inject(),
-      ...cardPrefix.inject(),
-      ...cardBody.inject(),
-      ...loadingIcon.inject(),
-      ...cellIcon.inject()
+      ...card.insert(),
+      ...cardItem.insert(),
+      ...cardPrefix.insert(),
+      ...cardBody.insert(),
+      ...loadingIcon.insert(),
+      ...cellIcon.insert()
     },
     props: {
       /**

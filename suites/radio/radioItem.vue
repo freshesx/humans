@@ -11,7 +11,7 @@
   export default new Element({
     name: 'mn-radio-item',
     components: {
-      ...cardItem.inject()
+      ...cardItem.insert()
     },
     props: {
       value: null,

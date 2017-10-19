@@ -36,7 +36,7 @@
   export default new Element({
     name: 'mn-btn',
     components: {
-      ...icon.inject()
+      ...icon.insert()
     },
     props: {
       name: String,

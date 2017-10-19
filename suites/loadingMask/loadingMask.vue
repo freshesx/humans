@@ -15,7 +15,7 @@
   export default new Element({
     name: 'mn-loading-mask',
     components: {
-      ...loadingIcon.inject()
+      ...loadingIcon.insert()
     },
     mixins: [
       layerMixin,

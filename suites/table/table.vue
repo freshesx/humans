@@ -66,8 +66,8 @@
   export default new Element({
     name: 'mn-table',
     components: {
-      ...tableHeaderColumn.inject(),
-      ...tableCheck.inject()
+      ...tableHeaderColumn.insert(),
+      ...tableCheck.insert()
     },
     props: {
       /**

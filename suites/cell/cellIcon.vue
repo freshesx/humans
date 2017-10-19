@@ -16,7 +16,7 @@
   export default new Element({
     name: 'mn-cell-icon',
     components: {
-      ...iconElement.inject()
+      ...iconElement.insert()
     },
     props: {
       checked: {

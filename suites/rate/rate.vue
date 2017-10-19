@@ -18,7 +18,7 @@
   export default new Element({
     name: 'mn-rate',
     components: {
-      ...iconElement.inject()
+      ...iconElement.insert()
     },
     props: {
       max: {

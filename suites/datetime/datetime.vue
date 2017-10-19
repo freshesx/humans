@@ -80,12 +80,12 @@
   export default new Element({
     name: 'mn-datetime',
     components: {
-      ...card.inject(),
-      ...cardItem.inject(),
-      ...cardBody.inject(),
-      ...cardPrefix.inject(),
-      ...cardSuffix.inject(),
-      ...cardBtns.inject()
+      ...card.insert(),
+      ...cardItem.insert(),
+      ...cardBody.insert(),
+      ...cardPrefix.insert(),
+      ...cardSuffix.insert(),
+      ...cardBtns.insert()
     },
     mixins: [
       layerMixin,

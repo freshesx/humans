@@ -32,7 +32,7 @@
     name: 'mn-side-bar-menu',
     components: {
       'mn-side-bar-menu': sideBarMenu,  // For Recursive Components
-      ...tag.inject()
+      ...tag.insert()
     },
     props: {
       menu: {

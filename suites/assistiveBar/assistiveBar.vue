@@ -19,8 +19,8 @@
   export default new Element({
     name: 'mn-assistive-bar',
     components: {
-      ...iconElement.inject(),
-      ...loadingIconElement.inject()
+      ...iconElement.insert(),
+      ...loadingIconElement.insert()
     },
     props: {
       show: Boolean

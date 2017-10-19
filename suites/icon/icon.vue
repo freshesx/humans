@@ -15,7 +15,7 @@
   export default new Element({
     name: 'mn-icon',
     components: {
-      ...loadingIconElement.inject()
+      ...loadingIconElement.insert()
     },
     props: {
       /**

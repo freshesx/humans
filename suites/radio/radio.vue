@@ -15,7 +15,7 @@
   export default new Element({
     name: 'mn-radio',
     components: {
-      ...iconElement.inject()
+      ...iconElement.insert()
     },
     props: {
       value: null,

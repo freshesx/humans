@@ -28,10 +28,10 @@
   export default new Element({
     name: 'mn-alert',
     components: {
-      ...card.inject(),
-      ...cardItem.inject(),
-      ...cardBody.inject(),
-      ...cardBtns.inject()
+      ...card.insert(),
+      ...cardItem.insert(),
+      ...cardBody.insert(),
+      ...cardBtns.insert()
     },
     mixins: [
       layerMixin,

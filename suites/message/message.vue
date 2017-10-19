@@ -40,12 +40,12 @@
 
   export default new Element({
     components: {
-      ...card.inject(),
-      ...cardItem.inject(),
-      ...cardBody.inject(),
-      ...cardPrefix.inject(),
-      ...cardSuffix.inject(),
-      ...icon.inject()
+      ...card.insert(),
+      ...cardItem.insert(),
+      ...cardBody.insert(),
+      ...cardPrefix.insert(),
+      ...cardSuffix.insert(),
+      ...icon.insert()
     },
     mixins: [
       layerMixin

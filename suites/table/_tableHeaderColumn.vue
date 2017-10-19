@@ -24,7 +24,7 @@
   export default new Element({
     name: 'mn-table-header-column',
     components: {
-      ...iconElement.inject()
+      ...iconElement.insert()
     },
     props: {
       title: String,

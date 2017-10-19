@@ -28,7 +28,7 @@
 
   export default new Element({
     components: {
-      ...icon.inject()
+      ...icon.insert()
     },
     name: 'mn-input',
     props: {

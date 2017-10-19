@@ -12,7 +12,7 @@
   export default new Element({
     name: 'mn-nav-bar-back',
     components: {
-      ...iconElement.inject()
+      ...iconElement.insert()
     },
     props: {
       icon: {

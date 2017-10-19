@@ -27,8 +27,8 @@
   export default new Element({
     name: 'mn-action-sheet',
     components: {
-      ...card.inject(),
-      ...cardBtns.inject()
+      ...card.insert(),
+      ...cardBtns.insert()
     },
     mixins: [
       layerMixin,

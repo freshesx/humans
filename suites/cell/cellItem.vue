@@ -16,9 +16,9 @@
   export default new Element({
     name: 'mn-cell-item',
     components: {
-      ...cardItem.inject(),
-      ...cardPrefix.inject(),
-      ...cellIcon.inject()
+      ...cardItem.insert(),
+      ...cardPrefix.insert(),
+      ...cellIcon.insert()
     },
     props: {
       type: String,

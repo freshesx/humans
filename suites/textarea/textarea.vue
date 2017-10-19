@@ -23,7 +23,7 @@
 
   export default new Element({
     components: {
-      ...iconElement.inject()
+      ...iconElement.insert()
     },
     name: 'mn-textarea',
     props: {

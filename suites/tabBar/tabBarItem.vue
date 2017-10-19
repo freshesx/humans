@@ -17,7 +17,7 @@
 
   export default new Element({
     components: {
-      ...iconElement.inject()
+      ...iconElement.insert()
     },
     name: 'mn-tab-bar-item',
     props: {

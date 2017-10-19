@@ -35,7 +35,7 @@
     name: 'mn-table-column',
     components: {
       ...modal.map(),
-      ...tableCheck.inject()
+      ...tableCheck.insert()
     },
     props: {
       icon: {

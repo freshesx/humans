@@ -33,10 +33,10 @@
       shadeMixin
     ],
     components: {
-      ...card.inject(),
-      ...cardItem.inject(),
-      ...cardBody.inject(),
-      ...cardBtns.inject()
+      ...card.insert(),
+      ...cardItem.insert(),
+      ...cardBody.insert(),
+      ...cardBtns.insert()
     },
     props: {
       title: {
