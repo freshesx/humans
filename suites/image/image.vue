@@ -26,14 +26,18 @@
   export default new Element({
     name: 'mn-image',
     props: {
+      title: String,
+      alt: String,
+      // 缩略图地址
       thumb: String,
+      // 原图地址
       source: String,
+      // ratio 表示的宽高比，如宽 200px，宽 100px，则 ratio 为 0.5
       ratio: {
         type: Number,
         default: 1
       },
-      alt: String,
-      title: String,
+      // type 起到修饰图片的作用，rounded 表示圆角图片，circle 表示圆形图片
       type: {
         type: String,
         validator: val => ['rounded', 'circle'].includes(val)
