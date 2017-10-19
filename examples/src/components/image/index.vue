@@ -9,7 +9,7 @@
       </mn-letter>
 
       <mn-columns>
-        <mn-column mobile="2" tablet="4" desktop="3" v-for="i in 100">
+        <mn-column mobile="2" tablet="4" desktop="3" v-for="i in 100" :key="i">
           <mn-card>
             <mn-card-media>
               <mn-image :ratio="1"
