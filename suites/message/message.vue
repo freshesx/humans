@@ -1,6 +1,6 @@
 <template>
   <transition :name="transition || 'has-slide-in-top'">
-    <div class="mn-message" v-if="visible">
+    <div class="mn-message" v-if="visible" :style="{ zIndex }">
       <mn-card theme="glass" class="mn-message-card" rounded>
         <!-- Title -->
         <mn-card-item class="mn-message-title">
