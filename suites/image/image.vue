@@ -48,8 +48,10 @@
         showSource: false
       }
     },
-    mounted () {
-      this.$nextTick(() => {
+    methods: {
+      observerSource () {
+        if (!this.source) return
+
         if (this.$refs.source.complete) {
           this.showSource = true
         } else {
@@ -57,6 +59,11 @@
             this.showSource = true
           })
         }
+      }
+    },
+    mounted () {
+      this.$nextTick(() => {
+        this.observerSource()
       })
     }
   })
