@@ -1,8 +1,14 @@
+## 2.7.1
+
+### /suites/core
+
+* 【补充】将 image 组件加入 core suites
+
 ## 2.7.0
 
 ### /suites/image/image
 
-* 【重构】重构 image 组建，实现预占位，和加载过渡
+* 【重构】重构 image 组件，实现预占位，和加载过渡
 
 ### /suites/message/message
 
