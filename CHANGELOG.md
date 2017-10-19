@@ -1,3 +1,18 @@
+## 2.7.0
+
+### /suites/image/image
+
+* 【重构】重构 image 组建，实现预占位，和加载过渡
+
+### /suites/message/message
+
+* 【样式】box-shadow 被覆盖
+* 【修复】缺少 z-index
+
+### /utils/Element
+
+* 【更新】新增 Element.prototype.insert 方法，兼容 vue 2.5
+
 ## 2.6.11
 
 ### /suites/input/input
