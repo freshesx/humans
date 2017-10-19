@@ -149,7 +149,7 @@
 
   .mn-message-card {
     margin-bottom: 0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) !important;
   }
 
   .mn-message-title {
