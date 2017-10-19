@@ -1,3 +1,9 @@
+## 2.7.2
+
+### /suites/image/image
+
+* 【修复】允许 image source 为空，依然显示占位符
+
 ## 2.7.1
 
 ### /suites/core
