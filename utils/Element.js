@@ -31,9 +31,23 @@ export default class Element {
    *
    * @return {Object}
    */
-  inject () {
+  insert () {
     return {
       [this.name]: this
     }
+  }
+
+  /**
+   * For components
+   * Because vue 2.5 add inject method,
+   * so this conflict with the Element.prototype.inject.
+   * We rename inject method to insert method,
+   * and inject is insert alias,
+   * but just use inject method below vue 2.5.x (e.g. vue 2.4.2).
+   * @return {Object}
+   */
+  inject () {
+    console.warn('You must rename inject to insert. You can\' use inject method at vue 2.5')
+    return this.insert()
   }
 }
