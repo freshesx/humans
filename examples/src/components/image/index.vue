@@ -1,18 +1,20 @@
 <template>
   <page>
     <mn-section>
-      <mn-columns>
-        <mn-column tablet="10, 1" desktop="8, 2">
-          <mn-letter>
-            <mn-letter-body>
-              <h1>Hi</h1>
-              <small>I am Vue Human!</small>
-            </mn-letter-body>
-          </mn-letter>
+      <mn-letter>
+        <mn-letter-body>
+          <h1>Hi</h1>
+          <small>I am Vue Human!</small>
+        </mn-letter-body>
+      </mn-letter>
 
+      <mn-columns>
+        <mn-column mobile="2" tablet="4" desktop="3" v-for="i in 100">
           <mn-card>
             <mn-card-media>
-              <mn-image :srcset="imageSets"></mn-image>
+              <mn-image :ratio="1"
+                source="https://picpro-sz.34580.com/sz/ImageUrl/30557/300.jpeg"
+                thumb="https://picpro-sz.34580.com/sz/ImageUrl/30557/20.jpeg"></mn-image>
             </mn-card-media>
           </mn-card>
         </mn-column>
@@ -27,14 +29,6 @@
   export default {
     components: {
       ...image.map()
-    },
-    data () {
-      return {
-        imageSets: [
-          { max: 768, src: 'https://ois1yok9v.qnssl.com/test-mobile.jpg', scale: 400 / 600 },
-          { min: 768, src: 'https://ois1yok9v.qnssl.com/test-desktop.jpg', scale: 1200 / 600 }
-        ]
-      }
     }
   }
 </script>
