@@ -13,6 +13,7 @@ import page from '../page'
 import form from '../form'
 import label from '../label'
 import helper from '../helper'
+import image from '../image'
 
 export default new Suites([
   icon,
@@ -28,5 +29,6 @@ export default new Suites([
   page,
   form,
   label,
-  helper
+  helper,
+  image
 ])
