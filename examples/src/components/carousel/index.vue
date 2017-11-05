@@ -52,7 +52,7 @@
           { src: 'https://ois1yok9v.qnssl.com/home-banner-2.jpg' },
           { src: 'https://ois1yok9v.qnssl.com/home-banner-3.jpg' }
         ]
-        this.$refs.carousel.updateLength()
+        this.$refs.carousel.length = 3
       }, 2000)
     }
   }
