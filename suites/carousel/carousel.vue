@@ -37,7 +37,10 @@
         index: 0,
         x: 0,
         width: undefined,
-        transitionOpen: false
+        transitionOpen: false,
+        autoplayDuration: 2000,
+        autoplayDelay: 2000,
+        needAutoplay: false
       }
     },
     computed: {
@@ -107,12 +110,13 @@
         this.updateIndex(prevIndex < 0 ? this.length - 1 : prevIndex)
       },
       autoplay (active) {
+        this.needAutoplay = active
         active ? this.openAutoplay() : this.closeAutoplay()
         return this
       },
       openAutoplay () {
         if (!this.autoplayInterval) {
-          this.autoplayInterval = setInterval(this.nextIndex, 2000)
+          this.autoplayInterval = setInterval(this.nextIndex, this.autoplayDuration)
         }
         return this
       },
@@ -126,9 +130,9 @@
       delayOpenAutoplay () {
         return new Promise(resolve => {
           setTimeout(() => {
-            this.openAutoplay()
+            if (this.needAutoplay) this.openAutoplay()
             resolve()
-          }, 2000)
+          }, this.autoplayDelay)
         })
       },
       onClick (event) {
