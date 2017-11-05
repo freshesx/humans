@@ -2,6 +2,8 @@
   <div
     class="mn-carousel"
     :class="{}"
+    ref="carousel"
+    @click.prevent="onClick"
     @touchstart="touchStart"
     @touchmove="touchMove"
     @touchend="touchEnd">
@@ -14,7 +16,7 @@
     <slot name="indicators">
       <div class="mn-carousel-indicators">
         <div class="mn-carousel-indicator"
-          @click.prevent.stop="onChangeItem(item)"
+          @click.prevent.stop="updateIndex(item - 1)"
           :class="{ 'is-active': item === index + 1 }"
           v-for="item in length"></div>
       </div>
@@ -92,21 +94,31 @@
           this.width = this.$el.offsetWidth
         }
       },
-      onChangeItem (item) {
-        this.index = item - 1
+      updateIndex (index) {
+        this.index = index
         this.x = this.width * this.index
       },
-      nextItem () {
-        const nextIndex = (this.index + 1) >= this.length
-          ? 0
-          : this.index + 1
-        this.onChangeItem(nextIndex + 1)
+      nextIndex () {
+        let nextIndex = this.index + 1
+        this.updateIndex(nextIndex > (this.length - 1) ? 0 : nextIndex)
+      },
+      prevIndex () {
+        const prevIndex = this.index - 1
+        this.updateIndex(prevIndex < 0 ? this.length - 1 : prevIndex)
       },
       switchAutoplay () {
         if (this.autoplay) {
-          this.autoplayInterval = setInterval(this.nextItem, 2000)
+          this.autoplayInterval = setInterval(this.nextIndex, 2000)
         } else {
           clearInterval(this.autoplayInterval)
+        }
+      },
+      onClick (event) {
+        if (event.offsetX === undefined) return
+        if (event.offsetX < this.$refs.carousel.offsetWidth / 2) {
+          this.prevIndex()
+        } else {
+          this.nextIndex()
         }
       }
     },
