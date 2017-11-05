@@ -52,6 +52,7 @@
     },
     methods: {
       touchStart (event) {
+        this.closeAutoplay()
         this.startPageY = event.touches[0].pageY
         this.startPageX = event.touches[0].pageX
         this.movePageX = this.startPageX
@@ -85,6 +86,7 @@
         }
         this.transitionOpen = true
         this.x = this.width * this.index
+        this.delayOpenAutoplay()
       },
       setElementWidth () {
         if (this.width !== this.$el.offsetWidth) {
@@ -94,6 +96,7 @@
       updateIndex (index) {
         this.index = index
         this.x = this.width * this.index
+        this.closeAutoplay().delayOpenAutoplay()
       },
       nextIndex () {
         let nextIndex = this.index + 1
@@ -105,17 +108,28 @@
       },
       autoplay (active) {
         active ? this.openAutoplay() : this.closeAutoplay()
+        return this
       },
       openAutoplay () {
         if (!this.autoplayInterval) {
           this.autoplayInterval = setInterval(this.nextIndex, 2000)
         }
+        return this
       },
       closeAutoplay () {
         if (this.autoplayInterval) {
           clearInterval(this.autoplayInterval)
           this.autoplayInterval = undefined
         }
+        return this
+      },
+      delayOpenAutoplay () {
+        return new Promise(resolve => {
+          setTimeout(() => {
+            this.openAutoplay()
+            resolve()
+          }, 2000)
+        })
       },
       onClick (event) {
         if (event.offsetX === undefined) return
