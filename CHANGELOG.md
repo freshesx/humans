@@ -1,3 +1,12 @@
+## 2.7.3
+
+### /suites/carousel/carousel
+
+* 【新增】循环轮播方法 this.refs.carousel.autoplay(true)
+* 【新增】修改 item 长度的方法 this.refs.carousel.setLength(3)
+* 【新增】setIndex, nextIndex, prevIndex 三个方案
+* 【新增】点击 carousel 时，实现左右切换
+
 ## 2.7.2
 
 ### /suites/image/image
