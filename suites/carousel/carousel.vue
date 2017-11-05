@@ -15,7 +15,7 @@
     <slot name="indicators">
       <div class="mn-carousel-indicators">
         <div class="mn-carousel-indicator"
-          @click.prevent.stop="updateIndex(item - 1)"
+          @click.prevent.stop="setIndex(item - 1)"
           :class="{ 'is-active': item === index + 1 }"
           v-for="item in length"></div>
       </div>
@@ -63,11 +63,11 @@
     methods: {
       /**
        * 切换图片
-       * @public updateIndex
+       * @public setIndex
        * @param  {Number} index 0 为第一张
        * @return {this}
        */
-      updateIndex (index) {
+      setIndex (index) {
         this.index = index
         this.x = this.width * this.index
         this.closeAutoplay().delayOpenAutoplay()
@@ -80,7 +80,7 @@
        */
       nextIndex () {
         let nextIndex = this.index + 1
-        this.updateIndex(nextIndex > (this.length - 1) ? 0 : nextIndex)
+        this.setIndex(nextIndex > (this.length - 1) ? 0 : nextIndex)
         return this
       },
       /**
@@ -90,7 +90,7 @@
        */
       prevIndex () {
         const prevIndex = this.index - 1
-        this.updateIndex(prevIndex < 0 ? this.length - 1 : prevIndex)
+        this.setIndex(prevIndex < 0 ? this.length - 1 : prevIndex)
         return this
       },
       /**
