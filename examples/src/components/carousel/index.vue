@@ -10,7 +10,7 @@
 
         <mn-card>
           <mn-card-media>
-            <mn-carousel ref="carousel" :autoplay="autoplay">
+            <mn-carousel ref="carousel">
               <mn-carousel-item v-for="item in pictures" :key="item">
                 <img :src="item.src" style="width: 100%; display: block;">
               </mn-carousel-item>
@@ -24,7 +24,7 @@
               <h5>循环播放</h5>
             </mn-card-body>
             <mn-card-prefix>
-              <mn-turn :data="true" v-model="autoplay"></mn-turn>
+              <mn-turn :data="true" v-model="models.autoplay" @input="onAutoplay"></mn-turn>
             </mn-card-prefix>
           </mn-card-item>
         </mn-card>
@@ -44,10 +44,17 @@
     },
     data () {
       return {
-        autoplay: true,
+        models: {
+          autoplay: false
+        },
         pictures: [
           { src: 'https://ois1yok9v.qnssl.com/home-banner-1.jpg' }
         ]
+      }
+    },
+    methods: {
+      onAutoplay (autoplay) {
+        this.$refs.carousel.autoplay(autoplay)
       }
     },
     mounted () {
