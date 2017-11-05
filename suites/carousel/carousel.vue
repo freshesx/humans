@@ -62,6 +62,15 @@
     },
     methods: {
       /**
+       * 修改 item length
+       * @public setLength
+       * @param {Number} length
+       */
+      setLength (length) {
+        this.length = length
+        return this
+      },
+      /**
        * 切换图片
        * @public setIndex
        * @param  {Number} index 0 为第一张
