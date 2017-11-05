@@ -10,7 +10,7 @@
 
         <mn-card>
           <mn-card-media>
-            <mn-carousel>
+            <mn-carousel ref="carousel">
               <mn-carousel-item v-for="item in pictures" :key="item">
                 <img :src="item.src" style="width: 100%; display: block;">
               </mn-carousel-item>
@@ -40,11 +40,20 @@
     data () {
       return {
         pictures: [
+          { src: 'https://ois1yok9v.qnssl.com/home-banner-1.jpg' }
+        ]
+      }
+    },
+    mounted () {
+      setTimeout(() => {
+        // 异步修改图片数量，修改后重新设定 length
+        this.pictures = [
           { src: 'https://ois1yok9v.qnssl.com/home-banner-1.jpg' },
           { src: 'https://ois1yok9v.qnssl.com/home-banner-2.jpg' },
           { src: 'https://ois1yok9v.qnssl.com/home-banner-3.jpg' }
         ]
-      }
+        this.$refs.carousel.updateLength()
+      }, 2000)
     }
   }
 </script>
