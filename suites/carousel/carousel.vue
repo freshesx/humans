@@ -26,20 +26,28 @@
 <script>
   import Element from '../../utils/Element'
 
+  /**
+   * 轮播组件
+   * @module suites/carousel/carousel
+   * @example
+   * <mn-carousel>...</mn-carousel>
+   *
+   * @slot  default    - carousel item
+   */
   export default new Element({
     name: 'mn-carousel',
     data () {
       return {
-        startPageX: undefined,
-        startPageY: undefined,
-        length: 0,
-        index: 0,
-        x: 0,
-        width: undefined,
-        transitionOpen: false,
-        autoplayDuration: 2000,
-        autoplayDelay: 2000,
-        needAutoplay: false
+        startPageX: undefined,        // touch 坐标
+        startPageY: undefined,        // touch 坐标
+        length: 0,                    // carousel item length
+        index: 0,                     // 目前轮播的 item 的下标
+        x: 0,                         // 横向偏移值
+        width: undefined,             // carousel 的宽度
+        transitionOpen: false,        // 动画效果是否开启
+        autoplayDuration: 2000,       // 循环轮播的间隔时间
+        autoplayDelay: 2000,          // 循环轮播延迟多久后启动
+        requestAutoplay: false        // 是否请求循环轮播
       }
     },
     computed: {
@@ -53,6 +61,49 @@
       }
     },
     methods: {
+      /**
+       * 切换图片
+       * @public updateIndex
+       * @param  {Number} index 0 为第一张
+       * @return {this}
+       */
+      updateIndex (index) {
+        this.index = index
+        this.x = this.width * this.index
+        this.closeAutoplay().delayOpenAutoplay()
+        return this
+      },
+      /**
+       * 切换下一张图片
+       * @public nextIndex
+       * @return {this}
+       */
+      nextIndex () {
+        let nextIndex = this.index + 1
+        this.updateIndex(nextIndex > (this.length - 1) ? 0 : nextIndex)
+        return this
+      },
+      /**
+       * 切换上一张图片
+       * @public prevIndex
+       * @return {this}
+       */
+      prevIndex () {
+        const prevIndex = this.index - 1
+        this.updateIndex(prevIndex < 0 ? this.length - 1 : prevIndex)
+        return this
+      },
+      /**
+       * 开启或关闭循环播放
+       * @public autoplay
+       * @param  {Boolean} active true 为开启，false 为关闭
+       * @return {this}
+       */
+      autoplay (active) {
+        this.requestAutoplay = active
+        active ? this.openAutoplay() : this.closeAutoplay()
+        return this
+      },
       touchStart (event) {
         this.closeAutoplay()
         this.startPageY = event.touches[0].pageY
@@ -95,24 +146,6 @@
           this.width = this.$el.offsetWidth
         }
       },
-      updateIndex (index) {
-        this.index = index
-        this.x = this.width * this.index
-        this.closeAutoplay().delayOpenAutoplay()
-      },
-      nextIndex () {
-        let nextIndex = this.index + 1
-        this.updateIndex(nextIndex > (this.length - 1) ? 0 : nextIndex)
-      },
-      prevIndex () {
-        const prevIndex = this.index - 1
-        this.updateIndex(prevIndex < 0 ? this.length - 1 : prevIndex)
-      },
-      autoplay (active) {
-        this.needAutoplay = active
-        active ? this.openAutoplay() : this.closeAutoplay()
-        return this
-      },
       openAutoplay () {
         if (!this.autoplayInterval) {
           this.autoplayInterval = setInterval(this.nextIndex, this.autoplayDuration)
@@ -129,7 +162,7 @@
       delayOpenAutoplay () {
         return new Promise(resolve => {
           setTimeout(() => {
-            if (this.needAutoplay) this.openAutoplay()
+            if (this.requestAutoplay) this.openAutoplay()
             resolve()
           }, this.autoplayDelay)
         })
