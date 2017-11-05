@@ -2,7 +2,6 @@
   <div
     class="mn-carousel"
     :class="{}"
-    ref="carousel"
     @click.prevent="onClick"
     @touchstart="touchStart"
     @touchmove="touchMove"
@@ -137,7 +136,7 @@
       },
       onClick (event) {
         if (event.offsetX === undefined) return
-        if (event.offsetX < this.$refs.carousel.offsetWidth / 2) {
+        if (event.offsetX < this.width / 2) {
           this.prevIndex()
         } else {
           this.nextIndex()
