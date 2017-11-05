@@ -27,6 +27,9 @@
 
   export default new Element({
     name: 'mn-carousel',
+    props: {
+      autoplay: Boolean
+    },
     data () {
       return {
         startPageX: undefined,
@@ -92,6 +95,19 @@
       onChangeItem (item) {
         this.index = item - 1
         this.x = this.width * this.index
+      },
+      nextItem () {
+        const nextIndex = (this.index + 1) >= this.length
+          ? 0
+          : this.index + 1
+        this.onChangeItem(nextIndex + 1)
+      },
+      switchAutoplay () {
+        if (this.autoplay) {
+          this.autoplayInterval = setInterval(this.nextItem, 2000)
+        } else {
+          clearInterval(this.autoplayInterval)
+        }
       }
     },
     watch: {
@@ -100,6 +116,9 @@
       },
       length (newValue) {
         this.$emit('length', newValue)
+      },
+      autoplay () {
+        this.switchAutoplay()
       }
     },
     created () {
@@ -114,6 +133,7 @@
       this.$nextTick(() => {
         this.setElementWidth()
         window.addEventListener('resize', this.setElementWidth)
+        this.switchAutoplay()
       })
     },
     beforeDestroy () {
