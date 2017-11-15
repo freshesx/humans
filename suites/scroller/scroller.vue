@@ -6,6 +6,17 @@
     @touchmove="touchMove"
     @touchend="touchEnd"
     @scroll="scroll">
+    <div class="mn-scroller-top"
+      :style="{
+        height: `${topHeight}px`,
+        'transition-duration': `${topHeightTransitionDuration}ms`
+      }">
+      <slot name="top" v-if="topHeight > 20">
+        <div class="has-center-text">
+          <mn-loading-icon></mn-loading-icon> 刷新中
+        </div>
+      </slot>
+    </div>
     <div class="mn-scroller-contents">
       <slot></slot>
     </div>
@@ -35,12 +46,28 @@
       scrollbar: {
         type: Boolean,
         default: false
+      },
+      // 默认情况，增加滑动的效果，以此提高用户体验，自动打开，自动关闭
+      // 具有事件的触发，自动打开，手动关闭
+      // 关闭滑动的效果
+      disableTopHeight: Boolean,
+      topHeightStep: {
+        type: Number,
+        default: 2
+      },
+      closeTopHeight: {
+        type: Function,
+        default () {
+          this.topHeightEndTransition()
+        }
       }
     },
     data () {
       return {
         time: undefined,
-        createdScrollTop: false
+        createdScrollTop: false,
+        topHeight: 0,
+        topHeightTransitionDuration: 0
       }
     },
     methods: {
@@ -59,8 +86,10 @@
 
         // 允许侧边栏手势进行返回
         if (this.startPageX > 16) {
+          console.log(scrollTop, this.startPageY, pageY)
           // 上面露底
           if (pageY > this.startPageY && scrollTop <= 0) {
+            this.topHeightStartTransition((pageY - this.startPageY) / 2)
             event.preventDefault()
           }
 
@@ -74,6 +103,7 @@
       touchEnd (event) {
         this.scrollAndTouchEnd(event)
         this.$emit('touchend', event, this)
+        this.closeTopHeight(event, this)
       },
       scroll (event) {
         this.scrollAndTouchEnd(event)
@@ -110,6 +140,24 @@
         if (!this.$route || !this.save || !this.createdScrollTop) return
         // 储存 scrollTop
         addStorage(this.getRoutePath(), this.name, this.$el.scrollTop)
+      },
+      /**
+       * 触摸事件时启动顶部的滑动
+       * @return {[type]} [description]
+       */
+      topHeightStartTransition (step) {
+        if (!this.disableTopHeight) {
+          this.topHeightTransitionDuration = 0
+          this.topHeight = step
+        }
+      },
+      /**
+       * 触摸事件时关闭顶部的滑动
+       * @return {[type]} [description]
+       */
+      topHeightEndTransition () {
+        this.topHeightTransitionDuration = 500
+        this.topHeight = 0
       }
     },
     mounted () {
@@ -141,5 +189,9 @@
         height: 0;
       }
     }
+  }
+
+  .mn-scroller-top {
+    // background: red;
   }
 </style>
