@@ -2,19 +2,19 @@
 
 ### 属性
 
-title
-message
-icon
-type
-autoClose
-duration
-closeIcon
+* title
+* message
+* icon
+* type
+* autoClose
+* duration
+* closeIcon
 
 ### 事件
 
 click
 
-```
+``` javascript
 this.messageLayer = Message.create().show()
 
 this.messageLayer.on('click', (event, vm) => {
