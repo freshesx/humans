@@ -177,12 +177,13 @@
         })
       },
       onClick (event) {
-        if (event.offsetX === undefined) return
-        if (event.offsetX < this.width / 2) {
-          this.prevIndex()
-        } else {
-          this.nextIndex()
-        }
+        // 移除该功能
+        // if (event.offsetX === undefined) return
+        // if (event.offsetX < this.width / 2) {
+        //   this.prevIndex()
+        // } else {
+        //   this.nextIndex()
+        // }
       }
     },
     watch: {
