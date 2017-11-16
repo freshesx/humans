@@ -3,6 +3,7 @@
     <div class="mn-message"
       :class="{ 'is-backdrop': enableBackdrop }"
       :style="{ zIndex }"
+      @click="emitClick"
       v-if="visible">
       <div class="mn-message-action">
         <div class="mn-message-icon">
@@ -13,7 +14,7 @@
         <div class="mn-message-type">
           {{ title || currentType.text }}
         </div>
-        <div class="mn-message-close" @click="hide">
+        <div class="mn-message-close" @click.prevent="hide">
           <mn-icon :name="closeIcon"></mn-icon>
         </div>
       </div>
@@ -119,6 +120,11 @@
        */
       iconName () {
         return this.icon || this.currentType.icon
+      }
+    },
+    methods: {
+      emitClick (event) {
+        this.$emit('click', event, this)
       }
     },
     mounted: function () {
