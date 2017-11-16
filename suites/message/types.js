@@ -4,9 +4,9 @@ import close from 'vue-human-icons/js/ios/close'
 import information from 'vue-human-icons/js/ios/information'
 
 export default {
-  default: { text: 'Message', icon: chatbubble, color: 'black' },
-  primary: { text: 'Success', icon: checkmark, color: 'green' },
-  success: { text: 'Success', icon: checkmark, color: 'green' },
-  warning: { text: 'Warning', icon: information, color: 'orange' },
-  error: { text: 'Error', icon: close, color: 'pink' }
+  default: { text: '新消息', icon: chatbubble, color: 'black' },
+  primary: { text: '操作成功', icon: checkmark, color: 'green' },
+  success: { text: '操作成功', icon: checkmark, color: 'green' },
+  warning: { text: '注意', icon: information, color: 'orange' },
+  error: { text: '发生了错误', icon: close, color: 'pink' }
 }

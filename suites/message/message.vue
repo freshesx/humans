@@ -1,28 +1,25 @@
 <template>
   <transition :name="transition || 'has-slide-in-top'">
-    <div class="mn-message" v-if="visible" :style="{ zIndex }">
-      <mn-card theme="glass" class="mn-message-card" rounded>
-        <!-- Title -->
-        <mn-card-item class="mn-message-title">
-          <mn-card-prefix>
-            <mn-icon :class="`has-${currentType.color}-text`"
-              :name="iconName"
-              vertical="-3px"></mn-icon>
-          </mn-card-prefix>
-          <mn-card-body>
-            <h4><small>{{ title || currentType.text }}</small></h4>
-          </mn-card-body>
-          <mn-card-suffix @click.native="hide">
-            <mn-icon :name="closeIcon"></mn-icon>
-          </mn-card-suffix>
-        </mn-card-item>
-        <!-- Main contents -->
-        <mn-card-item>
-          <mn-card-body>
-            {{ message }}
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
+    <div class="mn-message"
+      :class="{ 'is-backdrop': enableBackdrop }"
+      :style="{ zIndex }"
+      v-if="visible">
+      <div class="mn-message-action">
+        <div class="mn-message-icon">
+          <mn-icon :class="`has-${currentType.color}-text`"
+            :name="iconName"
+            vertical="-3px"></mn-icon>
+        </div>
+        <div class="mn-message-type">
+          {{ title || currentType.text }}
+        </div>
+        <div class="mn-message-close" @click="hide">
+          <mn-icon :name="closeIcon"></mn-icon>
+        </div>
+      </div>
+      <div class="mn-message-contents">
+        {{ message }}
+      </div>
     </div>
   </transition>
 </template>
@@ -100,6 +97,11 @@
         default () { return require('vue-human-icons/js/ios/close-empty') }
       }
     },
+    data () {
+      return {
+        enableBackdrop: false
+      }
+    },
     computed: {
       /**
        * 计算出当前的类型名称
@@ -120,6 +122,10 @@
       }
     },
     mounted: function () {
+      if (document.body.style.hasOwnProperty('webkitBackdropFilter')) {
+        this.enableBackdrop = true
+      }
+
       // 设定的时间后自动关闭
       if (this.autoClose) {
         setTimeout(() => {
@@ -139,6 +145,14 @@
     right: 0.5rem;
     left: 0.5rem;
     bottom: auto;
+    background: rgba(white, 1);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+    &.is-backdrop {
+      background: rgba(white, 0.6);
+      -webkit-backdrop-filter: blur(10px);
+    }
 
     @include min-screen('tablet') {
       width: 600px;
@@ -147,12 +161,28 @@
     }
   }
 
-  .mn-message-card {
-    margin-bottom: 0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) !important;
+  .mn-message-action {
+    display: flex;
+    padding: 0.5rem;
+    padding-bottom: 0;
+    align-items: center;
   }
 
-  .mn-message-title {
-    padding: 0.5rem 1rem;
+  .mn-message-icon {
+    margin-right: 0.5rem;
+  }
+
+  .mn-message-type {
+    flex: 1;
+    font-size: 0.875rem;
+  }
+
+  .mn-message-close {
+
+  }
+
+  .mn-message-contents {
+    padding: 0.25rem 0.6rem 0.5rem 0.6rem;
+    font-size: 0.875rem;
   }
 </style>
