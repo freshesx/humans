@@ -1,3 +1,10 @@
+## 2.8.0
+
+* 【删除】移除 vue-i18n 库和多语言功能的实现，删除 locale 文件夹
+* 【样式】调整 Message 至最新的样式
+* 【新增】为 Message 新增 click 事件
+* 【删除】删除 carousel 的左右点击切换上下张的能力
+
 ## 2.7.3
 
 ### /suites/carousel/carousel
