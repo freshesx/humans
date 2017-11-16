@@ -41,16 +41,16 @@
     props: {
       title: {
         type: String,
-        default () { return this.$t('mn.popup.confirmTitle') }
+        default: '确认操作'
       },
       description: String,
       cancelText: {
         type: String,
-        default () { return this.$t('mn.popup.cancelText') }
+        default: '取消'
       },
       confirmText: {
         type: String,
-        default () { return this.$t('mn.popup.confirmText') }
+        default: '确认'
       }
     },
     methods: {

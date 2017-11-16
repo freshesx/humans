@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import Datetime from './Datetime'
 import { addDay, addHours } from '../suites/datetime/dateChecker'
 
@@ -194,8 +193,8 @@ export default class DatetimeRange {
    */
   setFromAtConfig (propsData = {}) {
     this.fromAtConfig = {
-      title: Vue.t('mn.datetime.fromAtTitle'),
-      confirmText: Vue.t('mn.datetime.next'),
+      title: '选择开始时间',
+      confirmText: '下一步',
       ...propsData
     }
   }
@@ -207,9 +206,9 @@ export default class DatetimeRange {
    */
   setToAtConfig (propsData = {}) {
     this.toAtConfig = {
-      title: Vue.t('mn.datetime.toAtTitle'),
-      cancelText: Vue.t('mn.datetime.prev'),
-      smallerText: Vue.t('mn.datetime.smallerToAtText'),
+      title: '选择结束时间',
+      cancelText: '上一步',
+      smallerText: '不可小于最小时间',
       ...propsData
     }
   }

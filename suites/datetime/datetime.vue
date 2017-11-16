@@ -108,23 +108,23 @@
       },
       title: {
         type: String,
-        default () { return this.$t('mn.datetime.title') }
+        default: '选择日期时间'
       },
       cancelText: {
         type: String,
-        default () { return this.$t('mn.popup.cancelText') }
+        default: '取消'
       },
       confirmText: {
         type: String,
-        default () { return this.$t('mn.popup.confirmText') }
+        default: '确认'
       },
       smallerText: {
         type: String,
-        default () { return this.$t('mn.datetime.smallerText') }
+        default: '不可小于最小时间'
       },
       biggerText: {
         type: String,
-        default () { return this.$t('mn.datetime.biggerText') }
+        default: '不可大于最大时间'
       },
       showDate: {
         type: Boolean,

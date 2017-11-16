@@ -40,12 +40,12 @@
     props: {
       title: {
         type: String,
-        default () { return this.$t('mn.popup.alertTitle') }
+        default: '警告'
       },
       description: String,
       cancelText: {
         type: String,
-        default () { return this.$t('mn.popup.closeText') }
+        default: '关闭'
       }
     },
     methods: {

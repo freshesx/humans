@@ -61,7 +61,7 @@
        */
       message: {
         type: String,
-        default () { return this.$t('mn.popup.messageText') }
+        default: '你有一条消息'
       },
 
       /**

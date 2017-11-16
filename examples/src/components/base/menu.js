@@ -1,12 +1,10 @@
-import Vue from 'vue'
-
 export default [
   {
-    name: Vue.t('examples.menus.home'),
+    name: '首页',
     push: { name: 'homepage' }
   },
   {
-    name: Vue.t('examples.menus.core'),
+    name: '核心',
     badge: {
       theme: 'gray-darkest',
       content: 'core',
@@ -14,27 +12,27 @@ export default [
     },
     children: [
       {
-        name: Vue.t('examples.submenus.core.button'),
+        name: '按钮',
         push: { name: 'button' }
       },
       {
-        name: Vue.t('examples.submenus.core.icon'),
+        name: '图标',
         push: { name: 'icon' }
       },
       {
-        name: Vue.t('examples.submenus.core.scroller'),
+        name: '滚动条',
         push: { name: 'scroller' }
       },
       {
-        name: Vue.t('examples.submenus.core.container'),
+        name: '页面容器',
         push: { name: 'container' }
       },
       {
-        name: Vue.t('examples.submenus.core.column'),
+        name: '12 列布局',
         push: { name: 'column' }
       },
       {
-        name: Vue.t('examples.submenus.core.card'),
+        name: '卡片列表',
         push: { name: 'card' },
         badge: {
           content: 'H!',
@@ -43,122 +41,122 @@ export default [
         }
       },
       {
-        name: Vue.t('examples.submenus.core.form'),
+        name: '表单与验证',
         push: { name: 'form' }
       }
     ]
   },
   {
-    name: Vue.t('examples.menus.form'),
+    name: '控件',
     children: [
       {
-        name: Vue.t('examples.submenus.form.input'),
+        name: '单行文本框',
         push: { name: 'input' }
       },
       {
-        name: Vue.t('examples.submenus.form.radio'),
+        name: '单选',
         push: { name: 'radio' }
       },
       {
-        name: Vue.t('examples.submenus.form.check'),
+        name: '多选',
         push: { name: 'check' }
       },
       {
-        name: Vue.t('examples.submenus.form.select'),
+        name: '下拉菜单',
         push: { name: 'select' }
       },
       {
-        name: Vue.t('examples.submenus.form.turn'),
+        name: '开关',
         push: { name: 'turn' }
       },
       {
-        name: Vue.t('examples.submenus.form.textarea'),
+        name: '多行文本框',
         push: { name: 'textarea' }
       },
       {
-        name: Vue.t('examples.submenus.form.counter'),
+        name: '计数器',
         push: { name: 'counter' }
       },
       {
-        name: Vue.t('examples.submenus.form.datetime'),
+        name: '日期时间',
         push: { name: 'datetime' }
       }
     ]
   },
   {
-    name: Vue.t('examples.menus.popup'),
+    name: '浮层',
     children: [
       {
-        name: Vue.t('examples.submenus.popup.message'),
+        name: '消息框',
         push: { name: 'message' }
       },
       {
-        name: Vue.t('examples.submenus.popup.confirm'),
+        name: '确认框',
         push: { name: 'confirm' }
       },
       {
-        name: Vue.t('examples.submenus.popup.alert'),
+        name: '警告框',
         push: { name: 'alert' }
       },
       {
-        name: Vue.t('examples.submenus.popup.loadingMask'),
+        name: '加载动画',
         push: { name: 'loadingMask' }
       },
       {
-        name: Vue.t('examples.submenus.popup.modal'),
+        name: '模态对话框',
         push: { name: 'modal' }
       },
       {
-        name: Vue.t('examples.submenus.popup.actionSheet'),
+        name: '操作列表',
         push: { name: 'actionSheet' }
       }
     ]
   },
   {
-    name: Vue.t('examples.menus.components'),
+    name: '组件库',
     children: [
       {
-        name: Vue.t('examples.submenus.core.image'),
+        name: '图片',
         push: { name: 'image' }
       },
       {
-        name: Vue.t('examples.submenus.components.paginate'),
+        name: '页码',
         push: { name: 'paginate' }
       },
       {
-        name: Vue.t('examples.submenus.components.cell'),
+        name: '单元列表',
         push: { name: 'cell' }
       },
       {
-        name: Vue.t('examples.submenus.components.carousel'),
+        name: '轮播图',
         push: { name: 'carousel' }
       },
       {
-        name: Vue.t('examples.submenus.components.tag'),
+        name: '标签',
         push: { name: 'tag' }
       },
       {
-        name: Vue.t('examples.submenus.components.searchBar'),
+        name: '搜索条',
         push: { name: 'searchBar' }
       },
       {
-        name: Vue.t('examples.submenus.components.rate'),
+        name: '评分',
         push: { name: 'rate' }
       },
       {
-        name: Vue.t('examples.submenus.components.tabBar'),
+        name: '底部栏',
         push: { name: 'tabBar' }
       },
       {
-        name: Vue.t('examples.submenus.components.navBar'),
+        name: '顶部栏',
         push: { name: 'navBar' }
       },
       {
-        name: Vue.t('examples.submenus.components.menu'),
+        name: '手风琴',
         push: { name: 'menu' }
       },
       {
-        name: Vue.t('examples.submenus.components.table'),
+        name: '表格',
         push: { name: 'table' }
       }
     ]
