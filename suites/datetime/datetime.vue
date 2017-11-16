@@ -76,6 +76,7 @@
     formatDoubleNumber,
     parseDatetime } from './dateChecker'
   import options from './options'
+  import text from './text'
 
   export default new Element({
     name: 'mn-datetime',
@@ -253,9 +254,9 @@
       },
 
       formatDate (at) {
-        const month = this.$t(`mn.datetime.months.${at.getMonth()}`)
-        const date = this.$t(`mn.datetime.dates.${at.getDate()}`)
-        const week = this.$t(`mn.datetime.weeks.${at.getDay()}`)
+        const month = text.months[at.getMonth()]
+        const date = text.dates[at.getDate()]
+        const week = text.weeks[at.getDay()]
         return `${at.getFullYear()} ${month}${date} ${week}`
       },
 
