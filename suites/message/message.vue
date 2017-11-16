@@ -123,6 +123,7 @@
       }
     },
     methods: {
+      // 上交 click 事件
       emitClick (event) {
         this.$emit('click', event, this)
       }
