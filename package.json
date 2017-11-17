@@ -23,6 +23,7 @@
     "lint": "eslint --ext .js,.vue src",
     "build": "rollup -c"
   },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
@@ -35,7 +36,8 @@
     "eslint-loader": "^1.7.1",
     "eslint-plugin-html": "^2.0.3",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^2.0.1"
+    "eslint-plugin-standard": "^2.0.1",
+    "rollup": "^0.51.7"
   },
   "engines": {
     "node": ">= 8.9.0",
