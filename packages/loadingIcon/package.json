@@ -1,0 +1,12 @@
+{
+  "name": "@freshes/loading-icon",
+  "version": "3.0.0",
+  "description": "Freshes loading icon",
+  "main": "src/index.js",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ]
+}
