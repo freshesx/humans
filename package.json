@@ -21,7 +21,8 @@
   ],
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
-    "build": "rollup -c ./scripts/rollup/build.js"
+    "build": "rollup -c ./scripts/rollup/build.js",
+    "test:example": "node scripts/house/development.js"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
