@@ -9,14 +9,20 @@ import dependencies from './dependencies'
 export default packages().map(item => {
   return {
     input: `packages/${item}/src/index.js`,
-    output: {
-      file: `packages/${item}/dist/index.js`,
-      format: 'es'
-    },
+    output: [
+      {
+        file: `packages/${item}/dist/main.esm.js`,
+        format: 'es'
+      },
+      {
+        file: `packages/${item}/dist/main.common.js`,
+        format: 'cjs'
+      }
+    ],
     plugins: [
       vue(),
       scss({
-        output: `packages/${item}/dist/index.css`
+        output: `packages/${item}/dist/main.css`
       }),
       json(),
       resolve(),
