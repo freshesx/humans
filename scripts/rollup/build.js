@@ -4,13 +4,14 @@ import babel from 'rollup-plugin-babel'
 import vue from 'rollup-plugin-vue2'
 import scss from 'rollup-plugin-scss'
 import packages from './packages'
+import dependencies from './dependencies'
 
-export default packages.map(item => {
+export default packages().map(item => {
   return {
     input: `packages/${item}/src/index.js`,
     output: {
       file: `packages/${item}/dist/index.js`,
-      format: 'cjs'
+      format: 'es'
     },
     plugins: [
       vue(),
@@ -23,6 +24,6 @@ export default packages.map(item => {
         exclude: 'node_modules/**'
       })
     ],
-    external: ['vue', 'lodash']
+    external: ['vue', 'lodash'].concat(dependencies(item))
   }
 })
