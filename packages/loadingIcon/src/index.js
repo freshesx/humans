@@ -1,4 +1,4 @@
-import Suites from '../../../utils/helpers/Suites.js'
+import Suites from '@freshes/suites'
 import loadingIcon from './loadingIcon.vue'
 import './index.scss'
 
