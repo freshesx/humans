@@ -20,16 +20,20 @@ export default packages().map(item => {
       }
     ],
     plugins: [
+      resolve({
+        customResolveOptions: {
+          moduleDirectory: 'packages'
+        }
+      }),
       vue(),
       scss({
         output: `packages/${item}/dist/main.css`
       }),
       json(),
-      resolve(),
       babel({
         exclude: 'node_modules/**'
       })
     ],
-    external: ['vue', 'lodash'].concat(dependencies(item))
+    external: [].concat(dependencies(item))
   }
 })
