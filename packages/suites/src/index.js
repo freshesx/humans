@@ -24,8 +24,13 @@ export default class Suites {
    * @param {Vue} Vue
    */
   install (Vue) {
-    this.elements.forEach(element => {
-      Vue.component(element)
+    // Return multi VueComponents Object
+    return this.elements.map(element => {
+      // Register Vue Componentt
+      return {
+        name: element.name,
+        component: Vue.component(element.name, element)
+      }
     })
   }
 }
