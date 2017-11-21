@@ -47,7 +47,8 @@
     "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-scss": "^0.3.0",
-    "rollup-plugin-vue2": "^0.8.0"
+    "rollup-plugin-vue2": "^0.8.0",
+    "vue-human-icons": "^1.4.0"
   },
   "engines": {
     "node": ">= 8.9.0",

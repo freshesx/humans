@@ -6588,6 +6588,10 @@ vue-hot-reload-api@^2.2.0:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.2.4.tgz#683bd1d026c0d3b3c937d5875679e9a87ec6cd8f"
 
+vue-human-icons@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/vue-human-icons/-/vue-human-icons-1.4.0.tgz#e3fd023207474d0adc6898ddf55eb491b7839582"
+
 vue-loader@~13.4.0:
   version "13.4.0"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-13.4.0.tgz#44aa7eef4fb1be89fbc37193ad33b8253417c4b9"
