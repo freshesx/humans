@@ -22,12 +22,14 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "build": "rollup -c ./scripts/rollup/build.js",
-    "test:example": "node scripts/house/development.js"
+    "test:example": "node scripts/house/development.js",
+    "test": "jest"
   },
   "devDependencies": {
     "@freshes/house": "^1.0.0",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^21.2.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.5.1",
     "babel-preset-stage-2": "^6.24.1",
@@ -39,6 +41,7 @@
     "eslint-plugin-html": "^2.0.3",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.0.1",
+    "jest": "^21.2.1",
     "lerna": "^2.5.1",
     "lodash": "^4.17.4",
     "rollup": "^0.51.8",
