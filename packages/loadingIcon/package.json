@@ -8,8 +8,7 @@
   "main": "dist/main.common.js",
   "module": "dist/main.esm.js",
   "files": [
-    "dist",
-    "docs"
+    "dist"
   ],
   "dependencies": {
     "@freshes/suites": "^3.0.0"
