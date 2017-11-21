@@ -11,7 +11,7 @@
     name: 'mn-loading-icon',
     props: {
       icon: {
-        type: Object,  // is a vueComponent
+        type: Object,  // need a vue element
         default () {
           const customIcon = options.get('loading')
           const Component = Vue.extend(customIcon || defaultIcon)
