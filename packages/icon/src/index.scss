@@ -1,0 +1,22 @@
+@import "../../../shares/scss/vars";
+
+// 私有属性
+$-mn-icon-width: $reboot-font-size * $reboot-line-height !default;    // # 等于 24px 图标默认宽度
+$-mn-icon-height: $reboot-font-size * $reboot-line-height !default;   // # 等于 24px 图标默认高度
+
+.mn-icon {
+  display: inline-block;
+  fill: currentColor;
+  width: $-mn-icon-width;
+  height: $-mn-icon-height;
+  text-align: center;
+}
+
+.mn-icon-svg {
+  width: $-mn-icon-width;
+  height: $-mn-icon-height;
+
+  > svg {
+    vertical-align: top;
+  }
+}

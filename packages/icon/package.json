@@ -1,0 +1,19 @@
+{
+  "name": "@freshes/icon",
+  "version": "3.0.0-alpha.1",
+  "description": "Freshes icon",
+  "main": "dist/main.common.js",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@freshes/suites": "^3.0.0-alpha.1",
+    "@freshes/loadingIcon": "^3.0.0-alpha.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
