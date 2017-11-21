@@ -21,7 +21,8 @@
     "lint": "eslint --ext .js,.vue src",
     "build": "rollup -c ./scripts/rollup/build.js",
     "test:example": "node scripts/house/development.js",
-    "test": "jest"
+    "test": "jest",
+    "publish:test": "yarn run build && lerna publish"
   },
   "devDependencies": {
     "@freshes/house": "^1.0.0",
