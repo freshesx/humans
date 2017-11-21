@@ -25,7 +25,7 @@ export default class Suites {
    */
   install (Vue) {
     this.elements.forEach(element => {
-      Vue.use(element)
+      Vue.component(element)
     })
   }
 }
