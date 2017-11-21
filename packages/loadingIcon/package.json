@@ -11,6 +11,8 @@
     "dist"
   ],
   "dependencies": {
-    "@freshes/suites": "^3.0.0"
+    "vue": "^2.5.0",
+    "@freshes/suites": "^3.0.0",
+    "@freshes/options": "^3.0.0"
   }
 }
