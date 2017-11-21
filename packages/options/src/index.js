@@ -6,11 +6,11 @@ const storeOptions = {
   loading: undefined
 }
 
-export function get (name) {
+function get (name) {
   return storeOptions[name]
 }
 
-export function set (name, value) {
+function set (name, value) {
   if (!storeOptions.hasOwnProperty(name)) {
     throw new Error(`The options haven't ${name} property.`)
   }
