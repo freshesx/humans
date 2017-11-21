@@ -15,9 +15,7 @@
   ],
   "main": "main.js",
   "files": [
-    "main.js",
-    "suites",
-    "utils"
+    "packages"
   ],
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
