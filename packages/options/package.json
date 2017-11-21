@@ -1,0 +1,13 @@
+{
+  "name": "@freshes/options",
+  "version": "3.0.0",
+  "description": "Freshes options",
+  "main": "src/index.js",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "main": "dist/main.common.js",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ]
+}
