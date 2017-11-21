@@ -4,7 +4,7 @@ export default class Suites {
    * @param {Object} vueElements[].vueElement
    */
   constructor (vueElements) {
-    this.elements = [].concat(vueElements)
+    this.elements = [].concat(vueElements || [])
   }
 
   /**
