@@ -1,19 +1,25 @@
 const storeOptions = {
+  /**
+   * Custom loading icon
+   * @type {VueComponent}
+   */
+  loading: undefined
 }
 
-/**
- * Save and merge human options
- * @param  {Object} [options]
- * @return {Object} options
- */
-export default function options (options) {
-  // return some
-  if (options === undefined) {
-    return storeOptions
+export function get (name) {
+  return storeOptions[name]
+}
+
+export function set (name, value) {
+  if (!storeOptions.hasOwnProperty(name)) {
+    throw new Error(`The options haven't ${name} property.`)
   }
 
-  // merge some
-  Object.assign(storeOptions, options)
-  console.log('The storeOptions has changed.', storeOptions)
-  return storeOptions
+  const old = get(name)
+  storeOptions[name] = value
+  console.log(`The option '${name}' has changed.`, value, old)
+
+  return get(name)
 }
+
+export default { get, set }
