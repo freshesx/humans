@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import loadingIcon from '@packages/loadingIcon/dist'
-  import '@packages/loadingIcon/dist/index.css'
+  import loadingIcon from '@freshes/loadingIcon'
+  import '@freshes/loadingIcon/dist/main.css'
 
   export default {
     components: {
