@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 
 const folders = fs.readdirSync(path.join(process.cwd(), './packages'))
-const excludes = [ '.DS_Store' ]
+const excludes = [ '.DS_Store', '.babelrc' ]
 
 excludes.forEach(item => {
   const index = folders.indexOf(item)
