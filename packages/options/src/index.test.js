@@ -7,10 +7,4 @@ describe('options', () => {
     expect(options.set('loading', value)).toEqual(value)
     expect(options.get('loading')).toEqual(value)
   })
-
-  test('have\'t the property', () => {
-    expect(() => {
-      options.set('test', {})
-    }).toThrow('The options haven\'t test property.')
-  })
 })

@@ -11,10 +11,6 @@ function get (name) {
 }
 
 function set (name, value) {
-  if (!storeOptions.hasOwnProperty(name)) {
-    throw new Error(`The options haven't ${name} property.`)
-  }
-
   const old = get(name)
   storeOptions[name] = value
   console.log(`The option '${name}' has changed.`, value, old)
