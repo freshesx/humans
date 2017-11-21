@@ -4,7 +4,8 @@
 
 <script>
   import Vue from 'vue'
-  import icon from './icon.vue'
+  import options from '@freshes/options'
+  import defaultIcon from './icon.vue'
 
   export default {
     name: 'mn-loading-icon',
@@ -12,7 +13,8 @@
       icon: {
         type: Object,  // is a vueComponent
         default () {
-          const Component = Vue.extend(icon)
+          const customIcon = options.get('loading')
+          const Component = Vue.extend(customIcon || defaultIcon)
           return new Component().$mount()
         }
       }
