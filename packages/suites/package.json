@@ -8,5 +8,8 @@
   "module": "dist/main.esm.js",
   "files": [
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
