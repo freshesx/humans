@@ -1,6 +1,6 @@
 {
   "name": "@freshes/human",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0",
   "description": "Freshes Human based on vue for quick developing application",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
