@@ -37,6 +37,7 @@
     "babel-register": "^6.24.1",
     "esdoc": "^1.0.4",
     "esdoc-standard-plugin": "^1.0.0",
+    "esdoc-vue-plugin": "^1.0.0",
     "eslint": "^4.11.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
