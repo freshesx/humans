@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import vue from 'rollup-plugin-vue2'
 import scss from 'rollup-plugin-scss'
+import eslint from 'rollup-plugin-eslint'
 import packages from './packages'
 import dependencies from './dependencies'
 
@@ -29,6 +30,7 @@ export default packages().map(item => {
       scss({
         output: `packages/${item}/dist/main.css`
       }),
+      eslint(),
       json(),
       babel({
         exclude: 'node_modules/**'
