@@ -1,0 +1,12 @@
+{
+  "source": "./packages",
+  "destination": "./docs/api",
+  "excludes": [
+    "dist"
+  ],
+  "plugins": [
+    {
+      "name": "esdoc-standard-plugin"
+    }
+  ]
+}

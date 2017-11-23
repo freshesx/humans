@@ -18,11 +18,13 @@
     "packages"
   ],
   "scripts": {
-    "lint": "eslint --ext .js,.vue src",
+    "start": "yarn run test:example",
     "build": "rollup -c ./scripts/rollup/build.js",
+    "docs:api": "esdoc",
+    "test": "yarn run test:unit",
     "test:example": "node scripts/house/development.js",
-    "test": "jest",
-    "publish:test": "yarn run build && lerna publish"
+    "test:unit": "jest",
+    "publish:beta": "yarn run build && lerna publish"
   },
   "devDependencies": {
     "@freshes/house": "^1.0.0",
@@ -33,6 +35,8 @@
     "babel-preset-env": "^1.5.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
+    "esdoc": "^1.0.4",
+    "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^7.1.0",
     "eslint-friendly-formatter": "^2.0.7",
