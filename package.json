@@ -27,7 +27,7 @@
     "publish:beta": "yarn run build && lerna publish"
   },
   "devDependencies": {
-    "@freshes/house": "^1.0.0",
+    "@freshes/house": "^1.1.0",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^21.2.0",
