@@ -1,6 +1,7 @@
 import options from './index.js'
+import { Options } from './index.js'
 
-const value = { name: 'custom-loading-icon' }
+const value = { name: 'mn-card' }
 
 describe('options', () => {
   test('have the property', () => {
