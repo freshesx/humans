@@ -2,16 +2,12 @@
   "source": "./packages",
   "destination": "./docs/api",
   "includes": [
-    "\\.js$",
-    "\\.vue$"
+    "\\.js$"
   ],
   "excludes": [
     "dist"
   ],
   "plugins": [
-    {
-      "name": "esdoc-vue-plugin"
-    },
     {
       "name": "esdoc-standard-plugin"
     }
