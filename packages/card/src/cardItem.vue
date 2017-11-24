@@ -7,43 +7,52 @@
       'is-disabled': disabled
     }"
     @click="click">
+    <!-- Card item contents -->
     <slot></slot>
   </div>
 </template>
 
 <script>
   /**
-   * mn-card-item（卡片内的每一条的布局的组件）
-   * @module suites/card/cardItem
-   * @param {string} [type] - 行的类型，有 link, arrow, cursor 可选，
-   * link 表示 具有右箭头和鼠标箭头状态；
-   * arrow 表示 仅仅具有右箭头；
-   * cursor 表示 仅仅具有鼠标箭头状态。
-   * @param {boolean} [disabled=false] - 是否禁用该项，主要表现为 click 事件无效
+   * Card item component
    */
   export default {
     name: 'mn-card-item',
     props: {
+      /**
+       * Line item type,
+       * 'link' means having right arrow and pointer cursor status.
+       * 'arrow' means only having right arrow.
+       * 'cursor' means only having pointer cursor status.
+       */
       type: {
         type: String,
         validator: val => ['link', 'arrow', 'cursor'].includes(val)
       },
+      /**
+       * Disable click event, and add disabled style
+       */
       disabled: Boolean
     },
     data () {
       return {
+        /**
+         * Save focus status for click event
+         */
         focus: false
       }
     },
     methods: {
-      /**
-       * 触发点击事件
-       * @event click
-       * @property {Event} $event - DOM Event 对象
-       * @property {VueComponent} cardItem - 自身
-       */
-      click ($event) {
-        this.$emit('click', $event, this)
+      click (event) {
+        /**
+         * Click event
+         * @event click
+         * @property {Event} event - DOM Event
+         * @property {this} cardItem - cardItem self
+         */
+        this.$emit('click', event, this)
+
+        // Add click focus animation
         if (this.type) {
           this.focus = true
           setTimeout(() => {
