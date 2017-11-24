@@ -1,5 +1,5 @@
 {
-  "name": "@freshes/options",
+  "name": "@humans/options",
   "version": "3.0.0-alpha.1",
   "description": "Freshes options",
   "main": "dist/main.common.js",

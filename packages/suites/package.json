@@ -1,5 +1,5 @@
 {
-  "name": "@freshes/suites",
+  "name": "@humans/suites",
   "version": "3.0.0-alpha.1",
   "description": "Freshes suites",
   "main": "dist/main.common.js",

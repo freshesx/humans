@@ -1,5 +1,5 @@
 {
-  "name": "@freshes/loading-icon",
+  "name": "@humans/loading-icon",
   "version": "3.0.0-alpha.1",
   "description": "Freshes loading icon",
   "main": "dist/main.common.js",
@@ -10,8 +10,8 @@
     "dist"
   ],
   "dependencies": {
-    "@freshes/options": "^3.0.0-alpha.1",
-    "@freshes/suites": "^3.0.0-alpha.1",
+    "@humans/options": "^3.0.0-alpha.1",
+    "@humans/suites": "^3.0.0-alpha.1",
     "vue": "^2.5.0"
   },
   "publishConfig": {

@@ -1,5 +1,5 @@
 {
-  "name": "@freshes/base",
+  "name": "@humans/base",
   "version": "3.0.0-alpha.1",
   "description": "Freshes base",
   "main": "dist/main.common.js",
