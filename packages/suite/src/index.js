@@ -1,5 +1,8 @@
 /**
  * Wrap vue element to a suite. And add Vue.use plugin method
+ * @example
+ * import card from '@humans/card'
+ * Vue.use(new Suite(card))
  */
 export default class Suite {
   /**
