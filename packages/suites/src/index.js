@@ -6,6 +6,9 @@ export default class Suite {
    * @param {Object} vueElementsMap - e.g. { [card.name]: card }
    */
   constructor (vueElementsMap) {
+    /**
+     * @type {Object}
+     */
     this.map = Object.assign({}, vueElementsMap)
   }
 
