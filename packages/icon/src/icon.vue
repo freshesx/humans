@@ -15,29 +15,41 @@
   import loadingIcon from '@humans/loadingIcon'
 
   /**
-   * @param {String}   [name]             - Some svg string, You can use vue-human-icons or your custom svg string. @see {@link https://www.npmjs.com/package/vue-human-icons}.
-   * @param {Number}   [width=24]         - Icon width
-   * @param {Number}   [height=24]        - Icon height
-   * @param {Number}   [scale=1]          - If change scale, you can change line-height as same.
-   * @param {Boolean}  [loading=false]    - Switch to loading icon
+   * Icon component
    */
   export default {
     name: 'mn-icon',
-    components: Object.assign({}, loadingIcon.map()),
+    components: Object.assign({}, loadingIcon),
     props: {
-      name: null,
+      /**
+       * Some svg string, You can use vue-human-icons or your custom svg string.
+       * @see https://www.npmjs.com/package/vue-human-icons
+       */
+      name: [Object, String],
+      /**
+       * Icon width
+       */
       width: {
         type: Number,
         default: 24
       },
+      /**
+       * Icon height
+       */
       height: {
         type: Number,
         default: 24
       },
+      /**
+       * If change scale, you can change line-height as same.
+       */
       scale: {
         type: Number,
         default: 1
       },
+      /**
+       * Switch to loading icon
+       */
       loading: Boolean
     },
     computed: {
