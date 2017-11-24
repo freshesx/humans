@@ -1,33 +1,37 @@
 import Suite from './index.js'
 import Vue from 'vue'
 
-const mnCard = {
-  name: 'mn-card'
-}
-
-const mnCardItem = {
-  name: 'mn-card-item'
-}
-
-const card = {
-  [mnCard.name]: mnCard,
-  [mnCardItem.name]: mnCardItem
-}
-
+/** @test {Suite} */
 describe('constructor', () => {
-  test('empty object', () => {
+  const mnCard = {
+    name: 'mn-card'
+  }
+
+  const mnCardItem = {
+    name: 'mn-card-item'
+  }
+
+  const card = {
+    [mnCard.name]: mnCard,
+    [mnCardItem.name]: mnCardItem
+  }
+
+  /** @test {Suite#constructor} */
+  test('Suite.constructor with empty object', () => {
     const suite = new Suite({})
     expect(suite.map).toEqual({})
   })
 
-  test('has elements', () => {
+  /** @test {Suite#constructor} */
+  test('Suite.constructor with elements map', () => {
     const suite = new Suite(card)
     expect(suite.map).toEqual(card)
   })
-})
 
-// @todo use Mock Function to rewrite Vue to test me deeply.
-describe('install', () => {
+  /**
+   * @test {Suite#install}
+   * @todo use Mock Function to rewrite Vue to test me deeply.
+   */
   test('install', () => {
     Vue.use(new Suite(card))
   })
