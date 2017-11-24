@@ -20,6 +20,9 @@
       }
     ]
   ],
+  "plugins": [
+    "transform-vue-jsx"
+  ],
   "env": {
     "test": {
       "presets": [
