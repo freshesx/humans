@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = runner => {
   runner.webpackBuilder.extend(webpack => {
     webpack.resolve.alias = {
-      '@freshes': path.resolve('./packages')
+      '@humans': path.resolve('./packages')
     }
     return webpack
   })
@@ -13,9 +13,6 @@ module.exports = runner => {
     use: [
       {
         loader: '@freshes/style-import-loader',
-        options: {
-          scoped: '@freshes/[\\w-]+'
-        }
       }
     ]
   })
