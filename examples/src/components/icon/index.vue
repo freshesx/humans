@@ -9,7 +9,6 @@
 
 <script>
   import icon from '@freshes/icon'
-  import '@freshes/icon/dist/main.css'
 
   export default {
     components: {

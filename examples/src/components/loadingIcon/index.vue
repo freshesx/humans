@@ -6,7 +6,6 @@
 
 <script>
   import loadingIcon from '@freshes/loadingIcon'
-  import '@freshes/loadingIcon/dist/main.css'
 
   export default {
     components: {
