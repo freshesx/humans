@@ -1,0 +1,153 @@
+@import "../../../shares/scss/vars";
+@import "../../../shares/scss/mixins/media";
+@import "../../../shares/scss/mixins/arrow";
+
+$mn-card-grid-gutters:    $grid-gutters;
+$mn-card-mobile-radius:   $mobile-radius !default;
+$mn-card-desktop-radius:  $desktop-radius !default;
+
+.mn-card {
+  margin-bottom: $mn-card-grid-gutters;
+  border-radius: $mn-card-mobile-radius;
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+
+  @include screen('mobile') {
+    border-radius: 0;
+  }
+
+  @include min-screen('desktop') {
+    border-radius: $mn-card-desktop-radius;
+  }
+
+  &.is-inverse {
+    background-color: #333;
+    color: #fff;
+  }
+
+  &.is-glass.is-backdrop {
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+.mn-card.is-rounded {
+  border-radius: $mn-card-mobile-radius;
+
+  @include min-screen('desktop') {
+    border-radius: $mn-card-desktop-radius;
+  }
+}
+
+.mn-card-body {
+  flex: 1;
+
+  &.is-prefix,
+  &.is-suffix {
+    flex: auto 0;
+  }
+
+  &.is-prefix {
+    margin-right: 0.5rem;
+  }
+
+  &.is-suffix {
+    margin-left: 0.5rem;
+  }
+
+  &.is-muted {
+    color: #666;
+  }
+
+  &.is-action {
+    display: flex;
+    margin-top: -$mn-card-grid-gutters;
+    margin-bottom: -$mn-card-grid-gutters;
+    align-items: center;
+  }
+}
+
+.mn-card-btns {
+  > .button,
+  > button {
+    display: block;
+    outline: none;
+    -webkit-appearance: none;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    padding: $mn-card-grid-gutters;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border-top: solid 1px #eee;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+
+  &.is-column {
+    display: flex;
+
+    > .button,
+    > button {
+      flex: 1 1;
+      border-top: none;
+      border-left: solid 1px #eee;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+  }
+}
+
+// @affect(./card-item.vue, ./cardMedia.vue)
+.mn-card-item + .mn-card-btns,
+.mn-card-media + .mn-card-btns,
+.mn-card-btns + .mn-card-btns {
+  border-top: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.mn-card-item {
+  display: flex;
+  padding: $mn-card-grid-gutters;
+  align-items: center;
+
+  &.is-focus {
+    background: #f5f5f5;
+  }
+
+  &.is-link,
+  &.is-cursor {
+    cursor: pointer;
+  }
+
+  &.is-link,
+  &.is-arrow {
+    &::after {
+      @include make-arrow();
+    }
+  }
+}
+
+// @affect(./cardBtns.vue, ./cardMedia.vue)
+.mn-card-item + .mn-card-item,
+.mn-card-media + .mn-card-item,
+.mn-card-btns + .mn-card-item {
+  border-top: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.mn-card-media {
+  > img {
+    display: block;
+    width: 100%;
+  }
+}

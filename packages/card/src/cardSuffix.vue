@@ -1,8 +1,7 @@
 <script>
-  import Element from '../../utils/Element'
-  import cardBody from './cardBody'
+  import cardBody from './cardBody.vue'
 
-  export default new Element({
+  export default {
     name: 'mn-card-suffix',
     mixins: [ cardBody ],
     data () {
@@ -10,5 +9,5 @@
         columnName: 'suffix'
       }
     }
-  })
+  }
 </script>

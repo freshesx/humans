@@ -1,0 +1,15 @@
+{
+  "name": "@humans/card",
+  "version": "3.0.0-alpha.3",
+  "description": "Card component",
+  "main": "dist/main.common.js",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
