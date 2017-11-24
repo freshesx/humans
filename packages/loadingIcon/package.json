@@ -1,7 +1,7 @@
 {
   "name": "@humans/loading-icon",
   "version": "3.0.0-alpha.2",
-  "description": "Freshes loading icon",
+  "description": "Loading icon component",
   "main": "dist/main.common.js",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",

@@ -1,7 +1,7 @@
 {
   "name": "@humans/icon",
   "version": "3.0.0-alpha.2",
-  "description": "Freshes icon",
+  "description": "Icon component",
   "main": "dist/main.common.js",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",

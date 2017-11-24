@@ -1,7 +1,7 @@
 {
   "name": "@humans/options",
   "version": "3.0.0-alpha.2",
-  "description": "Freshes options",
+  "description": "Share some options in @human components.",
   "main": "dist/main.common.js",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
