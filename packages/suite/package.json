@@ -1,7 +1,7 @@
 {
-  "name": "@humans/suites",
+  "name": "@humans/suite",
   "version": "3.0.0-alpha.2",
-  "description": "Wrap some vue element to a suites to use.",
+  "description": "Wrap some vue elements to a suite to install.",
   "main": "dist/main.common.js",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
