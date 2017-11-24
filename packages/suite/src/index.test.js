@@ -1,5 +1,4 @@
 import Suite from './index.js'
-import Vue from 'vue'
 
 /** @test {Suite} */
 describe('constructor', () => {
@@ -30,9 +29,18 @@ describe('constructor', () => {
 
   /**
    * @test {Suite#install}
-   * @todo use Mock Function to rewrite Vue to test me deeply.
    */
   test('install', () => {
+    // mock vue
+    const Vue = {
+      use (callback) {
+        callback.install(Vue)
+      },
+      component (name, value) {
+        expect(name).toEqual(value.name)
+      }
+    }
+
     Vue.use(new Suite(card))
   })
 })
