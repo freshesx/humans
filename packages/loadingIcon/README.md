@@ -1,13 +1,13 @@
-# @freshes/loadingIcon
+# @humans/loadingIcon
 
 ### Base usage
 
-Base usage use the freshes universal usage.
+Base usage use the humans universal usage.
 
 ### Set custom icon in loading-icon globally
 
 ``` javascript
-import options from '@freshes/options'
+import options from '@humans/options'
 import customIcon from './customIcon.vue'
 
 // Global use customIcon
@@ -23,7 +23,7 @@ options.set('loading', customIcon)
 
 <script>
   import customIcon from './customIcon.vue'
-  import loadingIcon from '@freshes/loadingIcon'
+  import loadingIcon from '@humans/loadingIcon'
 
   export default {
     components: {
@@ -43,7 +43,7 @@ options.set('loading', customIcon)
 ``` javascript
 // appLoadingIcon.vue
 import customIcon from './customIcon.vue'
-import loadingIcon from '@freshes/loadingIcon'
+import loadingIcon from '@humans/loadingIcon'
 
 export default {
   name: 'app-loading-icon',

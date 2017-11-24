@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import loadingIcon from '@freshes/loadingIcon'
+  import loadingIcon from '@humans/loadingIcon'
 
   /**
    * @param {String}   [name]             - Some svg string, You can use vue-human-icons or your custom svg string. @see {@link https://www.npmjs.com/package/vue-human-icons}.

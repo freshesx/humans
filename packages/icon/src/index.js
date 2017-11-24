@@ -1,4 +1,4 @@
-import Suites from '@freshes/suites'
+import Suites from '@humans/suites'
 import icon from './icon.vue'
 import './index.scss'
 

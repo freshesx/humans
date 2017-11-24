@@ -4,7 +4,7 @@
 
 <script>
   import Vue from 'vue'
-  import options from '@freshes/options'
+  import options from '@humans/options'
   import defaultIcon from './icon.vue'
 
   export default {
