@@ -7,9 +7,15 @@
   import options from '@humans/options'
   import defaultIcon from './icon.vue'
 
+  /**
+   * Loading icon
+   */
   export default {
     name: 'mn-loading-icon',
     props: {
+      /**
+       * Developer can make a custom icon to replace default icon
+       */
       icon: {
         type: Object,  // need a vue element
         default () {
