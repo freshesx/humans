@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import loadingIcon from '@freshes/loadingIcon'
+  import loadingIcon from '@humans/loadingIcon'
 
   export default {
     components: {

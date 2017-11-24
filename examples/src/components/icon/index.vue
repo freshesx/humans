@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import icon from '@freshes/icon'
+  import icon from '@humans/icon'
 
   export default {
     components: {
