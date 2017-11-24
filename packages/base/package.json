@@ -1,6 +1,6 @@
 {
   "name": "@humans/base",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.0-alpha.2",
   "description": "Freshes base",
   "main": "dist/main.common.js",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
