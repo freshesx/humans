@@ -1,11 +1,16 @@
 import options from './index.js'
-import { Options } from './index.js'
 
-const value = { name: 'mn-card' }
-
+/** @test {Options} */
 describe('options', () => {
-  test('have the property', () => {
+  const value = { name: 'mn-card' }
+
+  /** @test {Options#set} */
+  test('options.set', () => {
     expect(options.set('loading', value)).toEqual(value)
+  })
+
+  /** @test {Options#get} */
+  test('options.get', () => {
     expect(options.get('loading')).toEqual(value)
   })
 })
