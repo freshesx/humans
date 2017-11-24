@@ -1,32 +1,34 @@
-import Suites from './index.js'
+import Suite from './index.js'
 import Vue from 'vue'
 
-const vueElement = {
-  name: 'mn-test'
+const mnCard = {
+  name: 'mn-card'
+}
+
+const mnCardItem = {
+  name: 'mn-card-item'
+}
+
+const card = {
+  [mnCard.name]: mnCard,
+  [mnCardItem.name]: mnCardItem
 }
 
 describe('constructor', () => {
-  test('without vueElement', () => {
-    const suites = new Suites()
-    expect(suites.elements).toEqual([])
-
-    const map = suites.map()
-    expect(map).toEqual({})
+  test('empty object', () => {
+    const suite = new Suite({})
+    expect(suite.map).toEqual({})
   })
 
-  test('with vueElement', () => {
-    const suites = new Suites([ vueElement ])
-    expect(suites.elements).toEqual([ vueElement ])
-
-    const map = suites.map()
-    expect(map).toEqual({ 'mn-test': vueElement })
+  test('has elements', () => {
+    const suite = new Suite(card)
+    expect(suite.map).toEqual(card)
   })
 })
 
 // @todo use Mock Function to rewrite Vue to test me deeply.
 describe('install', () => {
   test('install', () => {
-    const suites = new Suites([ vueElement ])
-    Vue.use(suites)
+    Vue.use(new Suite(card))
   })
 })

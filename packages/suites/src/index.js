@@ -1,31 +1,20 @@
-export default class Suites {
+/**
+ * Wrap vue element to a suite. And add Vue.use plugin method
+ */
+export default class Suite {
   /**
-   * @param {Array} vueElements
-   * @param {Object} vueElements[].vueElement
+   * @param {Object} vueElementsMap - e.g. { [card.name]: card }
    */
-  constructor (vueElements) {
-    this.elements = [].concat(vueElements || [])
-  }
-
-  /**
-   * @return {Object}
-   */
-  map () {
-    const elements = {}
-
-    this.elements.forEach(element => {
-      elements[element.name] = element
-    })
-
-    return elements
+  constructor (vueElementsMap) {
+    this.map = Object.assign({}, vueElementsMap)
   }
 
   /**
    * @param {Vue} Vue
    */
   install (Vue) {
-    this.elements.forEach(element => {
-      Vue.component(element.name, element)
-    })
+    for (let name in this.map) {
+      Vue.component(name, this.map[name])
+    }
   }
 }
