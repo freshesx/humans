@@ -1,10 +1,11 @@
 import Vue from 'vue'
+import human from '@humans/base'
 import router from './router'
 import app from './app'
-import '@freshes/base/dist/main.css'
 
 new Vue({
   el: '#app',
+  human,
   router,
   render: h => h(app)
 })
