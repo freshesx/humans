@@ -11,9 +11,7 @@
   import icon from '@humans/icon'
 
   export default {
-    components: {
-      ...icon.map()
-    },
+    components: Object.assign({}, icon),
     data () {
       return {
         icons: {

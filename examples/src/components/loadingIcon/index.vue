@@ -8,8 +8,6 @@
   import loadingIcon from '@humans/loadingIcon'
 
   export default {
-    components: {
-      ...loadingIcon.map()
-    }
+    components: Object.assign({}, loadingIcon)
   }
 </script>
