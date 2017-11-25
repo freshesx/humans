@@ -7,11 +7,11 @@ Base usage use the humans universal usage.
 ### Set custom icon in loading-icon globally
 
 ``` javascript
-import options from '@humans/options'
+import share from '@humans/share'
 import customIcon from './customIcon.vue'
 
 // Global use customIcon
-options.set('loading', customIcon)
+share.setLoading(customIcon)
 ```
 
 ### Set custom icon in the specified loading-icon

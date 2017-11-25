@@ -10,7 +10,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/options": "^3.0.0-alpha.3",
+    "@humans/share": "^3.0.0-alpha.3",
     "vue": "^2.5.0"
   },
   "publishConfig": {

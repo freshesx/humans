@@ -4,7 +4,7 @@
 
 <script>
   import Vue from 'vue'
-  import options from '@humans/options'
+  import share from '@humans/share'
   import defaultIcon from './icon.vue'
 
   /**
@@ -19,7 +19,7 @@
       icon: {
         type: Object,  // need a vue element
         default () {
-          const customIcon = options.get('loading')
+          const customIcon = share.getLoading()
           const Component = Vue.extend(customIcon || defaultIcon)
           return new Component().$mount()
         }
