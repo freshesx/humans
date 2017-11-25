@@ -7,6 +7,7 @@
     @touchend="touchEnd"
     @scroll="scroll">
     <div class="mn-scroller-contents">
+      <!-- scroller contents -->
       <slot></slot>
     </div>
   </div>
@@ -15,22 +16,40 @@
 <script>
   import { addStorage, getScrollTop } from './storage'
 
+  /**
+   * Scroller component
+   */
   export default {
     name: 'mn-scroller',
     props: {
+      /**
+       * Do scroller save the top scroll value
+       */
       save: {
         type: Boolean,
         default: true
       },
+      /**
+       * The scroller name.
+       * if have two scroller in one page, you need set thier name.
+       */
       name: {
         type: String,
         default: 'default'
       },
+      /**
+       * Save mode.
+       * full only include path,
+       * fullPath include path and string query
+       */
       mode: {
         type: String,
         default: 'path',
         validator: val => ['path', 'fullPath'].includes(val)
       },
+      /**
+       * Show scrollbar
+       */
       scrollbar: {
         type: Boolean,
         default: false
@@ -38,16 +57,24 @@
     },
     data () {
       return {
+        /**
+         * @todo remove
+         */
         time: undefined,
         createdScrollTop: false
       }
     },
     methods: {
       touchStart (event) {
-        // 监听 touchstart 事件，记录开始前的 pageX 和 pageY
-        // 触发组件 touchstart 事件
+        // Save origin pageX and pageY in touchStart
         this.startPageY = event.touches[0].pageY
         this.startPageX = event.touches[0].pageX
+
+        /**
+         * @event touchstart
+         * @property {Event} event - DOM Event
+         * @property {VueComponent} scroller - scroller self
+         */
         this.$emit('touchstart', event, this)
       },
       touchMove (event) {
@@ -56,38 +83,67 @@
         let scrollHeight = this.$el.scrollHeight
         let containerHeight = this.$el.offsetHeight
 
-        // 允许侧边栏手势进行返回
+        // If startPageX is too low,
+        // allow swipe to right to emit browser back event.
         if (this.startPageX > 16) {
-          // 上面露底
+          // prevent top scroll less than 0, case in safari or wechat browser.
           if (pageY > this.startPageY && scrollTop <= 0) {
             event.preventDefault()
           }
 
-          // 下面露底
+          // prevent top scroll great than container height, case in safari or wechat browser.
           if (pageY < this.startPageY && scrollTop >= scrollHeight - containerHeight) {
             event.preventDefault()
           }
         }
+
+        /**
+         * @event touchmove
+         * @property {Event} event - DOM Event
+         * @property {VueComponent} scroller - scroller self
+         */
         this.$emit('touchmove', event, this)
       },
       touchEnd (event) {
         this.scrollAndTouchEnd(event)
+
+        /**
+         * @event touchend
+         * @property {Event} event - DOM Event
+         * @property {VueComponent} scroller - scroller self
+         */
         this.$emit('touchend', event, this)
       },
       scroll (event) {
         this.scrollAndTouchEnd(event)
+
+        /**
+         * @event scroll
+         * @property {Event} event - DOM Event
+         * @property {VueComponent} scroller - scroller self
+         */
         this.$emit('scroll', event, this)
       },
       scrollAndTouchEnd (event) {
         this.saveScrollTop()
 
-        // 拉到顶部，触发事件
+        // pull to the scroller top
         if (this.$el.scrollTop <= 0) {
+          /**
+           * @event top
+           * @property {Event} event - DOM Event
+           * @property {VueComponent} scroller - scroller self
+           */
           this.$emit('top', event, this)
         }
 
-        // 拉到底部，触发事件
+        // push to the scroller bottom
         if (this.$el.offsetHeight >= this.$el.scrollHeight - this.$el.scrollTop) {
+          /**
+           * @event bottom
+           * @property {Event} event - DOM Event
+           * @property {VueComponent} scroller - scroller self
+           */
           this.$emit('bottom', event, this)
         }
       },
@@ -95,29 +151,31 @@
         return this.$route[this.mode]
       },
       createScrollTop () {
-        // 必须依赖 $route
-        // 是否设置
+        // The method will be exec in mounted hook.
+        // Check the app install `vue-router`,
+        // and allow to save the top scroll value.
         if (!this.$route || !this.save) return
-        // 获取 scrollTop，并且设置修改过 scrollTop
+        // Get scroller top from share state, and give the value to the scroller.
         this.$el.scrollTop = getScrollTop(this.getRoutePath(), this.name)
+        // Set createdScrollTop is true,
+        // In order to tell the scroller: the scrollTop complete initialization.
+        // After initialization, the scroller can save new scrollTop value.
         this.createdScrollTop = true
       },
       saveScrollTop () {
-        // 必须依赖 $route
-        // 是否储存
-        // 是否初始过 scrollTop
+        // Check the app install `vue-router`,
+        // and allow to save the top scroll value.
+        // And the scrollTop after initialization, it can save new value.
         if (!this.$route || !this.save || !this.createdScrollTop) return
-        // 储存 scrollTop
+        // Save new scrollTop value.
         addStorage(this.getRoutePath(), this.name, this.$el.scrollTop)
       }
     },
     mounted () {
+      // Execute createScrollTop method after a lot millisecond.
+      // Because wait the app page load thier DOM.
       this.$nextTick(() => {
-        // 等待 DOM 的加载
-        setTimeout(() => {
-          // 初始化 scrollTop
-          this.createScrollTop()
-        }, 100)
+        setTimeout(this.createScrollTop, 100)
       })
     }
   }
