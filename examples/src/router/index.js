@@ -6,6 +6,11 @@ Vue.use(VueRouter)
 const router = new VueRouter({
   routes: [
     {
+      path: '/',
+      name: 'homepage',
+      component: resolve => { require(['../components/home'], resolve) }
+    },
+    {
       path: '/loading-icon',
       name: 'loadingIcon',
       component: resolve => { require(['../components/loadingIcon'], resolve) }
