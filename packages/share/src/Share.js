@@ -1,12 +1,17 @@
 /**
- * Component level state shared for @human
- * @example
- * import share from '@humans/share'
- * // Do not use import { Share } from '@humans/share'.
- * // Use 'static function: share' instead of 'constructor function'.
- *
- * share.getLoading()
- */
+  * Component level state shared for @human
+  * @example
+  * // `share` is instance from `Share` class.
+  * // Use `share` instead of `Share`.
+  * import share from '@humans/share'
+  * import appLoadingIcon from './appLoadingIcon'
+  *
+  * // set
+  * share.setLoading(appLoadingIcon)
+  *
+  * // get
+  * share.getLoading()
+  */
 export default class Share {
   /**
    * constructor
