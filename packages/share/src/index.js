@@ -35,7 +35,8 @@ export class Share {
    * @param {VueObject} vueElement - e.g. { name: 'mn-card' }
    */
   setLoading (vueElement) {
-    return this.state.loading = vueElement
+    this.state.loading = vueElement
+    return this.state.loading
   }
 }
 
