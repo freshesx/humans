@@ -1,7 +1,7 @@
 {
-  "name": "@humans/options",
+  "name": "@humans/share",
   "version": "3.0.0-alpha.3",
-  "description": "Share some options in @human components.",
+  "description": "Component state shared in @human.",
   "main": "dist/main.common.js",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
