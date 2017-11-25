@@ -13,10 +13,9 @@
 </template>
 
 <script>
-  import Element from '../../utils/Element'
   import { addStorage, getScrollTop } from './storage'
 
-  export default new Element({
+  export default {
     name: 'mn-scroller',
     props: {
       save: {
@@ -121,5 +120,5 @@
         }, 100)
       })
     }
-  })
+  }
 </script>
