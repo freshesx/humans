@@ -1,7 +1,9 @@
-import scrollers from './scrollers'
+import Scrollers from './Scrollers'
 
 describe('srcollers', () => {
-  test('srcollers.addScroller', () => {
+  const scrollers = new Scrollers()
+
+  test('srcollers.addScroller with top 200', () => {
     scrollers.addScroller('/', 'default', 200)
     expect(scrollers.scrollers).toEqual([
       {
@@ -9,6 +11,18 @@ describe('srcollers', () => {
         name: 'default',
         top: 200,
         left: 0
+      }
+    ])
+  })
+
+  test('srcollers.addScroller with left 300', () => {
+    scrollers.addScroller('/', 'default', undefined, 300)
+    expect(scrollers.scrollers).toEqual([
+      {
+        path: '/',
+        name: 'default',
+        top: 0,
+        left: 300
       }
     ])
   })
@@ -41,7 +55,7 @@ describe('srcollers', () => {
   })
 
   test('srcollers.getScroller with only left 500', () => {
-    scrollers.addScroller('/', 'default', null, 500)
+    scrollers.addScroller('/', 'default', undefined, 500)
     const output = scrollers.getScroller('/', 'default')
     expect(output).toEqual({ top: 0, left: 500 })
   })
