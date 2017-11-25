@@ -123,23 +123,3 @@
     }
   })
 </script>
-
-<style lang="scss">
-  .mn-scroller {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-
-    &.is-hide-bar {
-      -ms-overflow-style: none;
-
-      &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
-      }
-    }
-  }
-</style>
