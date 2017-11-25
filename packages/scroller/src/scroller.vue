@@ -14,7 +14,12 @@
 </template>
 
 <script>
-  import scrollers from './scrollers'
+  import Scrollers from './Scrollers'
+
+  /**
+   * Scrollers instance to save scrollers.
+   */
+  const scrollers = new Scrollers()
 
   /**
    * Scroller component

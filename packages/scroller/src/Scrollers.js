@@ -1,7 +1,7 @@
 /**
  * Save scrollers top and left by thier path and own name
  */
-class Scrollers {
+export default class Scrollers {
   /**
    * Constructor
    */
@@ -74,9 +74,3 @@ class Scrollers {
     return { top, left }
   }
 }
-
-/**
- * Scroller protected function
- * @protected
- */
-export default new Scrollers()
