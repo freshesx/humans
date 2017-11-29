@@ -1,3 +1,7 @@
+## 2.8.2
+
+* 【修复】修复 actionSheet 和 cell 的 translate bug
+
 ## 2.8.1
 
 * 【修复】修复 date 的位数问题
