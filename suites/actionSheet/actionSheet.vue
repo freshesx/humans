@@ -9,7 +9,7 @@
       <mn-card class="has-none-margin-bottom" v-if="cancelButton" rounded>
         <mn-card-btns>
           <button class="has-blue-text" @click="hide">
-            <strong>{{ $t('mn.popup.cancelText') }}</strong>
+            <strong>{{ cancelText }}</strong>
           </button>
         </mn-card-btns>
       </mn-card>
@@ -38,6 +38,10 @@
       cancelButton: {
         type: Boolean,
         default: true
+      },
+      cancelText: {
+        type: String,
+        default: '取消'
       }
     },
     computed: {
