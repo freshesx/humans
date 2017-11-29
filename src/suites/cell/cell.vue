@@ -7,7 +7,7 @@
         <mn-cell-icon :checked="contents && isAllChecked" @click.native.stop="onAddSelections"></mn-cell-icon>
       </mn-card-prefix>
       <mn-card-prefix v-if="!hideSelections">
-        {{ $t('mn.cell.allSelectedText') }}
+        {{ allSelectedText }}
         ({{ !contents ? 0 : selections.length }})
       </mn-card-prefix>
       <!-- 顶部的中间区域 -->
@@ -26,7 +26,7 @@
     <!-- 当没有一个记录时，则显示提示 -->
     <mn-card-item v-if="contents && contents.length === 0">
       <mn-card-body :class="'has-center-text'">
-        <p>{{ $t('mn.cell.noDataText') }}</p>
+        <p>{{ noDataText }}</p>
       </mn-card-body>
     </mn-card-item>
     <!-- default 的 slot 区域，外部调用时，请使用 "template slot"!! 插槽 -->
@@ -84,6 +84,14 @@
         default: () => {
           return []
         }
+      },
+      allSelectedText: {
+        type: String,
+        default: '全选'
+      },
+      noDataText: {
+        type: String,
+        default: '没有找到合适的记录'
       }
     },
     methods: {
