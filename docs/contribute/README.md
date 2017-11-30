@@ -13,6 +13,12 @@ yarn start
 yarn run build
 ```
 
+### start unit test
+
+``` bash
+yarn test --watch
+```
+
 ### build es6 api docs
 
 ``` bash
