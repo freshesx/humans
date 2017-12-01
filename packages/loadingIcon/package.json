@@ -1,6 +1,6 @@
 {
   "name": "@humans/loading-icon",
-  "version": "3.0.0-alpha.4",
+  "version": "3.0.0-alpha.5",
   "description": "Loading icon component",
   "main": "dist/main.common.js",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/share": "^3.0.0-alpha.4",
+    "@humans/share": "^3.0.0-alpha.5",
     "vue": "^2.5.0"
   },
   "publishConfig": {
