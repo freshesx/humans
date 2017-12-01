@@ -44,6 +44,11 @@ const router = new VueRouter({
       path: '/btn',
       name: 'btn',
       component: resolve => { require(['../components/btn'], resolve) }
+    },
+    {
+      path: '/link',
+      name: 'link',
+      component: resolve => { require(['../components/link'], resolve) }
     }
   ]
 })
