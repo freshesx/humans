@@ -1,54 +1,15 @@
 <template>
-  <page>
-    <mn-letter>
-      <mn-letter-body>
-        <h1>Container</h1>
-      </mn-letter-body>
-    </mn-letter>
-
-    <mn-section>
-      <div class="example-tile">
-        <h1>Container</h1>
-        <small v-for="(name, key) in nameOfScreens">
-          {{ name }}
-          <span v-if="key !== nameOfScreens.length - 1"> / </span>
-        </small>
-      </div>
-    </mn-section>
-
-    <mn-section>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-body>
-            View mobile and desktop
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
-    </mn-section>
-  </page>
+  <mn-container>
+    <div style="height: 100px; background: #999; text-align: center; line-height: 100px;">
+      Hello
+    </div>
+  </mn-container>
 </template>
 
 <script>
-  import Human from 'vue-human'
+  import container from '@humans/container'
 
   export default {
-    data () {
-      return {
-        screens: Human.$screens
-      }
-    },
-    computed: {
-      nameOfScreens () {
-        return this.screens.map(item => item.name)
-      }
-    }
+    components: Object.assign({}, container)
   }
 </script>
-
-<style lang="scss" scoped>
-  .example-tile {
-    background: #ddd;
-    text-align: center;
-    padding: 1rem 0;
-  }
-</style>

@@ -29,6 +29,11 @@ const router = new VueRouter({
       path: '/scroller',
       name: 'scroller',
       component: resolve => { require(['../components/scroller'], resolve) }
+    },
+    {
+      path: '/container',
+      name: 'container',
+      component: resolve => { require(['../components/container'], resolve) }
     }
   ]
 })
