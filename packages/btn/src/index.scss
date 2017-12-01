@@ -1,0 +1,181 @@
+@import "../../../shares/scss/vars";
+@import "../../../shares/scss/mixins/media";
+@import "../../../shares/scss/mixins/merge";
+
+// Built-in theme
+@import "./btn-primary";
+@import "./btn-secondary";
+@import "./btn-warning";
+@import "./btn-error";
+@import "./btn-inverse";
+
+$-mn-button-default-theme: map-collect(
+  $-button-primary,
+  $-button-secondary,
+  $-button-warning,
+  $-button-error,
+  $-button-inverse
+);
+
+// 公有属性，可修改
+$mn-button-theme:               () !default;
+$mn-button-mobile-radius:       $mobile-radius !default;
+$mn-button-desktop-radius:      $desktop-radius !default;
+
+// 私有属性
+$-mn-button-theme: map-merge($-mn-button-default-theme, $mn-button-theme);
+$-mn-button-height: 2.75rem;
+$-mn-button-sm-height: 2rem;
+
+.mn-btn {
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  height: $-mn-button-height;
+  line-height: 1.5rem;
+  padding: (($-mn-button-height - 1.5rem) / 2) 1rem;
+  border-radius: $mn-button-mobile-radius;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  vertical-align: middle;
+
+  @include min-screen('desktop') {
+    border-radius: $mn-button-desktop-radius;
+  }
+
+  &.is-margin-bottom {
+    margin-bottom: 1rem;
+  }
+
+  &.is-sm {
+    height: $-mn-button-sm-height;
+    padding: (($-mn-button-sm-height - 1.5rem) / 2) 1rem;
+    border-radius: $mn-button-mobile-radius * 0.75;
+    font-size: 0.875rem;
+
+    @include min-screen('desktop') {
+      border-radius: $mn-button-desktop-radius;
+    }
+  }
+
+  &.is-block {
+    display: block;
+    width: 100%;
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+  }
+
+  &.is-circle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    padding: 0;
+  }
+
+  &.is-circle.is-sm {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+  }
+}
+
+//
+// @class .btn.btn-primary, etc.
+//
+@mixin btn-style($bg, $color) {
+  background-color: $bg;
+  color: $color;
+
+  &:hover {
+    background-color: darken($bg, 10%);
+  }
+}
+
+@mixin btn-bg-color ($options) {
+  @if map-get($options, "bg") {
+    background-color: map-get($options, "bg");
+  }
+
+  @if map-get($options, "color") {
+    color: map-get($options, "color");
+  }
+
+  @if map-get($options, "border") {
+    border-color: map-get($options, "border");
+    border-width: 1px;
+    border-style: solid;
+  }
+}
+
+@mixin btn-set-type ($name, $value) {
+  &.is-#{$name} {
+    $normal: map-get($value, "normal");
+    $hover: map-get($value, "hover");
+    $active: map-get($value, "active");
+    $disable: map-get($value, "disable");
+
+    @if $hover == null {
+      $hover: $normal;
+    }
+
+    @if $active == null {
+      $active: $normal;
+    }
+
+    @if $disable == null {
+      $disable: $normal;
+    }
+
+    // normal
+    & {
+      @if $normal {
+        @include btn-bg-color($normal);
+      }
+    }
+
+    // hover
+    &:hover {
+      @if $hover {
+        @include btn-bg-color($hover);
+      }
+    }
+
+    // active
+    &.is-active,
+    &.is-active:hover,
+    &:active {
+      background: #fff;
+
+      @if $active {
+        @include btn-bg-color($active);
+      }
+    }
+
+    // disabled
+    &.is-disabled {
+      &,
+      &:hover,
+      &.is-active,
+      &.is-active:hover,
+      &:active {
+        @if $disable {
+          @include btn-bg-color($disable);
+        }
+      }
+    }
+  }
+}
+
+.mn-btn {
+  //
+  // @class .btn.is-success, etc.
+  //
+  @each $name, $value in $-mn-button-theme {
+    @include btn-set-type($name, $value);
+  }
+}
