@@ -1,0 +1,34 @@
+@import "../../../shares/scss/vars";
+@import "../../../shares/scss/mixins/media";
+
+$mn-container-grid-gutters: $grid-gutters;
+
+.mn-container {
+  width: 100%;
+
+  @include screen(tablet) {
+    padding-left: $mn-container-grid-gutters;
+    padding-right: $mn-container-grid-gutters;
+  }
+
+  @include min-screen(desktop) {
+    width: media-breakpoint-get(desktop);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include min-screen(widescreen) {
+    width: media-breakpoint-get(widescreen);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.mn-container.is-fluid {
+  width: 100%;
+
+  @include min-screen(tablet) {
+    padding-left: $mn-container-grid-gutters;
+    padding-right: $mn-container-grid-gutters;
+  }
+}
