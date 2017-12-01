@@ -39,6 +39,11 @@ const router = new VueRouter({
       path: '/section',
       name: 'section',
       component: resolve => { require(['../components/section'], resolve) }
+    },
+    {
+      path: '/btn',
+      name: 'btn',
+      component: resolve => { require(['../components/btn'], resolve) }
     }
   ]
 })
