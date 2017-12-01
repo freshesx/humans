@@ -1,0 +1,25 @@
+@import "../../../shares/scss/vars";
+@import "../../../shares/scss/mixins/media";
+
+$mn-section-grid-gutters: $grid-gutters;
+
+.mn-section {
+  margin-bottom: $mn-section-grid-gutters;
+}
+
+.mn-section-btn {
+  padding: 0 $mn-section-grid-gutters;
+  margin-bottom: $mn-section-grid-gutters / 2;
+
+  @include min-screen(tablet) {
+    padding: 0;
+  }
+}
+
+.mn-section-note {
+  color: #666;
+  font-size: 0.875rem;
+  padding-left: $mn-section-grid-gutters;
+  padding-right: $mn-section-grid-gutters;
+  margin-bottom: $mn-section-grid-gutters / 2;
+}
