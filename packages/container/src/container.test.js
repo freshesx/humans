@@ -1,5 +1,5 @@
 import { mount } from 'vue-test-utils'
-import container from './container'
+import container from './container.vue'
 
 describe('container.vue', () => {
   test('name', () => {
@@ -27,7 +27,6 @@ describe('container.vue', () => {
         default: '<div/>'
       }
     })
-    console.log(wrapper.html())
     expect(wrapper.html()).toBe('<div class="mn-container"><div></div></div>')
   })
 })
