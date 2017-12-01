@@ -9,6 +9,9 @@
 @import "./btn-error";
 @import "./btn-inverse";
 
+// Import external css
+@import "~@humans/icon/dist/main.css";
+
 $-mn-button-default-theme: map-collect(
   $-button-primary,
   $-button-secondary,
