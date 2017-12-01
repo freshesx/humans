@@ -6,26 +6,36 @@
     :title="title"
     @click="click">
     <mn-icon :name="icon" :loading="loading" v-if="icon || loading"></mn-icon>
+    <!-- Link btn text contents -->
     <slot></slot>
   </a>
 </template>
 
 <script>
-  import Element from '../../utils/Element'
-  import Button from '../button/button'
+  import btn from '@humans/btn'
 
-  export default new Element({
+  /**
+   * Link component from btn component
+   */
+  export default {
     name: 'mn-link',
-    mixins: [ Button ],
+    mixins: [ btn['mn-btn'] ],
     props: {
+      /**
+       * Href string
+       */
       href: {
         type: String
       },
+      /**
+       * $router Object or String
+       */
       to: {
         type: [String, Object]
       }
     },
     computed: {
+      // If has to and $router, parse href. Or use string href.
       computedHref () {
         if (this.to && this.$router) {
           const { href } = this.$router.resolve(this.to)
@@ -35,5 +45,5 @@
         }
       }
     }
-  })
+  }
 </script>
