@@ -1,3 +1,7 @@
+## 2.8.3
+
+* 【更新】更新 datetime range 的结束时间默认设定的逻辑，保持初始值。
+
 ## 2.8.2
 
 * 【修复】修复 actionSheet 和 cell 的 translate bug
