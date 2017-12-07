@@ -125,13 +125,19 @@ export default class DatetimeRange {
 
     // 根据 fromAt 计算 toAt，增加一小时或一天
     const isTimeType = this.fromAtLayer.vm.isTimeType
-    const defaultToAt = isTimeType ? addHours(fromAt, 1) : addDay(fromAt, 1)
+
+    // 判断是否存在默认时间，如果不存在的话，
+    if (!this.toAtConfig.default) {
+      this.toAtConfig.default = isTimeType
+        ? addHours(fromAt, 1)
+        : addDay(fromAt, 1)
+    }
 
     // 等待 500 毫秒
     await this.timeout(500)
 
     // 开始时间将作为结束时间的初始时间值
-    this.showToAt({ min: fromAt, default: defaultToAt })
+    this.showToAt({ min: fromAt })
   }
 
   /**
