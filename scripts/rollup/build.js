@@ -14,10 +14,6 @@ export default packages().map(item => {
       {
         file: `packages/${item}/dist/main.esm.js`,
         format: 'es'
-      },
-      {
-        file: `packages/${item}/dist/main.common.js`,
-        format: 'cjs'
       }
     ],
     plugins: [
