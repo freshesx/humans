@@ -2,7 +2,6 @@
   "name": "@humans/container",
   "version": "3.0.0-alpha.5",
   "description": "Container component",
-  "main": "dist/main.common.js",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
   "module": "dist/main.esm.js",

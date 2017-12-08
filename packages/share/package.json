@@ -2,7 +2,6 @@
   "name": "@humans/share",
   "version": "3.0.0-alpha.5",
   "description": "Component state shared in @human.",
-  "main": "dist/main.common.js",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
   "module": "dist/main.esm.js",
