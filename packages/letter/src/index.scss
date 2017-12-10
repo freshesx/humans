@@ -1,0 +1,19 @@
+@import "../../../shares/scss/vars";
+
+$mn-letter-grid-gutters: $grid-gutters;
+
+.mn-letter {
+  display: flex;
+}
+
+.mn-letter-body {
+  flex: 1;
+  margin: $mn-letter-grid-gutters;
+}
+
+.mn-letter-action {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin: $mn-letter-grid-gutters;
+}
