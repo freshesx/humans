@@ -1,0 +1,42 @@
+@import "../../../shares/scss/mixins/media";
+@import "../../../shares/scss/vars";
+
+$mn-image-mobile-radius:      $mobile-radius !default;
+$mn-image-desktop-radius:     $desktop-radius !default;
+
+.mn-image {
+}
+
+.mn-image-holder {
+  display: none;
+  width: 100%;
+  background-color: #ddd;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  filter: blur(50px);
+
+  &.is-active {
+    display: block;
+  }
+}
+
+.mn-image-source {
+  display: none;
+  width: 100%;
+
+  &.is-rounded {
+    border-radius: $mn-image-mobile-radius;
+
+    @include min-screen('desktop') {
+      border-radius: $mn-image-desktop-radius;
+    }
+  }
+
+  &.is-circle {
+    border-radius: 50% 50%;
+  }
+
+  &.is-active {
+    display: block;
+  }
+}
