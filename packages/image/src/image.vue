@@ -70,12 +70,12 @@
         if (!this.source) return
 
         if (this.$refs.source.complete) {
-          this.showSource()
+          this.setShowSource()
         } else {
-          this.$refs.source.addEventListener('load', this.showSource)
+          this.$refs.source.addEventListener('load', this.setShowSource)
         }
       },
-      showSource () {
+      setShowSource () {
         this.showSource = true
       }
     },
@@ -83,7 +83,7 @@
       this.observerSource()
     },
     beforeDestroy () {
-      this.$refs.source.removeEventListener('load', this.showSource)
+      this.$refs.source.removeEventListener('load', this.setShowSource)
     }
   }
 </script>
