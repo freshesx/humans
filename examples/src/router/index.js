@@ -59,6 +59,11 @@ const router = new VueRouter({
       path: '/letter',
       name: 'letter',
       component: resolve => { require(['../components/letter'], resolve) }
+    },
+    {
+      path: '/assistive-bar',
+      name: 'assistiveBar',
+      component: resolve => { require(['../components/assistiveBar'], resolve) }
     }
   ]
 })
