@@ -1,8 +1,8 @@
-<document>
-  不建议采用绝对相关定位，当图片多时非常影响性能
-</document>
-
 <template>
+  <!--
+    Can't use relative position.
+    When there are too much images, the performance is very poor.
+  -->
   <div class="mn-image">
     <div class="mn-image-holder"
       :class="{ 'is-active': !showSource }"
@@ -21,24 +21,43 @@
 </template>
 
 <script>
+  /**
+   * The image component
+   */
   export default {
     name: 'mn-image',
     props: {
+      /**
+       * image title
+       */
       title: String,
+      /**
+       * image alt
+       */
       alt: String,
-      // 缩略图地址
+      /**
+       * image thumb
+       * if can't set thumb, it will use gray background.
+       */
       thumb: String,
-      // 原图地址
+      /**
+       * real image source
+       */
       source: String,
-      // ratio 表示的宽高比，如宽 200px，宽 100px，则 ratio 为 0.5
+      /**
+       * image ratio, if width is 200px, and height is 100px,
+       * then the ratio should be 0.5.
+       */
       ratio: {
         type: Number,
         default: 1
       },
-      // type 起到修饰图片的作用，rounded 表示圆角图片，circle 表示圆形图片
+      /**
+       * rounded or circle type
+       */
       type: {
         type: String,
-        validator: val => ['rounded', 'circle'].includes(val)
+        validator: val => ['rounded', 'circle'].indexOf(val) > -1
       }
     },
     data () {
@@ -51,18 +70,20 @@
         if (!this.source) return
 
         if (this.$refs.source.complete) {
-          this.showSource = true
+          this.showSource()
         } else {
-          this.$refs.source.addEventListener('load', () => {
-            this.showSource = true
-          })
+          this.$refs.source.addEventListener('load', this.showSource)
         }
+      },
+      showSource () {
+        this.showSource = true
       }
     },
     mounted () {
-      this.$nextTick(() => {
-        this.observerSource()
-      })
+      this.observerSource()
+    },
+    beforeDestroy () {
+      this.$refs.source.removeEventListener('load', this.showSource)
     }
   }
 </script>
