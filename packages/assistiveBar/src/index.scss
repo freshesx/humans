@@ -1,0 +1,40 @@
+@import "../../../shares/scss/vars";
+@import "../../../shares/scss/mixins/media";
+
+// Import external css
+@import "~@humans/icon/dist/main.css";
+
+.mn-assistive-bar {
+  width: 100%;
+  height: 0;
+
+  @include min-screen(desktop) {
+    display: none;
+  }
+}
+
+.mn-assistive-bar-btn {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  left: 1rem;
+  bottom: 1rem;
+
+  &.is-animation {
+    transition-duration: 500ms;
+  }
+}
+
+.mn-assistive-bar-item {
+  padding: 0 1.2rem;
+
+  & + & {
+    border-left: solid 1px rgba(255, 255, 255, 0.1);
+  }
+}

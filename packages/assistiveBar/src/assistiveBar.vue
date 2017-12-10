@@ -12,16 +12,11 @@
 </template>
 
 <script>
-  import Element from '../../utils/Element'
-  import iconElement from '../icon/icon'
-  import loadingIconElement from '../loadingIcon/loadingIcon'
+  import icon from '@humans/icon'
 
-  export default new Element({
+  export default {
     name: 'mn-assistive-bar',
-    components: {
-      ...iconElement.insert(),
-      ...loadingIconElement.insert()
-    },
+    components: Object.assign({}, icon),
     props: {
       show: Boolean
     },
@@ -125,45 +120,5 @@
     beforeDestroy () {
       window.removeEventListener('resize', this.setOffset)
     }
-  })
+  }
 </script>
-
-<style lang="scss">
-  @import "../../scss/vars";
-  @import "../../scss/mixins/media";
-
-  .mn-assistive-bar {
-    width: 100%;
-    height: 0;
-
-    @include min-screen(desktop) {
-      display: none;
-    }
-  }
-
-  .mn-assistive-bar-btn {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 44px;
-    height: 44px;
-    border-radius: 22px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    left: 1rem;
-    bottom: 1rem;
-
-    &.is-animation {
-      transition-duration: 500ms;
-    }
-  }
-
-  .mn-assistive-bar-item {
-    padding: 0 1.2rem;
-
-    & + & {
-      border-left: solid 1px rgba(255, 255, 255, 0.1);
-    }
-  }
-</style>
