@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import human from '@humans/base'
+import human from './human'
 import router from './router'
 import app from './app'
 
