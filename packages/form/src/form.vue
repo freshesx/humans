@@ -73,6 +73,24 @@
          * @property {this} form - form self
          */
         this.$emit('error', event, this)
+      },
+      /**
+       * Start loading status
+       * @public
+       * @return {this}     - Button self
+       */
+      start () {
+        this.loading = true
+        return this
+      },
+      /**
+       * Finish loading status
+       * @public
+       * @return {this}     - Button self
+       */
+      finish () {
+        this.loading = false
+        return this
       }
     }
   }
