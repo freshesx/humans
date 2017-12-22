@@ -16,7 +16,7 @@
       }
     },
     methods: {
-      submit ($event) {
+      submit (event) {
         // If the form is loading, disable submit.
         if (this.loading) return
 
@@ -31,18 +31,48 @@
 
         // Check invalid
         if (!this.validate.$invalid) {
-          this.emitSuccess($event)
+          this.emitSuccess(event)
         } else {
-          this.emitError($event)
+          this.emitError(event)
         }
       },
-      emitSuccess ($event) {
-        this.$emit('submit', $event, this, true)
-        this.$emit('success', $event, this)
+      emitSuccess (event) {
+        /**
+         * Submit success event,
+         * suggest to use `success` event.
+         * @event submit
+         * @property {Event} event - DOM Event
+         * @property {this} form - form self
+         * @property {Boolean} success - success
+         */
+        this.$emit('submit', event, this, true)
+
+        /**
+         * Success submit event
+         * @event success
+         * @property {Event} event - DOM Event
+         * @property {this} form - form self
+         */
+        this.$emit('success', event, this)
       },
-      emitError ($event) {
-        this.$emit('submit', $event, this, false)
-        this.$emit('error', $event, this)
+      emitError (event) {
+        /**
+         * Submit error event,
+         * suggest to use `error` event.
+         * @event submit
+         * @property {Event} event - DOM Event
+         * @property {this} form - form self
+         * @property {Boolean} error - error
+         */
+        this.$emit('submit', event, this, false)
+
+        /**
+         * Error submit event
+         * @event error
+         * @property {Event} event - DOM Event
+         * @property {this} form - form self
+         */
+        this.$emit('error', event, this)
       }
     }
   }
