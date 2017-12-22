@@ -1,19 +1,15 @@
 <template>
-  <page>
-    <mn-letter>
-      <mn-letter-body>
-        <h1>Validation Form</h1>
-      </mn-letter-body>
-    </mn-letter>
-
+  <div>
     <mn-form>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-body>
-            form
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
+      form area
     </mn-form>
-  </page>
+  </div>
 </template>
+
+<script>
+  import form from '@humans/form'
+
+  export default {
+    components: Object.assign({}, form)
+  }
+</script>
