@@ -5,9 +5,16 @@
 </template>
 
 <script>
+  /**
+   * Form component
+   */
   export default {
     name: 'mn-form',
     props: {
+      /**
+       * validate Object, you can set this value through Vuelidate.
+       * If the value is undefined, the form will not check validation.
+       */
       validate: Object
     },
     data () {
