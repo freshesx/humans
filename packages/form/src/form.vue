@@ -5,9 +5,7 @@
 </template>
 
 <script>
-  import Element from '../../utils/Element'
-
-  export default new Element({
+  export default {
     name: 'mn-form',
     props: {
       validate: Object
@@ -19,15 +17,19 @@
     },
     methods: {
       submit ($event) {
+        // If the form is loading, disable submit.
         if (this.loading) return
 
+        // If validate prop is undefined, then return success.
         if (!this.validate) {
           this.emitSuccess()
           return
         }
 
+        // Touch validate prop by vuelidate.
         this.validate.$touch()
 
+        // Check invalid
         if (!this.validate.$invalid) {
           this.emitSuccess($event)
         } else {
@@ -43,5 +45,5 @@
         this.$emit('error', $event, this)
       }
     }
-  })
+  }
 </script>
