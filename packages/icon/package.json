@@ -9,7 +9,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/loadingIcon": "^3.0.0-alpha.1"
+    "@humans/loading-icon": "^3.0.0-alpha.1"
   },
   "publishConfig": {
     "access": "public"

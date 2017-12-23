@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import loadingIcon from '@humans/loadingIcon'
+  import loadingIcon from '@humans/loading-icon'
 
   /**
    * Icon component

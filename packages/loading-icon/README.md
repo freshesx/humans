@@ -1,4 +1,4 @@
-# @humans/loadingIcon
+# @humans/loading-icon
 
 ### Base usage
 
@@ -23,7 +23,7 @@ share.setLoading(customIcon)
 
 <script>
   import customIcon from './customIcon.vue'
-  import loadingIcon from '@humans/loadingIcon'
+  import loadingIcon from '@humans/loading-icon'
 
   export default {
     components: {
@@ -43,7 +43,7 @@ share.setLoading(customIcon)
 ``` javascript
 // appLoadingIcon.vue
 import customIcon from './customIcon.vue'
-import loadingIcon from '@humans/loadingIcon'
+import loadingIcon from '@humans/loading-icon'
 
 export default {
   name: 'app-loading-icon',

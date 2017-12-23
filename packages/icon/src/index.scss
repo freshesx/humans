@@ -1,7 +1,7 @@
 @import "../../../shares/scss/vars";
 
 // Import external css
-@import "~@humans/loadingIcon/dist/main.css";
+@import "~@humans/loading-icon/dist/main.css";
 
 // 私有属性
 $-mn-icon-width: $reboot-font-size * $reboot-line-height !default;    // # 等于 24px 图标默认宽度
