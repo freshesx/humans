@@ -5,11 +5,8 @@
     "packages/*"
   ],
   "commands": {
-    "publish": {
-      "ignore": [
-        "*.md",
-        "test/**"
-      ]
+    "bootstrap": {
+      "hoist": true
     }
   },
   "npmClient": "yarn",
