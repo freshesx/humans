@@ -1,0 +1,17 @@
+{
+  "name": "@humans/validator",
+  "version": "3.0.0-alpha.9",
+  "description": "Validator builder",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "vuelidate": "^0.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
