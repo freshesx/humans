@@ -9,7 +9,9 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/share": "^3.0.0-alpha.9",
+    "@humans/share": "^3.0.0-alpha.9"
+  },
+  "peerDependencies": {
     "vue": "^2.5.0"
   },
   "publishConfig": {
