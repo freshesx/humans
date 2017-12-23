@@ -1,6 +1,6 @@
 {
   "name": "@humans/link",
-  "version": "3.0.0-alpha.7",
+  "version": "3.0.0-alpha.8",
   "description": "Link component",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/btn": "^3.0.0-alpha.7"
+    "@humans/btn": "^3.0.0-alpha.8"
   },
   "publishConfig": {
     "access": "public"
