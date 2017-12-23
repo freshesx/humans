@@ -24,7 +24,7 @@
     "test": "yarn run test:unit",
     "test:example": "node scripts/house/development.js",
     "test:unit": "jest",
-    "publish:beta": "yarn run build && lerna publish"
+    "alpha": "yarn run build && lerna publish"
   },
   "devDependencies": {
     "@freshes/house": "^1.1.0",
