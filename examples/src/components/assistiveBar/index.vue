@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import assistiveBar from '@humans/assistiveBar'
+  import assistiveBar from '@humans/assistive-bar'
 
   export default {
     components: Object.assign({}, assistiveBar)
