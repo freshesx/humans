@@ -1,6 +1,6 @@
 {
   "name": "@humans/assistiveBar",
-  "version": "3.0.0-alpha.6",
+  "version": "3.0.0-alpha.7",
   "description": "Icon component",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/icon": "^3.0.0-alpha.6"
+    "@humans/icon": "^3.0.0-alpha.7"
   },
   "publishConfig": {
     "access": "public"
