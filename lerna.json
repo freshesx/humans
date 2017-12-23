@@ -4,6 +4,14 @@
   "packages": [
     "packages/*"
   ],
+  "commands": {
+    "publish": {
+      "ignore": [
+        "*.md",
+        "test/**"
+      ]
+    }
+  },
   "npmClient": "yarn",
   "npmClientArgs": [
     "--no-lockfile"
