@@ -1,5 +1,6 @@
 <template>
   <form class="mn-form" @submit.prevent="submit" novalidate>
+    <!-- show form contents -->
     <slot></slot>
   </form>
 </template>
