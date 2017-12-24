@@ -1,0 +1,18 @@
+@import "../../../shares/scss/vars";
+
+$mn-label-width: 6rem;
+$mn-label-error-color: $pink;
+
+.mn-label {
+  display: block;
+  width: $mn-label-width;
+
+  // @todo add is-success for label
+  &.is-success {
+
+  }
+
+  &.is-error {
+    color: $mn-label-error-color;
+  }
+}
