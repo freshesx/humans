@@ -5,7 +5,8 @@
     "\\.js$"
   ],
   "excludes": [
-    "dist"
+    "dist",
+    "node_modules"
   ],
   "plugins": [
     {
