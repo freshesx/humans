@@ -1,19 +1,27 @@
 <template>
   <label
     class="mn-label"
-    :class="{ 'is-error': isInvalid }">
+    :class="{ 'is-error': error }">
+    <!-- show label contents -->
     <slot></slot>
   </label>
 </template>
 
 <script>
+  /**
+   * Label component for form
+   */
   export default {
     name: 'mn-label',
     props: {
+      /**
+       * validate object by Vuelidate $v
+       * @see https://github.com/monterail/vuelidate
+       */
       validate: Object
     },
     computed: {
-      isInvalid () {
+      error () {
         return this.validate ? this.validate.$error : false
       }
     }
