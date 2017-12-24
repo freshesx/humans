@@ -15,6 +15,7 @@
       /**
        * validate Object, you can set this value through Vuelidate.
        * If the value is undefined, the form will not check validation.
+       * You should pass this.$v object into there, not this.$v.models.age.
        * @see https://github.com/monterail/vuelidate
        */
       validate: Object
