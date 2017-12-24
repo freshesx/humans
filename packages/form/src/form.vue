@@ -14,6 +14,7 @@
       /**
        * validate Object, you can set this value through Vuelidate.
        * If the value is undefined, the form will not check validation.
+       * @see https://github.com/monterail/vuelidate
        */
       validate: Object
     },
