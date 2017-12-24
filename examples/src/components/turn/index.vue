@@ -1,12 +1,27 @@
 <template>
   <div>
-    <h1>Turn</h1>
     <div>
-      <mn-turn :data="true" v-model="models.policy"></mn-turn>
+      <h1>Turn 1</h1>
+      <div>
+        <mn-turn v-model="models.policy"></mn-turn>
+      </div>
+      <h1>Value</h1>
+      <div>
+        {{ models.policy }}
+      </div>
     </div>
-    <h1>Value</h1>
+
+    <hr>
+
     <div>
-      {{ models.policy }}
+      <h1>Turn 2</h1>
+      <div>
+        <mn-turn data="male" v-model="models.sex"></mn-turn>
+      </div>
+      <h1>Value</h1>
+      <div>
+        {{ models.sex }}
+      </div>
     </div>
   </div>
 </template>
@@ -19,7 +34,8 @@
     data () {
       return {
         models: {
-          policy: undefined
+          policy: undefined,
+          sex: undefined
         }
       }
     }
