@@ -1,0 +1,95 @@
+@import "../../../shares/scss/vars";
+
+// Import external css
+@import "~@humans/icon/dist/main.css";
+
+@keyframes mn-input-control {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mn-input-mask {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.mn-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &-control {
+    flex: 1 1;
+    display: block;
+    width: 100%;
+    height: 1.5rem;
+    line-height: 1.5;
+    border: none;
+    padding: 0;
+    background: transparent;
+    outline: none;
+    -webkit-appearance: none;
+
+    &.is-focus {
+      animation: 900ms mn-input-control;
+    }
+  }
+
+  &.is-lg {
+    .mn-input-control {
+      height: 3.5rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  &-mask {
+    $radius: 80px;
+    position: absolute;
+    width: $radius;
+    height: $radius;
+    background: rgba($blue, 0.03);
+    transform: scale(0);
+    border-radius: $radius / 2;
+    top: $radius * -0.5 + 28px;
+    left: $radius * -0.1;
+
+    &.is-focus {
+      animation: 366ms mn-input-mask;
+    }
+  }
+
+  &-clear {
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  &-clear-enter-active {
+    transition: all 0.2s ease;
+  }
+
+  &-clear-leave-active {
+    transition: all 0.2s ease;
+  }
+
+  &-clear-enter,
+  &-clear-leave-active {
+    opacity: 0;
+  }
+
+  &-clear-icon {
+    color: rgba(0, 0, 0, 0.2);
+  }
+}
