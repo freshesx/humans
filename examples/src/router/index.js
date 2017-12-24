@@ -69,6 +69,11 @@ const router = new VueRouter({
       path: '/form',
       name: 'form',
       component: resolve => { require(['../components/form'], resolve) }
+    },
+    {
+      path: '/turn',
+      name: 'turn',
+      component: resolve => { require(['../components/turn'], resolve) }
     }
   ]
 })
