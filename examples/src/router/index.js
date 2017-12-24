@@ -74,6 +74,11 @@ const router = new VueRouter({
       path: '/turn',
       name: 'turn',
       component: resolve => { require(['../components/turn'], resolve) }
+    },
+    {
+      path: '/counter',
+      name: 'counter',
+      component: resolve => { require(['../components/counter'], resolve) }
     }
   ]
 })
