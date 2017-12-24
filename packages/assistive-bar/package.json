@@ -9,7 +9,8 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/icon": "^3.0.0-alpha.9"
+    "@humans/icon": "^3.0.0-alpha.9",
+    "vue-human-icons": "^1.4.0"
   },
   "publishConfig": {
     "access": "public"

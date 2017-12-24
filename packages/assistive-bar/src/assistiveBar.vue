@@ -2,10 +2,10 @@
   <div class="mn-assistive-bar">
     <div class="mn-assistive-bar-btn" ref="btn" @touchstart="onStart" @touchmove="onMove" @touchend="onEnd" :class="{ 'is-animation': enableAnimation }" :style="{ top: `${y}px`, left: `${x}px` }">
       <div class="mn-assistive-bar-item" @click="onBack">
-        <mn-icon :name="isRootRoute ? icons.home : icons.back" :loading="backLoading"></mn-icon>
+        <mn-icon :name="isRootRoute ? homeIcon : backIcon" :loading="backLoading"></mn-icon>
       </div>
       <div class="mn-assistive-bar-item" @click="onOpen">
-        <mn-icon :name="icons.keypad" :loading="menuLoading"></mn-icon>
+        <mn-icon :name="keypadIcon" :loading="menuLoading"></mn-icon>
       </div>
     </div>
   </div>
@@ -13,6 +13,9 @@
 
 <script>
   import icon from '@humans/icon'
+  import backIcon from 'vue-human-icons/js/ios/arrow-back.js'
+  import homeIcon from 'vue-human-icons/js/android/home.js'
+  import keypadIcon from 'vue-human-icons/js/ios/keypad.js'
 
   export default {
     name: 'mn-assistive-bar',
@@ -31,11 +34,9 @@
         height: 0,
         btnWidth: 118,
         isRootRoute: true,
-        icons: {
-          back: require('vue-human-icons/js/ios/arrow-back'),
-          home: require('vue-human-icons/js/android/home'),
-          keypad: require('vue-human-icons/js/ios/keypad')
-        }
+        backIcon,
+        homeIcon,
+        keypadIcon
       }
     },
     watch: {
