@@ -24,25 +24,37 @@
   import minusIcon from 'vue-human-icons/js/ios/minus-empty'
   import plusIcon from 'vue-human-icons/js/ios/plus-empty'
 
+  /**
+   * Counter component
+   */
   export default {
     name: 'mn-counter',
     components: Object.assign({}, icon),
     props: {
+      /**
+       * Counter value
+       */
       value: {
         type: Number,
         default: 0
       },
-      // options: Multiplied increase or reduce of the value
+      /**
+       * Step of increase or reduce the value
+       */
       step: {
         type: Number,
         default: 1
       },
-      // options: The min value
+      /**
+       * The min value
+       */
       min: {
         type: Number,
         default: 0
       },
-      // options: The max value
+      /**
+       * The max value
+       */
       max: {
         type: Number,
         default: 999999
@@ -65,34 +77,42 @@
     methods: {
       reduceCount () {
         const newValue = this.value - this.step
-        if (newValue >= this.min) this.$emit('input', newValue)
+        if (newValue >= this.min) this.emitInput(newValue)
       },
       increaseCount () {
         const newValue = this.value + this.step
-        if (newValue <= this.max) this.$emit('input', newValue)
+        if (newValue <= this.max) this.emitInput(newValue)
       },
       input (event) {
         let newValue = parseInt(event.target.value)
 
-        // 非数字
+        // If the value is NaN, then reuse old value
         if (isNaN(newValue)) {
           newValue = this.value
           event.target.value = this.value
         }
 
-        // 不可小于最小值
+        // If the value is less than old value
         if (newValue < this.min) {
           newValue = this.min
           event.target.value = newValue
         }
 
-        // 不可大于最大值
+        // If the value is great then old value
         if (newValue > this.max) {
           newValue = this.max
           event.target.value = newValue
         }
 
-        // 输出
+        // The new value is valid
+        this.emitInput(newValue)
+      },
+      emitInput (newValue) {
+        /**
+         * Emit new value for v-model
+         * @event input
+         * @property {Number}  - The new value
+         */
         this.$emit('input', newValue)
       }
     }
