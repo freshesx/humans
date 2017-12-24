@@ -15,7 +15,7 @@
     name: 'mn-label',
     props: {
       /**
-       * validate object by Vuelidate $v
+       * vuelidate child object, e.g. this.$v.models.age, not this.$v
        * @see https://github.com/monterail/vuelidate
        */
       validate: Object
