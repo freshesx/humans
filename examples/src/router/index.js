@@ -79,6 +79,11 @@ const router = new VueRouter({
       path: '/counter',
       name: 'counter',
       component: resolve => { require(['../components/counter'], resolve) }
+    },
+    {
+      path: '/input',
+      name: 'input',
+      component: resolve => { require(['../components/input'], resolve) }
     }
   ]
 })
