@@ -5,6 +5,10 @@
 * Add parseBeforeFn, parseAfterFn, parseClearFn props to change the value.
 * The default size of input is changed to `lg`, and remove `lg` size, and add `sm` size.
 
+### @humans/checkbox
+
+* Now we rename the old `vue-human/suites/check` to the new `@humans/checkbox`. Include: `mn-checkbox`, `mn-checkbox-icon`, `mn-checkbox-item` and `mn-checkbox-tag` tags.
+
 ## 2.8.0
 
 * 【删除】移除 vue-i18n 库和多语言功能的实现，删除 locale 文件夹
