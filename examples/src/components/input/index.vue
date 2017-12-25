@@ -13,21 +13,27 @@
       ></mn-input>
     </div>
 
-    <mn-input type="password"
-       v-model="models.password"
-       placeholder="Password"
-    ></mn-input>
+    <div style="background: #fff; margin-bottom: 2rem;">
+      <mn-input type="password"
+         v-model="models.password"
+         placeholder="Password"
+      ></mn-input>
+    </div>
 
-    <mn-input v-model="models.code"
-      placeholder="Code"
-      hide-clear
-    ></mn-input>
+    <div style="background: #fff; margin-bottom: 2rem;">
+      <mn-input v-model="models.code"
+        placeholder="Code"
+        hide-clear
+      ></mn-input>
+    </div>
 
-    <mn-input v-model="models.number"
-      placeholder="Card number"
-      :parseBeforeFn="numberParseBeforeFn"
-      :parseAfterFn="numberParseAfterFn"
-    ></mn-input>
+    <div style="background: #fff; margin-bottom: 2rem;">
+      <mn-input v-model="models.number"
+        placeholder="Card number"
+        :parseBeforeFn="numberParseBeforeFn"
+        :parseAfterFn="numberParseAfterFn"
+      ></mn-input>
+    </div>
 
     <code>
       {{ models }}
