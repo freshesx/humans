@@ -1,3 +1,10 @@
+## 3.0.0
+
+### @humans/input
+
+* Add parseBeforeFn, parseAfterFn, parseClearFn props to change the value.
+* The default size of input is changed to `lg`, and remove `lg` size, and add `sm` size.
+
 ## 2.8.0
 
 * 【删除】移除 vue-i18n 库和多语言功能的实现，删除 locale 文件夹
