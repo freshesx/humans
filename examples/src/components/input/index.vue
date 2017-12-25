@@ -1,25 +1,30 @@
 <template>
   <div>
-    <mn-input v-model="models.username"
-      placeholder="Username"
-      size="lg"
-    ></mn-input>
+    <div style="background: #fff; margin-bottom: 2rem;">
+      <mn-input v-model="models.username"
+        placeholder="Username"
+      ></mn-input>
+    </div>
+
+    <div style="background: #fff; margin-bottom: 2rem;">
+      <mn-input v-model="models.username"
+        size="sm"
+        placeholder="Username"
+      ></mn-input>
+    </div>
 
     <mn-input type="password"
        v-model="models.password"
        placeholder="Password"
-       size="lg"
     ></mn-input>
 
     <mn-input v-model="models.code"
       placeholder="Code"
-      size="lg"
       hide-clear
     ></mn-input>
 
     <mn-input v-model="models.number"
       placeholder="Card number"
-      size="lg"
       :parseBeforeFn="numberParseBeforeFn"
       :parseAfterFn="numberParseAfterFn"
     ></mn-input>
