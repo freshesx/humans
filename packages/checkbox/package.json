@@ -1,0 +1,17 @@
+{
+  "name": "@humans/checkbox",
+  "version": "3.0.0-alpha.9",
+  "description": "Checkbox component",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@humans/radio": "^3.0.0-alpha.9"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

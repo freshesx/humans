@@ -1,13 +1,14 @@
 <script>
-  import Element from '../../utils/Element'
-  import radioTag from '../radio/radioTag'
+  import radio from '@humans/radio'
 
-  export default new Element({
-    name: 'mn-check-tag',
-    mixins: [ radioTag ],
+  export default {
+    name: 'mn-checkbox-tag',
+    mixins: [
+      radio['mn-radio-tag']
+    ],
     computed: {
       checked () {
-        return this.value.includes(this.data)
+        return this.value.indexOf(this.data) > -1
       }
     },
     methods: {
@@ -15,12 +16,12 @@
         if (!this.disabled) {
           this.$emit(
             'input',
-            this.value.includes(this.data)
+            this.value.indexOf(this.data) > -1
               ? this.value.filter(item => item !== this.data)
               : [ ...this.value, this.data ]
           )
         }
       }
     }
-  })
+  }
 </script>
