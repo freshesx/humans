@@ -99,6 +99,11 @@ const router = new VueRouter({
       path: '/radio',
       name: 'radio',
       component: resolve => { require(['../components/radio'], resolve) }
+    },
+    {
+      path: '/checkbox',
+      name: 'checkbox',
+      component: resolve => { require(['../components/checkbox/index.vue'], resolve) }
     }
   ]
 })
