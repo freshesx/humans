@@ -16,6 +16,17 @@
       size="lg"
       hide-clear
     ></mn-input>
+
+    <mn-input v-model="models.number"
+      placeholder="Card number"
+      size="lg"
+      :parseBeforeFn="numberParseBeforeFn"
+      :parseAfterFn="numberParseAfterFn"
+    ></mn-input>
+
+    <code>
+      {{ models }}
+    </code>
   </div>
 </template>
 
@@ -29,7 +40,18 @@
         models: {
           username: undefined,
           password: undefined,
-          code: undefined
+          code: undefined,
+          number: '123412341234123'
+        },
+        numberParseBeforeFn (value) {
+          return typeof value === 'string'
+            ? value.replace(/(....)(?=.)/g, '$1 ')
+            : value
+        },
+        numberParseAfterFn (value) {
+          return value.length > 0
+            ? value.replace(/\s/g, '')
+            : undefined
         }
       }
     }
