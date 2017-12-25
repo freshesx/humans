@@ -3,12 +3,17 @@
     <mn-card>
       <mn-radio-item :data="option.value"
         v-model="models.sex"
-        v-for="(option, key) in sexOptions" :key="key">
+        v-for="(option, key) in sexOptions"
+        :key="key"
+      >
         <mn-card-prefix action>
           <mn-radio-icon :data="option.value"
-            :value="models.sex"></mn-radio-icon>
+            :value="models.sex"
+          ></mn-radio-icon>
         </mn-card-prefix>
-        <mn-card-body>{{ option.label }}</mn-card-body>
+        <mn-card-body>
+          {{ option.label }}
+        </mn-card-body>
       </mn-radio-item>
     </mn-card>
 
@@ -16,14 +21,16 @@
       <mn-radio :data="option.value"
         v-model="models.sex"
         v-for="(option, key) in sexOptions"
-        :key="key">{{ option.label }}</mn-radio>
+        :key="key"
+      >{{ option.label }}</mn-radio>
     </div>
 
     <div>
       <mn-radio-tag :data="option.value"
         v-model="models.sex"
         v-for="(option, key) in sexOptions"
-        :key="key">{{ option.label }}</mn-radio-tag>
+        :key="key"
+      >{{ option.label }}</mn-radio-tag>
     </div>
   </div>
 </template>
