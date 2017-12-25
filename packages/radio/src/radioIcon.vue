@@ -14,7 +14,7 @@
   import checkmarkIcon from 'vue-human-icons/js/ios/checkmark-empty'
 
   /**
-   * Radio icon component
+   * The radio-icon component
    */
   export default {
     name: 'mn-radio-icon',
