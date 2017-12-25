@@ -5,14 +5,11 @@
 </template>
 
 <script>
-  import Element from '../../utils/Element'
-  import cardItem from '../card/cardItem'
+  import card from '@humans/card'
 
-  export default new Element({
+  export default {
     name: 'mn-radio-item',
-    components: {
-      ...cardItem.insert()
-    },
+    components: Object.assign({}, card),
     props: {
       value: null,
       data: null,
@@ -25,5 +22,5 @@
         }
       }
     }
-  })
+  }
 </script>

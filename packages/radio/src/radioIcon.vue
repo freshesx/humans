@@ -12,20 +12,17 @@
 </template>
 
 <script>
-  import Element from '../../utils/Element'
-  import Icon from '../icon/icon'
-  import checkmarkEmpty from 'vue-human-icons/js/ios/checkmark-empty'
+  import icon from '@humans/icon'
+  import checkmarkIcon from 'vue-human-icons/js/ios/checkmark-empty'
 
-  export default new Element({
-    components: {
-      [Icon.name]: Icon
-    },
+  export default {
     name: 'mn-radio-icon',
+    components: Object.assign({}, icon),
     props: {
       // when checked, show this icon.
       active: {
         type: [String, Object],
-        default: () => checkmarkEmpty
+        default: () => checkmarkIcon
       },
       // When unchecked, show this icon.
       // If the icon is empty, hide the icon.
@@ -63,5 +60,5 @@
         return this.checked
       }
     }
-  })
+  }
 </script>

@@ -9,14 +9,11 @@
 </template>
 
 <script>
-  import Element from '../../utils/Element'
-  import iconElement from '../icon/icon'
+  import icon from '@humans/icon'
 
-  export default new Element({
+  export default {
     name: 'mn-radio',
-    components: {
-      ...iconElement.insert()
-    },
+    components: Object.assign({}, icon),
     props: {
       value: null,
       data: null,
@@ -45,29 +42,5 @@
         }
       }
     }
-  })
-</script>
-
-
-<style lang="scss">
-  @import "./vars";
-
-  .mn-radio {
-    &-label {
-      cursor: pointer;
-      user-select: none;
-
-      & + & {
-        margin-left: $mn-radio-grid-gutters;
-      }
-    }
-
-    &-checkmark {
-      color: $mn-radio-color;
-
-      &.is-active {
-        color: $mn-radio-active-color;
-      }
-    }
   }
-</style>
+</script>
