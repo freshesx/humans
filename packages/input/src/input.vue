@@ -4,7 +4,7 @@
       :type="type"
       class="mn-input-control"
       :class="{ 'is-focus': isFocus }"
-      :value="parseBefore(value)"
+      :value="parseBeforeFn(value)"
       :placeholder="placeholder"
       :readonly="readonly"
       :disabled="disabled"
@@ -78,7 +78,36 @@
       /**
        * Hide input clear button
        */
-      hideClear: Boolean
+      hideClear: Boolean,
+      /**
+       * Change the value before parse
+       */
+      parseBeforeFn: {
+        type: Function,
+        default (value) {
+          return value
+        }
+      },
+      /**
+       * Change the value after parse
+       */
+      parseAfterFn: {
+        type: Function,
+        default (value) {
+          return value.length > 0
+            ? value
+            : undefined
+        }
+      },
+      /**
+       * Change the value by clear
+       */
+      parseClearFn: {
+        type: Function,
+        default () {
+          return undefined
+        }
+      }
     },
     data () {
       return {
@@ -88,21 +117,10 @@
     },
     methods: {
       changeValue (event) {
-        this.emitInput(this.parseAfter(event.target.value))
+        this.emitInput(this.parseAfterFn(event.target.value))
       },
       clearValue () {
-        this.emitInput(this.parseClear())
-      },
-      parseBefore () {
-        return this.value
-      },
-      parseAfter (newValue) {
-        return newValue.length > 0
-          ? newValue
-          : undefined
-      },
-      parseClear () {
-        return undefined
+        this.emitInput(this.parseClearFn())
       },
       onFocus () {
         this.isFocus = true
