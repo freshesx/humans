@@ -8,7 +8,7 @@
       :disabled="disabled"
       @input="changeValue">{{ value }}</textarea>
     <div class="mn-textarea-counter">
-      <mn-icon :name="icons.tip"></mn-icon>
+      <mn-icon :name="tipIcon"></mn-icon>
       {{ value ? value.length : 0 }}
       <span v-if="maxLength">
         / {{ maxLength }}
@@ -18,13 +18,11 @@
 </template>
 
 <script>
-  import Element from '../../utils/Element'
-  import iconElement from '../icon/icon'
+  import icon from '@humans/icon'
+  import tipIcon from 'vue-human-icons/js/ios/grid-view-outline'
 
-  export default new Element({
-    components: {
-      ...iconElement.insert()
-    },
+  export default {
+    components: Object.assign({}, icon),
     name: 'mn-textarea',
     props: {
       value: {
@@ -53,9 +51,7 @@
     },
     data () {
       return {
-        icons: {
-          tip: require('vue-human-icons/js/ios/grid-view-outline')
-        }
+        tipIcon
       }
     },
     methods: {
@@ -63,25 +59,5 @@
         this.$emit('input', event.target.value)
       }
     }
-  })
+  }
 </script>
-
-<style lang="scss">
-  .mn-textarea-control {
-    display: block;
-    width: 100%;
-    border: none;
-    padding: 0;
-    background: transparent;
-    outline: none;
-    appearance: none;
-    resize: none;
-    line-height: 1.5;
-  }
-
-  .mn-textarea-counter {
-    border-top: solid 1px #eee;
-    padding-top: 0.5rem;
-    text-align: right;
-  }
-</style>
