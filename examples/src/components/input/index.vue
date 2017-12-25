@@ -44,11 +44,13 @@
           number: '123412341234123'
         },
         numberParseBeforeFn (value) {
+          // format card number to xxxx xxxx xxxx xxx
           return typeof value === 'string'
             ? value.replace(/(....)(?=.)/g, '$1 ')
             : value
         },
         numberParseAfterFn (value) {
+          // parse the formatted value
           return value.length > 0
             ? value.replace(/\s/g, '')
             : undefined
