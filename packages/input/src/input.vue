@@ -26,15 +26,24 @@
   import icon from '@humans/icon'
   import clearIcon from 'vue-human-icons/js/ios/close'
 
+  /**
+   * Input component
+   */
   export default {
-    components: Object.assign({}, icon),
     name: 'mn-input',
+    components: Object.assign({}, icon),
     props: {
+      /**
+       * Input value
+       */
       value: {
         type: null,
         default: undefined,
         required: true
       },
+      /**
+       * Input type, only support text and password
+       */
       type: {
         type: String,
         default: 'text',
@@ -42,18 +51,33 @@
           return ['text', 'password'].includes(val)
         }
       },
+      /**
+       * Input placeholder
+       */
       placeholder: {
         type: String
       },
+      /**
+       * Input readonly
+       */
       readonly: {
         type: Boolean,
         default: false
       },
+      /**
+       * Disable input
+       */
       disabled: {
         type: Boolean,
         default: false
       },
+      /**
+       * Input size, only support `lg`
+       */
       size: String,
+      /**
+       * Hide input clear button
+       */
       hideClear: Boolean
     },
     data () {
@@ -64,10 +88,10 @@
     },
     methods: {
       changeValue (event) {
-        this.$emit('input', this.parseAfter(event.target.value))
+        this.emitInput(this.parseAfter(event.target.value))
       },
       clearValue () {
-        this.$emit('input', this.parseClear())
+        this.emitInput(this.parseClear())
       },
       parseBefore () {
         return this.value
@@ -85,6 +109,13 @@
         setTimeout(() => {
           this.isFocus = false
         }, 672)
+      },
+      emitInput (value) {
+        /**
+         * @event input
+         * @property {*} value - emit value
+         */
+        this.$emit('input', value)
       }
     }
   }
