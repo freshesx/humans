@@ -72,7 +72,8 @@
         default: false
       },
       /**
-       * Input size, only support `lg`
+       * Input size, only support `sm`,
+       * but user can add new size name and css.
        */
       size: String,
       /**
