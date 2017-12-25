@@ -89,6 +89,11 @@ const router = new VueRouter({
       path: '/select',
       name: 'select',
       component: resolve => { require(['../components/select'], resolve) }
+    },
+    {
+      path: '/textarea',
+      name: 'textarea',
+      component: resolve => { require(['../components/textarea'], resolve) }
     }
   ]
 })
