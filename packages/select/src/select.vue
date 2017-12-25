@@ -11,9 +11,7 @@
 </template>
 
 <script>
-  import Element from '../../utils/Element'
-
-  export default new Element({
+  export default {
     name: 'mn-select',
     props: {
       value: {},
@@ -42,19 +40,5 @@
         this.$emit('input', value)
       }
     }
-  })
-</script>
-
-<style lang="scss">
-  .mn-select {
-    border: none;
-    background: transparent;
-    width: 100%;
-    height: 3.5rem;
-    line-height: 3.5rem;
-    margin: -1rem 0;
-    outline: none;
-    appearance: none;
-    -webkit-tap-highlight-color: transparent;
   }
-</style>
+</script>
