@@ -21,33 +21,40 @@
   import icon from '@humans/icon'
   import tipIcon from 'vue-human-icons/js/ios/grid-view-outline'
 
+  /**
+   * Textarea component
+   */
   export default {
-    components: Object.assign({}, icon),
     name: 'mn-textarea',
+    components: Object.assign({}, icon),
     props: {
-      value: {
-        type: null,
-        default: undefined,
-        required: true
-      },
-      maxLength: {
-        type: Number
-      },
+      /**
+       * For v-model
+       */
+      value: null,
+      /**
+       * Max text length
+       */
+      maxLength: Number,
+      /**
+       * Row numbers
+       */
       rows: {
         type: Number,
         default: 6
       },
-      placeholder: {
-        type: String
-      },
-      readonly: {
-        type: Boolean,
-        default: false
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      }
+      /**
+       * Placeholder
+       */
+      placeholder: String,
+      /**
+       * Readonly
+       */
+      readonly: Boolean,
+      /**
+       * Disabled
+       */
+      disabled: Boolean
     },
     data () {
       return {
@@ -56,6 +63,10 @@
     },
     methods: {
       changeValue (event) {
+        /**
+         * @event input
+         * @property {String} input  - the output value
+         */
         this.$emit('input', event.target.value)
       }
     }
