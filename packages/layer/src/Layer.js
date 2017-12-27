@@ -76,10 +76,9 @@ export default class Layer {
    * @return {Object}
    */
   mergePropsData (propsData) {
-    return {
-      zIndex: this.generateZindex(),
-      ...propsData
-    }
+    return Object.assign({}, {
+      zIndex: this.generateZindex()
+    }, propsData)
   }
 
   /**
