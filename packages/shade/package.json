@@ -1,0 +1,18 @@
+{
+  "name": "@humans/shade",
+  "version": "3.0.0-alpha.9",
+  "description": "Select component",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@humans/layer": "3.0.0-alpha.9",
+    "vue": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
