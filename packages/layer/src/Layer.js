@@ -12,23 +12,25 @@ let zIndex = 8000
  * @class
  */
 export default class Layer {
-  /**
-   * 存储 element
-   * @type {Object}
-   */
-  element
+  constructor () {
+    /**
+     * 存储 element
+     * @type {Object}
+     */
+    this.element = undefined
 
-  /**
-   * 插入 body 的 vueComponent 的包裹器
-   * @type {DOM}
-   */
-  wrapper
+    /**
+     * 插入 body 的 vueComponent 的包裹器
+     * @type {DOM}
+     */
+    this.wrapper = undefined
 
-  /**
-   * 是否忘记存储
-   * @type {boolean}
-   */
-  forget
+    /**
+     * 是否忘记存储
+     * @type {boolean}
+     */
+    this.forget = undefined
+  }
 
   /**
    * 工厂模式创建
