@@ -9,8 +9,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/layer": "3.0.0-alpha.9",
-    "vue": "^2.0.0"
+    "@humans/layer": "3.0.0-alpha.9"
   },
   "publishConfig": {
     "access": "public"
