@@ -128,7 +128,7 @@ export default class Layer {
    * @return {Layer}
    */
   remove () {
-    if (typeof this.vm === 'undefined') {
+    if (typeof this.vm !== 'undefined') {
       this.vm.$destroy()
       this.removeWrapper()
     }
