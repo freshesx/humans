@@ -103,7 +103,12 @@ const router = new VueRouter({
     {
       path: '/checkbox',
       name: 'checkbox',
-      component: resolve => { require(['../components/checkbox/index.vue'], resolve) }
+      component: resolve => { require(['../components/checkbox'], resolve) }
+    },
+    {
+      path: '/alert',
+      name: 'alert',
+      component: resolve => { require(['../components/alert'], resolve) }
     }
   ]
 })
