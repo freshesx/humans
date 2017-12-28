@@ -1,0 +1,13 @@
+@import "../../../shares/scss/vars";
+
+$mn-alert-width: 280px;
+
+.mn-alert {
+  position: fixed;
+  width: $mn-alert-width;
+  top: 45%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
