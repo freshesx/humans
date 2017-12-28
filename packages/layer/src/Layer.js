@@ -168,13 +168,20 @@ export default class Layer {
    * @method destroy
    * @return {Promise}
    */
-  async destroy () {
-    if (this.vm) {
-      this.vm.$props.visible = false
-      await this.timeout()
-      return this.remove()
-    }
-    return this
+  destroy () {
+    return new Promise(resolve => {
+      if (this.vm) {
+        this.vm.$props.visible = false
+
+        setTimeout(() => {
+          console.log('hi')
+          this.remove()
+          resolve(this)
+        }, 1500)
+      }
+
+      resolve(this)
+    })
   }
 
   /**
