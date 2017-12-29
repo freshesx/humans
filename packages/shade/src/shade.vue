@@ -9,10 +9,7 @@
   import { layerMixin } from '@humans/layer'
 
   /**
-   * mn-shade（遮盖浮层）
-   * @module suites/shade/shade
-   * @param {string}    [theme]           - 主题
-   * @parma {boolean}   [disableClosing]  - 禁用 “关闭” 事件
+   * Shade component
    */
   export default {
     name: 'mn-shade',
@@ -20,7 +17,13 @@
       layerMixin
     ],
     props: {
+      /**
+       * Theme name
+       */
       theme: String,
+      /**
+       * Disable click the shade to close shade
+       */
       disableClosing: Boolean
     },
     methods: {

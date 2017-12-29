@@ -2,8 +2,18 @@ import Shade from './Shade.js'
 
 export default {
   props: {
+    /**
+     * Show or hide specify layer
+     */
     visible: Boolean,
+    /**
+     * Pass shade propsData from specify layer
+     * @type {[type]}
+     */
     shadePropsData: Object,
+    /**
+     * Set shade layer z-index
+     */
     zIndex: {
       type: Number,
       default: 2000
@@ -11,21 +21,13 @@ export default {
   },
   data () {
     return {
-      /**
-       * 存储 shade layer 对象
-       * @type {Layer}
-       */
+      // Store shade layer object
       shade: undefined
     }
   },
   watch: {
-    /**
-     * 监听 visible 的变化
-     * @method visible
-     * @private
-     * @param  {boolean} visible
-     * @return {undefined}
-     */
+    // Watch visible, if true, then create shade layer and show,
+    // if false, destroy shade.
     visible (visible) {
       visible
         ? this.shade = this.createShadeLayer().show()
@@ -34,15 +36,15 @@ export default {
   },
   methods: {
     createShadeLayer () {
-      // 控制 shade element 的 zIndex 减少一层
+      // Let shade's z-index is less than specify layer
       const zIndex = this.zIndex - 1
 
-      // 合并 shade propsData
+      // Pass shade propsData
       const shade = Shade.create(Object.assign(
         {}, { zIndex }, this.shadePropsData
       ))
 
-      // 监听
+      // Listen shade visible, if click shade to close, and close specify layer.
       shade.vm.$on('update:visible', visible => {
         if (!visible) this.whenShadeCallHiding(shade)
       })
@@ -50,8 +52,7 @@ export default {
       return shade
     },
     /**
-     * 当 shade 请求隐藏的时候执行相应的方法
-     * @method shadeCallHiding
+     * When shade need to hide, the specify can use this method to close self.
      * @public
      * @param  {Shade}      shade - shade layer
      * @return {undefined}
