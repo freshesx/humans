@@ -7,7 +7,7 @@ const excludes = [ '.DS_Store', '.babelrc' ]
 // splice excludes name
 excludes.forEach(item => {
   const index = folders.indexOf(item)
-  folders.splice(index, 1)
+  if (index > -1) folders.splice(index, 1)
 })
 
 // @todo if it has camelCase, throw error
