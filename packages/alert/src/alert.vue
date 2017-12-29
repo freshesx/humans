@@ -21,8 +21,9 @@
   import { layerMixin } from '@humans/layer'
   import { shadeMixin } from '@humans/shade'
 
-  console.log(card)
-
+  /**
+   * Alert component
+   */
   export default {
     name: 'mn-alert',
     components: Object.assign({}, card),
@@ -31,11 +32,20 @@
       shadeMixin
     ],
     props: {
+      /**
+       * Title
+       */
       title: {
         type: String,
         default: '警告'
       },
+      /**
+       * Description
+       */
       description: String,
+      /**
+       * Cancel text
+       */
       cancelText: {
         type: String,
         default: '关闭'
@@ -44,13 +54,13 @@
     methods: {
       cancel () {
         this.hide()
+
+        /**
+         * @event cancel
+         */
         this.$emit('cancel')
       },
-      /**
-       * 覆盖 shadeMixin 内的方法
-       * @method whenShadeCallHiding
-       * @return {undefined}
-       */
+      // Close self when shade call hide
       whenShadeCallHiding () {
         this.cancel()
       }
