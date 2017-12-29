@@ -5,8 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-test/unit/coverage
-test/e2e/reports
+scripts/unit/coverage
+scripts/e2e/reports
 selenium-debug.log
 docs/jsdoc
 docs/api
