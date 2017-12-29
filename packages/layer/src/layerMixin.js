@@ -1,28 +1,34 @@
 export default {
   props: {
+    /**
+     * Control layer show or hide
+     */
     visible: Boolean,
+    /**
+     * Set transition name
+     */
     transition: String,
+    /**
+     * Define z-index
+     */
     zIndex: {
       type: Number,
       default: 2000
     }
   },
   methods: {
-    /**
-     * 触发显示的事件请求
-     * @method show
-     * @return {undefined}
-     */
     show () {
+      /**
+       * @event update:visible
+       * @property {Boolean} visible - show visible
+       */
       this.$emit('update:visible', true)
     },
-
-    /**
-     * 触发隐藏的事件请求
-     * @method hide
-     * @return {undefined}
-     */
     hide () {
+      /**
+       * @event update:visible
+       * @property {Boolean} visible - hide visible
+       */
       this.$emit('update:visible', false)
     }
   }
