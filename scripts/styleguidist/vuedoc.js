@@ -1,12 +1,12 @@
 const path = require('path')
 
 module.exports = {
-  components: 'packages/**/*.vue',
-  styleguideDir: 'docs/vue',
+  components: path.resolve(__dirname, '../../packages/**/*.vue'),
+  styleguideDir: path.resolve(__dirname, '../../docs/vue'),
   webpackConfig: {
     resolve: {
       alias: {
-        '@humans': path.resolve('./packages')
+        '@humans': path.resolve(__dirname, '../../packages')
       }
     },
     module: {
