@@ -1,44 +1,40 @@
 import Vue from 'vue'
 
 /**
- * 浮层的 zIndex 存储值
+ * Layer last z-index storage
  * @private
  * @type {number}
  */
 let zIndex = 8000
 
 /**
- * 控制浮层的类
- * @class
+ * Layer class
  */
 export default class Layer {
   constructor () {
     /**
-     * 存储 element
+     * Specifily vue element
      * @type {Object}
      */
     this.element = undefined
 
     /**
-     * 插入 body 的 vueComponent 的包裹器
+     * vueComponent within a wrapper
      * @type {DOM}
      */
     this.wrapper = undefined
 
     /**
-     * 是否忘记存储
+     * Forget
      * @type {boolean}
      */
     this.forget = undefined
   }
 
   /**
-   * 工厂模式创建
-   * @method create
-   * @static
-   * @public
-   * @param  {Object} propsData  - 属性的数据
-   * @return {Layer}             - utils/Layer
+   * Create a new layer
+   * @param  {Object} propsData  - Vue propsData
+   * @return {Layer}             - Layer
    */
   static create (propsData) {
     const instance = new this()
@@ -46,15 +42,13 @@ export default class Layer {
   }
 
   /**
-   * 创建 vueComponent
-   * @method createComponent
-   * @public
-   * @param  {Object}        propsData
+   * create vueComponent
+   * @param  {Object} propsData  - Vue propsData
    * @return {Layer}
    */
   createComponent (propsData) {
     if (typeof this.element === 'undefined') {
-      throw new Error('没有配置 element')
+      throw new Error('The this.element should be a vue element.')
     }
 
     const VueComponent = Vue.extend(this.element)
@@ -69,10 +63,9 @@ export default class Layer {
   }
 
   /**
-   * 合并 propsData 的默认值
-   * @method mergePropsData
+   * Merge propsData default value
    * @protected
-   * @param  {Object}       propsData
+   * @param  {Object} propsData  - vue propsData
    * @return {Object}
    */
   mergePropsData (propsData) {
@@ -82,8 +75,7 @@ export default class Layer {
   }
 
   /**
-   * 生成 zIndex
-   * @method generateZindex
+   * Generate zIndex
    * @private
    * @return {number}
    */
@@ -93,8 +85,7 @@ export default class Layer {
   }
 
   /**
-   * 监听 vueComponent 的 update:visible 触发事件
-   * @method listen
+   * Listen vueComponent's update:visible event
    * @protected
    * @param  {VueComponent} vueComponent
    * @return {Layer}
@@ -107,9 +98,7 @@ export default class Layer {
   }
 
   /**
-   * 包裹 wrapper 并插入 body
-   * @protected
-   * @method append
+   * Wrap vueComponent and append to body
    * @param  {VueComponent} vueComponent
    * @return {Layer}
    */
@@ -122,8 +111,7 @@ export default class Layer {
   }
 
   /**
-   * 从 body 内移除 wrapper 和 vueComponent
-   * @method remove
+   * Destroy vueComponent and remove wrapper from body
    * @protected
    * @return {Layer}
    */
@@ -138,8 +126,7 @@ export default class Layer {
   }
 
   /**
-   * 移除 wrapper
-   * @method removeWrapper
+   * Remove wrapper
    * @protected
    * @return {Layer}
    */
@@ -151,21 +138,17 @@ export default class Layer {
   }
 
   /**
-   * 显示 vueComponent
-   * @method show
-   * @public
+   * Show vueComponent
    * @return {Layer}
    */
   show () {
-    if (!this.vm) throw new Error('vueComponent 已经被销毁。')
+    if (!this.vm) throw new Error('vueComponent is already destroyed.')
     this.vm.$props.visible = true
     return this
   }
 
   /**
-   * 先关闭后销毁 vueComponent
-   * @public
-   * @method destroy
+   * Hide vueComponent, and then destroy it.
    * @return {Promise}
    */
   destroy () {
@@ -174,7 +157,6 @@ export default class Layer {
         this.vm.$props.visible = false
 
         setTimeout(() => {
-          console.log('hi')
           this.remove()
           resolve(this)
         }, 1500)
@@ -185,21 +167,9 @@ export default class Layer {
   }
 
   /**
-   * 定时器
-   * @method timeout
-   * @public
-   * @param  {Number} [ms=3000]
-   * @return {Promise}
-   */
-  timeout (ms = 1500) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-  }
-
-  /**
-   * 封装 vm.$on 方法，返回 this，实现操作链
-   * @method on
-   * @param  {string}   name       - 事件名称
-   * @param  {Function} callback
+   * Wrap vm.$on event, and return this
+   * @param  {string}   name       - event name from vueComponent
+   * @param  {Function} callback   - pass callback to vueComponent
    * @return {Layer}
    */
   on (name, callback) {
