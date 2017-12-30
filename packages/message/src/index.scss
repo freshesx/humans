@@ -1,0 +1,54 @@
+@import "../../../shares/scss/vars";
+@import "../../../shares/scss/mixins/media";
+
+// Import external css
+@import "~@humans/layer/dist/main.css";
+@import "~@humans/shade/dist/main.css";
+@import "~@humans/icon/dist/main.css";
+
+.mn-message {
+  position: fixed;
+  top: 0.5rem;
+  right: 0.5rem;
+  left: 0.5rem;
+  bottom: auto;
+  background: rgba(white, 1);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+  &.is-backdrop {
+    background: rgba(white, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  @include min-screen('tablet') {
+    width: 600px;
+    left: 50%;
+    margin-left: -300px;
+  }
+}
+
+.mn-message-action {
+  display: flex;
+  padding: 0.5rem;
+  padding-bottom: 0;
+  align-items: center;
+}
+
+.mn-message-icon {
+  margin-right: 0.5rem;
+}
+
+.mn-message-type {
+  flex: 1;
+  font-size: 0.875rem;
+}
+
+.mn-message-close {
+
+}
+
+.mn-message-contents {
+  padding: 0.25rem 0.6rem 0.5rem 0.6rem;
+  font-size: 0.875rem;
+}
