@@ -1,0 +1,20 @@
+{
+  "name": "@humans/datetime",
+  "version": "3.0.0-alpha.9",
+  "description": "Datetime component",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@humans/layer": "3.0.0-alpha.9",
+    "@humans/shade": "3.0.0-alpha.9",
+    "@humans/card": "3.0.0-alpha.9",
+    "@humans/message": "3.0.0-alpha.9"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
