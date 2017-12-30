@@ -11,7 +11,6 @@
     methods: {
       openAlert () {
         this.alertLayer = Alert.create().show()
-        console.log('hai')
       }
     },
     beforeDestroy () {
