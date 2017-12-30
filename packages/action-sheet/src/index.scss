@@ -1,0 +1,27 @@
+@import "../../../shares/scss/vars";
+@import "../../../shares/scss/mixins/media";
+
+// Import external css
+@import "~@humans/layer/dist/main.css";
+@import "~@humans/shade/dist/main.css";
+@import "~@humans/card/dist/main.css";
+
+$mn-action-sheet-grid-gutter: $grid-gutters;
+
+// # 大于等于 desktop 尺寸下的固定宽度
+$mn-action-sheet-desktop-width: 600px;
+
+.mn-action-sheet {
+  position: fixed;
+  right: $mn-action-sheet-grid-gutter / 2;
+  bottom: $mn-action-sheet-grid-gutter / 2;
+  left: $mn-action-sheet-grid-gutter / 2;
+
+  @include min-screen('desktop') {
+    width: $mn-action-sheet-desktop-width;
+    width: $mn-action-sheet-desktop-width;
+    left: 50%;
+    right: auto;
+    margin-left: $mn-action-sheet-desktop-width * -0.5;
+  }
+}

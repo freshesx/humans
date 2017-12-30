@@ -1,0 +1,19 @@
+{
+  "name": "@humans/loading-mask",
+  "version": "3.0.0-alpha.9",
+  "description": "Loading mask component",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@humans/layer": "3.0.0-alpha.9",
+    "@humans/shade": "3.0.0-alpha.9",
+    "@humans/card": "3.0.0-alpha.9"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
