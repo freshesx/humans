@@ -109,6 +109,11 @@ const router = new VueRouter({
       path: '/alert',
       name: 'alert',
       component: resolve => { require(['../components/alert'], resolve) }
+    },
+    {
+      path: '/confirm',
+      name: 'confirm',
+      component: resolve => { require(['../components/confirm'], resolve) }
     }
   ]
 })
