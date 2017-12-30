@@ -1,38 +1,15 @@
 <template>
-  <page>
-    <mn-letter>
-      <mn-letter-body><h1>Message</h1></mn-letter-body>
-    </mn-letter>
-
-    <mn-section>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-body>Message</mn-card-body>
-          <mn-card-suffix action>
-            <mn-btn theme="primary" @click="onOpenMessage" size="sm">
-              Open message
-            </mn-btn>
-          </mn-card-suffix>
-        </mn-card-item>
-      </mn-card>
-      <mn-section-note>
-        可以有多种不同类型的 Message: success, warning, error。
-      </mn-section-note>
-    </mn-section>
-  </page>
+  <div>
+    <button @click="openMessage">Open message</button>
+  </div>
 </template>
 
 <script>
-  import Message from 'vue-human/utils/Message'
+  import { Message } from '@humans/message'
 
   export default {
-    data () {
-      return {
-        types: ['Default', 'Success', 'Warning', 'Error']
-      }
-    },
     methods: {
-      onOpenMessage () {
+      openMessage () {
         this.messageLayer = Message.create().show()
       }
     },

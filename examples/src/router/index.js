@@ -119,6 +119,11 @@ const router = new VueRouter({
       path: '/loading-mask',
       name: 'loadingMask',
       component: resolve => { require(['../components/loadingMask'], resolve) }
+    },
+    {
+      path: '/message',
+      name: 'message',
+      component: resolve => { require(['../components/message'], resolve) }
     }
   ]
 })
