@@ -23,7 +23,7 @@
     "docs:publish": "yarn run docs:api && yarn run docs:vue:build",
     "test": "yarn run unit",
     "test:example": "node scripts/house/development.js",
-    "unit": "jest --config scripts/unit/jest.conf.js",
+    "unit": "jest --config scripts/jest/jest.conf.js",
     "alpha": "yarn run build && lerna publish"
   },
   "devDependencies": {

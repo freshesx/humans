@@ -4,7 +4,7 @@ module.exports = {
   rootDir: path.resolve(__dirname, '../../'),
   mapCoverage: true,
   collectCoverage: true,
-  coverageDirectory: '<rootDir>/scripts/unit/coverage',
+  coverageDirectory: '<rootDir>/scripts/jest/coverage',
   moduleFileExtensions: [
     'js',
     'vue'
