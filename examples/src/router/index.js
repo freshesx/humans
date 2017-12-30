@@ -114,6 +114,11 @@ const router = new VueRouter({
       path: '/confirm',
       name: 'confirm',
       component: resolve => { require(['../components/confirm'], resolve) }
+    },
+    {
+      path: '/loading-mask',
+      name: 'loadingMask',
+      component: resolve => { require(['../components/loadingMask'], resolve) }
     }
   ]
 })

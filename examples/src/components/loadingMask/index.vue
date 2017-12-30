@@ -1,30 +1,15 @@
 <template>
-  <page>
-    <mn-letter>
-      <mn-letter-body><h1>Loading Mask</h1></mn-letter-body>
-    </mn-letter>
-
-    <mn-section>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-body>
-            <mn-btn theme="primary" block @click="onOpenLoadingMask">Open loading mask</mn-btn>
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
-      <mn-section-note>
-        此 LoadingMask 打开后，会在 3s 后自动关闭。
-      </mn-section-note>
-    </mn-section>
-  </page>
+  <div>
+    <button @click="openLoadingMask">Open loading mask</button>
+  </div>
 </template>
 
 <script>
-  import LoadingMask from 'vue-human/utils/LoadingMask'
+  import { LoadingMask } from '@humans/loading-mask'
 
   export default {
     methods: {
-      onOpenLoadingMask () {
+      openLoadingMask () {
         this.loadingMaskLayer = LoadingMask.create().show()
 
         setTimeout(() => {
