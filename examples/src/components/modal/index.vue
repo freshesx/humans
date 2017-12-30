@@ -1,20 +1,6 @@
 <template>
   <div>
-    <page>
-      <mn-letter>
-        <mn-letter-body><h1>Modal</h1></mn-letter-body>
-      </mn-letter>
-
-      <mn-section>
-        <mn-card>
-          <mn-card-item>
-            <mn-card-body>
-              <mn-btn theme="primary" @click="onOpenModal" block>Open Modal</mn-btn>
-            </mn-card-body>
-          </mn-card-item>
-        </mn-card>
-      </mn-section>
-    </page>
+    <button @click="openModal" block>Open Modal</button>
 
     <mn-modal :visible.sync="showModal">
       <mn-scroller>
@@ -28,7 +14,7 @@
         </mn-section>
       </mn-scroller>
       <mn-modal-action slot="suffix">
-        <mn-btn theme="secondary-link" @click="onCloseModal">Cancel</mn-btn>
+        <mn-btn theme="secondary-link" @click="closeModal">Cancel</mn-btn>
         <mn-btn theme="primary">Confirm</mn-btn>
       </mn-modal-action>
     </mn-modal>
@@ -36,22 +22,24 @@
 </template>
 
 <script>
-  import modal from 'vue-human/suites/modal'
+  import modal from '@humans/modal'
+  import card from '@humans/card'
+  import scroller from '@humans/scroller'
+  import section from '@humans/section'
+  import btn from '@humans/btn'
 
   export default {
-    components: {
-      ...modal.map()
-    },
+    components: Object.assign({}, modal, card, scroller, section, btn),
     data () {
       return {
         showModal: false
       }
     },
     methods: {
-      onOpenModal () {
+      openModal () {
         this.showModal = true
       },
-      onCloseModal () {
+      closeModal () {
         this.showModal = false
       }
     }
