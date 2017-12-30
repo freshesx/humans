@@ -124,6 +124,11 @@ const router = new VueRouter({
       path: '/message',
       name: 'message',
       component: resolve => { require(['../components/message'], resolve) }
+    },
+    {
+      path: '/action-sheet',
+      name: 'actionSheet',
+      component: resolve => { require(['../components/actionSheet'], resolve) }
     }
   ]
 })

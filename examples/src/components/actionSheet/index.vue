@@ -1,20 +1,6 @@
 <template>
   <div>
-    <page>
-      <mn-letter>
-        <mn-letter-body><h1>Action Sheet</h1></mn-letter-body>
-      </mn-letter>
-
-      <mn-section>
-        <mn-card>
-          <mn-card-item>
-            <mn-card-body>
-              <mn-btn theme="primary" @click="onOpenActionSheet" block>Open Action Sheet</mn-btn>
-            </mn-card-body>
-          </mn-card-item>
-        </mn-card>
-      </mn-section>
-    </page>
+    <button @click="openActionSheet">Open Action Sheet</button>
 
     <mn-action-sheet :visible.sync="showActionSheet">
       <mn-card rounded>
@@ -32,21 +18,18 @@
 </template>
 
 <script>
-  import actionSheet from 'vue-human/suites/actionSheet'
-  import page from '../base/page'
+  import actionSheet from '@humans/action-sheet'
+  import card from '@humans/card'
 
   export default {
-    components: {
-      ...actionSheet.map(),
-      page
-    },
+    components: Object.assign({}, actionSheet, card),
     data () {
       return {
         showActionSheet: false
       }
     },
     methods: {
-      onOpenActionSheet () {
+      openActionSheet () {
         this.showActionSheet = true
       }
     }
