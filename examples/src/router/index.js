@@ -134,6 +134,11 @@ const router = new VueRouter({
       path: '/modal',
       name: 'modal',
       component: resolve => { require(['../components/modal'], resolve) }
+    },
+    {
+      path: '/datetime',
+      name: 'datetime',
+      component: resolve => { require(['../components/datetime'], resolve) }
     }
   ]
 })

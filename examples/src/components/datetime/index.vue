@@ -1,82 +1,52 @@
 <template>
-  <page>
-    <mn-letter>
-      <mn-letter-body><h1>Datetime</h1></mn-letter-body>
-    </mn-letter>
+  <div>
 
-    <mn-section>
-      <mn-section-note>Datetime Single Mode</mn-section-note>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-prefix>
-            <mn-label>Datetime</mn-label>
-          </mn-card-prefix>
-          <mn-card-body>
-            <mn-datetime-picker :display="models.datetime" @openPicker="onOpenSingle"></mn-datetime-picker>
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
-    </mn-section>
+    <div>
+      <h1>Datetime Single Mode</h1>
+      <mn-datetime-picker :display="models.datetime"
+        @openPicker="openSingle"
+      ></mn-datetime-picker>
+    </div>
 
-    <mn-section>
-      <mn-section-note>Datetime Range Mode</mn-section-note>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-prefix>
-            <mn-label>Range</mn-label>
-          </mn-card-prefix>
-          <mn-card-body>
-            <mn-datetime-picker :display="`${models.fromDatetime} 至 ${models.toDatetime}`" @openPicker="onOpenRange"></mn-datetime-picker>
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
-    </mn-section>
+    <hr>
 
-    <mn-section>
-      <mn-section-note>Time Single Mode</mn-section-note>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-prefix>
-            <mn-label>Time</mn-label>
-          </mn-card-prefix>
-          <mn-card-body>
-            <mn-datetime-picker :display="models.time" @openPicker="onOpenSingleTime"></mn-datetime-picker>
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
-    </mn-section>
+    <div>
+      <h1>Time Single Mode</h1>
+      <mn-datetime-picker :display="models.time"
+        @openPicker="openSingleTime"
+      ></mn-datetime-picker>
+    </div>
 
-    <mn-section>
-      <mn-section-note>Time Range Mode</mn-section-note>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-prefix>
-            <mn-label>Time</mn-label>
-          </mn-card-prefix>
-          <mn-card-body>
-            <mn-datetime-picker :display="`${models.fromTime} 到 ${models.toTime}`" @openPicker="onOpenRangeTime"></mn-datetime-picker>
-          </mn-card-body>
-        </mn-card-item>
-      </mn-card>
-      <mn-section-note>
-        <div>@todo 新增 type 属性，参数有 “datetime”、“date”、“time”，用于简化配置。并根据不同的参数形式来设定 toAt 的增量为 1 天，1 小时等。</div>
-        <div>从而重新比较 toAt，判断是 datetime，date，time 三个层面是否大于 fromAt。</div>
-      </mn-section-note>
-    </mn-section>
-  </page>
+    <hr>
+
+    <div>
+      <h1>Datetime Range Mode</h1>
+      <mn-datetime-picker
+        :display="`${models.fromDatetime} 至 ${models.toDatetime}`"
+        @openPicker="openRange"
+      ></mn-datetime-picker>
+    </div>
+
+    <div>
+      <h1>Time Range Mode</h1>
+      <mn-datetime-picker
+        :display="`${models.fromTime} 到 ${models.toTime}`"
+        @openPicker="openRangeTime"
+      ></mn-datetime-picker>
+    </div>
+  </div>
 </template>
 
 <script>
-  import input from 'vue-human/suites/input'
-  import datetime from 'vue-human/suites/datetime'
-  import Datetime from 'vue-human/utils/Datetime'
-  import DatetimeRange from 'vue-human/utils/DatetimeRange'
+  import input from '@humans/input'
+  import {
+    default as datetime,
+    Datetime,
+    DatetimeRange
+  } from '@humans/datetime'
 
   export default {
-    components: {
-      ...input.map(),
-      ...datetime.map()
-    },
+    components: Object.assign({}, input, datetime),
     data () {
       return {
         models: {
@@ -90,14 +60,14 @@
       }
     },
     methods: {
-      onOpenSingle () {
+      openSingle () {
         this.singleDatetime = Datetime.create({
           default: this.models.datetime
         }).show().on('confirm', format => {
           this.models.datetime = format
         })
       },
-      onOpenSingleTime () {
+      openSingleTime () {
         this.singleTime = Datetime.create({
           default: this.models.time,
           showDate: false
@@ -105,7 +75,7 @@
           this.models.time = format
         })
       },
-      onOpenRange () {
+      openRange () {
         this.rangeDatetime = DatetimeRange.create({
           default: this.models.fromDatetime
         }, {
@@ -115,7 +85,7 @@
           this.models.toDatetime = formats.to
         })
       },
-      onOpenRangeTime () {
+      openRangeTime () {
         this.rangeTime = DatetimeRange.create({
           default: this.models.fromTime, showDate: false
         }, {
