@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="320" src="https://raw.githubusercontent.com/HumanUI/vue-human/master/docs/vue-human.jpg">
+  <img width="320" src="https://raw.githubusercontent.com/freshesx/humans/master/docs/vue-human.jpg">
 </p>
 
 <p align="center">
@@ -18,8 +18,8 @@
 </p>
 
 <p align="center">
-  <a href="https://circleci.com/gh/HumanUI/vue-human/tree/master" title="CircleCI">
-    <img src="https://circleci.com/gh/HumanUI/vue-human/tree/master.svg?style=svg">
+  <a href="https://circleci.com/gh/freshesx/humans/tree/master" title="CircleCI">
+    <img src="https://circleci.com/gh/freshesx/humans/tree/master.svg?style=svg">
   </a>
 </p>
 
