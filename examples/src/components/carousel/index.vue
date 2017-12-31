@@ -1,47 +1,18 @@
 <template>
-  <page>
-    <mn-columns>
-      <mn-column tablet="8, 2" desktop="6, 3">
-        <mn-letter>
-          <mn-letter-body>
-            <h1>Carousel</h1>
-          </mn-letter-body>
-        </mn-letter>
-
-        <mn-card>
-          <mn-card-media>
-            <mn-carousel ref="carousel">
-              <mn-carousel-item v-for="item in pictures" :key="item">
-                <img :src="item.src" style="width: 100%; display: block;">
-              </mn-carousel-item>
-            </mn-carousel>
-          </mn-card-media>
-        </mn-card>
-
-        <mn-card>
-          <mn-card-item>
-            <mn-card-body>
-              <h5>循环播放</h5>
-            </mn-card-body>
-            <mn-card-prefix>
-              <mn-turn :data="true" v-model="models.autoplay" @input="onAutoplay"></mn-turn>
-            </mn-card-prefix>
-          </mn-card-item>
-        </mn-card>
-      </mn-column>
-    </mn-columns>
-  </page>
+  <div>
+    <mn-carousel ref="carousel">
+      <mn-carousel-item v-for="(item, index) in pictures" :key="index">
+        <img :src="item.src" style="width: 100%; display: block;">
+      </mn-carousel-item>
+    </mn-carousel>
+  </div>
 </template>
 
 <script>
-  import turn from 'vue-human/suites/turn'
-  import carousel from 'vue-human/suites/carousel'
+  import carousel from '@humans/carousel'
 
   export default {
-    components: {
-      ...turn.map(),
-      ...carousel.map()
-    },
+    components: Object.assign({}, carousel),
     data () {
       return {
         models: {
