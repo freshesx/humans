@@ -9,6 +9,10 @@
 
 * Now we rename the old `vue-human/suites/check` to the new `@humans/checkbox`. Include: `mn-checkbox`, `mn-checkbox-icon`, `mn-checkbox-item` and `mn-checkbox-tag` tags.
 
+### @humans/nav-bar
+
+* Fix bug: allow pass icon to navBarBack prop.
+
 ## 2.8.0
 
 * 【删除】移除 vue-i18n 库和多语言功能的实现，删除 locale 文件夹
