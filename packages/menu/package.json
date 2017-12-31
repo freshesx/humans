@@ -1,0 +1,14 @@
+{
+  "name": "@humans/menu",
+  "version": "3.0.0-alpha.12",
+  "description": "Menu component",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
