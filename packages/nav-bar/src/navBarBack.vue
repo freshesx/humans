@@ -14,7 +14,6 @@
     components: Object.assign({}, icon),
     props: {
       icon: {
-        type: Object,
         default: () => backIcon
       },
       simple: Boolean
