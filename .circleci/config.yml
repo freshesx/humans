@@ -13,7 +13,7 @@ jobs:
           - v1-dependencies-
 
       - run: yarn install
-      - run: lerna bootstrap
+      - run: yarn run lerna bootstrap
 
       - save_cache:
           paths:
@@ -29,5 +29,5 @@ jobs:
             TAG=$(git describe --tags)
             if [[ $TAG =~ ^v[0-9]+(\.[0-9]+)+(-rc\.[0-9]+)?(-beta\.[0-9]+)?(-alpha\.[0-9]+)?$ ]]; then
               echo $TAG
-              lerna publish --skip-git --yes --repo-version=$TAG
+              yarn run lerna publish --skip-git --yes --repo-version=$TAG
             fi
