@@ -1,6 +1,6 @@
 {
   "name": "@humans/textarea",
-  "version": "3.0.0-alpha.9",
+  "version": "3.0.0-alpha.10",
   "description": "Input component",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/icon": "^3.0.0-alpha.9"
+    "@humans/icon": "^3.0.0-alpha.10"
   },
   "publishConfig": {
     "access": "public"

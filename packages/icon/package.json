@@ -1,6 +1,6 @@
 {
   "name": "@humans/icon",
-  "version": "3.0.0-alpha.9",
+  "version": "3.0.0-alpha.10",
   "description": "Icon component",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/loading-icon": "^3.0.0-alpha.9"
+    "@humans/loading-icon": "^3.0.0-alpha.10"
   },
   "publishConfig": {
     "access": "public"

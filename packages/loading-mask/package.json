@@ -1,6 +1,6 @@
 {
   "name": "@humans/loading-mask",
-  "version": "3.0.0-alpha.9",
+  "version": "3.0.0-alpha.10",
   "description": "Loading mask component",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
@@ -9,9 +9,9 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/layer": "3.0.0-alpha.9",
-    "@humans/shade": "3.0.0-alpha.9",
-    "@humans/loading-icon": "3.0.0-alpha.9"
+    "@humans/layer": "^3.0.0-alpha.10",
+    "@humans/loading-icon": "^3.0.0-alpha.10",
+    "@humans/shade": "^3.0.0-alpha.10"
   },
   "publishConfig": {
     "access": "public"
