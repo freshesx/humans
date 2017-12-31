@@ -164,6 +164,11 @@ const router = new VueRouter({
       path: '/nav-bar',
       name: 'navBar',
       component: resolve => { require(['../components/navBar'], resolve) }
+    },
+    {
+      path: '/paginate',
+      name: 'paginate',
+      component: resolve => { require(['../components/paginate'], resolve) }
     }
   ]
 })
