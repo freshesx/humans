@@ -1,0 +1,42 @@
+@import "../../../shares/scss/vars";
+
+// Import external css
+@import "~@humans/icon/dist/main.css";
+
+.mn-nav-bar {
+  display: flex;
+  background: #fafafa;
+  height: 50px;
+  white-space: nowrap;
+
+  &-prefix {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+  }
+
+  &-suffix {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-right: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  &-body {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+.mn-nav-bar-back {
+  display: flex;
+  min-width: 50px;
+  height: 100%;
+  align-items: center;
+  cursor: pointer;
+}
