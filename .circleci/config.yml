@@ -1,0 +1,31 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:carbon
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: yarn test
+      - deploy:
+          command: |
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            set -eu
+            TAG=$(git describe --tags)
+            if [[ $TAG =~ ^v[0-9]+(\.[0-9]+)+(-rc\.[0-9]+)?(-beta\.[0-9]+)?(-alpha\.[0-9]+)?$ ]]; then
+              echo $TAG
+              npm publish
+            fi
