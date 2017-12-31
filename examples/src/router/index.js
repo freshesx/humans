@@ -154,6 +154,11 @@ const router = new VueRouter({
       path: '/loading-bar',
       name: 'loadingBar',
       component: resolve => { require(['../components/loadingBar'], resolve) }
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: resolve => { require(['../components/menu'], resolve) }
     }
   ]
 })
