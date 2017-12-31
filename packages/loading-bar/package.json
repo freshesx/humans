@@ -1,0 +1,17 @@
+{
+  "name": "@humans/loading-bar",
+  "version": "3.0.0-alpha.9",
+  "description": "Loading bar component",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "vue": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
