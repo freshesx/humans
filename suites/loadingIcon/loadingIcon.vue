@@ -28,7 +28,7 @@
       })
     },
     beforeDestroy () {
-      this.$el.removeChild(this.icon.$el)
+      if (this.$el) this.$el.removeChild(this.icon.$el)
       this.icon.$destroy()
     }
   })
