@@ -23,9 +23,8 @@ jobs:
       - deploy:
           command: |
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-            set -eu
+            echo "@freshes:registry=https://registry.npmjs.org/" >> ~/.npmrc
             TAG=$(git describe --tags)
             if [[ $TAG =~ ^v[0-9]+(\.[0-9]+)+(-rc\.[0-9]+)?(-beta\.[0-9]+)?(-alpha\.[0-9]+)?$ ]]; then
-              echo $TAG
               npm publish
             fi
