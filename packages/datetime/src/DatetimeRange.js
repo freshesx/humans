@@ -2,47 +2,49 @@ import Datetime from './Datetime.js'
 import { addDay, addHours } from './dateChecker.js'
 
 export default class DatetimeRange {
-  /**
-   * 存储开始时间
-   * @private
-   * @type {Date}
-   */
-  fromAt
+  constructor () {
+    /**
+     * 存储开始时间
+     * @private
+     * @type {Date}
+     */
+    this.fromAt = undefined
 
-  /**
-   * 存储结束时间
-   * @private
-   * @type {Date}
-   */
-  toAt
+    /**
+     * 存储结束时间
+     * @private
+     * @type {Date}
+     */
+    this.toAt = undefined
 
-  /**
-   * 存储开始时间的浮层
-   * @private
-   * @type {Layer}
-   */
-  fromAtLayer
+    /**
+     * 存储开始时间的浮层
+     * @private
+     * @type {Layer}
+     */
+    this.fromAtLayer = undefined
 
-  /**
-   * 存储结束时间的浮层
-   * @private
-   * @type {Layer}
-   */
-  toAtLayer
+    /**
+     * 存储结束时间的浮层
+     * @private
+     * @type {Layer}
+     */
+    this.toAtLayer = undefined
 
-  /**
-   * 存储开始时间的配置
-   * @private
-   * @type {Object}
-   */
-  fromAtConfig
+    /**
+     * 存储开始时间的配置
+     * @private
+     * @type {Object}
+     */
+    this.fromAtConfig = undefined
 
-  /**
-   * 存储结束时间的配置
-   * @private
-   * @type {Object}
-   */
-  toAtConfig
+    /**
+     * 存储结束时间的配置
+     * @private
+     * @type {Object}
+     */
+    this.toAtConfig = undefined
+  }
 
   /**
    * 静态方法创建实例化类，然后配置类的参数
@@ -101,10 +103,11 @@ export default class DatetimeRange {
    */
   showFromAt (propsData = {}) {
     // 创建浮层，显示，并监听
-    this.fromAtLayer = Datetime.create({
-      ...this.fromAtConfig,
-      ...propsData
-    }).show().on('confirm', (display, formats) => {
+    this.fromAtLayer = Datetime.create(Object.assign(
+      {},
+      this.fromAtConfig,
+      propsData
+    )).show().on('confirm', (display, formats) => {
       this.whenFromAtLayerHiding(display, formats)
     })
 
@@ -152,10 +155,11 @@ export default class DatetimeRange {
    * @return {DatetimeRange}
    */
   showToAt (propsData = {}) {
-    this.toAtLayer = Datetime.create({
-      ...this.toAtConfig,
-      ...propsData
-    }).show().on('confirm', (display, toAt) => {
+    this.toAtLayer = Datetime.create(Object.assign(
+      {},
+      this.toAtConfig,
+      propsData
+    )).show().on('confirm', (display, toAt) => {
       this.whenConfirm(display, toAt)
     }).on('cancel', () => {
       this.whenToAtLayerHiding()
@@ -192,11 +196,14 @@ export default class DatetimeRange {
    * @param  {Object}        [propsData={}]
    */
   setFromAtConfig (propsData = {}) {
-    this.fromAtConfig = {
-      title: '选择开始时间',
-      confirmText: '下一步',
-      ...propsData
-    }
+    this.fromAtConfig = Object.assign(
+      {},
+      {
+        title: '选择开始时间',
+        confirmText: '下一步'
+      },
+      propsData
+    )
   }
 
   /**
@@ -205,12 +212,15 @@ export default class DatetimeRange {
    * @param  {Object}      [propsData={}] [description]
    */
   setToAtConfig (propsData = {}) {
-    this.toAtConfig = {
-      title: '选择结束时间',
-      cancelText: '上一步',
-      smallerText: '不可小于最小时间',
-      ...propsData
-    }
+    this.toAtConfig = Object.assign(
+      {},
+      {
+        title: '选择结束时间',
+        cancelText: '上一步',
+        smallerText: '不可小于最小时间'
+      },
+      propsData
+    )
   }
 
   /**
