@@ -1,6 +1,6 @@
 {
   "name": "@humans/turn",
-  "version": "3.0.0-alpha.11",
+  "version": "3.0.0-alpha.12",
   "description": "Turn switch component",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/loading-icon": "^3.0.0-alpha.11"
+    "@humans/loading-icon": "^3.0.0-alpha.12"
   },
   "publishConfig": {
     "access": "public"

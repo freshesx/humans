@@ -1,6 +1,6 @@
 {
   "name": "@humans/message",
-  "version": "3.0.0-alpha.11",
+  "version": "3.0.0-alpha.12",
   "description": "Message component",
   "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
   "license": "MIT",
@@ -9,9 +9,9 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/icon": "^3.0.0-alpha.11",
-    "@humans/layer": "^3.0.0-alpha.11",
-    "@humans/shade": "^3.0.0-alpha.11"
+    "@humans/icon": "^3.0.0-alpha.12",
+    "@humans/layer": "^3.0.0-alpha.12",
+    "@humans/shade": "^3.0.0-alpha.12"
   },
   "publishConfig": {
     "access": "public"
