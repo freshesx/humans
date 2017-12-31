@@ -24,7 +24,7 @@
     "test": "yarn run unit",
     "example": "node scripts/house/development.js",
     "unit": "jest --config scripts/jest/jest.conf.js",
-    "alpha": "yarn run build && lerna publish"
+    "prerelease": "lerna publish --skip-npm"
   },
   "devDependencies": {
     "@freshes/house": "^1.1.0",
