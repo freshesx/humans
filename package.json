@@ -1,5 +1,5 @@
 {
-  "name": "vue-human",
+  "name": "@freshes/humans",
   "version": "2.8.3",
   "description": "Vue Human is designed for high quality user experience. It has rich interactive and animation component. Inspired by iOS Human Interface Guidelines",
   "author": "ChaselWu <chasel.wu@vitualreaty.com>",
@@ -30,6 +30,9 @@
     "test": "karma start test/unit/karma.conf.js --single-run",
     "test:unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js",
     "docs": "jsdoc -r -c ./docs/jsdoc.json"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "lodash": "^4.17.4",
