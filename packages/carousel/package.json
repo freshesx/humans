@@ -1,0 +1,14 @@
+{
+  "name": "@humans/carousel",
+  "version": "3.0.0-alpha.9",
+  "description": "Carousel component",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
