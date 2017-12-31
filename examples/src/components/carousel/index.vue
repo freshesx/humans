@@ -36,7 +36,7 @@
           { src: 'https://ois1yok9v.qnssl.com/home-banner-2.jpg' },
           { src: 'https://ois1yok9v.qnssl.com/home-banner-3.jpg' }
         ]
-        this.$refs.carousel.length = 3
+        if (this.$refs.carousel) this.$refs.carousel.length = 3
       }, 2000)
     }
   }
