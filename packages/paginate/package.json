@@ -1,0 +1,14 @@
+{
+  "name": "@humans/paginate",
+  "version": "3.0.0-alpha.12",
+  "description": "Paginate component",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
