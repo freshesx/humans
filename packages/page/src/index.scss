@@ -1,0 +1,7 @@
+.has-slide-enter {
+  transform: translateX(50%);
+}
+
+.has-slide-enter-active {
+  transition: transform 0.2s;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@humans/page",
+  "version": "3.0.0-alpha.12",
+  "description": "Page component",
+  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "license": "MIT",
+  "module": "dist/main.esm.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
