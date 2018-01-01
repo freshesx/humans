@@ -1,36 +1,25 @@
 <template>
-  <page>
-    <mn-letter>
-      <mn-letter-body><h1>Rate</h1></mn-letter-body>
-    </mn-letter>
-
-    <mn-section>
-      <mn-section-note>Read only rate component. Support for half-star.</mn-section-note>
-      <mn-card>
-        <mn-card-item>
-          <mn-card-body><mn-rate :value="3" disabled></mn-rate></mn-card-body>
-          <mn-card-suffix>Disabled 3</mn-card-suffix>
-        </mn-card-item>
-        <mn-card-item>
-          <mn-card-body><mn-rate :value="3.6" disabled></mn-rate></mn-card-body>
-          <mn-card-suffix>Disabled 3.6</mn-card-suffix>
-        </mn-card-item>
-        <mn-card-item>
-          <mn-card-body><mn-rate v-model="rate" @input="onChange"></mn-rate></mn-card-body>
-          <mn-card-suffix>Writable Rate: {{ rate }}</mn-card-suffix>
-        </mn-card-item>
-      </mn-card>
-    </mn-section>
-  </page>
+  <div>
+    <div>
+      <div><mn-rate :value="3" disabled></mn-rate></div>
+      <div>Disabled 3</div>
+    </div>
+    <div>
+      <div><mn-rate :value="3.6" disabled></mn-rate></div>
+      <div>Disabled 3.6</div>
+    </div>
+    <div>
+      <div><mn-rate v-model="rate" @input="onChange"></mn-rate></div>
+      <div>Writable Rate: {{ rate }}</div>
+    </div>
+  </div>
 </template>
 
 <script>
-  import rate from 'vue-human/suites/rate'
+  import rate from '@humans/rate'
 
   export default {
-    components: {
-      ...rate.map()
-    },
+    components: Object.assign({}, rate),
     data () {
       return {
         rate: 3

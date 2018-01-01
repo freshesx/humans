@@ -169,6 +169,11 @@ const router = new VueRouter({
       path: '/paginate',
       name: 'paginate',
       component: resolve => { require(['../components/paginate'], resolve) }
+    },
+    {
+      path: '/rate',
+      name: 'rate',
+      component: resolve => { require(['../components/rate'], resolve) }
     }
   ]
 })
