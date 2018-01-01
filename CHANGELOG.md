@@ -18,6 +18,10 @@
 * When use search-bar with input, the input must be set size prop to `sm`. Because the input component's size prop is `lg`
  by default.
 
+### @humans/column
+
+* You can use `@humans/share` to custom your response screens config before load `@humans/column`.
+
 ### vuelidate
 
 * You need to load vuelidate manually.
