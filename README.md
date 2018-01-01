@@ -1,14 +1,4 @@
-<p align="center">
-  <img width="320" src="https://raw.githubusercontent.com/freshesx/humans/master/docs/vue-human.jpg">
-</p>
-
-<p align="center">
-  <a href="https://circleci.com/gh/freshesx/humans/tree/master" title="CircleCI">
-    <img src="https://circleci.com/gh/freshesx/humans/tree/next-3.svg?style=svg">
-  </a>
-</p>
-
-# Humans
+# Humans [![CircleCI](https://circleci.com/gh/freshesx/humans.svg?style=svg)](https://circleci.com/gh/freshesx/humans)
 
 Humans is designed for mobile and desktop for human users. And it is vue-based implementation. To help developer to build UI quickly.
 
