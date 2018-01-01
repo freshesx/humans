@@ -1,0 +1,62 @@
+@import "../../../shares/scss/vars";
+
+// Import external css
+@import "~@humans/icon/dist/main.css";
+
+$mn-tab-bar-item-color: #999;
+$mn-tab-bar-item-active-color: darken($green, 10%);
+$mn-tab-bar-item-badge-bg: $pink;
+
+.mn-tab-bar {
+  display: flex;
+  background: #fafafa;
+  height: 3rem;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.mn-tab-bar-items {
+  display: flex;
+  flex: 1;
+  max-width: 400px;
+}
+
+.mn-tab-bar-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: $mn-tab-bar-item-color;
+  cursor: pointer;
+
+  // @todo 增加 scss 配置至 vars
+  &.is-active {
+    color: $mn-tab-bar-item-active-color;
+  }
+}
+
+.mn-tab-bar-title {
+  font-size: 12px;
+}
+
+.mn-tab-bar-badge {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: $mn-tab-bar-item-badge-bg;
+  font-size: 10px;
+  color: #fff;
+  top: 3px;
+  left: 50%;
+  margin-left: 6px;
+  line-height: 18px;
+  text-align: center;
+
+  &.is-more {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+  }
+}
