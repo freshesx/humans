@@ -1,0 +1,54 @@
+@import "../../../shares/scss/mixins/media";
+@import "../../../shares/scss/vars";
+
+// 公有属性
+$mn-column-grid-gutters: $grid-gutters !default;
+$mn-column-grid-breakpoints: $grid-breakpoints !default;
+
+.mn-column {
+  width: 100%;
+
+  // When `mobile` media query, padding is 0, and use single column forcely.
+  // When equal and more than `tablet` media query, padding is 0.5rem.
+  @include min-screen(tablet) {
+    padding: 0 $mn-column-grid-gutters * 0.5;
+  }
+
+  @each $-breakpoint in map-keys($mn-column-grid-breakpoints) {
+    @include min-screen($-breakpoint) {
+      @for $-number from 1 through 12 {
+        &.is-#{$-breakpoint}-#{$-number} {
+          width: (100% / 12) * $-number;
+        }
+
+        &.is-#{$-breakpoint}-offset-#{$-number} {
+          margin-left: (100% / 12) * $-number;
+        }
+      }
+    }
+
+    // When `mobile` media query, only use single column.
+    @include max-screen('tablet') {
+      @for $-number from 1 through 12 {
+        &.is-#{$-breakpoint}-#{$-number} {
+          width: 100%;
+        }
+
+        &.is-#{$-breakpoint}-offset-#{$-number} {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.mn-columns {
+  display: flex;
+  flex-wrap: wrap;
+
+  // When `mobile` media query, padding is 0, and use single column forcely.
+  // When equal and more than `tablet` media query, padding is 0.5rem.
+  @include min-screen(tablet) {
+    margin: 0 $mn-column-grid-gutters * -0.5;
+  }
+}
