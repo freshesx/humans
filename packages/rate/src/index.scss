@@ -1,0 +1,18 @@
+@import "../../../shares/scss/vars";
+
+// Import external css
+@import "~@humans/icon/dist/main.css";
+
+$mn-rate-color: $orange;
+
+.mn-rate {
+  color: $mn-rate-color;
+}
+
+.mn-rate-item {
+  cursor: pointer;
+
+  &.is-disabled {
+    cursor: default;
+  }
+}
