@@ -1,13 +1,5 @@
 <template>
-  <page>
-    <mn-section>
-      <mn-letter>
-        <mn-letter-body>
-          <h1>Column <small>12 列布局</small></h1>
-        </mn-letter-body>
-      </mn-letter>
-    </mn-section>
-
+  <div>
     <mn-section>
       <mn-columns>
         <mn-column mobile="4">
@@ -94,5 +86,15 @@
         </mn-column>
       </mn-columns>
     </mn-section>
-  </page>
+  </div>
 </template>
+
+<script>
+  import section from '@humans/section'
+  import card from '@humans/card'
+  import column from '@humans/column'
+
+  export default {
+    components: Object.assign({}, section, card, column)
+  }
+</script>

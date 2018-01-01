@@ -189,6 +189,11 @@ const router = new VueRouter({
       path: '/tag',
       name: 'tag',
       component: resolve => { require(['../components/tag'], resolve) }
+    },
+    {
+      path: '/column',
+      name: 'column',
+      component: resolve => { require(['../components/column'], resolve) }
     }
   ]
 })
