@@ -22,6 +22,10 @@
 
 * You can use `@humans/share` to custom your response screens config before load `@humans/column`.
 
+### @humans/page
+
+* Add &lt;div&gt; into page component to avoid transition one tag bug.
+
 ### vuelidate
 
 * You need to load vuelidate manually.
