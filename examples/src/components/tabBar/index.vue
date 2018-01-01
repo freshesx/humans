@@ -1,10 +1,5 @@
 <template>
-  <page>
-    <mn-letter>
-      <mn-letter-body>
-        <h1>Tab Bar</h1>
-      </mn-letter-body>
-    </mn-letter>
+  <div>
     <mn-tab-bar>
       <mn-tab-bar-item :icon="active === key ? item.activeIcon : item.icon"
         :title="item.title"
@@ -13,16 +8,14 @@
         @click="active = key"
         v-for="(item, key) in menu" :key="key"></mn-tab-bar-item>
     </mn-tab-bar>
-  </page>
+  </div>
 </template>
 
 <script>
-  import tabBar from 'vue-human/suites/tabBar'
+  import tabBar from '@humans/tab-bar'
 
   export default {
-    components: {
-      ...tabBar.map()
-    },
+    components: Object.assign({}, tabBar),
     data () {
       return {
         active: 0,
