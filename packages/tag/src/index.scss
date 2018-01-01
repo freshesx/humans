@@ -1,0 +1,21 @@
+.mn-tag {
+  font-size: 0.9rem;
+  padding: 0.1rem 0.6rem;
+  display: inline-block;
+  border-radius: 2rem;
+  cursor: default;
+  color: #fff;
+  background: #000;
+
+  &.is-sm {
+    font-size: 0.7rem;
+  }
+
+  &.is-lg {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
