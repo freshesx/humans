@@ -18,6 +18,10 @@
 * When use search-bar with input, the input must be set size prop to `sm`. Because the input component's size prop is `lg`
  by default.
 
+### vuelidate
+
+* You need to load vuelidate manually.
+
 ## 2.8.0
 
 * 【删除】移除 vue-i18n 库和多语言功能的实现，删除 locale 文件夹
