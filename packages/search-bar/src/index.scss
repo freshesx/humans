@@ -1,0 +1,31 @@
+@import "../../../shares/scss/vars";
+
+// Import external css
+@import "~@humans/icon/dist/main.css";
+
+$mn-search-bar-grid-gutters: $grid-gutters;
+$mn-search-bar-bg: #eee;
+$mn-search-bar-color: #000;
+$mn-search-bar-mobile-radius: $base-radius;
+
+.mn-search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  align-items: center;
+  background: $mn-search-bar-bg;
+  color: $mn-search-bar-color;
+  border-radius: $mn-search-bar-mobile-radius;
+  padding: $mn-search-bar-grid-gutters / 2;
+  transition: width 0.2s;
+
+  &-control {
+    flex: 1;
+    margin-left: $mn-search-bar-grid-gutters / 2;
+  }
+
+  &.is-sm {
+    padding-top: $mn-search-bar-grid-gutters / 4;
+    padding-bottom: $mn-search-bar-grid-gutters / 4;
+  }
+}
