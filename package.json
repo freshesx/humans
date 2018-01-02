@@ -1,10 +1,10 @@
 {
-  "description": "Freshes Human based on vue for quick developing application",
-  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "description": "Humans is designed for mobile and desktop for human users. And it is vue-based implementation.",
+  "author": "Wu Qicheng <chasel.wu@vitualreaty.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HumanUI/vue-human.git"
+    "url": "git+https://github.com/freshesx/humans.git"
   },
   "keywords": [
     "vue",
