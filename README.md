@@ -72,6 +72,7 @@ $ lerna bootstrap  # install packages for every packages
 ##### run examples
 
 ``` shell
+$ yarn run build     # you need build packages before start
 $ yarn start
 ```
 
