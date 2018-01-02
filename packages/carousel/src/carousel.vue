@@ -1,15 +1,16 @@
 <template>
-  <div
-    class="mn-carousel"
+  <div class="mn-carousel"
     :class="{}"
     @click.prevent="onClick"
     @touchstart="touchStart"
     @touchmove="touchMove"
-    @touchend="touchEnd">
+    @touchend="touchEnd"
+  >
     <div class="mn-carousel-content" :style="[
       { transform: translateX },
       transition
     ]">
+      <!-- The carousel main contents -->
       <slot></slot>
     </div>
     <slot name="indicators">
@@ -17,7 +18,8 @@
         <div class="mn-carousel-indicator"
           @click.prevent.stop="setIndex(item - 1)"
           :class="{ 'is-active': item === index + 1 }"
-          v-for="item in length"></div>
+          v-for="item in length"
+        ></div>
       </div>
     </slot>
   </div>
@@ -25,27 +27,22 @@
 
 <script>
   /**
-   * 轮播组件
-   * @module suites/carousel/carousel
-   * @example
-   * <mn-carousel>...</mn-carousel>
-   *
-   * @slot  default    - carousel item
+   * Carousel component
    */
   export default {
     name: 'mn-carousel',
     data () {
       return {
-        startPageX: undefined,        // touch 坐标
-        startPageY: undefined,        // touch 坐标
+        startPageX: undefined,        // touch start x position
+        startPageY: undefined,        // touch start y position
         length: 0,                    // carousel item length
-        index: 0,                     // 目前轮播的 item 的下标
-        x: 0,                         // 横向偏移值
-        width: undefined,             // carousel 的宽度
-        transitionOpen: false,        // 动画效果是否开启
-        autoplayDuration: 2000,       // 循环轮播的间隔时间
-        autoplayDelay: 2000,          // 循环轮播延迟多久后启动
-        requestAutoplay: false        // 是否请求循环轮播
+        index: 0,                     // images index
+        x: 0,                         // image container left offset width
+        width: undefined,             // container total width
+        transitionOpen: false,        // open css transition, when touch move, the data is false
+        autoplayDuration: 2000,       // autoplay duration time
+        autoplayDelay: 2000,          // autoplay delay start time
+        requestAutoplay: false        // is opened autoplay now
       }
     },
     computed: {
@@ -60,7 +57,7 @@
     },
     methods: {
       /**
-       * 修改 item length
+       * Change item length
        * @public setLength
        * @param {Number} length
        */
@@ -69,9 +66,9 @@
         return this
       },
       /**
-       * 切换图片
+       * Switch image index
        * @public setIndex
-       * @param  {Number} index 0 为第一张
+       * @param  {Number} index  - 0 is first image
        * @return {this}
        */
       setIndex (index) {
@@ -81,7 +78,7 @@
         return this
       },
       /**
-       * 切换下一张图片
+       * Switch to next image
        * @public nextIndex
        * @return {this}
        */
@@ -91,7 +88,7 @@
         return this
       },
       /**
-       * 切换上一张图片
+       * Switch to prev image
        * @public prevIndex
        * @return {this}
        */
@@ -101,9 +98,9 @@
         return this
       },
       /**
-       * 开启或关闭循环播放
+       * Open or close autoplay
        * @public autoplay
-       * @param  {Boolean} active true 为开启，false 为关闭
+       * @param  {Boolean} active
        * @return {this}
        */
       autoplay (active) {
@@ -175,7 +172,7 @@
         })
       },
       onClick (event) {
-        // 移除该功能
+        // @todo remove this function
         // if (event.offsetX === undefined) return
         // if (event.offsetX < this.width / 2) {
         //   this.prevIndex()
@@ -186,14 +183,22 @@
     },
     watch: {
       index (newValue) {
+        /**
+         * @event index
+         * @property {Number} index  - current image index
+         */
         this.$emit('index', newValue)
       },
       length (newValue) {
+        /**
+         * @event length
+         * @property {Number} length - current images length
+         */
         this.$emit('length', newValue)
       }
     },
     created () {
-      // 初始化时获得 items 数量
+      // Get image items length by created
       if (!this.$slots.default) {
         this.length = 0
       } else {
