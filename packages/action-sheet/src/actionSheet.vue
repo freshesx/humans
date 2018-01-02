@@ -3,6 +3,7 @@
     <div class="mn-action-sheet" v-if="visible" :style="{ zIndex }">
       <!-- Main contents -->
       <div :style="hasCancelButtonStyle">
+        <!-- The main contents -->
         <slot></slot>
       </div>
       <!-- Cancel button -->
@@ -22,6 +23,9 @@
   import { layerMixin } from '@humans/layer'
   import { shadeMixin } from '@humans/shade'
 
+  /**
+   * Action sheet component
+   */
   export default {
     name: 'mn-action-sheet',
     components: Object.assign({}, card),
@@ -30,10 +34,16 @@
       shadeMixin
     ],
     props: {
+      /**
+       * Show cancel button
+       */
       cancelButton: {
         type: Boolean,
         default: true
       },
+      /**
+       * Cancel button text
+       */
       cancelText: {
         type: String,
         default: '取消'
