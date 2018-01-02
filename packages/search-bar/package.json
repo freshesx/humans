@@ -2,7 +2,7 @@
   "name": "@humans/search-bar",
   "version": "3.0.0-alpha.12",
   "description": "Search bar component",
-  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
   "module": "dist/main.esm.js",
   "files": [

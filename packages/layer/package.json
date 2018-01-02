@@ -2,7 +2,7 @@
   "name": "@humans/layer",
   "version": "3.0.0-alpha.12",
   "description": "Layer foundation Library",
-  "author": "Wu Qicheng <qicheng.wu@vitualreaty.com>",
+  "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
   "module": "dist/main.esm.js",
   "files": [
