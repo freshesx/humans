@@ -31,6 +31,7 @@
   import TYPES from './types'
 
   export default {
+    name: 'mn-message',
     components: Object.assign({}, icon),
     mixins: [
       layerMixin
