@@ -16,13 +16,13 @@ Humans is designed for mobile and desktop for human users. And it is vue-based i
 
 ## Quick Start
 
-* install dependencies
+### install dependencies
 
 ``` shell
 yarn add @humans/base @human/btn
 ```
 
-* use dependencies
+### use dependencies
 
 `main.js`
 
@@ -58,9 +58,9 @@ export default {
 
 ## Contributing Guide
 
-##### How to run the project in your system
+### How to run the project in your system
 
-* install
+##### install
 
 ``` shell
 $ git clone git@github.com:freshesx/humans.git
@@ -69,32 +69,32 @@ $ yarn install
 $ lerna bootstrap  # install packages for every packages
 ```
 
-* run examples
+##### run examples
 
 ``` shell
 $ yarn start
 ```
 
-* build packages
+##### build packages
 
 ``` shell
 $ yarn run build
 $ yarn run build --watch    # you can add watch
 ```
 
-* run test
+##### run test
 
 ``` shell
 $ yarn test
 ```
 
-* build api docs
+##### build api docs
 
 ``` shell
 $ yarn run docs:api
 ```
 
-* build vue docs and open it in browser
+##### build vue docs and open it in browser
 
 ``` shell
 $ yarn run docs:vue
