@@ -17,10 +17,16 @@
   import homeIcon from 'vue-human-icons/js/android/home.js'
   import keypadIcon from 'vue-human-icons/js/ios/keypad.js'
 
+  /**
+   * Assistive bar component
+   */
   export default {
     name: 'mn-assistive-bar',
     components: Object.assign({}, icon),
     props: {
+      /**
+       * Show self
+       */
       show: Boolean
     },
     data () {
@@ -93,6 +99,11 @@
       },
       onOpen () {
         this.openLoading('menuLoading')
+
+        /**
+         * @event update:show
+         * @property {Boolean} show  - show self
+         */
         this.$emit('update:show', true)
       },
       openLoading (name, time = 600) {
