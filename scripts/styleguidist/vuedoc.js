@@ -2,6 +2,9 @@ const path = require('path')
 
 module.exports = {
   components: path.resolve(__dirname, '../../packages/**/*.vue'),
+  ignore: [
+    '**/node_modules/**'
+  ],
   styleguideDir: path.resolve(__dirname, '../../docs/vue'),
   webpackConfig: {
     resolve: {
