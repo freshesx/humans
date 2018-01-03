@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div>
       <h1>Datetime Single Mode</h1>
       <mn-datetime-picker :display="models.datetime"
@@ -38,15 +37,14 @@
 </template>
 
 <script>
-  import input from '@humans/input'
-  import {
-    default as datetime,
-    Datetime,
-    DatetimeRange
-  } from '@humans/datetime'
+  import { input } from '@humans/input'
+  import { datetime, Datetime, DatetimeRange } from '@humans/datetime'
 
   export default {
-    components: Object.assign({}, input, datetime),
+    components: {
+      ...input,
+      ...datetime
+    },
     data () {
       return {
         models: {

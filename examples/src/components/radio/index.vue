@@ -36,11 +36,14 @@
 </template>
 
 <script>
-  import radio from '@humans/radio'
-  import card from '@humans/card'
+  import { radio } from '@humans/radio'
+  import { card } from '@humans/card'
 
   export default {
-    components: Object.assign({}, radio, card),
+    components: {
+      ...radio,
+      ...card
+    },
     data () {
       return {
         icons: {

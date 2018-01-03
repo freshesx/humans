@@ -90,11 +90,15 @@
 </template>
 
 <script>
-  import section from '@humans/section'
-  import card from '@humans/card'
-  import column from '@humans/column'
+  import { section } from '@humans/section'
+  import { card } from '@humans/card'
+  import { column } from '@humans/column'
 
   export default {
-    components: Object.assign({}, section, card, column)
+    components: {
+      ...section,
+      ...card,
+      ...column
+    }
   }
 </script>

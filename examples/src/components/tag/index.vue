@@ -32,11 +32,14 @@
 </template>
 
 <script>
-  import tag from '@humans/tag'
-  import icon from '@humans/icon'
+  import { tag } from '@humans/tag'
+  import { icon } from '@humans/icon'
 
   export default {
-    components: Object.assign({}, tag, icon),
+    components: {
+      ...tag,
+      ...icon
+    },
     data () {
       return {
         checkmark: require('vue-human-icons/js/ios/checkmark-empty')

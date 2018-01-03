@@ -42,10 +42,12 @@
 </template>
 
 <script>
-  import input from '@humans/input'
+  import { input } from '@humans/input'
 
   export default {
-    components: Object.assign({}, input),
+    components: {
+      ...input
+    },
     data () {
       return {
         models: {

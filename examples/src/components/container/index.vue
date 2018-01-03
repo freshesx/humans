@@ -7,9 +7,11 @@
 </template>
 
 <script>
-  import container from '@humans/container'
+  import { container } from '@humans/container'
 
   export default {
-    components: Object.assign({}, container)
+    components: {
+      ...container
+    }
   }
 </script>

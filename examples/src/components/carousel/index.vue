@@ -9,10 +9,12 @@
 </template>
 
 <script>
-  import carousel from '@humans/carousel'
+  import { carousel } from '@humans/carousel'
 
   export default {
-    components: Object.assign({}, carousel),
+    components: {
+      ...carousel
+    },
     data () {
       return {
         models: {

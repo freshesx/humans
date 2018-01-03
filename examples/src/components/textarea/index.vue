@@ -8,10 +8,12 @@
 </template>
 
 <script>
-  import textarea from '@humans/textarea'
+  import { textarea } from '@humans/textarea'
 
   export default {
-    components: Object.assign({}, textarea),
+    components: {
+      ...textarea
+    },
     data () {
       return {
         models: {

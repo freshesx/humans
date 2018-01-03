@@ -8,10 +8,12 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
 
   export default {
-    components: Object.assign({}, icon),
+    components: {
+      ...icon
+    },
     data () {
       return {
         icons: {

@@ -5,9 +5,11 @@
 </template>
 
 <script>
-  import assistiveBar from '@humans/assistive-bar'
+  import { assistiveBar } from '@humans/assistive-bar'
 
   export default {
-    components: Object.assign({}, assistiveBar)
+    components: {
+      ...assistiveBar
+    }
   }
 </script>

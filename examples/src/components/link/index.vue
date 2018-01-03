@@ -7,10 +7,12 @@
 </template>
 
 <script>
-  import link from '@humans/link'
+  import { link } from '@humans/link'
 
   export default {
-    components: Object.assign({}, link),
+    components: {
+      ...link
+    },
     data () {
       return {
         icons: {

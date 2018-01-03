@@ -5,9 +5,11 @@
 </template>
 
 <script>
-  import loadingIcon from '@humans/loading-icon'
+  import { loadingIcon } from '@humans/loading-icon'
 
   export default {
-    components: Object.assign({}, loadingIcon)
+    components: {
+      ...loadingIcon
+    }
   }
 </script>

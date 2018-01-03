@@ -9,9 +9,11 @@
 </template>
 
 <script>
-  import image from '@humans/image'
+  import { image } from '@humans/image'
 
   export default {
-    components: Object.assign({}, image)
+    components: {
+      ...image
+    }
   }
 </script>

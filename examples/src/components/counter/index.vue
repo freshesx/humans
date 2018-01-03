@@ -5,10 +5,12 @@
 </template>
 
 <script>
-  import counter from '@humans/counter'
+  import { counter } from '@humans/counter'
 
   export default {
-    components: Object.assign({}, counter),
+    components: {
+      ...counter
+    },
     data () {
       return {
         icons: {

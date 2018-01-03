@@ -27,10 +27,12 @@
 </template>
 
 <script>
-  import turn from '@humans/turn'
+  import { turn } from '@humans/turn'
 
   export default {
-    components: Object.assign({}, turn),
+    components: {
+      ...turn
+    },
     data () {
       return {
         models: {

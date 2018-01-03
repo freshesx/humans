@@ -28,13 +28,17 @@
 </template>
 
 <script>
-  import form from '@humans/form'
-  import label from '@humans/label'
-  import helper from '@humans/helper'
+  import { form } from '@humans/form'
+  import { label } from '@humans/label'
+  import { helper } from '@humans/helper'
   import { between } from 'vuelidate/lib/validators'
 
   export default {
-    components: Object.assign({}, form, label, helper),
+    components: {
+      ...form,
+      ...label,
+      ...helper
+    },
     data () {
       return {
         models: {

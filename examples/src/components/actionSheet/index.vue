@@ -19,7 +19,7 @@
 
 <script>
   import { actionSheet } from '@humans/action-sheet'
-  import card from '@humans/card'
+  import { card } from '@humans/card'
 
   export default {
     components: Object.assign({}, actionSheet, card),

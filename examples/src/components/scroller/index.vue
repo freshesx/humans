@@ -9,9 +9,11 @@
 </template>
 
 <script>
-  import scroller from '@humans/scroller'
+  import { scroller } from '@humans/scroller'
 
   export default {
-    components: Object.assign({}, scroller)
+    components: {
+      ...scroller
+    }
   }
 </script>

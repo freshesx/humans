@@ -17,11 +17,15 @@
 </template>
 
 <script>
-  import container from '@humans/container'
-  import section from '@humans/section'
-  import card from '@humans/card'
+  import { container } from '@humans/container'
+  import { section } from '@humans/section'
+  import { card } from '@humans/card'
 
   export default {
-    components: Object.assign({}, container, section, card)
+    components: {
+      ...container,
+      ...section,
+      ...card
+    }
   }
 </script>

@@ -5,9 +5,11 @@
 </template>
 
 <script>
-  import page from '@humans/page'
+  import { page } from '@humans/page'
 
   export default {
-    components: Object.assign({}, page)
+    components: {
+      ...page
+    }
   }
 </script>

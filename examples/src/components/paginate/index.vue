@@ -9,10 +9,12 @@
 </template>
 
 <script>
-  import paginate from '@humans/paginate'
+  import { paginate } from '@humans/paginate'
 
   export default {
-    components: Object.assign({}, paginate),
+    components: {
+      ...paginate
+    },
     data () {
       return {
         models: {

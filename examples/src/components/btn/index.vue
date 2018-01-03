@@ -52,10 +52,12 @@
 </template>
 
 <script>
-  import btn from '@humans/btn'
+  import { btn } from '@humans/btn'
 
   export default {
-    components: Object.assign({}, btn),
+    components: {
+      ...btn
+    },
     data () {
       return {
         icons: {

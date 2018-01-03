@@ -88,10 +88,12 @@
 </template>
 
 <script>
-  import menu from '@humans/menu'
+  import { menu } from '@humans/menu'
 
   export default {
-    components: Object.assign({}, menu)
+    components: {
+      ...menu
+    }
   }
 </script>
 

@@ -11,10 +11,12 @@
 </template>
 
 <script>
-  import navBar from '@humans/nav-bar'
+  import { navBar } from '@humans/nav-bar'
 
   export default {
-    components: Object.assign({}, navBar),
+    components: {
+      ...navBar
+    },
     data () {
       return {
         icons: {

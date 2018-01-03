@@ -9,9 +9,11 @@
 </template>
 
 <script>
-  import article from '@humans/article'
+  import { article } from '@humans/article'
 
   export default {
-    components: Object.assign({}, article)
+    components: {
+      ...article
+    }
   }
 </script>

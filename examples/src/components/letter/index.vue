@@ -12,9 +12,11 @@
 </template>
 
 <script>
-  import letter from '@humans/letter'
+  import { letter } from '@humans/letter'
 
   export default {
-    components: Object.assign({}, letter)
+    components: {
+      ...letter
+    }
   }
 </script>

@@ -22,14 +22,20 @@
 </template>
 
 <script>
-  import modal from '@humans/modal'
-  import card from '@humans/card'
-  import scroller from '@humans/scroller'
-  import section from '@humans/section'
-  import btn from '@humans/btn'
+  import { modal } from '@humans/modal'
+  import { card } from '@humans/card'
+  import { scroller } from '@humans/scroller'
+  import { section } from '@humans/section'
+  import { btn } from '@humans/btn'
 
   export default {
-    components: Object.assign({}, modal, card, scroller, section, btn),
+    components: {
+      ...modal,
+      ...card,
+      ...scroller,
+      ...section,
+      ...btn
+    },
     data () {
       return {
         showModal: false

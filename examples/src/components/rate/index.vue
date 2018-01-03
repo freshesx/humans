@@ -16,10 +16,12 @@
 </template>
 
 <script>
-  import rate from '@humans/rate'
+  import { rate } from '@humans/rate'
 
   export default {
-    components: Object.assign({}, rate),
+    components: {
+      ...rate
+    },
     data () {
       return {
         rate: 3

@@ -12,10 +12,12 @@
 </template>
 
 <script>
-  import tabBar from '@humans/tab-bar'
+  import { tabBar } from '@humans/tab-bar'
 
   export default {
-    components: Object.assign({}, tabBar),
+    components: {
+      ...tabBar
+    },
     data () {
       return {
         active: 0,

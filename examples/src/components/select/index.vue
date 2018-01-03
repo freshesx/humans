@@ -5,10 +5,12 @@
 </template>
 
 <script>
-  import select from '@humans/select'
+  import { select } from '@humans/select'
 
   export default {
-    components: Object.assign({}, select),
+    components: {
+      ...select
+    },
     data () {
       return {
         models: {

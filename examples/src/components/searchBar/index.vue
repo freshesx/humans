@@ -13,13 +13,18 @@
 </template>
 
 <script>
-  import searchBar from '@humans/search-bar'
-  import input from '@humans/input'
-  import section from '@humans/section'
-  import card from '@humans/card'
+  import { searchBar } from '@humans/search-bar'
+  import { input } from '@humans/input'
+  import { section } from '@humans/section'
+  import { card } from '@humans/card'
 
   export default {
-    components: Object.assign({}, searchBar, input, section, card),
+    components: {
+      ...searchBar,
+      ...input,
+      ...section,
+      ...card
+    },
     data () {
       return {
         searchText: undefined

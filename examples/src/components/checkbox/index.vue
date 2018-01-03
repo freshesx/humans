@@ -34,11 +34,14 @@
 </template>
 
 <script>
-  import checkbox from '@humans/checkbox'
-  import card from '@humans/card'
+  import { checkbox } from '@humans/checkbox'
+  import { card } from '@humans/card'
 
   export default {
-    components: Object.assign({}, checkbox, card),
+    components: {
+      ...checkbox,
+      ...card
+    },
     data () {
       return {
         icons: {

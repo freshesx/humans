@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <mn-card>
       <mn-card-item v-for="i in 2" :key="i">
         <mn-card-prefix>
@@ -67,15 +66,16 @@
         <button class="has-blue-text">Confirm</button>
       </mn-card-btns>
     </mn-card>
-
   </div>
 </template>
 
 <script>
-  import card from '@humans/card'
+  import { card } from '@humans/card'
 
   export default {
-    components: Object.assign({}, card)
+    components: {
+      ...card
+    }
   }
 </script>
 
