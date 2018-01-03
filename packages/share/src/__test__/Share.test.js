@@ -1,4 +1,4 @@
-import Share from './Share.js'
+import Share from '../Share.js'
 
 /** @test {Share} */
 describe('Share', () => {
