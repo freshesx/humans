@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import btn from '@humans/btn'
+  import { btn } from '@humans/btn'
 
   /**
    * Link component from btn component

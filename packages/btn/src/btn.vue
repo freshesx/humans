@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
 
   /**
    * Button component

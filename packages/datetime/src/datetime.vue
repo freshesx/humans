@@ -59,7 +59,7 @@
 </template>
 
 <script>
-  import card from '@humans/card'
+  import { card } from '@humans/card'
   import { Message } from '@humans/message'
   import { layerMixin } from '@humans/layer'
   import { shadeMixin } from '@humans/shade'

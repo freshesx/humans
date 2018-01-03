@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
   import checkmarkIcon from 'vue-human-icons/js/ios/checkmark-empty'
 
   /**

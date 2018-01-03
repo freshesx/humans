@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
   import clearIcon from 'vue-human-icons/js/ios/close'
 
   /**

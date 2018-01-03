@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
   import backIcon from 'vue-human-icons/js/ios/arrow-back.js'
   import homeIcon from 'vue-human-icons/js/android/home.js'
   import keypadIcon from 'vue-human-icons/js/ios/keypad.js'

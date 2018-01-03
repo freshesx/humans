@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
   import searchIcon from 'vue-human-icons/js/ios/search-strong'
 
   export default {

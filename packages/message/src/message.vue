@@ -26,7 +26,7 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
   import { layerMixin } from '@humans/layer'
   import TYPES from './types'
 

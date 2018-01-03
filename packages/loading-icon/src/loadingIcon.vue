@@ -4,7 +4,7 @@
 
 <script>
   import Vue from 'vue'
-  import share from '@humans/share'
+  import { share } from '@humans/share'
   import defaultIcon from './icon.vue'
 
   /**

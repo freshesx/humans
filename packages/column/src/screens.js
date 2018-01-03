@@ -1,4 +1,4 @@
-import share from '@humans/share'
+import { share } from '@humans/share'
 
 const defaultScreens = [
   { name: 'mobile', min: 0 },

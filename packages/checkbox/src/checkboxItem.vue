@@ -1,5 +1,5 @@
 <script>
-  import radio from '@humans/radio'
+  import { radio } from '@humans/radio'
 
   export default {
     name: 'mn-checkbox-item',

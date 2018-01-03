@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
   import informationIcon from 'vue-human-icons/js/ios/information'
 
   export default {

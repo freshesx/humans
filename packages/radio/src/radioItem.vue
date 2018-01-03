@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import card from '@humans/card'
+  import { card } from '@humans/card'
 
   /**
    * The radio-item component, like card-item

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
   import activeIcon from 'vue-human-icons/js/ios/circle-filled'
   import unactiveIcon from 'vue-human-icons/js/ios/circle-outline'
 

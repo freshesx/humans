@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
   import backIcon from 'vue-human-icons/js/ios/arrow-back'
 
   export default {

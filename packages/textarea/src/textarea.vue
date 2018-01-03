@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import icon from '@humans/icon'
+  import { icon } from '@humans/icon'
   import tipIcon from 'vue-human-icons/js/ios/grid-view-outline'
 
   /**

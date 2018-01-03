@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import loadingIcon from '@humans/loading-icon'
+  import { loadingIcon } from '@humans/loading-icon'
   import { layerMixin } from '@humans/layer'
   import { shadeMixin } from '@humans/shade'
 
