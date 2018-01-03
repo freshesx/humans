@@ -1,7 +1,8 @@
-import share from './index.js'
+import Share from './Share.js'
 
 /** @test {Share} */
-describe('share', () => {
+describe('Share', () => {
+  const share = new Share()
   const value = { name: 'mn-card' }
   const screens = [{ name: 'mobile', min: 0 }]
 
