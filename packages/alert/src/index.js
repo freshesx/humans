@@ -2,8 +2,11 @@ import alert from './alert.vue'
 import Alert from './Alert.js'
 import './index.scss'
 
-export default {
+const suite = {
   [alert.name]: alert
 }
 
-export { Alert }
+export {
+  suite as alert,
+  Alert
+}
