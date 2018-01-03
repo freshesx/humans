@@ -1,5 +1,5 @@
 import { mount } from 'vue-test-utils'
-import container from './container.vue'
+import container from '../container.vue'
 
 describe('container.vue', () => {
   test('name', () => {

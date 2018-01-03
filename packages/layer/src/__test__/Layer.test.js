@@ -1,4 +1,4 @@
-import Layer from './Layer.js'
+import Layer from '../Layer.js'
 
 /** @test {Layer} */
 describe('Layer', () => {
