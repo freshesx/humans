@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import actionSheet from '@humans/action-sheet'
+  import { actionSheet } from '@humans/action-sheet'
   import card from '@humans/card'
 
   export default {
