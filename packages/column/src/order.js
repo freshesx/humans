@@ -1,5 +1,3 @@
-import get from 'lodash/get'
-
 export default {
   data () {
     return {
@@ -14,7 +12,11 @@ export default {
     },
 
     orderStyle () {
-      return { order: get(this, 'adaptedConfig.order') }
+      // @todo test the order
+      const order = (this.adaptedConfig && this.adaptedConfig.order)
+        ? this.adaptedConfig.order
+        : undefined
+      return { order }
     }
   },
   methods: {

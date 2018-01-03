@@ -9,6 +9,9 @@
   "files": [
     "dist"
   ],
+  "dependencies": {
+    "@humans/share": "^3.0.0-alpha.12"
+  },
   "publishConfig": {
     "access": "public"
   }
