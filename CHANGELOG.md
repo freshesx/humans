@@ -29,3 +29,11 @@
 ### vuelidate
 
 * You need to load vuelidate manually.
+
+### removed components
+
+* cell
+* core
+* dashboard
+* sideBar
+* table
