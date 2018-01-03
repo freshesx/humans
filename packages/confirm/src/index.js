@@ -2,7 +2,7 @@ import confirm from './confirm.vue'
 import Confirm from './Confirm.js'
 import './index.scss'
 
-const suite {
+const suite = {
   [confirm.name]: confirm
 }
 
