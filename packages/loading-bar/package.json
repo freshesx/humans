@@ -4,6 +4,7 @@
   "description": "Loading bar component",
   "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
+  "main": "dist/main.common.js",
   "module": "dist/main.esm.js",
   "files": [
     "dist"
