@@ -2,8 +2,11 @@ import message from './message.vue'
 import Message from './Message.js'
 import './index.scss'
 
-export default {
+const suite = {
   [message.name]: message
 }
 
-export { Message }
+export {
+  suite as message,
+  Message
+}

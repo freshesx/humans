@@ -2,7 +2,11 @@ import column from './column.vue'
 import columns from './columns.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [column.name]: column,
   [columns.name]: columns
+}
+
+export {
+  suite as column
 }

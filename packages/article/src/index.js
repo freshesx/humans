@@ -1,6 +1,10 @@
 import article from './article.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [article.name]: article
+}
+
+export {
+  suite as article
 }

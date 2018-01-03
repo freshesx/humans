@@ -1,6 +1,10 @@
 import rate from './rate.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [rate.name]: rate
+}
+
+export {
+  suite as rate
 }

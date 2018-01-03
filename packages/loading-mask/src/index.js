@@ -2,8 +2,11 @@ import loadingMask from './loadingMask.vue'
 import LoadingMask from './LoadingMask.js'
 import './index.scss'
 
-export default {
+const suite = {
   [loadingMask.name]: loadingMask
 }
 
-export { LoadingMask }
+export {
+  suite as loadingMask,
+  LoadingMask
+}

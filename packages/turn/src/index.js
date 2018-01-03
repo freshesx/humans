@@ -1,6 +1,10 @@
 import turn from './turn.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [turn.name]: turn
+}
+
+export {
+  suite as turn
 }

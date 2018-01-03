@@ -2,8 +2,11 @@ import confirm from './confirm.vue'
 import Confirm from './Confirm.js'
 import './index.scss'
 
-export default {
+const suite {
   [confirm.name]: confirm
 }
 
-export { Confirm }
+export {
+  suite as confirm,
+  Confirm
+}

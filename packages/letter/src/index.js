@@ -3,8 +3,12 @@ import letterBody from './letterBody.vue'
 import letterAction from './letterAction.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [letter.name]: letter,
   [letterBody.name]: letterBody,
   [letterAction.name]: letterAction
+}
+
+export {
+  suite as letter
 }

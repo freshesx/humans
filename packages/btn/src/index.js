@@ -1,6 +1,10 @@
 import btn from './btn.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [btn.name]: btn
+}
+
+export {
+  suite as btn
 }

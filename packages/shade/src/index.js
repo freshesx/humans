@@ -3,8 +3,12 @@ import Shade from './Shade.js'
 import shadeMixin from './shadeMixin'
 import './index.scss'
 
-export default {
+const suite = {
   [shade.name]: shade
 }
 
-export { Shade, shadeMixin }
+export {
+  suite as shade,
+  Shade,
+  shadeMixin
+}

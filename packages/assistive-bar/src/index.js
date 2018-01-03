@@ -1,6 +1,10 @@
 import assistiveBar from './assistiveBar.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [assistiveBar.name]: assistiveBar
+}
+
+export {
+  suite as assistiveBar
 }

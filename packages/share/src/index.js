@@ -1,5 +1,8 @@
 import Share from './Share'
 
-export default new Share()
+const share = new Share()
 
-export { Share }
+export {
+  share,
+  Share
+}

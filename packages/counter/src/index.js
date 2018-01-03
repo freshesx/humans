@@ -1,6 +1,10 @@
 import counter from './counter.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [counter.name]: counter
+}
+
+export {
+  suite as counter
 }

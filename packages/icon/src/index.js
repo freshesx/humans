@@ -1,6 +1,10 @@
 import icon from './icon.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [icon.name]: icon
+}
+
+export {
+  suite as icon
 }

@@ -7,7 +7,7 @@ import cardMedia from './cardMedia.vue'
 import cardBtns from './cardBtns.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [card.name]: card,
   [cardItem.name]: cardItem,
   [cardBody.name]: cardBody,
@@ -15,4 +15,8 @@ export default {
   [cardSuffix.name]: cardSuffix,
   [cardMedia.name]: cardMedia,
   [cardBtns.name]: cardBtns
+}
+
+export {
+  suite as card
 }

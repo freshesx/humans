@@ -1,6 +1,10 @@
 import tag from './tag.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [tag.name]: tag
+}
+
+export {
+  suite as tag
 }

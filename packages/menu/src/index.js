@@ -4,9 +4,13 @@ import menuPane from './menuPane.vue'
 import menuTitle from './menuTitle.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [menu.name]: menu,
   [menuContent.name]: menuContent,
   [menuPane.name]: menuPane,
   [menuTitle.name]: menuTitle
+}
+
+export {
+  suite as menu
 }

@@ -1,6 +1,10 @@
 import container from './container.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [container.name]: container
+}
+
+export {
+  suite as container
 }

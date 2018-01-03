@@ -1,6 +1,10 @@
 import label from './label.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [label.name]: label
+}
+
+export {
+  suite as label
 }

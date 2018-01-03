@@ -2,8 +2,11 @@ import loadingBar from './loadingBar.vue'
 import LoadingBar from './LoadingBar.js'
 import './index.scss'
 
-export default {
+const suite = {
   [loadingBar.name]: loadingBar
 }
 
-export { LoadingBar }
+export {
+  suite as loadingBar,
+  LoadingBar
+}

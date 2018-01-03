@@ -1,6 +1,10 @@
 import input from './input.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [input.name]: input
+}
+
+export {
+  suite as input
 }

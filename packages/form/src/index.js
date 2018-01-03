@@ -1,5 +1,9 @@
 import form from './form.vue'
 
-export default {
+const suite = {
   [form.name]: form
+}
+
+export {
+  suite as form
 }

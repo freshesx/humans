@@ -1,6 +1,10 @@
 import searchBar from './searchBar.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [searchBar.name]: searchBar
+}
+
+export {
+  suite as searchBar
 }

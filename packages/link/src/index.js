@@ -1,6 +1,10 @@
 import link from './link.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [link.name]: link
+}
+
+export {
+  suite as link
 }

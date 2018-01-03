@@ -1,6 +1,10 @@
 import select from './select.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [select.name]: select
+}
+
+export {
+  suite as select
 }

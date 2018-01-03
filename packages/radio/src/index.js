@@ -4,9 +4,13 @@ import radioItem from './radioItem.vue'
 import radioTag from './radioTag.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [radio.name]: radio,
   [radioIcon.name]: radioIcon,
   [radioItem.name]: radioItem,
   [radioTag.name]: radioTag
+}
+
+export {
+  suite as radio
 }

@@ -1,6 +1,10 @@
 import page from './page.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [page.name]: page
+}
+
+export {
+  suite as page
 }

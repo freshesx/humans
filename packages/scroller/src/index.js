@@ -2,8 +2,11 @@ import scroller from './scroller.vue'
 import Scrollers from './Scrollers.js'
 import './index.scss'
 
-export default {
+const suite = {
   [scroller.name]: scroller
 }
 
-export { Scrollers }
+export {
+  suite as scroller,
+  Scrollers
+}

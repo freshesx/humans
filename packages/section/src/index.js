@@ -3,8 +3,12 @@ import sectionNote from './sectionNote.vue'
 import sectionBtn from './sectionBtn.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [section.name]: section,
   [sectionNote.name]: sectionNote,
   [sectionBtn.name]: sectionBtn
+}
+
+export {
+  suite as section
 }
