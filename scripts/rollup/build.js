@@ -12,6 +12,10 @@ export default packages().map(item => {
     input: `packages/${item}/src/index.js`,
     output: [
       {
+        file: `packages/${item}/dist/main.common.js`,
+        format: 'cjs'
+      },
+      {
         file: `packages/${item}/dist/main.esm.js`,
         format: 'es'
       }
