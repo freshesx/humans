@@ -1,4 +1,4 @@
-import Scrollers from './Scrollers'
+import Scrollers from '../Scrollers'
 
 /** @test {Scrollers} */
 describe('Scrollers', () => {
