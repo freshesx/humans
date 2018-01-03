@@ -1,6 +1,10 @@
 import actionSheet from './actionSheet.vue'
 import './index.scss'
 
-export default {
+const suite = {
   [actionSheet.name]: actionSheet
+}
+
+export {
+  suite as actionSheet
 }
