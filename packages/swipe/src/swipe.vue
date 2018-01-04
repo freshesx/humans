@@ -1,9 +1,10 @@
 <template>
   <div class="mn-swipe" ref="swipe">
     <div class="mn-swipe-content" ref="swipeGroup">
+      <!-- Swipe contexts -->
       <slot></slot>
     </div>
-    <slot name="indicators">
+    <slot name="indicators" v-if="hasDots">
       <div class="mn-swipe-indicators">
         <div class="mn-swipe-indicator"
           v-for="(item, $index) in dots"
@@ -20,99 +21,139 @@ import BScroll from 'better-scroll'
 export default {
   name: 'mn-swipe',
   props: {
+    /**
+     * Swipe dots switch
+    */
+    hasDots: {
+      type: Boolean,
+      default: true
+    },
+    /**
+     * Slot v-for items
+    */
     repeatItem: {
       type: Array
     },
+    /**
+     * Swipe start index
+     */
     startIndex: {
       type: Number,
       default: 0
     },
+    /**
+     * Swipe infinite loop
+     */
     loop: {
       type: Boolean,
       default: true
     },
+    /**
+     * Swipe auto play
+    */
     autoPlay: {
       type: Boolean,
       default: true
     },
+    /**
+     * Swipe auto play interval
+    */
     interval: {
       type: Number,
       default: 4000
     },
+    /**
+     * Swipe threshold is about the distance exceeded
+    */
     threshold: {
       type: Number,
       default: 0.3
     },
+    /**
+     * Swipe play animate speed
+    */
     speed: {
       type: Number,
       default: 400
     },
+    /**
+     * Swipe scroll end callback function
+    */
     scrollEndFn: {
       type: Function,
       default: function() {}
     },
+    /**
+     * Swipe scroll start callback function
+    */
     scrollStartFn: {
       type: Function,
       default: function() {}
     },
+    /**
+     * Swipe scroll before start
+    */
     beforeScrollStartFn: {
       type: Function,
       default: function() {}
     }
   },
   watch: {
-    repeatItem: {
-      deep: true,
-      handler: function(val) {
-        this.refresh()
-      }
+    repeatItem() {
+      this.refresh()
     }
   },
   data() {
     return {
       dots: 0,
-      _timer: null,
-      _resizeTimer: null,
+      timer: null,
+      resizeTimer: null,
       currentPageIndex: this.startIndex || 0,
       scrollOption: {
-        scrollX: true, //横向滚动
-        scrollY: false, // 纵向滚动
-        momentum: false, //
-        tap: false, // 模仿原生click事件
-        bounce: false, //超过边缘的回弹动画
+        scrollX: true,
+        scrollY: false,
+        momentum: false,
+        tap: false,
+        bounce: false,
         snap: {
-          loop: this.loop, // 循环播放，只支持横向循环
-          threshold: this.threshold, //滑动滚动阈值
-          speed: this.speed // 滑动动画速度
+          loop: this.loop,
+          threshold: this.threshold,
+          speed: this.speed
         },
-        click: true, // 派发点击事件
-        observeDOM: false //会检测 scroller 内部 DOM 变化
+        click: true,
+        observeDOM: false
       }
     }
   },
   methods: {
+    /**
+     * After DOM changed,Swipe instance need to destory and renew.
+     * @public
+     * @return {this}
+    */
     refresh() {
       this.swipe && this.swipe.destroy()
-      clearTimeout(this._timer)
+      clearTimeout(this.timer)
       this.$nextTick(() => {
-        this._initMethod()
+        this.initMethod()
       })
+      return this
     },
-    _initMethod() {
+    initMethod() {
       this.dots = 0
-      this._setSwipeWidth(false)
-      this._initDots()
-      this._initswipe()
+      this.setSwipeWidth(false)
+      this.initDots()
+      this.initSwipe()
       if (this.autoPlay) {
-        this._play()
+        this.play()
       }
     },
-    _touchEndEvent() {
+    touchEndEvent() {
       if (this.autoPlay) {
-        this._play()
+        this.play()
       }
     },
-    _setSwipeWidth(isResize) {
+    setSwipeWidth() {
       this.children = this.$refs.swipeGroup.children
       let width = 0
       let swipeWidth = this.$refs.swipe.clientWidth
@@ -121,70 +162,67 @@ export default {
         child.style.width = swipeWidth + 'px'
         width += swipeWidth
       }
-      if (this.loop && !isResize) {
+      if (this.loop) {
         width += 2 * swipeWidth
       }
       this.$refs.swipeGroup.style.width = width + 'px'
     },
-    _initswipe() {
+    initSwipe() {
       this.swipe = new BScroll(this.$refs.swipe, this.scrollOption)
 
       this.swipe.goToPage(this.currentPageIndex, 0, 0)
-      //@todo 事件添加
-      this.swipe.on('scrollEnd', this._onScrollEnd)
 
-      window.removeEventListener('touchend', this._touchEndEvent, false)
+      this.swipe.on('scrollEnd', this.onScrollEnd)
 
-      window.addEventListener('touchend', this._touchEndEvent, false)
+      window.removeEventListener('touchend', this.touchEndEvent, false)
 
-      // 滚动结束回调
+      window.addEventListener('touchend', this.touchEndEvent, false)
+
       this.swipe.on('scrollEnd', () => {
         this.scrollEndFn()
       })
-      // *手动*滚动开始回调
       this.swipe.on('scrollStart', () => {
         this.scrollStartFn()
       })
-      // 滚动开始前回调
       this.swipe.on('beforeScrollStart', () => {
         this.beforeScrollStartFn()
       })
       this.swipe.on('beforeScrollStart', () => {
         if (this.autoPlay) {
-          clearTimeout(this._timer)
+          clearTimeout(this.timer)
         }
       })
     },
-    _updatePageIndex() {
+    updatePageIndex() {
       const pageIndex = this.swipe.getCurrentPage().pageX
       if (this.currentPageIndex !== pageIndex) {
         this.currentPageIndex = pageIndex
         this.$emit('change', this.currentPageIndex)
       }
       if (this.autoPlay) {
-        this._play()
+        this.play()
       }
     },
-    _onScrollEnd() {
-      this._updatePageIndex()
+    onScrollEnd() {
+      this.updatePageIndex()
     },
-    _initDots() {
+    initDots() {
       this.dots = new Array(this.children.length)
     },
-    _play() {
-      clearTimeout(this._timer)
-      this._timer = setTimeout(() => {
+    play() {
+      clearTimeout(this.timer)
+      this.timer = setTimeout(() => {
         this.swipe.next()
       }, this.interval)
     },
-    _resize() {
-      clearTimeout(this._resizeTimer)
-      this._resizeTimer = setTimeout(() => {
+    resize() {
+      clearTimeout(this.resizeTimer)
+      this.resizeTimer = setTimeout(() => {
         if (this.swipe.isInTransition) {
-          this._onScrollEnd()
+          this.onScrollEnd()
         } else {
           if (this.autoPlay) {
-            this._play()
+            this.play()
           }
         }
         this.refresh()
@@ -192,19 +230,18 @@ export default {
     }
   },
   updated() {
-    console.log('updated')
   },
   mounted() {
     this.refresh()
     window.addEventListener('resize', () => {
       if (!this.swipe || !this.swipe.enable) return
-      this._resize()
+      this.resize()
     })
   },
   activated() {
     if (!this.swipe) return
     this.swipe.enable()
-    this._updatePageIndex()
+    this.updatePageIndex()
   },
   deactivated() {
     this.swipe.disable()

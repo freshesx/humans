@@ -1,5 +1,5 @@
 <template>
-  <div class="mn-carousel-item" :class="{}">
+  <div class="mn-carousel-item">
     <slot></slot>
   </div>
 </template>
