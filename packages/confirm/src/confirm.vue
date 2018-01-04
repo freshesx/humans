@@ -22,8 +22,9 @@
   import { layerMixin } from '@humans/layer'
   import { shadeMixin } from '@humans/shade'
 
-  console.log('nihao', layerMixin, shadeMixin)
-
+  /**
+   * Confirm component
+   */
   export default {
     name: 'mn-confirm',
     components: Object.assign({}, card),
