@@ -1,5 +1,6 @@
 <template>
   <div class="mn-container" :class="{ 'is-fluid': fluid }">
+    <!-- The container contents -->
     <slot></slot>
   </div>
 </template>
