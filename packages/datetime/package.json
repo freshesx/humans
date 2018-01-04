@@ -1,6 +1,6 @@
 {
   "name": "@humans/datetime",
-  "version": "3.0.0-alpha.12",
+  "version": "3.0.0-alpha.13",
   "description": "Datetime component",
   "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
@@ -10,10 +10,10 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/card": "^3.0.0-alpha.12",
-    "@humans/layer": "^3.0.0-alpha.12",
-    "@humans/message": "^3.0.0-alpha.12",
-    "@humans/shade": "^3.0.0-alpha.12"
+    "@humans/card": "^3.0.0-alpha.13",
+    "@humans/layer": "^3.0.0-alpha.13",
+    "@humans/message": "^3.0.0-alpha.13",
+    "@humans/shade": "^3.0.0-alpha.13"
   },
   "publishConfig": {
     "access": "public"

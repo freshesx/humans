@@ -1,6 +1,6 @@
 {
   "name": "@humans/shade",
-  "version": "3.0.0-alpha.12",
+  "version": "3.0.0-alpha.13",
   "description": "Select component",
   "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/layer": "^3.0.0-alpha.12"
+    "@humans/layer": "^3.0.0-alpha.13"
   },
   "publishConfig": {
     "access": "public"
