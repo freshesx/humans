@@ -13,7 +13,7 @@ Humans is designed for mobile and desktop for human users. And it is vue-based i
 * API Reference
 * Tutorial
 * [Contributing Guide](#quick-start)
-* [About vue-human 2.8.x](tree/2.x)
+* [About vue-human 2.8.x](https://github.com/freshesx/humans/tree/2.x)
 
 ## Quick Start
 
