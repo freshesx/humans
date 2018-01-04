@@ -1,6 +1,6 @@
 {
   "name": "@humans/loading-icon",
-  "version": "3.0.0-alpha.13",
+  "version": "3.0.0-beta.1",
   "description": "Loading icon component",
   "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/share": "^3.0.0-alpha.13",
+    "@humans/share": "^3.0.0-beta.1",
     "vue": "^2.0.0"
   },
   "publishConfig": {

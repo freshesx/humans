@@ -1,6 +1,6 @@
 {
   "name": "@humans/checkbox",
-  "version": "3.0.0-alpha.13",
+  "version": "3.0.0-beta.1",
   "description": "Checkbox component",
   "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/radio": "^3.0.0-alpha.13"
+    "@humans/radio": "^3.0.0-beta.1"
   },
   "publishConfig": {
     "access": "public"
