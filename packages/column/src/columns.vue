@@ -1,5 +1,6 @@
 <template>
   <div class="mn-columns">
+    <!-- The columns contents -->
     <slot></slot>
   </div>
 </template>

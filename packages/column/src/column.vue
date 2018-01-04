@@ -1,5 +1,6 @@
 <template>
   <div class="mn-column" :class="[ widthClass ]" :style="[ orderStyle ]">
+    <!-- The column contents -->
     <slot></slot>
   </div>
 </template>
@@ -12,25 +13,33 @@
     name: 'mn-column',
     mixins: [ order ],
     props: {
+      /**
+       * Mobile screen config
+       */
       mobile: {
         type: [String, Object]
       },
+      /**
+       * Tablet screen config
+       */
       tablet: {
         type: [String, Object]
       },
+      /**
+       * Desktop screen config
+       */
       desktop: {
         type: [String, Object]
       },
+      /**
+       * Widescreen screen config
+       */
       widescreen: {
         type: [String, Object]
       }
     },
     computed: {
-      /**
-       * Media queries config
-       *
-       * @return {Array}
-       */
+      // Calculate all screens media queries
       mediaQueries () {
         const configOfScreens = screens.map(screen => {
           if (typeof this[screen.name] !== 'undefined') {
@@ -44,12 +53,7 @@
 
         return configOfScreens.filter(item => typeof item !== 'undefined')
       },
-
-      /**
-       * Computed class
-       *
-       * @return {Array}
-       */
+      // Computed class
       widthClass () {
         const classes = []
 
@@ -68,8 +72,6 @@
     methods: {
       /**
        * Parse media query config
-       * @protected
-       *
        * @param {String|Object} query
        * @return {Object}
        */
@@ -91,11 +93,8 @@
 
         return {}
       },
-
       /**
        * Parse string to number
-       * @private
-       *
        * @param  {String|undefined}    value
        * @return {Number|undefined}
        */

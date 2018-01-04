@@ -1,3 +1,6 @@
+/**
+ * @mixin
+ */
 export default {
   data () {
     return {
@@ -10,7 +13,6 @@ export default {
         return this.offsetWidth > item.min
       }).reverse()[0]
     },
-
     orderStyle () {
       // @todo test the order
       const order = (this.adaptedConfig && this.adaptedConfig.order)
