@@ -1,4 +1,4 @@
-# Humans 3.0 [![CircleCI](https://circleci.com/gh/freshesx/humans.svg?style=svg)](https://circleci.com/gh/freshesx/humans)
+# Humans 3.0 Beta [![CircleCI](https://circleci.com/gh/freshesx/humans.svg?style=svg)](https://circleci.com/gh/freshesx/humans)
 
 Humans is designed for mobile and desktop for human users. And it is vue-based implementation. To help developer to build UI quickly.
 
