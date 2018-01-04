@@ -16,34 +16,52 @@
             <div class="mn-datetime-input">
               <div class="mn-datetime-item" v-if="showDate">
                 <select v-model="models.fullYear">
-                  <option :value="option.value" v-for="option in fullYearOptions">{{ option.label }}</option>
+                  <option :value="option.value"
+                    v-for="option in fullYearOptions"
+                    :key="option.value"
+                  >{{ option.label }}</option>
                 </select>
               </div>
               <div class="mn-datetime-item" v-if="showDate">
                 <select v-model="models.month">
-                  <option :value="option.value" v-for="option in monthOptions">{{ option.label }}</option>
+                  <option :value="option.value"
+                    v-for="option in monthOptions"
+                    :key="option.value"
+                  >{{ option.label }}</option>
                 </select>
               </div>
               <div class="mn-datetime-item" v-if="showDate">
                 <select v-model="models.date">
-                  <option :value="option.value" v-for="option in dateOptions">{{ option.label }}</option>
+                  <option :value="option.value"
+                    v-for="option in dateOptions"
+                    :key="option.value"
+                  >{{ option.label }}</option>
                 </select>
               </div>
               <div class="mn-datetime-item" v-if="showHours">
                 <select v-model="models.hours">
-                  <option :value="option.value" v-for="option in hoursOptions">{{ option.label }}</option>
+                  <option :value="option.value"
+                    v-for="option in hoursOptions"
+                    :key="option.value"
+                  >{{ option.label }}</option>
                 </select>
               </div>
               <div v-if="showHours && showMintues">:</div>
               <div class="mn-datetime-item" v-if="showHours && showMintues">
                 <select v-model="models.minutes">
-                  <option :value="option.value" v-for="option in minutesOptions">{{ option.label }}</option>
+                  <option :value="option.value"
+                    v-for="option in minutesOptions"
+                    :key="option.value"
+                  >{{ option.label }}</option>
                 </select>
               </div>
               <div v-if="showHours && showMintues && showSeconds">:</div>
               <div class="mn-datetime-item" v-if="showHours && showMintues && showSeconds">
                 <select v-model="models.seconds">
-                  <option :value="option.value" v-for="option in secondsOptions">{{ option.label }}</option>
+                  <option :value="option.value"
+                    v-for="option in secondsOptions"
+                    :key="option.value"
+                  >{{ option.label }}</option>
                 </select>
               </div>
             </div>
@@ -72,6 +90,9 @@
   import options from './options'
   import text from './text'
 
+  /**
+   * Datetime component
+   */
   export default {
     name: 'mn-datetime',
     components: Object.assign({}, card),
@@ -81,51 +102,94 @@
       options
     ],
     props: {
+      /**
+       * Card theme
+       */
       theme: String,
+      /**
+       * Default datetime.
+       * You can pass string: `2018-01-01 08:00:00`.
+       * Or pass a Date object.
+       * Or a object extend Date.
+       */
       default: {
         type: [String, Date, Object],
         default () { return new Date() }
       },
+      /**
+       * Min datetime. Similar as default prop.
+       */
       min: {
         type: [String, Date, Object],
         default: '1970-01-01 00:00:00'
       },
+      /**
+       * Max datetime. Similar as default prop.
+       */
       max: {
         type: [String, Date, Object],
         default: '2049-12-31 23:59:59'
       },
+      /**
+       * Popup title
+       */
       title: {
         type: String,
         default: '选择日期时间'
       },
+      /**
+       * Cancel text
+       */
       cancelText: {
         type: String,
         default: '取消'
       },
+      /**
+       * Confirm text
+       */
       confirmText: {
         type: String,
         default: '确认'
       },
+      /**
+       * If the choice datetime is smaller than min datetime, then show the text.
+       */
       smallerText: {
         type: String,
         default: '不可小于最小时间'
       },
+      /**
+       * If the choice datetime is bigger than max datetime, then show the text.
+       */
       biggerText: {
         type: String,
         default: '不可大于最大时间'
       },
+      /**
+       * Show Date in datetime
+       */
       showDate: {
         type: Boolean,
         default: true
       },
+      /**
+       * Show hours in datetime.
+       * If it is false, hide time in datetime.
+       */
       showHours: {
         type: Boolean,
         default: true
       },
+      /**
+       * Show mintues in datetime.
+       */
       showMintues: {
         type: Boolean,
         default: true
       },
+      /**
+       * Show seconds in datetime.
+       */
       showSeconds: {
         type: Boolean,
         default: true
@@ -133,7 +197,7 @@
     },
     data () {
       return {
-        currentAt: undefined, // 初始开始时间
+        currentAt: undefined,
         minAt: undefined,
         maxAt: undefined,
         models: {
@@ -165,7 +229,6 @@
       },
 
       onConfirm () {
-        // 开始时间是否大于等于结束时间，则错误
         if (this.minAt > this.currentAt) {
           Message.create({ type: 'error', message: this.smallerText }).show()
           return
@@ -274,13 +337,13 @@
           this.models.date = 30
         }
 
-        // 平年 2 月份
+        // regular year
         if (!isLeapYear(this.models.fullYear) &&
           isFebruary(this.models.month) && this.models.date > 28) {
           this.models.date = 28
         }
 
-        // 闰年 2 月份
+        // leap year
         if (isLeapYear(this.models.fullYear) &&
           isFebruary(this.models.month) && this.models.date > 29) {
           this.models.date = 29

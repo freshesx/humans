@@ -1,6 +1,5 @@
 /**
- * Lunar month 小月
- *
+ * Lunar month (小月，每月仅 30 天的月份)
  * @param  {Number}     month 0 - 11
  * @return {Boolean}
  */
@@ -9,10 +8,9 @@ export function isLunarMonth (month) {
 }
 
 /**
- * Leap year 闰年
+ * Leap year (闰年)
  * 1.普通年能被 4 整除且不能被 100 整除的为闰年，如 2004 年就是闰年，1900年不是闰年；
  * 2.世纪年能被 400 整除的是闰年，如 2000 年是闰年，1900 年不是闰年。
- *
  * @param  {Number}   fullYear e.g. 2017
  * @return {Boolean}
  */
@@ -21,8 +19,7 @@ export function isLeapYear (fullYear) {
 }
 
 /**
- * February 二月
- *
+ * February (二月)
  * @param  {Number}   month 0 - 11
  * @return {Boolean}
  */
@@ -30,10 +27,18 @@ export function isFebruary (month) {
   return month === 1
 }
 
+/**
+ * Format `5` to `'05'`
+ * @param {Number} number
+ */
 export function formatDoubleNumber (number) {
   return number < 10 ? '0' + number : number
 }
 
+/**
+ * Format Date object to standrad string, e.g. `2018-01-01 08:00:00`
+ * @param {Date} at
+ */
 export function formatStandrad (at) {
   const fullYear = at.getFullYear()
   const month = at.getMonth() + 1
@@ -44,18 +49,30 @@ export function formatStandrad (at) {
   return `${fullYear}-${month}-${date} ${formatDoubleNumber(hours)}:${formatDoubleNumber(minutes)}:${formatDoubleNumber(seconds)}`
 }
 
+/**
+ * Add many days for Date object
+ * @param {Date} at
+ * @param {Number} day
+ */
 export function addDay (at, day) {
-  // day 必须为数字
-  if (!Number.isInteger(day)) return console && console.warn('新增量必须为数字')
+  if (!Number.isInteger(day)) throw new Error('The day use Number type.')
   return new Date(at.getTime() + day * 24 * 60 * 60 * 1000)
 }
 
+/**
+ * Add many hours for Date object
+ * @param {Date} at
+ * @param {Number} hours
+ */
 export function addHours (at, hours) {
-  // day 必须为数字
-  if (!Number.isInteger(hours)) return console && console.warn('新增量必须为数字')
+  if (!Number.isInteger(hours)) throw new Error('The housr use Number type.')
   return new Date(at.getTime() + hours * 60 * 60 * 1000)
 }
 
+/**
+ * Parse string to Date object
+ * @param {String} currentAt - `2018-01-01 08:00:00`
+ */
 export function parseDatetime (currentAt) {
   if (currentAt instanceof Date) {
     return currentAt
@@ -99,6 +116,11 @@ export function parseDatetime (currentAt) {
   }
 }
 
+/**
+ * Use some string (date) to set a Date object
+ * @param {Date} at
+ * @param {String} currentDate  - example: `2018-01-01`
+ */
 export function parseDate (at, currentDate) {
   const [fullYear, month, date] = currentDate.split('-')
   at.setFullYear(fullYear)
@@ -107,6 +129,11 @@ export function parseDate (at, currentDate) {
   return at
 }
 
+/**
+ * Use some string (time) to set a Date object
+ * @param {Date} at
+ * @param {String} time  - example: `08:00:00`
+ */
 export function parseTime (at, time) {
   const [ hours, minutes, seconds ] = time.split(':')
   at.setHours(hours)
