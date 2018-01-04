@@ -9,6 +9,10 @@
     methods: {
       click () {
         if (!this.disabled) {
+          /**
+           * @event input
+           * @property {Array} data - ouput array
+           */
           this.$emit(
             'input',
             this.value.indexOf(this.data) > -1

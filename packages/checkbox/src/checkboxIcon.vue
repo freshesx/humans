@@ -9,9 +9,15 @@
       radio['mn-radio-icon']
     ],
     props: {
+      /**
+       * Active icon
+       */
       active: {
         default: () => activeIcon
       },
+      /**
+       * Unactive icon
+       */
       unactive: {
         default: () => unactiveIcon
       }
