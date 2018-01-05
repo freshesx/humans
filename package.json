@@ -23,6 +23,7 @@
     "docs:publish": "yarn run docs:api && yarn run docs:vue:build",
     "test": "yarn run unit",
     "example": "node scripts/house/development.js",
+    "example:build": "node scripts/house/production.js",
     "unit": "jest --config scripts/jest/jest.conf.js",
     "tag": "yarn run lerna publish --skip-npm"
   },
