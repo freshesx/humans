@@ -24,8 +24,7 @@ jobs:
       - run: yarn test
       - deploy:
         command: |
-          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-          echo "@humans:registry=https://registry.npmjs.org/" >> ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN\n@humans:registry=https://registry.npmjs.org/" >> ~/.npmrc
           set -eu
           TAG=$(git describe --tags)
           if [[ $TAG =~ ^v[0-9]+(\.[0-9]+)+(-rc\.[0-9]+)?(-beta\.[0-9]+)?(-alpha\.[0-9]+)?$ ]]; then
