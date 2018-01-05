@@ -42,7 +42,7 @@
     },
     data () {
       return {
-        checkmark: require('vue-human-icons/js/ios/checkmark-empty')
+        checkmark: require('@freshes/icons/js/ios/checkmark-empty')
       }
     }
   }

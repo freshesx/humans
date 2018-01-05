@@ -61,7 +61,7 @@
     data () {
       return {
         icons: {
-          cart: require('vue-human-icons/js/ios/cart')
+          cart: require('@freshes/icons/js/ios/cart')
         }
       }
     },

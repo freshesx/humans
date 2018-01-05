@@ -30,25 +30,25 @@
         return [
           {
             title: 'WeChat',
-            icon: require('vue-human-icons/js/ios/chatbubble-outline'),
-            activeIcon: require('vue-human-icons/js/ios/chatbubble'),
+            icon: require('@freshes/icons/js/ios/chatbubble-outline'),
+            activeIcon: require('@freshes/icons/js/ios/chatbubble'),
             badge: this.newMessageBadge
           },
           {
             title: 'Contact',
-            icon: require('vue-human-icons/js/ios/bookmarks-outline'),
-            activeIcon: require('vue-human-icons/js/ios/bookmarks')
+            icon: require('@freshes/icons/js/ios/bookmarks-outline'),
+            activeIcon: require('@freshes/icons/js/ios/bookmarks')
           },
           {
             title: 'Moments',
-            icon: require('vue-human-icons/js/ios/world-outline'),
-            activeIcon: require('vue-human-icons/js/ios/world'),
+            icon: require('@freshes/icons/js/ios/world-outline'),
+            activeIcon: require('@freshes/icons/js/ios/world'),
             badge: this.newMomentBadge
           },
           {
             title: 'Mine',
-            icon: require('vue-human-icons/js/ios/person-outline'),
-            activeIcon: require('vue-human-icons/js/ios/person')
+            icon: require('@freshes/icons/js/ios/person-outline'),
+            activeIcon: require('@freshes/icons/js/ios/person')
           }
         ]
       }

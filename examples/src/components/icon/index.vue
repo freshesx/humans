@@ -17,7 +17,7 @@
     data () {
       return {
         icons: {
-          contact: require('vue-human-icons/js/ios/contact-outline'),
+          contact: require('@freshes/icons/js/ios/contact-outline'),
           nothing: undefined
         },
         loading: false

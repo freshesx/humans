@@ -47,7 +47,7 @@
     data () {
       return {
         icons: {
-          information: require('vue-human-icons/js/ios/information-outline')
+          information: require('@freshes/icons/js/ios/information-outline')
         },
         models: {
           sex: 'Male'

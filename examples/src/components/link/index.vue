@@ -16,8 +16,8 @@
     data () {
       return {
         icons: {
-          cart: require('vue-human-icons/js/ios/cart'),
-          github: require('vue-human-icons/js/iconic/social-github')
+          cart: require('@freshes/icons/js/ios/cart'),
+          github: require('@freshes/icons/js/iconic/social-github')
         }
       }
     }

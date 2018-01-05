@@ -20,7 +20,7 @@
     data () {
       return {
         icons: {
-          keypad: require('vue-human-icons/js/ios/keypad')
+          keypad: require('@freshes/icons/js/ios/keypad')
         }
       }
     }

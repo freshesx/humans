@@ -14,7 +14,7 @@
     data () {
       return {
         icons: {
-          home: require('vue-human-icons/js/ios/home')
+          home: require('@freshes/icons/js/ios/home')
         },
         models: {
           counter: 2
