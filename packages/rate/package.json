@@ -1,6 +1,6 @@
 {
   "name": "@humans/rate",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "description": "Rate component",
   "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/icon": "^3.0.0-beta.1"
+    "@humans/icon": "^3.0.0-beta.2"
   },
   "publishConfig": {
     "access": "public"

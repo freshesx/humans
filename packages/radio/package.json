@@ -1,6 +1,6 @@
 {
   "name": "@humans/radio",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "description": "Radio component",
   "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
@@ -10,8 +10,8 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/card": "^3.0.0-beta.1",
-    "@humans/icon": "^3.0.0-beta.1"
+    "@humans/card": "^3.0.0-beta.2",
+    "@humans/icon": "^3.0.0-beta.2"
   },
   "publishConfig": {
     "access": "public"
