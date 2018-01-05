@@ -1,6 +1,6 @@
 {
   "name": "@humans/core",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.3",
   "description": "Humans core components",
   "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
@@ -10,22 +10,22 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/base": "^3.0.0-beta.2",
-    "@humans/loading-icon": "^3.0.0-beta.2",
-    "@humans/icon": "^3.0.0-beta.2",
-    "@humans/scroller": "^3.0.0-beta.2",
-    "@humans/btn": "^3.0.0-beta.2",
-    "@humans/link": "^3.0.0-beta.2",
-    "@humans/card": "^3.0.0-beta.2",
-    "@humans/container": "^3.0.0-beta.2",
-    "@humans/section": "^3.0.0-beta.2",
-    "@humans/column": "^3.0.0-beta.2",
-    "@humans/letter": "^3.0.0-beta.2",
-    "@humans/page": "^3.0.0-beta.2",
-    "@humans/form": "^3.0.0-beta.2",
-    "@humans/label": "^3.0.0-beta.2",
-    "@humans/helper": "^3.0.0-beta.2",
-    "@humans/image": "^3.0.0-beta.2"
+    "@humans/base": "^3.0.0-beta.3",
+    "@humans/btn": "^3.0.0-beta.3",
+    "@humans/card": "^3.0.0-beta.3",
+    "@humans/column": "^3.0.0-beta.3",
+    "@humans/container": "^3.0.0-beta.3",
+    "@humans/form": "^3.0.0-beta.3",
+    "@humans/helper": "^3.0.0-beta.3",
+    "@humans/icon": "^3.0.0-beta.3",
+    "@humans/image": "^3.0.0-beta.3",
+    "@humans/label": "^3.0.0-beta.3",
+    "@humans/letter": "^3.0.0-beta.3",
+    "@humans/link": "^3.0.0-beta.3",
+    "@humans/loading-icon": "^3.0.0-beta.3",
+    "@humans/page": "^3.0.0-beta.3",
+    "@humans/scroller": "^3.0.0-beta.3",
+    "@humans/section": "^3.0.0-beta.3"
   },
   "publishConfig": {
     "access": "public"

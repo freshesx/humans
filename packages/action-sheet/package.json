@@ -1,6 +1,6 @@
 {
   "name": "@humans/action-sheet",
-  "version": "3.0.0-beta.2",
+  "version": "3.0.0-beta.3",
   "description": "Loading mask component",
   "author": "Wu Qicheng <chaselwu.wu@vitualreaty.com>",
   "license": "MIT",
@@ -10,9 +10,9 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/card": "^3.0.0-beta.2",
-    "@humans/layer": "^3.0.0-beta.2",
-    "@humans/shade": "^3.0.0-beta.2"
+    "@humans/card": "^3.0.0-beta.3",
+    "@humans/layer": "^3.0.0-beta.3",
+    "@humans/shade": "^3.0.0-beta.3"
   },
   "publishConfig": {
     "access": "public"
