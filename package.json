@@ -30,6 +30,7 @@
   "devDependencies": {
     "@freshes/house": "^1.1.0",
     "@freshes/style-import-loader": "^0.4.0",
+    "@freshes/suite": "^1.0.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^8.0.2",
     "babel-helper-vue-jsx-merge-props": "^2.0.2",

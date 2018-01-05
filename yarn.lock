@@ -118,6 +118,10 @@
   dependencies:
     loader-utils "^1.1.0"
 
+"@freshes/suite@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@freshes/suite/-/suite-1.0.1.tgz#ba5f2149519218165c34ca3f1ce1f2a21ae238d5"
+
 "@types/strip-bom@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@types/strip-bom/-/strip-bom-3.0.0.tgz#14a8ec3956c2e81edb7520790aecf21c290aebd2"
