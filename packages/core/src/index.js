@@ -1,4 +1,3 @@
-import { alert } from '@humans/alert'
 import { loadingIcon } from '@humans/loading-icon'
 import { icon } from '@humans/icon'
 import { scroller } from '@humans/scroller'
@@ -18,7 +17,6 @@ import './index.scss'
 
 const suites = Object.assign(
   {},
-  alert,
   loadingIcon,
   icon,
   scroller,
