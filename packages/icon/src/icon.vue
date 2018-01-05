@@ -22,8 +22,8 @@
     components: Object.assign({}, loadingIcon),
     props: {
       /**
-       * Some svg string, You can use vue-human-icons or your custom svg string.
-       * @see https://www.npmjs.com/package/vue-human-icons
+       * Some svg string, You can use @freshes/icons or your custom svg string.
+       * @see https://www.npmjs.com/package/@freshes/icons
        */
       name: [Object, String],
       /**
@@ -59,7 +59,7 @@
           return this.name
         }
 
-        // for commonjs require, e.g. require('vue-human-icons/icon')
+        // for commonjs require, e.g. require('@freshes/icons/icon')
         if (typeof this.name === 'object' &&
           this.name.hasOwnProperty('default')) {
           return this.name.default

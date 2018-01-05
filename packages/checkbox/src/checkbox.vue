@@ -1,7 +1,7 @@
 <script>
   import { radio } from '@humans/radio'
-  import activeIcon from 'vue-human-icons/js/ios/checkmark-outline'
-  import unactiveIcon from 'vue-human-icons/js/ios/circle-outline'
+  import activeIcon from '@freshes/icons/js/ios/checkmark-outline'
+  import unactiveIcon from '@freshes/icons/js/ios/circle-outline'
 
   export default {
     name: 'mn-checkbox',

@@ -9,7 +9,7 @@
 
 <script>
   import { icon } from '@humans/icon'
-  import searchIcon from 'vue-human-icons/js/ios/search-strong'
+  import searchIcon from '@freshes/icons/js/ios/search-strong'
 
   export default {
     components: Object.assign({}, icon),

@@ -7,7 +7,7 @@
 
 <script>
   import { icon } from '@humans/icon'
-  import backIcon from 'vue-human-icons/js/ios/arrow-back'
+  import backIcon from '@freshes/icons/js/ios/arrow-back'
 
   export default {
     name: 'mn-nav-bar-back',

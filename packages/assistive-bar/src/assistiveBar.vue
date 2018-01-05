@@ -13,9 +13,9 @@
 
 <script>
   import { icon } from '@humans/icon'
-  import backIcon from 'vue-human-icons/js/ios/arrow-back.js'
-  import homeIcon from 'vue-human-icons/js/android/home.js'
-  import keypadIcon from 'vue-human-icons/js/ios/keypad.js'
+  import backIcon from '@freshes/icons/js/ios/arrow-back.js'
+  import homeIcon from '@freshes/icons/js/android/home.js'
+  import keypadIcon from '@freshes/icons/js/ios/keypad.js'
 
   /**
    * Assistive bar component

@@ -24,7 +24,7 @@
 
 <script>
   import { icon } from '@humans/icon'
-  import clearIcon from 'vue-human-icons/js/ios/close'
+  import clearIcon from '@freshes/icons/js/ios/close'
 
   /**
    * Input component

@@ -37,9 +37,9 @@
       return {
         showValue: 0,
         icons: {
-          unactive: require('vue-human-icons/js/ios/star-outline'),
-          active: require('vue-human-icons/js/ios/star'),
-          half: require('vue-human-icons/js/ios/star-half')
+          unactive: require('@freshes/icons/js/ios/star-outline'),
+          active: require('@freshes/icons/js/ios/star'),
+          half: require('@freshes/icons/js/ios/star-half')
         }
       }
     },

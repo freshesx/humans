@@ -83,7 +83,7 @@
        * 默认的关闭按钮的图标
        */
       closeIcon: {
-        default () { return require('vue-human-icons/js/ios/close-empty') }
+        default () { return require('@freshes/icons/js/ios/close-empty') }
       }
     },
     data () {

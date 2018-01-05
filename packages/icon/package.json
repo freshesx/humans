@@ -10,7 +10,8 @@
     "dist"
   ],
   "dependencies": {
-    "@humans/loading-icon": "^3.0.0-beta.2"
+    "@humans/loading-icon": "^3.0.0-beta.2",
+    "@freshes/icons": "^2.0.1"
   },
   "publishConfig": {
     "access": "public"

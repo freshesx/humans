@@ -19,7 +19,7 @@
 
 <script>
   import { icon } from '@humans/icon'
-  import tipIcon from 'vue-human-icons/js/ios/grid-view-outline'
+  import tipIcon from '@freshes/icons/js/ios/grid-view-outline'
 
   /**
    * Textarea component

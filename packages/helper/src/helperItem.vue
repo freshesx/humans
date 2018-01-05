@@ -7,7 +7,7 @@
 
 <script>
   import { icon } from '@humans/icon'
-  import informationIcon from 'vue-human-icons/js/ios/information'
+  import informationIcon from '@freshes/icons/js/ios/information'
 
   export default {
     name: 'mn-helper-item',

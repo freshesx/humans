@@ -11,7 +11,7 @@
 
 <script>
   import { icon } from '@humans/icon'
-  import checkmarkIcon from 'vue-human-icons/js/ios/checkmark-empty'
+  import checkmarkIcon from '@freshes/icons/js/ios/checkmark-empty'
 
   /**
    * The radio-icon component

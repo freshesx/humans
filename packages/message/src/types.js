@@ -1,7 +1,7 @@
-import chatbubble from 'vue-human-icons/js/ios/chatbubble'
-import checkmark from 'vue-human-icons/js/ios/checkmark'
-import close from 'vue-human-icons/js/ios/close'
-import information from 'vue-human-icons/js/ios/information'
+import chatbubble from '@freshes/icons/js/ios/chatbubble'
+import checkmark from '@freshes/icons/js/ios/checkmark'
+import close from '@freshes/icons/js/ios/close'
+import information from '@freshes/icons/js/ios/information'
 
 export default {
   default: { text: '新消息', icon: chatbubble, color: 'black' },
