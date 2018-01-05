@@ -28,6 +28,23 @@ folders.forEach(folder => {
   if (folder !== pkgName) {
     throw new Error(`The package.json name happend wrong: ${folder} and ${pkgName}.`)
   }
+
+  // Check necessary keywords in package.json
+  if (!pkg.main || pkg.main !== 'dist/main.common.js') {
+    throw new Error('The main keyword happend wrong.')
+  }
+
+  if (!pkg.module || pkg.module !== 'dist/main.esm.js') {
+    throw new Error('The module keyword happend wrong.')
+  }
+
+  if (!pkg.files || pkg.files.indexOf('dist') < 0) {
+    throw new Error('The files keyword happend wrong.')
+  }
+
+  if (!pkg.publishConfig || !pkg.publishConfig.access || pkg.publishConfig.access !== 'public') {
+    throw new Error('The publishConfig.access keyword happend wrong.')
+  }
 })
 
 export default function packages (prefix) {
