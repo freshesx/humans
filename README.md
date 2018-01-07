@@ -20,7 +20,7 @@ Humans is designed for mobile and desktop for human users. And it is vue-based i
 ### install dependencies
 
 ``` shell
-yarn add @humans/base @human/btn
+yarn add @humans/base @humans/btn
 ```
 
 ### use dependencies
