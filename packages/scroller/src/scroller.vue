@@ -1,10 +1,11 @@
 <template>
   <div
     class="mn-scroller"
+    :class="{ 'is-hide-bar': !scrollbar }"
     ref="container"
     >
     <slot name="header"></slot>
-    <div class="scroll-container" ref="contents" style="height:500px;overflow:auto;">
+    <div class="scroll-container" ref="contents" :style="handleStyle">
       <!-- scroller contents -->
       <slot></slot>
     </div>
@@ -65,6 +66,15 @@ export default {
     refreshStatus: {
       type: Boolean,
       default: false
+    },
+    scrollContainerHeight: {
+      type: Number,
+      default: 300
+    }
+  },
+  computed: {
+    handleStyle() {
+      return { height: `${this.scrollContainerHeight}px` }
     }
   },
   data() {

@@ -2,9 +2,11 @@
   <div class="scroller-full-page" :style="handleStyle">
     <mn-scroller
     :pull-down="true"
+    :scroll-container-height="500"
     @touchmoveevent="handleTouchMove"
     @touchendevent="handleTouchEnd"
     :refresh-status="refreshStatus"
+    :scrollbar="false"
     >
       <div class="header" slot="header" ><span>你好</span></div>
       <ul  v-for="i in 50">{{ i }}
