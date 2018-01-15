@@ -1,5 +1,7 @@
 <template>
-  <div class="scroller-full-page" :style="handleStyle">
+<div>
+    <h1>测试</h1>
+  <div class="scroller-full-page">
     <mn-scroller
     :pull-down="true"
     :scroll-container-height="500"
@@ -7,13 +9,18 @@
     @touchendevent="handleTouchEnd"
     :refresh-status="refreshStatus"
     :scrollbar="false"
+    :style="handleStyle"
     >
       <div class="header" slot="header" ><span>你好</span></div>
-      <ul  v-for="i in 50">{{ i }}
+      <ul >
+        <li  v-for="(i,index) in 50" :key="index" v-html="i"></li>
 
       </ul>
+      <div class="footer" slot="footer"><span>再见</span></div>
     </mn-scroller>
   </div>
+
+</div>
 </template>
 
 <script>
@@ -36,11 +43,13 @@ export default {
     }
   },
   methods: {
-    handleTouchMove (event, childSelf, precent) {
-      this.height = this.defaultHeight * precent
-      // if (precent === 1) {
-      //   this.asyncTask()
-      // }
+    handleTouchMove (event, childSelf, precent, direction) {
+      if (direction === 'down') {
+        this.height = this.defaultHeight * precent
+      }
+      if (direction === 'up') {
+        this.height = -this.defaultHeight * precent
+      }
     },
     asyncTask () {
       const timer = setTimeout(() => {
@@ -49,7 +58,7 @@ export default {
         clearTimeout(timer)
       }, 2000)
     },
-    handleTouchEnd (event, childSelf, precent) {
+    handleTouchEnd (event, childSelf, precent, direction) {
       if (precent < 1) {
         this.height = 0
         return
@@ -57,25 +66,48 @@ export default {
       this.asyncTask()
     }
   },
-  mounted () {
-  }
+  mounted () {}
 }
 </script>
 <style>
 html {
   overflow: hidden;
 }
+h1 {
+  text-align: center;
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,.1);
+}
 .scroller-full-page {
   will-change: transform;
-  height: 100vh;
+
 }
-.header {
+.scroller-full-page::after {
+  content: " ";
   width: 100%;
-  margin-top: -120px;
-  height: 120px;
-}
-.header span {
+  height: 200px;
   text-align: center;
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,.1);
+}
+.header  {
+  position: absolute;
+  top: -50px;
+}
+.footer {
+  width: 100%;
+  margin-bottom: -120px;
+  height: 120px;
 }
 </style>
 

@@ -23,8 +23,10 @@ const removeEvent = (el, type, fn, capture) => {
 const defaultOptions = {
   threshold: 0.3,
   percentage: 0,
+  scrollContainerHeight: 0,
   container: null,
   enablePullDown: false,
+  enablePullUp: false,
   touchStartFn: noop,
   touchMoveFn: noop,
   touchEndFn: noop,
@@ -42,8 +44,16 @@ export default class Scroller {
     if (!(options.container instanceof HTMLElement)) {
       throw new Error('[scroller]:Container should be a html element!')
     }
-    this.isGlobal = this.options.container === window
+    this.win = window
+    this.isGlobal = this.options.container === this.win
     this.screenHeight = window.screen.height
+
+    if (!this.options.scrollContainerHeight) {
+      this.options.scrollContainerHeight = this.container.offsetHeight
+    }
+    if (this.options.enablePullUp) {
+      this.winHeight = window.innerHeight
+    }
     this.isInTouchStatus = false
 
     this.refreshFlag = false
@@ -51,6 +61,7 @@ export default class Scroller {
     this.isThresholded = false
     this.destroyed = false
     this.movingDirection = 'none'
+    this.preMovingDirection = this.movingDirection
     this.startPageY = 0
     this.prePageY = 0
     this.attachEvent()
@@ -129,6 +140,19 @@ export default class Scroller {
   isTop () {
     return this.isGlobal ? this.container.pageYOffset <= 0 : this.container.scrollTop <= 1
   }
+  isBottom () {
+    const { winHeight } = this
+    let containerHeight
+    let currentScrollHeight
+    if (this.isGlobal) {
+      containerHeight = winHeight
+      currentScrollHeight = this.container.pageYOffset
+    } else {
+      containerHeight = this.container.scrollHeight - this.options.scrollContainerHeight
+      currentScrollHeight = this.container.scrollTop
+    }
+    return !(containerHeight - currentScrollHeight)
+  }
   watchRefreshFlag () {
     if (typeof Object.defineProperty !== 'function') {
       return
@@ -182,7 +206,10 @@ export default class Scroller {
     }
   }
   scroll (event) {
-    return this.options.scrollFn(event)
+    if (this.isThresholded) {
+      event.preventDefault()
+    }
+    this.options.scrollFn(event)
   }
   touchStart (event) {
     const { touches } = event
@@ -198,16 +225,19 @@ export default class Scroller {
     this.percentage = (this.startPageY - pageY) / this.screenHeight
     this.handleMovingDirection(pageY)
     if (this.movingDirection === 'none') {
-      event.preventDefault()
+      return
     }
-    if (this.isTop() && this.movingDirection === 'down' && this.options.enablePullDown) {
-      event.preventDefault()
+    this.preMovingDirection = this.movingDirection
+    this.handleCriticalThreshold(event)
+  }
+  handleCriticalThreshold (event) {
+    const criticalFlag = this.movingDirection === 'up' ? this.isBottom() && this.options.enablePullUp : this.isTop() && this.options.enablePullDown
+    if (criticalFlag) {
       this.isThresholded = Math.abs(this.percentage) >= this.options.threshold
       if (this.isThresholded) {
         this.refreshFlag = true
       }
-
-      this.options.touchMoveFn(event, this.handleThreshold())
+      this.options.touchMoveFn(event, this.handleThreshold(), this.movingDirection)
     }
   }
   handleMovingDirection (pageY) {
@@ -226,7 +256,7 @@ export default class Scroller {
     this.isThresholded = false
     this.isInTouchStatus = false
     this.movingDirection = 'none'
-    this.options.touchEndFn(event, this.handleThreshold())
+    this.options.touchEndFn(event, this.handleThreshold(), this.preMovingDirection)
   }
   resetRefreshingStatusFn (status) {
     this.refreshFlag = status

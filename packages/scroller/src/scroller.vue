@@ -4,11 +4,12 @@
     :class="{ 'is-hide-bar': !scrollbar }"
     ref="container"
     >
-    <slot name="header"></slot>
-    <div class="scroll-container" ref="contents" :style="handleStyle">
+    <slot name="header" ></slot>
+    <div class="mn-scroller-contents" ref="contents" :style="handleContainerHeight">
       <!-- scroller contents -->
       <slot></slot>
     </div>
+    <slot name="footer"></slot>
   </div>
 </template>
 
@@ -67,14 +68,20 @@ export default {
       type: Boolean,
       default: false
     },
+    scrollHeadHeight: {
+      type: Number,
+      default: 300
+    },
     scrollContainerHeight: {
       type: Number,
       default: 300
     }
   },
   computed: {
-    handleStyle() {
-      return { height: `${this.scrollContainerHeight}px` }
+    handleContainerHeight() {
+      return {
+        height: `${this.scrollContainerHeight}px`,
+      }
     }
   },
   data() {
@@ -87,9 +94,10 @@ export default {
       createdScrollTop: false,
       scrollOptions: {
         threshold: 0.3,
-        moveCount: 200,
+        scrollContainerHeight: this.scrollContainerHeight,
         percentage: 0,
         enablePullDown: this.pullDown,
+        enablePullUp: true,
         container: null,
         touchStartFn: this.touchStartFn,
         touchMoveFn: this.touchMoveFn,
@@ -212,7 +220,8 @@ export default {
        */
       this.$emit('touchstartevent', event, this)
     },
-    touchMoveFn(event, pre) {
+    touchMoveFn(event, precent, direction) {
+
       /**
          * @event touchmove
          * @property {Event} event - DOM Event
@@ -224,12 +233,12 @@ export default {
        * @property {Event} event - DOM Event
        * @property {VueComponent} scroller - scroller self
        * @property {number} precent - threshold precent
+       * @property {string} direction - scroll direction
        */
-      this.$emit('touchmoveevent', event, this, pre)
+      this.$emit('touchmoveevent', event, this, precent, direction)
     },
-    touchEndFn(event, pre) {
+    touchEndFn(event, precent, direction) {
       this.scrollAndTouchEnd(event)
-
       /**
          * @event touchend
          * @property {Event} event - DOM Event
@@ -242,7 +251,7 @@ export default {
        * @property {VueComponent} scroller - scroller self
        * @property {number} precent - threshold precent
        */
-      this.$emit('touchendevent', event, this, pre)
+      this.$emit('touchendevent', event, this, precent, direction)
     },
     watchRefresh() {},
     resetRefreshingStatus() {
