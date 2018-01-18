@@ -1,36 +1,16 @@
-import { proxy } from './Proxy'
-const noop = () => {
+import { proxy } from './utils/proxy'
+import { addEvent, removeEvent } from './utils/utils'
 
-}
-const assign = (source, target) => {
-  if (target == void (0)) {
-    throw new TypeError('[scroller]:Target should be an object.')
-  }
-  const tempTarget = Object(target)
-  for (const key in tempTarget) {
-    if (key in source) {
-      source[key] = tempTarget[key]
-    }
-  }
-  return source
-}
-const addEvent = (el, type, fn, capture) => {
-  el.addEventListener(type, fn, { passive: false, capture: !!capture })
-}
-const removeEvent = (el, type, fn, capture) => {
-  el.removeEventListener(type, fn, { passive: false, capture: !!capture })
-}
 const defaultOptions = {
   threshold: 0.3,
-  percentage: 0,
   scrollContainerHeight: 0,
   container: null,
   enablePullDown: false,
   enablePullUp: false,
-  touchStartFn: noop,
-  touchMoveFn: noop,
-  touchEndFn: noop,
-  scrollFn: noop
+  touchStartFn: () => { },
+  touchMoveFn: () => { },
+  touchEndFn: () => { },
+  scrollFn: () => { }
 }
 let scrollers = {
   list: []
@@ -39,28 +19,51 @@ scrollers = proxy(scrollers, 'scroll', ['list'], 'sessionStorage')
 
 export default class Scroller {
   constructor (options) {
-    this.options = assign(defaultOptions, options)
+    // merge user optons with default options
+    this.options = Object.assign({}, defaultOptions, options)
+    /**
+     * scroll container
+    */
     this.container = this.options.container
     if (!(options.container instanceof HTMLElement)) {
       throw new Error('[scroller]:Container should be a html element!')
     }
-    this.win = window
-    this.isGlobal = this.options.container === this.win
+
+    /**
+     * get the height of the screen in pixels
+    */
     this.screenHeight = window.screen.height
 
     if (!this.options.scrollContainerHeight) {
       this.options.scrollContainerHeight = this.container.offsetHeight
     }
-    if (this.options.enablePullUp) {
-      this.winHeight = window.innerHeight
-    }
+    /**
+     * user touching the screen sence
+    */
     this.isInTouchStatus = false
 
+    /**
+     * user pull up or pull down the screen
+    */
     this.refreshFlag = false
 
+    /**
+     * user pull up or pull down to make pageY reach threshold
+    */
     this.isThresholded = false
+
+    /**
+     * distroy the scroller instance
+    */
     this.destroyed = false
+
+    /**
+     * finger movement direction (up/down/none)
+    */
     this.movingDirection = 'none'
+    /**
+     * last finger movement direction
+    */
     this.preMovingDirection = this.movingDirection
     this.startPageY = 0
     this.prePageY = 0
@@ -76,7 +79,6 @@ export default class Scroller {
  * @param {Number} [left=0]  - scrollLeft
  */
   addScroller (path, name, top = 0, left = 0) {
-    // this.removeScroller(path, name)
     let index = -1
     index = scrollers.list.findIndex(s => s.path === path && s.name === name)
     if (index < 0) {
@@ -84,8 +86,6 @@ export default class Scroller {
     } else {
       scrollers.list[index] = { path, name, top, left }
     }
-
-    // this.scrollers.push({ path, name, top, left })
   }
   /**
  * Find scroller storage by path and name
@@ -94,10 +94,6 @@ export default class Scroller {
  * @return {Object|null}
  */
   findScroller (path, name) {
-    // const findeds = this.scrollers.filter(item => {
-    //   return item.path === path && item.name === name
-    // })
-    // return findeds.length > 0 ? findeds[0] : null
     let index = -1
     index = scrollers.list.findIndex(s => s.path === path && s.name === name)
     return index < 0 ? null : scrollers.list[index]
@@ -110,12 +106,6 @@ export default class Scroller {
   removeScroller (path, name) {
     let index = scrollers.list.findIndex(s => s.path === path && s.name === name)
     index >= 0 && scrollers.list.splice(index, 1)
-    // const finded = this.findScroller(path, name)
-
-    // // If finded, remove its old value
-    // if (finded) {
-    //   this.scrollers.splice(this.scrollers.indexOf(finded), 1)
-    // }
   }
   /**
  * Get scroller top and left,
@@ -137,20 +127,24 @@ export default class Scroller {
       }
     }
   }
+  /**
+   * detect scroll to top
+   *
+   * @returns {boolean}
+   * @memberof Scroller
+   */
   isTop () {
-    return this.isGlobal ? this.container.pageYOffset <= 0 : this.container.scrollTop <= 1
+    return this.container.scrollTop <= 1
   }
+  /**
+   * detect scroll to bottom
+   *
+   * @returns
+   * @memberof Scroller
+   */
   isBottom () {
-    const { winHeight } = this
-    let containerHeight
-    let currentScrollHeight
-    if (this.isGlobal) {
-      containerHeight = winHeight
-      currentScrollHeight = this.container.pageYOffset
-    } else {
-      containerHeight = this.container.scrollHeight - this.options.scrollContainerHeight
-      currentScrollHeight = this.container.scrollTop
-    }
+    let containerHeight = this.container.scrollHeight - this.options.scrollContainerHeight
+    let currentScrollHeight = this.container.scrollTop
     return !(containerHeight - currentScrollHeight)
   }
   watchRefreshFlag () {
@@ -168,6 +162,11 @@ export default class Scroller {
       }
     })
   }
+  /**
+   * attach event listener to scroll container
+   *
+   * @memberof Scroller
+   */
   attachEvent () {
     const target = this.options.container
     addEvent(target, 'touchstart', this)
@@ -176,6 +175,11 @@ export default class Scroller {
     addEvent(target, 'touchcancel', this)
     addEvent(target, 'scroll', this)
   }
+  /**
+   * destroy attached event listeners
+   *
+   * @memberof Scroller
+   */
   destroy () {
     this.destroyed = true
     this.destroyEvent()
@@ -188,6 +192,14 @@ export default class Scroller {
     removeEvent(target, 'touchcancel', this)
     removeEvent(target, 'scroll', this)
   }
+  /**
+   * use handleEvent function to catch events
+   * so that we can easily attach or remove the listener
+   *
+   * @param {any} event
+   * @returns
+   * @memberof Scroller
+   */
   handleEvent (event) {
     if (!(event instanceof Event)) return
     switch (event.type) {
@@ -205,12 +217,23 @@ export default class Scroller {
         break
     }
   }
+  /**
+   *
+   * @param {any} event
+   * @memberof Scroller
+   */
   scroll (event) {
     if (this.isThresholded) {
       event.preventDefault()
     }
     this.options.scrollFn(event)
   }
+  /**
+   *
+   *
+   * @param {any} event
+   * @memberof Scroller
+   */
   touchStart (event) {
     const { touches } = event
     this.handleMovingDirection(touches[0].pageY)
@@ -218,10 +241,20 @@ export default class Scroller {
     this.isInTouchStatus = true
     this.options.touchStartFn(event)
   }
+
+  /**
+   *
+   *
+   * @param {any} event
+   * @memberof Scroller
+   */
   touchMove (event) {
     if (!this.isInTouchStatus || this.refreshFlag) return
     const { touches } = event
     const pageY = touches[0].pageY
+    /**
+     * get the finger movment distance/screen sense height
+     */
     this.percentage = (this.startPageY - pageY) / this.screenHeight
     this.handleMovingDirection(pageY)
     if (this.movingDirection === 'none') {
@@ -230,7 +263,30 @@ export default class Scroller {
     this.preMovingDirection = this.movingDirection
     this.handleCriticalThreshold(event)
   }
+  /**
+   *
+   *
+   * @param {any} event
+   * @memberof Scroller
+   */
+  touchEnd (event) {
+    this.refreshFlag = false
+    this.isThresholded = false
+    this.isInTouchStatus = false
+    this.movingDirection = 'none'
+    this.options.touchEndFn(event, this.handleThreshold(), this.preMovingDirection)
+  }
+
+  /**
+   *
+   *
+   * @param {any} event
+   * @memberof Scroller
+   */
   handleCriticalThreshold (event) {
+    /**
+     * pull up or pull down threshold calc
+     */
     const criticalFlag = this.movingDirection === 'up' ? this.isBottom() && this.options.enablePullUp : this.isTop() && this.options.enablePullDown
     if (criticalFlag) {
       this.isThresholded = Math.abs(this.percentage) >= this.options.threshold
@@ -240,6 +296,12 @@ export default class Scroller {
       this.options.touchMoveFn(event, this.handleThreshold(), this.movingDirection)
     }
   }
+  /**
+   * detect finger movement direction
+   *
+   * @param {number} pageY
+   * @memberof Scroller
+   */
   handleMovingDirection (pageY) {
     const distanceY = pageY - this.prePageY
     if (distanceY < 0) {
@@ -248,16 +310,16 @@ export default class Scroller {
       this.movingDirection = 'down'
     }
   }
+  /**
+   * if scroll to head or foot detect movment percentage / default threshold
+   *
+   * @returns
+   * @memberof Scroller
+   */
   handleThreshold () {
     return Math.min(Math.abs(this.percentage) / this.options.threshold, 1)
   }
-  touchEnd (event) {
-    this.refreshFlag = false
-    this.isThresholded = false
-    this.isInTouchStatus = false
-    this.movingDirection = 'none'
-    this.options.touchEndFn(event, this.handleThreshold(), this.preMovingDirection)
-  }
+
   resetRefreshingStatusFn (status) {
     this.refreshFlag = status
   }

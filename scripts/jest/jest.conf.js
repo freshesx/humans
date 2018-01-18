@@ -9,6 +9,7 @@ module.exports = {
     'js',
     'vue'
   ],
+  testEnvironment: 'jsdom',
   transform: {
     "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
