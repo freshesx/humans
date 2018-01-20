@@ -85,12 +85,12 @@ export default {
   },
   mounted () {
     // Parse $slots.default to get scroller vnode
-    const scroller = getScrollerVNode.call(this)
+    this.scrollerVNode = getScrollerVNode.call(this)
 
     // If the scroller vnode is extis, then listen their event.
-    if (scroller) {
+    if (this.scrollerVNode) {
       // Listen pull event to show prefix area.
-      scroller.componentInstance.$on('pull', (event, scroller, distance) => {
+      this.scrollerVNode.componentInstance.$on('pull', (event, scroller, distance) => {
         this.transitionDuration = 0
 
         // You can define pullDistanceFn to change pull progress.
@@ -101,7 +101,7 @@ export default {
       })
 
       // Listen touchend event to close prefix area.
-      scroller.componentInstance.$on('touchend', (event, scroller) => {
+      this.scrollerVNode.componentInstance.$on('touchend', (event, scroller) => {
         // If the pullDistance is equal 0, the prefix area isn't showed.
         if (this.pullDistance === 0) return
 
@@ -131,6 +131,10 @@ export default {
     this.prefixHeight = this.$slots.prefix && this.$slots.prefix.length > 0
       ? this.$slots.prefix[0].elm.offsetHeight
       : this.prefixHolder
+  },
+  beforeDestroy () {
+    // Off all events.
+    this.scrollerVNode.componentInstance.$off()
   }
 }
 </script>
