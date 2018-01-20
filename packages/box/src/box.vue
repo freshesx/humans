@@ -34,9 +34,30 @@ export default {
       default: 80
     },
     /**
+     * You can update pullDistanceFn to change pull progress.
+     * By default it returns half the distance.
+     * @param {Number} distance
+     * @param {Object} params
+     * @param {Event} params.event
+     * @param {VueComponent} params.scroller
+     */
+    pullDistanceFn: {
+      type: Function,
+      default (distance, params) {
+        return distance / 2
+      }
+    },
+    /**
      * When pull touchend is emitted, this function will be call.
      * You can define the logic you want to in this function.
      * Just return a Promise.
+     * pullDistance
+     * @param {Number} ratio  - the ratio of pullDistance and prefixHeight
+     * @param {Object} params
+     * @param {Number} params.pullDistance
+     * @param {Number} params.prefixHeight
+     * @param {Event} params.event
+     * @param {VueComponent} params.scroller
      */
     finishPullFn: {
       type: Function,
@@ -44,6 +65,10 @@ export default {
         return new Promise(resolve => resolve())
       }
     },
+    /**
+     * You can create and extend new MnScroller,
+     * and then you need to update scrollerTag prop.
+     */
     scrollerTag: {
       type: Array,
       default: () => ['mn-scroller']
@@ -63,9 +88,14 @@ export default {
     // If the scroller vnode is extis, then listen their event.
     if (scroller) {
       // Listen pull event to show prefix area.
-      scroller.componentInstance.$on('pull', distance => {
+      scroller.componentInstance.$on('pull', (event, scroller, distance) => {
         this.transitionDuration = 0
-        this.pullDistance = distance / 2
+
+        // You can define pullDistanceFn to change pull progress.
+        this.pullDistance = this.pullDistanceFn(distance, {
+          event,
+          scroller
+        })
       })
 
       // Listen touchend event to close prefix area.
@@ -82,7 +112,7 @@ export default {
         // Combine params
         const params = {
           pullDistance: this.pullDistance,
-          elmHeight: this.prefixHeight,
+          prefixHeight: this.prefixHeight,
           event: event,
           scroller: scroller
         }
