@@ -1,0 +1,123 @@
+<template>
+  <div
+    class="mn-box"
+    :style="{
+      transitionDuration: transitionDuration + 'ms',
+      transform: `translateY(-${prefixHeight - pullDistance}px)`
+    }"
+  >
+    <div
+      class="mn-box-prefix"
+      :style="{
+        height: prefixHeight + 'px'
+      }"
+    >
+      <slot name="prefix"></slot>
+    </div>
+    <div class="mn-box-body">
+      <slot ref="scroller"></slot>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'mn-box',
+  props: {
+    /**
+     * Define prefix area height.
+     * When the prefix slot isn't defined, box will use this value to init prefix area.
+     * You can set 0 to close prefix area.
+     */
+    prefixHolder: {
+      type: Number,
+      default: 80
+    },
+    /**
+     * When pull touchend is emitted, this function will be call.
+     * You can define the logic you want to in this function.
+     * Just return a Promise.
+     */
+    finishPullFn: {
+      type: Function,
+      default (ratio, params) {
+        return new Promise(resolve => resolve())
+      }
+    }
+  },
+  data () {
+    return {
+      prefixHeight: 0,
+      pullDistance: 0,
+      transitionDuration: 0
+    }
+  },
+  mounted () {
+    // Parse $slots.default to get scroller vnode
+    const scroller = getScrollerVNode.call(this)
+
+    // If the scroller vnode is extis, then listen their event.
+    if (scroller) {
+      // Listen pull event to show prefix area.
+      scroller.componentInstance.$on('pull', distance => {
+        this.transitionDuration = 0
+        this.pullDistance = distance / 2
+      })
+
+      // Listen touchend event to close prefix area.
+      scroller.componentInstance.$on('touchend', (event, scroller) => {
+        this.transitionDuration = 300
+
+        // Compute the area pull destance ratio
+        const ratio = this.pullDistance / this.prefixHeight
+
+        // Combine params
+        const params = {
+          pullDistance: this.pullDistance,
+          elmHeight: this.prefixHeight,
+          event: event,
+          scroller: scroller
+        }
+
+        // Handle finishPullFn, and it must return Promise
+        this.finishPullFn(ratio, params).then(() => {
+          this.pullDistance = 0
+        })
+      })
+    }
+
+    // If the prefix slot is extis, the box use the slot's height to define `mn-box-prefix` div height.
+    // If the prefix slot isn't extis, the box use the prefixHeight prop to define `mn-box-prefix` div height.
+    this.prefixHeight = this.$slots.prefix && this.$slots.prefix.length > 0
+      ? this.$slots.prefix[0].elm.offsetHeight
+      : this.prefixHolder
+  }
+}
+
+function getScrollerVNode () {
+  if (!this.$slots || !this.$slots.default) return
+
+  // Filter out MnScroller
+  const vnodes = this.$slots.default.filter(vnode => {
+    const tag = vnode.componentOptions && vnode.componentOptions.tag
+    return tag === 'mn-scroller'
+  })
+
+  if (vnodes.length === 0) return
+
+  // We only support one MnScroller in the box component.
+  if (vnodes.length > 1) {
+    throw new Error('The box default slot only support one MnScroller.')
+  }
+
+  return vnodes[0]
+}
+</script>
+
+<style lang="scss">
+.mn-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+</style>
