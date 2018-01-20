@@ -88,6 +88,13 @@
         const scrollTop = this.$el.scrollTop
         const scrollHeight = this.$el.scrollHeight
         const containerHeight = this.$el.offsetHeight
+        const distance = pageY - this.startPageY
+
+        // If the scrollTop is equal 0 and direction of touch is downward,
+        // we should emit the pull event.
+        if (scrollTop === 0 && distance > 0) {
+          this.$emit('pull', distance, this, event)
+        }
 
         // If startPageX is too low,
         // allow swipe to right to emit browser back event.
