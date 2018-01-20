@@ -70,6 +70,10 @@ export default {
 
       // Listen touchend event to close prefix area.
       scroller.componentInstance.$on('touchend', (event, scroller) => {
+        // If the pullDistance is equal 0, the prefix area isn't showed.
+        if (this.pullDistance === 0) return
+
+        // Open transition
         this.transitionDuration = 300
 
         // Compute the area pull destance ratio
