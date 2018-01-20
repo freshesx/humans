@@ -43,6 +43,10 @@ export default {
       default (ratio, params) {
         return new Promise(resolve => resolve())
       }
+    },
+    scrollerTag: {
+      type: Array,
+      default: () => ['mn-scroller']
     }
   },
   data () {
@@ -100,7 +104,7 @@ function getScrollerVNode () {
   // Filter out MnScroller
   const vnodes = this.$slots.default.filter(vnode => {
     const tag = vnode.componentOptions && vnode.componentOptions.tag
-    return tag === 'mn-scroller'
+    return this.scrollerTag.indexOf(tag) > -1
   })
 
   if (vnodes.length === 0) return
@@ -113,11 +117,3 @@ function getScrollerVNode () {
   return vnodes[0]
 }
 </script>
-
-<style lang="scss">
-.mn-box {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-</style>
