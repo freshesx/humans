@@ -112,6 +112,10 @@
     webpack-hot-middleware "^2.20.0"
     webpack-merge "^4.1.1"
 
+"@freshes/icons@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@freshes/icons/-/icons-2.0.1.tgz#f683898ce29b6ccb3f33975f0eea3efaabc67e8a"
+
 "@freshes/style-import-loader@^0.4.0":
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/@freshes/style-import-loader/-/style-import-loader-0.4.0.tgz#63562527a97869c7293c036de657e1cfebe89af4"

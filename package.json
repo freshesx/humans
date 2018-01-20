@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@freshes/house": "^1.1.0",
+    "@freshes/icons": "^2.0.1",
     "@freshes/style-import-loader": "^0.4.0",
     "@freshes/suite": "^1.0.1",
     "babel-core": "^6.24.1",
