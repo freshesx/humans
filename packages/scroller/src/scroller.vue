@@ -84,10 +84,10 @@
         this.$emit('touchstart', event, this)
       },
       touchMove (event) {
-        let pageY = event.touches[0].pageY
-        let scrollTop = this.$el.scrollTop
-        let scrollHeight = this.$el.scrollHeight
-        let containerHeight = this.$el.offsetHeight
+        const pageY = event.touches[0].pageY
+        const scrollTop = this.$el.scrollTop
+        const scrollHeight = this.$el.scrollHeight
+        const containerHeight = this.$el.offsetHeight
 
         // If startPageX is too low,
         // allow swipe to right to emit browser back event.
