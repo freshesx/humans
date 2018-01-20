@@ -5,7 +5,8 @@
     @touchstart="touchStart"
     @touchmove="touchMove"
     @touchend="touchEnd"
-    @scroll="scroll">
+    @scroll="scroll"
+  >
     <div class="mn-scroller-contents">
       <!-- scroller contents -->
       <slot></slot>
