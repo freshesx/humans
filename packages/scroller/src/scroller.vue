@@ -59,6 +59,14 @@
       scrollbar: {
         type: Boolean,
         default: false
+      },
+      /**
+       * When the scroll height close to the bottom minimum critical point,
+       * itself will emit bottom event.
+       */
+      bottomMinHeight: {
+        type: Number,
+        default: 20
       }
     },
     data () {
@@ -151,7 +159,7 @@
         }
 
         // push to the scroller bottom
-        if (this.$el.offsetHeight >= this.$el.scrollHeight - this.$el.scrollTop) {
+        if (this.$el.offsetHeight >= this.$el.scrollHeight - this.$el.scrollTop - this.bottomMinHeight) {
           /**
            * @event bottom
            * @property {Event} event - DOM Event
