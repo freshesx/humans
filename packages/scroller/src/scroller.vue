@@ -101,7 +101,7 @@
         // If the scrollTop is equal 0 and direction of touch is downward,
         // we should emit the pull event.
         if (scrollTop === 0 && distance > 0) {
-          this.$emit('pull', distance, this, event)
+          this.$emit('pull', event, this, distance)
         }
 
         // If startPageX is too low,
