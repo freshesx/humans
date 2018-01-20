@@ -1,6 +1,7 @@
 import { loadingIcon } from '@humans/loading-icon'
 import { icon } from '@humans/icon'
 import { scroller } from '@humans/scroller'
+import { core } from '@humans/core'
 import { btn } from '@humans/btn'
 import { link } from '@humans/link'
 import { card } from '@humans/card'
@@ -20,6 +21,7 @@ const suites = Object.assign(
   loadingIcon,
   icon,
   scroller,
+  core,
   btn,
   link,
   card,
