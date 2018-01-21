@@ -15,12 +15,12 @@
 </template>
 
 <script>
-  import ScrollStorage from './ScrollStorage'
+  import ScrollSessionStorage from './ScrollSessionStorage'
 
   /**
    * Scrollers instance to save scrollers.
    */
-  const scrollStorage = new ScrollStorage()
+  const scrollStorage = new ScrollSessionStorage()
 
   /**
    * Scroller component
