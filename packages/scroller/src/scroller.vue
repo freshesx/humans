@@ -15,12 +15,12 @@
 </template>
 
 <script>
-  import Scrollers from './Scrollers'
+  import ScrollStorage from './ScrollStorage'
 
   /**
    * Scrollers instance to save scrollers.
    */
-  const scrollers = new Scrollers()
+  const scrollStorage = new ScrollStorage()
 
   /**
    * Scroller component
@@ -177,7 +177,7 @@
         // and allow to save the top scroll value.
         if (!this.$route || !this.save) return
         // Get scroller top from share state, and give the value to the scroller.
-        this.$el.scrollTop = scrollers.getScroller(this.getRoutePath(), this.name).top
+        this.$el.scrollTop = scrollStorage.getScroller(this.getRoutePath(), this.name).top
         // Set createdScrollTop is true,
         // In order to tell the scroller: the scrollTop complete initialization.
         // After initialization, the scroller can save new scrollTop value.
@@ -189,7 +189,7 @@
         // And the scrollTop after initialization, it can save new value.
         if (!this.$route || !this.save || !this.createdScrollTop) return
         // Save new scrollTop value.
-        scrollers.addScroller(this.getRoutePath(), this.name, this.$el.scrollTop)
+        scrollStorage.addScroller(this.getRoutePath(), this.name, this.$el.scrollTop)
       }
     },
     mounted () {

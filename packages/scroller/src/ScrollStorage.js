@@ -1,7 +1,7 @@
 /**
  * Save scrollers top and left by thier path and own name
  */
-export default class Scrollers {
+export default class ScrollStorage {
   /**
    * Constructor
    */
