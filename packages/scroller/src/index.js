@@ -1,5 +1,6 @@
 import scroller from './scroller.vue'
 import ScrollStorage from './ScrollStorage.js'
+import ScrollSessionStorage from './ScrollSessionStorage.js'
 import './index.scss'
 
 const suite = {
@@ -8,5 +9,6 @@ const suite = {
 
 export {
   suite as scroller,
-  ScrollStorage
+  ScrollStorage,
+  ScrollSessionStorage
 }
