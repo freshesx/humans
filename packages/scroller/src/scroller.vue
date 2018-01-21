@@ -67,6 +67,14 @@
       bottomMinHeight: {
         type: Number,
         default: 20
+      },
+      /**
+       * You can define a new ScrollStorage to rewrite it.
+       * The default value should be a ScrollStorage Instance.
+       */
+      storage: {
+        type: Object,
+        default: () => scrollStorage
       }
     },
     data () {
@@ -177,7 +185,7 @@
         // and allow to save the top scroll value.
         if (!this.$route || !this.save) return
         // Get scroller top from share state, and give the value to the scroller.
-        this.$el.scrollTop = scrollStorage.getScroller(this.getRoutePath(), this.name).top
+        this.$el.scrollTop = this.storage.getScroller(this.getRoutePath(), this.name).top
         // Set createdScrollTop is true,
         // In order to tell the scroller: the scrollTop complete initialization.
         // After initialization, the scroller can save new scrollTop value.
@@ -189,7 +197,7 @@
         // And the scrollTop after initialization, it can save new value.
         if (!this.$route || !this.save || !this.createdScrollTop) return
         // Save new scrollTop value.
-        scrollStorage.addScroller(this.getRoutePath(), this.name, this.$el.scrollTop)
+        this.storage.addScroller(this.getRoutePath(), this.name, this.$el.scrollTop)
       }
     },
     mounted () {
