@@ -110,10 +110,6 @@
     },
     data () {
       return {
-        /**
-         * @todo remove
-         */
-        time: undefined,
         createdScrollTop: false,
         loading: true,
         showLoadingTip: false
