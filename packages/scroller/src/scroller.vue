@@ -11,6 +11,7 @@
       <!-- scroller contents -->
       <slot></slot>
     </div>
+    <div class="mn-scroller-mask" v-if="loading"></div>
   </div>
 </template>
 
@@ -75,6 +76,16 @@
       storage: {
         type: Object,
         default: () => scrollStorage
+      },
+      /**
+       * You can rewrite the promise to call scroll back to last top value.
+       * When you are sure your DOM is updated.
+       */
+      finishLoadingFn: {
+        type: Function,
+        default () {
+          return new Promise(resolve => setTimeout(resolve, 100))
+        }
       }
     },
     data () {
@@ -83,7 +94,8 @@
          * @todo remove
          */
         time: undefined,
-        createdScrollTop: false
+        createdScrollTop: false,
+        loading: true
       }
     },
     methods: {
@@ -190,6 +202,7 @@
         // In order to tell the scroller: the scrollTop complete initialization.
         // After initialization, the scroller can save new scrollTop value.
         this.createdScrollTop = true
+        this.loading = false
       },
       saveScrollTop () {
         // Check the app install `vue-router`,
@@ -201,11 +214,14 @@
       }
     },
     mounted () {
-      // Execute createScrollTop method after a lot millisecond.
-      // Because wait the app page load thier DOM.
-      this.$nextTick(() => {
-        setTimeout(this.createScrollTop, 100)
+      // Wait finishFn promise.
+      // When the DOM has updated, then set scroll top and finish loading.
+      this.finishLoadingFn().then(() => {
+        this.$nextTick(() => this.createScrollTop())
       })
+    },
+    beforeDestroy () {
+      this.loading = true
     }
   }
 </script>
