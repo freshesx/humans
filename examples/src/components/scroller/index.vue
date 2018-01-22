@@ -5,10 +5,11 @@
     </div>
     <div class="scroller-boding">
       <mn-box :finish-pull-fn="finishPull">
-        <mn-scroller>
+        <mn-scroller :finish-loading-fn="finishLoading">
           <ul>
-            <li v-for="i in 50" :key="i">{{ i }}</li>
+            <li v-for="i in items" :key="i">{{ i }}</li>
           </ul>
+          <span slot="loading">载入中...</span>
         </mn-scroller>
         <div class="scroller-prefix" slot="prefix">
           <span v-if="!loading">下拉刷新</span>
@@ -34,7 +35,8 @@
     },
     data () {
       return {
-        loading: false
+        loading: false,
+        items: 1
       }
     },
     methods: {
@@ -43,6 +45,10 @@
         this.loading = true
         await sleep()
         this.loading = false
+      },
+      async finishLoading () {
+        await sleep(2000)
+        this.items = await 50
       }
     }
   }
