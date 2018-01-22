@@ -11,7 +11,9 @@
       <!-- scroller contents -->
       <slot></slot>
     </div>
-    <div class="mn-scroller-mask" v-if="loading"></div>
+    <div class="mn-scroller-mask" v-if="loading">
+      <slot name="loading" v-if="showLoadingTip"></slot>
+    </div>
   </div>
 </template>
 
@@ -86,6 +88,13 @@
         default () {
           return new Promise(resolve => setTimeout(resolve, 100))
         }
+      },
+      /**
+       * Delay before showing the loading tip.
+       */
+      delayLoadingTip: {
+        type: Number,
+        default: 200
       }
     },
     data () {
@@ -95,7 +104,8 @@
          */
         time: undefined,
         createdScrollTop: false,
-        loading: true
+        loading: true,
+        showLoadingTip: false
       }
     },
     methods: {
@@ -202,7 +212,15 @@
         // In order to tell the scroller: the scrollTop complete initialization.
         // After initialization, the scroller can save new scrollTop value.
         this.createdScrollTop = true
+
+        // Clear old timeout
+        if (this.loadingTipTimer) {
+          clearTimeout(this.loadingTipTimer)
+        }
+
+        // Hide loading mask and loading tip
         this.loading = false
+        this.showLoadingTip = false
       },
       saveScrollTop () {
         // Check the app install `vue-router`,
@@ -211,9 +229,17 @@
         if (!this.$route || !this.save || !this.createdScrollTop) return
         // Save new scrollTop value.
         this.storage.addScroller(this.getRoutePath(), this.name, this.$el.scrollTop)
-      }
+      },
     },
     mounted () {
+      // If the loading is true, it will set timeout to show loading tip.
+      // For example loading icon or loading tip text.
+      // If the loading is false by initial time, the timer isn't worked.
+      // So, developer can control the loading mask's showing and tip's showing.
+      if (this.loading) {
+        this.loadingTipTimer = setTimeout(() => this.showLoadingTip = true, this.delayLoadingTip)
+      }
+
       // Wait finishFn promise.
       // When the DOM has updated, then set scroll top and finish loading.
       this.finishLoadingFn().then(() => {
