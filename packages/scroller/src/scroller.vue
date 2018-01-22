@@ -219,9 +219,6 @@
       this.finishLoadingFn().then(() => {
         this.$nextTick(() => this.createScrollTop())
       })
-    },
-    beforeDestroy () {
-      this.loading = true
     }
   }
 </script>
