@@ -11,7 +11,11 @@
       <!-- scroller contents -->
       <slot></slot>
     </div>
-    <div class="mn-scroller-mask" v-if="loading">
+    <div
+      class="mn-scroller-mask"
+      :style="{ background: maskBg }"
+      v-if="loading"
+    >
       <slot name="loading" v-if="showLoadingTip"></slot>
     </div>
   </div>
@@ -95,6 +99,13 @@
       delayLoadingTip: {
         type: Number,
         default: 200
+      },
+      /**
+       * Loading mask bg, if the value is undefined, it will use scss variable.
+       * The default bg color is same as the body's background color.
+       */
+      maskBg: {
+        type: String
       }
     },
     data () {
