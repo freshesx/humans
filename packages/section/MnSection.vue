@@ -6,10 +6,10 @@
 </template>
 
 <script>
-  /**
-   * Section component
-   */
-  export default {
-    name: 'mn-section'
-  }
+/**
+ * Section component
+ */
+export default {
+  name: 'MnSection'
+}
 </script>

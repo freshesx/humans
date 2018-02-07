@@ -17,15 +17,13 @@
 </template>
 
 <script>
-  import { container } from '@humans/container'
-  import { section } from '@humans/section'
-  import { card } from '@humans/card'
+import { MnContainer, MnSectionSuites, MnCardSuites } from '@freshes/human'
 
-  export default {
-    components: {
-      ...container,
-      ...section,
-      ...card
-    }
+export default {
+  components: {
+    MnContainer,
+    ...MnSectionSuites,
+    ...MnCardSuites
   }
+}
 </script>
