@@ -10,6 +10,6 @@
    * Card media component
    */
   export default {
-    name: 'mn-card-media'
+    name: 'MnCardMedia'
   }
 </script>

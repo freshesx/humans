@@ -70,11 +70,11 @@
 </template>
 
 <script>
-  import { card } from '@humans/card'
+  import { MnCardSuites } from '@freshes/human'
 
   export default {
     components: {
-      ...card
+      ...MnCardSuites
     }
   }
 </script>

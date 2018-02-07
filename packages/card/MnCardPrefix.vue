@@ -1,12 +1,12 @@
 <script>
-  import cardBody from './cardBody.vue'
+  import MnCardBody from './MnCardBody.vue'
 
   /**
    * Card prefix component
    */
   export default {
-    name: 'mn-card-prefix',
-    mixins: [ cardBody ],
+    name: 'MnCardPrefix',
+    mixins: [ MnCardBody ],
     data () {
       return {
         columnName: 'prefix'
