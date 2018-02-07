@@ -24,7 +24,7 @@
 import { getScrollerVNode } from './helpers'
 
 export default {
-  name: 'mn-box',
+  name: 'MnBox',
   props: {
     /**
      * Define prefix area height.
