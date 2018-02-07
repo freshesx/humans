@@ -21,37 +21,36 @@
 </template>
 
 <script>
-  import { scroller } from '@humans/scroller'
-  import { box } from '@humans/box'
+import { MnBox, MnScroller } from '@freshes/human'
 
-  function sleep (ms = 2000) {
-    return new Promise(resolve => setTimeout(resolve, ms))
-  }
+function sleep (ms = 2000) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
 
-  export default {
-    components: {
-      ...box,
-      ...scroller
+export default {
+  components: {
+    MnBox,
+    MnScroller
+  },
+  data () {
+    return {
+      loading: false,
+      items: 1
+    }
+  },
+  methods: {
+    async finishPull (ratio) {
+      if (ratio < 0.8) return
+      this.loading = true
+      await sleep()
+      this.loading = false
     },
-    data () {
-      return {
-        loading: false,
-        items: 1
-      }
-    },
-    methods: {
-      async finishPull (ratio) {
-        if (ratio < 0.8) return
-        this.loading = true
-        await sleep()
-        this.loading = false
-      },
-      async finishLoading () {
-        await sleep(2000)
-        this.items = await 50
-      }
+    async finishLoading () {
+      await sleep(2000)
+      this.items = await 50
     }
   }
+}
 </script>
 
 <style lang="scss" scoped>
