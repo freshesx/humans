@@ -8,11 +8,11 @@
 </template>
 
 <script>
-  import { icon } from '@humans/icon'
+  import { MnIcon } from '@freshes/human'
 
   export default {
     components: {
-      ...icon
+      MnIcon
     },
     data () {
       return {
