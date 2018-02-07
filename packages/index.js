@@ -1,5 +1,5 @@
-import RxBase from './base/RxBase'
+import MnBase from './base/MnBase.js'
 
 export {
-  RxBase
+  MnBase
 }
