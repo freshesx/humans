@@ -1,15 +1,15 @@
 <template>
   <div>
-    <mn-loading-icon></mn-loading-icon> loading
+    <mn-loading-icon /> loading
   </div>
 </template>
 
 <script>
-  import { loadingIcon } from '@humans/loading-icon'
+import { MnLoadingIcon } from '@freshes/human'
 
-  export default {
-    components: {
-      ...loadingIcon
-    }
+export default {
+  components: {
+    MnLoadingIcon
   }
+}
 </script>
