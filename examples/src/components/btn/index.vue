@@ -52,31 +52,31 @@
 </template>
 
 <script>
-  import { btn } from '@humans/btn'
+import { MnBtn } from '@freshes/human'
 
-  export default {
-    components: {
-      ...btn
-    },
-    data () {
-      return {
-        icons: {
-          cart: require('@freshes/icons/js/ios/cart')
-        }
-      }
-    },
-    methods: {
-      onPressButton (event, button) {
-        button.start()
-
-        setTimeout(() => {
-          window.alert('刚刚发生了加载动画')
-          button.finish()
-        }, 3000)
-      },
-      errorPressButton () {
-        window.alert('当前按钮被禁用')
+export default {
+  components: {
+    MnBtn
+  },
+  data () {
+    return {
+      icons: {
+        cart: require('@freshes/icons/js/ios/cart')
       }
     }
+  },
+  methods: {
+    onPressButton (event, button) {
+      button.start()
+
+      setTimeout(() => {
+        window.alert('刚刚发生了加载动画')
+        button.finish()
+      }, 3000)
+    },
+    errorPressButton () {
+      window.alert('当前按钮被禁用')
+    }
   }
+}
 </script>

@@ -1,16 +1,13 @@
-@import "../../../shares/scss/vars";
-@import "../../../shares/scss/mixins/media";
-@import "../../../shares/scss/mixins/merge";
+@import "../../shares/scss/vars";
+@import "../../shares/scss/mixins/media";
+@import "../../shares/scss/mixins/merge";
 
 // Built-in theme
-@import "./btn-primary";
-@import "./btn-secondary";
-@import "./btn-warning";
-@import "./btn-error";
-@import "./btn-inverse";
-
-// Import external css
-@import "~@humans/icon/dist/main.css";
+@import "./scss/btn-primary";
+@import "./scss/btn-secondary";
+@import "./scss/btn-warning";
+@import "./scss/btn-error";
+@import "./scss/btn-inverse";
 
 $-mn-button-default-theme: map-collect(
   $-button-primary,

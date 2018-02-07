@@ -6,6 +6,7 @@ import MnScroller from './scroller/MnScroller.vue'
 import MnBox from './box/MnBox.vue'
 import MnContainer from './container/MnContainer.vue'
 import MnSectionSuites from './section/MnSectionSuites.js'
+import MnBtn from './btn/MnBtn.vue'
 
 export {
   MnLoadingIcon,
@@ -14,5 +15,6 @@ export {
   MnScroller,
   MnBox,
   MnContainer,
-  MnSectionSuites
+  MnSectionSuites,
+  MnBtn
 }
