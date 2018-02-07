@@ -4,6 +4,6 @@
 
 <script>
   export default {
-    name: 'mn-loading-icon-default'
+    name: 'MnLoadingIconDefault'
   }
 </script>
