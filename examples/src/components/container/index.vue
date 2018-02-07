@@ -7,11 +7,11 @@
 </template>
 
 <script>
-  import { container } from '@humans/container'
+import { MnContainer } from '@freshes/human'
 
-  export default {
-    components: {
-      ...container
-    }
+export default {
+  components: {
+    MnContainer
   }
+}
 </script>
