@@ -7,6 +7,7 @@ import MnBox from './box/MnBox.vue'
 import MnContainer from './container/MnContainer.vue'
 import MnSectionSuites from './section/MnSectionSuites.js'
 import MnBtn from './btn/MnBtn.vue'
+import MnLink from './link/MnLink.vue'
 
 export {
   MnLoadingIcon,
@@ -16,5 +17,6 @@ export {
   MnBox,
   MnContainer,
   MnSectionSuites,
-  MnBtn
+  MnBtn,
+  MnLink
 }

@@ -7,11 +7,11 @@
 </template>
 
 <script>
-  import { link } from '@humans/link'
+  import { MnLink } from '@freshes/human'
 
   export default {
     components: {
-      ...link
+      MnLink
     },
     data () {
       return {
