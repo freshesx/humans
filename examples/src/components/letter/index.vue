@@ -12,11 +12,11 @@
 </template>
 
 <script>
-  import { letter } from '@humans/letter'
+import { MnLetterSuites } from '@freshes/human'
 
-  export default {
-    components: {
-      ...letter
-    }
+export default {
+  components: {
+    ...MnLetterSuites
   }
+}
 </script>

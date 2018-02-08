@@ -6,10 +6,10 @@
 </template>
 
 <script>
-  /**
-   * The letter action component
-   */
-  export default {
-    name: 'mn-letter-action'
-  }
+/**
+ * The letter action component
+ */
+export default {
+  name: 'MnLetterAction'
+}
 </script>

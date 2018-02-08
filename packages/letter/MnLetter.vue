@@ -6,10 +6,10 @@
 </template>
 
 <script>
-  /**
-   * The letter component
-   */
-  export default {
-    name: 'mn-letter'
-  }
+/**
+ * The letter component
+ */
+export default {
+  name: 'MnLetter'
+}
 </script>

@@ -9,6 +9,7 @@ import MnSectionSuites from './section/MnSectionSuites.js'
 import MnBtn from './btn/MnBtn.vue'
 import MnLink from './link/MnLink.vue'
 import MnImage from './image/MnImage.vue'
+import MnLetterSuites from './letter/MnLetterSuites.js'
 
 export {
   MnLoadingIcon,
@@ -20,5 +21,6 @@ export {
   MnSectionSuites,
   MnBtn,
   MnLink,
-  MnImage
+  MnImage,
+  MnLetterSuites
 }
