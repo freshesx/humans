@@ -27,6 +27,7 @@ export default {
     })
   ],
   external: [
-    'vue'
+    'vue',
+    '@freshes/icons'
   ]
 }
