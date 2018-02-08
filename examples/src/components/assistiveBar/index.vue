@@ -5,11 +5,11 @@
 </template>
 
 <script>
-  import { assistiveBar } from '@humans/assistive-bar'
+  import { MnAssistiveBar } from '@freshes/human'
 
   export default {
     components: {
-      ...assistiveBar
+      MnAssistiveBar
     }
   }
 </script>

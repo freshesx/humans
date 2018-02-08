@@ -10,6 +10,7 @@ import MnBtn from './btn/MnBtn.vue'
 import MnLink from './link/MnLink.vue'
 import MnImage from './image/MnImage.vue'
 import MnLetterSuites from './letter/MnLetterSuites.js'
+import MnAssistiveBar from './assistive-bar/MnAssistiveBar.vue'
 
 export {
   MnLoadingIcon,
@@ -22,5 +23,6 @@ export {
   MnBtn,
   MnLink,
   MnImage,
-  MnLetterSuites
+  MnLetterSuites,
+  MnAssistiveBar
 }

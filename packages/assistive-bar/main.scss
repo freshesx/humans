@@ -1,8 +1,5 @@
-@import "../../../shares/scss/vars";
-@import "../../../shares/scss/mixins/media";
-
-// Import external css
-@import "~@humans/icon/dist/main.css";
+@import "../../shares/scss/vars";
+@import "../../shares/scss/mixins/media";
 
 .mn-assistive-bar {
   width: 100%;
