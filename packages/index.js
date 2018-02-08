@@ -8,6 +8,7 @@ import MnContainer from './container/MnContainer.vue'
 import MnSectionSuites from './section/MnSectionSuites.js'
 import MnBtn from './btn/MnBtn.vue'
 import MnLink from './link/MnLink.vue'
+import MnImage from './image/MnImage.vue'
 
 export {
   MnLoadingIcon,
@@ -18,5 +19,6 @@ export {
   MnContainer,
   MnSectionSuites,
   MnBtn,
-  MnLink
+  MnLink,
+  MnImage
 }
