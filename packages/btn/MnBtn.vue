@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { MnIcon } from '@freshes/human'
+import MnIcon from '../icon/MnIcon.vue'
 
 /**
  * Button component
