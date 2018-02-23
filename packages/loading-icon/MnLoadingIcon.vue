@@ -1,11 +1,4 @@
-<template>
-  <span class="mn-loading-icon"></span>
-</template>
-
 <script>
-import Vue from 'vue'
-import defaultIcon from './_icon.vue'
-
 /**
  * Loading icon
  */
@@ -16,18 +9,29 @@ export default {
      * Developer can make a custom icon to replace default icon
      */
     icon: {
-      type: Object,  // need a vue element
-      default () {
-        const Component = Vue.extend(defaultIcon)
-        return new Component().$mount()
-      }
+      type: Object  // need a vue element
     }
   },
-  mounted () {
-    this.$el.appendChild(this.icon.$el)
-  },
-  beforeDestroy () {
-    this.$el.removeChild(this.icon.$el)
+  render (h) {
+    return h(
+      'span',
+      {
+        class: {
+          'mn-loading-icon': true
+        }
+      },
+      [
+        // Render custom icon or default icon
+        this.icon ? h(this.icon) : h(
+          'span',
+          {
+            class: {
+              'mn-loading-icon-default': true
+            }
+          }
+        )
+      ]
+    )
   }
 }
 </script>
