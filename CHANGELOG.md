@@ -26,6 +26,10 @@
 
 * Add &lt;div&gt; into page component to avoid transition one tag bug.
 
+### @humans/loading-icon
+
+* Remove global custom loading icon.
+
 ### vuelidate
 
 * You need to load vuelidate manually.
