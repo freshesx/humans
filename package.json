@@ -1,27 +1,17 @@
 {
-  "name": "@freshes/humans",
+  "name": "vue-human",
   "version": "2.8.4",
-  "description": "Vue Human is designed for high quality user experience. It has rich interactive and animation component. Inspired by iOS Human Interface Guidelines",
+  "description":
+    "Vue Human is designed for high quality user experience. It has rich interactive and animation component. Inspired by iOS Human Interface Guidelines",
   "author": "ChaselWu <chasel.wu@vitualreaty.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HumanUI/vue-human.git"
+    "url": "git+https://github.com/freshesx/humans.git"
   },
-  "keywords": [
-    "vue",
-    "javascript",
-    "components",
-    "scss"
-  ],
+  "keywords": ["vue", "javascript", "components", "scss"],
   "main": "index.js",
-  "files": [
-    "suites",
-    "scss",
-    "utils",
-    "locale",
-    "index.js"
-  ],
+  "files": ["suites", "scss", "utils", "locale", "index.js"],
   "scripts": {
     "start": "node examples/build/dev-server.js",
     "dev": "node examples/build/dev-server.js",
