@@ -8,7 +8,7 @@
       :class="{ 'is-active': !showSource }"
       :style="{
         'padding-bottom': `${ratio * 100}%`,
-        'background-image': `url(${thumb})`
+        'background-image': thumb ? `url(${thumb})` : undefined
       }"></div>
     <img class="mn-image-source"
       :class="{
